@@ -850,6 +850,73 @@
   adsnote =      {Provided by the SAO/NASA Astrophysics Data System}
 }
 
+@Unpublished{2015NOAO-BigDataTools-AlSayyad,
+  author =       {Yusra AlSayyad and Ian McGreer and Andy Connolly and
+                  Xiaohui Fan and Zeljko Ivezic and Andy Becker and
+                  Mario Juric and {The LSST Data Management team}},
+  title =        {Case study: Classifying High Redshift Quasars on the
+                  LSST-Reprocessed SDSS Stripe 82 Imaging},
+  booktitle =    {Tools for Astronomical Big Data, Tucson, AZ},
+  month =        mar,
+  year =         2015,
+  url =
+                  {http://www.noao.edu/meetings/bigdata/files/AlSayyad.pdf},
+  abstract =     {To evaluate methods for extracting information from
+                  multi-epoch imaging, the LSST data management team
+                  is testing the prototype pipeline, which converts
+                  pixels into catalogs, on simulated images and
+                  existing time domain surveys. A 250
+                  sq. deg. repeatedly-imaged stripe of the SDSS called
+                  Stripe 82 provides a strong test dataset because it
+                  was obtained under skies with highly variable
+                  conditions. Reprocessing the 20TB of imaging
+                  consisted of detecting sources on i-band co-adds but
+                  measuring flux on the single-epoch (ugriz) images,
+                  generating complete and less biased lightcurves for
+                  sources fainter than the single-epoch detection
+                  threshold. I will describe the technical challenges
+                  of aggregating these 16 billion photometry
+                  measurements into lightcurve metrics for each of the
+                  40 million objects. I will also discuss our
+                  application of ensemble classifiers to this dataset
+                  to select z~4 quasars with care to maintain the
+                  ability to estimate the completeness of the sample
+                  when the underlying population has a complex
+                  distribution in feature space.},
+}
+
+@Unpublished{2015NOAO-BigDataTools-Becla,
+  author =       {Jacek Becla},
+  title =        {Enabling Scalable Data Analytics for LSST and Beyond
+                  through Qserv},
+  booktitle =    {Tools for Astronomical Big Data, Tucson, AZ},
+  month =        mar,
+  year =         2015,
+  url =
+                  {http://www.noao.edu/meetings/bigdata/files/becla.pdf},
+  abstract =     {The construction of the Large Synoptic Survey
+                  Telescope (LSST) is starting this year. Its large
+                  and rich data set will enable exploration of a wide
+                  range of astrophysical questions, ranging from
+                  discovering “killer” asteroids, to examining the
+                  nature of dark energy. The exploration will involve
+                  running a wide range of spatial and temporal
+                  analyses, including computationally intensive
+                  scientific investigations in multi-dimensional space
+                  over the entire data set. Over a million analyses,
+                  from trivial to very complex, are expected daily,
+                  every day, for decades. A specialized database
+                  system is developed to make that not only possible,
+                  but also fast and efficient. The talk will describe
+                  the driving requirements, assumptions made, and
+                  design trade offs that were considered in developing
+                  the baseline architecture for the LSST
+                  database. Details of its prototype implementation,
+                  Qserv, will be given, highlighting its features,
+                  status, and potential for usage outside LSST and
+                  even outside astronomy.},
+}
+
 @ARTICLE{2015IAUGA..2256348J,
   author =       {{Juric}, M. and {Jones}, L. and {Axelrod}, T. and
                   {Ivezic}, Z.  },
@@ -873,7 +940,6 @@
   month =        dec,
   year =         2015,
 }
-
 
 @inproceedings{2016_P056_adassxxv,
   author =       "Tim Jenness",
