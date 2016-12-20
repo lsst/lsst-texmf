@@ -1,0 +1,178 @@
+%%
+%%	simureqs: LaTeX package for the description of simulation requirements
+%%
+%%	Author: X. Luri, UB (based on sr.sty from U. Lammers)
+%%
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{simureqs}[2007/03/15, v1.0, Simulation requirements description, $Rev$, $Date: 2007/03/15$]
+\RequirePackage{longtable}
+
+% Cycle number
+\newcommand{\cyclenum}{X}
+
+%\newlength{\oldtextwidth}
+%\newlength{\oldtextheight}
+\newlength{\olditemsep}
+\newlength{\oldparskip}
+\newlength{\oldparsep}
+\newlength{\srtabwidth}
+
+%% Used for description fields
+\newcommand{\simuReqDescription}[1]{
+  \multicolumn{2}{|c|}{ \parbox[b]{\srtabwidth}{~\vspace{0.2mm} \newline #1 } }\\
+  \hline
+}
+
+
+%%
+%%	Environment: simureqGenDesc
+%%	Purpose:
+%%		General description of CUx Simulation Requirements
+%%	Arguments:
+%%		1) Cycle number
+%%		2) Author names (CUx contact)
+%%		3) Description
+%%
+\newenvironment{simureqGenDesc}[2]{
+
+  \setlength{\oldtextwidth}{\textwidth}
+  \setlength{\oldtextheight}{\textheight}
+  \setlength{\olditemsep}{\itemsep}
+  \setlength{\oldparskip}{\parskip}
+  \setlength{\oldparsep}{\parsep}
+
+  \setlength{\srtabwidth}{\textwidth}
+  \setlength{\textheight}{22cm}
+  \setlength{\parindent}{0cm}		% No indent at start of paragraphs
+  \renewcommand{\arraystretch}{1.5}
+  \setlength\LTleft{0pt}
+  \setlength\LTright{\fill}
+  \setlength\LTpost{\fill}
+
+  \setlength{\itemsep}{0pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+
+  \subsubsection{General description}
+
+  \begin{longtable}{|p{.5\srtabwidth}|p{.5\srtabwidth}|}
+    \hline
+    {\bf Request issued by:} \CU & {\bf Cycle: } \cyclenum \\
+    \hline
+    \multicolumn{2}{|l|}{{\bf Authors (\CU~contact persons):} #1} \\
+    \hline
+}
+{  \end{longtable}
+
+  \setlength{\textwidth}{\oldtextwidth}
+  \setlength{\textheight}{\oldtextheight}
+  \setlength{\itemsep}{\olditemsep}
+  \setlength{\parskip}{\oldparskip}
+  \setlength{\parsep}{\oldparsep}
+}
+
+
+%%
+%%	Environment: simureq
+%%	Purpose:
+%%		Detailed description of a given Simulation Requirement
+%%	Arguments:
+%%		1) Requirement code
+%%		2) Contact for CU2
+%%		3) Dependences
+%%		4) Priority
+%%		5) Availability
+%%		6) Description
+%%
+\newenvironment{simureq}[6]{
+
+  \setlength{\oldtextwidth}{\textwidth}
+  \setlength{\oldtextheight}{\textheight}
+  \setlength{\olditemsep}{\itemsep}
+  \setlength{\oldparskip}{\parskip}
+  \setlength{\oldparsep}{\parsep}
+
+  \setlength{\srtabwidth}{.92\textwidth}
+  \setlength{\textheight}{22cm}
+  \setlength{\parindent}{0cm}		% No indent at start of paragraphs
+  \renewcommand{\arraystretch}{1.5}
+  \setlength\LTleft{0pt}
+  \setlength\LTright{\fill}
+  \setlength\LTpost{\fill}
+
+  \setlength{\itemsep}{0pt}
+  \setlength{\parskip}{1pt}
+  \setlength{\parsep}{1pt}
+
+  \subsubsection{#1}
+
+  \begin{longtable}{|p{.5\srtabwidth}|p{.5\srtabwidth}|}
+    \hline
+    {\bf Code:} #1 & {\bf Contact for CU2: } #2 \\
+    \hline
+    \multicolumn{2}{|l|}{{\bf Title:} #3} \\
+    \hline
+    \multicolumn{2}{|l|}{{\bf Dependences:} #4} \\
+    \hline
+    \multicolumn{2}{|l|}{{\bf Priority:} #5} \\
+    \hline
+    \multicolumn{2}{|l|}{{\bf Desired availability:} #6} \\
+    \hline
+}
+{  \end{longtable}
+
+  \setlength{\textwidth}{\oldtextwidth}
+  \setlength{\textheight}{\oldtextheight}
+  \setlength{\itemsep}{\olditemsep}
+  \setlength{\parskip}{\oldparskip}
+  \setlength{\parsep}{\oldparsep}
+}
+
+%%      Environment: simureqfinal
+%%      Purpose:
+%%              Simulation Requirement for the final cycles before launch
+%%      Arguments:
+%%              1) Requirement code
+%%              2) Requesting CU
+%%              3) Title
+%%              4) Priority
+%%
+\newenvironment{simureqfinal}[5]{
+
+  \setlength{\oldtextwidth}{\textwidth}
+  \setlength{\oldtextheight}{\textheight}
+  \setlength{\olditemsep}{\itemsep}
+  \setlength{\oldparskip}{\parskip}
+  \setlength{\oldparsep}{\parsep}
+
+  \setlength{\srtabwidth}{.92\textwidth}
+  \setlength{\textheight}{22cm}
+  \setlength{\parindent}{0cm}           % No indent at start of paragraphs
+  \renewcommand{\arraystretch}{1.5}
+  \setlength\LTleft{0pt}
+  \setlength\LTright{\fill}
+  \setlength\LTpost{\fill}
+
+  \setlength{\itemsep}{0pt}
+  \setlength{\parskip}{1pt}
+  \setlength{\parsep}{1pt}
+
+  \subsubsection{#1}
+
+  \begin{longtable}{|p{.5\srtabwidth}|p{.5\srtabwidth}|}
+    \hline
+    {\bf Code:} #1 & {\bf Requesting CU: } #2 \\
+    \hline
+    \multicolumn{2}{|l|}{{\bf Title:} #3} \\
+    \hline
+    \multicolumn{2}{|l|}{{\bf Priority:} #4} \\
+    \hline
+}
+{  \end{longtable}
+
+  \setlength{\textwidth}{\oldtextwidth}
+  \setlength{\textheight}{\oldtextheight}
+  \setlength{\itemsep}{\olditemsep}
+  \setlength{\parskip}{\oldparskip}
+  \setlength{\parsep}{\oldparsep}
+}

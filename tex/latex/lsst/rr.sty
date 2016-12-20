@@ -1,0 +1,142 @@
+%%
+%%	rr: LaTeX package for the description of an entry in the DPACE Risk Register
+%%
+%%	Id: rr.sty 
+%%
+%%	Author: R. Drimmel, INAF-OATo
+%%      Creation: 2008-03-28
+%%
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{rr}[2008/03/28, v1.0, DPAC Risk Register entry]
+\RequirePackage{longtable}
+\newlength{\oldtextwidth}
+\newlength{\oldtextheight}
+\newlength{\rrtabwidth}
+\newlength{\rh}
+\providecommand{\pu}[2]{\ensuremath{#1\,\mbox{#2}}}
+
+%%
+%%	width of RR table
+%%
+\newcommand{\rrfield}[1]{{\bf #1}}
+%%
+%%	Environment: RR
+%%	Purpose:
+%%		Definition of a DPAC risk
+%%	Arguments:
+%%		1) mantis risk code
+%%		2) Title
+%%
+\newenvironment{RR}[2]{%
+\setlength{\oldtextwidth}{\textwidth}
+\setlength{\oldtextheight}{\textheight}
+%\setlength{\textwidth}{16cm}
+\setlength{\rrtabwidth}{.92\textwidth}
+\setlength{\textheight}{22cm}
+%\setlength{\topmargin}{0cm}
+%\setlength{\oddsidemargin}{0cm}
+%\setlength{\evensidemargin}{0cm}
+\setlength{\parindent}{0cm}		% No indent at start of paragraphs
+% not sure this is so good - get blanck page after heading \newpage
+\renewcommand{\arraystretch}{1.5}
+% always flush-left longtables
+\setlength\LTleft{0pt}
+\setlength\LTright{\fill}
+\setlength\LTpost{\fill}
+\begin{longtable}{|p{.25\rrtabwidth}|p{.25\rrtabwidth}|p{.25\rrtabwidth}|p{.25\rrtabwidth}|}\hline
+\multicolumn{4}{|l|}{\settoheight{\rh}{\LARGE\bf X}
+\rule{0pt}{1.5\rh}{\LARGE\bf Gaia DPAC Risk}:\hspace{\stretch{1}}DRC-#1}\\\hline\hline
+\multicolumn{4}{|p{\rrtabwidth}|}{\rrfield{Title}: #2}\\\hline}
+{\end{longtable}
+\setlength{\textwidth}{\oldtextwidth}
+\setlength{\textheight}{\oldtextheight}
+}
+
+%%
+%%	Command: \rrdescription
+%%	Purpose:
+%%         Description (cause and consequence)
+%%       Arguments: free text
+%%
+\newcommand{\rrdescription}[1]{%
+\multicolumn{4}{|p{\rrtabwidth}|}{\rrfield{Description (cause and consequence)}:\newline #1}\\\hline}
+
+%%	
+%%	Command: \rrsubmitterdate
+%%      Purpose: Specify submitter and date of submission
+%%	Argument(s):
+%%		1) Submitter: name of submitter
+%%		2) Date of submission [yyyy-mm-dd]
+%%
+\newcommand{\rrsubmitterdate}[2]{%
+\multicolumn{2}{|p{.5\rrtabwidth}|}{\rrfield{Submitter}: #1} &
+\multicolumn{2}{|p{.5\rrtabwidth}|}{\rrfield{Submission Date}: #2}\\\hline\hline}
+
+%%
+%%	Command: \rrassessment
+%%	Purpose: Assessment of the risk by the RMT, according to RMP (RD-008)
+%%	Argument(s):
+%%		1) date of (last) assessment [yyyy-mm-dd]
+%%		2) Risk Severity (1/2/3/4/5)
+%%		3) Risk Likelihood (E/D/C/B/A)
+%%              4) Risk Index (Very Low/Low/Medium/High/Very High)
+%%
+\newcommand{\rrassessment}[4]{%
+\multicolumn{3}{|p{.75\rrtabwidth}|}{\large\bf Risk Assessment:} & 
+\multicolumn{1}{|p{.25\rrtabwidth}|}{\rrfield{Date}: #1}  \\\hline
+\rrfield{Severity}: #2 &
+\multicolumn{2}{|l|}{\rrfield{Likelihood}: #3} &
+\rrfield{Index}: #4 \\\hline}
+%%
+%%	Command: \rrrecommendation
+%%	Purpose: recommendation of the Risk Management Team
+%%	Argument(s):
+%%		1) Recommendation: to accept or not (free text)
+%%
+\newcommand{\rrrecommendation}[1]{%
+\multicolumn{4}{|p{\rrtabwidth}|}{\rrfield{Recommendation}:\newline #1}\\\hline\hline}
+
+%%
+%%	Command: \rrstatus
+%%	Purpose: Risk Status, as decided by DPACE
+%%	Argument(s):
+%%		1) Status: accept/act/closed
+%%
+\newcommand{\rrstatus}[1]{%
+\multicolumn{4}{|c|}{\Large\bf Risk Mitigation} \\\hline
+\multicolumn{4}{|p{\rrtabwidth}|}{\rrfield{Risk Status}: #1} \\\hline}
+
+%%
+%%	Command: \rractions
+%%	Purpose: List actions taken (if any) 
+%%	Argument(s):
+%%		1) actions taken (free text)
+%%
+\newcommand{\rractions}[1]{%
+\multicolumn{4}{|p{\rrtabwidth}|}{\rrfield{Action(s)}:\newline #1}\\\hline\hline}
+
+%%
+%%	History of the risk, with past assessments and actions taken (if any).
+%%	Command: \rrhistory
+%%	Argument(s):
+%%		1) Should have a table with past assessments 
+%%               (date, severity, likelihood, status) and a list (table?) of past actions.
+%%
+\newcommand{\rrhistory}[1]{%
+\multicolumn{4}{|c|}{\Large\bf Risk History} \\\hline
+\multicolumn{4}{|p{\rrtabwidth}|}{\rrfield{Past Assessments}:\newline #1}\\\hline}
+
+%%
+%%	Additional notes
+%%	Command: \rrnotes
+%%	Argument(s):
+%%		1) Notes (free text)
+%%
+\newcommand{\rrnotes}[1]{%
+\multicolumn{4}{|p{\rrtabwidth}|}{\rrfield{Notes}:\newline #1}\\\hline}
+
+
+%%
+%%	Revision History	
+%%
+

@@ -1,0 +1,301 @@
+%%
+%%	proc: LaTeX package for the description of a Gaia DPAC Procedure
+%%
+%%	$Id: proc.sty 32333 2011-11-30 10:31:16Z rguerra $
+%%
+%%	Author: R. Guerra, N. Cheek ESAC
+%%
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{opsproc}[2011/11/30, v1.0, Gaia Procedure description, $Rev$, $Date: 2005/11/16 12:47:39 $]
+\RequirePackage{longtable}
+\newlength{\oldtextwidth}
+\newlength{\oldtextheight}
+\newlength{\proctabwidth}
+\newlength{\rh}
+\providecommand{\pu}[2]{\ensuremath{#1\,\mbox{#2}}}
+
+%%
+%%	width of PROC table
+%%
+\newcommand{\procfield}[1]{{\bf #1}}
+%%
+%%	Environment: Proc
+%%	Purpose:
+%%		Definition of Gaia Procedure
+%%	Arguments:
+%%		1) Proc Reference code adhering to GAIA-C1-TN-ESAC-WOM-001
+%%		2) Title
+%%
+\newenvironment{PROC}[3]{%
+\setlength{\oldtextwidth}{\textwidth}
+\setlength{\oldtextheight}{\textheight}
+%\setlength{\textwidth}{16cm}
+\setlength{\proctabwidth}{.95\textwidth}
+\setlength{\textheight}{22cm}
+%\setlength{\topmargin}{0cm}
+%\setlength{\oddsidemargin}{0cm}
+%\setlength{\evensidemargin}{0cm}
+\setlength{\parindent}{0cm}		% No indent at start of paragraphs
+% not sure this is so good - get blanck page after heading \newpage
+\renewcommand{\arraystretch}{1.5}
+% always flush-left longtables
+\setlength\LTleft{0pt}
+\setlength\LTright{\fill}
+\setlength\LTpost{\fill}
+\begin{longtable}{|p{.31\proctabwidth}|p{.35\proctabwidth}|p{.31\proctabwidth}|}\hline
+\multicolumn{3}{|l|}{\settoheight{\rh}{\LARGE\bf X}
+\rule{0pt}{1.5\rh}{\LARGE\bf #1}\hspace{\stretch{1}}\bf#2}\\\hline\hline
+\multicolumn{3}{|l|}{\procfield{Description}: #3}\\\hline}
+{\end{longtable}
+\setlength{\textwidth}{\oldtextwidth}
+\setlength{\textheight}{\oldtextheight}
+}
+
+%%
+%%	Command: \procoper
+%%	Purpose:
+%%		Generate Provider + Manager field
+%%	Argument(s):
+%%		1) Operator (Ops Personnel/CSG/DB Administrator/
+%%									POS Engineer/Calibration Personnel/Ops Managers)
+%%	
+\newcommand{\procoper}[1]{%
+\multicolumn{3}{|p{\proctabwidth}|}{\procfield{Operator}: #1}\\\hline
+}
+
+
+%%
+%%      Command: \procstartfreqdur
+%%      Purpose:
+%%              Define Start, Frequency and Duration
+%%      Argument(s):
+%%              1) Start
+%%              2) Frequency (Variable/Once/On request/
+%%									As needed/On detection/Daily/On failure/
+%%									End of Cycle/Weekly)
+%%							3) Duration 
+\newcommand{\procstartfreqdur}[3]{%
+\procfield{Start}: #1 &
+\procfield{Frequency}: #2 &
+\procfield{Duration}: #3 \\\hline}
+
+%%
+%%	Command: \procobjective
+%%	Purpose:
+%%		Description of purpose of WP
+%%	Argument(s):
+%%		1) Description of purpose of WP (free text)
+%%
+\newcommand{\procobjective}[1]{%
+\multicolumn{3}{|p{\proctabwidth}|}{\procfield{Objective}:\newline #1}\\\hline}
+
+%%
+%%	Command: \prochistory
+%%	Purpose:
+%%		List of all history that this WP consists of
+%%	Argument(s):
+%%		1) Task list (free text)
+%%
+\newcommand{\prochistory}[1]{%
+\multicolumn{3}{|p{\proctabwidth}|}{\procfield{History}:\newline #1}\\\hline}
+
+%%
+%%      Command: \proctask
+%%      Purpose:
+%%              List of all tasks that this WP consists of
+%%      Argument(s):
+%%              1) Task list (free text)
+%%
+\newcommand{\proctask}[1]{%
+\multicolumn{3}{|p{\proctabwidth}|}{\procfield{Tasks}:\newline #1}\\\hline}
+
+
+\newcommand{\procstep}[3]{%
+\procfield{} #1 &
+\procfield{} #2 &
+\procfield{} #3 \\\hline}
+
+%%
+%%	Command: \procinput
+%%	Purpose:
+%%		Specify inputs to this WP
+%%	Argument(s):
+%%		1) WP inputs (free text)
+%%
+\newcommand{\procinput}[1]{%
+\multicolumn{3}{|p{\proctabwidth}|}{\procfield{Input}:\newline #1}\\\hline}
+
+%%
+%%      Command: \procprerequisites
+%%              Specify inputs to this WP
+%%      Argument(s):
+%%              
+%%
+\newcommand{\procprerequisites}[1]{%
+\multicolumn{3}{|p{\proctabwidth}|}{\procfield{Pre-requisite(s)}:\newline #1}\\\hline}
+
+%%
+%%	Command: \procoutput
+%%	Purpose:
+%%		Specify outputs of this WP
+%%	Argument(s):
+%%		1) WP outputs (free text)
+%%
+\newcommand{\procoutput}[1]{%
+\multicolumn{3}{|p{\proctabwidth}|}{\procfield{Output}:\newline #1}\\\hline}
+
+%%
+%%      Command: \procentryconditions
+%%      Purpose:
+%%              Specify Entry Conditions
+%%      Argument(s):
+%%              
+%%
+\newcommand{\procentryconditions}[1]{%
+\multicolumn{3}{|p{\proctabwidth}|}{\procfield{Entry Condition(s)}:\newline #1}\\\hline}
+
+%%
+%%	Command: \procexitconditions
+%%	Purpose:
+%%		Specify exit conditions (completion of procedure)
+%%	Argument(s):
+%%		
+%%
+\newcommand{\procexitconditions}[1]{%
+\multicolumn{3}{|p{\proctabwidth}|}{\procfield{Exit Condition(s)}:\newline #1}\\\hline}
+
+%%
+%%	Command: \procontact
+%%	Purpose:
+%%		Specify contact point in case of issues
+%%	Argument(s):
+%%		
+%%	
+\newcommand{\procontact}[1]{%
+\multicolumn{3}{|p{\proctabwidth}|}{\procfield{In Case of Problem(s)}:\newline #1}\\\hline}
+
+%%
+%%	Command: \procdepend
+%%	Purpose:
+%%		Specify other WP this one depends on and all other dependencies
+%%	Argument(s):
+%%		1) List of dependencies of this WP (free text)
+%%
+\newcommand{\procdepend}[1]{%
+\multicolumn{3}{|p{\proctabwidth}|}{\procfield{Dependencies}:\newline #1}\\\hline}
+%%
+%%	Command: \procinterface
+%%	Purpose:
+%%		Specify all interfaces of this WP
+%%	Argument(s):
+%%		1) All WP interfaces (free text)
+%%
+\newcommand{\procinterface}[1]{%
+\multicolumn{3}{|p{\proctabwidth}|}{\procfield{Interfaces}:\newline #1}\\\hline}
+
+%%
+%%	Command: \procremark
+%%	Purpose:
+%%		Specify remarks to this WP
+%%	Argument(s):
+%%		1) Remarks (free text)
+%%
+\newcommand{\procremark}[1]{%
+\multicolumn{3}{|p{\proctabwidth}|}{\procfield{Remarks}:\newline #1}\\\hline}
+
+
+%%
+%%	Revision History
+%%	$Log: proc.sty,v $
+%%	Revision 1.3  2005/11/16 12:47:39  ulammers
+%%	fixed version number
+%%	
+%%	Revision 1.2  2005/11/16 12:46:56  ulammers
+%%	fixed problem when \begin{proc} used more than once
+%%	
+%%
+
+%
+% Procedure steps
+%
+
+\newenvironment{procSteps}[0]{
+  \begin{footnotesize}
+        \subsection*{Detailed Procedure}
+
+    % flush table to the left
+    \setlength\LTleft{0pt}
+    \setlength\LTright{\fill}
+%   \setlength\LTpost{\fill}
+%   \addtocounter{table}{-1}
+    \begin{longtable}{|c|p{.40\textwidth}|p{.48\textwidth}|} \hline
+    
+    {\bf Step} & {\bf Description} & {\bf Action} \\ \hline\hline
+}{
+    \end{longtable}
+  \end{footnotesize}
+%        \ifx \@dpacDocCompact \@empty
+%           \pagebreak
+%         \else
+%         \relax
+%        \fi
+}
+\providecommand{\addtostep}[3]{
+#1 & #2 & #3\\\hline}
+
+%
+%   Document history
+%
+\newenvironment{docHis}[0]{
+  \subsection*{History}
+  \begin{footnotesize}
+    % flush table to the left
+    \setlength\LTleft{0pt}
+    \setlength\LTright{\fill}
+%   \setlength\LTpost{\fill}
+%   \addtocounter{table}{-1}
+    \begin{longtable}{|c|c|c|c|p{.50\textwidth}|}
+
+    \hline
+    {\bf Revision} & {\bf Date} & {\bf Author} & {\bf Approved by} & {\bf Comments} \\ \hline\hline
+}{
+\end{longtable}
+\end{footnotesize}
+%        \ifx \@dpacDocCompact \@empty
+%           \pagebreak
+%         \else
+%         \relax
+%        \fi
+}
+
+\providecommand{\addtohis}[5]{
+#1 & #2 & #3 & #4 & #5\\\hline}
+
+
+%
+% Tags
+%
+
+\newenvironment{procTags}[0]{
+  \begin{footnotesize}
+        \subsection*{Tags}
+
+    % flush table to the left
+    \setlength\LTleft{0pt}
+    \setlength\LTright{\fill}
+%   \setlength\LTpost{\fill}
+%   \addtocounter{table}{-1}
+    \begin{longtable}{|p{0.99\textwidth}|} \hline
+    
+%    {\bf Step} & {\bf Description} & {\bf Action} \\ \hline\hline
+}{
+    \end{longtable}
+  \end{footnotesize}
+%        \ifx \@dpacDocCompact \@empty
+%           \pagebreak
+%         \else
+%         \relax
+%        \fi
+}
+\providecommand{\addtotags}[1]{
+#1\\\hline}

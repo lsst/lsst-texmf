@@ -1,0 +1,167 @@
+%%
+%%	gwp: LaTeX package for the description of a Gaia DPAC Work Packages
+%%
+%%	$Id: gwp.sty 32333 2007-09-24 10:31:16Z ulammers $
+%%
+%%	Author: U. Lammers, ESAC
+%%
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{gwp}[2005/11/14, v1.0, Gaia Work Package description, $Rev$, $Date: 2005/11/16 12:47:39 $]
+\RequirePackage{longtable}
+\newlength{\oldtextwidth}
+\newlength{\oldtextheight}
+\newlength{\gwptabwidth}
+\newlength{\rh}
+\providecommand{\pu}[2]{\ensuremath{#1\,\mbox{#2}}}
+
+%%
+%%	width of GWP table
+%%
+\newcommand{\gwpfield}[1]{{\bf #1}}
+%%
+%%	Environment: GWP
+%%	Purpose:
+%%		Definition of Gaia Work Package
+%%	Arguments:
+%%		1) WP code adhering to GAIA-C1-TN-ESAC-WOM-001
+%%		2) Title
+%%
+\newenvironment{GWP}[2]{%
+\setlength{\oldtextwidth}{\textwidth}
+\setlength{\oldtextheight}{\textheight}
+%\setlength{\textwidth}{16cm}
+\setlength{\gwptabwidth}{.92\textwidth}
+\setlength{\textheight}{22cm}
+%\setlength{\topmargin}{0cm}
+%\setlength{\oddsidemargin}{0cm}
+%\setlength{\evensidemargin}{0cm}
+\setlength{\parindent}{0cm}		% No indent at start of paragraphs
+% not sure this is so good - get blanck page after heading \newpage
+\renewcommand{\arraystretch}{1.5}
+% always flush-left longtables
+\setlength\LTleft{0pt}
+\setlength\LTright{\fill}
+\setlength\LTpost{\fill}
+\begin{longtable}{|p{.33\gwptabwidth}|p{.33\gwptabwidth}|p{.33\gwptabwidth}|}\hline
+\multicolumn{3}{|l|}{\settoheight{\rh}{\LARGE\bf X}
+\rule{0pt}{1.5\rh}{\LARGE\bf Gaia DPAC WP}:\hspace{\stretch{1}}GWP-#1}\\\hline\hline
+\multicolumn{3}{|l|}{\gwpfield{Title}: #2}\\\hline}
+{\end{longtable}
+\setlength{\textwidth}{\oldtextwidth}
+\setlength{\textheight}{\oldtextheight}
+}
+
+%%
+%%	Command: \gwpprovmanag
+%%	Purpose:
+%%		Generate Provider + Manager field
+%%	Argument(s):
+%%		1) Provider(s) (free text)
+%%		2) Manager(s) (free text)
+%%	
+\newcommand{\gwpprovmanag}[2]{%
+\multicolumn{3}{|p{\gwptabwidth}|}{\gwpfield{Provider(s)}: #1}\\\hline
+\multicolumn{3}{|p{\gwptabwidth}|}{\gwpfield{Manager(s)}: #2}\\\hline}
+
+%%
+%%	Command: \gwpstartendeffort
+%%	Purpose:
+%%		Define start\end and total man power effort of WP
+%%	Argument(s):
+%%		1) Start of WP [dd/mm/yyyy]
+%%		2) End of WP [dd/mm/yyyy]
+%%		3) Total Man power effort in Man Months (no unit)
+\newcommand{\gwpstartendeffort}[3]{%
+\gwpfield{Start}: #1 &
+\gwpfield{End}: #2 &
+\gwpfield{Total Effort}: \pu{#3}{SM}\\\hline}
+
+%%
+%%	Command: \gwpobjective
+%%	Purpose:
+%%		Description of purpose of WP
+%%	Argument(s):
+%%		1) Description of purpose of WP (free text)
+%%
+\newcommand{\gwpobjective}[1]{%
+\multicolumn{3}{|p{\gwptabwidth}|}{\gwpfield{Objective}:\newline #1}\\\hline}
+
+%%
+%%	Command: \gwptask
+%%	Purpose:
+%%		List of all tasks that this WP consists of
+%%	Argument(s):
+%%		1) Task list (free text)
+%%
+\newcommand{\gwptask}[1]{%
+\multicolumn{3}{|p{\gwptabwidth}|}{\gwpfield{Tasks}:\newline #1}\\\hline}
+
+%%
+%%	Command: \gwpinput
+%%	Purpose:
+%%		Specify inputs to this WP
+%%	Argument(s):
+%%		1) WP inputs (free text)
+%%
+\newcommand{\gwpinput}[1]{%
+\multicolumn{3}{|p{\gwptabwidth}|}{\gwpfield{Input}:\newline #1}\\\hline}
+
+%%
+%%	Command: \gwpoutput
+%%	Purpose:
+%%		Specify outputs of this WP
+%%	Argument(s):
+%%		1) WP outputs (free text)
+%%
+\newcommand{\gwpoutput}[1]{%
+\multicolumn{3}{|p{\gwptabwidth}|}{\gwpfield{Output}:\newline #1}\\\hline}
+
+%%
+%%	Command: \gwpdeliver
+%%	Purpose:
+%%		Specify WP deliverables
+%%	Argument(s):
+%%		1) WP deliverables (free text)
+%%
+\newcommand{\gwpdeliver}[1]{%
+\multicolumn{3}{|p{\gwptabwidth}|}{\gwpfield{Deliverables}:\newline #1}\\\hline}
+%%
+%%	Command: \gwpdepend
+%%	Purpose:
+%%		Specify other WP this one depends on and all other dependencies
+%%	Argument(s):
+%%		1) List of dependencies of this WP (free text)
+%%
+\newcommand{\gwpdepend}[1]{%
+\multicolumn{3}{|p{\gwptabwidth}|}{\gwpfield{Dependencies}:\newline #1}\\\hline}
+%%
+%%	Command: \gwpinterface
+%%	Purpose:
+%%		Specify all interfaces of this WP
+%%	Argument(s):
+%%		1) All WP interfaces (free text)
+%%
+\newcommand{\gwpinterface}[1]{%
+\multicolumn{3}{|p{\gwptabwidth}|}{\gwpfield{Interfaces}:\newline #1}\\\hline}
+
+%%
+%%	Command: \gwpremark
+%%	Purpose:
+%%		Specify remarks to this WP
+%%	Argument(s):
+%%		1) Remarks (free text)
+%%
+\newcommand{\gwpremark}[1]{%
+\multicolumn{3}{|p{\gwptabwidth}|}{\gwpfield{Remarks}:\newline #1}\\\hline}
+
+%%
+%%	Revision History
+%%	$Log: gwp.sty,v $
+%%	Revision 1.3  2005/11/16 12:47:39  ulammers
+%%	fixed version number
+%%	
+%%	Revision 1.2  2005/11/16 12:46:56  ulammers
+%%	fixed problem when \begin{gwp} used more than once
+%%	
+%%
+

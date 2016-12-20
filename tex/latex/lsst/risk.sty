@@ -1,0 +1,54 @@
+%%
+%%	gwp: LaTeX package for risks in the SDP
+%%
+%%	$Id $
+%%
+%%	Author: William O'Mullane, ESAC
+%%
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{risk}[2007/10/21, v1.0, Gaia Risk entry,  $Date:$]
+\RequirePackage{longtable}
+
+\newcounter{ariski}
+\renewcommand{\theariski}{\numprint{\arabic{ariski}}}
+\def\p@arisk#1{\csname reqtype\endcsname-}
+
+
+\providecommand{\setriskincr}[1]{\setcounter{@dfriskincr}{#1}}
+\newcounter{@dfriskincr}
+\setcounter{@dfriskincr}{10}
+
+\newcounter{riskincr}
+\setcounter{riskincr}{\value{@dfriskincr}}
+
+
+\providecommand{\newrisktype}[1]{\def\risktype{#1}\setcounter{ariski}{0}}
+
+\newcounter{@riskdepth}\setcounter{@riskdepth}{0}
+\newenvironment{riskblock}[2][\value{@dfriskincr}]{%
+\newreqtype{#2}\setcounter{reqincr}{#1}%
+\addtocounter{@riskdepth}{1}}{%
+\setcounter{riskincr}{\value{@dfriskincr}}%
+\addtocounter{@riskdepth}{-1}}
+
+%#1 shortname, #2 severity, #3 likeliehood, #4 description #5 mitigation, #6 actions
+\providecommand{\risk}[6]{%
+\addtocounter{ariski}{\value{riskincr}}%
+\protected@edef\@currentlabel{\risktype -\csname p@arisk\endcsname-\theariski}%
+\begin{tabular}{|%
+p{0\textwidth}% dummy
+>{\bfseries}p{.2\textwidth}|% Risk identifier
+p{.4\textwidth}|% shortname
+p{.15\textwidth}|% severity 1-5 (5 catastrophic)
+p{.18\textwidth}|% likelihood a-e (e maximum
+}\hline%
+&\risktype -\csname p@arisk\endcsname -\theariski & %
+ #1 &{\bf severity:}#2 &{\bf likelihood:} #3 \\\hline
+\multicolumn{5}{|p{.95\textwidth}|}{{\bf Description:~}#4}\\\hline
+\multicolumn{5}{|p{.95\textwidth}|}{{\bf Mitigation:~} #5}\\\hline
+\multicolumn{5}{|p{.95\textwidth}|}{{\bf Actions:~} #6}\\\hline
+\end{tabular}
+\\[4mm]%
+\typeout{RISK:\csname \risktype-p@arisk\endcsname-\arabic{ariski},#1,#2,#3}%
+}

@@ -1,0 +1,336 @@
+%%
+%%	proc: LaTeX package for the description of a Gaia DPAC Procedure
+%%
+%%	$Id: proc.sty 32333 2011-11-30 10:31:16Z rguerra $
+%%
+%%	Author: R. Guerra,  ESAC
+%%
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{drd}[2012/05/31, v1.0, Dataset Release Document, $Rev$, $Date: 2005/11/16 12:47:39 $]
+\RequirePackage{longtable}
+\newlength{\oldtextwidth}
+\newlength{\oldtextheight}
+\newlength{\proctabwidth}
+\newlength{\rh}
+\providecommand{\pu}[2]{\ensuremath{#1\,\mbox{#2}}}
+
+%%
+%%	width of DS table
+%%
+\newcommand{\drdfield}[1]{{\bf #1}}
+%%
+%%	Environment: Ds
+%%	Purpose:
+%%		Definition of the dataset
+%%	Arguments:
+%%		1) Proc Reference code adhering to GAIA-C1-TN-ESAC-WOM-001
+%%		2) Title
+%%
+\newenvironment{DRD}[3]{%
+\setlength{\oldtextwidth}{\textwidth}
+\setlength{\oldtextheight}{\textheight}
+%\setlength{\textwidth}{16cm}
+\setlength{\proctabwidth}{.95\textwidth}
+\setlength{\textheight}{22cm}
+%\setlength{\topmargin}{0cm}
+%\setlength{\oddsidemargin}{0cm}
+%\setlength{\evensidemargin}{0cm}
+\setlength{\parindent}{0cm}		% No indent at start of paragraphs
+% not sure this is so good - get blanck page after heading \newpage
+\renewcommand{\arraystretch}{1.5}
+% always flush-left longtables
+\setlength\LTleft{0pt}
+\setlength\LTright{\fill}
+\setlength\LTpost{\fill}
+\begin{longtable}{|p{.31\proctabwidth}|p{.35\proctabwidth}|p{.31\proctabwidth}|}\hline
+\multicolumn{3}{|l|}{\settoheight{\rh}{\LARGE\bf X}
+\rule{0pt}{1.5\rh}{\LARGE\bf #1}\hspace{\stretch{1}}\bf#2}\\\hline\hline
+\multicolumn{3}{|l|}{\drdfield{Description}: #3}\\\hline}
+{\end{longtable}
+\setlength{\textwidth}{\oldtextwidth}
+\setlength{\textheight}{\oldtextheight}
+}
+
+%%
+%%	Command: \drdresp
+%%	Purpose:
+%%		Responsible
+%%	Argument(s):
+%%		1) Who downloads the data
+%%	
+\newcommand{\drdresp}[1]{%
+\multicolumn{3}{|p{\proctabwidth}|}{\drdfield{Responsible}: #1}\\\hline
+}
+
+%%
+%%      Command: \drdorigin
+%%      Purpose:
+%%              Origin of the data
+%%      Argument(s):
+%%              1) Link to the storage
+%%      
+\newcommand{\drdorigin}[1]{%
+\multicolumn{3}{|p{\proctabwidth}|}{\drdfield{Retrieved from}: #1}\\\hline
+}
+
+%%
+%%      Command: \drdretention
+%%      Purpose:
+%%              Retention
+%%      Argument(s):
+%%              1) Retention policy
+%%      
+\newcommand{\drdorigin}[1]{%
+\multicolumn{3}{|p{\proctabwidth}|}{\drdfield{Retention Policy}: #1}\\\hline
+}
+
+
+%%
+%%      Command: \drdchecksum
+%%      Purpose:
+%%              Checksum of the data
+%%      Argument(s):
+%%              1) Checksum
+%%      
+\newcommand{\drdchecksum}[1]{%
+\multicolumn{3}{|p{\proctabwidth}|}{\drdfield{Checksum}: #1}\\\hline
+}
+
+
+
+
+%%
+%%      Command: \procstartfreqdur
+%%      Purpose:
+%%              Define Start, Frequency and Duration
+%%      Argument(s):
+%%              1) Start
+%%              2) Frequency (Variable/Once/On request/
+%%									As needed/On detection/Daily/On failure/
+%%									End of Cycle/Weekly)
+%%							3) Duration 
+\newcommand{\procstartfreqdur}[3]{%
+\drdfield{Start}: #1 &
+\drdfield{Frequency}: #2 &
+\drdfield{Duration}: #3 \\\hline}
+
+%%
+%%	Command: \procobjective
+%%	Purpose:
+%%		Description of purpose of WP
+%%	Argument(s):
+%%		1) Description of purpose of WP (free text)
+%%
+\newcommand{\procobjective}[1]{%
+\multicolumn{3}{|p{\proctabwidth}|}{\drdfield{Objective}:\newline #1}\\\hline}
+
+%%
+%%	Command: \prochistory
+%%	Purpose:
+%%		List of all history that this WP consists of
+%%	Argument(s):
+%%		1) Task list (free text)
+%%
+\newcommand{\drdhistory}[1]{%
+\multicolumn{3}{|p{\proctabwidth}|}{\drdfield{History}:\newline #1}\\\hline}
+
+%%
+%%      Command: \proctask
+%%      Purpose:
+%%              List of all tasks that this WP consists of
+%%      Argument(s):
+%%              1) Task list (free text)
+%%
+\newcommand{\proctask}[1]{%
+\multicolumn{3}{|p{\proctabwidth}|}{\drdfield{Tasks}:\newline #1}\\\hline}
+
+
+\newcommand{\procstep}[3]{%
+\drdfield{} #1 &
+\drdfield{} #2 &
+\drdfield{} #3 \\\hline}
+
+%%
+%%	Command: \procinput
+%%	Purpose:
+%%		Specify inputs to this WP
+%%	Argument(s):
+%%		1) WP inputs (free text)
+%%
+\newcommand{\procinput}[1]{%
+\multicolumn{3}{|p{\proctabwidth}|}{\drdfield{Input}:\newline #1}\\\hline}
+
+%%
+%%      Command: \drdmantis
+%%              Mantis list
+%%      Argument(s):
+%%              
+%%
+\newcommand{\drdmantis}[1]{%
+\multicolumn{3}{|p{\proctabwidth}|}{\drdfield{Mantis issues}:\newline #1}\\\hline}
+
+%%
+%%	Command: \procoutput
+%%	Purpose:
+%%		Specify outputs of this WP
+%%	Argument(s):
+%%		1) WP outputs (free text)
+%%
+\newcommand{\procoutput}[1]{%
+\multicolumn{3}{|p{\proctabwidth}|}{\drdfield{Output}:\newline #1}\\\hline}
+
+%%
+%%      Command: \procentryconditions
+%%      Purpose:
+%%              Specify Entry Conditions
+%%      Argument(s):
+%%              
+%%
+\newcommand{\procentryconditions}[1]{%
+\multicolumn{3}{|p{\proctabwidth}|}{\drdfield{Entry Condition(s)}:\newline #1}\\\hline}
+
+%%
+%%	Command: \procexitconditions
+%%	Purpose:
+%%		Specify exit conditions (completion of procedure)
+%%	Argument(s):
+%%		
+%%
+\newcommand{\procexitconditions}[1]{%
+\multicolumn{3}{|p{\proctabwidth}|}{\drdfield{Exit Condition(s)}:\newline #1}\\\hline}
+
+%%
+%%	Command: \procontact
+%%	Purpose:
+%%		Specify contact point in case of issues
+%%	Argument(s):
+%%		
+%%	
+\newcommand{\procontact}[1]{%
+\multicolumn{3}{|p{\proctabwidth}|}{\drdfield{In Case of Problem(s)}:\newline #1}\\\hline}
+
+%%
+%%	Command: \procdepend
+%%	Purpose:
+%%		Specify other WP this one depends on and all other dependencies
+%%	Argument(s):
+%%		1) List of dependencies of this WP (free text)
+%%
+\newcommand{\procdepend}[1]{%
+\multicolumn{3}{|p{\proctabwidth}|}{\drdfield{Dependencies}:\newline #1}\\\hline}
+%%
+%%	Command: \procinterface
+%%	Purpose:
+%%		Specify all interfaces of this WP
+%%	Argument(s):
+%%		1) All WP interfaces (free text)
+%%
+\newcommand{\procinterface}[1]{%
+\multicolumn{3}{|p{\proctabwidth}|}{\drdfield{Interfaces}:\newline #1}\\\hline}
+
+%%
+%%	Command: \procremark
+%%	Purpose:
+%%		Specify remarks to this WP
+%%	Argument(s):
+%%		1) Remarks (free text)
+%%
+\newcommand{\procremark}[1]{%
+\multicolumn{3}{|p{\proctabwidth}|}{\drdfield{Remarks}:\newline #1}\\\hline}
+
+
+%%
+%%	Revision History
+%%	$Log: proc.sty,v $
+%%	Revision 1.3  2005/11/16 12:47:39  ulammers
+%%	fixed version number
+%%	
+%%	Revision 1.2  2005/11/16 12:46:56  ulammers
+%%	fixed problem when \begin{proc} used more than once
+%%	
+%%
+
+%
+% Reports
+%
+
+\newenvironment{drdReports}[0]{
+  \begin{footnotesize}
+        \subsection*{Reports}
+
+    % flush table to the left
+    \setlength\LTleft{0pt}
+    \setlength\LTright{\fill}
+%   \setlength\LTpost{\fill}
+%   \addtocounter{table}{-1}
+    \begin{longtable}{|c|p{.50\textwidth}|p{.30\textwidth}|} \hline
+    
+    {\bf Report} & {\bf Link} & {\bf Comment} \\ \hline\hline
+}{
+    \end{longtable}
+  \end{footnotesize}
+%        \ifx \@dpacDocCompact \@empty
+%           \pagebreak
+%         \else
+%         \relax
+%        \fi
+}
+\providecommand{\addtoreport}[3]{
+#1 & #2 & #3\\\hline}
+
+%
+%   Document history
+%
+\newenvironment{drdChanges}[0]{
+  \subsection*{Features added:}
+  \begin{footnotesize}
+    % flush table to the left
+    \setlength\LTleft{0pt}
+    \setlength\LTright{\fill}
+%   \setlength\LTpost{\fill}
+%   \addtocounter{table}{-1}
+    \begin{longtable}{|c|c|c|p{.50\textwidth}|}
+
+    \hline
+    {\bf Version} & {\bf Date} & {\bf Author} & {\bf Modification added:} \\ \hline\hline
+}{
+\end{longtable}
+\end{footnotesize}
+%        \ifx \@dpacDocCompact \@empty
+%           \pagebreak
+%         \else
+%         \relax
+%        \fi
+}
+
+\providecommand{\addtohis}[4]{
+#1 & #2 & #3 & #4 \\\hline}
+
+
+%
+% Tags
+%
+
+\newenvironment{procTags}[0]{
+  \begin{footnotesize}
+        \subsection*{Tags}
+
+    % flush table to the left
+    \setlength\LTleft{0pt}
+    \setlength\LTright{\fill}
+%   \setlength\LTpost{\fill}
+%   \addtocounter{table}{-1}
+    \begin{longtable}{|p{0.99\textwidth}|} \hline
+    
+%    {\bf Step} & {\bf Description} & {\bf Action} \\ \hline\hline
+}{
+    \end{longtable}
+  \end{footnotesize}
+%        \ifx \@dpacDocCompact \@empty
+%           \pagebreak
+%         \else
+%         \relax
+%        \fi
+}
+\providecommand{\addtotags}[1]{
+#1\\\hline}
