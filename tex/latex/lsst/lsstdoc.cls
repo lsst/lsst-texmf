@@ -23,9 +23,24 @@
 \RequirePackage{type1cm}
 \RequirePackage{hyperref}
 \RequirePackage{breakurl}
-\RequirePackage{natbib}
+\RequirePackage[numbers]{natbib}
 \RequirePackage{numprint}
 \RequirePackage[english,iso]{isodate}
+\RequirePackage{titlesec}
+\RequirePackage[english]{babel}
+\RequirePackage[utf8x]{inputenc}
+\RequirePackage{tabularx}
+\RequirePackage[linkcolor=blue,colorlinks=true]{hyperref}
+\RequirePackage{comment}
+\RequirePackage{xspace}
+\RequirePackage[usenames]{xcolor}
+\RequirePackage{datetime}
+\RequirePackage{microtype}
+\usepackage{listings}
+\usepackage{nameref}
+
+
+
 %\RequirePackage{mathptmx} % note this messes up \vec definition... do not e add put in your doc if you want it
 
 
@@ -145,92 +160,7 @@
 % footer title can be empty
 \newsavebox{\footerTitle}
 \sbox{\footerTitle}{}
-
-\newcommand{\docTitle}{No Title}
-\providecommand{\setDocTitle}[2][@shorttitle@]{
-  \def\@docTitle{\Huge #2}
-  \ifthenelse{\equal{@shorttitle@}{#1}}
-             {\def\@docShortTitle{}}
-             {\def\@docShortTitle{#1}}
-  \renewcommand{\docTitle}{#2}
-}
-
-\newcommand{\docSubtitle}{No Subtitle}
-\newcommand{\setDocSubtitle}[1]{\def\@docSubtitle{#1}
-  \renewcommand{\docSubtitle}{#1}
-}
-\setDocSubtitle{}
-
-\newcommand{\setDocCompact}[1]{\def\@docCompact{#1}}
-\setDocCompact{}
-
-\setDocTitle{Set the document title with $\backslash$setDocTitle}
-
-\newcommand{\docDate}{set the date with {$\backslash$}setDocDate}
-\newcommand{\setDocDate}[1]{\renewcommand{\docDate}{#1}}
-
-\newcommand{\docIssue}{none}
-\newcommand{\setDocIssue}[1]{\renewcommand{\docIssue}{#1}}
-
-\newcommand{\docStatus}{set the Status with {$\backslash$}setDocStatus}
-\newcommand{\setDocStatus}[1]{\renewcommand{\docStatus}{#1}}
-
-\newcommand{\docRevision}{set the Revision with {$\backslash$}setDocRevision}
-\newcommand{\setDocRevision}[1]{\renewcommand{\docRevision}{#1}}
-
-\newcommand{\docRef}{set the Reference with {$\backslash$}setDocRef}
-\newcommand{\setDocRef}[1]{\renewcommand{\docRef}{#1}}
-
-\newcommand{\docAuthor}{set the Author with {$\backslash$}setDocAuthor}
-\newcommand{\setDocAuthor}[1]{\renewcommand{\docAuthor}{#1}}
-
-\newcommand{\setDocCurator}[1]{\def\@docCurator{#1}}
-\setDocCurator{}
-
-\newcommand{\setDocAffil}[1]{\def\@docAffil{#1}}
-\setDocAffil{}
-
-\newcommand{\docApprove}{@noapprove@}
-\newcommand{\setDocApprove}[1]{\renewcommand{\docApprove}{#1}}
-
-\newcommand{\docAuthorize}{@noauthorize@}
-\newcommand{\setDocAuthorize}[1]{\renewcommand{\docAuthorize}{#1}}
-
-\newcommand{\docAbstract}{}
-\newcommand{\setDocAbstract}[1]{\renewcommand{\docAbstract}
-{\section*{Abstract}
-    \ifx \@docCompact \@empty
-           \vspace*{1cm}
-     \else
-           \relax
-    \fi
-    \begin{center}
-    \parbox{.9\textwidth}{#1}\\
-    \end{center}
-    \pagebreak
-}}
-
-
-\providecommand{\putlogo}{
-    \ifx \@docLocalLogo \@empty
-           \def\@lbsize{0.5}
-     \else
-           \def\@lbsize{0.75}
-    \fi
-  \begin{center}
-   \resizebox{\@lbsize\textwidth}{!}{\includegraphics{\@docLogo}
-   
-    \ifx \@docLocalLogo \@empty
-           \relax
-     \else
-           \includegraphics{\@docLocalLogo}
-    \fi
-   }
-   \end{center}
-}
-
-
-\providecommand{\mkshorttitle}{
+ecommand{\mkshorttitle}{
      \begin{center}
         \@docTitle \\
         \normalsize {\bf \docAuthor}\\
@@ -807,3 +737,180 @@ No actions have been identified.}
 \setcounter{nparaincr}{\value{@dfparincr}}
 
 %-----------------------
+
+
+%------ REAL LSST STUFF FROM LDM-151 ----
+
+% For referencing {description} environment labels,
+% as used in DRP pipeline section.  Taken from
+% http://tex.stackexchange.com/questions/1230/reference-name-of-description-list-item-in-latex
+\makeatletter
+\let\orgdescriptionlabel\descriptionlabel
+\renewcommand*{\descriptionlabel}[1]{%
+  \let\orglabel\label
+  \let\label\@gobble
+  \phantomsection
+  \edef\@currentlabel{#1}%
+  %\edef\@currentlabelname{#1}%
+  \let\label\orglabel
+  \orgdescriptionlabel{#1}%
+}
+\makeatother
+
+
+\newcommand{\vstretch}[1]{\vspace*{\stretch{#1}}}
+\newcommand{\code}[1]{\texttt{#1}}
+
+\newcommand{\DIASource}{\code{DIASource}\xspace}
+\newcommand{\DIASources}{\code{DIASources}\xspace}
+\newcommand{\DIAObject}{\code{DIAObject}\xspace}
+\newcommand{\DIAObjects}{\code{DIAObjects}\xspace}
+\newcommand{\DB}{{Level 1 database}\xspace}
+\newcommand{\DR}{{Level 2 database}\xspace}
+\newcommand{\Object}{\code{Object}\xspace}
+\newcommand{\Objects}{\code{Objects}\xspace}
+\newcommand{\Source}{\code{Source}\xspace}
+\newcommand{\Sources}{\code{Sources}\xspace}
+\newcommand{\ForcedSource}{\code{ForcedSource}\xspace}
+\newcommand{\ForcedSources}{\code{ForcedSources}\xspace}
+\newcommand{\CoaddSource}{\code{CoaddSource}\xspace}
+\newcommand{\CoaddSources}{\code{CoaddSources}\xspace}
+\newcommand{\SSObject}{\code{SSObject}\xspace}
+\newcommand{\SSObjects}{\code{SSObjects}\xspace}
+\newcommand{\VOEvent}{\code{VOEvent}\xspace}
+\newcommand{\VOEvents}{\code{VOEvents}\xspace}
+\newcommand{\transSNR}{5\xspace}
+
+% Command to link to a document in Docushare. Pass an LSST document handle as argument, or a document number
+\newcommand{\ds}[2]{{\color{blue} \href{https://docushare.lsstcorp.org/docushare/dsweb/Get/#1}{#2}}\xspace}
+
+\newcommand{\SRD}{\ds{LPM-17}{SRD}}
+\newcommand{\DPDD}{\ds{LSE-163}{DPDD}}
+\newcommand{\LSR}{\ds{LSE-29}{LSR}}
+\newcommand{\OSS}{\ds{LSE-30}{OSS}}
+\newcommand{\DMSR}{\ds{LSE-61}{DMSR}}
+\newcommand{\appsUMLdomain}{\ds{LDM-133}{LDM-133}}
+\newcommand{\appsUMLusecase}{\ds{LDM-134}{LDM-134}}
+\newcommand{\SUI}{\ds{LDM-131}{SUID}}
+\newcommand{\DMSD}{\ds{LDM-148}{DMSD}}
+\newcommand{\MOPSD}{\ds{LDM-156}{MOPSD}}
+\newcommand{\DMMD}{\ds{LDM-152}{DMMD}}
+\newcommand{\DMOps}{\ds{LDM-230}{DM OpsCon}}
+\newcommand{\SDQAP}{\ds{LSE-63}{LSE-63}}
+\newcommand{\NewPCP}{\ds{LSE-180}{LSE-180}}
+\newcommand{\UCAL}{\ds{Document-15125}{UCAL}}
+
+\newcommand{\wbsSFM}{WBS 02C.03.01}
+\newcommand{\wbsAssocP}{WBS 02C.03.02}
+\newcommand{\wbsAP}{WBS 02C.03.03}
+\newcommand{\wbsDiffim}{WBS 02C.03.04}
+\newcommand{\wbsMOPS}{WBS 02C.03.06}
+\newcommand{\wbsSDQAP}{WBS 02C.01.02.02}
+\newcommand{\wbsSDQAT}{WBS 02C.01.02.02}
+\newcommand{\wbsSPT}{WBS 02C.01.02.03}
+\newcommand{\wbsPSF}{WBS 02C.04.03}
+\newcommand{\wbsCoadd}{WBS 02C.04.04}
+\newcommand{\wbsDetDeblend}{WBS 02C.04.05}
+\newcommand{\wbsObjChar}{WBS 02C.04.06}
+\newcommand{\wbsAFW}{WBS 02C.03.05, 02C.04.01}
+\newcommand{\wbsCPP}{WBS 02C.04.02}
+\newcommand{\wbsPhotoCal}{WBS 02C.03.07}
+\newcommand{\wbsAstroCal}{WBS 02C.03.08}
+
+
+
+%%% Command's for merging Robert's document, at least temporarily.
+%%% Some of these will be removable, some may not be.
+\renewcommand{\c}{\textit{c.}\xspace}
+\newcommand{\eg}{\textit{e.g.}\xspace}
+\newcommand{\etc}{\textit{etc.}\xspace}
+\newcommand{\ie}{\textit{i.e.}\xspace}
+\renewcommand{\th}{\ensuremath{^{\mbox{\tiny th}}}\xspace}
+\newcommand{\Nb}{\textit{N.b.}\xspace}
+\newcommand{\nb}{\textit{n.b.}\xspace}
+\newcommand{\xib}{{\boldsymbol \xi}}
+\newcommand{\zerob}{{\boldsymbol 0}}
+%\newcommand{\inputData}[1]{(inputs: \ref{inputs:#1})}
+%\newcommand{\inputDataII}[2]{(inputs: \ref{inputs:#1}, \ref{inputs:#2})}
+%\newcommand{\outputData}[1]{(calibProducts: \ref{calibProducts:#1})}
+%\newcommand{\outputDataII}[2]{(calibProducts: \ref{calibProducts:#1}, \ref{calibProducts:#2})}
+%\newcommand{\inputOutputData}[1]{(inputs: \ref{inputs:#1}; calibProducts: \ref{calibProducts:#1})}
+%\newcommand{\calypsoData}[1]{(calypsoProducts: \ref{calypso:#1})}
+\newcommand{\cameraTeam}{\textbf{Camera Team deliverable}\\}
+\newcommand{\TBD}{\textit{T.B.D.}\xspace}
+\newcommand{\XXX}[1]{{{\color{red}\textbf{XXX #1}\xspace}}}
+\makeatletter
+\newcommand{\myLabel}[2]{\def\@currentlabel{#2}\label{#1}}
+\makeatother
+\newcommand{\appRef}[1]{App. \ref{app:#1}}
+\newcommand{\secRef}[1]{Sec. \ref{sec:#1}}
+\newcommand{\rednote}[1]{{\color{red} (#1)}}
+
+\newcommand{\alg}{\\ \textbullet\xspace Algorithmic component: }
+\newcommand{\fefiftyfive}{$^{55}$Fe\xspace}
+
+\newcommand{\alg}{\\ \textbullet\xspace Algorithmic component: }
+\newcommand{\fefiftyfive}{$^{55}$Fe\xspace}
+\newcommand{\bfeffect}{``brighter-fatter effect"}
+\newcommand{\auxtelescope}{auxiliary/Calpyso/calibration telescope\xspace}
+\newcommand{\secsymbol}{§}
+\newcommand{\xxx}{{\color{red} xxx}\xspace}
+\newcommand{\dragons}{ {\color{blue} \textbf{\textit{Here be dragons...}}}}
+\newcommand{\mysubitem}{\subitem \textendash\xspace}
+\newcommand{\smalltilde}{\raise.26ex\hbox{$\scriptstyle\mathtt{\sim}$}}
+\newcommand{\electron}{$e^{-}$}
+
+
+%%% Command's for merging Robert's document, at least temporarily.
+%%% Some of these will be removable, some may not be.
+\renewcommand{\c}{\textit{c.}\xspace}
+\newcommand{\eg}{\textit{e.g.}\xspace}
+\newcommand{\etc}{\textit{etc.}\xspace}
+\newcommand{\ie}{\textit{i.e.}\xspace}
+\renewcommand{\th}{\ensuremath{^{\mbox{\tiny th}}}\xspace}
+\newcommand{\Nb}{\textit{N.b.}\xspace}
+\newcommand{\nb}{\textit{n.b.}\xspace}
+\newcommand{\xib}{{\boldsymbol \xi}}
+\newcommand{\zerob}{{\boldsymbol 0}}
+\newcommand{\cameraTeam}{\textbf{Camera Team deliverable}\\}
+\newcommand{\TBD}{\textit{T.B.D.}\xspace}
+\newcommand{\XXX}[1]{{{\color{red}\textbf{XXX #1}\xspace}}}
+\makeatletter
+\newcommand{\myLabel}[2]{\def\@currentlabel{#2}\label{#1}}
+\makeatother
+\newcommand{\appRef}[1]{App. \ref{app:#1}}
+\newcommand{\secRef}[1]{Sec. \ref{sec:#1}}
+\newcommand{\rednote}[1]{{\color{red} (#1)}}
+
+\newcommand{\alg}{\\ \textbullet\xspace Algorithmic component: }
+\newcommand{\fefiftyfive}{$^{55}$Fe\xspace}
+\newcommand{\bfeffect}{``brighter-fatter effect"}
+\newcommand{\auxtelescope}{auxiliary/Calpyso/calibration telescope\xspace}
+\newcommand{\secsymbol}{§}
+\newcommand{\xxx}{{\color{red} xxx}\xspace}
+\newcommand{\dragons}{ {\color{blue} \textbf{\textit{Here be dragons...}}}}
+\newcommand{\mysubitem}{\subitem \textendash\xspace}
+\newcommand{\smalltilde}{\raise.26ex\hbox{$\scriptstyle\mathtt{\sim}$}}
+\newcommand{\electron}{$e^{-}$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\newenvironment{note}[1][Note]
+{
+  \begin{displaymath}
+    \left[ \qquad
+    \begin{minipage}[h]{.75\linewidth}
+      \color{red} \footnotesize
+      \textbf{#1:} \newline
+      \color{black}
+}
+{
+    \end{minipage}
+    \normalsize
+    \qquad \right]
+  \end{displaymath}
+}
+
+\newcommand{\uc}[1]{{\tt #1}}
+
