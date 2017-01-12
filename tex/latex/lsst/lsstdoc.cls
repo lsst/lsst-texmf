@@ -21,8 +21,9 @@
 \RequirePackage{eso-pic}
 \RequirePackage{color}
 \RequirePackage{type1cm}
+
+%\RequirePackage[linkcolor=blue,colorlinks=true]{hyperref}
 \RequirePackage{hyperref}
-\RequirePackage{breakurl}
 \RequirePackage[numbers]{natbib}
 \RequirePackage{numprint}
 \RequirePackage[english,iso]{isodate}
@@ -30,14 +31,13 @@
 \RequirePackage[english]{babel}
 \RequirePackage[utf8x]{inputenc}
 \RequirePackage{tabularx}
-\RequirePackage[linkcolor=blue,colorlinks=true]{hyperref}
 \RequirePackage{comment}
 \RequirePackage{xspace}
 \RequirePackage[usenames]{xcolor}
-\RequirePackage{datetime}
-\RequirePackage{microtype}
-\usepackage{listings}
-\usepackage{nameref}
+%\RequirePackage{datetime}
+%\RequirePackage{microtype}
+%\RequirePackage{listings}
+\RequirePackage{nameref}
 
 
 
@@ -160,7 +160,92 @@
 % footer title can be empty
 \newsavebox{\footerTitle}
 \sbox{\footerTitle}{}
-ecommand{\mkshorttitle}{
+
+\newcommand{\docTitle}{No Title}
+\providecommand{\setDocTitle}[2][@shorttitle@]{
+  \def\@docTitle{\Huge #2}
+  \ifthenelse{\equal{@shorttitle@}{#1}}
+             {\def\@docShortTitle{}}
+             {\def\@docShortTitle{#1}}
+  \renewcommand{\docTitle}{#2}
+}
+
+\newcommand{\docSubtitle}{No Subtitle}
+\newcommand{\setDocSubtitle}[1]{\def\@docSubtitle{#1}
+  \renewcommand{\docSubtitle}{#1}
+}
+\setDocSubtitle{}
+
+\newcommand{\setDocCompact}[1]{\def\@docCompact{#1}}
+\setDocCompact{}
+
+\setDocTitle{Set the document title with $\backslash$setDocTitle}
+
+\newcommand{\docDate}{set the date with {$\backslash$}setDocDate}
+\newcommand{\setDocDate}[1]{\renewcommand{\docDate}{#1}}
+
+\newcommand{\docIssue}{none}
+\newcommand{\setDocIssue}[1]{\renewcommand{\docIssue}{#1}}
+
+\newcommand{\docStatus}{set the Status with {$\backslash$}setDocStatus}
+\newcommand{\setDocStatus}[1]{\renewcommand{\docStatus}{#1}}
+
+\newcommand{\docRevision}{set the Revision with {$\backslash$}setDocRevision}
+\newcommand{\setDocRevision}[1]{\renewcommand{\docRevision}{#1}}
+
+\newcommand{\docRef}{set the Reference with {$\backslash$}setDocRef}
+\newcommand{\setDocRef}[1]{\renewcommand{\docRef}{#1}}
+
+\newcommand{\docAuthor}{set the Author with {$\backslash$}setDocAuthor}
+\newcommand{\setDocAuthor}[1]{\renewcommand{\docAuthor}{#1}}
+
+\newcommand{\setDocCurator}[1]{\def\@docCurator{#1}}
+\setDocCurator{}
+
+\newcommand{\setDocAffil}[1]{\def\@docAffil{#1}}
+\setDocAffil{}
+
+\newcommand{\docApprove}{@noapprove@}
+\newcommand{\setDocApprove}[1]{\renewcommand{\docApprove}{#1}}
+
+\newcommand{\docAuthorize}{@noauthorize@}
+\newcommand{\setDocAuthorize}[1]{\renewcommand{\docAuthorize}{#1}}
+
+\newcommand{\docAbstract}{}
+\newcommand{\setDocAbstract}[1]{\renewcommand{\docAbstract}
+{\section*{Abstract}
+    \ifx \@docCompact \@empty
+           \vspace*{1cm}
+     \else
+           \relax
+    \fi
+    \begin{center}
+    \parbox{.9\textwidth}{#1}\\
+    \end{center}
+    \pagebreak
+}}
+
+\providecommand{\putlogo}{
+    \ifx \@docLocalLogo \@empty
+           \def\@lbsize{0.5}
+     \else
+           \def\@lbsize{0.75}
+    \fi
+  \begin{center}
+   \resizebox{\@lbsize\textwidth}{!}{\includegraphics{\@docLogo}
+
+    \ifx \@docLocalLogo \@empty
+           \relax
+     \else
+           \includegraphics{\@docLocalLogo}
+    \fi
+   }
+   \end{center}
+}
+
+
+
+\newcommand{\mkshorttitle}{
      \begin{center}
         \@docTitle \\
         \normalsize {\bf \docAuthor}\\
@@ -690,7 +775,7 @@ No actions have been identified.}
 \providecommand{\method}[1]{{\em #1}}
 \providecommand{\file}[1]{{\em #1}}
 \providecommand{\directory}[1]{{\em #1}}
-\providecommand{\code}[1]{{\tt #1}}
+%\providecommand{\code}[1]{{\tt #1}}
 
 % new bib
 \newcommand{\citell}{\citeyear}
@@ -830,48 +915,6 @@ No actions have been identified.}
 \newcommand{\nb}{\textit{n.b.}\xspace}
 \newcommand{\xib}{{\boldsymbol \xi}}
 \newcommand{\zerob}{{\boldsymbol 0}}
-%\newcommand{\inputData}[1]{(inputs: \ref{inputs:#1})}
-%\newcommand{\inputDataII}[2]{(inputs: \ref{inputs:#1}, \ref{inputs:#2})}
-%\newcommand{\outputData}[1]{(calibProducts: \ref{calibProducts:#1})}
-%\newcommand{\outputDataII}[2]{(calibProducts: \ref{calibProducts:#1}, \ref{calibProducts:#2})}
-%\newcommand{\inputOutputData}[1]{(inputs: \ref{inputs:#1}; calibProducts: \ref{calibProducts:#1})}
-%\newcommand{\calypsoData}[1]{(calypsoProducts: \ref{calypso:#1})}
-\newcommand{\cameraTeam}{\textbf{Camera Team deliverable}\\}
-\newcommand{\TBD}{\textit{T.B.D.}\xspace}
-\newcommand{\XXX}[1]{{{\color{red}\textbf{XXX #1}\xspace}}}
-\makeatletter
-\newcommand{\myLabel}[2]{\def\@currentlabel{#2}\label{#1}}
-\makeatother
-\newcommand{\appRef}[1]{App. \ref{app:#1}}
-\newcommand{\secRef}[1]{Sec. \ref{sec:#1}}
-\newcommand{\rednote}[1]{{\color{red} (#1)}}
-
-\newcommand{\alg}{\\ \textbullet\xspace Algorithmic component: }
-\newcommand{\fefiftyfive}{$^{55}$Fe\xspace}
-
-\newcommand{\alg}{\\ \textbullet\xspace Algorithmic component: }
-\newcommand{\fefiftyfive}{$^{55}$Fe\xspace}
-\newcommand{\bfeffect}{``brighter-fatter effect"}
-\newcommand{\auxtelescope}{auxiliary/Calpyso/calibration telescope\xspace}
-\newcommand{\secsymbol}{§}
-\newcommand{\xxx}{{\color{red} xxx}\xspace}
-\newcommand{\dragons}{ {\color{blue} \textbf{\textit{Here be dragons...}}}}
-\newcommand{\mysubitem}{\subitem \textendash\xspace}
-\newcommand{\smalltilde}{\raise.26ex\hbox{$\scriptstyle\mathtt{\sim}$}}
-\newcommand{\electron}{$e^{-}$}
-
-
-%%% Command's for merging Robert's document, at least temporarily.
-%%% Some of these will be removable, some may not be.
-\renewcommand{\c}{\textit{c.}\xspace}
-\newcommand{\eg}{\textit{e.g.}\xspace}
-\newcommand{\etc}{\textit{etc.}\xspace}
-\newcommand{\ie}{\textit{i.e.}\xspace}
-\renewcommand{\th}{\ensuremath{^{\mbox{\tiny th}}}\xspace}
-\newcommand{\Nb}{\textit{N.b.}\xspace}
-\newcommand{\nb}{\textit{n.b.}\xspace}
-\newcommand{\xib}{{\boldsymbol \xi}}
-\newcommand{\zerob}{{\boldsymbol 0}}
 \newcommand{\cameraTeam}{\textbf{Camera Team deliverable}\\}
 \newcommand{\TBD}{\textit{T.B.D.}\xspace}
 \newcommand{\XXX}[1]{{{\color{red}\textbf{XXX #1}\xspace}}}
@@ -892,6 +935,8 @@ No actions have been identified.}
 \newcommand{\mysubitem}{\subitem \textendash\xspace}
 \newcommand{\smalltilde}{\raise.26ex\hbox{$\scriptstyle\mathtt{\sim}$}}
 \newcommand{\electron}{$e^{-}$}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
