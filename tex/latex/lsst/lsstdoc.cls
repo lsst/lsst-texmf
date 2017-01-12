@@ -6,6 +6,7 @@
 \ProvidesClass{lsstdoc}[2016/12/12 v1.1 LSST document class]
 
 \LoadClass[12pt,a4paper]{article}
+\RequirePackage[usenames]{xcolor}
 \RequirePackage{amsmath}
 \RequirePackage{amssymb}
 \RequirePackage{amsbsy}
@@ -31,14 +32,12 @@
 \RequirePackage[english]{babel}
 \RequirePackage[utf8x]{inputenc}
 \RequirePackage{tabularx}
-\RequirePackage{comment}
+%\RequirePackage{comment}
 \RequirePackage{xspace}
-\RequirePackage[usenames]{xcolor}
 %\RequirePackage{datetime}
 %\RequirePackage{microtype}
 %\RequirePackage{listings}
-\RequirePackage{nameref}
-
+%\RequirePackage{nameref}
 
 
 %\RequirePackage{mathptmx} % note this messes up \vec definition... do not e add put in your doc if you want it
@@ -339,10 +338,10 @@ revision:\>    \docRevision\\
     \begin{longtable}{|c|c|c|p{.07\textwidth}|p{.53\textwidth}|}
 
     \hline
-    Issue & Revision & Date & Author & Comment \\ \hline\hline
+Issue & Revision & Date & Author & Comment \\ \hline\hline
     \endfirsthead
     \hline
-    Issue & Revision & Date & Author & Comment \\ \hline\hline
+Issue & Revision & Date & Author & Comment \\ \hline\hline
     \endhead
     \multicolumn{5}{r}{\emph{Continued on next page}}
     \endfoot
