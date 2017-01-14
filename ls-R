@@ -278,6 +278,7 @@ microtype
 
 ./tex/latex/lsst:
 .DS_Store
+.lsstdoc.cls.swp
 LSSTlogo.png
 drd.sty
 gwp.sty
@@ -286,6 +287,7 @@ lsstbeamer.cls
 lsstdoc.cls
 lsstdoc.cls.old
 lsstscope.png
+lsstscopegrey.png
 opsproc.sty
 proc.sty
 risk.sty

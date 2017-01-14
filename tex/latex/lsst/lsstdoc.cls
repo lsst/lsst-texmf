@@ -34,14 +34,14 @@
 \RequirePackage{tabularx}
 %\RequirePackage{comment}
 \RequirePackage{xspace}
-%\RequirePackage{datetime}
 %\RequirePackage{microtype}
-%\RequirePackage{listings}
+\RequirePackage{listings}
 %\RequirePackage{nameref}
 
 
 %\RequirePackage{mathptmx} % note this messes up \vec definition... do not e add put in your doc if you want it
 
+\definecolor{lsstblue}{RGB}{60,120,170}
 
 
 % Switch off the onecolumn and twocolumn options
@@ -140,8 +140,6 @@
 %
 % default settings for the newly defined commands
 %
-\newcommand{\setDocLogo}[1]{\def\@docLogo{#1}}
-\setDocLogo{LSSTlogo}
 
 % you own DPC, institute or funding logo for front page
 \newcommand{\setDocLocalLogo}[1]{\def\@docLocalLogo{#1}}
@@ -225,20 +223,22 @@
 }}
 
 \providecommand{\putlogo}{
-    \ifx \@docLocalLogo \@empty
-           \def\@lbsize{0.5}
-     \else
-           \def\@lbsize{0.75}
-    \fi
   \begin{center}
-   \resizebox{\@lbsize\textwidth}{!}{\includegraphics{\@docLogo}
+	\includegraphics{lsst_logo_notext}\\
+   \end{center}
+\vspace{-25pt}
+\color{lsstblue}
+   \hspace{-2.8cm}\rule{6cm}{2.5pt} \lower.3em\hbox{
+	{\large \color{lsstblue}LARGE SYNOPTIC SURVEY TELESCOPE}
+   }
+   \rule{6cm}{2.5pt} 
 
+  \begin{center}
     \ifx \@docLocalLogo \@empty
            \relax
      \else
            \includegraphics{\@docLocalLogo}
     \fi
-   }
    \end{center}
 }
 
@@ -260,11 +260,24 @@
   pdfkeywords={\docRef}}
     
    \thispagestyle{empty}
+
+
+    \AddToShipoutPicture*{%
+            \setlength{\unitlength}{0.7pt}%
+        \makeatletter
+            \put(\strip@pt \textwidth,\strip@pt \textheight){%
+                \makebox(0,0){%
+			\includegraphics[scale=0.9]{lsstscopegrey}\\
+                    }}%
+		\vspace{10cm}
+		{\hspace{-3cm}\color{lsstblue}\rule{25cm}{2.5cm}}
+	    
+        \makeatother
+    }%
+
    \setlength{\parindent}{0pt}
-   \vspace*{-4cm}
+   \vspace*{-6cm}
    \putlogo
-   \centerline{\color[rgb]{0.16,0.42,0.57}}
-   \rule{\textwidth}{0.5pt} \\
    \vspace*{1cm}
    \begin{center}
    \begin{minipage}{1.0\textwidth}
@@ -280,12 +293,13 @@
    \end{minipage}
     \end{center}
    \vspace*{1cm}
-   \rule{\textwidth}{0.5pt} \\[0.5cm] 
+   %\rule{\textwidth}{0.5pt} \\[0.5cm] 
    \ifx \@docCompact \@empty
        \vspace*{2cm}
      \else
      \relax
     \fi
+   \color{black}
    {\large\textsf{
       \begin{tabbing}
          XXXXXXXXX: \=\kill
