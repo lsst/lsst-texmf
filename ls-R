@@ -13,6 +13,7 @@ bst
 ./bibtex/bib:
 books.bib
 gaia_livelink_valid.bib
+lsst.bib
 refs.bib
 refs_ads.bib
 
