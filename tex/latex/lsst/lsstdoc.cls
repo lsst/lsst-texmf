@@ -41,7 +41,7 @@
 
 %\RequirePackage{mathptmx} % note this messes up \vec definition... do not e add put in your doc if you want it
 
-\definecolor{lsstblue}{RGB}{60,120,170}
+\definecolor{lsstblue}{RGB}{54, 84, 138}
 
 
 % Switch off the onecolumn and twocolumn options
