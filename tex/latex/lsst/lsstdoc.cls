@@ -37,8 +37,6 @@
 %\RequirePackage{microtype}
 \RequirePackage{listings}
 %\RequirePackage{nameref}
-
-
 %\RequirePackage{mathptmx} % note this messes up \vec definition... do not e add put in your doc if you want it
 
 \definecolor{lsstblue}{RGB}{54, 84, 138}
@@ -390,18 +388,18 @@ Issue & Revision & Date & Author & Comment \\ \hline\hline
 % Page layout
 %
 \setlength{\textwidth}{16cm}
-\setlength{\textheight}{22cm}
+\setlength{\textheight}{24cm}
 
 \setlength{\topmargin}{0cm}
 \setlength{\oddsidemargin}{0cm}
 \setlength{\evensidemargin}{0cm}
-\setlength{\leftmargini}{2cm}
+\setlength{\leftmargin}{2cm}
 \setlength{\marginparwidth}{2cm}
 
-\setlength{\parindent}{0in}             % No indent at start of paragraphs
+\setlength{\parindent}{0cm}             % No indent at start of paragraphs
 \setlength{\parskip}{\baselineskip}     % Blank line between paragraph
 
-\setlength\headheight{35pt}     % Make space for logo
+\setlength\headheight{5pt}     % Make space for logo
 
 \pagenumbering{arabic}
 \mark{{}{}} 
@@ -430,29 +428,34 @@ Issue & Revision & Date & Author & Comment \\ \hline\hline
 
 \pagestyle{fancy}
 
-\addtolength{\headsep}{8.2mm}
+\addtolength{\headsep}{4.2mm}
 
+\fancyheadoffset{0pt}
 \lhead{
+\color{lsstblue}
+ \vspace{-4cm}
   \IfFileExists{lsst_logo_notext.png}{
-    \resizebox{0.12\textwidth}{!}{\includegraphics{lsst_logo_notext}}
-    {\bfseries\large\sf{\CU\DU}}
+    \resizebox{0.18\textwidth}{!}{\includegraphics{lsst_logo_notext}}
+    \hspace{5pt}{\bfseries\large\sf{\CU\DU}}
   } {
        {\bfseries\large\sf{LSST: \CU\DU}}
-  }
-  \vskip -1\baselineskip
+  }\\\vspace{-8pt}
+\color{lsstblue}
+    \hspace{-1.5cm}\rule{0.55cm}{1.0pt} \lower.1em\hbox{
+	{ \tiny \color{lsstblue}LARGE SYNOPTIC SURVEY TELESCOPE}
+   }
+    \rule{12.5cm}{1.0pt} 
+\vspace{-27pt}
+\begin{flushright}	
+   \small  \@docShortTitle \hspace{1cm} \docRef~  \docStatus~ \docDate 
+\end{flushright}	
+  \vskip -2\baselineskip
 }
-
 
 \rhead{
- {
-\begin{tabular}{l}
-    \@docShortTitle \\
-     {\scriptsize   \docRef }
-\end{tabular}
- }
-   \vskip -1\baselineskip
 }
 
+\renewcommand{\headrulewidth}{0.0pt}
 
 \renewcommand{\footrulewidth}{0.4pt}
 \lfoot{\bfseries\sf{\docType}}
