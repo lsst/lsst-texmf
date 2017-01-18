@@ -81,8 +81,8 @@
 \DeclareOption{TR}{
    \renewcommand{\docType}{Test Report}
 }
-\DeclareOption{SDP}{
-   \renewcommand{\docType}{Software Development Plan}
+\DeclareOption{DP}{
+   \renewcommand{\docType}{Development Plan}
 }
 \DeclareOption{DDP}{
    \renewcommand{\docType}{Data Processing Centre Development Plan}
