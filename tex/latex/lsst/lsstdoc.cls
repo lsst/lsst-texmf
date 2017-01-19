@@ -114,6 +114,9 @@
 \DeclareOption{VTR}{
    \renewcommand{\docType}{Validation Test Report}
 }
+\DeclareOption{SOW}{
+   \renewcommand{\docType}{Statement of Work}
+}
 \DeclareOption{SPAR}{
    \renewcommand{\docType}{Software Product Assurance Report}
 } 
