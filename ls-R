@@ -279,7 +279,6 @@ microtype
 
 ./tex/latex/lsst:
 .DS_Store
-.lsstdoc.cls.swp
 LSSTlogo.png
 drd.sty
 gwp.sty
