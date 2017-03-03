@@ -5,7 +5,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{lsstdoc}[2016/12/12 v1.1 LSST document class]
 
-\LoadClass[12pt,a4paper]{article}
+\LoadClass[12pt,letter]{article}
 \RequirePackage[usenames]{xcolor}
 \RequirePackage{amsmath}
 \RequirePackage{amssymb}
@@ -119,7 +119,7 @@
 }
 \DeclareOption{SPAR}{
    \renewcommand{\docType}{Software Product Assurance Report}
-} 
+}
 \DeclareOption{PL}{
    \renewcommand{\docType}{Planning and Policy Document}
 }
@@ -129,12 +129,13 @@
 %there is only one of these probably
 \DeclareOption{SSS}{
    \renewcommand{\docType}{Software System Specification}
-}  
+}
 %
 % Define the CUs -- and the DPACE
 %
 \DeclareOption{DM}{
    \renewcommand{\CU}{DM}
+   \renewcommand{\docType}{LSST Data Management}
 }
 
 
@@ -232,7 +233,7 @@
    \hspace{-2.8cm}\rule{6cm}{2.5pt} \lower.3em\hbox{
 	{\large \color{lsstblue}LARGE SYNOPTIC SURVEY TELESCOPE}
    }
-   \rule{6cm}{2.5pt} 
+   \rule{6cm}{2.5pt}
 
   \begin{center}
     \ifx \@docLocalLogo \@empty
@@ -254,12 +255,12 @@
 
 }
 
-\providecommand{\mktitle}{
+\renewcommand{\maketitle}{
 
-  \hypersetup{pdftitle={\docTitle\ifx\@docSubtitle\@empty\else\ - \docSubtitle\fi},
+  \hypersetup{pdftitle={\@title\ifx\@docSubtitle\@empty\else\ - \docSubtitle\fi},
   pdfauthor={\docAuthor},
   pdfkeywords={\docRef}}
-    
+
    \thispagestyle{empty}
 
 
@@ -272,7 +273,7 @@
                     }}%
 		\vspace{10cm}
 		{\hspace{-3cm}\color{lsstblue}\rule{25cm}{2.5cm}}
-	    
+
         \makeatother
     }%
 
@@ -283,7 +284,7 @@
    \begin{center}
    \begin{minipage}{1.0\textwidth}
      \begin{center}
-    \@docTitle \\
+    {\Huge \@title} \\
       \ifx \@docSubtitle \@empty
        \relax
     \else
@@ -294,7 +295,7 @@
    \end{minipage}
     \end{center}
    \vspace*{1cm}
-   %\rule{\textwidth}{0.5pt} \\[0.5cm] 
+   %\rule{\textwidth}{0.5pt} \\[0.5cm]
    \ifx \@docCompact \@empty
        \vspace*{2cm}
      \else
@@ -304,7 +305,7 @@
    {\large\textsf{
       \begin{tabbing}
          XXXXXXXXX: \=\kill
-         prepared by:\> \parbox[t]{ 0.7\textwidth}{\raggedright\docAuthor}\\
+         prepared by:\> \parbox[t]{ 0.7\textwidth}{\raggedright\@author}\\
     \ifx \@docAffil \@empty
      \relax
      \else
@@ -327,7 +328,7 @@ revision:\>    \docRevision\\
          status:\>      \docStatus
       \end{tabbing}
    }}
-   
+
     \ifx \@docCompact \@empty
            \pagebreak
      \else
@@ -375,11 +376,11 @@ Issue & Revision & Date & Author & Comment \\ \hline\hline
 #1 & #2 & #3 & \path{#4} & #5\\\hline}
 
 
-% 
+%
 % Issue Lists
 %
 \newenvironment{issueList}[0]{
-\begin{longtable}{|l|p{0.8\textwidth}|}\hline \textbf{ID}&\textbf{Summary}\\\hline 
+\begin{longtable}{|l|p{0.8\textwidth}|}\hline \textbf{ID}&\textbf{Summary}\\\hline
 }{
 \end{longtable}
 }
@@ -391,7 +392,7 @@ Issue & Revision & Date & Author & Comment \\ \hline\hline
 % Page layout
 %
 \setlength{\textwidth}{16cm}
-\setlength{\textheight}{24cm}
+\setlength{\textheight}{22cm}
 
 \setlength{\topmargin}{0cm}
 \setlength{\oddsidemargin}{0cm}
@@ -402,17 +403,17 @@ Issue & Revision & Date & Author & Comment \\ \hline\hline
 \setlength{\parindent}{0cm}             % No indent at start of paragraphs
 \setlength{\parskip}{\baselineskip}     % Blank line between paragraph
 
-\setlength\headheight{5pt}     % Make space for logo
+\setlength\headheight{15pt}     % Make space for logo
 
 \pagenumbering{arabic}
-\mark{{}{}} 
+\mark{{}{}}
 
 \newcommand{\clearemptydoublepage}{\newpage{\pagestyle{empty}\cleardoublepage}}
 
 %% min page fraction that must be filled with text
-\renewcommand{\textfraction}{0.1} 
+\renewcommand{\textfraction}{0.1}
 %% max page fraction that a float may take at the top of the page
-\renewcommand{\topfraction}{0.9} 
+\renewcommand{\topfraction}{0.9}
 %% max page fraction that a float may take at the bottom of the page
 \renewcommand{\bottomfraction}{0.9}
 %% max page fraction that may be filled with floats
@@ -447,11 +448,11 @@ Issue & Revision & Date & Author & Comment \\ \hline\hline
     \hspace{-1.5cm}\rule{0.55cm}{1.0pt} \lower.1em\hbox{
 	{ \tiny \color{lsstblue}LARGE SYNOPTIC SURVEY TELESCOPE}
    }
-    \rule{12.5cm}{1.0pt} 
+    \rule{12.5cm}{1.0pt}
 \vspace{-27pt}
-\begin{flushright}	
-   \small  \@docShortTitle \hspace{1cm} \docRef~  \docStatus~ \docDate 
-\end{flushright}	
+\begin{flushright}
+   \small  \@docShortTitle \hspace{1cm} \docRef~  \docStatus~ \docDate
+\end{flushright}
   \vskip -2\baselineskip
 }
 
@@ -563,9 +564,9 @@ p{.11\textwidth}|% Status
 %
 %   B. FREZOULS 01/13/2012
 %	Applicable requirement macro
-%	Created from the req command with an extra argument (the last one) 
+%	Created from the req command with an extra argument (the last one)
 % 	used to indicate to which system the req. is applicable
-%	Display this argument in the requirement nomenclature 
+%	Display this argument in the requirement nomenclature
 % 	and add it in the log file so that the makeReqList script can add it in the Requirements.csv file
 %
 \providecommand{\reqapp}[8][@noparent@]{%
@@ -595,10 +596,10 @@ p{.19\textwidth}|% Applicability
 %	Deleted requirement macro
 %	Created from the req command
 % 	used to 'create' deleted requirement.
-% 	The requirement is not displayed in the PDF produced but it exists i.e. it is listed 
+% 	The requirement is not displayed in the PDF produced but it exists i.e. it is listed
 % 	in the Requirements.csv file produced by the makeReqList.rb.
 %	This requirement does not 'break' the numbering schema i.e. the requirements following the requirement
-%	deleted keep their number/name 
+%	deleted keep their number/name
 %
 \providecommand{\reqdel}[7][@noparent@]{%
 \addtocounter{areqi}{\value{reqincr}}%
@@ -610,10 +611,10 @@ p{.19\textwidth}|% Applicability
 %	Deleted requirement macro
 %	Created from the reqapp command
 % 	used to 'create' deleted requirement.
-% 	The requirement is not displayed in the PDF produced but it exists i.e. it is listed 
+% 	The requirement is not displayed in the PDF produced but it exists i.e. it is listed
 % 	in the Requirements.csv file produced by the makeReqList.rb.
 %	This requirement does not 'break' the numbering schema i.e. the requirements following the requirement
-%	deleted keep their number/name 
+%	deleted keep their number/name
 %
 \providecommand{\reqdel}[8][@noparent@]{%
 \addtocounter{areqi}{\value{reqincr}}%
@@ -742,8 +743,9 @@ No actions have been identified.}
 \def\araa{ARA\&A}          % Annual Review of Astron and Astrophys
 \def\nat{Nature}           % Nature
 \def\apjl{ApJ}             % Astrophysical Journal, Letters
+\def\icarus{Icarus}        % Icarus
 
-\def\degr{\hbox{$^\circ$}} 
+\def\degr{\hbox{$^\circ$}}
 \def\arcmin{\hbox{$^\prime$}}
 \def\arcsec{\hbox{$^{\prime\prime}$}}
 \def\fs{\hbox{$.\!\!^{\rm s}$}}
@@ -865,6 +867,8 @@ No actions have been identified.}
 \newcommand{\vstretch}[1]{\vspace*{\stretch{#1}}}
 \newcommand{\code}[1]{\texttt{#1}}
 
+\newcommand{\Alert}{\code{Alert}\xspace}
+\newcommand{\Alerts}{\code{Alerts}\xspace}
 \newcommand{\DIASource}{\code{DIASource}\xspace}
 \newcommand{\DIASources}{\code{DIASources}\xspace}
 \newcommand{\DIAObject}{\code{DIAObject}\xspace}
@@ -977,4 +981,3 @@ No actions have been identified.}
 }
 
 \newcommand{\uc}[1]{{\tt #1}}
-
