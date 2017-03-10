@@ -135,9 +135,12 @@
 %
 \DeclareOption{DM}{
    \renewcommand{\CU}{DM}
-   \renewcommand{\docType}{LSST Data Management}
+   \renewcommand{\docType}{Data Management}
 }
-
+\DeclareOption{SE}{
+   \renewcommand{\CU}{SE}
+   \renewcommand{\docType}{Systems Engineering}
+}
 
 %
 % default settings for the newly defined commands
