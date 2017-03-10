@@ -5,7 +5,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{lsstdoc}[2016/12/12 v1.1 LSST document class]
 
-\LoadClass[12pt,letter]{article}
+\LoadClass[12pt,letterpaper]{article}
 \RequirePackage[usenames]{xcolor}
 \RequirePackage{amsmath}
 \RequirePackage{amssymb}
@@ -21,6 +21,7 @@
 \RequirePackage{longtable}
 \RequirePackage{eso-pic}
 \RequirePackage{color}
+\RequirePackage{helvet}
 \RequirePackage{type1cm}
 
 %\RequirePackage[linkcolor=blue,colorlinks=true]{hyperref}
@@ -40,6 +41,12 @@
 %\RequirePackage{mathptmx} % note this messes up \vec definition... do not e add put in your doc if you want it
 
 \definecolor{lsstblue}{RGB}{54, 84, 138}
+
+
+% LSST uses a sans serif font
+\renewcommand\familydefault{\sfdefault}
+\renewcommand\sfdefault{phv}
+\normalfont
 
 
 % Switch off the onecolumn and twocolumn options
@@ -233,10 +240,10 @@
    \end{center}
 \vspace{-25pt}
 \color{lsstblue}
-   \hspace{-2.8cm}\rule{6cm}{2.5pt} \lower.3em\hbox{
+   \hspace{-2.8cm}\rule{5.5cm}{2.5pt} \lower.3em\hbox{
 	{\large \color{lsstblue}LARGE SYNOPTIC SURVEY TELESCOPE}
    }
-   \rule{6cm}{2.5pt}
+   \rule{6.5cm}{2.5pt}
 
   \begin{center}
     \ifx \@docLocalLogo \@empty
@@ -259,7 +266,6 @@
 }
 
 \renewcommand{\maketitle}{
-
   \hypersetup{pdftitle={\@title\ifx\@docSubtitle\@empty\else\ - \docSubtitle\fi},
   pdfauthor={\docAuthor},
   pdfkeywords={\docRef}}
@@ -281,19 +287,29 @@
     }%
 
    \setlength{\parindent}{0pt}
-   \vspace*{-6cm}
+   \vspace*{-5cm}
    \putlogo
    \vspace*{1cm}
    \begin{center}
    \begin{minipage}{1.0\textwidth}
      \begin{center}
-    {\Huge \@title} \\
+    \textsf{\Large \bfseries Large Synoptic Survey Telescope (LSST)} \\
+    \vspace*{0.5cm}
+    \textsf{\Huge \bfseries \@title} \\
       \ifx \@docSubtitle \@empty
        \relax
     \else
          \vspace*{1cm}
          \large\@docSubtitle
     \fi
+    \vspace*{2cm}
+
+    \color{black}
+    \textsf{\large \bfseries\@author}\\
+    \vspace*{0.5cm}
+    \textsf{\Large \bfseries\docRef}\\
+    \vspace*{0.5cm}
+    \textsf{\Large \bfseries Latest Revision: \docDate}
     \end{center}
    \end{minipage}
     \end{center}
@@ -308,7 +324,6 @@
    {\large\textsf{
       \begin{tabbing}
          XXXXXXXXX: \=\kill
-         prepared by:\> \parbox[t]{ 0.7\textwidth}{\raggedright\@author}\\
     \ifx \@docAffil \@empty
      \relax
      \else
@@ -323,11 +338,9 @@
     {}{approved by:\> \docApprove\\}%
     \ifthenelse{\equal{@noauthorize@}{\docAuthorize}}%
     {}{authorized by:\> \docAuthorize\\}%
-         reference:\>   \docRef\\
 \ifthenelse{\equal{\docIssue}{none}}{\relax}{%
          issue:\>       \docIssue\\}%
 revision:\>    \docRevision\\
-         date:\>        \docDate\\
          status:\>      \docStatus
       \end{tabbing}
    }}
@@ -337,6 +350,7 @@ revision:\>    \docRevision\\
      \else
      \relax
     \fi
+   \pagenumbering{roman}
    \docAbstract
 }
 
@@ -347,27 +361,28 @@ revision:\>    \docRevision\\
 %
 \newenvironment{docHistory}[0]{
   \newpage
-  \section*{Document History}
+  \section*{Change Record}
   \begin{small}
     % flush table to the left
     \setlength\LTleft{0pt}
     \setlength\LTright{\fill}
 %   \setlength\LTpost{\fill}
 %   \addtocounter{table}{-1}
-    \begin{longtable}{|c|c|c|p{.07\textwidth}|p{.53\textwidth}|}
+    \begin{longtable}{|l|l|p{.45\textwidth}|p{.23\textwidth}|}
 
     \hline
-Issue & Revision & Date & Author & Comment \\ \hline\hline
+\textbf{Version} & \textbf{Date} & \textbf{Description} & \textbf{Owner name} \\ \hline\hline
     \endfirsthead
     \hline
-Issue & Revision & Date & Author & Comment \\ \hline\hline
+\textbf{Version} & \textbf{Date} & \textbf{Description} & \textbf{Owner name} \\ \hline\hline
     \endhead
-    \multicolumn{5}{r}{\emph{Continued on next page}}
+    \multicolumn{4}{r}{\emph{Continued on next page}}
     \endfoot
     \endlastfoot
 }{
 \end{longtable}
 \end{small}
+\clearpage
 %        \ifx \@docCompact \@empty
 %           \pagebreak
 %         \else
@@ -375,8 +390,8 @@ Issue & Revision & Date & Author & Comment \\ \hline\hline
 %        \fi
 }
 
-\providecommand{\addtohist}[5]{
-#1 & #2 & #3 & \path{#4} & #5\\\hline}
+\providecommand{\addtohist}[4]{
+#1 & #2 & #3 & #4 \\\hline}
 
 
 %
@@ -443,18 +458,25 @@ Issue & Revision & Date & Author & Comment \\ \hline\hline
  \vspace{-4cm}
   \IfFileExists{lsst_logo_notext.png}{
     \resizebox{0.18\textwidth}{!}{\includegraphics{lsst_logo_notext}}
-    \hspace{5pt}{\bfseries\large\sf{\CU\DU}}
+    %\hspace{5pt}{\bfseries\large\sf{\CU\DU}}
   } {
        {\bfseries\large\sf{LSST: \CU\DU}}
   }\\\vspace{-8pt}
 \color{lsstblue}
+%    \hspace{-1.5cm}\rule{0.55cm}{1.0pt} \lower.1em\hbox{
     \hspace{-1.5cm}\rule{0.55cm}{1.0pt} \lower.1em\hbox{
-	{ \tiny \color{lsstblue}LARGE SYNOPTIC SURVEY TELESCOPE}
+	{ \hspace{-0.3cm}\tiny \color{lsstblue}LARGE SYNOPTIC SURVEY TELESCOPE}\hspace{-0.1cm}
    }
     \rule{12.5cm}{1.0pt}
-\vspace{-27pt}
+\vspace{-15pt}
 \begin{flushright}
-   \small  \@docShortTitle \hspace{1cm} \docRef~  \docStatus~ \docDate
+\begin{minipage}{12.5cm}
+\tiny
+\sffamily
+\begin{tabularx}{\textwidth}{XXr}
+\@docShortTitle & \docRef~ \docStatus & Latest Revision \docDate \\
+\end{tabularx}
+\end{minipage}
 \end{flushright}
   \vskip -2\baselineskip
 }
@@ -481,21 +503,21 @@ Issue & Revision & Date & Author & Comment \\ \hline\hline
   {0mm}%                                        % the indent
   {-10pt \@plus -1pt \@minus -1pt}%             % the beforeskip
   {4pt \@plus 1pt}%                             % the afterskip
-  {\bfseries\Large}}%                           % the style
+  {\bfseries\Large\color{lsstblue}}}%                           % the style
 \renewcommand{\subsection}{\@startsection
   {subsection}%                                 % the name
   {2}%                                          % the level
   {0mm}%                                        % the indent
   {-5pt \@plus -1pt \@minus -1pt}%              % the beforeskip
   {2pt \@plus 1pt}%                             % the afterskip
-  {\bfseries\large}}%                      % the style
+  {\bfseries\large\color{lsstblue}}}%                      % the style
 \renewcommand{\subsubsection}{\@startsection
   {subsubsection}%                              % the name
   {3}%                                          % the level
   {0mm}%                                        % the indent
   {-5pt \@plus -1pt \@minus -1pt}%              % the beforeskip
   {2pt \@plus 1pt}%                             % the afterskip
-  {\bfseries\normalsize}}%                      % the style
+  {\bfseries\normalsize\color{lsstblue}}}%                      % the style
 
 
 \newcommand{\gwptop}[1]{\multicolumn{1}{|l|}{\textbf{#1}}}
