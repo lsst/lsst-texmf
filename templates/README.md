@@ -1,3 +1,3 @@
 # Latex Templates
 
-This directory contains template latex files demonstrating how to use the Latex classes.
+This directory contains template Latex files demonstrating how to use the Latex classes.
