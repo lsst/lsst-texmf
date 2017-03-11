@@ -1,0 +1,65 @@
+\documentclass[DM,lsstdraft]{lsstdoc}
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{hyperref}
+\usepackage{comment}
+\usepackage{natbib}
+
+\excludecomment{changelog}
+\excludecomment{todo}
+\excludecomment{openissues}
+
+% Local commands go here
+\newcommand{\G}[1]{{\color{green} #1}}
+\newcommand{\B}[1]{{\color{blue} #1}}
+\newcommand{\R}[1]{{\color{red} #1}}
+
+%% Journal abbreviations
+\bibliographystyle{aasjournal}
+
+\title{Title of document}
+
+\author{
+A.~Author,
+B.~Author,
+and
+C.~Author}
+
+\setDocRef{LDM-nnn}
+\setDocDate{\today}
+\setDocRevision{TBD}
+\setDocStatus{draft}
+\setDocTitle[Short title]{Unused main title}  % Use this to set the short title for now
+
+\setDocAbstract{%
+This document demonstrates how to use the LSST \LaTeX\ class files to make Data Management
+documents. Build this document in the normal way, making sure that the class file is
+available in the \LaTeX\ load path.
+}
+
+\begin{document}
+
+% Create the title page
+\maketitle
+
+% Change history goes after the title page
+% MOST RECENT FIRST
+\begin{docHistory}
+  \addtohist{2}{1}{YYYY-MM-DD}{??}{Future changes}
+  \addtohist{2}{0}{2017-09-10}{TJ}{Initial release based on Gaia examples.}
+\end{docHistory}
+
+% Create the table of contents
+\clearpage
+\tableofcontents
+\clearpage
+
+\section{Introduction}
+
+Now write your document as you would normally write it.
+
+\end{document}
