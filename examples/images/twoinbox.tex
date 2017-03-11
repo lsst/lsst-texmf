@@ -1,0 +1,79 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Document:      Two in box simple tex diagram example
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass{article}
+
+\usepackage{times,layouts}
+\usepackage{tikz,hyperref,amsmath}
+\usetikzlibrary{positioning,arrows,shapes,decorations.shapes,shapes.arrows}
+\usetikzlibrary{backgrounds,calc}
+
+\usepackage[paperwidth=110mm,paperheight=105mm,
+left=-2mm,top=3mm,bottom=0mm,right=0mm,
+noheadfoot,marginparwidth=0pt,includemp=false,
+textwidth=205mm,textheight=50mm]{geometry}
+
+
+\newcommand\showpage{%
+\setlayoutscale{0.5}\setlabelfont{\tiny}\printheadingsfalse\printparametersfalse
+\currentpage\pagedesign}
+
+\hypersetup{pdftitle={Potential Archive Group organisation }, pdfsubject={Diagram illustrating the
+ coordination in Archive Group}, pdfauthor={ William O'Mullane}}
+
+\tikzstyle{divbox}=[rectangle, rounded corners=3pt, draw=blue, top color=blue!30!white, bottom
+color=white, very thick, minimum height=12mm, inner sep=3pt, text centered, text width=30mm]
+
+\tikzstyle{sbox}=[rectangle, rounded corners=3pt, draw=red, top color=green!50!white, bottom
+color=white, very thick, minimum height=12mm, inner sep=2pt, text centered, text width=50mm]
+
+\tikzstyle{gbox}=[rectangle, rounded corners=3pt, draw=orange!80!black, top color=orange!30!white,
+bottom color=white, very thick, minimum height=12mm, inner sep=5pt, text badly ragged, text width=40mm]
+
+\tikzstyle{line}=[-, thick]
+
+\xdefinecolor{softviolet}{rgb}{0.85, 0.8, 1.0}
+
+\begin{document}
+
+\begin{tikzpicture}[node distance=0mm]
+
+    \node (div) [divbox] {\textbf{System}};
+
+
+    \node (ag) [sbox, minimum height=40mm, rectangle split, rectangle split parts=2,below=1cm of div] 
+	{ \textbf{Subsystem}
+	   \nodepart{second} \vspace{15mm} 
+	};
+    \node (c) [below=-10mm of ag, text width=0mm]{};
+
+    \node (tc) [sbox,text width=20mm,right=of c] 
+	   { Technical Leader};
+
+    \node (sc) [sbox, text width=20mm, left=of c] 
+	   { Science Leader};
+
+    \node (c2) [below=3cm of c, text width=0mm]{};
+
+    \node (tcg) [gbox, rectangle split, rectangle split parts=2, right=of c2]
+	{ \textbf{Technical Coordination Group}
+	   \nodepart{second} Plan and prioritise technical activities 
+	};
+    \node (scg) [gbox, rectangle split, rectangle split parts=2, left=of c2]
+	{ \textbf{Science Coordination Group}
+	   \nodepart{second} Plan and prioritise science activities 
+	};
+
+	\node (ol) [draw] at (c2) [ellipse ,fill=softviolet, draw=softviolet, fill opacity=0.5 ,minimum width=1.2cm , minimum height=29mm ] {}; 
+	\node (olt) [below=-2mm of ol] {These groups should not be distinct.};
+
+   \draw[line] (ag.north) -- ++(0,0.8) -| (div.south);
+   \draw[line] (scg.north) -- ++(0,0.8) -| (sc.south);
+   \draw[line] (tcg.north) -- ++(0,0.8) -| (tc.south);
+
+\end{tikzpicture}
+\end{document}
