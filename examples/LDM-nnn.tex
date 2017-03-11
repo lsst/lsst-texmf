@@ -47,16 +47,19 @@ available in the \LaTeX\ load path.
 \maketitle
 
 % Change history goes after the title page
-% MOST RECENT FIRST
+% OLDEST FIRST: VERSION, DATE, DESCRIPTION, OWNER NAME
 \begin{docHistory}
-  \addtohist{2}{1}{YYYY-MM-DD}{??}{Future changes}
-  \addtohist{2}{0}{2017-09-10}{TJ}{Initial release based on Gaia examples.}
+\addtohist{1}{2017-09-10}{Initial release. Based on Gaia examples.}{Tim Jenness}
+\addtohist{2}{YYYY-MM-DD}{Future changes}{Future person}
 \end{docHistory}
 
 % Create the table of contents
 \clearpage
 \tableofcontents
 \clearpage
+
+% Now that the preamble is complete, switch to arabic numbers for pages
+\pagenumbering{arabic}
 
 \section{Introduction}
 
