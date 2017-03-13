@@ -3,11 +3,16 @@
 \documentclass{lsstbeamer}
 \usepackage{longtable}
 
+% Set the graphics path such that this example will
+% build from the repository root directory as well as
+% from within its own directory
+\graphicspath{{./}{examples/}}
+
 % ----------------------
 
 %\setbeamercovered{dynamic}
 
-%include mission logo like this 
+%include mission logo like this
 %\logoleft{GaiaTrans}
 
 \title[Demo Presentation]{ Beamer example for TeX with lsstbeamer class}
@@ -49,13 +54,13 @@
 
 \frame{\frametitle{Beamer lists}
    \begin{itemize}[<+->]
-	\item This reveals 
+	\item This reveals
 	\item each bullet separately
    \end{itemize}
 }
 \frame{\frametitle{Beamer lists}
    \begin{itemize}
-	\item This reveals 
+	\item This reveals
 	\item all bullets {\color{red} immediately}
    \end{itemize}
 }
@@ -69,7 +74,7 @@
 \end{center}
 \column{0.4\textwidth}
 \begin{itemize}
-\item can use onslide to make things appear in order 
+\item can use onslide to make things appear in order
 \item not done here look up on internet
 \end{itemize}
 \end{columns}
