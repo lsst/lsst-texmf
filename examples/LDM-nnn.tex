@@ -1,4 +1,4 @@
-\documentclass[DM,lsstdraft]{lsstdoc}
+\documentclass[DM,lsstdraft,toc]{lsstdoc}
 
 \usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
@@ -41,25 +41,20 @@ documents. Build this document in the normal way, making sure that the class fil
 available in the \LaTeX\ load path.
 }
 
+% Change history defined here. Will be inserted into
+% correct place with \maketitle
+% OLDEST FIRST: VERSION, DATE, DESCRIPTION, OWNER NAME
+\setDocChangeRecord{%
+\addtohist{1}{2017-09-10}{Initial release. Based on Gaia examples.}{Tim Jenness}
+\addtohist{2}{yyyy-mm-dd}{Future changes}{Future person}
+}
+
 \begin{document}
 
 % Create the title page
+% Table of contents will be added automatically if "toc" class option
+% is used.
 \maketitle
-
-% Change history goes after the title page
-% OLDEST FIRST: VERSION, DATE, DESCRIPTION, OWNER NAME
-\begin{docHistory}
-\addtohist{1}{2017-09-10}{Initial release. Based on Gaia examples.}{Tim Jenness}
-\addtohist{2}{yyyy-mm-dd}{Future changes}{Future person}
-\end{docHistory}
-
-% Create the table of contents
-\clearpage
-\tableofcontents
-\clearpage
-
-% Now that the preamble is complete, switch to arabic numbers for pages
-\pagenumbering{arabic}
 
 \section{Introduction}
 

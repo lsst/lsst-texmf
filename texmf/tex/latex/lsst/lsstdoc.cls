@@ -68,6 +68,17 @@
 }
 
 %
+% Automatically include table of contents in maketitle with the
+% addtoc option.
+%
+\newif\if@addtoc
+\@addtocfalse
+\DeclareOption{toc}{\@addtoctrue}
+\if@compatibility\else
+\DeclareOption{notoc}{\@addtocfalse}
+\fi
+
+%
 % Define the various document types
 %
 \DeclareOption{CP}{
@@ -234,6 +245,15 @@
     \pagebreak
 }}
 
+\newcommand{\docChangeRecord}{}
+\newcommand{\setDocChangeRecord}[1]{\renewcommand{\docChangeRecord}
+{
+\clearpage
+\begin{docHistory}
+#1
+\end{docHistory}
+}}
+
 \providecommand{\putlogo}{
   \begin{center}
 	\includegraphics{lsst_logo_notext}\\
@@ -352,6 +372,14 @@ revision:\>    \docRevision\\
     \fi
    \pagenumbering{roman}
    \docAbstract
+   \docChangeRecord
+
+   \if@addtoc
+     \setcounter{tocdepth}{3}
+     \tableofcontents
+     \clearpage
+     \pagenumbering{arabic}
+   \fi
 }
 
 \ProcessOptions\relax
