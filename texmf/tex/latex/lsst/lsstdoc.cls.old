@@ -104,7 +104,7 @@
 }
 \DeclareOption{SPAR}{
    \renewcommand{\dpacDocType}{Software Product Assurance Report}
-} 
+}
 \DeclareOption{PL}{
    \renewcommand{\dpacDocType}{Planning and Policy Document}
 }
@@ -114,7 +114,7 @@
 %there is only one of these probably
 \DeclareOption{SSS}{
    \renewcommand{\dpacDocType}{Software System Specification}
-}  
+}
 %
 % Define the CUs -- and the DPACE
 %
@@ -219,7 +219,7 @@
     \fi
   \begin{center}
    \resizebox{\@lbsize\textwidth}{!}{\includegraphics{\@docLogo}
-   
+
     \ifx \@docLocalLogo \@empty
            \relax
      \else
@@ -244,7 +244,7 @@
   \hypersetup{pdftitle={\dpacDocTitle\ifx\@dpacDocSubtitle\@empty\else\ - \dpacDocSubtitle\fi},
   pdfauthor={\dpacDocAuthor},
   pdfkeywords={\dpacDocRef}}
-    
+
    \thispagestyle{empty}
    \setlength{\parindent}{0pt}
    \vspace*{-4cm}
@@ -266,7 +266,7 @@
    \end{minipage}
     \end{center}
    \vspace*{1cm}
-   \rule{\textwidth}{0.5pt} \\[0.5cm] 
+   \rule{\textwidth}{0.5pt} \\[0.5cm]
    \ifx \@dpacDocCompact \@empty
        \vspace*{2cm}
      \else
@@ -298,7 +298,7 @@ revision:\>    \dpacDocRevision\\
          status:\>      \dpacDocStatus
       \end{tabbing}
    }}
-   
+
     \ifx \@dpacDocCompact \@empty
            \pagebreak
      \else
@@ -346,11 +346,11 @@ revision:\>    \dpacDocRevision\\
 #1 & #2 & #3 & \path{#4} & #5\\\hline}
 
 
-% 
+%
 % Issue Lists
 %
 \newenvironment{issueList}[0]{
-\begin{longtable}{|l|p{0.8\textwidth}|}\hline \textbf{ID}&\textbf{Summary}\\\hline 
+\begin{longtable}{|l|p{0.8\textwidth}|}\hline \textbf{ID}&\textbf{Summary}\\\hline
 }{
 \end{longtable}
 }
@@ -376,14 +376,14 @@ revision:\>    \dpacDocRevision\\
 \setlength\headheight{35pt}     % Make space for logo
 
 \pagenumbering{arabic}
-\mark{{}{}} 
+\mark{{}{}}
 
 \newcommand{\clearemptydoublepage}{\newpage{\pagestyle{empty}\cleardoublepage}}
 
 %% min page fraction that must be filled with text
-\renewcommand{\textfraction}{0.1} 
+\renewcommand{\textfraction}{0.1}
 %% max page fraction that a float may take at the top of the page
-\renewcommand{\topfraction}{0.9} 
+\renewcommand{\topfraction}{0.9}
 %% max page fraction that a float may take at the bottom of the page
 \renewcommand{\bottomfraction}{0.9}
 %% max page fraction that may be filled with floats
@@ -534,9 +534,9 @@ p{.11\textwidth}|% Status
 %
 %   B. FREZOULS 01/13/2012
 %	Applicable requirement macro
-%	Created from the req command with an extra argument (the last one) 
+%	Created from the req command with an extra argument (the last one)
 % 	used to indicate to which system the req. is applicable
-%	Display this argument in the requirement nomenclature 
+%	Display this argument in the requirement nomenclature
 % 	and add it in the log file so that the makeReqList script can add it in the Requirements.csv file
 %
 \providecommand{\reqapp}[8][@noparent@]{%
@@ -566,10 +566,10 @@ p{.19\textwidth}|% Applicability
 %	Deleted requirement macro
 %	Created from the req command
 % 	used to 'create' deleted requirement.
-% 	The requirement is not displayed in the PDF produced but it exists i.e. it is listed 
+% 	The requirement is not displayed in the PDF produced but it exists i.e. it is listed
 % 	in the Requirements.csv file produced by the makeReqList.rb.
 %	This requirement does not 'break' the numbering schema i.e. the requirements following the requirement
-%	deleted keep their number/name 
+%	deleted keep their number/name
 %
 \providecommand{\reqdel}[7][@noparent@]{%
 \addtocounter{areqi}{\value{reqincr}}%
@@ -581,10 +581,10 @@ p{.19\textwidth}|% Applicability
 %	Deleted requirement macro
 %	Created from the reqapp command
 % 	used to 'create' deleted requirement.
-% 	The requirement is not displayed in the PDF produced but it exists i.e. it is listed 
+% 	The requirement is not displayed in the PDF produced but it exists i.e. it is listed
 % 	in the Requirements.csv file produced by the makeReqList.rb.
 %	This requirement does not 'break' the numbering schema i.e. the requirements following the requirement
-%	deleted keep their number/name 
+%	deleted keep their number/name
 %
 \providecommand{\reqdel}[8][@noparent@]{%
 \addtocounter{areqi}{\value{reqincr}}%
@@ -714,7 +714,7 @@ No actions have been identified.}
 \def\nat{Nature}           % Nature
 \def\apjl{ApJ}             % Astrophysical Journal, Letters
 
-\def\degr{\hbox{$^\circ$}} 
+\def\degr{\hbox{$^\circ$}}
 \def\arcmin{\hbox{$^\prime$}}
 \def\arcsec{\hbox{$^{\prime\prime}$}}
 \def\fs{\hbox{$.\!\!^{\rm s}$}}

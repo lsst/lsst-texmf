@@ -57,7 +57,7 @@
 %%		Responsible
 %%	Argument(s):
 %%		1) Who downloads the data
-%%	
+%%
 \newcommand{\drdresp}[1]{%
 \multicolumn{3}{|p{\proctabwidth}|}{\drdfield{Responsible}: #1}\\\hline
 }
@@ -68,7 +68,7 @@
 %%              Origin of the data
 %%      Argument(s):
 %%              1) Link to the storage
-%%      
+%%
 \newcommand{\drdorigin}[1]{%
 \multicolumn{3}{|p{\proctabwidth}|}{\drdfield{Retrieved from}: #1}\\\hline
 }
@@ -79,7 +79,7 @@
 %%              Retention
 %%      Argument(s):
 %%              1) Retention policy
-%%      
+%%
 \newcommand{\drdorigin}[1]{%
 \multicolumn{3}{|p{\proctabwidth}|}{\drdfield{Retention Policy}: #1}\\\hline
 }
@@ -91,7 +91,7 @@
 %%              Checksum of the data
 %%      Argument(s):
 %%              1) Checksum
-%%      
+%%
 \newcommand{\drdchecksum}[1]{%
 \multicolumn{3}{|p{\proctabwidth}|}{\drdfield{Checksum}: #1}\\\hline
 }
@@ -108,7 +108,7 @@
 %%              2) Frequency (Variable/Once/On request/
 %%									As needed/On detection/Daily/On failure/
 %%									End of Cycle/Weekly)
-%%							3) Duration 
+%%							3) Duration
 \newcommand{\procstartfreqdur}[3]{%
 \drdfield{Start}: #1 &
 \drdfield{Frequency}: #2 &
@@ -164,7 +164,7 @@
 %%      Command: \drdmantis
 %%              Mantis list
 %%      Argument(s):
-%%              
+%%
 %%
 \newcommand{\drdmantis}[1]{%
 \multicolumn{3}{|p{\proctabwidth}|}{\drdfield{Mantis issues}:\newline #1}\\\hline}
@@ -184,7 +184,7 @@
 %%      Purpose:
 %%              Specify Entry Conditions
 %%      Argument(s):
-%%              
+%%
 %%
 \newcommand{\procentryconditions}[1]{%
 \multicolumn{3}{|p{\proctabwidth}|}{\drdfield{Entry Condition(s)}:\newline #1}\\\hline}
@@ -194,7 +194,7 @@
 %%	Purpose:
 %%		Specify exit conditions (completion of procedure)
 %%	Argument(s):
-%%		
+%%
 %%
 \newcommand{\procexitconditions}[1]{%
 \multicolumn{3}{|p{\proctabwidth}|}{\drdfield{Exit Condition(s)}:\newline #1}\\\hline}
@@ -204,8 +204,8 @@
 %%	Purpose:
 %%		Specify contact point in case of issues
 %%	Argument(s):
-%%		
-%%	
+%%
+%%
 \newcommand{\procontact}[1]{%
 \multicolumn{3}{|p{\proctabwidth}|}{\drdfield{In Case of Problem(s)}:\newline #1}\\\hline}
 
@@ -244,10 +244,10 @@
 %%	$Log: proc.sty,v $
 %%	Revision 1.3  2005/11/16 12:47:39  ulammers
 %%	fixed version number
-%%	
+%%
 %%	Revision 1.2  2005/11/16 12:46:56  ulammers
 %%	fixed problem when \begin{proc} used more than once
-%%	
+%%
 %%
 
 %
@@ -264,7 +264,7 @@
 %   \setlength\LTpost{\fill}
 %   \addtocounter{table}{-1}
     \begin{longtable}{|c|p{.50\textwidth}|p{.30\textwidth}|} \hline
-    
+
     {\bf Report} & {\bf Link} & {\bf Comment} \\ \hline\hline
 }{
     \end{longtable}
@@ -321,7 +321,7 @@
 %   \setlength\LTpost{\fill}
 %   \addtocounter{table}{-1}
     \begin{longtable}{|p{0.99\textwidth}|} \hline
-    
+
 %    {\bf Step} & {\bf Description} & {\bf Action} \\ \hline\hline
 }{
     \end{longtable}

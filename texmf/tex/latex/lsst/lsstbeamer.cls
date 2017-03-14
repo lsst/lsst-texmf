@@ -3,7 +3,7 @@
 %% ------------------------------------------------------------
 %%
 %% A document class based on beamer.cls copied from Gaia original from Daniel Michalik
-%% 
+%%
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{lsstbeamer}[2016/12/13 v1.0
 	LSST Beamer class
@@ -68,15 +68,15 @@
   \setbeamercolor{palette sidebar tertiary}{fg=white,bg=LSSTcyan}
   \setbeamercolor{palette sidebar quaternary}{fg=white,bg=LSSTcyan}
 
-  \setbeamercolor*{author in head/foot}{fg=gray,bg=white}  
+  \setbeamercolor*{author in head/foot}{fg=gray,bg=white}
   \setbeamerfont{author in head/foot}{series=\normalfont,size=\fontsize{6}{6}}
-  
+
   \setbeamercolor{title in head/foot}{fg=gray,bg=white}
   \setbeamerfont{title in head/foot}{series=\normalfont,size=\fontsize{6}{6}}
-  
+
   \setbeamercolor{page number in head/foot}{fg=gray,bg=white}
   \setbeamerfont{page number in head/foot}{series=\normalfont,size=\fontsize{6}{6}}
-  
+
   \setbeamercolor{frame title}{fg=white,bg=LSSTcyan}
   \setbeamercolor{block title}{fg=white,bg=LSSTcyan}
   \setbeamercolor{itemize item}{fg=LSSTcyan}
@@ -102,18 +102,18 @@
 
 \providecommand\primarycolor{blue}
 
-% Defines the key color of the theme. 
+% Defines the key color of the theme.
 \setbeamercolor{structure}{fg=\primarycolor}
 
 % If insertframetitle doesn't exist, print something empty.
-\providecommand\insertframetitle{} 
+\providecommand\insertframetitle{}
 
 \setbeamertemplate{frametitle}[default][center]
 \setbeamercolor*{frametitle}{fg=white,bg=}
 \addtobeamertemplate{frametitle}{\vspace*{-1.05cm}}{\vspace*{0.17cm}}
 \setbeamertemplate{headline}{
   \vspace*{-1ex}
- 
+
   \leavevmode%
   \hspace*{-4pt} \hbox{%
   \begin{tikzpicture}[background rectangle/.style={fill=LSSTcyan}, show background rectangle]
@@ -128,7 +128,7 @@
 \mode<all>
 
 
-  
+
 \setbeamertemplate{footline}{
   \leavevmode%
   \hbox{%
@@ -174,7 +174,7 @@
 \def\nat{Nature}           % Nature
 \def\apjl{ApJ}             % Astrophysical Journal, Letters
 
-\def\degr{\hbox{$^\circ$}} 
+\def\degr{\hbox{$^\circ$}}
 \def\arcmin{\hbox{$^\prime$}}
 \def\arcsec{\hbox{$^{\prime\prime}$}}
 \def\fs{\hbox{$.\!\!^{\rm s}$}}
@@ -188,5 +188,5 @@
 \newcommand{\citell}{\citeyear}
 \newcommand{\citellp}{\citeyearpar}
 %\newcommand*{\newblock}{}
-%% 
+%%
 %% End of file `gaiasocbeamer.cls'.

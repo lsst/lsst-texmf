@@ -656,7 +656,7 @@ FUNCTION {format.note}
 {
   url empty$
     'skip$
-%   Put URL on a new line DWE 24/10/07    
+%   Put URL on a new line DWE 24/10/07
     { "\newline\urlprefix\url{" url * "}" * output }
   if$
  note empty$
@@ -674,7 +674,7 @@ FUNCTION {format.note}
 %        }
 %      if$
       note #2 global.max$ substring$ * "note" bibinfo.check
-%   Put note on a new line DWE 24/10/07    
+%   Put note on a new line DWE 24/10/07
       "\newline " swap$ *
     }
   if$
@@ -1372,14 +1372,14 @@ FUNCTION {lsstnumber}
   if$
 %  format.authors "author" output.check
 %  author format.key output
-% Year reinstated DWE 26/11/07  
+% Year reinstated DWE 26/11/07
   format.date "year" output.check
 % date.block
   format.btitle
   "title" output.check
 % LiveLink bit goes here rather than "Tech. rep." DWE 24 Oct 2007
 %  format.tr.number output.nonnull
-  format.lsstnumber "lsstnumber" 
+  format.lsstnumber "lsstnumber"
   url "url" bibinfo.warn pop$
 % I don't think that we need the following two fields DWE 24 Oct 2007
 %  institution "institution" bibinfo.warn output

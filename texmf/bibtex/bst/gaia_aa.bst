@@ -659,7 +659,7 @@ FUNCTION {format.note}
 {
   url empty$
     'skip$
-%   Put URL on a new line DWE 24/10/07    
+%   Put URL on a new line DWE 24/10/07
     { "\newline\urlprefix\url{" url * "}" * output }
   if$
  note empty$
@@ -677,7 +677,7 @@ FUNCTION {format.note}
 %        }
 %      if$
       note #2 global.max$ substring$ * "note" bibinfo.check
-%   Put note on a new line DWE 24/10/07    
+%   Put note on a new line DWE 24/10/07
       "\newline " swap$ *
     }
   if$
@@ -1375,7 +1375,7 @@ FUNCTION {livelink}
   if$
 %  format.authors "author" output.check
 %  author format.key output
-% Year reinstated DWE 26/11/07  
+% Year reinstated DWE 26/11/07
   format.date "year" output.check
 % date.block
   format.btitle
