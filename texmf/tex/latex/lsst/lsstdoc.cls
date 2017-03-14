@@ -267,7 +267,7 @@
 
 \renewcommand{\maketitle}{
   \hypersetup{pdftitle={\@title\ifx\@docSubtitle\@empty\else\ - \docSubtitle\fi},
-  pdfauthor={\docAuthor},
+  pdfauthor={\@author},
   pdfkeywords={\docRef}}
 
    \thispagestyle{empty}
