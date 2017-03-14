@@ -181,6 +181,18 @@
 \newsavebox{\footerTitle}
 \sbox{\footerTitle}{}
 
+% Override standard \title to allow shorttitle
+% to be given as an optional argument. If not supplied
+% the long title is used as short title.
+%  \title{longtitle}
+%  \title[shorttitle]{longtitle}
+\renewcommand{\title}[2][@shorttitle@]{
+  \gdef\@title{#2}
+  \ifthenelse{\equal{@shorttitle@}{#1}}
+             {\def\@docShortTitle{#2}}
+             {\def\@docShortTitle{#1}}
+}
+
 \newcommand{\docTitle}{No Title}
 \providecommand{\setDocTitle}[2][@shorttitle@]{
   \def\@docTitle{\Huge #2}
