@@ -216,6 +216,9 @@
 \newcommand{\docDate}{set the date with {$\backslash$}setDocDate}
 \newcommand{\setDocDate}[1]{\renewcommand{\docDate}{#1}}
 
+% allow standard \date{} to work as an alias of \setDocDate
+\renewcommand{\date}[1]{\setDocDate{#1}}
+
 \newcommand{\docIssue}{none}
 \newcommand{\setDocIssue}[1]{\renewcommand{\docIssue}{#1}}
 
