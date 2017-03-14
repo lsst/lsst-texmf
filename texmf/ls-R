@@ -1,6 +1,5 @@
 % ls-R -- filename database for kpathsea; do not change this line.
 ./:
-.DS_Store
 bibtex
 doc
 ls-R
@@ -251,34 +250,12 @@ pgfmanual.tex
 
 
 ./tex:
-.DS_Store
-comment
 latex
 
-./tex/comment:
-Makefile
-README
-comm_bug.tex
-comm_test.pdf
-comm_test.tex
-comm_test_ivo.tex
-comm_test_l.tex
-comment.pdf
-comment.sty
-comment.tex
-comment_plain.tex
-t1test.pdf
-t1test.tex
-writeup.pdf
-writeup.tex
-
 ./tex/latex:
-.DS_Store
 lsst
-microtype
 
 ./tex/latex/lsst:
-.DS_Store
 LSSTlogo.png
 drd.sty
 gwp.sty
@@ -293,39 +270,3 @@ proc.sty
 risk.sty
 rr.sty
 simureqs.sty
-
-./tex/latex/microtype:
-.DS_Store
-README.md
-letterspace.sty
-microtype-luatex.def
-microtype-pdftex.def
-microtype-utf.dtx
-microtype-xetex.def
-microtype.cfg
-microtype.dtx
-microtype.ins
-microtype.log
-microtype.lua
-microtype.pdf
-microtype.sty
-mt-CharisSIL.cfg
-mt-LatinModernRoman.cfg
-mt-PalatinoLinotype.cfg
-mt-bch.cfg
-mt-blg.cfg
-mt-cmr.cfg
-mt-euf.cfg
-mt-eur.cfg
-mt-euroitc.cfg
-mt-eus.cfg
-mt-msa.cfg
-mt-msb.cfg
-mt-mvs.cfg
-mt-pad.cfg
-mt-pmn.cfg
-mt-ppl.cfg
-mt-ptm.cfg
-mt-ugm.cfg
-mt-zpeu.cfg
-test-microtype.tex
