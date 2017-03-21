@@ -1,0 +1,32 @@
+\documentclass[DM,toc]{lsstdoc}
+
+\title[Bib testing]{Bibliography Verification}
+\author{Automated~Content}
+\date{\today}
+
+\setDocStatus{generated}
+\setDocRef{LSST-test}
+\setDocRevision{1}
+
+\setDocAbstract{%
+Standard LSST document class example but using all bibtex entries.
+This allows the bib files to be tested as well as the associated
+bibtex style.
+}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+In the following pages, all bibliographic entries from this repository will be listed.
+These are used to test that the entries in the relevant \texttt{.bib} files are formatted correctly.
+Bibtex will issue Warnings but the build will only be stopped if Errors are located.
+
+\nocite{*}
+
+\bibliographystyle{gaia_aa}
+\bibliography{lsst,refs,books,refs_ads}
+
+\end{document}

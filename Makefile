@@ -3,14 +3,22 @@ EXAMPLES = \
 Example_presentation.tex \
 LDM-nnn.tex
 
+TESTFILES = \
+test-bibtex.tex
+
 .SUFFIXES:
 .SUFFIXES: .tex .pdf
 PDF = $(EXAMPLES:.tex=.pdf)
 
-all: $(PDF)
+TESTS = $(TESTFILES:.tex=.pdf)
+
+all: $(PDF) $(TESTS)
 
 $(PDF): %.pdf: examples/%.tex
 	latexmk -pdf -f $<
+
+$(TESTS): %.pdf: tests/%.tex
+	latexmk -pdf -bibtex -f $<
 
 .PHONY: clean
 clean:

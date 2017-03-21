@@ -806,12 +806,16 @@ No actions have been identified.}
 \def\aap{A\&A}             % Astronomy and Astrophysics
 \def\ssr{Space~Sci.~Rev.}  % Space Science Reviews
 \def\apj{ApJ}              % Astrophysical Journal
+\def\apjs{ApJS}            % Astrophysical Journal Supplement
 \def\aj{AJ}                % Astronomical Journal
 \def\mnras{MNRAS}          % Monthly Notices of the RAS
 \def\araa{ARA\&A}          % Annual Review of Astron and Astrophys
 \def\nat{Nature}           % Nature
 \def\apjl{ApJ}             % Astrophysical Journal, Letters
 \def\icarus{Icarus}        % Icarus
+\def\prd{Phys.~Rev.~D}     % Physical Review D
+\def\physrep{Phys.~Rep.}   % Physics Reports
+\def\pasp{PASP}            % Publications of the Astronomical Society of the Pacific
 
 \def\degr{\hbox{$^\circ$}}
 \def\arcmin{\hbox{$^\prime$}}
