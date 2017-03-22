@@ -1,0 +1,225 @@
+%%
+\NeedsTeXFormat{LaTeX2e}
+\RequirePackage{kvoptions}
+\usepackage{xparse}
+\def\fileversion{v.1.0}\def\filedate{2017/03/05}
+\ProvidesPackage{LSST-beamer}
+          [\filedate\space\fileversion\space Adjust Beamer for LSST Talks]
+%
+\SetupKeyvalOptions{
+   family=LSST,
+   prefix=LSST@
+}          
+\DeclareBoolOption{quiet}
+\DeclareBoolOption{descTheme}           % Fiddle beamer to use DESC templates
+\DeclareBoolOption{serif}               % Use serif fonts 
+\DeclareBoolOption[false]{colorlinks}   % Hyperref's colorlinks, but set colours for beamer
+\DeclareStringOption[Boadilla]{theme}   % Beamer theme to use (e.g. default, Boadilla, Frankfurt)
+\DeclareStringOption[]{colortheme} % Beamer colour theme (e.g. crane, tiger [locally])
+\DeclareStringOption[]{colorthemeArgs}  % Extra arguments for Beamer colour theme
+\DeclareStringOption[default]{backgroundTheme} % location of LSST{cover,main}.pdf
+\DeclareStringOption[]{footline}	% Text to put in the footer (generally with backgroundTheme=generic)
+\DeclareBoolOption[true]{centerFrameTitle} % Center frame titles
+\DeclareStringOption[]{titleColor}         % name of foreground colour for title page
+\DeclareStringOption[0.2]{titleVoffset}     % vertical offset of start of title (in units of \textheight)
+\DeclareStringOption[]{foreground}         % foreground `structure' colour (as RGB triple)
+\DeclareBoolOption[true]{fonts}         % Allow user to set fonts using using xelatex's font management
+\DeclareStringOption[]{mainFont}        % default (Palatino) is set in \if@LSSTfonts block
+\DeclareStringOption[1.00]{mainFontScale}
+\DeclareStringOption[]{sansFont}        % default (Gill Sans) is set in \if@LSSTfonts block
+\DeclareStringOption[1.00]{sansFontScale}
+\DeclareStringOption[]{monoFont}        % default (Monaco) is set in \if@LSSTfonts block
+\DeclareStringOption[0.80]{monoFontScale}
+\DeclareBoolOption{noOutline}           % don't include an outline before each section (BEAMER_FRAME_LEVEL: 2)
+%
+\newif\if@slide\@slidefalse
+%\ExecuteOptions{default}
+\ProcessKeyvalOptions*
+
+% -- Option quiet
+\ifLSST@quiet
+  \def\PDFSCR@Warning#1{}
+\fi
+
+%------------------------------------------------------------------------------
+%
+% Load packages
+
+\usepackage{fancyvrb}
+\usepackage{color}
+\usepackage{hyperref}
+\hypersetup{pdfpagelayout=SinglePage}
+\hypersetup{plainpages=false}           %avoid ``destination with the same identifier'' errors
+\ifLSST@colorlinks
+   \hypersetup{colorlinks=true}
+   \hypersetup{urlcolor=structure.fg}      % structure.fg is a beamer color
+   \hypersetup{linkcolor=normal text.fg}
+   % N.b. we're not setting citecolor or filecolor
+\fi
+\usepackage{graphicx}
+\usepackage{xspace}
+\IfFileExists{tpslifonts.sty}{\usepackage{tpslifonts}}{} % use tpslifonts fonts
+\IfFileExists{bera.sty}{\usepackage{bera}}{} % use Bitstream Vera fonts
+
+%------------------------------------------------------------------------------
+%
+% Beamer style
+%
+\newcommand{\setBackground}[1]{%
+  \includegraphics[width=\paperwidth,height=\paperheight]{#1}
+}
+
+\usepackage[normalem]{ulem}          % Part of the standard distribution
+\ifLSST@fonts
+   \usepackage{fontspec}
+   \usepackage{xunicode}                % Unicode extras!
+   \usepackage{xltxtra}                 % Fixes
+\fi
+
+%
+% Set colour themes
+%
+% Foreground takes preference to colortheme
+%
+\ifx\LSST@colortheme\empty\ifx\LSST@foreground\empty
+   \ifLSST@descTheme
+      \def\LSST@foreground{0.8, 0.0, 0.0}
+   \else
+      \def\LSST@colortheme{seahorse}
+   \fi
+\fi\fi
+
+\ifx\LSST@colortheme\empty
+   \usecolortheme[rgb={\LSST@foreground}]{structure}
+   %\usecolortheme[rgb={1, 0, 0}]{structure}
+\else
+   \ifx\LSST@foreground\empty\else
+      \message{*** Ignoring foreground ``\LSST@foreground'' in deference to colortheme \LSST@colortheme}
+   \fi
+
+   \usecolortheme[\LSST@colorthemeArgs]{\LSST@colortheme}
+\fi
+
+\ifLSST@serif
+   \usefonttheme{serif}
+\fi
+\ifLSST@fonts
+   \ifx\LSST@mainFont\empty\def\LSST@mainFont{Palatino}\fi
+   \ifx\LSST@sansFont\empty\def\LSST@sansFont{Gill Sans}\fi
+   \ifx\LSST@monoFont\empty\def\LSST@monoFont{Monaco}\fi
+
+   \setmainfont[Scale=\LSST@mainFontScale]{\LSST@mainFont}
+   \setsansfont[Scale=\LSST@sansFontScale]{\LSST@sansFont}
+   \setmonofont[Scale=\LSST@monoFontScale]{\LSST@monoFont}
+\else
+   \ifx\LSST@mainFont\empty\else\message{*** mainFont ``\LSST@mainFont'' is ignored (set fonts=true)}\fi
+   \ifx\LSST@sansFont\empty\else\message{*** sansFont ``\LSST@sansFont'' is ignored (set fonts=true)}\fi
+   \ifx\LSST@monoFont\empty\else\message{*** monoFont ``\LSST@monoFont'' is ignored (set fonts=true)}\fi
+\fi
+
+%------------------------------------------------------------------------------
+
+\usetheme{\LSST@theme}
+
+\ifLSST@centerFrameTitle
+   \setbeamertemplate{frametitle}[default][center]
+\else
+   \setbeamertemplate{frametitle}[default][left]
+\fi
+
+\setbeamertemplate{background canvas}{%
+  \ifx\LSST@backgroundTheme\empty\else
+     \ifnum\the\c@framenumber=1
+        \setBackground{LSST-themes/\LSST@backgroundTheme/LSSTcover}%
+     \else
+        \setBackground{LSST-themes/\LSST@backgroundTheme/LSSTmain}
+     \fi
+  \fi
+}
+
+%
+% We need to tweak some things for DESC
+%
+\ifLSST@descTheme
+   \def\default{default}
+   \ifx\LSST@backgroundTheme\default
+      \def\LSST@backgroundTheme{DESC}
+   \fi
+   \setbeamersize{text margin left=7mm}
+   \addtobeamertemplate{frametitle}{\vspace*{4mm}\hspace*{2mm}}{\vspace*{2mm}}
+   \def\LSST@footlineVspace{-1.5mm}   % move footline up by this distance
+\else
+   \addtobeamertemplate{frametitle}{\vspace*{0mm}}{\vspace*{2mm}}
+   \def\LSST@footlineVspace{0mm}      % move footline up by this distance
+\fi
+
+\beamertemplatenavigationsymbolsempty
+% \setbeameroption{show notes on second screen=bottom}
+\defbeamertemplate*{title page}{customized}[1][]
+                   {
+                     \thispagestyle{empty}  % no page number on title page
+
+                     % fg!50 means 50% fg, the rest white. See xcolor
+                     \ifx\LSST@titleColor\empty\else
+                        \setbeamercolor{title}{fg=\LSST@titleColor, bg=structure.fg!50}
+                     \fi
+
+                     \vspace*{\LSST@titleVoffset\textheight}
+                     \ifLSST@descTheme
+                        \begin{minipage}[t]{\textwidth}
+                          \usebeamercolor[fg]{title}
+                          \usebeamerfont{title}
+                          \raggedright
+                          \inserttitle\hfil
+                        \end{minipage}
+
+                        \usebeamerfont{title}
+                        %\usebeamercolor[fg]{subtitle}
+                        \vspace*{0.48\textheight}
+                        \hbox to \textwidth{\usebeamerfont{author}\insertauthor\hfil}
+                        \usebeamerfont{subtitle}
+                        \hbox to \textwidth{\insertinstitute\hfil}
+                        \vspace*{0.02\textheight}
+                        \hbox to \textwidth{\usebeamerfont{date}\insertdate\hfil}
+                     \else
+                        \usebeamercolor[fg]{title}
+                        \hbox to \textwidth{\usebeamerfont{author}\hfil\insertauthor\par}
+                        \usebeamerfont{subtitle}
+                        \hbox to \textwidth{\hfil\insertinstitute\par}
+   
+                        \begin{minipage}[t]{\textwidth}
+                          \usebeamercolor[fg]{title}
+                          \usebeamerfont{title}
+                          \raggedleft
+                          \inserttitle\hfil
+                        \end{minipage}
+   
+                        \hbox to \textwidth{\usebeamerfont{date}\hfil\insertdate\par}
+                     \fi
+                   }
+                   \setbeamertemplate{footline}{
+                     \rule[-0.3\baselineskip]{0pt}{0.7\baselineskip}
+                     \begin{beamercolorbox}[wd=0.995\textwidth]{XXX} % avoid overfull \hbox
+                       \usebeamercolor[fg]{structure}
+                       \raisebox{\LSST@footlineVspace}[0pt][2mm]{
+                         \hbox to \textwidth{\hfill \LSST@footline \hfill \hbox to 0pt{\hss \insertframenumber\hspace{5mm}}}
+                       }
+                     \end{beamercolorbox}
+                   }
+                   \setbeamertemplate{section in toc shaded}[default][40]
+                   \setbeamertemplate{itemize item}{\raisebox{2pt}{\rule{2mm}{1pt}}}
+                   \setbeamertemplate{itemize subitem}[ball]
+                   \setbeamertemplate{itemize subsubitem}{-}
+                   %\setbeamercolor{normal text}{use=structure, fg=structure.fg}
+                   \setbeamercolor*{item}{fg=normal text.fg}
+                   \let\position=\institute
+
+%------------------------------------------------------------------------------
+
+\ifLSST@noOutline\else
+\AtBeginSection[]{\begin{frame}<beamer>\frametitle{Outline}\tableofcontents[currentsection]\vspace{\stretch{6}}\end{frame}}
+\setbeamertemplate{section in toc}[default]
+\setbeamertemplate{enumerate item}[default]
+\fi
+
+\endinput
