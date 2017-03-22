@@ -254,17 +254,9 @@ LSST-themes
 latex
 
 ./tex/LSST-themes:
-Commissioning2017
 DESC
 LSST2016
 LSST2016-alt
-Technical
-default
-generic
-
-./tex/LSST-themes/Commissioning2017:
-LSSTcover.pdf
-LSSTmain.pdf
 
 ./tex/LSST-themes/DESC:
 LSSTcover.pdf
@@ -286,18 +278,6 @@ Title-3.jpg
 ./tex/LSST-themes/LSST2016-alt:
 LSSTcover.jpg
 LSSTmain.jpg
-
-./tex/LSST-themes/Technical:
-LSSTcover.pdf
-LSSTmain.pdf
-
-./tex/LSST-themes/default:
-LSSTcover.pdf
-LSSTmain.pdf
-
-./tex/LSST-themes/generic:
-LSSTcover.pdf
-LSSTmain.pdf
 
 ./tex/latex:
 lsst
