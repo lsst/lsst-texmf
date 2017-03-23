@@ -3,10 +3,16 @@
 *.log
 *.toc
 *.out
-*.pdf
 *.nav
 *.snm
 *.fls
 *.fdb_latexmk
 *.bbl
 *.blg
+/Example-beamer-LSST2016.pdf
+/Example-beamer-desc.pdf
+/Example_presentation.pdf
+/LDM-nnn.pdf
+/test-bibtex.pdf
+examples/*.pdf
+tests/*.pdf
