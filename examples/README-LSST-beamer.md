@@ -8,7 +8,7 @@ You can use beamer to make LSST-flavoured talks by adding something like:
 ```latex
 \usepackage[fonts=false]{LSST-beamer}
 ```
-to your beamer presentation (see `examples/example.tex` for a complete, umhh, example).  You need the
+to your beamer presentation (see `examples/Example_presentation.tex` for a complete, umhh, example).  You need the
 `fonts=false` if you want to use `pdflatex`; if you're happy with `xelatex` it may be omitted.
 
 The backgrounds for the title and main pages are found in the directory LSST-themes/default. Two files are
