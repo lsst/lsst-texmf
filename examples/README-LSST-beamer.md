@@ -53,9 +53,9 @@ The full set of options that the LSST-beamer package accepts are:
 | `noOutline`	       | Don't include an outline before each section (`BEAMER_FRAME_LEVEL: 2`) |
 | `serif`	           | Use serif font theme |
 | `fonts`	           | Allow user to set fonts using using xelatex's font management |
-| `mainFont`	       | The main font (default: `Palatino`;  only takes effect if `fonts=true`) |
+| `mainFont`	       | The main font (default: `Tex Gyre Pagella`;  only takes effect if `fonts=true`) |
 | `mainFontScale`    | Scaling for main font (default: `1`; only takes effect if `fonts=true`) |
-| `sansFont`	       | The sans font (default: `Gill Sans`; only takes effect if `fonts=true`) |
+| `sansFont`	       | The sans font (default: `Open Sans`; only takes effect if `fonts=true`) |
 | `sansFontScale`    | Scaling for sans font (default: `1`; only takes effect if `fonts=true`) |
-| `monoFont`	       | The mono font (default: `Monaco`;    only takes effect if `fonts=true`) |
+| `monoFont`	       | The mono font (default: `Inconsolata`;    only takes effect if `fonts=true`) |
 | `monoFontScale`    | Scaling for mono font (default: `1`; only takes effect if `fonts=true`) |
