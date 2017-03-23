@@ -257,6 +257,8 @@ latex
 DESC
 LSST2016
 LSST2016-alt
+default
+generic
 
 ./tex/LSST-themes/DESC:
 LSSTcover.pdf
@@ -278,6 +280,14 @@ Title-3.jpg
 ./tex/LSST-themes/LSST2016-alt:
 LSSTcover.jpg
 LSSTmain.jpg
+
+./tex/LSST-themes/default:
+LSSTcover.pdf
+LSSTmain.pdf
+
+./tex/LSST-themes/generic:
+LSSTcover.pdf
+LSSTmain.pdf
 
 ./tex/latex:
 lsst
