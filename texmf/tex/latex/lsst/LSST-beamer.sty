@@ -74,6 +74,22 @@
    \usepackage{fontspec}
    \usepackage{xunicode}                % Unicode extras!
    \usepackage{xltxtra}                 % Fixes
+   \defaultfontfeatures[TeXGyrePagella]
+     {
+     Extension = .otf ,
+     UprightFont = texgyrepagella-regular,
+     BoldFont = texgyrepagella-bold,
+     ItalicFont = texgyrepagella-italic,
+     BoldItalicFont = texgyrepagella-bolditalic
+     }
+   \defaultfontfeatures[OpenSans]
+     {
+     Extension = .ttf ,
+     UprightFont = OpenSans-Regular,
+     BoldFont = OpenSans-Bold,
+     ItalicFont = OpenSans-Italic,
+     BoldItalicFont = OpenSans-BoldItalic
+     }
 \fi
 
 %
@@ -104,9 +120,9 @@
    \usefonttheme{serif}
 \fi
 \ifLSST@fonts
-   \ifx\LSST@mainFont\empty\def\LSST@mainFont{Palatino}\fi
-   \ifx\LSST@sansFont\empty\def\LSST@sansFont{Gill Sans}\fi
-   \ifx\LSST@monoFont\empty\def\LSST@monoFont{Monaco}\fi
+   \ifx\LSST@mainFont\empty\def\LSST@mainFont{TeXGyrePagella}\fi
+   \ifx\LSST@sansFont\empty\def\LSST@sansFont{OpenSans}\fi
+   \ifx\LSST@monoFont\empty\def\LSST@monoFont{Inconsolata}\fi
 
    \setmainfont[Scale=\LSST@mainFontScale]{\LSST@mainFont}
    \setsansfont[Scale=\LSST@sansFontScale]{\LSST@sansFont}

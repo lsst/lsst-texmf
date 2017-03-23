@@ -1,0 +1,8 @@
+\defaultfontfeatures[OpenSans]
+  {
+  Extension = .ttf ,
+  UprightFont = OpenSans-Regular,
+  BoldFont = OpenSans-Bold,
+  ItalicFont = OpenSans-Italic,
+  BoldItalicFont = OpenSans-BoldItalic
+  }

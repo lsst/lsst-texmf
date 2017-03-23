@@ -2,6 +2,7 @@
 ./:
 bibtex
 doc
+fonts
 ls-R
 tex
 
@@ -247,6 +248,45 @@ pgfmanual-xetex.cfg
 ./doc/generic/pgf/version-for-xetex/en:
 Makefile
 pgfmanual.tex
+
+./fonts:
+opentype
+truetype
+
+./fonts/opentype:
+public
+
+./fonts/opentype/public:
+TeX-Gyre-Pagella
+
+./fonts/opentype/public/TeX-Gyre-Pagella:
+GUST e-foundry License.txt
+TeXGyrePagella.fontspec
+texgyrepagella-bold.otf
+texgyrepagella-bolditalic.otf
+texgyrepagella-italic.otf
+texgyrepagella-regular.otf
+
+./fonts/truetype:
+OpenSans-Regular.tfm
+public
+
+./fonts/truetype/public:
+opensans
+
+./fonts/truetype/public/opensans:
+LICENSE.txt
+OpenSans-Bold.ttf
+OpenSans-BoldItalic.ttf
+OpenSans-ExtraBold.ttf
+OpenSans-ExtraBoldItalic.ttf
+OpenSans-Italic.ttf
+OpenSans-Light.ttf
+OpenSans-LightItalic.ttf
+OpenSans-Regular.ttf
+OpenSans-Semibold.ttf
+OpenSans-SemiboldItalic.ttf
+OpenSans.fontspec
 
 
 ./tex:
