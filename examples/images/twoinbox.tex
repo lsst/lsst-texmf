@@ -45,30 +45,30 @@ bottom color=white, very thick, minimum height=12mm, inner sep=5pt, text badly r
     \node (div) [divbox] {\textbf{System}};
 
 
-    \node (ag) [sbox, minimum height=40mm, rectangle split, rectangle split parts=2,below=1cm of div] 
+    \node (ag) [sbox, minimum height=40mm, rectangle split, rectangle split parts=2,below=1cm of div]
 	{ \textbf{Subsystem}
-	   \nodepart{second} \vspace{15mm} 
+	   \nodepart{second} \vspace{15mm}
 	};
     \node (c) [below=-10mm of ag, text width=0mm]{};
 
-    \node (tc) [sbox,text width=20mm,right=of c] 
+    \node (tc) [sbox,text width=20mm,right=of c]
 	   { Technical Leader};
 
-    \node (sc) [sbox, text width=20mm, left=of c] 
+    \node (sc) [sbox, text width=20mm, left=of c]
 	   { Science Leader};
 
     \node (c2) [below=3cm of c, text width=0mm]{};
 
     \node (tcg) [gbox, rectangle split, rectangle split parts=2, right=of c2]
 	{ \textbf{Technical Coordination Group}
-	   \nodepart{second} Plan and prioritise technical activities 
+	   \nodepart{second} Plan and prioritise technical activities
 	};
     \node (scg) [gbox, rectangle split, rectangle split parts=2, left=of c2]
 	{ \textbf{Science Coordination Group}
-	   \nodepart{second} Plan and prioritise science activities 
+	   \nodepart{second} Plan and prioritise science activities
 	};
 
-	\node (ol) [draw] at (c2) [ellipse ,fill=softviolet, draw=softviolet, fill opacity=0.5 ,minimum width=1.2cm , minimum height=29mm ] {}; 
+	\node (ol) [draw] at (c2) [ellipse ,fill=softviolet, draw=softviolet, fill opacity=0.5 ,minimum width=1.2cm , minimum height=29mm ] {};
 	\node (olt) [below=-2mm of ol] {These groups should not be distinct.};
 
    \draw[line] (ag.north) -- ++(0,0.8) -| (div.south);

@@ -9,10 +9,10 @@
 \SetupKeyvalOptions{
    family=LSST,
    prefix=LSST@
-}          
+}
 \DeclareBoolOption{quiet}
 \DeclareBoolOption{descTheme}           % Fiddle beamer to use DESC templates
-\DeclareBoolOption{serif}               % Use serif fonts 
+\DeclareBoolOption{serif}               % Use serif fonts
 \DeclareBoolOption[false]{colorlinks}   % Hyperref's colorlinks, but set colours for beamer
 \DeclareStringOption[Boadilla]{theme}   % Beamer theme to use (e.g. default, Boadilla, Frankfurt)
 \DeclareStringOption[]{colortheme} % Beamer colour theme (e.g. crane, tiger [locally])
@@ -202,14 +202,14 @@
                         \hbox to \textwidth{\usebeamerfont{author}\hfil\insertauthor\par}
                         \usebeamerfont{subtitle}
                         \hbox to \textwidth{\hfil\insertinstitute\par}
-   
+
                         \begin{minipage}[t]{\textwidth}
                           \usebeamercolor[fg]{title}
                           \usebeamerfont{title}
                           \raggedleft
                           \inserttitle\hfil
                         \end{minipage}
-   
+
                         \hbox to \textwidth{\usebeamerfont{date}\hfil\insertdate\par}
                      \fi
                    }
