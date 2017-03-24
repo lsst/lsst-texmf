@@ -5,7 +5,10 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{lsstdoc}[2016/12/12 v1.1 LSST document class]
 
-\LoadClass[12pt,letterpaper]{article}
+\LoadClass[11pt,letterpaper]{article}
+
+% Define the default stretch
+\renewcommand{\baselinestretch}{1.25}
 
 % LSST uses a sans serif font
 \RequirePackage{ifxetex}
@@ -43,6 +46,7 @@
 \RequirePackage{longtable}
 \RequirePackage{eso-pic}
 \RequirePackage{color}
+\RequirePackage{setspace}
 
 %\RequirePackage[linkcolor=blue,colorlinks=true]{hyperref}
 \RequirePackage{hyperref}
@@ -288,7 +292,7 @@
 \vspace{-25pt}
 \color{lsstblue}
    \hspace{-2.8cm}\rule{6.15cm}{2.5pt} \lower.3em\hbox{
-	{\large \color{lsstblue}LARGE SYNOPTIC SURVEY TELESCOPE}
+	{\Large \color{lsstblue}LARGE SYNOPTIC SURVEY TELESCOPE}
    }
    \rule{7.0cm}{2.5pt}
 
@@ -340,7 +344,7 @@
    \begin{center}
    \begin{minipage}{1.0\textwidth}
      \begin{center}
-    \textsf{\Large \bfseries Large Synoptic Survey Telescope (LSST)} \\
+    \textsf{\LARGE \bfseries Large Synoptic Survey Telescope (LSST)} \\
     \vspace*{0.5cm}
     \textsf{\Huge \bfseries \@title} \\
       \ifx \@docSubtitle \@empty
@@ -352,7 +356,7 @@
     \vspace*{2cm}
 
     \color{black}
-    \textsf{\large \bfseries\@author}\\
+    \textsf{\Large \bfseries\@author}\\
     \vspace*{0.5cm}
     \textsf{\Large \bfseries\docRef}\\
     \vspace*{0.5cm}
@@ -403,7 +407,10 @@ revision:\>    \docRevision\\
 
    \if@addtoc
      \setcounter{tocdepth}{3}
+     % Do not use lots of whitespace in toc
+     \begin{spacing}{0.8}
      \tableofcontents
+     \end{spacing}
      \clearpage
      \pagenumbering{arabic}
    \fi
