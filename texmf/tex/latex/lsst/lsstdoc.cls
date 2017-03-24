@@ -5,12 +5,37 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{lsstdoc}[2016/12/12 v1.1 LSST document class]
 
-\LoadClass[12pt,letterpaper]{article}
+\LoadClass[11pt,letterpaper]{article}
+
+% Define the default stretch
+\renewcommand{\baselinestretch}{1.25}
+
+% LSST uses a sans serif font
+\RequirePackage{ifxetex}
+\ifxetex
+  \RequirePackage{fontspec}
+  \RequirePackage{xunicode}
+  \defaultfontfeatures[OpenSans]
+  {
+  Extension = .ttf ,
+  UprightFont = OpenSans-Regular,
+  BoldFont = OpenSans-Bold,
+  ItalicFont = OpenSans-Italic,
+  BoldItalicFont = OpenSans-BoldItalic
+  }
+  \setmainfont[Ligatures=TeX]{OpenSans}
+  \setmonofont{Inconsolata}
+\else
+  \RequirePackage[T1]{fontenc}
+  \RequirePackage[utf8x]{inputenc}
+  \RequirePackage[default]{opensans}
+  \RequirePackage{inconsolata}
+\fi
+
 \RequirePackage[usenames]{xcolor}
 \RequirePackage{amsmath}
 \RequirePackage{amssymb}
 \RequirePackage{amsbsy}
-\RequirePackage{times}
 \RequirePackage{ifthen}
 \RequirePackage{calc}
 \RequirePackage{array}
@@ -21,8 +46,7 @@
 \RequirePackage{longtable}
 \RequirePackage{eso-pic}
 \RequirePackage{color}
-\RequirePackage{helvet}
-\RequirePackage{type1cm}
+\RequirePackage{setspace}
 
 %\RequirePackage[linkcolor=blue,colorlinks=true]{hyperref}
 \RequirePackage{hyperref}
@@ -31,7 +55,6 @@
 \RequirePackage[english,iso]{isodate}
 \RequirePackage{titlesec}
 \RequirePackage[english]{babel}
-\RequirePackage[utf8x]{inputenc}
 \RequirePackage{tabularx}
 %\RequirePackage{comment}
 \RequirePackage{xspace}
@@ -41,13 +64,6 @@
 %\RequirePackage{mathptmx} % note this messes up \vec definition... do not e add put in your doc if you want it
 
 \definecolor{lsstblue}{RGB}{54, 84, 138}
-
-
-% LSST uses a sans serif font
-\renewcommand\familydefault{\sfdefault}
-\renewcommand\sfdefault{phv}
-\normalfont
-
 
 % Switch off the onecolumn and twocolumn options
 \DeclareOption{onecolumn}{\OptionNotUsed}
@@ -275,10 +291,10 @@
    \end{center}
 \vspace{-25pt}
 \color{lsstblue}
-   \hspace{-2.8cm}\rule{5.5cm}{2.5pt} \lower.3em\hbox{
-	{\large \color{lsstblue}LARGE SYNOPTIC SURVEY TELESCOPE}
+   \hspace{-2.8cm}\rule{6.15cm}{2.5pt} \lower.3em\hbox{
+	{\Large \color{lsstblue}LARGE SYNOPTIC SURVEY TELESCOPE}
    }
-   \rule{6.5cm}{2.5pt}
+   \rule{7.0cm}{2.5pt}
 
   \begin{center}
     \ifx \@docLocalLogo \@empty
@@ -328,7 +344,7 @@
    \begin{center}
    \begin{minipage}{1.0\textwidth}
      \begin{center}
-    \textsf{\Large \bfseries Large Synoptic Survey Telescope (LSST)} \\
+    \textsf{\LARGE \bfseries Large Synoptic Survey Telescope (LSST)} \\
     \vspace*{0.5cm}
     \textsf{\Huge \bfseries \@title} \\
       \ifx \@docSubtitle \@empty
@@ -340,7 +356,7 @@
     \vspace*{2cm}
 
     \color{black}
-    \textsf{\large \bfseries\@author}\\
+    \textsf{\Large \bfseries\@author}\\
     \vspace*{0.5cm}
     \textsf{\Large \bfseries\docRef}\\
     \vspace*{0.5cm}
@@ -391,7 +407,10 @@ revision:\>    \docRevision\\
 
    \if@addtoc
      \setcounter{tocdepth}{3}
+     % Do not use lots of whitespace in toc
+     \begin{spacing}{0.8}
      \tableofcontents
+     \end{spacing}
      \clearpage
      \pagenumbering{arabic}
    \fi
@@ -506,12 +525,14 @@ revision:\>    \docRevision\\
        {\bfseries\large\sf{LSST: \CU\DU}}
   }\\\vspace{-8pt}
 \color{lsstblue}
+\begin{minipage}{7.5in}
 %    \hspace{-1.5cm}\rule{0.55cm}{1.0pt} \lower.1em\hbox{
-    \hspace{-1.5cm}\rule{0.55cm}{1.0pt} \lower.1em\hbox{
+    \hspace{-1.8cm}\rule{1.4cm}{1.0pt} \lower.1em\hbox{
 	{ \hspace{-0.3cm}\tiny \color{lsstblue}LARGE SYNOPTIC SURVEY TELESCOPE}\hspace{-0.1cm}
    }
-    \rule{12.5cm}{1.0pt}
-\vspace{-15pt}
+    \rule{15.0cm}{1.0pt}
+\end{minipage}
+\vspace{-30pt}
 \begin{flushright}
 \begin{minipage}{12.5cm}
 \tiny
