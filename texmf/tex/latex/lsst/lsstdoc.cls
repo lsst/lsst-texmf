@@ -58,6 +58,7 @@
 \RequirePackage{tabularx}
 %\RequirePackage{comment}
 \RequirePackage{xspace}
+\RequirePackage{xstring}
 %\RequirePackage{microtype}
 \RequirePackage{listings}
 %\RequirePackage{nameref}
@@ -68,6 +69,9 @@
 % Switch off the onecolumn and twocolumn options
 \DeclareOption{onecolumn}{\OptionNotUsed}
 \DeclareOption{twocolumn}{\OptionNotUsed}
+
+\newif\if@isdraft
+\@isdraftfalse
 \DeclareOption{lsstdraft}{
     % DRAFT
     \AddToShipoutPicture{%
@@ -81,6 +85,7 @@
                     }}}}%
         \makeatother
     }%
+    \@isdrafttrue
 }
 
 %
@@ -244,8 +249,14 @@
 \newcommand{\docRevision}{set the Revision with {$\backslash$}setDocRevision}
 \newcommand{\setDocRevision}[1]{\renewcommand{\docRevision}{#1}}
 
+\newif\if@ccb
+\@ccbfalse
 \newcommand{\docRef}{set the Reference with {$\backslash$}setDocRef}
-\newcommand{\setDocRef}[1]{\renewcommand{\docRef}{#1}}
+\newcommand{\setDocRef}[1]{
+   \renewcommand{\docRef}{#1}
+   \if@ccb\relax\else\IfBeginWith{#1}{LDM-}{\@ccbtrue}{}\fi
+   \if@ccb\relax\else\IfBeginWith{#1}{LSE-}{\@ccbtrue}{}\fi
+}
 
 \newcommand{\docAuthor}{set the Author with {$\backslash$}setDocAuthor}
 \newcommand{\setDocAuthor}[1]{\renewcommand{\docAuthor}{#1}}
@@ -365,6 +376,24 @@
    \end{minipage}
     \end{center}
    \vspace*{1cm}
+
+   % If this is not a draft and is a controlled document we need to say so
+   \if@isdraft
+     \relax
+   \else
+     \if@ccb
+       \color{black}
+       \bfseries
+       \small
+       \begin{spacing}{1.5}
+         This LSST document has been approved as a Content-Controlled Document.
+         Its contents are subject to configuration control and may not be changed, altered, or their provisions waived without prior approval.
+         If this document is changed or superseded, the new document will retain the Handle designation shown above.
+         The control is on the most recent digital document with this Handle in the LSST digital archive and not printed versions.
+       \end{spacing}
+     \fi
+   \fi
+
    %\rule{\textwidth}{0.5pt} \\[0.5cm]
    \ifx \@docCompact \@empty
        \vspace*{2cm}
