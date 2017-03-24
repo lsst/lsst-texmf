@@ -1,10 +1,11 @@
 sudo: true
 language: python
+dist: trusty
 matrix:
   include:
     - python: "3.5"
 before_install:
-  - "sudo apt-get update && sudo apt-get install -y --no-install-recommends texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended latexmk poppler-utils latex-xcolor latex-beamer"
+  - "sudo apt-get update && sudo apt-get install -y --no-install-recommends texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended latexmk poppler-utils latex-xcolor latex-beamer lmodern texlive-xetex texlive-generic-recommended"
 install:
   - echo Nothing extra to install
 script:

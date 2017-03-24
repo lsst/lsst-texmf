@@ -1,6 +1,8 @@
 
 EXAMPLES = \
 Example_presentation.tex \
+Example-beamer-desc.tex \
+Example-beamer-LSST2016.tex \
 LDM-nnn.tex
 
 TESTFILES = \
@@ -15,7 +17,7 @@ TESTS = $(TESTFILES:.tex=.pdf)
 all: $(PDF) $(TESTS)
 
 $(PDF): %.pdf: examples/%.tex
-	latexmk -pdf -f $<
+	latexmk -xelatex -f $<
 
 $(TESTS): %.pdf: tests/%.tex
 	latexmk -pdf -bibtex -f $<
