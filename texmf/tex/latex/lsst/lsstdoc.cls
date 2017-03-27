@@ -334,7 +334,6 @@
 
    \thispagestyle{empty}
 
-
     \AddToShipoutPicture*{%
             \setlength{\unitlength}{0.7pt}%
         \makeatletter
@@ -501,7 +500,7 @@ revision:\>    \docRevision\\
 % Page layout
 %
 \setlength{\textwidth}{6.5in}
-\setlength{\textheight}{8.3in}
+\setlength{\textheight}{8.5in}
 
 \setlength{\topmargin}{0cm}
 \setlength{\oddsidemargin}{0cm}
@@ -542,6 +541,9 @@ revision:\>    \docRevision\\
 \pagestyle{fancy}
 
 \addtolength{\headsep}{4.2mm}
+
+% Shift everything up a bit
+\setlength{\topmargin}{-0.5cm}
 
 \fancyheadoffset{0pt}
 \lhead{
