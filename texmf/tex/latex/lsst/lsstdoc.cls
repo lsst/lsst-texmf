@@ -559,9 +559,9 @@ revision:\>    \docRevision\\
 \begin{minipage}{7.5in}
 %    \hspace{-1.5cm}\rule{0.55cm}{1.0pt} \lower.1em\hbox{
     \hspace{-1.8cm}\rule{1.4cm}{1.0pt} \lower.1em\hbox{
-	{ \hspace{-0.3cm}\tiny \color{lsstblue}LARGE SYNOPTIC SURVEY TELESCOPE}\hspace{-0.1cm}
+	{ \hspace{-0.1cm}\tiny \color{lsstblue}LARGE SYNOPTIC SURVEY TELESCOPE}\hspace{-0.1cm}
    }
-    \rule{15.0cm}{1.0pt}
+    \rule{14.8cm}{1.0pt}
 \end{minipage}
 \vspace{-30pt}
 \begin{flushright}
