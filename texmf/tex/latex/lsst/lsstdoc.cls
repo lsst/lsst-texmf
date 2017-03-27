@@ -343,7 +343,7 @@
 			\includegraphics[scale=0.9]{lsstscopegrey}\\
                     }}%
 		\vspace{10cm}
-		{\hspace{-3cm}\color{lsstblue}\rule{25cm}{2.5cm}}
+		{\hspace{-0.5in}\color{lsstblue}\rule{9in}{2.1cm}}
 
         \makeatother
     }%
@@ -500,14 +500,14 @@ revision:\>    \docRevision\\
 %
 % Page layout
 %
-\setlength{\textwidth}{16cm}
-\setlength{\textheight}{22cm}
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{8.3in}
 
 \setlength{\topmargin}{0cm}
 \setlength{\oddsidemargin}{0cm}
 \setlength{\evensidemargin}{0cm}
-\setlength{\leftmargin}{2cm}
-\setlength{\marginparwidth}{2cm}
+\setlength{\leftmargin}{1in}
+\setlength{\marginparwidth}{1in}
 
 \setlength{\parindent}{0cm}             % No indent at start of paragraphs
 \setlength{\parskip}{\baselineskip}     % Blank line between paragraph
