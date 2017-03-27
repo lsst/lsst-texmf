@@ -581,16 +581,26 @@ revision:\>    \docRevision\\
 
 \renewcommand{\headrulewidth}{0.0pt}
 
-\renewcommand{\footrulewidth}{0.4pt}
-\lfoot{\bfseries\sf{\docType}}
+\renewcommand{\footrulewidth}{1pt}
+\lfoot{}
 \cfoot{
-\ifx \@docAffil \@empty
-     \relax
-     \else
-        \sf \@docAffil
-    \fi
+\if@ccb
+\begin{minipage}{0.9\textwidth}
+\begin{center}
+  \vspace*{0.2cm}
+  \color{lsstblue}
+  \small
+  \bfseries
+The contents of this document are subject to configuration control and may not be changed, altered, or their provisions waived without prior approval.
+\end{center}
+\end{minipage}
+\fi
+\vspace*{-0.25cm}
+\begin{center}
+\thepage
+\end{center}
 }
-\rfoot{\sf \thepage}
+\rfoot{}
 
 \renewcommand{\section}{\@startsection
   {section}%                                    % the name
