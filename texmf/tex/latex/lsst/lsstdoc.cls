@@ -58,6 +58,7 @@
 \RequirePackage{tabularx}
 %\RequirePackage{comment}
 \RequirePackage{xspace}
+\RequirePackage{xstring}
 %\RequirePackage{microtype}
 \RequirePackage{listings}
 %\RequirePackage{nameref}
@@ -68,6 +69,9 @@
 % Switch off the onecolumn and twocolumn options
 \DeclareOption{onecolumn}{\OptionNotUsed}
 \DeclareOption{twocolumn}{\OptionNotUsed}
+
+\newif\if@isdraft
+\@isdraftfalse
 \DeclareOption{lsstdraft}{
     % DRAFT
     \AddToShipoutPicture{%
@@ -81,6 +85,7 @@
                     }}}}%
         \makeatother
     }%
+    \@isdrafttrue
 }
 
 %
@@ -244,8 +249,14 @@
 \newcommand{\docRevision}{set the Revision with {$\backslash$}setDocRevision}
 \newcommand{\setDocRevision}[1]{\renewcommand{\docRevision}{#1}}
 
+\newif\if@ccb
+\@ccbfalse
 \newcommand{\docRef}{set the Reference with {$\backslash$}setDocRef}
-\newcommand{\setDocRef}[1]{\renewcommand{\docRef}{#1}}
+\newcommand{\setDocRef}[1]{
+   \renewcommand{\docRef}{#1}
+   \if@ccb\relax\else\IfBeginWith{#1}{LDM-}{\@ccbtrue}{}\fi
+   \if@ccb\relax\else\IfBeginWith{#1}{LSE-}{\@ccbtrue}{}\fi
+}
 
 \newcommand{\docAuthor}{set the Author with {$\backslash$}setDocAuthor}
 \newcommand{\setDocAuthor}[1]{\renewcommand{\docAuthor}{#1}}
@@ -323,7 +334,6 @@
 
    \thispagestyle{empty}
 
-
     \AddToShipoutPicture*{%
             \setlength{\unitlength}{0.7pt}%
         \makeatletter
@@ -332,7 +342,7 @@
 			\includegraphics[scale=0.9]{lsstscopegrey}\\
                     }}%
 		\vspace{10cm}
-		{\hspace{-3cm}\color{lsstblue}\rule{25cm}{2.5cm}}
+		{\hspace{-0.5in}\color{lsstblue}\rule{9in}{2.1cm}}
 
         \makeatother
     }%
@@ -365,6 +375,24 @@
    \end{minipage}
     \end{center}
    \vspace*{1cm}
+
+   % If this is not a draft and is a controlled document we need to say so
+   \if@isdraft
+     \relax
+   \else
+     \if@ccb
+       \color{black}
+       \begin{spacing}{1.5}
+         \textbf{\small
+         This LSST document has been approved as a Content-Controlled Document.
+         Its contents are subject to configuration control and may not be changed, altered, or their provisions waived without prior approval.
+         If this document is changed or superseded, the new document will retain the Handle designation shown above.
+         The control is on the most recent digital document with this Handle in the LSST digital archive and not printed versions.
+         }
+       \end{spacing}
+     \fi
+   \fi
+
    %\rule{\textwidth}{0.5pt} \\[0.5cm]
    \ifx \@docCompact \@empty
        \vspace*{2cm}
@@ -471,14 +499,14 @@ revision:\>    \docRevision\\
 %
 % Page layout
 %
-\setlength{\textwidth}{16cm}
-\setlength{\textheight}{22cm}
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{8.5in}
 
 \setlength{\topmargin}{0cm}
 \setlength{\oddsidemargin}{0cm}
 \setlength{\evensidemargin}{0cm}
-\setlength{\leftmargin}{2cm}
-\setlength{\marginparwidth}{2cm}
+\setlength{\leftmargin}{1in}
+\setlength{\marginparwidth}{1in}
 
 \setlength{\parindent}{0cm}             % No indent at start of paragraphs
 \setlength{\parskip}{\baselineskip}     % Blank line between paragraph
@@ -514,6 +542,9 @@ revision:\>    \docRevision\\
 
 \addtolength{\headsep}{4.2mm}
 
+% Shift everything up a bit
+\setlength{\topmargin}{-0.5cm}
+
 \fancyheadoffset{0pt}
 \lhead{
 \color{lsstblue}
@@ -527,10 +558,10 @@ revision:\>    \docRevision\\
 \color{lsstblue}
 \begin{minipage}{7.5in}
 %    \hspace{-1.5cm}\rule{0.55cm}{1.0pt} \lower.1em\hbox{
-    \hspace{-1.8cm}\rule{1.4cm}{1.0pt} \lower.1em\hbox{
-	{ \hspace{-0.3cm}\tiny \color{lsstblue}LARGE SYNOPTIC SURVEY TELESCOPE}\hspace{-0.1cm}
+    \hspace{-1.8cm}\rule{1.4cm}{2.0pt} \lower.1em\hbox{
+	{ \hspace{-0.1cm}\tiny \color{lsstblue}LARGE SYNOPTIC SURVEY TELESCOPE}\hspace{-0.1cm}
    }
-    \rule{15.0cm}{1.0pt}
+    \rule{14.8cm}{2.0pt}
 \end{minipage}
 \vspace{-30pt}
 \begin{flushright}
@@ -550,16 +581,26 @@ revision:\>    \docRevision\\
 
 \renewcommand{\headrulewidth}{0.0pt}
 
-\renewcommand{\footrulewidth}{0.4pt}
-\lfoot{\bfseries\sf{\docType}}
+\renewcommand{\footrulewidth}{1pt}
+\lfoot{}
 \cfoot{
-\ifx \@docAffil \@empty
-     \relax
-     \else
-        \sf \@docAffil
-    \fi
+\if@ccb
+\begin{minipage}{0.9\textwidth}
+\begin{center}
+  \vspace*{0.2cm}
+  \color{lsstblue}
+  \small
+  \bfseries
+The contents of this document are subject to configuration control and may not be changed, altered, or their provisions waived without prior approval.
+\end{center}
+\end{minipage}
+\fi
+\vspace*{-0.25cm}
+\begin{center}
+\thepage
+\end{center}
 }
-\rfoot{\sf \thepage}
+\rfoot{}
 
 \renewcommand{\section}{\@startsection
   {section}%                                    % the name
