@@ -383,13 +383,13 @@
    \else
      \if@ccb
        \color{black}
-       \bfseries
-       \small
        \begin{spacing}{1.5}
+         \textbf{\small
          This LSST document has been approved as a Content-Controlled Document.
          Its contents are subject to configuration control and may not be changed, altered, or their provisions waived without prior approval.
          If this document is changed or superseded, the new document will retain the Handle designation shown above.
          The control is on the most recent digital document with this Handle in the LSST digital archive and not printed versions.
+         }
        \end{spacing}
      \fi
    \fi
