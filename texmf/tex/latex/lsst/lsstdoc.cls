@@ -249,12 +249,14 @@
 \newcommand{\docRevision}{set the Revision with {$\backslash$}setDocRevision}
 \newcommand{\setDocRevision}[1]{\renewcommand{\docRevision}{#1}}
 
+\newif\if@dmtct
+\@dmtctfalse
 \newif\if@ccb
 \@ccbfalse
 \newcommand{\docRef}{set the Reference with {$\backslash$}setDocRef}
 \newcommand{\setDocRef}[1]{
    \renewcommand{\docRef}{#1}
-   \if@ccb\relax\else\IfBeginWith{#1}{LDM-}{\@ccbtrue}{}\fi
+   \if@dmtct\relax\else\IfBeginWith{#1}{LDM-}{\@dmtcttrue}{}\fi
    \if@ccb\relax\else\IfBeginWith{#1}{LSE-}{\@ccbtrue}{}\fi
 }
 
@@ -376,18 +378,44 @@
     \end{center}
    \vspace*{1cm}
 
+   % Define the control text to use based on document type
+   \def\@controlText{}
+   \def\@controlFootText{}
+   \if@ccb
+   \def\@controlText{%
+   This LSST document has been approved as a Content-Controlled Document.
+   Its contents are subject to configuration control and may not be changed, altered, or their provisions waived without prior approval.
+   If this document is changed or superseded, the new document will retain the Handle designation shown above.
+   The control is on the most recent digital document with this Handle in the LSST digital archive and not printed versions.
+   }
+   \def\@controlFootText{%
+   The contents of this document are subject to configuration control and may not be changed, altered, or their provisions waived without prior approval.
+   }
+   \fi
+   \if@dmtct
+   \def\@controlText{%
+   This LSST document has been approved as a Content-Controlled Document by the LSST DM Technical Control Team.
+   If this document is changed or superseded, the new document will retain the Handle designation shown above.
+   The control is on the most recent digital document with this Handle in the LSST digital archive and not printed versions.
+   Additional information may be found in the corresponding DM RFC.
+   }
+   \def\@controlFootText{%
+   The contents of this document are subject to configuration control by the LSST DM Technical Control Team.
+   }
+   \fi
+
+
    % If this is not a draft and is a controlled document we need to say so
    \if@isdraft
      \relax
    \else
-     \if@ccb
+     \ifx \@controlText \@empty
+       \relax
+     \else
        \color{black}
        \begin{spacing}{1.5}
          \textbf{\small
-         This LSST document has been approved as a Content-Controlled Document.
-         Its contents are subject to configuration control and may not be changed, altered, or their provisions waived without prior approval.
-         If this document is changed or superseded, the new document will retain the Handle designation shown above.
-         The control is on the most recent digital document with this Handle in the LSST digital archive and not printed versions.
+         \@controlText
          }
        \end{spacing}
      \fi
@@ -584,14 +612,16 @@ revision:\>    \docRevision\\
 \renewcommand{\footrulewidth}{1pt}
 \lfoot{}
 \cfoot{
-\if@ccb
+\ifx \@controlText \@empty
+  \relax
+\else
 \begin{minipage}{0.9\textwidth}
 \begin{center}
   \vspace*{0.2cm}
   \color{lsstblue}
   \small
   \bfseries
-The contents of this document are subject to configuration control and may not be changed, altered, or their provisions waived without prior approval.
+  \@controlFootText
 \end{center}
 \end{minipage}
 \fi
