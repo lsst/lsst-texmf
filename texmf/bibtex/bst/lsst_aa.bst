@@ -1,5 +1,7 @@
 %%
-%% This was copied for LSST from Dafydd Evan;s file for Gaia
+%% This is file `lsst_aa.bst',
+%%
+%% This was copied for LSST from Dafydd Evan's file for Gaia
 %% This is based on aa.bst and has been altered for Gaia use by DWE.
 %%
 %% The original source files were:
@@ -70,7 +72,10 @@ ENTRY
     institution
     journal
     key
-    lsstnumber
+    livelinknumber
+    livelinkshortnumber
+    docusharenumber
+    docushareshortnumber
     month
     note
     number
@@ -695,9 +700,17 @@ FUNCTION {format.adsurl}
 % New function for changing font of LinkLink number (also makes it
 % unhyphenatable) DWE 25/10/07
 
-FUNCTION {format.lsstnumber}
+FUNCTION {format.livelinknumber}
 {
-  "\\ \texttt{ " lsstnumber * "}" *
+  "\\ \texttt{ " livelinknumber * "}" *
+}
+
+% New function for changing font of DocuShare number (also makes it
+% unhyphenatable) DWE 25/10/07
+
+FUNCTION {format.docusharenumber}
+{
+  "\\ \texttt{ " docusharenumber * "}" *
 }
 
 FUNCTION {format.title}
@@ -825,9 +838,13 @@ FUNCTION {output.bibitem}
   before.all 'output.state :=
 % Citation key added to beginning of line DWE 29/4/09
 
-  lsstnumber empty$
+  livelinkshortnumber empty$
   {}
-  {"\textbf{[" lsstnumber * "]}" * output}
+  {"\textbf{[" livelinkshortnumber * "]}" * output}
+  if$
+  docushareshortnumber empty$
+  {}
+  {"\textbf{[" docushareshortnumber * "]}" * output}
   if$
 }
 
@@ -883,7 +900,7 @@ FUNCTION {format.btitle}
 { title "title" bibinfo.check
   duplicate$ empty$ 'skip$
     {
-    " {\em " swap$ * "}" *
+    " \emph{ " swap$ * "}" *
     }
   if$
 }
@@ -1353,7 +1370,7 @@ FUNCTION {techreport}
 
 % New BibTeX type DWE 16/10/07
 
-FUNCTION {lsstnumber}
+FUNCTION {livelink}
 { output.bibitem
 
 % Editor section added to code with FM-030 DWE 8/1/08
@@ -1379,7 +1396,46 @@ FUNCTION {lsstnumber}
   "title" output.check
 % LiveLink bit goes here rather than "Tech. rep." DWE 24 Oct 2007
 %  format.tr.number output.nonnull
-  format.lsstnumber "lsstnumber"
+  format.livelinknumber "livelinknumber" bibinfo.warn output
+  livelinkshortnumber "livelinkshortnumber" bibinfo.warn pop$
+  url "url" bibinfo.warn pop$
+% I don't think that we need the following two fields DWE 24 Oct 2007
+%  institution "institution" bibinfo.warn output
+%  address "address" bibinfo.check output
+  format.note output
+  fin.entry
+}
+
+% New BibTeX type for LSST DocuShare. Initially copied from livelink entry.
+
+FUNCTION {docushare}
+{ output.bibitem
+
+% Editor section added to code with FM-030 DWE 8/1/08
+
+  author empty$
+    { format.editors "author and editor" output.check
+      editor format.key output
+      add.blank
+    }
+    { format.authors output.nonnull
+      crossref missing$
+        { "author and editor" editor either.or.check }
+        'skip$
+      if$
+    }
+  if$
+%  format.authors "author" output.check
+%  author format.key output
+% Year reinstated DWE 26/11/07
+  format.date "year" output.check
+% date.block
+  format.btitle
+  "title" output.check
+% DocuShare bit goes here rather than "Tech. rep."
+%  format.tr.number output.nonnull
+  format.docusharenumber "docusharenumber" bibinfo.warn output
+  docushareshortnumber "docushareshortnumber" bibinfo.warn pop$
   url "url" bibinfo.warn pop$
 % I don't think that we need the following two fields DWE 24 Oct 2007
 %  institution "institution" bibinfo.warn output
@@ -1491,15 +1547,20 @@ FUNCTION {calc.short.authors}
 
 % This is where the short form of the LiveLink number gets inserted into
 % the system DWE 24/10/07
+% Supports both docushare and livelink numbers (with preference for docushare)
 
 FUNCTION {calc.label}
 { calc.short.authors
   short.list
   "("
   *
-  lsstnumber empty$
-    { year duplicate$ empty$}
-    { lsstnumber duplicate$ empty$}
+  docushareshortnumber empty$
+    { livelinkshortnumber empty$
+      { year duplicate$ empty$}
+      { livelinkshortnumber duplicate$ empty$}
+      if$
+    }
+    { docushareshortnumber duplicate$ empty$}
   if$
 
   short.list key field.or.null = or
