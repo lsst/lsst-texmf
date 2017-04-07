@@ -662,7 +662,7 @@ FUNCTION {format.note}
   url empty$
     'skip$
 %   Put URL on a new line DWE 24/10/07
-    { "\newline\urlprefix\url{" url * "}" * output }
+    { "\urlprefix\url{" url * "}" * output }
   if$
  note empty$
     { "" }
@@ -710,7 +710,7 @@ FUNCTION {format.livelinknumber}
 
 FUNCTION {format.docusharenumber}
 {
-  "\\ \texttt{ " docusharenumber * "}" *
+  "\textsf{ " docusharenumber * "}" *
 }
 
 FUNCTION {format.title}
