@@ -1,0 +1,3 @@
+Sphinx>=1.4.6
+documenteer>=0.1.9
+lsst-dd-rtd-theme

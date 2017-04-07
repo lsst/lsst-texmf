@@ -16,3 +16,4 @@
 /test-bibtex.pdf
 examples/*.pdf
 tests/*.pdf
+docs/_build/
