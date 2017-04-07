@@ -64,6 +64,9 @@
 %\RequirePackage{nameref}
 %\RequirePackage{mathptmx} % note this messes up \vec definition... do not e add put in your doc if you want it
 
+% Standardize bibliography styling
+\bibliographystyle{lsst_aa}
+
 \definecolor{lsstblue}{RGB}{54, 84, 138}
 
 % Switch off the onecolumn and twocolumn options
