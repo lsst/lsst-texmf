@@ -45,10 +45,15 @@
 
 .. Add content below. Do not include the document title.
 
-The LSST Latex Support Files
-============================
+Introduction
+============
 
-The LSST `lsst-texmf <https://github.com/lsst/lsst-texmf>`_ package contains Latex document classes, style files, and bibliographies that can be used to help you write LSST documentation in Latex to match the project style.
+The LSST `lsst-texmf <https://github.com/lsst/lsst-texmf>`_ package contains Latex document classes, style files, and bibliographies that can be used to help you write LSST documentation in Latex to match the project style defined in :cite:`Document-11920` and :cite:`Document-9224`, as documented in :cite:`LPM-51`.
+
+
+Installing the LSST Latex Support Files
+=======================================
+
 You can get the LSST Latex classes and style files from Github:
 
 .. code-block:: bash
@@ -373,3 +378,10 @@ Some things to remember:
 
   Environment variable used to specify the search path for per-user Latex style files.
   More details on this and other Latex environment variables can be found at the `TexLive Guide <https://www.tug.org/texlive/doc/texlive-en/texlive-en.html>`_.
+
+
+.. rubric:: References
+
+.. bibliography:: ../texmf/bibtex/bib/lsst.bib
+  :encoding: latex+latin
+  :style: lsst_aa
