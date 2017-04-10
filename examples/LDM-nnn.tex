@@ -4,9 +4,6 @@
 
 % Local commands go here
 
-%% Journal abbreviations
-\bibliographystyle{aasjournal}
-
 \title[Short title]{Title of document}
 
 \author{
@@ -44,10 +41,20 @@ available in the \LaTeX\ load path.
 \section{Introduction}
 
 Now write your document as you would normally write it.
+Different citation schemes are supported, and the default bibliography style is declared by the class.
+
+\verb|\citellp|: \citellp{LPM-17, LSE-30} \\
+\verb|\citell|: (SRD; \citell{LPM-17,LSE-29}) \\
+\verb|\citep[][]|: \citep[e.g.,][are interesting]{LPM-17,LSE-29} \\
+\verb|\cite|: \cite{LPM-17,LSE-29}
 
 Font checking: \texttt{Fixed width font}.
 
 Math checking: $A = \pi r^2 \mathrm{(math roman)}$
 
+% Include all the relevant bib files.
+% lsst is for DocuShare and DMTN entries.
+% refs_ads is for entries coming from ADS.
+\bibliography{lsst,refs,books,refs_ads}
 
 \end{document}

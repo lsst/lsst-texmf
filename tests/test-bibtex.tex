@@ -26,10 +26,13 @@ Bibtex will issue Warnings but the build will only be stopped if Errors are loca
 
 Test the standard references to baseline documents: (\SRD), \DPDD, \LSR, \OSS, \DMSR, \appsUMLdomain, \appsUMLusecase, \SUI, \DMSD, \MOPSD, \DMMD, \DMOps, (\SDQAP), \NewPCP, \UCAL.
 
+\verb|\citellp|: \citellp{LPM-17, LSE-30} \\
+\verb|\citell|: (SRD; \citell{LPM-17,LSE-29}) \\
+\verb|\citep[][]|: \citep[e.g.,][are interesting]{LPM-17,LSE-29} \\
+\verb|\cite|: \cite{LPM-17,LSE-29}
 
 \nocite{*}
 
-\bibliographystyle{gaia_aa}
 \bibliography{lsst,refs,books,refs_ads}
 
 \end{document}

@@ -2,6 +2,7 @@
 %% This is file `gaia_aa.bst',
 %% generated with the docstrip utility.
 %%
+%% This version copied back from lsst_aa.bst to support DocuShare bibitem.
 %% This is based on aa.bst and has been altered for Gaia use by DWE.
 %%
 %% The original source files were:
@@ -74,6 +75,8 @@ ENTRY
     key
     livelinknumber
     livelinkshortnumber
+    docusharenumber
+    docushareshortnumber
     month
     note
     number
@@ -703,6 +706,14 @@ FUNCTION {format.livelinknumber}
   "\\ \texttt{ " livelinknumber * "}" *
 }
 
+% New function for changing font of DocuShare number (also makes it
+% unhyphenatable) DWE 25/10/07
+
+FUNCTION {format.docusharenumber}
+{
+  "\textsf{ " docusharenumber * "}" *
+}
+
 FUNCTION {format.title}
 { title "title" bibinfo.check
   duplicate$ empty$ 'skip$
@@ -832,6 +843,10 @@ FUNCTION {output.bibitem}
   {}
   {"\textbf{[" livelinkshortnumber * "]}" * output}
   if$
+  docushareshortnumber empty$
+  {}
+  {"\textbf{[" docushareshortnumber * "]}" * output}
+  if$
 }
 
 FUNCTION {n.dashify}
@@ -886,7 +901,7 @@ FUNCTION {format.btitle}
 { title "title" bibinfo.check
   duplicate$ empty$ 'skip$
     {
-    " {\em " swap$ * "}" *
+    " \emph{ " swap$ * "}" *
     }
   if$
 }
@@ -1392,6 +1407,44 @@ FUNCTION {livelink}
   fin.entry
 }
 
+% New BibTeX type for LSST DocuShare. Initially copied from livelink entry.
+
+FUNCTION {docushare}
+{ output.bibitem
+
+% Editor section added to code with FM-030 DWE 8/1/08
+
+  author empty$
+    { format.editors "author and editor" output.check
+      editor format.key output
+      add.blank
+    }
+    { format.authors output.nonnull
+      crossref missing$
+        { "author and editor" editor either.or.check }
+        'skip$
+      if$
+    }
+  if$
+%  format.authors "author" output.check
+%  author format.key output
+% Year reinstated DWE 26/11/07
+  format.date "year" output.check
+% date.block
+  format.btitle
+  "title" output.check
+% DocuShare bit goes here rather than "Tech. rep."
+%  format.tr.number output.nonnull
+  format.docusharenumber "docusharenumber" bibinfo.warn output
+  docushareshortnumber "docushareshortnumber" bibinfo.warn pop$
+  url "url" bibinfo.warn pop$
+% I don't think that we need the following two fields DWE 24 Oct 2007
+%  institution "institution" bibinfo.warn output
+%  address "address" bibinfo.check output
+  format.note output
+  fin.entry
+}
+
 FUNCTION {unpublished}
 { output.bibitem
   format.authors "author" output.check
@@ -1495,15 +1548,20 @@ FUNCTION {calc.short.authors}
 
 % This is where the short form of the LiveLink number gets inserted into
 % the system DWE 24/10/07
+% Supports both docushare and livelink numbers (with preference for docushare)
 
 FUNCTION {calc.label}
 { calc.short.authors
   short.list
   "("
   *
-  livelinkshortnumber empty$
-    { year duplicate$ empty$}
-    { livelinkshortnumber duplicate$ empty$}
+  docushareshortnumber empty$
+    { livelinkshortnumber empty$
+      { year duplicate$ empty$}
+      { livelinkshortnumber duplicate$ empty$}
+      if$
+    }
+    { docushareshortnumber duplicate$ empty$}
   if$
 
   short.list key field.or.null = or
