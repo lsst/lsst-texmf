@@ -368,3 +368,8 @@ Some things to remember:
   This file should be used for arXiv entries obtained from ADS.
 * :file:`refs.bib` should be used for non-LSST references that can not be located on ADS.
 * :file:`books.bib` should be used for books that are not indexed by ADS.
+
+.. envvar:: TEXMFHOME
+
+  Environment variable used to specify the search path for per-user Latex style files.
+  More details on this and other Latex environment variables can be found at the `TexLive Guide <https://www.tug.org/texlive/doc/texlive-en/texlive-en.html>`_.
