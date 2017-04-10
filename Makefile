@@ -1,8 +1,8 @@
 
 EXAMPLES = \
-Example_presentation.tex \
-Example-beamer-desc.tex \
-Example-beamer-LSST2016.tex \
+presentation.tex \
+beamer-desc.tex \
+beamer-LSST2016.tex \
 LDM-nnn.tex
 
 TESTFILES = \

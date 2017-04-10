@@ -9,9 +9,9 @@
 *.fdb_latexmk
 *.bbl
 *.blg
-/Example-beamer-LSST2016.pdf
-/Example-beamer-desc.pdf
-/Example_presentation.pdf
+/beamer-LSST2016.pdf
+/beamer-desc.pdf
+/presentation.pdf
 /LDM-nnn.pdf
 /test-bibtex.pdf
 examples/*.pdf
