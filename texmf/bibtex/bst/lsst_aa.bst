@@ -74,8 +74,7 @@ ENTRY
     key
     livelinknumber
     livelinkshortnumber
-    docusharenumber
-    docushareshortnumber
+    handle
     month
     note
     number
@@ -660,8 +659,11 @@ FUNCTION {format.editors}
 FUNCTION {format.note}
 {
   url empty$
-    'skip$
-%   Put URL on a new line DWE 24/10/07
+    { handle empty$
+        'skip$
+        { "\urlprefix\url{https://ls.st/" handle * "}" * output }
+      if$
+    }
     { "\urlprefix\url{" url * "}" * output }
   if$
  note empty$
@@ -708,9 +710,12 @@ FUNCTION {format.livelinknumber}
 % New function for changing font of DocuShare number (also makes it
 % unhyphenatable) DWE 25/10/07
 
-FUNCTION {format.docusharenumber}
+FUNCTION {format.handle}
 {
-  "\textsf{ " docusharenumber * "}" *
+  handle empty$
+  {"Missing document handle for " cite$ * warning$ ""}
+  {"\textsf{ " handle * "}" *}
+  if$
 }
 
 FUNCTION {format.title}
@@ -842,9 +847,9 @@ FUNCTION {output.bibitem}
   {}
   {"\textbf{[" livelinkshortnumber * "]}" * output}
   if$
-  docushareshortnumber empty$
+  handle empty$
   {}
-  {"\textbf{[" docushareshortnumber * "]}" * output}
+  {"\textbf{[" handle * "]}" * output}
   if$
 }
 
@@ -1425,21 +1430,10 @@ FUNCTION {docushare}
       if$
     }
   if$
-%  format.authors "author" output.check
-%  author format.key output
-% Year reinstated DWE 26/11/07
   format.date "year" output.check
-% date.block
   format.btitle
   "title" output.check
-% DocuShare bit goes here rather than "Tech. rep."
-%  format.tr.number output.nonnull
-  format.docusharenumber "docusharenumber" bibinfo.warn output
-  docushareshortnumber "docushareshortnumber" bibinfo.warn pop$
-  url "url" bibinfo.warn pop$
-% I don't think that we need the following two fields DWE 24 Oct 2007
-%  institution "institution" bibinfo.warn output
-%  address "address" bibinfo.check output
+  format.handle output
   format.note output
   fin.entry
 }
@@ -1554,13 +1548,13 @@ FUNCTION {calc.label}
   short.list
   "("
   *
-  docushareshortnumber empty$
+  handle empty$
     { livelinkshortnumber empty$
       { year duplicate$ empty$}
       { livelinkshortnumber duplicate$ empty$}
       if$
     }
-    { docushareshortnumber duplicate$ empty$}
+    { handle duplicate$ empty$}
   if$
 
   short.list key field.or.null = or
