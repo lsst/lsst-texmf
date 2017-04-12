@@ -4,6 +4,9 @@ This repository contains Latex class and style files that can be used to create 
 To use these class files check out this repository and set `$TEXMFLOCAL` to the location of the `texmf` subdirectory.
 Template files with example usage can be found in the `examples` directory.
 
+For help on using the Latex classes, see [the user guide](docs/index.rst).
+
+
 *Developer note:*
 
 If adding or removing files from the `texmf` directory, please remember to run the `mktexlsr` command and commit the new version of `ls-R`.
