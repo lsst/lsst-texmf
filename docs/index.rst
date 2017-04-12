@@ -228,10 +228,29 @@ This enables a single known set of references to exist.
 
 References can be cited using the following commands:
 
-* ``\citell`` should be used for LSST references (DocuShare and tech note).
+* ``\citeds`` should be used for LSST DocuShare documents (and in the future tech notes).
   The output will show the document handle rather than the reference number.
-* ``\citellp`` is the same as ``\citell`` but adds parentheses around the document handle.
+* ``\citedsp`` is the same as ``\citeds`` but adds parentheses around the document handle.
 * ``\citep`` should be used for non-LSST references.
+
+The following Latex,
+
+.. code-block:: latex
+
+  \citeds{LDM-151},
+  \citeds[SRD]{LPM-17},
+  \citedsp{LDM-151},
+  \citedsp[DMSR]{LSE-61},
+  \citep{LDM-151},
+  \citep[e.g.,]{LSE-163}
+
+results in this output:
+
+::
+
+  LDM-151, SRD, [LDM-151], [DMSR], [1], [e.g., 3]
+
+where the final two examples would be the reference number.
 
 .. note::
 

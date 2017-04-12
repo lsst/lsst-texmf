@@ -965,10 +965,6 @@ No actions have been identified.}
 \providecommand{\directory}[1]{{\em #1}}
 %\providecommand{\code}[1]{{\tt #1}}
 
-% new bib
-\newcommand{\citell}{\citeyear}
-\newcommand{\citellp}{\citeyearpar}
-
 \renewcommand{\vec}[1]{\ensuremath{\mathchoice{\mbox{\boldmath$\displaystyle#1$}}
 {\mbox{\boldmath$\textstyle#1$}}
 {\mbox{\boldmath$\scriptstyle#1$}}
@@ -1056,31 +1052,55 @@ No actions have been identified.}
 \newcommand{\VOEvents}{\code{VOEvents}\xspace}
 \newcommand{\transSNR}{5\xspace}
 
-% Command to link to a document in Docushare. Pass an LSST document handle as argument, or a document number
+% Command to link to a document in Docushare. Pass an LSST document handle as argument, or a document number.
+% This will not result in a references entry.
 \newcommand{\ds}[2]{{\color{blue} \href{https://docushare.lsstcorp.org/docushare/dsweb/Get/#1}{#2}}\xspace}
 
-% Command to link to a Docushare document via a citation. This is preferred over \ds as it allows the document to be discovered in the references list. No parentheses are added around the supplied text, matching \ds. If both arguments are equal, a standard \citell citation is used. If they differ, \nocite is used with \ds. Blue text is used.
-\newcommand{\dscite}[2]{{\color{blue}
-\IfStrEq{#1}{#2}%
-{\citell{#1}}%
-{\nocite{#1}\ds{#1}{#2}}%
+% Command to link to a Docushare document via a citation.
+
+% \citeds is a "docushare citation" where the cite label used
+% is the document handle rather than the year.
+% citell is the Gaia version for citing livelink.
+% The livelink variants are deprecated.
+\newcommand{\citell}{\citeyear}
+\newcommand{\citellp}{\citeyearpar}
+
+
+% \citeds is preferred over \ds as it allows the document to be discovered in the references list.
+% An optional argument allows the document handle to be replaced with alternate text.
+% No parentheses are added around the supplied text, matching \ds, and the alternate text is blue.
+% Parentheses will be added with the \citedsp variant.
+
+% \citeds[AltText]{Handle}
+\newcommand{\citeds}[2][@alttext@]{{%
+\IfStrEq{#1}{@alttext@}%
+{\citeyear{#2}}%
+{\nocite{#2}\ds{#2}{#1}}%
 }\xspace}
 
-\newcommand{\SRD}{\dscite{LPM-17}{SRD}}
-\newcommand{\DPDD}{\dscite{LSE-163}{DPDD}}
-\newcommand{\LSR}{\dscite{LSE-29}{LSR}}
-\newcommand{\OSS}{\dscite{LSE-30}{OSS}}
-\newcommand{\DMSR}{\dscite{LSE-61}{DMSR}}
-\newcommand{\appsUMLdomain}{\dscite{LDM-133}{LDM-133}}
-\newcommand{\appsUMLusecase}{\dscite{LDM-134}{LDM-134}}
-\newcommand{\SUI}{\dscite{LDM-131}{SUID}}
-\newcommand{\DMSD}{\dscite{LDM-148}{DMSD}}
-\newcommand{\MOPSD}{\dscite{LDM-156}{MOPSD}}
-\newcommand{\DMMD}{\dscite{LDM-152}{DMMD}}
-\newcommand{\DMOps}{\dscite{LDM-230}{DM OpsCon}}
-\newcommand{\SDQAP}{\dscite{LSE-63}{LSE-63}}
-\newcommand{\NewPCP}{\dscite{LSE-180}{LSE-180}}
-\newcommand{\UCAL}{\dscite{Document-15125}{UCAL}}
+% Add [] around the citation text
+\newcommand{\citedsp}[2][@alttext@]{{[%
+\IfStrEq{#1}{@alttext@}%
+{\citeds{#2}}%
+{\citeds[#1]{#2}}%
+}]\xspace}
+
+
+\newcommand{\SRD}{\citeds[SRD]{LPM-17}}
+\newcommand{\DPDD}{\citeds[DPDD]{LSE-163}}
+\newcommand{\LSR}{\citeds[LSR]{LSE-29}}
+\newcommand{\OSS}{\citeds[OSS]{LSE-30}}
+\newcommand{\DMSR}{\citeds[DMSR]{LSE-61}}
+\newcommand{\appsUMLdomain}{\citeds{LDM-133}}
+\newcommand{\appsUMLusecase}{\citeds{LDM-134}}
+\newcommand{\SUI}{\citeds[SUID]{LDM-131}}
+\newcommand{\DMSD}{\citeds[DMSD]{LDM-148}}
+\newcommand{\MOPSD}{\citeds[MOPSD]{LDM-156}}
+\newcommand{\DMMD}{\citeds[DMMD]{LDM-152}}
+\newcommand{\DMOps}{\citeds[DM OpsCon]{LDM-230}}
+\newcommand{\SDQAP}{\citeds{LSE-63}}
+\newcommand{\NewPCP}{\citeds{LSE-180}}
+\newcommand{\UCAL}{\citeds[UCAL]{Document-15125}}
 
 \newcommand{\wbsSFM}{WBS 02C.03.01}
 \newcommand{\wbsAssocP}{WBS 02C.03.02}
