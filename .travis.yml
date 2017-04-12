@@ -4,10 +4,22 @@ dist: trusty
 matrix:
   include:
     - python: "3.5"
+      env: LTD_MASON_BUILD=true
 before_install:
   - "sudo apt-get update && sudo apt-get install -y --no-install-recommends texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended latexmk poppler-utils latex-xcolor latex-beamer lmodern texlive-xetex texlive-generic-recommended"
 install:
-  - echo Nothing extra to install
+  - pip install -r docs/requirements.txt
+  - pip install "ltd-mason>=0.2,<0.3"
 script:
   - export TEXMFLOCAL=./texmf
   - make
+  - cd docs
+  - sphinx-build -b html -a -n -d _build/doctree . _build/html
+  - cd ..
+after_success:
+  - ltd-mason-travis --html-dir docs/_build/html
+env:
+  global:
+    - LTD_MASON_BUILD=false  # disable builds in regular text matrix
+    - LTD_MASON_PRODUCT="lsst-texmf"
+    # Add AWS and LTD Keeper credentials as encrypted secrets here
