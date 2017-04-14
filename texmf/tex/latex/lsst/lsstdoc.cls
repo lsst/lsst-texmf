@@ -911,6 +911,7 @@ No actions have been identified.}
 \def\prd{Phys.~Rev.~D}     % Physical Review D
 \def\physrep{Phys.~Rep.}   % Physics Reports
 \def\pasp{PASP}            % Publications of the Astronomical Society of the Pacific
+\def\procspie{Proc.\ SPIE} % Proceedings of the SPIE
 
 \def\degr{\hbox{$^\circ$}}
 \def\arcmin{\hbox{$^\prime$}}
