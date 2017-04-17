@@ -1,7 +1,7 @@
 # LSST Latex document class files
 
 ## Users
-This repository contains Latex class and style files that can be used to create documents matching (reasonably closely) the LSST documentation standard. To use these class files clone this repository and set `$TEXMFLOCAL` to the location of the `texmf` subdirectory. For example, using `bash` or `sh`:
+This repository contains Latex class and style files that can be used to create documents matching (reasonably closely) the LSST documentation standard. To use these class files clone this repository and set `$TEXMFHOME` to the location of the `texmf` subdirectory. For example, using `bash` or `sh`:
 ```bash
 export TEXMFHOME=`pwd`/lsst-texmf/texmf
 ```
