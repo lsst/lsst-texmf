@@ -121,6 +121,9 @@ The options for the document class control some of the layout:
   For backwards compatibility reasons this is not the default, and furthermore, without this option the page style must be explicitly set to ``arabic`` by the document author.
   Leaving out this option enables the author to have more control over page counts and when the document properly begins.
   It is expected that most new documents written will enable this option.
+* ``authoryear`` enables author/year citations for the ``natbib`` package.
+  The default is to use numbered citations.
+  DocuShare references (via :command:`\citeds`) will still report the handle.
 
 This can be followed by any document-specific package imports and macros.
 The document metadata must then be defined.
