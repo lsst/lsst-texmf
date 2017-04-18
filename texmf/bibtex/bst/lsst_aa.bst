@@ -1208,8 +1208,10 @@ FUNCTION {article}
       format.pages output
     }
   if$
-  format.adsurl output
   format.note output
+  format.eprint "eprint" output.check.nocomma
+  format.doi "doi" output.check.nocomma
+  format.adsurl output
   fin.entry
 }
 FUNCTION {book}
@@ -1285,6 +1287,8 @@ FUNCTION {inbook}
   if$
   format.edition output
   format.note output
+  format.eprint "eprint" output.check.nocomma
+  format.doi "doi" output.check.nocomma
   fin.entry
 }
 
@@ -1307,6 +1311,8 @@ FUNCTION {incollection}
     }
   if$
   format.note output
+  format.eprint "eprint" output.check.nocomma
+  format.doi "doi" output.check.nocomma
   fin.entry
 }
 % Added adsurl output if it exists. DWE 13/8/08
@@ -1332,8 +1338,10 @@ FUNCTION {inproceedings}
       format.pages output
     }
   if$
-  format.adsurl output
   format.note output
+  format.eprint "eprint" output.check.nocomma
+  format.doi "doi" output.check.nocomma
+  format.adsurl output
   fin.entry
 }
 FUNCTION {conference} { inproceedings }
