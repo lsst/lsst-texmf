@@ -1,0 +1,62 @@
+\documentclass[DM,lsstdraft,authoryear,toc]{lsstdoc}
+
+% Package imports go here
+
+% Local commands go here
+
+\title[Short title]{Title of document}
+
+\author{
+A.~Author,
+B.~Author,
+and
+C.~Author}
+
+\setDocRef{DMTN-nnn}
+\date{\today}
+\setDocRevision{TBD}
+\setDocStatus{draft}
+
+\setDocAbstract{%
+This document demonstrates how to use the LSST \LaTeX\ class files to make a Data Management
+tech note. Build this document in the normal way, making sure that the class file is
+available in the \LaTeX\ load path.
+}
+
+% Change history defined here. Will be inserted into
+% correct place with \maketitle
+% OLDEST FIRST: VERSION, DATE, DESCRIPTION, OWNER NAME
+\setDocChangeRecord{%
+\addtohist{1}{2017-04-17}{Initial release. Based on LDM example}{Tim Jenness}
+\addtohist{2}{yyyy-mm-dd}{Future changes}{Future person}
+}
+
+\begin{document}
+
+% Create the title page
+% Table of contents will be added automatically if "toc" class option
+% is used.
+\maketitle
+
+\section{Introduction}
+
+Now write your document as you would normally write it.
+Different citation schemes are supported, and the default bibliography style is declared by the class.
+In this example we have enabled author-year citing.
+Use \verb|\citeds| for citing docushare documents.
+
+\verb|\citedsp|: \citedsp{LPM-17, LSE-30} \\
+\verb|\citeds|: (SRD; \citeds{LPM-17,LSE-29}) \\
+\verb|\citep[][]|: \citep[e.g.,][are interesting]{2009arXiv0912.0201L,2016SPIE.9913E..0GJ} \\
+\verb|\cite|: \cite{LPM-51,Wang:2011:QDS:2063348.2063364}
+
+Font checking: \texttt{Fixed width font}.
+
+Math checking: $A = \pi r^2 \mathrm{(math roman)}$
+
+% Include all the relevant bib files.
+% lsst is for DocuShare and DMTN entries.
+% refs_ads is for entries coming from ADS.
+\bibliography{lsst,refs,books,refs_ads}
+
+\end{document}

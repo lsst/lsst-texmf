@@ -50,7 +50,6 @@
 
 %\RequirePackage[linkcolor=blue,colorlinks=true]{hyperref}
 \RequirePackage{hyperref}
-\RequirePackage[numbers]{natbib}
 \RequirePackage{numprint}
 \RequirePackage[english,iso]{isodate}
 \RequirePackage{titlesec}
@@ -90,6 +89,14 @@
     }%
     \@isdrafttrue
 }
+
+% Enable author year cite mode
+\newif\if@authoryear
+\@authoryearfalse
+\DeclareOption{authoryear}{\@authoryeartrue}
+\if@compatibility\else
+\DeclareOption{notoc}{\@authoryearfalse}
+\fi
 
 %
 % Automatically include table of contents in maketitle with the
@@ -476,6 +483,13 @@ revision:\>    \docRevision\\
 }
 
 \ProcessOptions\relax
+
+% Decide on type of natbib citation
+\if@authoryear
+  \usepackage{natbib}
+\else
+  \usepackage[numbers]{natbib}
+\fi
 
 %
 %   Document history
