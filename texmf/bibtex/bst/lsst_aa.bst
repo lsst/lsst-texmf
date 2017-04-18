@@ -63,11 +63,14 @@
 ENTRY
   { address
     adsurl
+    archiveprefix      % used by ADS
     author
     booktitle
     chapter
+    doi
     edition
     editor
+    eprint
     howpublished
     institution
     journal
@@ -686,6 +689,57 @@ FUNCTION {format.note}
     }
   if$
 }
+
+FUNCTION {output.nonnull.nocomma}
+{'s :=
+  output.state mid.sentence =
+    { write$ }
+    { output.state after.block =
+        { ". " *  write$
+          newline$
+%          "\newblock " write$
+        }
+        { output.state before.all =
+            'write$
+            { ", " * write$ }
+          if$
+        }
+      if$
+      mid.sentence 'output.state :=
+    }
+  if$
+  s
+}
+
+FUNCTION {output.check.nocomma}
+{ 't :=
+  duplicate$ empty$
+    'pop$ % or warn with { pop$ "empty " t * " in " * cite$ * warning$ }
+    'output.nonnull.nocomma
+  if$
+}
+
+% Format eprints. This code taken from the MNRAS bst file.
+
+FUNCTION {format.eprint}
+{ eprint empty$
+    { "" }
+    { " (\mn@eprint {"
+      archiveprefix empty$
+        { "" }
+        { archiveprefix }
+      if$
+      * "} {" * eprint * "})" * }
+    if$
+}
+
+FUNCTION {format.doi}
+{ doi empty$
+    { "" }
+    { ", \mn@doi{" * doi * "}" }
+    if$
+}
+
 
 % New function for displaying an ADS URL link DWE 24/10/07
 % If adsurl is empty, you still need to put something on the stack.
@@ -1750,12 +1804,25 @@ FUNCTION {begin.bib}
   write$ newline$
   "\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi"
   write$ newline$
+  "\makeatletter" write$ newline$
+  "\relax" write$ newline$
+  % Definitions copied from mnras.bst
+  % we retain the \mn@ to make it easier to update in the future.
+"\def\mn@urlcharsother{\let\do\@makeother \do\$\do\&\do\#\do\^\do\_\do\%\do\~}" write$ newline$
+"\def\mn@doi{\begingroup\mn@urlcharsother \@ifnextchar [ {\mn@doi@} {\mn@doi@[]}}" write$ newline$
+"\def\mn@doi@[#1]#2{\def\@tempa{#1}\ifx\@tempa\@empty \href {http://doi.org/#2} {doi:#2}\else \href {http://doi.org/#2} {#1}\fi \endgroup}" write$ newline$
+"\def\mn@eprint#1#2{\mn@eprint@#1:#2::\@nil}" write$ newline$
+"\def\mn@eprint@arXiv#1{\href {http://arxiv.org/abs/#1} {\texttt{arXiv:#1}}}" write$ newline$
+"\def\mn@eprint@dblp#1{\href {http://dblp.uni-trier.de/rec/bibtex/#1.xml} {dblp:#1}}" write$ newline$
+"\def\mn@eprint@#1:#2:#3:#4\@nil{\def\@tempa {#1}\def\@tempb {#2}\def\@tempc {#3}\ifx \@tempc \@empty \let \@tempc \@tempb \let \@tempb \@tempa \fi \ifx \@tempb \@empty \def\@tempb {arXiv}\fi \@ifundefined {mn@eprint@\@tempb}{\@tempb:\@tempc}{\expandafter \expandafter \csname mn@eprint@\@tempb\endcsname \expandafter{\@tempc}}}" write$ newline$
+
 }
 EXECUTE {begin.bib}
 EXECUTE {init.state.consts}
 ITERATE {call.type$}
 FUNCTION {end.bib}
 { newline$
+  "\makeatother" write$ newline$
   "\end{thebibliography}" write$ newline$
 }
 EXECUTE {end.bib}
