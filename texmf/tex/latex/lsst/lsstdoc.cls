@@ -478,8 +478,8 @@ revision:\>    \docRevision\\
      \tableofcontents
      \end{spacing}
      \clearpage
-     \pagenumbering{arabic}
    \fi
+   \pagenumbering{arabic}
 }
 
 \ProcessOptions\relax
