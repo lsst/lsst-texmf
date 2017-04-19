@@ -66,7 +66,13 @@
 % Standardize bibliography styling
 \bibliographystyle{lsst_aa}
 
-\definecolor{lsstblue}{RGB}{54, 84, 138}
+% The standard word template uses different blue for
+% title, section headings and the banner.
+% define lsstblue as the banner color
+\definecolor{lsstblue}{RGB}{ 69,106,153}
+\definecolor{lsstsect}{RGB}{ 23, 54, 93}
+\definecolor{lssttitle}{RGB}{ 54, 95,145}
+\definecolor{lssthead}{RGB}{ 79,129,189}
 
 % Switch off the onecolumn and twocolumn options
 \DeclareOption{onecolumn}{\OptionNotUsed}
@@ -366,6 +372,7 @@
    \begin{center}
    \begin{minipage}{1.0\textwidth}
      \begin{center}
+    \color{lssttitle}
     \textsf{\LARGE \bfseries Large Synoptic Survey Telescope (LSST)} \\
     \vspace*{0.5cm}
     \textsf{\Huge \bfseries \@title} \\
@@ -492,7 +499,7 @@ revision:\>    \docRevision\\
      \clearpage
      \pagenumbering{arabic}
      \begin{center}
-     \textsf{\LARGE \color{lsstblue} \bfseries \@title \color{black}}
+     \textsf{\LARGE \color{lssttitle} \bfseries \@title \color{black}}
      \end{center}
    \fi
 }
@@ -619,8 +626,9 @@ revision:\>    \docRevision\\
 \begin{minipage}{7.5in}
 %    \hspace{-1.5cm}\rule{0.55cm}{1.0pt} \lower.1em\hbox{
     \hspace{-1.8cm}\rule{1.4cm}{2.0pt} \lower.1em\hbox{
-	{ \hspace{-0.1cm}\tiny \color{lsstblue}LARGE SYNOPTIC SURVEY TELESCOPE}\hspace{-0.1cm}
+	{ \hspace{-0.1cm}\tiny \color{lssthead}LARGE SYNOPTIC SURVEY TELESCOPE}\hspace{-0.1cm}
    }
+    \color{lsstblue}
     \rule{14.8cm}{2.0pt}
 \end{minipage}
 \vspace{-30pt}
@@ -667,9 +675,9 @@ revision:\>    \docRevision\\
   \if@isdraft
     \color{red}
     DRAFT NOT YET APPROVED
-    \color{lsstblue} --
+    \color{lssthead} --
   \fi
-  \color{lsstblue}
+  \color{lssthead}
   \@controlFootText
   \if@isdraft
     --
@@ -692,21 +700,21 @@ revision:\>    \docRevision\\
   {0mm}%                                        % the indent
   {-10pt \@plus -1pt \@minus -1pt}%             % the beforeskip
   {4pt \@plus 1pt}%                             % the afterskip
-  {\bfseries\Large\color{lsstblue}}}%                           % the style
+  {\bfseries\Large\color{lsstsect}}}%                           % the style
 \renewcommand{\subsection}{\@startsection
   {subsection}%                                 % the name
   {2}%                                          % the level
   {0mm}%                                        % the indent
   {-5pt \@plus -1pt \@minus -1pt}%              % the beforeskip
   {2pt \@plus 1pt}%                             % the afterskip
-  {\bfseries\large\color{lsstblue}}}%                      % the style
+  {\bfseries\large\color{lsstsect}}}%                      % the style
 \renewcommand{\subsubsection}{\@startsection
   {subsubsection}%                              % the name
   {3}%                                          % the level
   {0mm}%                                        % the indent
   {-5pt \@plus -1pt \@minus -1pt}%              % the beforeskip
   {2pt \@plus 1pt}%                             % the afterskip
-  {\bfseries\normalsize\color{lsstblue}}}%                      % the style
+  {\bfseries\normalsize\color{lsstsect}}}%                      % the style
 
 
 \newcommand{\gwptop}[1]{\multicolumn{1}{|l|}{\textbf{#1}}}
