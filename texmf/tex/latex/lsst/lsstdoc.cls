@@ -415,20 +415,32 @@
    \fi
 
 
-   % If this is not a draft and is a controlled document we need to say so
-   \if@isdraft
-     \relax
-   \else
-     \ifx \@controlText \@empty
-       \relax
-     \else
-       \color{black}
-       \begin{spacing}{1.5}
-         \textbf{\small
-         \@controlText
-         }
-       \end{spacing}
+   % If this is a controlled document we need to report that.
+   % For draft controlled documents we splash some red text in appropriate places.
+   \ifx \@controlText \@empty
+     \if@isdraft
+       \begin{center}
+       \color{red}
+       \Large
+       \textbf{D R A F T}
+       \end{center}
      \fi
+   \else
+     \begin{spacing}{1.5}
+       \textbf{\small
+       \if@isdraft
+         \color{red}
+         Draft Revision NOT YET Approved
+         \color{black} --
+       \fi
+       \color{black}
+       \@controlText
+       \if@isdraft
+       -- \color{red} Draft Revision NOT YET Approved
+       \fi
+       \color{black}
+       }
+     \end{spacing}
    \fi
 
    %\rule{\textwidth}{0.5pt} \\[0.5cm]
@@ -627,7 +639,19 @@ revision:\>    \docRevision\\
 \renewcommand{\headrulewidth}{0.0pt}
 
 \renewcommand{\footrulewidth}{1pt}
-\lfoot{}
+
+% If this is not a controlled document we have space for DRAFT in the left and right footer
+\newcommand{\@draftFooterText}{
+\ifx \@controlText \@empty
+  \if@isdraft
+    \color{red}\textbf{D R A F T}
+  \fi
+\fi
+}
+
+\lfoot{\@draftFooterText}
+\rfoot{\@draftFooterText}
+
 \cfoot{
 \ifx \@controlText \@empty
   \relax
@@ -635,19 +659,29 @@ revision:\>    \docRevision\\
 \begin{minipage}{0.9\textwidth}
 \begin{center}
   \vspace*{0.2cm}
-  \color{lsstblue}
-  \small
+  \scriptsize
   \bfseries
+  \if@isdraft
+    \color{red}
+    DRAFT NOT YET APPROVED
+    \color{lsstblue} --
+  \fi
+  \color{lsstblue}
   \@controlFootText
+  \if@isdraft
+    --
+    \color{red}
+    DRAFT NOT YET APPROVED
+  \fi
 \end{center}
 \end{minipage}
 \fi
 \vspace*{-0.25cm}
 \begin{center}
+\color{black}
 \thepage
 \end{center}
 }
-\rfoot{}
 
 \renewcommand{\section}{\@startsection
   {section}%                                    % the name
