@@ -247,6 +247,7 @@
 
 \newcommand{\setDocCompact}[1]{\def\@docCompact{#1}}
 \setDocCompact{}
+\def\@docCompact{false}
 
 \setDocTitle{Set the document title with $\backslash$setDocTitle}
 
