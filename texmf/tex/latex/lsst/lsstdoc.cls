@@ -491,6 +491,9 @@ revision:\>    \docRevision\\
      \end{spacing}
      \clearpage
      \pagenumbering{arabic}
+     \begin{center}
+     \textsf{\LARGE \color{lsstblue} \bfseries \@title \color{black}}
+     \end{center}
    \fi
 }
 
