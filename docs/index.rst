@@ -142,22 +142,27 @@ The date for a draft document can float during development, but should be fixed 
 
   \date{\today}
 
+Some documents, have a secondary title that can be included as follows.
+This is optional.
+
+.. code-block:: latex
+
+  \setDocSubtitle{A subtitle}
+
 The document reference ("document handle" in DocuShare) is set next.
 The ``\setDocRef`` command controls whether the document will be include change control messaging.
 ``LDM`` and ``LSE`` documents are in this category, but a ``DMTN`` will not display change control statements.
-
 
 .. code-block:: latex
 
   \setDocRef{LDM-nnn}
 
-The document status and revision number are not usually required for LSST documentation matching the project style, but currently must be set in the class as a holdover from the Gaia original.
-The document revision is normally included in the change record, and the document status is currently draft (indicated by the use of the ``lsstdraft`` class option), or released (not in draft, change record indicating so).
+Optionally, the document curator can be defined here.
+LSST change-controlled documents do not require this information, but sometimes it is beneficial to indicate a point of contact who is not necessarily the person listed as author or the person most recently mentioned in the change record.
 
 .. code-block:: latex
 
-  \setDocRevision{TBD}
-  \setDocStatus{draft}
+  \setDocCurator{A Person}
 
 The abstract can be defined with this command and will be inserted in the correct place in the document preamble.
 
@@ -170,6 +175,7 @@ The abstract can be defined with this command and will be inserted in the correc
 
 The change record should be updated whenever a document is to be released (by a merge to ``master``).
 For change-controlled documents, the change record should include the relevant RFC or LCR number.
+The revision number should follow the policy defined in :cite:`LPM-51`.
 
 .. code-block:: latex
 

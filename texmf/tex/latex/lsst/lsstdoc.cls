@@ -229,15 +229,8 @@
              {\def\@docShortTitle{#2}}
              {\def\@docShortTitle{#1}}
 }
-
-\newcommand{\docTitle}{No Title}
-\providecommand{\setDocTitle}[2][@shorttitle@]{
-  \def\@docTitle{\Huge #2}
-  \ifthenelse{\equal{@shorttitle@}{#1}}
-             {\def\@docShortTitle{}}
-             {\def\@docShortTitle{#1}}
-  \renewcommand{\docTitle}{#2}
-}
+\title{Set the document title with $\backslash$title}
+\author{Set the document author with $\backslash$author}
 
 \newcommand{\docSubtitle}{No Subtitle}
 \newcommand{\setDocSubtitle}[1]{\def\@docSubtitle{#1}
@@ -249,22 +242,11 @@
 \setDocCompact{}
 \def\@docCompact{false}
 
-\setDocTitle{Set the document title with $\backslash$setDocTitle}
-
 \newcommand{\docDate}{set the date with {$\backslash$}setDocDate}
 \newcommand{\setDocDate}[1]{\renewcommand{\docDate}{#1}}
 
 % allow standard \date{} to work as an alias of \setDocDate
 \renewcommand{\date}[1]{\setDocDate{#1}}
-
-\newcommand{\docIssue}{none}
-\newcommand{\setDocIssue}[1]{\renewcommand{\docIssue}{#1}}
-
-\newcommand{\docStatus}{set the Status with {$\backslash$}setDocStatus}
-\newcommand{\setDocStatus}[1]{\renewcommand{\docStatus}{#1}}
-
-\newcommand{\docRevision}{set the Revision with {$\backslash$}setDocRevision}
-\newcommand{\setDocRevision}[1]{\renewcommand{\docRevision}{#1}}
 
 \newif\if@dmtct
 \@dmtctfalse
@@ -282,15 +264,6 @@
 
 \newcommand{\setDocCurator}[1]{\def\@docCurator{#1}}
 \setDocCurator{}
-
-\newcommand{\setDocAffil}[1]{\def\@docAffil{#1}}
-\setDocAffil{}
-
-\newcommand{\docApprove}{@noapprove@}
-\newcommand{\setDocApprove}[1]{\renewcommand{\docApprove}{#1}}
-
-\newcommand{\docAuthorize}{@noauthorize@}
-\newcommand{\setDocAuthorize}[1]{\renewcommand{\docAuthorize}{#1}}
 
 \newcommand{\docAbstract}{}
 \newcommand{\setDocAbstract}[1]{\renewcommand{\docAbstract}
@@ -335,13 +308,33 @@
    \end{center}
 }
 
+% These commands are not used by LSST but are retained as no-ops for
+% compatibility with earlier usage from Gaia.
+\newcommand{\setDocIssue}[1]{%
+\ClassWarning{lsstdoc}{For setDocIssue please use the Change Record}}
 
+\newcommand{\setDocStatus}[1]{%
+\ClassWarning{lsstdoc}{For setDocStatus use the lsstdraft option to enable draft mode. Document is released by default.}}
+
+\newcommand{\setDocRevision}[1]{%
+\ClassWarning{lsstdoc}{For setDocRevision please use the Change Record}}
+
+\newcommand{\setDocAffil}[1]{%
+\ClassWarning{lsstdoc}{setDocAffil is no longer supported}}
+
+\newcommand{\setDocApprove}[1]{%
+\ClassWarning{lsstdoc}{For setDocApprove please use the Change Record}}
+
+\newcommand{\setDocAuthorize}[1]{%
+\ClassWarning{lsstdoc}{For setDocAuthorize authorized person is implied by document series}}
 
 \newcommand{\mkshorttitle}{
      \begin{center}
-        \@docTitle \\
+        \color{lssttitle}
+        \@title \\
+        \color{black}
         \normalsize {\bf \docAuthor}\\
-	Issue \docIssue.\docRevision ~~ \docDate\\
+	      \docDate\\
      \end{center}
 
 }
@@ -457,30 +450,7 @@
      \else
      \relax
     \fi
-   \color{black}
-   {\large\textsf{
-      \begin{tabbing}
-         XXXXXXXXX: \=\kill
-    \ifx \@docAffil \@empty
-     \relax
-     \else
-         affiliation :\> \@docAffil\\
-    \fi
-    \ifx \@docCurator \@empty
-         \relax
-         \else
-         curator:\> \@docCurator\\
-     \fi
-    \ifthenelse{\equal{@noapprove@}{\docApprove}}%
-    {}{approved by:\> \docApprove\\}%
-    \ifthenelse{\equal{@noauthorize@}{\docAuthorize}}%
-    {}{authorized by:\> \docAuthorize\\}%
-\ifthenelse{\equal{\docIssue}{none}}{\relax}{%
-         issue:\>       \docIssue\\}%
-revision:\>    \docRevision\\
-         status:\>      \docStatus
-      \end{tabbing}
-   }}
+    \color{black}
 
     \ifx \@docCompact \@empty
            \pagebreak
@@ -540,6 +510,11 @@ revision:\>    \docRevision\\
 }{
 \end{longtable}
 \end{small}
+\ifx \@docCurator \@empty
+    \relax
+\else
+    \emph{Document curator:} \@docCurator\\
+\fi
 \clearpage
 %        \ifx \@docCompact \@empty
 %           \pagebreak
@@ -638,7 +613,7 @@ revision:\>    \docRevision\\
 \tiny
 \sffamily
 \begin{tabularx}{\textwidth}{XXr}
-\@docShortTitle & \docRef~ \docStatus & Latest Revision \docDate \\
+\@docShortTitle & \docRef & Latest Revision \docDate \\
 \end{tabularx}
 \end{minipage}
 \end{flushright}
