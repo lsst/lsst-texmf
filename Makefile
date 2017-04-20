@@ -3,6 +3,7 @@ EXAMPLES = \
 presentation.tex \
 beamer-desc.tex \
 beamer-LSST2016.tex \
+DMTN-nnn.tex \
 LDM-nnn.tex
 
 TESTFILES = \
