@@ -361,7 +361,7 @@
     }%
 
    \setlength{\parindent}{0pt}
-   \vspace*{-5cm}
+   \vspace*{-4cm}
    \putlogo
    \vspace*{1cm}
    \begin{center}
@@ -543,19 +543,19 @@
 %
 % Page layout
 %
-\setlength{\textwidth}{6.5in}
-\setlength{\textheight}{8.5in}
-
-\setlength{\topmargin}{0cm}
-\setlength{\oddsidemargin}{0cm}
-\setlength{\evensidemargin}{0cm}
-\setlength{\leftmargin}{1in}
-\setlength{\marginparwidth}{1in}
+% use the "showframe" option to draw margins
+\usepackage{geometry}
+\geometry{textheight=8.5in,
+          letterpaper,
+          textwidth=6.5in,
+          includeall,
+          lmargin=1in,
+          headheight=40pt,
+          headsep=2em,
+          footskip=40pt}
 
 \setlength{\parindent}{0cm}             % No indent at start of paragraphs
 \setlength{\parskip}{\baselineskip}     % Blank line between paragraph
-
-\setlength\headheight{15pt}     % Make space for logo
 
 \pagenumbering{arabic}
 \mark{{}{}}
@@ -582,46 +582,42 @@
 \setcounter{secnumdepth}{5}    % numbering level of sections
 \setcounter{tocdepth}{4}       % appearance level in table of contents
 
+% Header and footer definitions
+
 \pagestyle{fancy}
 
-\addtolength{\headsep}{4.2mm}
-
-% Shift everything up a bit
-\setlength{\topmargin}{-0.5cm}
-
+% Clear all headings
+\fancyhead{}
 \fancyheadoffset{0pt}
-\lhead{
-\color{lsstblue}
- \vspace{-4cm}
-  \IfFileExists{lsst_logo_notext.png}{
-    \resizebox{0.18\textwidth}{!}{\includegraphics{lsst_logo_notext}}
-    %\hspace{5pt}{\bfseries\large\sf{\CU\DU}}
-  } {
-       {\bfseries\large\sf{LSST: \CU\DU}}
-  }\\\vspace{-8pt}
-\color{lsstblue}
+
+% Left heading is the logo and horizontal rule
+\lhead{%
+\includegraphics[width=0.18\textwidth]{lsst_logo_notext}\\
+\vskip -1ex
 \begin{minipage}{7.5in}
-%    \hspace{-1.5cm}\rule{0.55cm}{1.0pt} \lower.1em\hbox{
-    \hspace{-1.8cm}\rule{1.4cm}{2.0pt} \lower.1em\hbox{
-	{ \hspace{-0.1cm}\tiny \color{lssthead}LARGE SYNOPTIC SURVEY TELESCOPE}\hspace{-0.1cm}
-   }
+    \hspace{-1.8cm}
+    \color{lsstblue}
+    \rule{1.4cm}{2.0pt}
+    \lower 1pt
+    \hbox{
+	      {\hspace{-0.1cm}\tiny \color{lsstblue}LARGE SYNOPTIC SURVEY TELESCOPE}
+        \hspace{-0.1cm}
+    }
     \color{lsstblue}
     \rule{14.8cm}{2.0pt}
-\end{minipage}
-\vspace{-30pt}
-\begin{flushright}
-\begin{minipage}{12.5cm}
-\tiny
-\sffamily
-\begin{tabularx}{\textwidth}{XXr}
-\@docShortTitle & \docRef & Latest Revision \docDate \\
-\end{tabularx}
-\end{minipage}
-\end{flushright}
-  \vskip -2\baselineskip
+\end{minipage}%
 }
 
-\rhead{
+% Right heading is the document description.
+\rhead{%
+\begin{minipage}{11.5cm}
+  % The skip is used to go below the horizontal rule from the lhead
+  \vskip 1.2em
+  \tiny
+  \color{lssthead}
+  \sffamily
+  \textbf{\@docShortTitle \hfill \docRef \hfill Latest Revision \docDate}
+\end{minipage}%
 }
 
 \renewcommand{\headrulewidth}{0.0pt}
