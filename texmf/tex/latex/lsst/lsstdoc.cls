@@ -370,13 +370,15 @@
     \color{lssttitle}
     \textsf{\LARGE \bfseries Large Synoptic Survey Telescope (LSST)} \\
     \vspace*{0.5cm}
-    \textsf{\Huge \bfseries \@title} \\
-      \ifx \@docSubtitle \@empty
-       \relax
-    \else
-         \vspace*{1cm}
-         \large\@docSubtitle
-    \fi
+    \begin{spacing}{2}
+      \textsf{\Huge \bfseries \@title} \\
+        \ifx \@docSubtitle \@empty
+         \relax
+      \else
+           \vspace*{1cm}
+           \large\@docSubtitle
+      \fi
+    \end{spacing}
     \vspace*{2cm}
 
     \color{black}
