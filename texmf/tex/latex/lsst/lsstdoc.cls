@@ -73,6 +73,7 @@
 \definecolor{lsstsect}{RGB}{ 23, 54, 93}
 \definecolor{lssttitle}{RGB}{ 54, 95,145}
 \definecolor{lssthead}{RGB}{ 79,129,189}
+\definecolor{lsstfoot}{RGB}{ 31, 73,125}
 
 % Switch off the onecolumn and twocolumn options
 \DeclareOption{onecolumn}{\OptionNotUsed}
@@ -360,7 +361,7 @@
     }%
 
    \setlength{\parindent}{0pt}
-   \vspace*{-5cm}
+   \vspace*{-4cm}
    \putlogo
    \vspace*{1cm}
    \begin{center}
@@ -542,19 +543,19 @@
 %
 % Page layout
 %
-\setlength{\textwidth}{6.5in}
-\setlength{\textheight}{8.5in}
-
-\setlength{\topmargin}{0cm}
-\setlength{\oddsidemargin}{0cm}
-\setlength{\evensidemargin}{0cm}
-\setlength{\leftmargin}{1in}
-\setlength{\marginparwidth}{1in}
+% use the "showframe" option to draw margins
+\usepackage{geometry}
+\geometry{textheight=8.5in,
+          letterpaper,
+          textwidth=6.5in,
+          includeall,
+          lmargin=1in,
+          headheight=40pt,
+          headsep=2em,
+          footskip=40pt}
 
 \setlength{\parindent}{0cm}             % No indent at start of paragraphs
 \setlength{\parskip}{\baselineskip}     % Blank line between paragraph
-
-\setlength\headheight{15pt}     % Make space for logo
 
 \pagenumbering{arabic}
 \mark{{}{}}
@@ -581,46 +582,76 @@
 \setcounter{secnumdepth}{5}    % numbering level of sections
 \setcounter{tocdepth}{4}       % appearance level in table of contents
 
+% Header and footer definitions
+
 \pagestyle{fancy}
 
-\addtolength{\headsep}{4.2mm}
+% Clear all headings
+\fancyhead{}
 
-% Shift everything up a bit
-\setlength{\topmargin}{-0.5cm}
+% Expand the width of the header into the margins by 1.8cm on each side
+\newlength{\headextrawidth}
+\setlength{\headextrawidth}{1.8cm}
+\fancyhfoffset[LH,RH]{\headextrawidth}
 
-\fancyheadoffset{0pt}
-\lhead{
-\color{lsstblue}
- \vspace{-4cm}
-  \IfFileExists{lsst_logo_notext.png}{
-    \resizebox{0.18\textwidth}{!}{\includegraphics{lsst_logo_notext}}
-    %\hspace{5pt}{\bfseries\large\sf{\CU\DU}}
-  } {
-       {\bfseries\large\sf{LSST: \CU\DU}}
-  }\\\vspace{-8pt}
-\color{lsstblue}
-\begin{minipage}{7.5in}
-%    \hspace{-1.5cm}\rule{0.55cm}{1.0pt} \lower.1em\hbox{
-    \hspace{-1.8cm}\rule{1.4cm}{2.0pt} \lower.1em\hbox{
-	{ \hspace{-0.1cm}\tiny \color{lssthead}LARGE SYNOPTIC SURVEY TELESCOPE}\hspace{-0.1cm}
-   }
+% Dynamically calculate the spacing so that it is driven solely by
+% the amount of overhang required and the width of the logo.
+\newlength{\lsstheadlogowidth}
+\setlength{\lsstheadlogowidth}{0.18\textwidth}
+
+% Total width of header minipage
+\newlength{\lsstheadwidth}
+\setlength{\lsstheadwidth}{2\headextrawidth + \textwidth}
+
+% Horizontal offset of logo into header
+\newlength{\lsstheadlogooffset}
+\setlength{\lsstheadlogooffset}{\headextrawidth}
+
+% Calculate space taken up by the LSST header text
+\newlength{\lsstheadertextwidth}
+\newcommand{\headertext}{\tiny LARGE SYNOPTIC SURVEY TELESCOPE}
+
+% Include space around the text width calculation
+\settowidth{\lsstheadertextwidth}{\headertext}
+
+% Additional space between rule and header LSST text
+\newlength{\lsstheadergap}
+\setlength{\lsstheadergap}{0.0cm}
+
+% Length of first part of ruler depends on text being centred below the logo.
+\newlength{\lsstleftheadrule}
+\setlength{\lsstleftheadrule}{\lsstheadlogooffset + 0.5\lsstheadlogowidth -
+                              0.5\lsstheadertextwidth - \lsstheadergap}
+
+% Define command to fill the rest of the line with a rule of specified thickness
+\def\vhrulefill#1{\leavevmode\leaders\hrule\@height#1\hfill \kern\z@}
+
+% Left heading is the logo and horizontal rule
+\lhead{%
+\hspace{\lsstheadlogooffset}
+\includegraphics[width=\lsstheadlogowidth]{lsst_logo_notext}\\
+\vskip -1ex
+\begin{minipage}{\lsstheadwidth}
     \color{lsstblue}
-    \rule{14.8cm}{2.0pt}
-\end{minipage}
-\vspace{-30pt}
-\begin{flushright}
-\begin{minipage}{12.5cm}
-\tiny
-\sffamily
-\begin{tabularx}{\textwidth}{XXr}
-\@docShortTitle & \docRef & Latest Revision \docDate \\
-\end{tabularx}
-\end{minipage}
-\end{flushright}
-  \vskip -2\baselineskip
+    \rule{\lsstleftheadrule}{2.0pt}
+    \lower 1pt
+    \hbox{\hspace{\lsstheadergap}\headertext\hspace{\lsstheadergap}}
+    \color{lsstblue}
+    \vhrulefill{2.0pt}
+\end{minipage}%
 }
 
-\rhead{
+% Right heading is the document description.
+\rhead{%
+\begin{minipage}{13.3cm}
+  % The skip is used to go below the horizontal rule from the lhead
+  \vskip 1.2em
+  \tiny
+  \color{lssthead}
+  \sffamily
+  \textbf{\@docShortTitle \hfill \docRef \hfill Latest Revision \docDate}
+  \hspace{\headextrawidth}
+\end{minipage}%
 }
 
 \renewcommand{\headrulewidth}{0.0pt}
@@ -651,9 +682,9 @@
   \if@isdraft
     \color{red}
     DRAFT NOT YET APPROVED
-    \color{lssthead} --
+    \color{lsstfoot} --
   \fi
-  \color{lssthead}
+  \color{lsstfoot}
   \@controlFootText
   \if@isdraft
     --
@@ -662,12 +693,10 @@
   \fi
 \end{center}
 \end{minipage}
+\\
 \fi
-\vspace*{-0.25cm}
-\begin{center}
 \color{black}
 \thepage
-\end{center}
 }
 
 \renewcommand{\section}{\@startsection
