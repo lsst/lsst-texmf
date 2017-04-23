@@ -594,6 +594,7 @@
 
 % Left heading is the logo and horizontal rule
 \lhead{%
+\hskip 1.8cm
 \includegraphics[width=0.18\textwidth]{lsst_logo_notext}\\
 \vskip -1ex
 \begin{minipage}{3.6cm+\textwidth}
