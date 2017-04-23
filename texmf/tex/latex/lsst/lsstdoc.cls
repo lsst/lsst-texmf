@@ -659,12 +659,10 @@
   \fi
 \end{center}
 \end{minipage}
+\\
 \fi
-\vspace*{-0.25cm}
-\begin{center}
 \color{black}
 \thepage
-\end{center}
 }
 
 \renewcommand{\section}{\@startsection
