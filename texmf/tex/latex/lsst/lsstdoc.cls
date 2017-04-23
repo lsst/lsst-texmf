@@ -602,7 +602,7 @@
     \rule{1.4cm}{2.0pt}
     \lower 1pt
     \hbox{
-	      {\hspace{-0.1cm}\tiny \color{lsstblue}LARGE SYNOPTIC SURVEY TELESCOPE}
+        {\hspace{-0.1cm}\tiny \color{lsstblue}LARGE SYNOPTIC SURVEY TELESCOPE}
         \hspace{-0.1cm}
     }
     \color{lsstblue}
