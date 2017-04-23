@@ -588,14 +588,15 @@
 
 % Clear all headings
 \fancyhead{}
-\fancyheadoffset{0pt}
+
+% Expand the width of the header into the margins by 1.8cm on each side
+\fancyhfoffset[LH,RH]{1.8cm}
 
 % Left heading is the logo and horizontal rule
 \lhead{%
 \includegraphics[width=0.18\textwidth]{lsst_logo_notext}\\
 \vskip -1ex
-\begin{minipage}{7.5in}
-    \hspace{-1.8cm}
+\begin{minipage}{3.6cm+\textwidth}
     \color{lsstblue}
     \rule{1.4cm}{2.0pt}
     \lower 1pt
@@ -610,13 +611,14 @@
 
 % Right heading is the document description.
 \rhead{%
-\begin{minipage}{11.5cm}
+\begin{minipage}{13.3cm}
   % The skip is used to go below the horizontal rule from the lhead
   \vskip 1.2em
   \tiny
   \color{lssthead}
   \sffamily
   \textbf{\@docShortTitle \hfill \docRef \hfill Latest Revision \docDate}
+  \hspace{1.8cm}
 \end{minipage}%
 }
 
