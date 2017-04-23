@@ -590,23 +590,54 @@
 \fancyhead{}
 
 % Expand the width of the header into the margins by 1.8cm on each side
-\fancyhfoffset[LH,RH]{1.8cm}
+\newlength{\headextrawidth}
+\setlength{\headextrawidth}{1.8cm}
+\fancyhfoffset[LH,RH]{\headextrawidth}
+
+% Dynamically calculate the spacing so that it is driven solely by
+% the amount of overhang required and the width of the logo.
+\newlength{\lsstheadlogowidth}
+\setlength{\lsstheadlogowidth}{0.18\textwidth}
+
+% Total width of header minipage
+\newlength{\lsstheadwidth}
+\setlength{\lsstheadwidth}{2\headextrawidth + \textwidth}
+
+% Horizontal offset of logo into header
+\newlength{\lsstheadlogooffset}
+\setlength{\lsstheadlogooffset}{\headextrawidth}
+
+% Calculate space taken up by the LSST header text
+\newlength{\lsstheadertextwidth}
+\newcommand{\headertext}{\tiny LARGE SYNOPTIC SURVEY TELESCOPE}
+
+% Include space around the text width calculation
+\settowidth{\lsstheadertextwidth}{\headertext}
+
+% Additional space between rule and header LSST text
+\newlength{\lsstheadergap}
+\setlength{\lsstheadergap}{0.0cm}
+
+% Length of first part of ruler depends on text being centred below the logo.
+\newlength{\lsstleftheadrule}
+\setlength{\lsstleftheadrule}{\lsstheadlogooffset + 0.5\lsstheadlogowidth -
+                              0.5\lsstheadertextwidth - \lsstheadergap}
+
+% Define command to fill the rest of the line with a rule of specified thickness
+\def\vhrulefill#1{\leavevmode\leaders\hrule\@height#1\hfill \kern\z@}
 
 % Left heading is the logo and horizontal rule
 \lhead{%
-\hskip 1.8cm
-\includegraphics[width=0.18\textwidth]{lsst_logo_notext}\\
+\hspace{\lsstheadlogooffset}
+\includegraphics[width=\lsstheadlogowidth]{lsst_logo_notext}\\
 \vskip -1ex
-\begin{minipage}{3.6cm+\textwidth}
+\begin{minipage}{\lsstheadwidth}
     \color{lsstblue}
-    \rule{1.4cm}{2.0pt}
+    \rule{\lsstleftheadrule}{2.0pt}
     \lower 1pt
-    \hbox{
-        {\hspace{-0.1cm}\tiny \color{lsstblue}LARGE SYNOPTIC SURVEY TELESCOPE}
-        \hspace{-0.1cm}
-    }
+    \hbox{\hspace{\lsstheadergap}\headertext\hspace{\lsstheadergap}}
     \color{lsstblue}
-    \rule{14.8cm}{2.0pt}
+    \vhrulefill{2.0pt}
 \end{minipage}%
 }
 
@@ -619,7 +650,7 @@
   \color{lssthead}
   \sffamily
   \textbf{\@docShortTitle \hfill \docRef \hfill Latest Revision \docDate}
-  \hspace{1.8cm}
+  \hspace{\headextrawidth}
 \end{minipage}%
 }
 
