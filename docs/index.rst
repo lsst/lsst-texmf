@@ -8,6 +8,7 @@ The LSST `lsst-texmf <https://github.com/lsst/lsst-texmf>`_ package contains Lat
    :maxdepth: 2
 
    install
+   examples
    lsstdoc
    beamer
    developer

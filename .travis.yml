@@ -13,11 +13,9 @@ install:
 script:
   - export TEXMFLOCAL=./texmf
   - make
-  - cd docs
-  - sphinx-build -b html -a -n -d _build/doctree . _build/html
-  - cd ..
+  - make docs
 after_success:
-  - ltd-mason-travis --html-dir docs/_build/html
+  - make lsstthedocs
 env:
   global:
     - LTD_MASON_BUILD=false  # disable builds in regular text matrix

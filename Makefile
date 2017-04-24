@@ -23,6 +23,15 @@ $(PDF): %.pdf: examples/%.tex
 $(TESTS): %.pdf: tests/%.tex
 	latexmk -pdf -bibtex -f $<
 
+.PHONY: docs
+docs: $(PDF) $(TESTS)
+	cp *.pdf docs/
+	make -C docs html
+
+.PHONY: lsstthedocs
+lsstthedocs:
+	ltd-mason-travis --html-dir docs/_build/html
+
 .PHONY: clean
 clean:
 	rm -f *.aux
@@ -34,4 +43,4 @@ clean:
 	rm -f *.toc
 	rm -f *.nav
 	rm -f *.snm
-	rm -f -R _build
+	make -C docs clean
