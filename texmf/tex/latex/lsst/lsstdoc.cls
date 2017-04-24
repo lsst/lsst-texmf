@@ -609,12 +609,17 @@
 \newlength{\lsstheadlogooffset}
 \setlength{\lsstheadlogooffset}{\headextrawidth}
 
-% Calculate space taken up by the LSST header text
-\newlength{\lsstheadertextwidth}
+% Text to use below the logo in the header
 \newcommand{\headertext}{\tiny LARGE SYNOPTIC SURVEY TELESCOPE}
 
-% Include space around the text width calculation
-\settowidth{\lsstheadertextwidth}{\headertext}
+% Calculate space taken up by the LSST header text
+% \settowidth does not seem to work properly with pdflatex
+\newlength{\lsstheadertextwidth}
+\ifxetex
+  \settowidth{\lsstheadertextwidth}{\headertext}
+\else
+  \setlength{\lsstheadertextwidth}{105pt}
+\fi
 
 % Additional space between rule and header LSST text
 \newlength{\lsstheadergap}
