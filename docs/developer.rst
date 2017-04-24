@@ -30,7 +30,7 @@ Once new files are added, ensure that they are built correctly by the :file:`Mak
 Updating bibliographies
 =======================
 
-One goal of a shared repository containing the LSST Latex files, is to provide a shared source of truth for references to other documents.
+One goal of a shared repository containing the LSST LaTeX files, is to provide a shared source of truth for references to other documents.
 If a document is being cited that is not part of the current list, a pull request should be made, preferably using a ticket branch related to the main document development.
 If the automated tests pass, the PR can be self-merged without review.
 In this way, we can ensure that all documents agree on references without duplication and with minimum overhead.

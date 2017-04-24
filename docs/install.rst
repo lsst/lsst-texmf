@@ -4,13 +4,13 @@
 Installing lsst-texmf
 #####################
 
-You can get the LSST Latex classes and style files from GitHub:
+You can get the LSST LaTeX classes and style files from GitHub:
 
 .. code-block:: bash
 
    git clone https://github.com/lsst/lsst-texmf
 
-To enable Latex to find the style files the :envvar:`TEXMFHOME` environment variable can be set to the :file:`texmf` subdirectory.
+To enable LaTeX to find the style files the :envvar:`TEXMFHOME` environment variable can be set to the :file:`texmf` subdirectory.
 For example, the following can be used if you are in the directory from which you cloned the repository:
 
 .. code-block:: bash

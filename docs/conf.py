@@ -34,7 +34,7 @@ version = form_ltd_edition_name(
 # The full version, including alpha/beta/rc tags.
 release = version
 
-project = 'lsst-texmf: The LSST Latex Classes'
+project = 'lsst-texmf: The LSST LaTeX Classes'
 html_title = project
 html_short_title = 'lsst-texmf'
 

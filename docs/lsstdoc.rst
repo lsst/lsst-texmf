@@ -4,7 +4,7 @@
 Using the lsstdoc document class
 ################################
 
-The :file:`lsstdoc` document class should be used for all Latex LSST documents.
+The :file:`lsstdoc` document class should be used for all LaTeX LSST documents.
 The class file defines the document fonts and page dimensions, imports commonly used packages, defines journal macros and other common commands and defines the main title page and the page headers and footers.
 In this section we will explain how to create a document using the LSST document class.
 A full example can be seen in the :file:`examples` directory in the repository.
@@ -16,7 +16,7 @@ A full example can be seen in the :file:`examples` directory in the repository.
 Document Preamble
 =================
 
-A Latex document begins with a preamble that sets up the document.
+A LaTeX document begins with a preamble that sets up the document.
 The first step is to define the class:
 
 .. code-block:: latex
@@ -157,7 +157,7 @@ References can be cited using the following commands:
 * ``\citedsp`` is the same as ``\citeds`` but adds parentheses around the document handle.
 * ``\citep`` should be used for non-LSST references.
 
-The following Latex,
+The following LaTeX,
 
 .. code-block:: latex
 
