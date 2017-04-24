@@ -1,3 +1,3 @@
-Sphinx>=1.4.6
-documenteer>=0.1.9
-lsst-dd-rtd-theme
+Sphinx>=1.5.5
+documenteer>=0.1.11
+sphinx-rtd-theme==0.2.4
