@@ -289,17 +289,27 @@
 \end{docHistory}
 }}
 
+\newcommand{\lssttitletext}{\Large LARGE SYNOPTIC SURVEY TELESCOPE}
+\newlength{\lssttitletextwidth}
+\settowidth{\lssttitletextwidth}{\lssttitletext}
+
+% Length of ruler is derived from the page width and the width of the
+% text we are centering and half a character either side.
+\newlength{\lsstlefttitlerule}
+\setlength{\lsstlefttitlerule}{0.5\paperwidth - 0.5\lssttitletextwidth + 0.5em}
+
 \providecommand{\putlogo}{
+  \hspace{-1in}\noindent
+  % Put logo and rule in same minipage so that they center consistently
+  \begin{minipage}{\paperwidth}
   \begin{center}
 	\includegraphics{lsst_logo_notext}\\
    \end{center}
-\vspace{-25pt}
+\vspace{-15pt}
 \color{lsstblue}
-   \hspace{-2.8cm}\rule{6.15cm}{2.5pt} \lower.3em\hbox{
-	{\Large \color{lsstblue}LARGE SYNOPTIC SURVEY TELESCOPE}
-   }
-   \rule{7.0cm}{2.5pt}
-
+   \noindent\rule{\lsstlefttitlerule}{2.5pt} \lower.3em\hbox{\lssttitletext}
+   \vhrulefill{2.5pt}
+  \end{minipage}
   \begin{center}
     \ifx \@docLocalLogo \@empty
            \relax
