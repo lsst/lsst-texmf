@@ -499,7 +499,7 @@
     \setlength\LTright{\fill}
 %   \setlength\LTpost{\fill}
 %   \addtocounter{table}{-1}
-    \begin{longtable}{|l|p{.15\textwidth}|p{.45\textwidth}|p{.23\textwidth}|}
+    \begin{longtable}{|l|p{.13\textwidth}|p{.45\textwidth}|p{.23\textwidth}|}
 
     \hline
 \textbf{Version} & \textbf{Date} & \textbf{Description} & \textbf{Owner name} \\ \hline\hline
