@@ -258,6 +258,7 @@ public
 
 ./fonts/opentype/public:
 TeX-Gyre-Pagella
+inconsolata
 
 ./fonts/opentype/public/TeX-Gyre-Pagella:
 GUST e-foundry License.txt
@@ -267,12 +268,22 @@ texgyrepagella-bolditalic.otf
 texgyrepagella-italic.otf
 texgyrepagella-regular.otf
 
+./fonts/opentype/public/inconsolata:
+Inconsolatazi4-Bold.otf
+Inconsolatazi4-Regular.otf
+
 ./fonts/truetype:
 OpenSans-Regular.tfm
 public
 
 ./fonts/truetype/public:
+inconsolata
 opensans
+
+./fonts/truetype/public/inconsolata:
+Inconsolata-Bold.ttf
+Inconsolata-Regular.ttf
+OFL.txt
 
 ./fonts/truetype/public/opensans:
 LICENSE.txt
