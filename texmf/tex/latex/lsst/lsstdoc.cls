@@ -328,11 +328,11 @@
    \thispagestyle{empty}
 
     \AddToShipoutPicture*{%
-            \setlength{\unitlength}{0.7pt}%
+            \setlength{\unitlength}{0.65pt}%
         \makeatletter
             \put(\strip@pt \textwidth,\strip@pt \textheight){%
                 \makebox(0,0){%
-			\includegraphics[scale=0.9]{lsstscopegrey}\\
+			\includegraphics[width=1.1\textwidth]{lsstscopegrey}\\
                     }}%
 		\vspace{10cm}
 		{\hspace{-0.5in}\color{lsstblue}\rule{9in}{2.1cm}}
