@@ -289,36 +289,6 @@
 \end{docHistory}
 }}
 
-\newcommand{\lssttitletext}{\Large LARGE SYNOPTIC SURVEY TELESCOPE}
-\newlength{\lssttitletextwidth}
-\settowidth{\lssttitletextwidth}{\lssttitletext}
-
-% Length of ruler is derived from the page width and the width of the
-% text we are centering and half a character either side.
-\newlength{\lsstlefttitlerule}
-\setlength{\lsstlefttitlerule}{0.5\paperwidth - 0.5\lssttitletextwidth + 0.5em}
-
-\providecommand{\putlogo}{
-  \hspace{-1in}\noindent
-  % Put logo and rule in same minipage so that they center consistently
-  \begin{minipage}{\paperwidth}
-  \begin{center}
-	\includegraphics{lsst_logo_notext}\\
-   \end{center}
-\vspace{-15pt}
-\color{lsstblue}
-   \noindent\rule{\lsstlefttitlerule}{2.5pt} \lower.3em\hbox{\lssttitletext}
-   \vhrulefill{2.5pt}
-  \end{minipage}
-  \begin{center}
-    \ifx \@docLocalLogo \@empty
-           \relax
-     \else
-           \includegraphics{\@docLocalLogo}
-    \fi
-   \end{center}
-}
-
 % These commands are not used by LSST but are retained as no-ops for
 % compatibility with earlier usage from Gaia.
 \newcommand{\setDocIssue}[1]{%
@@ -370,10 +340,34 @@
         \makeatother
     }%
 
+    % These calculations are used for the placement of the text below
+    % the logo on the title page.
+    % Calculate the text width after here because pdflatex
+    % can no calculate widths reliably in the preamble.
+    \newcommand{\lssttitletext}{\Large LARGE SYNOPTIC SURVEY TELESCOPE}
+    \newlength{\lssttitletextwidth}
+    \settowidth{\lssttitletextwidth}{\lssttitletext}
+
+    % Length of ruler is derived from the page width and the width of the
+    % text we are centering and half a character either side.
+    \newlength{\lssttitlewidth}
+    \setlength{\lssttitlewidth}{\paperwidth}
+    \newlength{\lsstlefttitlerule}
+    \setlength{\lsstlefttitlerule}{0.5\lssttitlewidth - 0.5\lssttitletextwidth - 0.5em}
+
+    % Place logo on the foreground at the top with text centred underneath it
+    \AddToShipoutPictureFG*{%
+      \put(\LenToUnit{0.5\paperwidth},\LenToUnit{0.87\paperheight}){%
+        \makebox[0pt][c]{\includegraphics[width=3.5in]{lsst_logo_notext}}\\
+      }
+      \put(\LenToUnit{0.0\paperwidth},\LenToUnit{0.853\paperheight}){%
+        \makebox[\lssttitlewidth]{\color{lsstblue}\rule{\lsstlefttitlerule}{2.5pt} \lower.3em\hbox{\lssttitletext}
+          \vhrulefill{2.5pt}}
+      }
+    }
+
    \setlength{\parindent}{0pt}
-   \vspace*{-4cm}
-   \putlogo
-   \vspace*{1cm}
+   \vspace*{1in}
    \begin{center}
    \begin{minipage}{1.0\textwidth}
      \begin{center}
