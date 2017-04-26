@@ -18,4 +18,4 @@
 examples/*.pdf
 tests/*.pdf
 docs/_build/
-docs/*.pdf
+docs/_static/examples/

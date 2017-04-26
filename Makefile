@@ -25,7 +25,8 @@ $(TESTS): %.pdf: tests/%.tex
 
 .PHONY: docs
 docs: $(PDF) $(TESTS)
-	cp *.pdf docs/
+	mkdir -p docs/_static/examples
+	cp *.pdf docs/_static/examples/
 	make -C docs html
 
 .PHONY: lsstthedocs
@@ -44,3 +45,4 @@ clean:
 	rm -f *.nav
 	rm -f *.snm
 	make -C docs clean
+	rm -f docs/_static/examples/*.pdf
