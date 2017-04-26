@@ -1,4 +1,4 @@
-![lsst-texmf.lsst.io](https://img.shields.io/badge/lsst--texmf-lsst.io-blue.svg "Documentaton") ![Travis](https://img.shields.io/travis/USER/REPO/BRANCH.svg "Build status")
+![lsst-texmf.lsst.io](https://img.shields.io/badge/lsst--texmf-lsst.io-blue.svg "Documentaton") ![Travis](https://img.shields.io/travis/lsst/lsst-texmf/master.svg "Build status")
 
 # LSST LaTeX document class files
 
