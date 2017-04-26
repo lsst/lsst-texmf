@@ -13,13 +13,13 @@ install:
 script:
   - export TEXMFLOCAL=./texmf
   - make
-  - cd docs
-  - sphinx-build -b html -a -n -d _build/doctree . _build/html
-  - cd ..
+  - make docs
 after_success:
-  - ltd-mason-travis --html-dir docs/_build/html
+  - make lsstthedocs
 env:
   global:
     - LTD_MASON_BUILD=false  # disable builds in regular text matrix
     - LTD_MASON_PRODUCT="lsst-texmf"
-    # Add AWS and LTD Keeper credentials as encrypted secrets here
+    # AWS and LTD Keeper credentials as encrypted secrets here
+    - secure: "rmK3azL0TZmEoZ3nObhiWr1Sr79Z9gHXHVFLV1dJ8hpTKee+qF6HSYZ4CT2SrbzCx/X4WLSOiVfvxDYyOeZUQUTdLxf+8AytORtX7s1F5/4IW2Va7XyJztAL7yI9SVs9pKlB+craO8P5ljxm7ReqahRkitog8i9few2WdYDozsm80MNDuU+bmet4o3dLyVOtgmb0YroY7+E0NminHNCalv8ekUHA+VemgG6549VazcNtXrTkIKQBKWbSZmGwAJDa5YzQOQJIV1TQ0PXX1gARpeVe6Mm5YBnWpzWtG016QC+ZwdHSS5Pjh9S5+2eaYey7F157q7bODcfMt1RU09p360RU7KVgezBElyZvus/q4pZnfd8VARl+7EzG9m8AaqBDuFhJex2A4iZbk4fMOmywtPDpMGzmDZOLOxa47cUu1KVFKarMm8ILY9QBUI8u84DqYrLuYVfMTvcXro6PG1QIMgzhe4H4Qd5wrJggnRuyBVZajWhPFNioBouq0DtbyxPUE9J7z7ki3VV2cu7Nxdat0snmFRfayfJt0fHj3h1J7HCt2JF83ZdyqG5Y28b/GpEydyBnIyBzhNbMlbQJl/g/39Zfgq2EJB8tmWyCii5Fi7QSxRW6DR35mCB2ztejNsHpT23qaxhxlZGD+xFdTBejGFbrV/SukqJuDAkpxAwu1wQ="
+    - secure: "wMjSG3rFs/RMqL9k8sSGpqH9OKyre6gBzU6FuhUcOIlCkzuws+bJ4L2xGIbIBun+FdzxIBCePaxvSxV4waFV67Q9BOOfno96ZxwHUL8URFx/x7xN3Djb6gS0VIQ/5Hg5xEmYvNCdLzw9GB2Ka4alQxOvIC6hNhxPmCDxwTru5H8uggSM7LTFK1wnAOF1VO2483llbNJ1HkVkWMi/+OFlUjdxPEmnEcAVMyGv8pfZ30fBjKRmBpIj3zK+kbX6XW0wcu8sEOleMgHpcpvq/zCrsWJF+K/b4jKyadPNoudp+hnOvj4dV480SZt9Iu/AWQ0N5oy+GyFKJtoIpl+I85t3DQflFaTR9k6Hdk8RvdGb7DNo55iyWyohj1ClN0qxq4SLyP0/z8RQNZOWjcjJUtIlQxLkFxDceNhEqKegU+dg+XZOSt9LzA0/6c6tsa4bg3J0lYqDHTJ2oQfQ/fA/cVWRNvPhDZoAxr/pYRdo2+eRfX+A2XfBVbbr5lm02UmkcrBqfO9fuUZZDRdssrIXKl31QGNcxyxr3lRHKBYza/7Bh5hNTNHs8NEcoZh+GaIp1cZzjboGO/XAJzopxVv99H0n0buCUa06NjiKwlxgh78XXerQNXgYq80bYy4uGqtsdb8oKf6MCPlkuPMtKw+GVFG42/PCgfzqqUJ5hjfKzImYuko="

@@ -1,18 +1,31 @@
-# LSST Latex document class files
+![lsst-texmf.lsst.io](https://img.shields.io/badge/lsst--texmf-lsst.io-blue.svg "Documentaton") ![Travis](https://img.shields.io/travis/USER/REPO/BRANCH.svg "Build status")
 
-## Users
-This repository contains Latex class and style files that can be used to create documents matching (reasonably closely) the LSST documentation standard. To use these class files clone this repository and set `$TEXMFHOME` to the location of the `texmf` subdirectory. For example, using `bash` or `sh`:
+# LSST LaTeX document class files
+
+This repository contains LaTeX class and style files that can be used to create documents matching (reasonably closely) the LSST documentation standard.
+This includes the `lsstdoc` class for documents (including LDM, DMTN, and SQR) and a `LSST-beamer` package for making Beamer slide decks.
+lsst-texmf also includes DM's common BibTeX bibliographies.
+
+**Documentation:** https://lsst-texmf.lsst.io.
+
+## Quickstart
+
+To use these class files clone this repository and set `$TEXMFHOME` to the location of the `texmf` subdirectory.
+For example, with `bash` or `sh`:
+
 ```bash
+git clone https://github.com/
 export TEXMFHOME=`pwd`/lsst-texmf/texmf
 ```
-(if run from the cloned directory).
 
-For all other help on setting up, available Latex classes, and how to use them, see [the user guide](docs/index.rst).
+Next, read the docs at https://lsst-texmf.lsst.io.
 
 ## Developers
 
+Please refer to the [lsst-texmf Developer Guide](https://lsst-texmf.lsst.io/developer.html) for contribution information.
+
 If adding or removing files from the `texmf` directory, please remember to run the `mktexlsr` command and commit the new version of `ls-R`.
 
-```
-% mktexlsr --verbose texmf
+```bash
+mktexlsr --verbose texmf
 ```
