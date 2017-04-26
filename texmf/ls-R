@@ -11,8 +11,10 @@ bib
 bst
 
 ./bibtex/bib:
+README.md
 books.bib
 gaia_livelink_valid.bib
+lsst-dm.bib
 lsst.bib
 refs.bib
 refs_ads.bib
