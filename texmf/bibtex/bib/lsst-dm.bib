@@ -3,6 +3,10 @@
 %% Includes entries for published papers, poster presentations,
 %% and talks. Does not include DocuShare entries.
 
+%% Use ADS entry if available.
+%% Use publisher entry if ADS entry not available.
+%% If no publisher entry, use key format "YYYYauthor-event"
+
 @INPROCEEDINGS{2002SPIE.4844..225C,
    author = {{Connolly}, A. and {Boroson}, T.~A.},
     title = "{Design Decisions for Data Management with the LSST}",
@@ -19,7 +23,7 @@ booktitle = {Observatory Operations to Optimize Scientific Return III},
 }
 
 % Optional fields: author, title, howpublished, month, year, note
-@MISC{2002-adass-ajc,
+@MISC{2002connolly-adass,
     author = {A. Connolly},
     title = "{Data Management for the LSST}",
      year = 2002,
@@ -114,7 +118,7 @@ booktitle = {Astronomical Data Analysis Software and Systems XII, Baltimore},
   adsnote =      {Provided by the SAO/NASA Astrophysics Data System}
 }
 
-@Unpublished{2005Kantor,
+@Unpublished{2005kantor-status,
   author =       {Jeff Kantor and Tim Axelrod},
   title =        "{LSST Data Management Status}",
   url =
@@ -123,7 +127,7 @@ booktitle = {Astronomical Data Analysis Software and Systems XII, Baltimore},
   year =         2005,
 }
 
-@Unpublished{2005htu-Axelrod,
+@Unpublished{2005axelrod-htu,
   author =       {Tim Axelrod},
   title =        "{Events in the LSST}",
   booktitle =    {IVOA VOEvent Workshop, Pasadena},
@@ -231,7 +235,7 @@ booktitle = {Astronomical Data Analysis Software and Systems XII, Baltimore},
   adsnote =      {Provided by the SAO/NASA Astrophysics Data System}
 }
 
-@inproceedings{2006SPIE6270-79,
+@inproceedings{2006dossa-spie,
   Author =       {Dossa, D. and Smith, R. and Lambert, R. and Plante,
                   R. and Butler M. and Cribbs, C. and Kantor, J.},
   Booktitle =    {Observatory Operations: Strategies, Processes, and
@@ -302,7 +306,7 @@ booktitle = {Astronomical Data Analysis Software and Systems XII, Baltimore},
 }
 
 % Optional fields: author, title, howpublished, month, year, note
-@MISC{2007_becker_hotwired,
+@MISC{2007becker-htu,
   author =       {Andy Becker},
   title =        "{Transient object detection and classification}",
   note =         {Hot-wiring the Transient Universe: a Joint VOEvent \& HTN Workshop
@@ -312,7 +316,7 @@ booktitle = {Astronomical Data Analysis Software and Systems XII, Baltimore},
   year =         2007
 }
 
-@misc{2007_kt_ieee,
+@misc{2007lim-ieee,
   author =       {K.-T. Lim},
   title =        {Preparing for Scores of Petabytes},
   note =         {IEEE Mass Storage Symposium, San Diego, CA,
@@ -453,7 +457,7 @@ booktitle = {Astronomical Data Analysis Software and Systems XII, Baltimore},
   Bdsk-Url-1 =   {http://dx.doi.org/10.1086/524710}
 }
 
-@misc{2008_kt_mysql,
+@misc{2008lim-mysql,
   author =       {K.-T. Lim},
   title =        {Astronomy, Petabytes, and MySQL},
   note =         {MySQL Conference, Santa Clara, CA, April 16, 2008},
@@ -463,7 +467,7 @@ booktitle = {Astronomical Data Analysis Software and Systems XII, Baltimore},
                   {http://conferences.oreilly.com/mysql2008/public/schedule/detail/849},
 }
 
-@misc{2008_kt_hpc,
+@misc{2008lim-hpc,
   author =       {K.-T. Lim},
   title =        {LSST and SciDB},
   note =         {Stanford HPC Conference, Stanford, CA, USA, August
@@ -472,7 +476,7 @@ booktitle = {Astronomical Data Analysis Software and Systems XII, Baltimore},
   year =         2008
 }
 
-@misc{2008_kt_keck,
+@misc{2008lim-keck,
   author =       {K.-T. Lim},
   title =        {The LSST Data Management System},
   note =         {Talk at Keck Observatory, December 2, 2008},
@@ -480,7 +484,7 @@ booktitle = {Astronomical Data Analysis Software and Systems XII, Baltimore},
   year =         2008
 }
 
-@misc{2008_kt_iplant,
+@misc{2008lim-iplant,
   author =       {K.-T. Lim},
   title =        {Cyberinfrastructure Lessons from LSST Data
                   Management},
@@ -540,7 +544,7 @@ booktitle = {Astronomical Data Analysis Software and Systems XII, Baltimore},
   adsnote =      {Provided by the SAO/NASA Astrophysics Data System}
 }
 
-@Article{2008DSJ-Becla,
+@Article{2008becla-dsj,
   author =       {J. Becla and K-T Lim},
   title =        {Report from the First Workshop on Extremely Large
                   Databases},
@@ -568,7 +572,7 @@ booktitle = {Astronomical Data Analysis Software and Systems XII, Baltimore},
                   discussions and activities at the workshop.},
 }
 
-@Article{2008DSJ-Becla-b,
+@Article{2008becla-dsj2,
   author =       {J. Becla and K-T Lim},
   title =        {Report from the SciDB Workshop},
   journal =      {Data Science Journal},
@@ -614,7 +618,7 @@ booktitle = {Astronomical Data Analysis Software and Systems XII, Baltimore},
   adsnote =      {Provided by the SAO/NASA Astrophysics Data System}
 }
 
-@unpublished{2008AccessNova1,
+@unpublished{2008kantor-pucon,
   Author =       {Kantor, J.},
   Date-Added =   {2008-07-07 13:58:36 -0700},
   Date-Modified ={2008-07-07 14:06:47 -0700},
@@ -624,7 +628,7 @@ booktitle = {Astronomical Data Analysis Software and Systems XII, Baltimore},
   Year =         2008
 }
 
-@unpublished{2008AccessNova2,
+@unpublished{2008kantor-pucon2,
   Author =       {Kantor, J.},
   Booktitle =    {PUC{\'O}N SYMPOSIUM 2008, Fifth AccessNova Forum:
                   Ubiquitous Networks in Advanced Applications},
@@ -634,7 +638,7 @@ booktitle = {Astronomical Data Analysis Software and Systems XII, Baltimore},
   Year =         2008
 }
 
-@Unpublished{2008Hawaii-Kantor,
+@Unpublished{2008kantor-hawaii,
   author =       {Jeff Kantor},
   title =        {LSST Data Management: Making Peta-scale Data
                   Accessible},
@@ -665,7 +669,7 @@ booktitle = {Astronomical Data Analysis Software and Systems XII, Baltimore},
   Bdsk-Url-1 =   {http://dx.doi.org/10.1016/j.icarus.2007.11.033}
 }
 
-@unpublished{2008NewAstronomy1,
+@unpublished{2008kantor-brazil,
   Author =       {Kantor, J.},
   Booktitle =    {New Astronomy: The Data Challenge, Rio de Janeiro,
                   Brazil},
@@ -677,7 +681,7 @@ booktitle = {Astronomical Data Analysis Software and Systems XII, Baltimore},
   month =        may,
 }
 
-@unpublished{2008SBRC1,
+@unpublished{2008kantor-brazil2,
   Author =       {Kantor, J.},
   Booktitle =    {Brazilian Symposium of Computer Networks and
                   Distributed Systems},
@@ -702,7 +706,7 @@ booktitle = {Astronomical Data Analysis Software and Systems XVIII},
   adsnote = {Provided by the SAO/NASA Astrophysics Data System}
 }
 
-@InProceedings{2009CIDR-Becla,
+@InProceedings{2009becla-cidr,
   author =       {Michael Stonebraker and Jacek Becla and David Dewitt
                   and Kian-Tat Lim and David Maier and Oliver
                   Ratzesberger and Stan Zdonik},
@@ -755,7 +759,7 @@ booktitle = {Astronomical Data Analysis Software and Systems XVIII},
   publisher =    {VLDB Endowment},
 }
 
-@Unpublished{2009Becla,
+@Unpublished{2009becla-sdcc,
   author =       {Jacek Becla},
   title =        {SciDB: Open Source Data Management System for
                   Data-Intensive Scientific Analytics},
@@ -914,7 +918,7 @@ booktitle = {Astronomical Data Analysis Software and Systems XVIII},
   adsnote =      {Provided by the SAO/NASA Astrophysics Data System}
 }
 
-@Article{2010DSJ-Becla,
+@Article{2010becla-dsj,
   author =       {Jacek Becla and Kian-Tat Lim and Daniel L. Wang},
   title =        "{Report from the 3rd Workshop on Extremely Large
                   Databases}",
@@ -941,7 +945,7 @@ booktitle = {Astronomical Data Analysis Software and Systems XVIII},
                   workshop.}
 }
 
-@inproceedings{2010Becla,
+@inproceedings{2010becla-adass,
   Author =       {Jacek Becla},
   Date-Added =   {2012-01-24 14:29:33 -0700},
   Date-Modified ={2012-01-24 14:30:39 -0700},
@@ -954,7 +958,7 @@ booktitle = {Astronomical Data Analysis Software and Systems XVIII},
   Year =         2010
 }
 
-@Unpublished{2009htu3-Pierfederici,
+@Unpublished{2009pierfederici-htu,
   author =       {Francesco Pierfederici},
   title =        "{LSST-PanSTARRS Solar System Events}",
   booktitle =    {Hot-Wiring the Transient Universe 2, Santa Cruz},
@@ -968,7 +972,7 @@ booktitle = {Astronomical Data Analysis Software and Systems XVIII},
                   architectural choices and lesson learned.},
 }
 
-@Unpublished{2009htu3-Jones,
+@Unpublished{2009jones-htu,
   author =       {Lynne Jones},
   title =        "{Fast Transients to Long Period Variables:
                   Timescales in LSST}",
@@ -979,7 +983,7 @@ booktitle = {Astronomical Data Analysis Software and Systems XVIII},
                   {http://www.cacr.caltech.edu/hotwired2/program/presentations/jones_hotwiring.pdf},
 }
 
-@inproceedings{2010Freemon,
+@inproceedings{2010freemon-adass,
   Author =       {D. Michael Freemon and J. Becla and Gregory
                   P. Dubois-Felsmann and J. Kantor and K. T. Lim and
                   R. Plante},
@@ -993,7 +997,7 @@ booktitle = {Astronomical Data Analysis Software and Systems XVIII},
   Year =         2010
 }
 
-@inproceedings{2010IEEMSST,
+@inproceedings{2010jagatheesan-ieee,
   Author =       {Arun Jagatheesan and Jeff Kantor},
   Date-Added =   {2012-01-24 14:35:21 -0700},
   Date-Modified ={2012-01-24 14:36:26 -0700},
@@ -1006,7 +1010,7 @@ booktitle = {Astronomical Data Analysis Software and Systems XVIII},
   Year =         2010
 }
 
-@inproceedings{2010SC,
+@inproceedings{2010axelrod-sc,
   Author =       {Tim Axelrod and Jeff Kantor},
   Date-Added =   {2012-01-24 14:39:16 -0700},
   Date-Modified ={2012-01-24 14:40:15 -0700},
@@ -1017,7 +1021,7 @@ booktitle = {Astronomical Data Analysis Software and Systems XVIII},
   Title =        {Cyber-Infrastructure for the LSST Data Management
                   System},
   url =
-                  {https://docushare.lsstcorp.org/docushare/dsweb/Get/Document-10284/Kantor%20Axelrod.ppt},
+                  {https://docushare.lsstcorp.org/docushare/dsweb/Get/Document-10284/},
   Year =         2010
 }
 
@@ -1166,7 +1170,7 @@ booktitle = {Astronomical Data Analysis Software and Systems XVIII},
   Year =         2011
 }
 
-@misc{2011_kt_fermilab,
+@misc{2011lim-fermilab,
   author =       {K.-T. Lim},
   title =        {LSST Applications and Middleware},
   note =         {Talk at Fermilab, May 12, 2011},
@@ -1174,8 +1178,8 @@ booktitle = {Astronomical Data Analysis Software and Systems XVIII},
   year =         2011
 }
 
-@Misc{2011SLAC-PUB-14716,
-  author =       {Ivezic and others},
+@Misc{2011ivezic-slac-pub-14716,
+  author =       {Z. Ivezic and others},
   title =        {Parametrization and Classification of 20 Billion
                   LSST Objects: Lessons from SDSS},
   howpublished = {SLAC-PUB-14716},
@@ -1228,7 +1232,7 @@ booktitle = {Astronomical Data Analysis Software and Systems XVIII},
   Bdsk-Url-1 =   {http://doi.acm.org/10.1145/2063348.2063364}
 }
 
-@inproceedings{2011aGibson,
+@inproceedings{2011gibson-stsci,
   Author =       {Robert Gibson},
   Date-Added =   {2012-01-24 14:18:05 -0700},
   Date-Modified ={2012-01-24 14:21:38 -0700},
@@ -1238,7 +1242,7 @@ booktitle = {Astronomical Data Analysis Software and Systems XVIII},
   Title =        {AGN Variability and Long-Term Monitoring},
   Year =         2011,
   Bdsk-Url-1 =
-                  {http://www.stsci.edu/institute/conference/verywidefield/talksList}
+                  {http://www.stsci.edu/institute/conference/verywidefield/}
 }
 
 @INPROCEEDINGS{2011ASPC..442..329G,
@@ -1305,7 +1309,7 @@ booktitle = {Astronomical Data Analysis Software and Systems XVIII},
   Bdsk-Url-1 =   {http://adsabs.harvard.edu/abs/2012AAS...21915607J}
 }
 
-@misc{2012_kt_aas,
+@misc{2012lim-aas,
   author =       {K.-T. Lim},
   title =        {The LSST Database: What to Expect},
   note =         {AAS Splinter Meeting, Austin TX, January 8, 2012},
@@ -1313,7 +1317,7 @@ booktitle = {Astronomical Data Analysis Software and Systems XVIII},
   year =         2012
 }
 
-@Misc{2012-SLAC-TN-12-001,
+@Misc{2012becla-xldb,
   author =       {Jacek Becla and Kian-Tat Lim and Daniel L Wang},
   title =        {Facts About XLDB-2011},
   booktitle =    {5th Extremely Large Databases Conference and
@@ -1338,7 +1342,7 @@ booktitle = {Astronomical Data Analysis Software and Systems XVIII},
                   the XLDB community.},
 }
 
-@Unpublished{2012XLDBAsia-KTL,
+@Unpublished{2012lim-xldbasia,
   author =       {K.-T. Lim},
   title =        {XLDB and the Large Synoptic Survey Telescope},
   note =         {XLDB Asia, Beijing, China, June 22-23 2012 },
@@ -1409,7 +1413,7 @@ booktitle = {Astronomical Data Analysis Software and Systems XVIII},
   adsnote =      {Provided by the SAO/NASA Astrophysics Data System}
 }
 
-@Unpublished{2012Illinois-Juric,
+@Unpublished{2012juric-illinois,
   author =       {Mario Juric},
   title =        {Large Synoptic Survey Telescope: The Era of
                   Petascale Survey Astronomy},
@@ -1496,7 +1500,7 @@ booktitle = {Astronomical Data Analysis Software and Systems XVIII},
   adsnote =      {Provided by the SAO/NASA Astrophysics Data System}
 }
 
-@Unpublished{2013RadioLSST-Juric,
+@Unpublished{2013juric-radiolsst,
   author =       {Mario Juric},
   title =        "{LSST Data Management Entering the Era of Petascale
                   Optical Astronomy}",
@@ -1538,7 +1542,7 @@ booktitle = {Astronomical Data Analysis Software and Systems XVIII},
                   {http://www.slideserve.com/daphne/lsst-survey-data-products-mario-juric-lsst-data-management-project-scientist-radio-astronomy-in-the-lsst-era-nrao-may-6-8-th-2013},
 }
 
-@Unpublished{2013InterOp-Juric,
+@Unpublished{2013juric-ivoa,
   author =       {Mario Juric},
   title =        "{LSST: Introduction and Data Management
                   Requirements}",
@@ -1550,7 +1554,7 @@ booktitle = {Astronomical Data Analysis Software and Systems XVIII},
   year =         2013,
 }
 
-@Unpublished{2013LSSTEurope-Juric,
+@Unpublished{2013juric-lssteurope,
   author =       {Mario Juric},
   title =        "{Enabling LSST Science: LSST Data Products}",
   note =         {LSST@Europe: The Path to Science, Cambridge},
@@ -1560,7 +1564,7 @@ booktitle = {Astronomical Data Analysis Software and Systems XVIII},
                   {https://project.lsst.org/meetings/lsst-europe-2013/sites/default/files/lsstcam13-juric.pdf},
 }
 
-@Unpublished{2013NWU-Juric,
+@Unpublished{2013juric-nwu,
   author =       {Mario Juric},
   title =        "{LSST: Entering the Era of Petascale Astronomy}",
   note =         {Northwestern University CIERA Interdisciplinary
@@ -1571,7 +1575,7 @@ booktitle = {Astronomical Data Analysis Software and Systems XVIII},
                   {http://research.majuric.org/wp/wp-content/uploads/2013/11/LSST-Northwestern-Final.pdf},
 }
 
-@Unpublished{2014JHU-Juric,
+@Unpublished{2014juric-jhu,
   author =       {Mario Juric},
   title =        "{Mapping the Milky Way with Large Surveys}",
   note =         {Johns Hopkins Astronomy Colloquium, 25 February
@@ -1582,7 +1586,7 @@ booktitle = {Astronomical Data Analysis Software and Systems XVIII},
                   {http://research.majuric.org/wp/wp-content/uploads/2013/11/MW-JHU-Final.pdf},
 }
 
-@Unpublished{2014STScI-Juric,
+@Unpublished{2014juric-stsci,
   author =       {Mario Juric},
   title =        "{Large Synoptic Survey Telescope: Entering the Era
                   of Petascale Optical Astronomy}",
@@ -1658,7 +1662,7 @@ booktitle = {Astronomical Data Analysis Software and Systems XVIII},
   adsnote =      {Provided by the SAO/NASA Astrophysics Data System}
 }
 
-@Unpublished{2014GaiaCal-Juric,
+@Unpublished{2014juric-gaiacal,
   author =       {Mario Juric},
   title =        "{Creating and Calibrating LSST Data Products}",
   booktitle =    {Astrophysical calibration of Gaia and other surveys,
@@ -1669,7 +1673,7 @@ booktitle = {Astronomical Data Analysis Software and Systems XVIII},
   year =         2014,
 }
 
-@Unpublished{2014_Astroinformatics-Becker,
+@Unpublished{2014becker-astroinformatics,
   author =       {Andrew Becker},
   title =        "{Flexible and Scalable Methods for Time-Series
                   Characterization}",
@@ -1680,7 +1684,7 @@ booktitle = {Astronomical Data Analysis Software and Systems XVIII},
                   {http://eventos.cmm.uchile.cl/astro2014/wp-content/uploads/sites/13/2014/06/Astroinformatics2014.pdf},
 }
 
-@INPROCEEDINGS{2014_O1-4_adassxxiv,
+@INPROCEEDINGS{2014becla-adass,
   author =       {J. Becla},
   title =        "{Enabling Scalable Data Analytics for LSST and
                   Beyond Through Qserv}",
@@ -1714,7 +1718,7 @@ booktitle = {Astronomical Data Analysis Software and Systems XVIII},
                   even outside astronomy.}
 }
 
-@INPROCEEDINGS{2014_O2-1_adassxxiv,
+@INPROCEEDINGS{2014economou-adass,
   author =       {F. Economou},
   title =        "{How should astronomy pay for software?}",
   booktitle =    {Astronomical Data Analysis Software an Systems XXIV
@@ -1744,7 +1748,7 @@ booktitle = {Astronomical Data Analysis Software and Systems XVIII},
                   be made to care?}
 }
 
-@Unpublished{2014Krughoff-ZTF,
+@Unpublished{2014krughoff-ztf,
   author =       {K. Simon Krughoff},
   title =        {Image Differencing for LSST},
   note =         {ZTF-LSST Joint Meeting November 12th 2014},
@@ -1754,7 +1758,7 @@ booktitle = {Astronomical Data Analysis Software and Systems XVIII},
   year =         2014,
 }
 
-@Unpublished{2014CfA-Juric,
+@Unpublished{2014juric-cfa,
   author =       {Mario Juric},
   title =        "{LSST/DM: Building a Next Generation Survey Data
                   Processing System}",
@@ -1766,7 +1770,7 @@ booktitle = {Astronomical Data Analysis Software and Systems XVIII},
   year =         2014,
 }
 
-@misc{2014_kt_desc,
+@misc{2014lim-desc,
   author =       {K.-T. Lim},
   title =        {A Quick Tour of the LSST Software Stack},
   note =         {Talk at DES-LSST Workshop, Fermilab, March 25, 2014},
@@ -1776,7 +1780,7 @@ booktitle = {Astronomical Data Analysis Software and Systems XVIII},
                   {https://indico.fnal.gov/contributionDisplay.py?contribId=52&confId=7946},
 }
 
-@misc{2014_kt_xldb,
+@misc{2014lim-xldb,
   author =       {K.-T. Lim},
   title =        {The Designs for LSST's Extremely Large Databases},
   note =         {XLDB South America 2014, Rio de Janeiro, Brazil,
@@ -1799,7 +1803,7 @@ booktitle = {Astronomical Data Analysis Software and Systems XVIII},
 }
 
 
-@Unpublished{2015InterOp-Swinbank,
+@Unpublished{2015swinbank-ivoa,
   author =       {{Swinbank}, J.D.},
   title =        "{LSST: Introduction and Data Management
                   Requirements}",
@@ -1859,7 +1863,7 @@ booktitle = {Astronomical Data Analysis Software and Systems XVIII},
   adsnote =      {Provided by the SAO/NASA Astrophysics Data System}
 }
 
-@misc{2015_kt_hpc,
+@misc{2015lim-hpc,
   author =       {K.-T. Lim},
   title =        {Astroparticle physics: An LSST perspective},
   note =         {HEP Software Foundation Workshop, SLAC National
@@ -1884,7 +1888,7 @@ booktitle = {Astronomical Data Analysis Software and Systems XVIII},
   adsnote =      {Provided by the SAO/NASA Astrophysics Data System}
 }
 
-@Unpublished{2015NOAO-BigDataTools-AlSayyad,
+@Unpublished{2015alsayyad-noao,
   author =       {Yusra AlSayyad and Ian McGreer and Andy Connolly and
                   Xiaohui Fan and Zeljko Ivezic and Andy Becker and
                   Mario Juric and {The LSST Data Management team}},
@@ -1919,7 +1923,7 @@ booktitle = {Astronomical Data Analysis Software and Systems XVIII},
                   distribution in feature space.},
 }
 
-@Unpublished{2015NOAO-BigDataTools-Becla,
+@Unpublished{2015becla-noao,
   author =       {Jacek Becla},
   title =        {Enabling Scalable Data Analytics for LSST and Beyond
                   through Qserv},
@@ -1981,7 +1985,7 @@ booktitle = {Astronomical Data Analysis Software and Systems XVIII},
   adsnote =      {Provided by the SAO/NASA Astrophysics Data System}
 }
 
-@Misc{2016DESC-Bosch,
+@Misc{2016bosch-desc,
   author =       {Jim Bosch},
   title =        {Data Management Status},
   month =        oct,
@@ -1992,7 +1996,7 @@ booktitle = {Astronomical Data Analysis Software and Systems XVIII},
   doi =          {10.5281/zenodo.47334},
 }
 
-@Unpublished{2015PuppetConf-Holibtt,
+@Unpublished{2015hoblitt-puppet,
   author =       {Josh Hoblitt},
   title =        {Puppet vs Jenkins: A Tale of Types and Providers},
   note =         {Talk presented at PuppetConf 2015, Portland},
@@ -2015,7 +2019,7 @@ booktitle = {Astronomical Data Analysis Software and Systems XVIII},
                   common configuration will be told.},
 }
 
-@Unpublished{2015Astroinformatics-Juric,
+@Unpublished{2015juric-astroinformatics,
   author =       {Mario Juric},
   title =        {Large Sky Surveys: Entering the Era of
                   Software-Bound Astronomy},
@@ -2043,7 +2047,7 @@ booktitle = {Astronomical Data Analysis Software and Systems XVIII},
   adsnote =      {Provided by the SAO/NASA Astrophysics Data System}
 }
 
-@Unpublished{2015ngVLA-Kantor,
+@Unpublished{2015kantor-ngvla,
   author =       {Jeff Kantor},
   title =        {Computing for ngVLA: Lessons from LSST},
   booktitle =    {Second ngVLA Technical Workshop, Socorro, NM},
@@ -2053,7 +2057,7 @@ booktitle = {Astronomical Data Analysis Software and Systems XVIII},
   year =         2015,
 }
 
-@Unpublished{2015wlsys-bosch,
+@Unpublished{2015bosch-wlsys,
   author =       {J. Bosch},
   title =        "{Correcting sensor systematics in DM}",
   booktitle =    "{LSST Weak Lensing Science: A Workshop on the Impact
@@ -2064,7 +2068,7 @@ booktitle = {Astronomical Data Analysis Software and Systems XVIII},
   year =         2015,
 }
 
-@inproceedings{2016_P056_adassxxv,
+@inproceedings{2016jenness-adass,
   author =       "Tim Jenness",
   title =        "{The LSST Data Processing Software Stack: Summer
                   2015 Release}",
@@ -2080,7 +2084,7 @@ booktitle = {Astronomical Data Analysis Software and Systems XVIII},
   address =      "San Francisco",
 }
 
-@inproceedings{2016_O3-1_adassxxv,
+@inproceedings{2016juric-adass,
   author =       "Mario Juric and others",
   title =        "{The LSST Data Management System}",
   booktitle =    "ADASS XXV",
@@ -2096,7 +2100,7 @@ booktitle = {Astronomical Data Analysis Software and Systems XVIII},
   talkdoi =      {10.5281/zenodo.45161},
 }
 
-@inproceedings{2016_O10-1_adassxxv,
+@inproceedings{2016wu-adass,
   author =       "Xiuqin Wu and David Ciardi and Gregory
                   Dubois-Felsmann and Tatiana Goldina and Steve Groom
                   and Loi Ly and Trey Roby",
@@ -2144,9 +2148,9 @@ booktitle = {Astronomical Data Analysis Software and Systems XVIII},
   adsnote =      {Provided by the SAO/NASA Astrophysics Data System}
 }
 
-@misc{sick_2016_44643,
+@misc{2016sick-aas,
   author =       {Sick, Jonathan},
-  title =        {LSST DM Community Resources},
+  title =        "{LSST DM Community Resources}",
   month =        jan,
   year =         2016,
   note =         {NSF Pavilion Talk given at AAS 227.},
@@ -2154,10 +2158,10 @@ booktitle = {Astronomical Data Analysis Software and Systems XVIII},
   url =          {http://dx.doi.org/10.5281/zenodo.44643}
 }
 
-@misc{nidever_2016_44673,
+@misc{2016nidever-aas,
   author =       {Nidever, David L.},
-  title =        {{Evaluating the LSST Science Pipelines with
-                  Precursor Datasets}},
+  title =        "{Evaluating the LSST Science Pipelines with
+                  Precursor Datasets}",
   month =        jan,
   year =         2016,
   note =         {{NSF Pavilion talk at the 227th American
@@ -2166,9 +2170,9 @@ booktitle = {Astronomical Data Analysis Software and Systems XVIII},
   url =          {http://dx.doi.org/10.5281/zenodo.44673}
 }
 
-@misc{ciardi_2016_44635,
+@misc{2016ciardi-aas,
   author =       {Ciardi, David R.},
-  title =        {LSST and Synergies with the VO},
+  title =        "{LSST and Synergies with the VO}",
   month =        jan,
   year =         2016,
   note =         {{Talk presented at the US Virtual Observatory
@@ -2178,9 +2182,9 @@ booktitle = {Astronomical Data Analysis Software and Systems XVIII},
   url =          {http://dx.doi.org/10.5281/zenodo.44635}
 }
 
-@Misc{nidever_clusters_2016_leiden,
+@Misc{2016nidever-leiden,
   author =       {David L. Nidever},
-  title =        {Mapping the LMC outskirts with DECam},
+  title =        "{Mapping the LMC outskirts with DECam}",
   month =        feb,
   year =         2016,
   note =         {Presented at Globular Clusters and Galaxy Halos,
@@ -2189,9 +2193,9 @@ booktitle = {Astronomical Data Analysis Software and Systems XVIII},
   url =          {http://dx.doi.org/10.5281/zenodo.47537},
 }
 
-@Misc{lsst_desc_2016_mj,
+@Misc{2016juric-desc,
   author =       {Mario Juric and Robert Lupton},
-  title =        {LSST Data Management Brief Status Update},
+  title =        "{LSST Data Management Brief Status Update}",
   month =        mar,
   year =         2016,
   note =         {{Talk presented at the Winter 2016 LSST DESC Meeting
@@ -2239,9 +2243,9 @@ booktitle = {Python in Astronomy 2016},
   adsnote = {Provided by the SAO/NASA Astrophysics Data System}
 }
 
-@Misc{2016_tj_astropy_lsst,
+@Misc{2016jenness-astropy,
   author =       {Tim Jenness},
-  title =        {LSST Data Management Code Overview},
+  title =        "{LSST Data Management Code Overview}",
   month =        mar,
   year =         2016,
   note =         {Presented at LSST/Astropy Summit, March 2016,
@@ -2250,9 +2254,9 @@ booktitle = {Python in Astronomy 2016},
   url =          {http://dx.doi.org/10.5281/zenodo.48434},
 }
 
-@Misc{2016_jb_astropy_lsst,
+@Misc{2016bosch-astropy,
   author =       {Jim Bosch},
-  title =        {LSST Classes, as AstroPy Spin-Off Candidates},
+  title =        "{LSST Classes, as AstroPy Spin-Off Candidates}",
   month =        mar,
   year =         2016,
   note =         {Presented at LSST/Astropy Summit, March 2016,
@@ -2261,9 +2265,9 @@ booktitle = {Python in Astronomy 2016},
   url =          {http://dx.doi.org/10.5281/zenodo.48435},
 }
 
-@Misc{2016_zi_photoz,
+@Misc{2016ivezic-photoz,
   author =       {Zeljko Ivezic},
-  title =        {The impact of photo-z on LSST science requirements},
+  title =        "{The impact of photo-z on LSST science requirements}",
   month =        apr,
   year =         2016,
   url =
@@ -2273,7 +2277,7 @@ booktitle = {Python in Astronomy 2016},
 }
 
 % Optional fields: author, title, howpublished, month, year, note
-@MISC{2016_ciardi_oir,
+@MISC{2016bolton-oir,
     author = {Adam Bolton and David Ciardi and Knut Olsen},
     title = {Datasphere 2023},
     month = may,
@@ -2284,7 +2288,7 @@ booktitle = {Python in Astronomy 2016},
 }
 
 % Optional fields: author, title, howpublished, month, year, note
-@MISC{2016_ciardi_ivoa,
+@MISC{2016ciardi-ivoa,
     author = {David Ciardi},
     title = "{Large Synoptic Survey Telescope and Synergies with the VO}",
     month = may,
@@ -2294,7 +2298,7 @@ booktitle = {Python in Astronomy 2016},
 }
 
 % Optional fields: author, title, howpublished, month, year, note
-@MISC{2016_jds_ivoa,
+@MISC{2016swinbank-ivoa,
     author = {John Swinbank},
     title = "{VOEvent Transport Protocol}",
     month = may,
@@ -2304,9 +2308,9 @@ booktitle = {Python in Astronomy 2016},
 }
 
 % Optional fields: author, title, howpublished, month, year, note
-@MISC{2016_bvan_ivoa,
+@MISC{2016vanklaveren-ivoa,
     author = {Brian van Klaveren},
-    title = "{ LSST Data Access and VO: Pathfinding through TAP, ADQL and beyond}",
+    title = "{LSST Data Access and VO: Pathfinding through TAP, ADQL and beyond}",
     month = may,
     year = 2016,
     note = {Presentation at the Northern Spring IVOA Meeting, South Africa},
@@ -2314,9 +2318,9 @@ booktitle = {Python in Astronomy 2016},
 }
 
 % Optional fields: author, title, howpublished, month, year, note
-@MISC{2016_mj_lssteurope,
+@MISC{2016juric-lssteurope,
     author = {Mario Juric},
-    title = {LSST Data Products},
+    title = "{LSST Data Products}",
     month = jun,
     year = 2016,
     note = {Presented on 2016-06-20 at the LSST@Europe2 conference held in Serbia},
@@ -2324,7 +2328,7 @@ booktitle = {Python in Astronomy 2016},
 }
 
 % Optional fields: author, title, howpublished, month, year, note
-@MISC{2016_fe_ska,
+@MISC{2016economou-ska,
     author = {Frossie Economou},
     title = "{Software development with distributed teams in large astronomy projects: The LSST experience (so far)}",
     month = jun,
@@ -2335,7 +2339,7 @@ booktitle = {Python in Astronomy 2016},
 }
 
 % Optional fields: author, title, howpublished, month, year, note
-@MISC{2016_ajc_spie,
+@MISC{2016connolly-spie,
     author = {Andrew Connolly},
     title = "{Surveying the Sky with the LSST: Software as the instrument of the Next Decade}",
     month = jun,
@@ -2345,7 +2349,7 @@ booktitle = {Python in Astronomy 2016},
     doi = {10.5281/zenodo.56737},
 }
 
-@MISC{2016_jk_spie,
+@MISC{2016kantor-spie,
     author = {Kantor, Jeff and Long, Kevin and Becla, Jacek and Economou, Frossie and
               Gelman, Margaret and Juric, Mario and Lambert, Ron and Krughoff, Simon K. and
               Swinbank, John D. and Wu, Xiuqin},
@@ -2357,7 +2361,7 @@ booktitle = {Python in Astronomy 2016},
     doi = {10.5281/zenodo.56593},
 }
 
-@MISC{2016_tj_spie,
+@MISC{2016jenness-spie,
     author = {Jenness, Tim},
     title = "{Investigating interoperability of the LSST Data Management software stack with Astropy}",
     month = jun,
@@ -2367,7 +2371,7 @@ booktitle = {Python in Astronomy 2016},
     doi = {10.5281/zenodo.48434},
 }
 
-@MISC{2016_fe_spie,
+@MISC{2016economou-spie,
     author = {Economou, Frossie},
     title = "{The astronomer, the software engineer, and the cloud}",
     month = jun,
@@ -2377,7 +2381,7 @@ booktitle = {Python in Astronomy 2016},
     doi = {10.5281/zenodo.},
 }
 
-@MISC{2016_tr_spie,
+@MISC{2016roby-spie,
     author = {William W. Roby},
     title = "{Firefly: embracing future web technologies}",
     month = jun,
