@@ -158,7 +158,7 @@ The following LaTeX,
    \citedsp{LDM-151},
    \citedsp[DMSR]{LSE-61},
    \citep{LDM-151},
-   \citep[e.g.,]{LSE-163}
+   \citep[e.g.,][]{LSE-163}
 
 results in this output:
 
@@ -167,3 +167,11 @@ results in this output:
   LDM-151, SRD, [LDM-151], [DMSR], [1], [e.g., 3]
 
 where the final two examples would be the reference number.
+If the ``authoryear`` class option is enabled the resulting output is:
+
+::
+
+  LDM-151, SRD, [LDM-151], [DMSR], (Jurić et al., LDM-151), (e.g., Juric et al., LSE-163)
+
+Where the author is used rather than a number but for ``@DocuShare`` Bibtex entries the year is replaced by the document handle.
+This is indicative of DocuShare documents evolving over time, such that the handle is more relevant than the particular year.
