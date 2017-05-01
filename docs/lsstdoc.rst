@@ -128,9 +128,22 @@ A number of standard bibliography database files are available from this package
 
 .. code-block:: latex
 
-  \bibliography{lsst,refs,books,refs_ads}
+  \bibliography{lsst,lsst-dm,refs,books,refs_ads}
 
-The descriptions of these different files can be found below in :ref:`updating-bibliographies`.
+Detailed descriptions of these different files can be found below in :ref:`updating-bibliographies`, but can be summarized as:
+
+lsst
+    LSST DocuShare entries and tech notes.
+lsst-dm
+    Publications relating to LSST by members of the Data Management team.
+    This includes unpublished presentations.
+refs_ads
+    Entries obtained from ADS, including arXiv.
+refs
+    Miscellaneous non-LSST documents which have no entry on ADS.
+books
+    Books which have no entry on ADS.
+
 References should be placed at the end of the document but can come before any appendices.
 
 During development, a local ``.bib`` file can be used in addition to the standard files.
@@ -141,14 +154,6 @@ During development, a local ``.bib`` file can be used in addition to the standar
 
 When a document has been finalized and ready for release, those entries should be moved out of the local file and added to the relevant files in the global database.
 This enables a single known set of references to exist.
-
-.. note::
-
-   Should we cull the current ``.bib`` files (the non-lsst ones) so that they only include the references we are using?
-   There are many Gaia entries in the current database that are never going to be cited by LSST docs.
-   There are many ADS entries that are not used by LSST.
-   Should ADS entries be kept up to date by querying ADS for the bibcodes?
-   Sometimes information is updated (in particular SPIE entries).
 
 References can be cited using the following commands:
 
@@ -166,7 +171,7 @@ The following LaTeX,
    \citedsp{LDM-151},
    \citedsp[DMSR]{LSE-61},
    \citep{LDM-151},
-   \citep[e.g.,]{LSE-163}
+   \citep[e.g.,][]{LSE-163}
 
 results in this output:
 
@@ -175,8 +180,11 @@ results in this output:
   LDM-151, SRD, [LDM-151], [DMSR], [1], [e.g., 3]
 
 where the final two examples would be the reference number.
+If the ``authoryear`` class option is enabled the resulting output is:
 
-.. note::
+::
 
-   Currently the class file enforces number mode for citations.
-   I'm not entirely sure we've really thought about this much.
+  LDM-151, SRD, [LDM-151], [DMSR], (Jurić et al., LDM-151), (e.g., Juric et al., LSE-163)
+
+Where the author is used rather than a number but for ``@DocuShare`` Bibtex entries the year is replaced by the document handle.
+This is indicative of DocuShare documents evolving over time, such that the handle is more relevant than the particular year.
