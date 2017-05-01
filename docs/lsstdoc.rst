@@ -128,9 +128,22 @@ A number of standard bibliography database files are available from this package
 
 .. code-block:: latex
 
-  \bibliography{lsst,refs,books,refs_ads}
+  \bibliography{lsst,lsst-dm,refs,books,refs_ads}
 
-The descriptions of these different files can be found below in :ref:`updating-bibliographies`.
+Detailed descriptions of these different files can be found below in :ref:`updating-bibliographies`, but can be summarized as:
+
+lsst
+    LSST DocuShare entries and tech notes.
+lsst-dm
+    Publications relating to LSST by members of the Data Management team.
+    This includes unpublished presentations.
+refs_ads
+    Entries obtained from ADS, including arXiv.
+refs
+    Miscellaneous non-LSST documents which have no entry on ADS.
+books
+    Books which have no entry on ADS.
+
 References should be placed at the end of the document but can come before any appendices.
 
 During development, a local ``.bib`` file can be used in addition to the standard files.
