@@ -142,14 +142,6 @@ During development, a local ``.bib`` file can be used in addition to the standar
 When a document has been finalized and ready for release, those entries should be moved out of the local file and added to the relevant files in the global database.
 This enables a single known set of references to exist.
 
-.. note::
-
-   Should we cull the current ``.bib`` files (the non-lsst ones) so that they only include the references we are using?
-   There are many Gaia entries in the current database that are never going to be cited by LSST docs.
-   There are many ADS entries that are not used by LSST.
-   Should ADS entries be kept up to date by querying ADS for the bibcodes?
-   Sometimes information is updated (in particular SPIE entries).
-
 References can be cited using the following commands:
 
 * ``\citeds`` should be used for LSST DocuShare documents (and in the future tech notes).
@@ -175,8 +167,3 @@ results in this output:
   LDM-151, SRD, [LDM-151], [DMSR], [1], [e.g., 3]
 
 where the final two examples would be the reference number.
-
-.. note::
-
-   Currently the class file enforces number mode for citations.
-   I'm not entirely sure we've really thought about this much.
