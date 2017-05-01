@@ -32,6 +32,10 @@ Some things to remember:
   Any document available on DocuShare should use the ``@DocuShare`` bib entry using the document handle as the key in the bib file.
   In the longer term, this file will be auto-generated from DocuShare and should always be up to date and should not require manual editing.
   Tech notes will also be defined in this file.
+* LSST Data Management publications are added to :file:`lsst-dm.bib`.
+  This file is used for published papers (ADS and non-ADS) and presentations.
+  Do not use it for items stored on DocuShare.
+  Presentations should use a key of form ``YYYYauthor-meeting``. 
 * Any reference that can be found on ADS should be stored in :file:`refs_ads.bib` using the standard ADS bibtex export.
   ADS entries should always be cited using the ADS Bibcode.
   This file should be used for arXiv entries obtained from ADS.
