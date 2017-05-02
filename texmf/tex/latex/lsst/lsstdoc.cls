@@ -558,6 +558,7 @@
           lmargin=1in,
           headheight=40pt,
           headsep=2em,
+          marginparwidth=60pt,
           footskip=40pt}
 
 \setlength{\parindent}{0cm}             % No indent at start of paragraphs
@@ -1108,24 +1109,24 @@ No actions have been identified.}
 
 \newcommand{\Alert}{\code{Alert}\xspace}
 \newcommand{\Alerts}{\code{Alerts}\xspace}
-\newcommand{\DIASource}{\code{DIASource}\xspace}
-\newcommand{\DIASources}{\code{DIASources}\xspace}
-\newcommand{\DIAObject}{\code{DIAObject}\xspace}
-\newcommand{\DIAObjects}{\code{DIAObjects}\xspace}
+\newcommand{\DIASource}{\code{DIA\-Source}\xspace}
+\newcommand{\DIASources}{\code{DIA\-Sources}\xspace}
+\newcommand{\DIAObject}{\code{DIA\-Object}\xspace}
+\newcommand{\DIAObjects}{\code{DIA\-Objects}\xspace}
 \newcommand{\DB}{{Level 1 database}\xspace}
 \newcommand{\DR}{{Level 2 database}\xspace}
 \newcommand{\Object}{\code{Object}\xspace}
 \newcommand{\Objects}{\code{Objects}\xspace}
 \newcommand{\Source}{\code{Source}\xspace}
 \newcommand{\Sources}{\code{Sources}\xspace}
-\newcommand{\ForcedSource}{\code{ForcedSource}\xspace}
-\newcommand{\ForcedSources}{\code{ForcedSources}\xspace}
-\newcommand{\CoaddSource}{\code{CoaddSource}\xspace}
-\newcommand{\CoaddSources}{\code{CoaddSources}\xspace}
-\newcommand{\SSObject}{\code{SSObject}\xspace}
-\newcommand{\SSObjects}{\code{SSObjects}\xspace}
-\newcommand{\VOEvent}{\code{VOEvent}\xspace}
-\newcommand{\VOEvents}{\code{VOEvents}\xspace}
+\newcommand{\ForcedSource}{\code{Forced\-Source}\xspace}
+\newcommand{\ForcedSources}{\code{Forced\-Sources}\xspace}
+\newcommand{\CoaddSource}{\code{Coadd\-Source}\xspace}
+\newcommand{\CoaddSources}{\code{Coadd\-Sources}\xspace}
+\newcommand{\SSObject}{\code{SS\-Object}\xspace}
+\newcommand{\SSObjects}{\code{SS\-Objects}\xspace}
+\newcommand{\VOEvent}{\code{VO\-Event}\xspace}
+\newcommand{\VOEvents}{\code{VO\-Events}\xspace}
 \newcommand{\transSNR}{5\xspace}
 
 % Command to link to a document in Docushare. Pass an LSST document handle as argument, or a document number.
