@@ -558,6 +558,7 @@
           lmargin=1in,
           headheight=40pt,
           headsep=2em,
+          marginparwidth=60pt,
           footskip=40pt}
 
 \setlength{\parindent}{0cm}             % No indent at start of paragraphs
