@@ -1230,6 +1230,22 @@ No actions have been identified.}
 \newcommand{\smalltilde}{\raise.26ex\hbox{$\scriptstyle\mathtt{\sim}$}}
 \newcommand{\electron}{$e^{-}$}
 
+%%%%% Commands for indicating added text and removed text
+\newcommand{\oldtext}[1]{{\color{red} #1}}
+\newcommand{\newtext}[1]{{\color{blue} #1}}
+
+%%%%% Commands for adding requirement numbers to margins
+\makeatletter
+\newcommand{\margin@req}[1]{\marginpar{\hspace{0pt}\tiny #1}}
+
+% DMSR, LSR and OSS requirements have their own command
+\newcommand{\dmreq}[1]{\margin@req{DMS-REQ-#1}}
+\newcommand{\lsrreq}[1]{\margin@req{LSR-REQ-#1}}
+\newcommand{\ossreq}[1]{\margin@req{OSS-REQ-#1}}
+
+% Used for requirements parameters/constraints
+\newcommand{\reqparam}[1]{\margin@req{#1}}
+\makeatother
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
