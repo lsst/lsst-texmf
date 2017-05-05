@@ -23,6 +23,12 @@
   ItalicFont = OpenSans-Italic,
   BoldItalicFont = OpenSans-BoldItalic
   }
+  \defaultfontfeatures[Inconsolata]
+  {
+  Extension = .ttf ,
+  UprightFont = Inconsolata-Regular,
+  BoldFont = Inconsolata-Bold,
+  }
   \setmainfont[Ligatures=TeX]{OpenSans}
   \setmonofont{Inconsolata}
 \else
