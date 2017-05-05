@@ -275,12 +275,18 @@ public
 
 ./fonts/truetype/public:
 Inconsolata
+carrois-gothic
 opensans
 
 ./fonts/truetype/public/Inconsolata:
 Inconsolata-Bold.ttf
 Inconsolata-Regular.ttf
 OFL.txt
+
+./fonts/truetype/public/carrois-gothic:
+CarroisGothic-Regular.ttf
+CarroisGothicSC-Regular.ttf
+SIL Open Font License.txt
 
 ./fonts/truetype/public/opensans:
 LICENSE.txt

@@ -18,16 +18,17 @@
   \defaultfontfeatures[OpenSans]
   {
   Extension = .ttf ,
-  UprightFont = OpenSans-Regular,
-  BoldFont = OpenSans-Bold,
-  ItalicFont = OpenSans-Italic,
-  BoldItalicFont = OpenSans-BoldItalic
+  UprightFont = *-Regular,
+  BoldFont = *-Bold,
+  ItalicFont = *-Italic,
+  BoldItalicFont = *-BoldItalic,
+  SmallCapsFont = CarroisGothicSC-Regular,
   }
   \defaultfontfeatures[Inconsolata]
   {
   Extension = .ttf ,
-  UprightFont = Inconsolata-Regular,
-  BoldFont = Inconsolata-Bold,
+  UprightFont = *-Regular,
+  BoldFont = *-Bold,
   }
   \setmainfont[Ligatures=TeX]{OpenSans}
   \setmonofont{Inconsolata}
