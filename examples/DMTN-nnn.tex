@@ -48,13 +48,21 @@ Use \verb|\citeds| for citing docushare documents.
 \verb|\citep[][]|: \citep[e.g.,][are interesting]{2009arXiv0912.0201L,2016SPIE.9913E..0GJ} \\
 \verb|\cite|: \cite{LPM-51,Wang:2011:QDS:2063348.2063364}
 
-Font checking: \texttt{Fixed width font}.
+Font checking: \texttt{Fixed width font}, \textsc{Small Caps}, \textbf{Bold}, \textit{Italic}, \textbf{\textit{BoldItalic}}.
 
-Math checking: $A = \pi r^2 \mathrm{(math roman)}$
+Math checking: $A = \pi r^2 \smalltilde\mathrm{(math roman)}\mathit{(italic)}\mathsf{(sans serif)} 0 == \zerob \xib$
+
+\begin{equation}
+O(x, z) = \sum_\lambda I(x',\lambda) \otimes D(\lambda, z)
+\end{equation}
 
 Talk about something that relates to a requirement.\ossreq{1234}
 
 \newtext{We can show new text} \oldtext{and text to be removed}.
+
+\begin{note}[Note Title]
+  This is used for note blocks.
+\end{note}
 
 % Include all the relevant bib files.
 % lsst is for DocuShare and DMTN entries.

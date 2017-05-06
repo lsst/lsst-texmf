@@ -10,6 +10,12 @@
 % Define the default stretch
 \renewcommand{\baselinestretch}{1.25}
 
+% Must load AMS packages before loading math fonts
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+\RequirePackage{bm}
+\RequirePackage{amsbsy}
+
 % LSST uses a sans serif font
 \RequirePackage{ifxetex}
 \ifxetex
@@ -18,17 +24,20 @@
   \defaultfontfeatures[OpenSans]
   {
   Extension = .ttf ,
-  UprightFont = OpenSans-Regular,
-  BoldFont = OpenSans-Bold,
-  ItalicFont = OpenSans-Italic,
-  BoldItalicFont = OpenSans-BoldItalic
+  UprightFont = *-Regular,
+  BoldFont = *-Bold,
+  ItalicFont = *-Italic,
+  BoldItalicFont = *-BoldItalic,
+  SmallCapsFont = CarroisGothicSC-Regular,
   }
   \defaultfontfeatures[Inconsolata]
   {
   Extension = .ttf ,
-  UprightFont = Inconsolata-Regular,
-  BoldFont = Inconsolata-Bold,
+  UprightFont = *-Regular,
+  BoldFont = *-Bold,
   }
+  \RequirePackage[bold-style=ISO]{unicode-math}
+  \setmathfont{xits-math.otf}
   \setmainfont[Ligatures=TeX]{OpenSans}
   \setmonofont{Inconsolata}
 \else
@@ -36,12 +45,10 @@
   \RequirePackage[utf8x]{inputenc}
   \RequirePackage[default]{opensans}
   \RequirePackage{inconsolata}
+  \RequirePackage[uprightGreek]{newtxmath}
 \fi
 
 \RequirePackage[usenames]{xcolor}
-\RequirePackage{amsmath}
-\RequirePackage{amssymb}
-\RequirePackage{amsbsy}
 \RequirePackage{ifthen}
 \RequirePackage{calc}
 \RequirePackage{array}
@@ -53,6 +60,7 @@
 \RequirePackage{eso-pic}
 \RequirePackage{color}
 \RequirePackage{setspace}
+\RequirePackage{tcolorbox}
 
 %\RequirePackage[linkcolor=blue,colorlinks=true]{hyperref}
 \RequirePackage{hyperref}
@@ -1213,8 +1221,8 @@ No actions have been identified.}
 \renewcommand{\th}{\ensuremath{^{\mbox{\tiny th}}}\xspace}
 \newcommand{\Nb}{\textit{N.b.}\xspace}
 \newcommand{\nb}{\textit{n.b.}\xspace}
-\newcommand{\xib}{{\boldsymbol \xi}}
-\newcommand{\zerob}{{\boldsymbol 0}}
+\DeclareBoldMathCommand\xib{\xi}
+\DeclareBoldMathCommand\zerob{0}
 \newcommand{\cameraTeam}{\textbf{Camera Team deliverable}\\}
 \newcommand{\TBD}{\textit{T.B.D.}\xspace}
 \newcommand{\XXX}[1]{{{\color{red}\textbf{XXX #1}\xspace}}}
@@ -1259,18 +1267,13 @@ No actions have been identified.}
 
 \newenvironment{note}[1][Note]
 {
-  \begin{displaymath}
-    \left[ \qquad
-    \begin{minipage}[h]{.75\linewidth}
-      \color{red} \footnotesize
-      \textbf{#1:} \newline
-      \color{black}
+
+  \begin{minipage}[h]{.75\linewidth}
+    \begin{tcolorbox}[colback=red!5!white,colframe=red!75!black,title=#1]
 }
 {
-    \end{minipage}
-    \normalsize
-    \qquad \right]
-  \end{displaymath}
+    \end{tcolorbox}
+  \end{minipage}
 }
 
 \newcommand{\uc}[1]{{\tt #1}}
