@@ -10,6 +10,12 @@
 % Define the default stretch
 \renewcommand{\baselinestretch}{1.25}
 
+% Must load AMS packages before loading math fonts
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+\RequirePackage{bm}
+\RequirePackage{amsbsy}
+
 % LSST uses a sans serif font
 \RequirePackage{ifxetex}
 \ifxetex
@@ -30,6 +36,8 @@
   UprightFont = *-Regular,
   BoldFont = *-Bold,
   }
+  \RequirePackage[bold-style=ISO]{unicode-math}
+  \setmathfont{xits-math.otf}
   \setmainfont[Ligatures=TeX]{OpenSans}
   \setmonofont{Inconsolata}
 \else
@@ -37,12 +45,10 @@
   \RequirePackage[utf8x]{inputenc}
   \RequirePackage[default]{opensans}
   \RequirePackage{inconsolata}
+  \RequirePackage[uprightGreek]{newtxmath}
 \fi
 
 \RequirePackage[usenames]{xcolor}
-\RequirePackage{amsmath}
-\RequirePackage{amssymb}
-\RequirePackage{amsbsy}
 \RequirePackage{ifthen}
 \RequirePackage{calc}
 \RequirePackage{array}
@@ -1214,8 +1220,8 @@ No actions have been identified.}
 \renewcommand{\th}{\ensuremath{^{\mbox{\tiny th}}}\xspace}
 \newcommand{\Nb}{\textit{N.b.}\xspace}
 \newcommand{\nb}{\textit{n.b.}\xspace}
-\newcommand{\xib}{{\boldsymbol \xi}}
-\newcommand{\zerob}{{\boldsymbol 0}}
+\DeclareBoldMathCommand\xib{\xi}
+\DeclareBoldMathCommand\zerob{0}
 \newcommand{\cameraTeam}{\textbf{Camera Team deliverable}\\}
 \newcommand{\TBD}{\textit{T.B.D.}\xspace}
 \newcommand{\XXX}[1]{{{\color{red}\textbf{XXX #1}\xspace}}}
