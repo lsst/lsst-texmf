@@ -60,6 +60,7 @@
 \RequirePackage{eso-pic}
 \RequirePackage{color}
 \RequirePackage{setspace}
+\RequirePackage{tcolorbox}
 
 %\RequirePackage[linkcolor=blue,colorlinks=true]{hyperref}
 \RequirePackage{hyperref}
@@ -1266,18 +1267,13 @@ No actions have been identified.}
 
 \newenvironment{note}[1][Note]
 {
-  \begin{displaymath}
-    \left[ \qquad
-    \begin{minipage}[h]{.75\linewidth}
-      \color{red} \footnotesize
-      \textbf{#1:} \newline
-      \color{black}
+
+  \begin{minipage}[h]{.75\linewidth}
+    \begin{tcolorbox}[colback=red!5!white,colframe=red!75!black,title=#1]
 }
 {
-    \end{minipage}
-    \normalsize
-    \qquad \right]
-  \end{displaymath}
+    \end{tcolorbox}
+  \end{minipage}
 }
 
 \newcommand{\uc}[1]{{\tt #1}}
