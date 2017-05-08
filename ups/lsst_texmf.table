@@ -1,0 +1,1 @@
+envPrepend(TEXMFLOCAL, ${PRODUCT_DIR}/texmf)
