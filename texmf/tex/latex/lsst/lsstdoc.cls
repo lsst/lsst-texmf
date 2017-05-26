@@ -48,7 +48,7 @@
   \RequirePackage[uprightGreek]{newtxmath}
 \fi
 
-\RequirePackage[usenames]{xcolor}
+\RequirePackage[usenames,table]{xcolor}
 \RequirePackage{ifthen}
 \RequirePackage{calc}
 \RequirePackage{array}
