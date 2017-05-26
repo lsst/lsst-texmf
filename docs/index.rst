@@ -13,6 +13,7 @@ lsst-texmf is on GitHub at https://github.com/lsst/lsst-texmf.
    :maxdepth: 2
 
    install
+   docker
    examples/index
    lsstdoc
    beamer
