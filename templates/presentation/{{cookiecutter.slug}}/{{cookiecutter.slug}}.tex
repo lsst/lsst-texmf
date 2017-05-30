@@ -1,0 +1,44 @@
+\documentclass[t]{beamer}
+\usepackage{longtable}
+
+\usepackage[fonts=false, footline={ {{- cookiecutter.short_title -}} }]{LSST-beamer}
+
+
+\title{ {{- cookiecutter.title -}} }
+\date[ {{- cookiecutter.date -}} ]{ {{- cookiecutter.date}}, {{ cookiecutter.venue -}} }
+
+\author[ {{-cookiecutter.presenter -}} ]{ {{- cookiecutter.presenter -}} }
+\position{ {{- cookiecutter.presenter_role -}} }
+\institute{ {{- cookiecutter.presenter_institution -}} }
+
+
+% Added at the start of every section
+\AtBeginSection[]
+{
+\begin{frame}<beamer>
+\frametitle{Outline} % make a frame titled "Outline"
+\tableofcontents[currentsection]  % show TOC and highlight current section
+\end{frame}
+}
+
+
+\AtBeginSubsection[]
+{
+\begin{frame}
+  \frametitle{Outline}
+  \tableofcontents[currentsection,currentsubsection]
+\end{frame}
+}
+
+
+\begin{document}
+\frame{\titlepage}
+
+\frame{\frametitle{For more information}
+   \begin{itemize}
+    \item \url{https://lsst-texmf.lsst.io/beamer.html}
+    \item \url{https://lsst-texmf.lsst.io/examples/index.html\#presentations}
+   \end{itemize}
+}
+
+\end{document}

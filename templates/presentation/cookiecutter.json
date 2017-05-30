@@ -1,0 +1,13 @@
+{
+  "title": "Presentation title",
+  "short_title": "{{ cookiecutter.title }}",
+  "slug": "Project directory name (will be created)",
+  "presenter": "First Last",
+  "presenter_role": "Presenter's role",
+  "presenter_institution": "AURA/LSST",
+  "date": "YYYY-MM-DD",
+  "venue": "Event or venue name",
+  "copyright_year": "2017",
+  "copyright_holder": "Association of Universities for Research in Astronomy, Inc.",
+  "license_cc_by": [true, false]
+}
