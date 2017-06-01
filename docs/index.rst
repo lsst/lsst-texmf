@@ -15,6 +15,7 @@ lsst-texmf is on GitHub at https://github.com/lsst/lsst-texmf.
    install
    docker
    examples/index
+   templates/index
    lsstdoc
    beamer
    developer
