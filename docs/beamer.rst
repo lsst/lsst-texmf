@@ -4,7 +4,12 @@
 Writing Presentations
 #####################
 
-You can use `beamer <https://en.wikipedia.org/wiki/Beamer_(LaTeX)>`_ to make LSST-flavoured talks by adding something like:
+.. _lsst-beamer-quick-start:
+
+Quick start
+===========
+
+You can use `beamer`_ to make LSST-flavoured talks by adding something like:
 
 .. code-block:: latex
 
@@ -12,6 +17,11 @@ You can use `beamer <https://en.wikipedia.org/wiki/Beamer_(LaTeX)>`_ to make LSS
 
 to your beamer presentation.
 You need the ``fonts=false`` if you want to use :command:`pdflatex`; if you're happy with :command:`xelatex` it may be omitted.
+
+.. _lsst-beamer-theming:
+
+Alternate themes
+================
 
 The backgrounds for the title and main pages are found in the directory :file:`LSST-themes/`.
 Two files are required:
@@ -28,14 +38,19 @@ Default may be a symbolic link to choose the proper background, or you may speci
    \usepackage[backgroundTheme=LSST2016]{LSST-beamer}
 
 You may use ``footline=XXX`` to put text in the footer, generally with the default "generic" ``backgroundTheme``, as many ``backgroundThemes`` already have something there.
-The text may use ``{}`` to quote spaces; see :file:`examples/Example-beamer-LSST2016.tex` for an example.
+The text may use ``{}`` to quote spaces; see :ref:`beamer-LSST2016` for an example.
 
 You may use ``\position`` as an alias for ``\institute`` (e.g. ``\position{DM Boss}``) (but only if you declare it after importing the ``LSST-beamer`` package).
 
 Another common problem is DESC; they use a different layout for their cover slides --- see
-:file:`examples/Example-beamer-desc.tex`.
+:ref:`beamer-desc`.
 
-The full set of options that the LSST-beamer package accepts are:
+.. _lsst-beamer-reference:
+
+Options reference
+=================
+
+The full set of options that the ``LSST-beamer`` package accepts are:
 
 ``quiet``
    Suppress some pdf warnings.
@@ -97,3 +112,5 @@ The full set of options that the LSST-beamer package accepts are:
 
 ``monoFontScale``
    Scaling for mono font (default: ``1``; only takes effect if ``fonts=true``).
+
+.. _beamer: https://en.wikipedia.org/wiki/Beamer_(LaTeX)
