@@ -4,6 +4,13 @@
 Writing Presentations
 #####################
 
+This page describes how to use the ``LSST-beamer`` class to make LSST-style presentations with beamer_.
+
+.. seealso::
+
+   - :ref:`presentation-template`
+   - :ref:`examples`
+
 .. _lsst-beamer-quick-start:
 
 Quick start

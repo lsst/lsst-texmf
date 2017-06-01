@@ -6,8 +6,12 @@ Using the lsstdoc document class
 
 The :file:`lsstdoc` document class should be used for all LaTeX LSST documents.
 The class file defines the document fonts and page dimensions, imports commonly used packages, defines journal macros and other common commands and defines the main title page and the page headers and footers.
-In this section we will explain how to create a document using the LSST document class.
-A full example can be seen in the :file:`examples` directory in the repository.
+In this section we will explain how to use ``lsstdoc``.
+
+.. seealso::
+
+   - :ref:`document-template`
+   - :ref:`examples`
 
 .. Consider moving the macros into a separate style file in order to make it easier to document them.
 
