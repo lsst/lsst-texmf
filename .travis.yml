@@ -1,10 +1,13 @@
 sudo: true
 language: python
 dist: trusty
+services:
+  - docker
 matrix:
   include:
     - python: "3.5"
-      env: LTD_MASON_BUILD=true
+      # Enable docker and documentation deployments
+      env: LTD_MASON_BUILD=true DEPLOY_DOCKER_IMAGE=true
 before_install:
   - "sudo apt-get update && sudo apt-get install -y --no-install-recommends texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended latexmk poppler-utils latex-xcolor latex-beamer lmodern texlive-xetex texlive-generic-recommended texlive-math-extra"
 install:
@@ -16,11 +19,22 @@ script:
   - make
   - make docs
 after_success:
+  # Deploy https://lsst-texmf.lsst.io site
   - make lsstthedocs
+  # Build the Docker image
+  - "docker build -t ${IMAGE_NAME}:build ."
+  # Deploy the Docker image
+  - ./bin/travis-docker-deploy.sh
 env:
   global:
     - LTD_MASON_BUILD=false  # disable builds in regular text matrix
     - LTD_MASON_PRODUCT="lsst-texmf"
+    - DEPLOY_DOCKER_IMAGE=false  # disable docker builds in regular test matrix
+    - IMAGE_NAME="lsstsqre/lsst-texmf"  # Docker image name
     # AWS and LTD Keeper credentials as encrypted secrets here
     - secure: "rmK3azL0TZmEoZ3nObhiWr1Sr79Z9gHXHVFLV1dJ8hpTKee+qF6HSYZ4CT2SrbzCx/X4WLSOiVfvxDYyOeZUQUTdLxf+8AytORtX7s1F5/4IW2Va7XyJztAL7yI9SVs9pKlB+craO8P5ljxm7ReqahRkitog8i9few2WdYDozsm80MNDuU+bmet4o3dLyVOtgmb0YroY7+E0NminHNCalv8ekUHA+VemgG6549VazcNtXrTkIKQBKWbSZmGwAJDa5YzQOQJIV1TQ0PXX1gARpeVe6Mm5YBnWpzWtG016QC+ZwdHSS5Pjh9S5+2eaYey7F157q7bODcfMt1RU09p360RU7KVgezBElyZvus/q4pZnfd8VARl+7EzG9m8AaqBDuFhJex2A4iZbk4fMOmywtPDpMGzmDZOLOxa47cUu1KVFKarMm8ILY9QBUI8u84DqYrLuYVfMTvcXro6PG1QIMgzhe4H4Qd5wrJggnRuyBVZajWhPFNioBouq0DtbyxPUE9J7z7ki3VV2cu7Nxdat0snmFRfayfJt0fHj3h1J7HCt2JF83ZdyqG5Y28b/GpEydyBnIyBzhNbMlbQJl/g/39Zfgq2EJB8tmWyCii5Fi7QSxRW6DR35mCB2ztejNsHpT23qaxhxlZGD+xFdTBejGFbrV/SukqJuDAkpxAwu1wQ="
     - secure: "wMjSG3rFs/RMqL9k8sSGpqH9OKyre6gBzU6FuhUcOIlCkzuws+bJ4L2xGIbIBun+FdzxIBCePaxvSxV4waFV67Q9BOOfno96ZxwHUL8URFx/x7xN3Djb6gS0VIQ/5Hg5xEmYvNCdLzw9GB2Ka4alQxOvIC6hNhxPmCDxwTru5H8uggSM7LTFK1wnAOF1VO2483llbNJ1HkVkWMi/+OFlUjdxPEmnEcAVMyGv8pfZ30fBjKRmBpIj3zK+kbX6XW0wcu8sEOleMgHpcpvq/zCrsWJF+K/b4jKyadPNoudp+hnOvj4dV480SZt9Iu/AWQ0N5oy+GyFKJtoIpl+I85t3DQflFaTR9k6Hdk8RvdGb7DNo55iyWyohj1ClN0qxq4SLyP0/z8RQNZOWjcjJUtIlQxLkFxDceNhEqKegU+dg+XZOSt9LzA0/6c6tsa4bg3J0lYqDHTJ2oQfQ/fA/cVWRNvPhDZoAxr/pYRdo2+eRfX+A2XfBVbbr5lm02UmkcrBqfO9fuUZZDRdssrIXKl31QGNcxyxr3lRHKBYza/7Bh5hNTNHs8NEcoZh+GaIp1cZzjboGO/XAJzopxVv99H0n0buCUa06NjiKwlxgh78XXerQNXgYq80bYy4uGqtsdb8oKf6MCPlkuPMtKw+GVFG42/PCgfzqqUJ5hjfKzImYuko="
+    # DOCKER_USERNAME
+    - secure: "v0n7Vva6qx9OrA3BoaqJv0U3gpbkGXtKIcYdJ+2jHyt+vlhYx6qQUS/UGIiBxZmu4NuVxsB8TFOV3qQm47+NzwsdE64Y6/V/rTEgeZUd9JEOqeyO7o9lnrqjPCvBLMmdn1Qfc13AZ/hrNvOgVHzlSD1QVfQdh0mJvwWr2WsSIb9AJKsEI8yJTIW46OQv5CmICc98s27/aPMwbneDuHYcnUFg4cpCZ88LFkFAprrRJk8vwYiSYS7L1eNv55mPVyUe37Wuy1ncmwhV/r4b2H8RaTPlVDfVRtaCd5k2eZJ4olcoIZUpnNHTBbdqCTUsVUhP8L3IPtA48XTxGjZ2FN3e5g3cZ+3QTdemFCjAYUeXPYzzyiyhCNj1cIg4g13CGh39Mjwaice3zDJJ9ifJ3bZoCnN3FDnl0DjSrauj32ZyAyV1NTM1b36MkYwwXqoed+MZkOhIveCXSSDttK3ICeOdsnuCawK/eUDLGD3iQzyO7W/NWiUXG46nTiKHDYAZLEfDqEaaqaccQOqCZDNoYJZGwW5D53QN0hmFUsB2fMHtsNy/DvNhPv+NaG280sXPaqnhM71BStQlstRZFvXYYzJOMKB7DzafyCPI35Nak5PCfMD+PCI+FX95QBNXFzjthZ2qAAXvvsHzVYtnxz3I0+yvUwehITPjWimFMyvLXudQubw="
+    # DOCKER_PASSWORD
+    - secure: "6w/pJJKIm6+JxhXictGnkFB6W22EdQBKFwXQ7Ct0v40o4+O0mzcQd5SoVHmkg0OoFHTn/f1lCUf/0ry/FQl4wVFIUnWeomqp3VRWx7snH1UsrjdqedvvmelzhEJLpCqhXoOHCesSfzojh4JWHcT+pdjd0cYj9qmoILtmrSbdLif5HG5h12QzM78fSmh0U8kBMTSD7OcltWYKoAWtfK17EDn+rbZkcBz5odMLdglosE6kKgdRf2cs9xqHGmeBdfvH0wcIT8FGHucSSKnOJkHJxkrt1SK8dgSNVf3YCCEC7BK6WyNqBPYkJNaxzcZURcWKQ+lJPA4oTNukmAwVEudjPfu8SOfqF7hORY4ceJG1amy33rpHumiYrc8cXHew/JxJ8bIiVIkFXOVy+GT5IOE+wSnHyF+i4PuN+C2FtYPr7Md11myYTPatm52p4NjcXKHN0u5dgvLDrY1EkSj6bZ+CKPm/gFfHIy4ESocmdGGiGvLV9B/aQIVXXRp3FrsBCl566YieP+Yh23Zie0UKeZWmWnPgwHAZoFPie4LuCNSG8nHiZNDa7+lS+E+c2IanwUhZNIKAP/548GMKeVxHGEgLTbYJR/2qGRzIY4zU9lpiPu2LBCE3JHTXW8T5k29c+u7l8ygZpOXNrRXh7FHO7ny9k7Zq5ZWznI60JprCVn5ZLJo="

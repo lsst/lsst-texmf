@@ -62,3 +62,31 @@ For more information on writing reStructuredText-formatted documentation, see `D
 You can contribute to the documentation using `DM's normal workflow <https://developer.lsst.io/processes/workflow.html>`_.
 When you have pushed a ticket branch to GitHub, you can find a rendered draft at https://lsst-texmf.lsst.io/v.
 The main site at https://lsst-texmf.lsst.io updates automatically once your PR is merged to ``master``.
+
+.. _contrib-docker:
+
+Maintaining the Docker distribution
+===================================
+
+Docker images are automatically published as `lsstsqre/lsst-texmf`_ on Docker Hub through Travis CI.
+Contributors shouldn't need to worry about updating the Docker distribution.
+
+The following tags are generated through Travis:
+
+- ``latest`` corresponds to ``master`` on GitHub.
+- Tags also correspond to git branches and tags on GitHub.
+  The build system converts forward slashes in branch names to dashes in tags.
+  For example, the ``tickets/DM-10642`` Git branch is published on Docker Hub as ``tickets-DM-10642``.
+- ``travis-N`` tags correspond to individual Travis CI builds.
+
+The following components are involved in the Docker toolchain:
+
+- The ``Dockerfile`` defines the container.
+  Note that ``lsst-texmf``\ ’s :file:`Dockerfile` is only concerned with installing ``lsst-texmf`` and setting :envvar:`TEXMFHOME`.
+  The `lsstsqre/lsst-texlive`_ base image provides `TeX Live`_ and tools like :command:`make` and :command:`git`.
+- The ``.travis.yml`` file runs the Docker image build and push in the Travis CI environment.
+- The ``bin/travis-docker-deploy.sh`` script tags the images according to the above scheme and pushes those images to Docker Hub.
+
+.. _`lsstsqre/lsst-texmf`: https://hub.docker.com/r/lsstsqre/lsst-texmf/
+.. _`lsstsqre/lsst-texlive`: https://hub.docker.com/r/lsstsqre/lsst-texlive/
+.. _`TeX Live`: http://tug.org/texlive/
