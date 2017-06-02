@@ -1,0 +1,58 @@
+{% if cookiecutter.series in ['LDM', 'LSE', 'LPM'] -%}
+\documentclass[DM,lsstdraft,toc]{lsstdoc}
+{% else %}
+{# skip draft watermark for technotes and use author-year citations #}
+\documentclass[DM,authoryear,toc]{lsstdoc}
+{%- endif %}
+% lsstdoc documentation: https://lsst-texmf.lsst.io/lsstdoc.html
+
+% Package imports go here.
+
+% Local commands go here.
+
+% To add a short-form title:
+% \title[Short title]{Title}
+\title{ {{- cookiecutter.title -}} }
+
+% Optional subtitle
+% \setDocSubtitle{A subtitle}
+
+{% raw -%}
+\author{%{%- endraw %}
+{{ cookiecutter.first_author }}
+}
+
+\setDocRef{ {{- cookiecutter.series.upper() -}}-{{- cookiecutter.serial_number -}} }
+
+\date{\today}
+
+% Optional: name of the document's curator
+% \setDocCurator{The Curator of this Document}
+
+{% raw -%}
+\setDocAbstract{%{%- endraw %}
+{{ cookiecutter.abstract }}
+}
+
+% Change history defined here.
+% Order: oldest first.
+% Fields: VERSION, DATE, DESCRIPTION, OWNER NAME.
+% See LPM-51 for version number policy.
+{% raw -%}
+\setDocChangeRecord{%{%- endraw %}
+  \addtohist{1}{YYY-MM-DD}{Unreleased.}{ {{- cookiecutter.first_author -}} }
+}
+
+\begin{document}
+
+% Create the title page.
+% Table of contents is added automatically with the "toc" class option.
+\maketitle
+
+% ADD CONTENT HERE
+
+% Include all the relevant bib files.
+% https://lsst-texmf.lsst.io/lsstdoc.html#bibliographies
+\bibliography{lsst,lsst-dm,refs_ads,refs,books}
+
+\end{document}
