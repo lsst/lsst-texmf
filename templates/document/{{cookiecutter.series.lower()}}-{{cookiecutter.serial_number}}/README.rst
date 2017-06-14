@@ -1,5 +1,5 @@
 .. image:: https://img.shields.io/badge/{{ cookiecutter.series.lower() }}--{{ cookiecutter.serial_number }}-lsst.io-brightgreen.svg
-   :target: https://{{ cookiecutter.series.lower() }}-{{ cookiecutter.serial_number }}-lsst.io
+   :target: https://{{ cookiecutter.series.lower() }}-{{ cookiecutter.serial_number }}.lsst.io
 .. image:: https://travis-ci.org/{{ cookiecutter.github_org }}/{{ cookiecutter.series.lower() }}-{{ cookiecutter.serial_number }}.svg
    :target: https://travis-ci.org/{{ cookiecutter.github_org }}/{{ cookiecutter.series.lower() }}-{{ cookiecutter.serial_number }}
 
