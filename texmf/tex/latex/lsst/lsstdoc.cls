@@ -280,6 +280,12 @@
 \newcommand{\setDocCurator}[1]{\def\@docCurator{#1}}
 \setDocCurator{}
 
+\newcommand{\setDocUpstreamLocation}[1]{\def\@docUpstreamLocation{#1}}
+\setDocUpstreamLocation{}
+
+\newcommand{\setDocUpstreamVersion}[1]{\def\@docUpstreamVersion{#1}}
+\setDocUpstreamVersion{}
+
 \newcommand{\docAbstract}{}
 \newcommand{\setDocAbstract}[1]{\renewcommand{\docAbstract}
 {\section*{Abstract}
@@ -536,6 +542,17 @@
 \else
     \emph{Document curator:} \@docCurator\\
 \fi
+\ifx \@docUpstreamLocation \@empty
+    \relax
+\else
+    \emph{Document source location:} \@docUpstreamLocation\\
+\fi
+\ifx \@docUpstreamVersion \@empty
+    \relax
+\else
+    \emph{Version from source repository:} \@docUpstreamVersion\\
+\fi
+
 \clearpage
 %        \ifx \@docCompact \@empty
 %           \pagebreak
