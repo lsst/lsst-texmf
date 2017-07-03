@@ -522,7 +522,7 @@
     \setlength\LTleft{0pt}
     \setlength\LTright{\fill}
 %   \setlength\LTpost{\fill}
-%   \addtocounter{table}{-1}
+   \addtocounter{table}{-1}
     \begin{longtable}{|l|p{.13\textwidth}|p{.45\textwidth}|p{.23\textwidth}|}
 
     \hline
