@@ -76,6 +76,7 @@
 \RequirePackage{listings}
 %\RequirePackage{nameref}
 %\RequirePackage{mathptmx} % note this messes up \vec definition... do not e add put in your doc if you want it
+\RequirePackage{tocstyle}
 
 % Standardize bibliography styling
 \bibliographystyle{lsst_aa}
@@ -490,8 +491,8 @@
 
    \if@addtoc
      \setcounter{tocdepth}{3}
-     % Do not use lots of whitespace in toc
-     \begin{spacing}{0.8}
+     \usetocstyle{standard}
+     \begin{spacing}{1.5}
      \tableofcontents
      \end{spacing}
      \clearpage
