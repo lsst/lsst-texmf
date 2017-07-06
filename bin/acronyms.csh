@@ -1,9 +1,5 @@
 #!/bin/csh
 
-####
-#Better use ant acronyms from the build.xml in DOCCOMMON.
-####
-
 
 #------------------------------------------------------------------------------
 #
@@ -40,5 +36,10 @@ endif
 
 java -jar $install_dir/GaiaAcr.jar -u https://gaia.esac.esa.int/gpdb/glossary.txt -m $$_myacronyms.tex -s $$_skipacronyms.tex $*
 
+egrep -v "newline|Gaia acr"  acronyms.tex >> $$_acronyms.tex
+cat   $$_acronyms.tex > acronyms.tex
 
-/bin/rm $$_myacronyms.tex $$_skipacronyms.tex
+
+/bin/rm $$_myacronyms.tex $$_skipacronyms.tex $$_acronyms.tex
+
+
