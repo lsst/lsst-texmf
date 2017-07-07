@@ -18,6 +18,21 @@ For example, the following can be used if you are in the directory from which yo
    export TEXMFHOME=`pwd`/lsst-texmf/texmf
 
 A single :file:`texmf` directory can be reused for multiple documents, or else, it is possible to have separate :file:`texmf` directories for each document, having the environment variable set by a make file.
+A particularly useful way of doing the latter is to install :file:`lsst-texmf` as a git submodule.
+To do this, execute this within your document's repository:
+
+.. code-block:: bash
+
+    git submodule add https://github.com/lsst/lsst-texmf
+    
+Add and commit as usual.
+Later, when making a fresh clone of the repository, users will have to execute this within the repository:
+
+.. code-block:: bash
+
+    git submodule init
+    git submodule update
+
 If you do not want to override this environment setting but wish to have the files always available you can move the entire :file:`texmf` tree to the default home location which can be found using:
 
 .. code-block:: bash
