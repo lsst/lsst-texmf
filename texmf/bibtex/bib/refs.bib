@@ -1742,13 +1742,12 @@ requirements},
  issn = {2150-8097},
  pages = {330--339},
  numpages = {10},
- url = {http://dx.doi.org/10.14778/1920841.1920886},
  doi = {10.14778/1920841.1920886},
  acmid = {1920886},
  publisher = {VLDB Endowment},
 }
 
-@Inbook{Waas:2009:97836420342207,
+@Inproceedings{Waas:2009:97836420342207,
 author="Waas, Florian M.",
 editor="Castellanos, Malu
 and Dayal, Umesh
@@ -1763,6 +1762,24 @@ abstract="In this presentation we discuss trends and challenges for data warehou
 isbn="978-3-642-03422-0",
 doi="10.1007/978-3-642-03422-0_7",
 url={http://www.greenplum.com/resources/},
+}
+
+@inproceedings{Isard:2007:DDD:1272996.1273005,
+ author = {Isard, Michael and Budiu, Mihai and Yu, Yuan and Birrell, Andrew and Fetterly, Dennis},
+ title = {Dryad: Distributed Data-parallel Programs from Sequential Building Blocks},
+ booktitle = {Proceedings of the 2Nd ACM SIGOPS/EuroSys European Conference on Computer Systems 2007},
+ series = {EuroSys '07},
+ year = {2007},
+ isbn = {978-1-59593-636-3},
+ location = {Lisbon, Portugal},
+ pages = {59--72},
+ numpages = {14},
+ url = {http://doi.acm.org/10.1145/1272996.1273005},
+ doi = {10.1145/1272996.1273005},
+ acmid = {1273005},
+ publisher = {ACM},
+ address = {New York, NY, USA},
+ keywords = {cluster computing, concurrency, dataflow, distributed programming},
 }
 
 @inproceedings{Chattopadhyay:2011:37200,
@@ -1785,7 +1802,7 @@ title = {GrayWulf: Scalable Clustered Architecture for Data Intensive Computing}
 year = {2008},
 month = sep,
 number = {MSR-TR-2008-187},
-publisher = {Microsoft},
+institution = {Microsoft},
 url = {https://www.microsoft.com/en-us/research/publication/graywulf-scalable-clustered-architecture-for-data-intensive-computing/},
 }
 
@@ -1838,9 +1855,17 @@ month={Jan},
  keywords = {indexing, scalable algorithms, spatial joins, touch},
 }
 
+@misc{Monash:2009:teradata,
+  author = {Curt Monash},
+  title = "{Teradata and Netezza are doing MapReduce too}",
+  year = 2009,
+  month = sep,
+  url = {http://www.dbms2.com/2009/09/03/teradata-and-netezza-are-doing-mapreduce-too/},
+}
+
 @misc{Monash:2009:ebay,
   author = {Curt Monash},
-  title = "{eBay’s two enormous data warehouses}",
+  title = "{eBay's two enormous data warehouses}",
   year = 2009,
   month = apr,
   url = {http://www.dbms2.com/2009/04/30/ebays-two-enormous-data-warehouses/},
@@ -1852,6 +1877,96 @@ month={Jan},
   year = 2010,
   month = oct,
   url = {http://www.dbms2.com/2010/10/06/ebay-followup-greenplum-out-teradata-10-petabytes-hadoop-has-some-value-and-more/},
+}
+
+@misc{Foley:2011:Zdnet,
+  author = {Foley, Mary Jo},
+  title = "{Microsoft drops Dryad; puts its big-data bets on Hadoop}",
+  year = 2011,
+  month = nov,
+  url = {http://www.zdnet.com/article/microsoft-drops-dryad-puts-its-big-data-bets-on-hadoop/},
+}
+
+@misc{Zicaro:2011:ODBMS,
+  author = {Roberto V. Zicari},
+  title = "{Objects in Space}",
+  year = 2011,
+  month = feb,
+  url = {http://www.odbms.org/blog/2011/02/objects-in-space/},
+}
+
+@misc{Schuman:2004:eWeek,
+  author = {Evan Schuman},
+  title = "{At Wal-Mart, Worlds Largest Retail Data Warehouse Gets Even Larger}",
+  year = 2004,
+  month = oct,
+  url = {http://www.eweek.com/enterprise-apps/at-wal-mart-worlds-largest-retail-data-warehouse-gets-even-larger},
+}
+
+@misc{Tommaney:2009:MySQLConf,
+  author = {Jim Tommaney},
+  title = {Calpont: Open Source Columnar Storage Engine for Scalable MySQL},
+  year = 2009,
+  month = apr,
+  url = {https://web.archive.org/web/20090429121116/http://www.mysqlconf.com/mysql2009/public/schedule/detail/8997},
+}
+
+@misc{TokuDB:2013:White,
+  title = "{TokuDB: Scalable High Performance for MySQL and MariaDB Databases}",
+  author = {TokuTek},
+  year = 2013,
+  month = apr,
+  url = {https://web.archive.org/web/20130819012209/http://www.tokutek.com/wp-content/uploads/2013/04/Tokutek-White-Paper.pdf},
+}
+
+@misc{Hoff:2008:Skype,
+  author = {Todd Hoff},
+  title = "{Skype Plans For PostgreSQL To Scale To 1 Billion Users}",
+  year = 2008,
+  month = apr,
+  url = {http://highscalability.com/skype-plans-postgresql-scale-1-billion-users},
+}
+
+@misc{DeWitt:2008:MapReduce,
+  title = "{MapReduce: A major step backwards}",
+  author = {David DeWitt},
+  month = jan,
+  year = 2008,
+  url = {https://web.archive.org/web/20090327050223/http://www.databasecolumn.com/2008/01/mapreduce-a-major-step-back.html},
+
+}
+
+@misc{DeWitt:2008:MapReduceII,
+  title = "{MapReduce II}",
+  author = {David DeWitt},
+  month = jan,
+  year = 2008,
+  url = {https://web.archive.org/web/20090326224219/http://www.databasecolumn.com:80/2008/01/mapreduce-continued.html},
+}
+
+@misc{Intersystems:2008:Globals,
+  author = {Intersystems},
+  title = "{Using Cache Globals}",
+  url = {http://docs.intersystems.com/documentation/cache/20082/pdfs/GGBL.pdf},
+  year = 2008,
+  month = oct,
+}
+
+@misc{Peschka:2010:HBase,
+  author = {Jeremiah Peschka},
+  title = {Facebook Messaging - HBase Comes of Age},
+  month = nov,
+  year = 2010,
+  url = {https://web.archive.org/web/20110215081418/http://nosqlpedia.com/wiki/Facebook_Messaging_-_HBase_Comes_of_Age},
+}
+
+@misc{Ulin:2013:Percona,
+  author = {Tomas Ulin},
+  url = {https://www.youtube.com/watch?v=OpHTV59I1gs},
+  title = "{Driving MySQL Innovation}",
+  year = 2013,
+  month = apr,
+  howpublished = {Percona Live: MySQL Conference and Expo},
 }
 
 @article{Dorigo:2005:XRootd,
@@ -1898,4 +2013,96 @@ month={Jan},
   doi = {10.1109/MIS.2016.60},
   ISSN = {1541-1672},
   month = jul,
+}
+
+@Misc{Dyke:2009:Madison,
+  author = {Paul Dyke},
+  title = "{Microsoft SQL Server Project code-named 'Madison'}",
+  year = 2009,
+  howpublished = {PASS Summit Unite},
+  url = {http://wiki.esi.ac.uk/w/files/5/5c/Dyke-Details_of_Project_Madison-1.pdf},
+}
+
+@inproceedings{DBLP:conf/cidr/BeclaW05,
+  author    = {Jacek Becla and
+               Daniel L. Wang},
+  title     = {Lessons Learned from Managing a Petabyte},
+  booktitle = {{CIDR} 2005, Second Biennial Conference on Innovative Data Systems
+               Research, Asilomar, CA, USA, January 4-7, 2005, Online Proceedings},
+  pages     = {70--83},
+  year      = {2005},
+  url       = {http://cidrdb.org/cidr2005/papers/P06.pdf},
+  timestamp = {Thu, 29 Jun 2017 19:21:39 +0200},
+  biburl    = {http://dblp.dagstuhl.de/rec/bib/conf/cidr/BeclaW05},
+  bibsource = {dblp computer science bibliography, http://dblp.org}
+}
+
+@inproceedings{Stonebraker:2005:CCD:1083592.1083658,
+  author = {Stonebraker, Mike and Abadi, Daniel J. and Batkin, Adam and Chen, Xuedong and
+            Cherniack, Mitch and Ferreira, Miguel and Lau, Edmond and Lin, Amerson and
+            Madden, Sam and O'Neil, Elizabeth and O'Neil, Pat and Rasin, Alex and
+            Tran, Nga and Zdonik, Stan},
+  title = {C-store: A Column-oriented DBMS},
+  booktitle = {Proceedings of the 31st International Conference on Very Large Data Bases},
+  series = {VLDB '05},
+  year = {2005},
+  isbn = {1-59593-154-6},
+  location = {Trondheim, Norway},
+  pages = {553--564},
+  numpages = {12},
+  url = {http://dl.acm.org/citation.cfm?id=1083592.1083658},
+  acmid = {1083658},
+  publisher = {VLDB Endowment},
+}
+
+@INPROCEEDINGS{Ivanova:2007:4274958,
+  author = {M. Ivanova and N. Nes and R. Goncalves and M. Kersten},
+  booktitle = {19th International Conference on Scientific and Statistical Database
+               Management (SSDBM 2007)},
+  title = "{MonetDB/SQL Meets SkyServer: the Challenges of a Scientific Database}",
+  year= 2007,
+  pages= 13,
+  keywords = {SQL;database management systems;MonetDB/SQL;SkyServer;open source database system;reference platform;scientific database;sloan digital sky survey;zoom-in/zoom-out access patterns;Astronomy;Data mining;Database systems;Kernel;Logic;Object oriented databases;Pattern analysis;Performance analysis;Prototypes;Spatial databases},
+  doi = {10.1109/SSDBM.2007.19},
+  ISSN = {1551-6393},
+  month = jul,
+}
+
+@article{DBLP:journals/debu/IdreosGNMMK12,
+  author    = {Stratos Idreos and
+               Fabian Groffen and
+               Niels Nes and
+               Stefan Manegold and
+               K. Sjoerd Mullender and
+               Martin L. Kersten},
+  title     = {MonetDB: Two Decades of Research in Column-oriented Database Architectures},
+  journal   = {{IEEE} Data Eng. Bull.},
+  volume    = {35},
+  number    = {1},
+  pages     = {40--45},
+  year      = {2012},
+  url       = {http://sites.computer.org/debull/A12mar/monetdb.pdf},
+  timestamp = {Tue, 17 Apr 2012 13:08:58 +0200},
+  biburl    = {http://dblp.uni-trier.de/rec/bib/journals/debu/IdreosGNMMK12},
+  bibsource = {dblp computer science bibliography, http://dblp.org}
+}
+
+@inproceedings{Pavlo:2009:CAL:1559845.1559865,
+  author = {Pavlo, Andrew and Paulson, Erik and Rasin, Alexander and Abadi, Daniel J. and
+           DeWitt, David J. and Madden, Samuel and Stonebraker, Michael},
+  title = {A Comparison of Approaches to Large-scale Data Analysis},
+  booktitle = {Proceedings of the 2009 ACM SIGMOD International Conference on Management
+               of  Data},
+  series = {SIGMOD '09},
+  year = {2009},
+  isbn = {978-1-60558-551-2},
+  location = {Providence, Rhode Island, USA},
+  pages = {165--178},
+  numpages = {14},
+  url = {http://doi.acm.org/10.1145/1559845.1559865},
+  doi = {10.1145/1559845.1559865},
+  acmid = {1559865},
+  publisher = {ACM},
+  address = {New York, NY, USA},
+  keywords = {benchmarks, mapreduce, parallel database},
 }
