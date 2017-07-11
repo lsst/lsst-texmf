@@ -264,14 +264,14 @@
 % allow standard \date{} to work as an alias of \setDocDate
 \renewcommand{\date}[1]{\setDocDate{#1}}
 
-\newif\if@dmtct
-\@dmtctfalse
+\newif\if@dmccb
+\@dmccbfalse
 \newif\if@ccb
 \@ccbfalse
 \newcommand{\docRef}{set the Reference with {$\backslash$}setDocRef}
 \newcommand{\setDocRef}[1]{
    \renewcommand{\docRef}{#1}
-   \if@dmtct\relax\else\IfBeginWith{#1}{LDM-}{\@dmtcttrue}{}\fi
+   \if@dmccb\relax\else\IfBeginWith{#1}{LDM-}{\@dmccbtrue}{}\fi
    \if@ccb\relax\else\IfBeginWith{#1}{LSE-}{\@ccbtrue}{}\fi
 }
 
@@ -431,15 +431,15 @@
    The contents of this document are subject to configuration control and may not be changed, altered, or their provisions waived without prior approval.
    }
    \fi
-   \if@dmtct
+   \if@dmccb
    \def\@controlText{%
-   This LSST document has been approved as a Content-Controlled Document by the LSST DM Technical Control Team.
+   This LSST document has been approved as a Content-Controlled Document by the LSST DM Change Control Board.
    If this document is changed or superseded, the new document will retain the Handle designation shown above.
    The control is on the most recent digital document with this Handle in the LSST digital archive and not printed versions.
    Additional information may be found in the corresponding DM RFC.
    }
    \def\@controlFootText{%
-   The contents of this document are subject to configuration control by the LSST DM Technical Control Team.
+   The contents of this document are subject to configuration control by the LSST DM Change Control Board.
    }
    \fi
 
