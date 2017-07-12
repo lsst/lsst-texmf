@@ -1,8 +1,12 @@
 
-\documentclass[t]{beamer}
+\documentclass[t, aspectratio=169]{beamer}
 \usepackage{longtable}
 
-\usepackage[fonts=false, footline={Demo Presentation}]{LSST-beamer}
+\usepackage[fonts=false,
+  footline={Demo Presentation},
+  meeting={Name of meeting},
+  position={R\^ole in LSST}
+]{LSST-beamer}
 
 % Set the graphics path such that this example will
 % build from the repository root directory as well as
@@ -14,13 +18,12 @@
 %\setbeamercovered{dynamic}
 
 
-\title{ Beamer example for TeX with RHL beam theme }
+\title{Beamer example for TeX with RHL beam theme}
 
 
-\author[W. O'Mullane ]{William O'Mullane }
-\position{Role in LSST}
+\author[W. O'Mullane ]{William O'Mullane}
 
-\date[ 13/12/2016]{Dec  13$^{th}$ 2016 ESAC, Spain  }
+\date[ 13/12/2016]{Dec  13$^{th}$ 2016 ESAC, Spain}
 
 \institute{LSST Tucson Arizona}
 % ----------------------
