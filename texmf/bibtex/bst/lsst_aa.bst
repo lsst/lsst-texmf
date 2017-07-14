@@ -748,7 +748,7 @@ FUNCTION {format.doi}
 FUNCTION {format.adsurl}
 {
   adsurl empty$
-  {"No ADS URL for " cite$ * warning$ ""}
+  { "" }
   {"\href{" adsurl * "}{ADS Link}" *}
   if$
 }
@@ -1242,6 +1242,7 @@ FUNCTION {book}
   if$
   format.edition output
   format.note output
+  format.adsurl output
   fin.entry
 }
 FUNCTION {booklet}
@@ -1378,11 +1379,13 @@ FUNCTION {misc}
 { output.bibitem
   format.authors output
   author format.key output
-  format.date "year" output.check
+  format.date output
   date.block
   format.title output
   howpublished "howpublished" bibinfo.check output
   format.note output
+  format.eprint "eprint" output.check.nocomma
+  format.adsurl output
   fin.entry
 }
 FUNCTION {phdthesis}
@@ -1432,6 +1435,8 @@ FUNCTION {techreport}
   institution "institution" bibinfo.warn output
   address "address" bibinfo.check output
   format.note output
+  format.eprint "eprint" output.check.nocomma
+  format.adsurl output
   fin.entry
 }
 
@@ -1465,7 +1470,7 @@ FUNCTION {livelink}
 %  format.tr.number output.nonnull
   format.livelinknumber "livelinknumber" bibinfo.warn output
   livelinkshortnumber "livelinkshortnumber" bibinfo.warn pop$
-  url "url" bibinfo.warn pop$
+%  url "url" bibinfo.warn pop$
 % I don't think that we need the following two fields DWE 24 Oct 2007
 %  institution "institution" bibinfo.warn output
 %  address "address" bibinfo.check output
@@ -1821,6 +1826,7 @@ FUNCTION {begin.bib}
 "\def\mn@doi@[#1]#2{\def\@tempa{#1}\ifx\@tempa\@empty \href {http://doi.org/#2} {doi:#2}\else \href {http://doi.org/#2} {#1}\fi \endgroup}" write$ newline$
 "\def\mn@eprint#1#2{\mn@eprint@#1:#2::\@nil}" write$ newline$
 "\def\mn@eprint@arXiv#1{\href {http://arxiv.org/abs/#1} {\texttt{arXiv:#1}}}" write$ newline$
+"\def\mn@eprint@ascl#1{\href {http://ascl.net/#1} {\texttt{ascl:#1}}}" write$ newline$
 "\def\mn@eprint@dblp#1{\href {http://dblp.uni-trier.de/rec/bibtex/#1.xml} {dblp:#1}}" write$ newline$
 "\def\mn@eprint@#1:#2:#3:#4\@nil{\def\@tempa {#1}\def\@tempb {#2}\def\@tempc {#3}\ifx \@tempc \@empty \let \@tempc \@tempb \let \@tempb \@tempa \fi \ifx \@tempb \@empty \def\@tempb {arXiv}\fi \@ifundefined {mn@eprint@\@tempb}{\@tempb:\@tempc}{\expandafter \expandafter \csname mn@eprint@\@tempb\endcsname \expandafter{\@tempc}}}" write$ newline$
 
