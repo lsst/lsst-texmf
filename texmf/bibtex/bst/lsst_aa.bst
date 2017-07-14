@@ -1242,6 +1242,7 @@ FUNCTION {book}
   if$
   format.edition output
   format.note output
+  format.adsurl output
   fin.entry
 }
 FUNCTION {booklet}
@@ -1378,7 +1379,7 @@ FUNCTION {misc}
 { output.bibitem
   format.authors output
   author format.key output
-  format.date "year" output.check
+  format.date output
   date.block
   format.title output
   howpublished "howpublished" bibinfo.check output
@@ -1434,6 +1435,8 @@ FUNCTION {techreport}
   institution "institution" bibinfo.warn output
   address "address" bibinfo.check output
   format.note output
+  format.eprint "eprint" output.check.nocomma
+  format.adsurl output
   fin.entry
 }
 
@@ -1467,7 +1470,7 @@ FUNCTION {livelink}
 %  format.tr.number output.nonnull
   format.livelinknumber "livelinknumber" bibinfo.warn output
   livelinkshortnumber "livelinkshortnumber" bibinfo.warn pop$
-  url "url" bibinfo.warn pop$
+%  url "url" bibinfo.warn pop$
 % I don't think that we need the following two fields DWE 24 Oct 2007
 %  institution "institution" bibinfo.warn output
 %  address "address" bibinfo.check output
