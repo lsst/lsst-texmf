@@ -748,7 +748,7 @@ FUNCTION {format.doi}
 FUNCTION {format.adsurl}
 {
   adsurl empty$
-  {"No ADS URL for " cite$ * warning$ ""}
+  { "" }
   {"\href{" adsurl * "}{ADS Link}" *}
   if$
 }
