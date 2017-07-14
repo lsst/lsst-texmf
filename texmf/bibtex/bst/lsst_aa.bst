@@ -1383,6 +1383,8 @@ FUNCTION {misc}
   format.title output
   howpublished "howpublished" bibinfo.check output
   format.note output
+  format.eprint "eprint" output.check.nocomma
+  format.adsurl output
   fin.entry
 }
 FUNCTION {phdthesis}
@@ -1821,6 +1823,7 @@ FUNCTION {begin.bib}
 "\def\mn@doi@[#1]#2{\def\@tempa{#1}\ifx\@tempa\@empty \href {http://doi.org/#2} {doi:#2}\else \href {http://doi.org/#2} {#1}\fi \endgroup}" write$ newline$
 "\def\mn@eprint#1#2{\mn@eprint@#1:#2::\@nil}" write$ newline$
 "\def\mn@eprint@arXiv#1{\href {http://arxiv.org/abs/#1} {\texttt{arXiv:#1}}}" write$ newline$
+"\def\mn@eprint@ascl#1{\href {http://ascl.net/#1} {\texttt{ascl:#1}}}" write$ newline$
 "\def\mn@eprint@dblp#1{\href {http://dblp.uni-trier.de/rec/bibtex/#1.xml} {dblp:#1}}" write$ newline$
 "\def\mn@eprint@#1:#2:#3:#4\@nil{\def\@tempa {#1}\def\@tempb {#2}\def\@tempc {#3}\ifx \@tempc \@empty \let \@tempc \@tempb \let \@tempb \@tempa \fi \ifx \@tempb \@empty \def\@tempb {arXiv}\fi \@ifundefined {mn@eprint@\@tempb}{\@tempb:\@tempc}{\expandafter \expandafter \csname mn@eprint@\@tempb\endcsname \expandafter{\@tempc}}}" write$ newline$
 
