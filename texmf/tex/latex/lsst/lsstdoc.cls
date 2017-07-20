@@ -61,6 +61,7 @@
 \RequirePackage{color}
 \RequirePackage{setspace}
 \RequirePackage{tcolorbox}
+\RequirePackage{ifmtarg}
 
 %\RequirePackage[linkcolor=blue,colorlinks=true]{hyperref}
 \RequirePackage{hyperref}
@@ -69,7 +70,7 @@
 \RequirePackage{titlesec}
 \RequirePackage[english]{babel}
 \RequirePackage{tabularx}
-%\RequirePackage{comment}
+\RequirePackage{comment}
 \RequirePackage{xspace}
 \RequirePackage{xstring}
 %\RequirePackage{microtype}
@@ -770,15 +771,12 @@
 \newcommand{\gwpmid}[1]{\multicolumn{1}{|l|}{#1}}
 \newcommand{\gwplow}[1]{\multicolumn{1}{|r|}{#1}}
 
-\makeatother
-
 % \renewcommand{\cite}{\citep}
 \newcommand{\byte}{b}
 
 %-----------------------------------------------------------------------------
 %   Macros for dealing with requirements
 %-----------------------------------------------------------------------------
-\makeatletter
 \nplpadding{3}
 \newcounter{areqi}
 \renewcommand{\theareqi}{\numprint{\arabic{areqi}}}
@@ -909,7 +907,6 @@ p{.19\textwidth}|% Applicability
 \setcounter{@checkreq}{\csname @savectr\romannumeral\the@reqdepth\endcsname+\value{reqincr}}%
 \ifthenelse{\value{@checkreq}<\value{areqi}}{\errmessage{Requirement numbering incorrect: \the@checkreq<\arabic{areqi}}}{}%
 \setcounter{areqi}{\csname @savectr\romannumeral\the@reqdepth\endcsname}}
-\makeatother
 
 %
 %   requirement status labels
@@ -921,7 +918,6 @@ p{.19\textwidth}|% Applicability
 % -----------------------------------------------------------------------------
 % Meeting action management
 % -----------------------------------------------------------------------------
-\makeatletter
 \newcommand{\actprefix}{}
 \newcommand{\setActionItemPrefix}[1]{\renewcommand{\actprefix}{#1}}
 
@@ -1123,7 +1119,6 @@ No actions have been identified.}
 % For referencing {description} environment labels,
 % as used in DRP pipeline section.  Taken from
 % http://tex.stackexchange.com/questions/1230/reference-name-of-description-list-item-in-latex
-\makeatletter
 \let\orgdescriptionlabel\descriptionlabel
 \renewcommand*{\descriptionlabel}[1]{%
   \let\orglabel\label
@@ -1134,8 +1129,6 @@ No actions have been identified.}
   \let\label\orglabel
   \orgdescriptionlabel{#1}%
 }
-\makeatother
-
 
 \newcommand{\vstretch}[1]{\vspace*{\stretch{#1}}}
 \newcommand{\code}[1]{\texttt{#1}}
@@ -1244,10 +1237,12 @@ No actions have been identified.}
 \DeclareBoldMathCommand\zerob{0}
 \newcommand{\cameraTeam}{\textbf{Camera Team deliverable}\\}
 \newcommand{\TBD}{\textit{T.B.D.}\xspace}
+\if@isdraft
 \newcommand{\XXX}[1]{{{\color{red}\textbf{XXX #1}\xspace}}}
-\makeatletter
+\else
+\newcommand{\XXX}[1]{}
+\fi
 \newcommand{\myLabel}[2]{\def\@currentlabel{#2}\label{#1}}
-\makeatother
 \newcommand{\appRef}[1]{App. \ref{app:#1}}
 \newcommand{\secRef}[1]{Sec. \ref{sec:#1}}
 \newcommand{\rednote}[1]{{\color{red} (#1)}}
@@ -1268,7 +1263,6 @@ No actions have been identified.}
 \newcommand{\newtext}[1]{{\color{blue} #1}}
 
 %%%%% Commands for adding requirement numbers to margins
-\makeatletter
 \newcommand{\margin@req}[1]{\marginpar{\hspace{0pt}\tiny #1}}
 
 % DMSR, LSR and OSS requirements have their own command
@@ -1278,21 +1272,63 @@ No actions have been identified.}
 
 % Used for requirements parameters/constraints
 \newcommand{\reqparam}[1]{\margin@req{#1}}
-\makeatother
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%% We have multiple types of note environments.
+%% They all have titles that can be over ridden and are in colored boxes.
+%% "note" is the basic type. Title will default to Note but will not force that prefix.
+%% "warning" has a Warning prefix and different color
+%% "draftnote" is special in that the comment will not be shown unless the document is draft mode (lsstdraft).
 
-
-\newenvironment{note}[1][Note]
+%% Generic note that takes four arguments: background color, frame color, prefix text, title text
+\newenvironment{admonition}[4]
 {
+  \@ifmtarg{#3}%
+  {% Empty prefix
+    \@ifmtarg{#4}{\def\@ttext{Admonition}}{\def\@ttext{#4}}
+  }{% Prefix
+    \@ifmtarg{#4}{\def\@ttext{#3}}{\def\@ttext{#3: #4}}
+  }
 
   \begin{minipage}[h]{.75\linewidth}
-    \begin{tcolorbox}[colback=red!5!white,colframe=red!75!black,title=#1]
+    \begin{tcolorbox}[colback=#1,colframe=#2,title=\@ttext]
 }
 {
     \end{tcolorbox}
   \end{minipage}
 }
 
-\newcommand{\uc}[1]{{\tt #1}}
+\newenvironment{warning}[1][]
+{
+  \begin{admonition}{orange!5!white}{orange!75!black}{Warning}{#1}
+}
+{
+  \end{admonition}
+}
+
+\newenvironment{note}[1][Note]
+{
+  \begin{admonition}{cyan!5!white}{cyan!75!black}{}{#1}
+}
+{
+  \end{admonition}
+}
+
+\if@isdraft
+  \newenvironment{draftnote}[1][]
+  {
+    \begin{admonition}{green!5!white}{green!75!black}{Comment for draft}{#1}
+  }
+  {
+    \end{admonition}
+  }
+\else
+  % Empty environment that is excluded
+  \newenvironment{draftnote}[1][]
+  {}
+  {}
+  \excludecomment{draftnote}
+\fi
+
+\newcommand{\uc}[1]{\texttt{#1}}
