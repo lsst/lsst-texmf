@@ -1,3 +1,3 @@
 Sphinx>=1.5.5,<1.6
-documenteer>=0.1.11
+documenteer>=0.1.11,<0.2.0
 sphinx-rtd-theme==0.2.4
