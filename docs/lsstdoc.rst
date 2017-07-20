@@ -122,6 +122,28 @@ This assumes that the ``toc`` option was given above.
 
 After this the document can be written
 
+.. _lsstdoc-macros:
+
+Class-specific Macros
+---------------------
+
+This class defines a number of macros that can be used in LSST documents.
+
+Class-specific Environments
+---------------------------
+
+The ``note``, ``warning`` and ``draftnote`` environments are used to call out text into colored boxes for extra emphasis.
+They each take an optional argument that can be used to title the box.
+For ``note`` environments this title overrides the default text, for the other environments this optional argument augments the text.
+
+.. code-block:: latex
+
+   \begin{note}[Note title]
+     Text for display in box goes here.
+   \end{note}
+
+The ``draftnote`` environment is special in that the contents of these notes only appear when a document is in draft mode.
+
 .. _lsstdoc-bib:
 
 Bibliographies
