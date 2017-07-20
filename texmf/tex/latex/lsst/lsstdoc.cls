@@ -770,15 +770,12 @@
 \newcommand{\gwpmid}[1]{\multicolumn{1}{|l|}{#1}}
 \newcommand{\gwplow}[1]{\multicolumn{1}{|r|}{#1}}
 
-\makeatother
-
 % \renewcommand{\cite}{\citep}
 \newcommand{\byte}{b}
 
 %-----------------------------------------------------------------------------
 %   Macros for dealing with requirements
 %-----------------------------------------------------------------------------
-\makeatletter
 \nplpadding{3}
 \newcounter{areqi}
 \renewcommand{\theareqi}{\numprint{\arabic{areqi}}}
@@ -909,7 +906,6 @@ p{.19\textwidth}|% Applicability
 \setcounter{@checkreq}{\csname @savectr\romannumeral\the@reqdepth\endcsname+\value{reqincr}}%
 \ifthenelse{\value{@checkreq}<\value{areqi}}{\errmessage{Requirement numbering incorrect: \the@checkreq<\arabic{areqi}}}{}%
 \setcounter{areqi}{\csname @savectr\romannumeral\the@reqdepth\endcsname}}
-\makeatother
 
 %
 %   requirement status labels
@@ -921,7 +917,6 @@ p{.19\textwidth}|% Applicability
 % -----------------------------------------------------------------------------
 % Meeting action management
 % -----------------------------------------------------------------------------
-\makeatletter
 \newcommand{\actprefix}{}
 \newcommand{\setActionItemPrefix}[1]{\renewcommand{\actprefix}{#1}}
 
@@ -1123,7 +1118,6 @@ No actions have been identified.}
 % For referencing {description} environment labels,
 % as used in DRP pipeline section.  Taken from
 % http://tex.stackexchange.com/questions/1230/reference-name-of-description-list-item-in-latex
-\makeatletter
 \let\orgdescriptionlabel\descriptionlabel
 \renewcommand*{\descriptionlabel}[1]{%
   \let\orglabel\label
@@ -1134,8 +1128,6 @@ No actions have been identified.}
   \let\label\orglabel
   \orgdescriptionlabel{#1}%
 }
-\makeatother
-
 
 \newcommand{\vstretch}[1]{\vspace*{\stretch{#1}}}
 \newcommand{\code}[1]{\texttt{#1}}
@@ -1245,9 +1237,7 @@ No actions have been identified.}
 \newcommand{\cameraTeam}{\textbf{Camera Team deliverable}\\}
 \newcommand{\TBD}{\textit{T.B.D.}\xspace}
 \newcommand{\XXX}[1]{{{\color{red}\textbf{XXX #1}\xspace}}}
-\makeatletter
 \newcommand{\myLabel}[2]{\def\@currentlabel{#2}\label{#1}}
-\makeatother
 \newcommand{\appRef}[1]{App. \ref{app:#1}}
 \newcommand{\secRef}[1]{Sec. \ref{sec:#1}}
 \newcommand{\rednote}[1]{{\color{red} (#1)}}
@@ -1268,7 +1258,6 @@ No actions have been identified.}
 \newcommand{\newtext}[1]{{\color{blue} #1}}
 
 %%%%% Commands for adding requirement numbers to margins
-\makeatletter
 \newcommand{\margin@req}[1]{\marginpar{\hspace{0pt}\tiny #1}}
 
 % DMSR, LSR and OSS requirements have their own command
@@ -1278,7 +1267,6 @@ No actions have been identified.}
 
 % Used for requirements parameters/constraints
 \newcommand{\reqparam}[1]{\margin@req{#1}}
-\makeatother
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
