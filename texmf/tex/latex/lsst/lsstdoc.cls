@@ -1327,4 +1327,4 @@ No actions have been identified.}
   \excludecomment{draftnote}
 \fi
 
-\newcommand{\uc}[1]{{\tt #1}}
+\newcommand{\uc}[1]{\texttt{#1}}
