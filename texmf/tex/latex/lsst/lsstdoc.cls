@@ -1237,7 +1237,11 @@ No actions have been identified.}
 \DeclareBoldMathCommand\zerob{0}
 \newcommand{\cameraTeam}{\textbf{Camera Team deliverable}\\}
 \newcommand{\TBD}{\textit{T.B.D.}\xspace}
+\if@isdraft
 \newcommand{\XXX}[1]{{{\color{red}\textbf{XXX #1}\xspace}}}
+\else
+\newcommand{\XXX}[1]{}
+\fi
 \newcommand{\myLabel}[2]{\def\@currentlabel{#2}\label{#1}}
 \newcommand{\appRef}[1]{App. \ref{app:#1}}
 \newcommand{\secRef}[1]{Sec. \ref{sec:#1}}
