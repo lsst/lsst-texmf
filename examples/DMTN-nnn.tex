@@ -60,9 +60,27 @@ Talk about something that relates to a requirement.\ossreq{1234}
 
 \newtext{We can show new text} \oldtext{and text to be removed}.
 
-\begin{note}[Note Title]
+There are special environments for calling out text blocks.
+
+\begin{note}
+  Default note with default title.
+\end{note}
+
+\begin{note}[Optional Note Title]
   This is used for note blocks.
 \end{note}
+
+\begin{warning}[Scary]
+  Some warning information.
+\end{warning}
+
+\begin{warning}
+  Default warning title.
+\end{warning}
+
+\begin{draftnote}
+  This text should only appear in draft mode.
+\end{draftnote}
 
 % Include all the relevant bib files.
 % lsst is for DocuShare and DMTN entries.

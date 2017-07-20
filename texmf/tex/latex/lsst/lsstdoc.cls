@@ -61,6 +61,7 @@
 \RequirePackage{color}
 \RequirePackage{setspace}
 \RequirePackage{tcolorbox}
+\RequirePackage{ifmtarg}
 
 %\RequirePackage[linkcolor=blue,colorlinks=true]{hyperref}
 \RequirePackage{hyperref}
@@ -69,7 +70,7 @@
 \RequirePackage{titlesec}
 \RequirePackage[english]{babel}
 \RequirePackage{tabularx}
-%\RequirePackage{comment}
+\RequirePackage{comment}
 \RequirePackage{xspace}
 \RequirePackage{xstring}
 %\RequirePackage{microtype}
@@ -1270,17 +1271,60 @@ No actions have been identified.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%% We have multiple types of note environments.
+%% They all have titles that can be over ridden and are in colored boxes.
+%% "note" is the basic type. Title will default to Note but will not force that prefix.
+%% "warning" has a Warning prefix and different color
+%% "draftnote" is special in that the comment will not be shown unless the document is draft mode (lsstdraft).
 
-
-\newenvironment{note}[1][Note]
+%% Generic note that takes four arguments: background color, frame color, prefix text, title text
+\newenvironment{admonition}[4]
 {
+  \@ifmtarg{#3}%
+  {% Empty prefix
+    \@ifmtarg{#4}{\def\@ttext{Admonition}}{\def\@ttext{#4}}
+  }{% Prefix
+    \@ifmtarg{#4}{\def\@ttext{#3}}{\def\@ttext{#3: #4}}
+  }
 
   \begin{minipage}[h]{.75\linewidth}
-    \begin{tcolorbox}[colback=red!5!white,colframe=red!75!black,title=#1]
+    \begin{tcolorbox}[colback=#1,colframe=#2,title=\@ttext]
 }
 {
     \end{tcolorbox}
   \end{minipage}
 }
+
+\newenvironment{warning}[1][]
+{
+  \begin{admonition}{orange!5!white}{orange!75!black}{Warning}{#1}
+}
+{
+  \end{admonition}
+}
+
+\newenvironment{note}[1][Note]
+{
+  \begin{admonition}{cyan!5!white}{cyan!75!black}{}{#1}
+}
+{
+  \end{admonition}
+}
+
+\if@isdraft
+  \newenvironment{draftnote}[1][]
+  {
+    \begin{admonition}{green!5!white}{green!75!black}{Comment for draft}{#1}
+  }
+  {
+    \end{admonition}
+  }
+\else
+  % Empty environment that is excluded
+  \newenvironment{draftnote}[1][]
+  {}
+  {}
+  \excludecomment{draftnote}
+\fi
 
 \newcommand{\uc}[1]{{\tt #1}}
