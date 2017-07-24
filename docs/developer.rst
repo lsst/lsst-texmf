@@ -41,6 +41,17 @@ Bibliography file organization
 * :file:`refs.bib` should be used for non-LSST references that can not be located on ADS.
 * :file:`books.bib` should be used for books that are not indexed by ADS.
 
+%-escaping for Sphinx
+---------------------
+
+Sphinx documents also use ``lsst-texmf``\ ’s bibliographies through `sphinxcontrib-bibtex <http://sphinxcontrib-bibtex.readthedocs.io/en/latest/>`_.
+The Sphinx workflow requires that any non-comment ``%`` character be escaped.
+ADS includes un-escaped ``%`` characters in URLs for A&A journal articles, for instance.
+To work around this for now, ensure that these URLs are escaped (that is: ``\%``).
+Travis CI is testing bibliographies for Sphinx compatibility.
+
+See :jira:`DM-11358` for progress towards resolving this issue.
+
 .. _updating-examples:
 
 Updating examples and tests
