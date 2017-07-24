@@ -26,18 +26,17 @@ If a document is being cited that is not part of the current list, a pull reques
 If the automated tests pass, the PR can be self-merged without review.
 In this way, we can ensure that all documents agree on references without duplication and with minimum overhead.
 
-Some things to remember:
+Bibliography file organization
+------------------------------
 
-* LSST documents are added to :file:`lsst.bib`.
+* :file:`lsst.bib` includes LSST documents (DocuShare documents and technical notes).
   Any document available on DocuShare should use the ``@DocuShare`` bib entry using the document handle as the key in the bib file.
   In the longer term, this file will be auto-generated from DocuShare and should always be up to date and should not require manual editing.
-  Tech notes will also be defined in this file.
-* LSST Data Management publications are added to :file:`lsst-dm.bib`.
-  This file is used for published papers (ADS and non-ADS) and presentations.
-  Do not use it for items stored on DocuShare.
+* :file:`lsst-dm.bib` includes LSST Data Management publications (ADS and non-ADS) and presentations.
+  Do not include DocuShare items in this file.
   Presentations should use a key of form ``YYYYauthor-meeting``. 
-* Any reference that can be found on ADS should be stored in :file:`refs_ads.bib` using the standard ADS bibtex export.
-  ADS entries should always be cited using the ADS Bibcode.
+* :file:`refs_ads.bib` includes any reference that can be found on ADS (aside from those in :file:`lsst-dm.bib`).
+  Entries must be the standard ADS bibtex export and use the ADS Bibcode.
   This file should be used for arXiv entries obtained from ADS.
 * :file:`refs.bib` should be used for non-LSST references that can not be located on ADS.
 * :file:`books.bib` should be used for books that are not indexed by ADS.
