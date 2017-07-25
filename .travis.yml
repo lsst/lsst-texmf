@@ -17,6 +17,7 @@ install:
 script:
   - export TEXMFLOCAL=./texmf
   - make
+  - make test-pybtex
   - make docs
 after_success:
   # Deploy https://lsst-texmf.lsst.io site
