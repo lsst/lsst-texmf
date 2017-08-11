@@ -1274,6 +1274,9 @@ No actions have been identified.}
 % Used for requirements parameters/constraints
 \newcommand{\reqparam}[1]{\margin@req{#1}}
 
+% Reference a JIRA ticket
+\newcommand{\jira}[1]{\href{https://jira.lsstcorp.org/browse/#1}{#1}}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %% We have multiple types of note environments.
