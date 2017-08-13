@@ -18,6 +18,7 @@
 \DeclareStringOption[]{colortheme} % Beamer colour theme (e.g. crane, tiger [locally])
 \DeclareStringOption[]{colorthemeArgs}  % Extra arguments for Beamer colour theme
 \DeclareStringOption[default]{backgroundTheme} % location of LSST{cover,main}.pdf
+\DeclareStringOption[]{institute} 	% Speaker's institute to put on the title page (defaults to \institute)
 \DeclareStringOption[]{position} 	% Speaker's r\^ole to put on the title page
 \DeclareStringOption[]{meeting} 	% Meeting description to put on the title page
 \DeclareStringOption[]{footline}	% Text to put in the footer (generally with backgroundTheme=generic)
@@ -139,12 +140,10 @@
    \ifx\LSST@monoFont\empty\else\message{*** monoFont ``\LSST@monoFont'' is ignored (set fonts=true)}\fi
 \fi
 %
-% Use \institute to define the author's position for backwards compatibiity
+% Use \institute to define the author's institution if not provided as a package option
 %
-\let\position=\institute
-
-\ifx\LSST@position\empty
-   \def\LSST@position{\insertinstitute}
+\ifx\LSST@institute\empty
+   \def\LSST@institute{\insertinstitute}
 \fi
 
 %------------------------------------------------------------------------------
@@ -193,6 +192,9 @@
 % \setbeameroption{show notes on second screen=bottom}
 \defbeamertemplate*{title page}{customized}[1][]
                    {
+                     % Separator before \LSST@institute, which may be empty (so no separator is needed)
+                     \def\instituteSep{\setbox0=\hbox{\LSST@institute\unskip}\ifdim\wd0=0pt\else, \fi}%
+
                      \thispagestyle{empty}  % no page number on title page
 
                      % fg!50 means 50% fg, the rest white. See xcolor
@@ -212,7 +214,8 @@
                         \usebeamerfont{title}
                         %\usebeamercolor[fg]{subtitle}
                         \vspace*{0.48\textheight}
-                        \hbox to \textwidth{\usebeamerfont{author}\insertauthor\hfil}
+                        \hbox to \textwidth{\usebeamerfont{author}\insertauthor
+                          \instituteSep\LSST@institute\hfil}
                         \usebeamerfont{subtitle}
                         \hbox to \textwidth{\hfil\LSST@position\par}
                         \vspace*{0.02\textheight}
@@ -231,7 +234,8 @@
                         \end{minipage}
 
                         \vspace{0.1\textheight}
-                        \hbox to \textwidth{\usebeamerfont{author}\hfil\insertauthor\par}
+                        \hbox to \textwidth{\usebeamerfont{author}\hfil\insertauthor
+                          \instituteSep\LSST@institute\par}
                         \usebeamerfont{subtitle}
                         \hbox to \textwidth{\hfil\LSST@position\par}
 
