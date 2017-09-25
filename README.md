@@ -14,7 +14,7 @@ To use these class files clone this repository and set `$TEXMFHOME` to the locat
 For example, with `bash` or `sh`:
 
 ```bash
-git clone https://github.com/
+git clone https://github.com/lsst/lsst-texmf
 export TEXMFHOME=`pwd`/lsst-texmf/texmf
 ```
 
