@@ -1242,6 +1242,7 @@ FUNCTION {book}
   if$
   format.edition output
   format.note output
+  format.doi "doi" output.check.nocomma
   format.adsurl output
   fin.entry
 }
