@@ -213,6 +213,12 @@
    \renewcommand{\CU}{SE}
    \renewcommand{\docType}{Systems Engineering}
 }
+\DeclareOption{PM}{
+   \renewcommand{\CU}{PM}
+   \renewcommand{\docType}{LSST Project Office}
+}
+
+
 
 %
 % default settings for the newly defined commands
@@ -274,6 +280,7 @@
    \renewcommand{\docRef}{#1}
    \if@dmccb\relax\else\IfBeginWith{#1}{LDM-}{\@dmccbtrue}{}\fi
    \if@ccb\relax\else\IfBeginWith{#1}{LSE-}{\@ccbtrue}{}\fi
+   \if@ccb\relax\else\IfBeginWith{#1}{LPM-}{\@ccbtrue}{}\fi
 }
 
 \newcommand{\docAuthor}{set the Author with {$\backslash$}setDocAuthor}
