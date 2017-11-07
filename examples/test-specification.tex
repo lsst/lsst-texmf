@@ -77,7 +77,7 @@ Describe the GENERAL features to be tested.
 Describe all the features and significant combinations not to be tested and explain why. If it is not possible to test some
 features at their most appropriate level of testing but which will be tested at a later level, this information should be
 included here
-\subsection{Pass - Fail criteria \label{sect:passfail}}
+\subsection{Pass - Fail criteria \label{sect:apppassfail}}
 GENERAL criteria to be used to determine whether or not tests are passed.\\
 If we agree its always what is in LDM-503 then this is not needed.
 
@@ -118,13 +118,13 @@ If not suppress this section .
 % NON-TESTING VERIFICATION METHODS TEST DESIGN
 \section{\product-VER-XX \label{sect:designid_verification}}
 
-\subsection{Objective \label{sect:designobj}}
+\subsection{Objective \label{sect:VERXXdesignobj}}
 This test design includes all the verification methods different to the dynamic testing, needed for the
 demonstration of the fulfillment of specific requirements of the DMSR.\\
 This includes  the requirements that do not need the execution of the software systems, but a careful document or code inspection, review
 or analysis.
 
-\subsection{Features to be tested \label{sect:totest}}
+\subsection{Features to be tested \label{sect:VERXXtotest}}
 Identify the test items and describe the features and combinations of features that are the object of this design
 specification. E.g.:\\
 \begin{itemize}
@@ -161,13 +161,13 @@ etc & \\\hline
 \end{longtable}
 The number and scope of the test cases depend on the requirements to be verified. The list provide above is only an example.
 
-\subsection{Feature pass/fail criteria \label{sect:passfail}}
+\subsection{Feature pass/fail criteria \label{sect:featpassfail}}
 Specify the specific criteria for this design to be used to determine whether the feature or feature combination has passed or failed.
 
 % NON-TESTING VERIFICATION METHODS TEST CASES
 \subsection{Test Case \product-VER-XX-YY \label{sect:testcaseid}}
 
-\subsubsection{Requirements \label{sect:reqs}}
+\subsubsection{Requirements \label{sect:reqsVERXX}}
 Specify the requirements that fulfill the test case, comma-separated and ending with '.'\\
 e.g. CU3-IDT-XM-FUN-30,CU3-IDT-ASD-FUN-20.\\
 Note that the format is essential for the script that creates the traceability matrices works fine.
@@ -197,15 +197,15 @@ up, operator intervention, output determination procedures, and special wrap up.
 
 \section{\product-SCOPE-XX \label{sect:designid}}
 
-\subsection{Objective \label{sect:designobj}}
+\subsection{Objective \label{sect:XXdesignobj}}
 Specify the objective of this test design.
 
-\subsection{Features to be tested \label{sect:totest}}
+\subsection{Features to be tested \label{sect:totestXX}}
 Identify the test items and describe the features and combinations of features that are the object of this design
 specification. Other features may be exercised, but need not be identified.\\
 For each feature or feature combination, a reference to its associated requirements should be included.
 
-\subsection{Approach refinements \label{sect:approach}}
+\subsection{Approach refinements \label{sect:approachXX}}
 Specify refinements to the approach described in the test plan. Include specific test techniques to be used.
 The method on analysis test results should be identified.\\
 Specify the results of any analysis that provides a rationale for test case selection.\\
@@ -213,7 +213,7 @@ Summarize the common attributes of any test cases. This may include input constr
 in the set of associated test cases, any shared environmental needs, any shared special procedural requirements and any
 shared case dependencies.
 
-\subsection{Test case identification \label{sect:testcaselist}}
+\subsection{Test case identification \label{sect:testcaselistXX}}
 List the identifier and a brief description of each test case associated with this design.
 
 \begin{longtable} {|p{0.4\textwidth}|p{0.6\textwidth}|}\hline
@@ -222,7 +222,7 @@ List the identifier and a brief description of each test case associated with th
 Description of the test case \\\hline
 \end{longtable}
 
-\subsection{Feature pass/fail criteria \label{sect:passfail}}
+\subsection{Feature pass/fail criteria \label{sect:passfailXX}}
 Specify the specific criteria for this design to be used to determine whether the feature or feature combination has passed or failed.
 
 
@@ -236,14 +236,14 @@ Specify the specific criteria for this design to be used to determine whether th
 
 %\newpage
 
-\subsection{Test Case \product-SCOPE-XX-YY \label{sect:testcaseid}}
+\subsection{Test Case \product-SCOPE-XX-YY \label{sect:testcaseidSCXX}}
 
-\subsubsection{Requirements \label{sect:reqs}}
+\subsubsection{Requirements \label{sect:reqsXX}}
 Specify the requirements that fulfill the test cases, comma-separated and ending with '.'\\
 e.g. CU3-IDT-XM-FUN-30,CU3-IDT-ASD-FUN-20.\\
 Note that the format is essential for the script that creates the traceability matrices works fine.
 
-\subsubsection{Test items \label{sect:tcitems}}
+\subsubsection{Test items \label{sect:XXtcitems}}
 Identify and briefly describe the items and features to be exercised by this test case.\\
 For each item, consider supplying references to the following test item documentation: requirements specification, design
 specification, user guide, operations guide, installation guide, etc.
@@ -266,10 +266,10 @@ systems, compilers, simulators, and test tools.
 \paragraph{Other \label{sect:tcother}}
 Any other special requirements such as unique facility needs or specially trained personnel.
 
-\subsubsection{Intercase dependencies \label{interface_dependencies}}
+\subsubsection{Intercase dependencies \label{XXinterface_dependencies}}
 List the identifiers of the test cases that must be executed prior to this test case. Summarize the nature of the dependencies.
 
-\subsubsection{Procedure \label{procedures}}
+\subsubsection{Procedure \label{XXprocedures}}
 If the procedure is shared by various test cases it would be recommended to separate the procedure description from the test
 case definition. Thus, only a reference to the procedure identification shall be provided. The complete description of
 the test procedure shall be given otherwise. \\
