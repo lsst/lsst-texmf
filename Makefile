@@ -4,6 +4,7 @@ presentation.tex \
 beamer-desc.tex \
 beamer-LSST2016.tex \
 DMTN-nnn.tex \
+test-report.tex \
 LDM-nnn.tex
 
 TESTFILES = \
