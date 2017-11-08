@@ -1,5 +1,6 @@
 % ls-R -- filename database for kpathsea; do not change this line.
 ./:
+.DS_Store
 bibtex
 doc
 fonts
@@ -304,15 +305,25 @@ OpenSans.fontspec
 
 
 ./tex:
+.DS_Store
 LSST-themes
 latex
 
 ./tex/LSST-themes:
+.DS_Store
+Commissioning2017
 DESC
 LSST2016
 LSST2016-alt
+LSST2017
+LSST2017-nologos
+Technical
 default
 generic
+
+./tex/LSST-themes/Commissioning2017:
+LSSTcover.pdf
+LSSTmain.pdf
 
 ./tex/LSST-themes/DESC:
 LSSTcover.pdf
@@ -335,7 +346,22 @@ Title-3.jpg
 LSSTcover.jpg
 LSSTmain.jpg
 
+./tex/LSST-themes/LSST2017:
+.DS_Store
+LSSTcover.pdf
+LSSTmain.pdf
+
+./tex/LSST-themes/LSST2017-nologos:
+.DS_Store
+LSSTcover.pdf
+LSSTmain.pdf
+
+./tex/LSST-themes/Technical:
+LSSTcover.pdf
+LSSTmain.pdf
+
 ./tex/LSST-themes/default:
+.DS_Store
 LSSTcover.pdf
 LSSTmain.pdf
 
