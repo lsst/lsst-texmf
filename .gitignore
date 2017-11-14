@@ -14,6 +14,8 @@
 /presentation.pdf
 /LDM-nnn.pdf
 /DMTN-nnn.pdf
+/test-report.pdf
+/test-specification.pdf
 /test-bibtex.pdf
 examples/*.pdf
 tests/*.pdf
