@@ -1,5 +1,6 @@
 .DS_Store
 *.aux
+*.xdv
 *.log
 *.toc
 *.out
