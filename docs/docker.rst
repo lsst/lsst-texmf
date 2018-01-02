@@ -58,7 +58,7 @@ It contains a full `TeX Live`_ distribution, as well as ``make`` and ``git`` via
 ``lsst-texmf`` is installed in the container's ``/texmf`` directory, with :envvar:`TEXMFHOME` pre-set to that directory.
 
 The ``latest`` tag tracks the ``master`` branch.
-Tags are also published for all Git branches and tags pushed to GitHub, as well as tags for individual Travis builds.
+Other tags may be available for pinned versions and development branches.
 See the list of `tags on Docker Hub`_.
 
 Usually you'll want to use the ``latest`` tag.
