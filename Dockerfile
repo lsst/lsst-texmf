@@ -7,6 +7,13 @@
 FROM lsstsqre/lsst-texlive:latest
 MAINTAINER LSST SQuaRE <sqre-admin@lists.lsst.org>
 
+# Additional dependencies for lsst-texmf (acronyms.csh)
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+        csh \
+        default-jre && \
+    apt-get clean
+
 # Point $TEXMFHOME to the container's lsst-texmf. This environment variable
 # exists for container runs by a user.
 ENV TEXMFHOME "/texmf"

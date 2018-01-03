@@ -54,8 +54,10 @@ About the lsst-texmf Docker image
 =================================
 
 The `lsstsqre/lsst-texmf`_ Docker image is based on Ubuntu 14.04 (trusty).
-It contains a full `TeX Live`_ distribution, as well as ``make`` and ``git`` via the `lsstsqre/lsst-texlive`_ image.
+It contains a full `TeX Live`_ distribution, as well as ``make`` and ``git``, via the `lsstsqre/lsst-texlive`_ image.
+The image also contains a Java runtime for ``acronyms.csh``.
 ``lsst-texmf`` is installed in the container's ``/texmf`` directory, with :envvar:`TEXMFHOME` pre-set to that directory.
+Scripts from ``lsst-texmf``\ ’s :file:`/bin` directory are available in the container's ``PATH``.
 
 The ``latest`` tag tracks the ``master`` branch.
 Other tags may be available for pinned versions and development branches.
