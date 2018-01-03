@@ -19,13 +19,13 @@ script:
   - make
   - make test-pybtex
   - make docs
-after_success:
-  # Deploy https://lsst-texmf.lsst.io site
-  - make lsstthedocs
   # Build the Docker image
   - "docker build -t ${IMAGE_NAME}:build ."
   # Deploy the Docker image
   - ./bin/travis-docker-deploy.sh
+after_success:
+  # Deploy https://lsst-texmf.lsst.io site
+  - make lsstthedocs
 env:
   global:
     - LTD_MASON_BUILD=false  # disable builds in regular text matrix

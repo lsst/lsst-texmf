@@ -25,10 +25,12 @@ else
     TAG=`echo "$TRAVIS_BRANCH" | sed "s/\//-/"`;
 fi
 
-# Tag and push the branch-based name
-docker tag ${IMAGE_NAME}:build ${IMAGE_NAME}:${TAG}
-docker push ${IMAGE_NAME}:${TAG}
+# Only deploy the `latest` image
+if [ ${TAG} == "latest" ]; then
+    # Tag and push the branch-based name
+    docker tag ${IMAGE_NAME}:build ${IMAGE_NAME}:${TAG}
+    docker push ${IMAGE_NAME}:${TAG}
 
-# Tag and push based on the Travis build number for forensics
-docker tag ${IMAGE_NAME}:build ${IMAGE_NAME}:travis-${TRAVIS_BUILD_NUMBER}
-docker push ${IMAGE_NAME}:travis-${TRAVIS_BUILD_NUMBER}
+else
+    echo "Skipping docker push (not 'latest')"
+fi
