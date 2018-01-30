@@ -813,6 +813,18 @@
 \newcommand{\setReqPrefix}[1]{\renewcommand{\reqprefix}{#1}}
 
 %
+%  simplified non boxed requirement macro
+%
+\providecommand{\reqsimp}[1]{%
+\addtocounter{areqi}{\value{reqincr}}%
+\protected@edef\@currentlabel{\csname p@areq\endcsname-\theareqi}%
+
+{\bf \csname p@areq\endcsname -\theareqi}  {#1}
+\\[4mm]%
+\typeout{REQ:\reqprefix\csname p@areq\endcsname-\arabic{areqi},#1}%
+}
+
+%
 %  requirement macro
 %
 \providecommand{\req}[7][@noparent@]{%
@@ -1108,11 +1120,11 @@ No actions have been identified.}
 \newcounter{@dfparincr}
 \setcounter{@dfparincr}{5}
 
-\newcounter{gaiapar}
-\providecommand{\thegaiapar}{\numprint{\arabic{gaiapar}}}
+\newcounter{lsstpar}
+\providecommand{\thelsstpar}{\numprint{\arabic{lsstpar}}}
 \providecommand{\npara}{
-\addtocounter{gaiapar}{\value{nparaincr}}
-\marginlabel{\S\thegaiapar}}
+\addtocounter{lsstpar}{\value{nparaincr}}
+\marginlabel{\S\thelsstpar}}
 
 % default increment for requirement counter
 \providecommand{\setnparaincr}[1]{\setcounter{@dfparincr}{#1}}
