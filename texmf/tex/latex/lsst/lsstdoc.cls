@@ -343,7 +343,7 @@
         \color{lssttitle}
         \@title \\
         \color{black}
-        \normalsize {\bf \docAuthor}\\
+        \normalsize {\textbf \docAuthor}\\
 	      \docDate\\
      \end{center}
 
