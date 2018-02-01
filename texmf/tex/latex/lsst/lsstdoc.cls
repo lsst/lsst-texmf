@@ -820,7 +820,6 @@
 \protected@edef\@currentlabel{\csname p@areq\endcsname-\theareqi}%
 
 {\bf \csname p@areq\endcsname -\theareqi}  {#1}
-\\[4mm]%
 \typeout{REQ:\reqprefix\csname p@areq\endcsname-\arabic{areqi},#1}%
 }
 
