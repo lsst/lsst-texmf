@@ -61,7 +61,7 @@ LSE:LSST Systems Engineering (Document Handle)
 LPM:LSST Project Management (Document Handle)
 DMLT: DM Leadership Team
 NCSA: National Center for Supercomputing Applications
-# CAM: CAMera
+CAM: CAMera
 DMSR:DM System Requirements
 SEMP:Systems Engineering Management Plan
 NSF:National Science Foundation
