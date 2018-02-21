@@ -11,14 +11,52 @@ import os.path
 import sys
 import re
 
+MATCH_ACRONYM = "^(\w+)\s*:\s*(.*)$"
+MATCH_ACRONYM_RE = re.compile(MATCH_ACRONYM)
 
-def read_gaia(filename):
-    """Read Gaia format glossary.txt file.
+
+def _parse_line(line):
+    """Parse a line and return an acronym and definition.
+
+    Parameters
+    ----------
+    line : `str`
+        Line to analyze.
+
+    Returns
+    -------
+    acronym, definition : tuple(str, str)
+        Acronym and definition. Tuple of None, None if the line has
+        no acronym definition.
+    """
+    nothing = (None, None)
+
+    # Blank lines
+    line = line.strip()
+    if not line:
+        return nothing
+
+    # Comment lines
+    if line.startswith("#"):
+        return nothing
+
+    matched = MATCH_ACRONYM_RE.match(line)
+    if not matched:
+        return nothing
+
+    acr, defn = matched.groups()
+    return (acr, defn)
+
+
+def read_definitions(filename, init=None):
+    """Read acronym definitions from Gaia format glossary.txt file.
 
     Parameters
     ----------
     filename : `str`
         Path to Gaia format file.
+    init : `dict`
+        Initial definitions to augment with the content from this file.
 
     Returns
     -------
@@ -27,17 +65,17 @@ def read_gaia(filename):
         one or more definition associated with that acronym.
         Empty dict if the file can not be opened.
     """
-    definitions = {}
+    if init is None:
+        definitions = {}
+    else:
+        definitions = init.copy()
 
     with open(filename, "r") as fd:
         for line in fd:
-            line = line.strip()
-            if ' : ' not in line:
-                continue
 
-            acr, defn = line.split(":", maxsplit=1)
-            acr = acr.strip()
-            defn = defn.strip()
+            acr, defn = _parse_line(line)
+            if acr is None:
+                continue
 
             if acr not in definitions:
                 definitions[acr] = set()
@@ -47,7 +85,7 @@ def read_gaia(filename):
     return definitions
 
 
-def read_myacronyms(filename="myacronyms.tex", defaults=None):
+def read_myacronyms(filename="myacronyms.txt", allow_duplicates=False, defaults=None):
     """Read the supplied file and extract standard acronyms.
 
     File must contain lines in format:
@@ -59,7 +97,7 @@ def read_myacronyms(filename="myacronyms.tex", defaults=None):
 
     Parameters
     ----------
-    file_name
+    file_name : `str`
         Name of file to open.
     defaults : `dict`, optional
         `dict` containing default values to seed the returned definitions.
@@ -76,22 +114,16 @@ def read_myacronyms(filename="myacronyms.tex", defaults=None):
 
     with open(filename, "r") as fd:
         for line in fd:
-            line = line.strip()
-            if not line:
+            acr, defn = _parse_line(line)
+            if acr is None:
                 continue
-            if line.startswith("#"):  # comment
-                continue
-
-            acr, defn = line.split(":", maxsplit=1)
-            acr = acr.strip()
-            defn = defn.strip()
 
             if acr in definitions:
                 if defn != definitions[acr]:
-                    raise RuntimeError("Duplicate definitions of {} differ".format(acr))
+                    raise RuntimeError("Duplicate definitions of {} differ in {}".format(acr, filename))
                 else:
                     warnings.warn(UserWarning("Entry {} exists multiple times with same"
-                                              " definition".format(acr)))
+                                              " definition in {}".format(acr, filename)))
 
             definitions[acr] = defn
 
@@ -105,7 +137,7 @@ def read_myacronyms(filename="myacronyms.tex", defaults=None):
     return combined
 
 
-def read_skip_acronyms(file_name="skipacronyms.tex"):
+def read_skip_acronyms(file_name="skipacronyms.txt"):
     """Read the supplied file to obtain list of acronyms to skip.
 
     File must contain lines in format of one word per line. Repeat
@@ -233,6 +265,7 @@ def write_latex_table(acronyms, fd=sys.stdout):
 
     print(r"\end{longtable}", file=fd)
 
+
 def main(texfiles):
     """Run program and generate acronyms file."""
 
@@ -244,14 +277,23 @@ def main(texfiles):
     lsst_acronyms_path = os.path.join(defaults_dir, "lsstacronyms.txt")
     global_skip_path = os.path.join(defaults_dir, "skipacronyms.txt")
 
-    global_acronyms = read_gaia(gaia_glossary_path)
-    lsst_defaults = read_myacronyms(lsst_acronyms_path)
+    # Read the Gaia set
+    global_definitions = read_definitions(gaia_glossary_path)
 
-    # Augment with the local one
+    # Now read the LSST global definitions
+    lsst_definitions = read_definitions(lsst_acronyms_path)
+
+    # Merge global with lsst such that LSST overrides.
+    # If instead we wish to merge with global, use init kwarg in
+    # read_definitions above
+    global_definitions.update(lsst_definitions)
+    lsst_definitions = global_definitions
+
+    # Read the local set
     try:
-        local_definitions = read_myacronyms(defaults=lsst_defaults)
+        local_definitions = read_myacronyms()
     except FileNotFoundError:
-        local_definitions = lsst_defaults
+        local_definitions = {}
 
     # Get list of acronyms to ignore
     global_skip = read_skip_acronyms(global_skip_path)
@@ -268,11 +310,11 @@ def main(texfiles):
     for s in skip:
         if s in local_definitions:
             local_definitions.pop(s)
-        if s in global_acronyms:
-            global_acronyms.pop(s)
+        if s in lsst_definitions:
+            lsst_definitions.pop(s)
 
     # Master list of all acronyms
-    acronyms = set(global_acronyms.keys()) | set(local_definitions.keys())
+    acronyms = set(lsst_definitions) | set(local_definitions)
 
     # Scan each supplied tex file looking for the acronym
     matches = set()
@@ -287,10 +329,11 @@ def main(texfiles):
     for acr in sorted(matches):
         if acr in local_definitions:
             results.append((acr, local_definitions[acr]))
-        elif acr in global_acronyms:
-            options = global_acronyms[acr]
-            for a in options:
-                results.append((acr, a))
+        elif acr in lsst_definitions:
+            options = lsst_definitions[acr]
+            if len(options) > 1:
+                print("Entry {} exists multiple ({}) times. Using one definition.".format(acr, len(options)), file=sys.stderr)
+            results.append((acr, options.pop()))
         else:
             raise RuntimeError("Internal error handling {}".format(acr))
 
