@@ -11,7 +11,12 @@ import os.path
 import sys
 import re
 
-MATCH_ACRONYM = "^(\w+)\s*:\s*(.*)$"
+try:
+    import pypandoc
+except ImportError:
+    pypandoc = None
+
+MATCH_ACRONYM = "^([\w/&\-\+]+)\s*:\s*(.*)$"
 MATCH_ACRONYM_RE = re.compile(MATCH_ACRONYM)
 
 
@@ -115,6 +120,7 @@ def read_myacronyms(filename="myacronyms.txt", allow_duplicates=False, defaults=
     with open(filename, "r") as fd:
         for line in fd:
             acr, defn = _parse_line(line)
+            print(line, defn)
             if acr is None:
                 continue
 
@@ -173,7 +179,7 @@ def read_skip_acronyms(file_name="skipacronyms.txt"):
     return skip
 
 
-def find_matches(filename, acronyms, ignore_str=" %"):
+def find_matches_per_line(filename, acronyms, ignore_str=" %"):
     """Return list of matching acronyms in file.
 
     Parameters
@@ -210,7 +216,7 @@ def find_matches(filename, acronyms, ignore_str=" %"):
     return matches
 
 
-def find_matches_f(filename, acronyms, ignore_str=" %"):
+def find_matches_combo(filename, acronyms, ignore_str=" %"):
     """Return list of matching acronyms in file.
 
     Parameters
@@ -229,23 +235,34 @@ def find_matches_f(filename, acronyms, ignore_str=" %"):
         List of matching acronyms from supplied list.
     """
 
+    if pypandoc is not None:
+        # Use markdown rather than plain text because
+        # for plain text \textbf{Int} is converted to "INT"
+        # for emphasis.
+        text = pypandoc.convert_file(filename, "markdown")
+    else:
+        # Read the content of the file into a single string
+        lines = []
+        with open(filename, "r") as fd:
+            for line in fd:
+                if ignore_str:
+                    posn = line.find(ignore_str)
+                    if posn > -1:
+                        line = line[:posn]
+                line = line.strip()
+                lines.append(line)
+
+            text = " ".join(lines)
+
     pattern = r"\b(" + "|".join(re.escape(w) for w in acronyms) + r")\b"
     regex = re.compile(pattern)
 
-    lines = []
-    with open(filename, "r") as fd:
-        for line in fd:
-            if ignore_str:
-                posn = line.find(ignore_str)
-                if posn > -1:
-                    line = line[:posn]
-            line = line.strip()
-            lines.append(line)
-
-    text = " ".join(lines)
     matches = regex.findall(text)
 
     return set(matches)
+
+
+find_matches = find_matches_combo
 
 
 def write_latex_table(acronyms, fd=sys.stdout):
@@ -261,7 +278,7 @@ def write_latex_table(acronyms, fd=sys.stdout):
 \textbf{Acronym} & \textbf{Description}  \\\hline
 """, file=fd)
     for acr, defn in acronyms:
-        print("{} & {} {}".format(acr, defn, r"\\\hline"), file=fd)
+        print("{}&{} {}".format(acr, defn, r"\\\hline"), file=fd)
 
     print(r"\end{longtable}", file=fd)
 
@@ -332,8 +349,11 @@ def main(texfiles):
         elif acr in lsst_definitions:
             options = lsst_definitions[acr]
             if len(options) > 1:
-                print("Entry {} exists multiple ({}) times. Using one definition.".format(acr, len(options)), file=sys.stderr)
-            results.append((acr, options.pop()))
+                print("Entry {} exists multiple ({}) times. "
+                      "Including all definitions.".format(acr, len(options)),
+                      file=sys.stderr)
+            for a in options:
+                results.append((acr, a))
         else:
             raise RuntimeError("Internal error handling {}".format(acr))
 
