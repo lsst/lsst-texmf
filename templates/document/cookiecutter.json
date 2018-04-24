@@ -4,6 +4,7 @@
     "DMTN",
     "SQR",
     "SMTN",
+    "LSE",
     "TEST"],
   "serial_number": "000",
   "github_org": [
@@ -16,7 +17,7 @@
   "title": "Document Title",
   "first_author": "First Last",
   "abstract": "Abstract text.",
-  "copyright_year": "2017",
+  "copyright_year": "2018",
   "copyright_holder": "Association of Universities for Research in Astronomy, Inc.",
   "license_cc_by": [true, false]
 }
