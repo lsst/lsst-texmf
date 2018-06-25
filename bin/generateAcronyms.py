@@ -3,7 +3,7 @@
 """
 Utility that can be used to generate automatically the Acronyms of
 multiple TeX files, it reads the known acronyms from the Web and the
-"myacronyms.tex" and "skipacronyms.tex" files if exist and generates a
+"myacronyms.tex" and "skipacronyms.txt" files if exist and generates a
 "acronyms.tex" that can be included in the document
 """
 import warnings
@@ -196,6 +196,8 @@ def find_matches_per_line(filename, acronyms, ignore_str=" %"):
     -------
     matches : `set`
         List of matching acronyms from supplied list.
+    missing : `set`
+        List of acronyms used but not matched.
     """
 
     pattern = r"\b(" + "|".join(re.escape(w) for w in acronyms) + r")\b"
@@ -213,7 +215,7 @@ def find_matches_per_line(filename, acronyms, ignore_str=" %"):
             these = regex.findall(line)
             matches.update(these)
 
-    return matches
+    return matches, set()
 
 
 def find_matches_combo(filename, acronyms, ignore_str=" %"):
@@ -233,13 +235,15 @@ def find_matches_combo(filename, acronyms, ignore_str=" %"):
     -------
     matches : `set`
         List of matching acronyms from supplied list.
+    missing : `set`
+        Set of acronyms found in the text but that do not have any definitions.
     """
 
     if pypandoc is not None:
         # Use markdown rather than plain text because
         # for plain text \textbf{Int} is converted to "INT"
         # for emphasis.
-        text = pypandoc.convert_file(filename, "markdown")
+        text = pypandoc.convert_file(filename, "markdown", format="latex")
     else:
         # Read the content of the file into a single string
         lines = []
@@ -250,16 +254,53 @@ def find_matches_combo(filename, acronyms, ignore_str=" %"):
                     if posn > -1:
                         line = line[:posn]
                 line = line.strip()
+
+                # Latex specific ignore
+                if (line.startswith(r"\def") or line.startswith(r"\newcommand") or
+                        line.startswith(r"\renewcommand")):
+                    continue
+                line = line.replace(r"\&", "&")
+                line = line.replace(r"\_", "_")
+
                 lines.append(line)
 
             text = " ".join(lines)
 
-    pattern = r"\b(" + "|".join(re.escape(w) for w in acronyms) + r")\b"
+    # Do two passes. First look for usages of acronyms that have lower
+    # case characters, number or special characters.
+    # These do not look like "normal" acronyms so special case them.
+    # Also single character acronyms (which should probably be banned)
+    nonstandard = {a for a in acronyms if not a.isupper() or not a.isalpha() or len(a) == 1}
+
+    # findall matches non-overlapping left to right in the order that
+    # we give alternate strings. Therefore when we build the regex
+    # ensure that we supply strings sorted by length. Ideally we would also
+    # take into account word boundaries but for now length ensures that
+    # R&D matches before R and D.
+    sorted_nonstandard = sorted(nonstandard, key=len, reverse=True)
+
+    # This pattern matches all defined acronyms, even those with lower
+    # case characters and things like "&"
+    pattern = r"\b(" + "|".join(re.escape(w) for w in sorted_nonstandard) + r")\b"
     regex = re.compile(pattern)
 
-    matches = regex.findall(text)
+    matches = set(regex.findall(text))
 
-    return set(matches)
+    # Now look for all acronym-like strings in the text, defined as a
+    # collection of 2 or more upper case characters with word boundaries
+    # either side.
+    regex = re.compile(r"\b[A-Z][A-Z]+\b")
+    used = set(regex.findall(text))
+
+    # For all acronyms that were used and have existing definitions, add
+    # them to the current list of matches
+    matches.update(used & acronyms)
+
+    # Calculate all the acronyms we found in the text but which do not
+    # have definitions.
+    missing = used - matches
+
+    return matches, missing
 
 
 find_matches = find_matches_combo
@@ -278,7 +319,9 @@ def write_latex_table(acronyms, fd=sys.stdout):
 \textbf{Acronym} & \textbf{Description}  \\\hline
 """, file=fd)
     for acr, defn in acronyms:
-        print("{}&{} {}".format(acr, defn, r"\\\hline"), file=fd)
+        acr = acr.replace("&", r"\&")
+        acr = acr.replace("_", r"\_")
+        print("{} & {} {}".format(acr, defn, r"\\\hline"), file=fd)
 
     print(r"\end{longtable}", file=fd)
 
@@ -335,11 +378,18 @@ def main(texfiles):
 
     # Scan each supplied tex file looking for the acronym
     matches = set()
+    missing = set()
     for f in texfiles:
-        local_matches = find_matches(f, acronyms)
+        local_matches, local_missing = find_matches(f, acronyms)
         matches.update(local_matches)
+        missing.update(local_missing)
 
     print("Matched {} acronyms".format(len(matches)), file=sys.stderr)
+
+    # Report missing definitions, taking into account skips
+    missing = missing - skip
+    for m in missing:
+        print("Missing definition: {}".format(m), file=sys.stderr)
 
     # Attach definitions to matches
     results = []
