@@ -282,21 +282,15 @@ def find_matches_combo(filename, acronyms, ignore_str=" %"):
     # This pattern matches all defined acronyms, even those with lower
     # case characters and things like "&"
     pattern = r"\b(" + "|".join(re.escape(w) for w in sorted_nonstandard) + r")\b"
-    print(pattern)
-    print(text)
     regex = re.compile(pattern)
 
     matches = set(regex.findall(text))
-
-    print("RegEx matches:", matches)
 
     # Now look for all acronym-like strings in the text, defined as a
     # collection of 2 or more upper case characters with word boundaries
     # either side.
     regex = re.compile(r"\b[A-Z][A-Z]+\b")
     used = set(regex.findall(text))
-
-    print("Acronyms found:", used)
 
     # For all acronyms that were used and have existing definitions, add
     # them to the current list of matches
