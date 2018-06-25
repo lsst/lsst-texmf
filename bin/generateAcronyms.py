@@ -392,6 +392,8 @@ def main(texfiles):
 
     print("Matched {} acronyms".format(len(matches)), file=sys.stderr)
 
+    # Report missing definitions, taking into account skips
+    missing = missing - skip
     for m in missing:
         print("Missing definition: {}".format(m), file=sys.stderr)
 
