@@ -325,7 +325,9 @@ def write_latex_table(acronyms, fd=sys.stdout):
 \textbf{Acronym} & \textbf{Description}  \\\hline
 """, file=fd)
     for acr, defn in acronyms:
-        print("{}&{} {}".format(acr, defn, r"\\\hline"), file=fd)
+        acr = acr.replace("&", r"\&")
+        acr = acr.replace("_", r"\_")
+        print("{} & {} {}".format(acr, defn, r"\\\hline"), file=fd)
 
     print(r"\end{longtable}", file=fd)
 
