@@ -1,0 +1,8 @@
+% Snippet of tex to test glossary extraction
+\def\arcsec{\hbox{$^{\prime\prime}$}}
+
+LSST is a telescope.
+FRED is undefined but SEMP is defined, as is VO.
+We also can stress \emph{SODA} and it should still work.
+A non-standard acronym is 2MASS because it has a number in it and FoV has a lower case character.
+We also have T\&S for telescope and site and R\&D is also a thing.
