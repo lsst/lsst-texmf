@@ -3,7 +3,7 @@
 """
 Utility that can be used to generate automatically the Acronyms of
 multiple TeX files, it reads the known acronyms from the Web and the
-"myacronyms.tex" and "skipacronyms.tex" files if exist and generates a
+"myacronyms.tex" and "skipacronyms.txt" files if exist and generates a
 "acronyms.tex" that can be included in the document
 """
 import warnings
