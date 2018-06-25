@@ -30,6 +30,7 @@ OSS:Observatory System Specifications
 DMIS:DM Interface Scientist
 IS:Interface Scientist
 PMCS:Project Management Control System
+T&S:Telescope and Site
 
 ISR:Instrument Signal Removal
 OCS:Observatory Control System
