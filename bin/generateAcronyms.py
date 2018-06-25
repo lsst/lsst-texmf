@@ -250,6 +250,12 @@ def find_matches_combo(filename, acronyms, ignore_str=" %"):
                     if posn > -1:
                         line = line[:posn]
                 line = line.strip()
+
+                # Latex specific ignore
+                if (line.startswith(r"\def") or line.startswith(r"\newcommand") or
+                        line.startswith(r"\renewcommand")):
+                    continue
+
                 lines.append(line)
 
             text = " ".join(lines)
