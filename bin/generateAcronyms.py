@@ -230,6 +230,7 @@ def find_matches_combo(filename, acronyms, ignore_str=" %"):
     ignore_str : `str`, optional
         Anything from this string on in a line is not searched.
         Every line is searched if set to None. Default is tex comment.
+        Only used if pypandoc is not available.
 
     Returns
     -------
@@ -257,7 +258,7 @@ def find_matches_combo(filename, acronyms, ignore_str=" %"):
 
                 # Latex specific ignore
                 if (line.startswith(r"\def") or line.startswith(r"\newcommand") or
-                        line.startswith(r"\renewcommand")):
+                        line.startswith(r"\renewcommand") or line.startswith("%")):
                     continue
                 line = line.replace(r"\&", "&")
                 line = line.replace(r"\_", "_")
