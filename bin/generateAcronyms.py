@@ -120,7 +120,6 @@ def read_myacronyms(filename="myacronyms.txt", allow_duplicates=False, defaults=
     with open(filename, "r") as fd:
         for line in fd:
             acr, defn = _parse_line(line)
-            print(line, defn)
             if acr is None:
                 continue
 
