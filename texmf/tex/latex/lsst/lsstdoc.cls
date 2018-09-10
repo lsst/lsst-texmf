@@ -1156,6 +1156,8 @@ No actions have been identified.}
 \newcommand{\Alerts}{\code{Alerts}\xspace}
 \newcommand{\DIASource}{\code{DIA\-Source}\xspace}
 \newcommand{\DIASources}{\code{DIA\-Sources}\xspace}
+\newcommand{\DIAForcedSource}{\code{DIA\-Forced\-Source}\xspace}
+\newcommand{\DIAForcedSources}{\code{DIA\-Forced\-Sources}\xspace}
 \newcommand{\DIAObject}{\code{DIA\-Object}\xspace}
 \newcommand{\DIAObjects}{\code{DIA\-Objects}\xspace}
 \newcommand{\DB}{{Level 1 database}\xspace}
