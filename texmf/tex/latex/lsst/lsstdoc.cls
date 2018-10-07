@@ -338,12 +338,17 @@
 \newcommand{\setDocAuthorize}[1]{%
 \ClassWarning{lsstdoc}{For setDocAuthorize authorized person is implied by document series}}
 
+% Define the control text to use based on document type
+% This was in makeTitle which means make Short title caused lits of errors
+\def\@controlText{}
+\def\@controlFootText{}
+
 \newcommand{\mkshorttitle}{
      \begin{center}
         \color{lssttitle}
         \@title \\
         \color{black}
-        \normalsize {\textbf \docAuthor}\\
+        \normalsize {\textbf \@author}\\
 	      \docDate\\
      \end{center}
 
@@ -425,9 +430,6 @@
     \end{center}
    \vspace*{1cm}
 
-   % Define the control text to use based on document type
-   \def\@controlText{}
-   \def\@controlFootText{}
    \if@ccb
    \def\@controlText{%
    This LSST document has been approved as a Content-Controlled Document.
