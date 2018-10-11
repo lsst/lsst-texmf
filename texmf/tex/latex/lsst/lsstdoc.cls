@@ -203,8 +203,12 @@
    \renewcommand{\docType}{Software System Specification}
 }
 %
-% Define the CUs -- and the DPACE
+% Define the groups  
 %
+\DeclareOption{PST}{
+   \renewcommand{\CU}{PST}
+   \renewcommand{\docType}{Project Science Team}
+}
 \DeclareOption{DM}{
    \renewcommand{\CU}{DM}
    \renewcommand{\docType}{Data Management}
@@ -407,6 +411,8 @@
      \begin{center}
     \color{lssttitle}
     \textsf{\LARGE \bfseries Large Synoptic Survey Telescope (LSST)} \\
+    \vspace*{0.1cm}
+    \textsf{\LARGE \bfseries \docType } \\
     \vspace*{0.5cm}
     \begin{spacing}{2}
       \textsf{\Huge \bfseries \@title} \\
