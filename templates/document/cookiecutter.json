@@ -1,8 +1,14 @@
 {
+  "org": [
+    "DM",
+    "PST",
+     "SE",
+     "PMO"],
   "series": [
     "LDM",
     "DMTN",
     "SQR",
+    "PSTN",
     "SMTN",
     "LSE",
     "TEST"],

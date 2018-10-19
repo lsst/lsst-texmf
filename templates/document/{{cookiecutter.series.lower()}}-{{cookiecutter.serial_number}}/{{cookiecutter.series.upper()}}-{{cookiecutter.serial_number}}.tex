@@ -2,7 +2,7 @@
 \documentclass[DM,lsstdraft,toc]{lsstdoc}
 {% else %}
 {# skip draft watermark for technotes and use author-year citations #}
-\documentclass[DM,authoryear,toc]{lsstdoc}
+\documentclass[{{ cookiecutter.org }},authoryear,toc]{lsstdoc}
 {%- endif %}
 % lsstdoc documentation: https://lsst-texmf.lsst.io/lsstdoc.html
 
