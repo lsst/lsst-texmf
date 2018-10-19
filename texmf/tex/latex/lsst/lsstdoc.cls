@@ -131,7 +131,8 @@
 \if@compatibility\else
 \DeclareOption{notoc}{\@addtocfalse}
 \fi
-
+%Default toc depth should be here not in the title page so you can change it
+\setcounter{tocdepth}{3}
 %
 % Define the various document types
 %
@@ -506,7 +507,6 @@
    \docChangeRecord
 
    \if@addtoc
-     \setcounter{tocdepth}{3}
      \usetocstyle{standard}
      \begin{spacing}{1.5}
      \tableofcontents
