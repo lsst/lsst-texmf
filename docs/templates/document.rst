@@ -41,6 +41,15 @@ Template configurations
 
 This section describes configurations requested by :command:`cookiecutter`.
 
+``org``
+   Which part of DM the note is from (this comes out on the title page:
+
+   - PST -  Project Science Team
+   - DM -  Data Management}
+   - SE - Systems Engineering
+   - PMO - Project Office
+
+
 ``series``
    Handle of the documentation series.
    Technical notes can be ``DMTN``, ``SQR``, ``PSTN'' or ``SMTN`` (see the `DM Developer Guide <https://developer.lsst.io/docs/technotes.html>`__ for more information).
