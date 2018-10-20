@@ -1159,7 +1159,6 @@ No actions have been identified.}
 
 \newcommand{\vstretch}[1]{\vspace*{\stretch{#1}}}
 \newcommand{\code}[1]{\texttt{#1}}
-
 \newcommand{\Alert}{\code{Alert}\xspace}
 \newcommand{\Alerts}{\code{Alerts}\xspace}
 \newcommand{\DIASource}{\code{DIA\-Source}\xspace}
@@ -1170,6 +1169,8 @@ No actions have been identified.}
 \newcommand{\DIAObjects}{\code{DIA\-Objects}\xspace}
 \newcommand{\DB}{{Level 1 database}\xspace}
 \newcommand{\DR}{{Level 2 database}\xspace}
+\newcommand{\PPDB}{{Prompt Products database}\xspace}
+\newcommand{\DRDB}{{Data Release database}\xspace}
 \newcommand{\Object}{\code{Object}\xspace}
 \newcommand{\Objects}{\code{Objects}\xspace}
 \newcommand{\Source}{\code{Source}\xspace}
