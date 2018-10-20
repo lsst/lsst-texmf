@@ -52,7 +52,7 @@ This section describes configurations requested by :command:`cookiecutter`.
 
 ``series``
    Handle of the documentation series.
-   Technical notes can be ``DMTN``, ``SQR``, ``PSTN`` or ``SMTN`` (see the `DM Developer Guide <https://developer.lsst.io/docs/technotes.html>`__ for more information).
+   Technical notes can be ``DMTN``, ``SQR``, ``PSTN'' or ``SMTN`` (see the `DM Developer Guide <https://developer.lsst.io/docs/technotes.html>`__ for more information).
 
 ``serial_number``
    Serial number of the document.
