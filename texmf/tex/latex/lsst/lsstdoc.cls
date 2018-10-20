@@ -635,7 +635,6 @@
 \def\fps@figure{!htbp}
 
 \setcounter{secnumdepth}{5}    % numbering level of sections
-\setcounter{tocdepth}{4}       % appearance level in table of contents
 
 % Header and footer definitions
 
