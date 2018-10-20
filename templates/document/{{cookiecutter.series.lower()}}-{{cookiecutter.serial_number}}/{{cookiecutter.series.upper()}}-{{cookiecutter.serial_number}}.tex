@@ -1,5 +1,5 @@
 {% if cookiecutter.series in ['LDM', 'LSE', 'LPM'] -%}
-\documentclass[DM,lsstdraft,toc]{lsstdoc}
+\documentclass[{{ cookiecutter.org }},lsstdraft,toc]{lsstdoc}
 {% else %}
 {# skip draft watermark for technotes and use author-year citations #}
 \documentclass[{{ cookiecutter.org }},authoryear,toc]{lsstdoc}
