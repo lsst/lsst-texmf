@@ -42,7 +42,7 @@ Template configurations
 This section describes configurations requested by :command:`cookiecutter`.
 
 ``org``
-   Which part of DM the note is from (this comes out on the title page:
+   Which part of DM the note is from (this comes out on the title page):
 
    - PST - Project Science Team
    - DM  - Data Management
