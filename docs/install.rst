@@ -4,7 +4,11 @@
 Installing lsst-texmf
 #####################
 
-You can get the LSST LaTeX classes and style files from GitHub:
+There are three ways to install and use lsst-texmf: as a single centralized installation on your computer, as a submodule of individual document Git repositories, and as a Docker container.
+This page describes how to install lsst-texmf centrally.
+See :doc:`submodule` and :doc:`docker` for the other approaches.
+
+To install lsst-texmf, clone the lsst-texmf repository:
 
 .. code-block:: bash
 
@@ -17,29 +21,13 @@ For example, the following can be used if you are in the directory from which yo
 
    export TEXMFHOME=`pwd`/lsst-texmf/texmf
 
-A single :file:`texmf` directory can be reused for multiple documents, or else, it is possible to have separate :file:`texmf` directories for each document, having the environment variable set by a make file.
-A particularly useful way of doing the latter is to install :file:`lsst-texmf` as a git submodule.
-To do this, execute this within your document's repository:
-
-.. code-block:: bash
-
-    git submodule add https://github.com/lsst/lsst-texmf
-    
-Add and commit as usual.
-Later, when making a fresh clone of the repository, users will have to execute this within the repository:
-
-.. code-block:: bash
-
-    git submodule init
-    git submodule update
-
 If you do not want to override this environment setting but wish to have the files always available you can move the entire :file:`texmf` tree to the default home location which can be found using:
 
 .. code-block:: bash
 
    kpsewhich -var-value TEXMFHOME
 
-which on a Mac reports :file:`~/Library/texmf`.
+On a Mac this is :file:`~/Library/texmf`.
 
 Once this environment variable is set, :command:`xelatex` and :command:`pdflatex` will find the relevant files automatically.
 
