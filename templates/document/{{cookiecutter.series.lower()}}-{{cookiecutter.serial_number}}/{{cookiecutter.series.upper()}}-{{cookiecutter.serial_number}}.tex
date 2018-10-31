@@ -40,7 +40,7 @@
 % See LPM-51 for version number policy.
 {% raw -%}
 \setDocChangeRecord{%{%- endraw %}
-  \addtohist{1}{YYY-MM-DD}{Unreleased.}{ {{- cookiecutter.first_author -}} }
+  \addtohist{1}{YY-MM-DD}{Unreleased.}{ {{- cookiecutter.first_author -}} }
 }
 
 \begin{document}
@@ -49,10 +49,16 @@
 % Table of contents is added automatically with the "toc" class option.
 \maketitle
 
-% ADD CONTENT HERE
+% ADD CONTENT HERE ... a file per section can be good for editing
+\input{intro}
 
+\appendix
 % Include all the relevant bib files.
 % https://lsst-texmf.lsst.io/lsstdoc.html#bibliographies
+\section{References} \label{sec:bib}
 \bibliography{lsst,lsst-dm,refs_ads,refs,books}
 
+%Make sure lsst-texmf/bin/generateAcronyms.py is in your path
+\section{Acronyms used in this document}\label{sec:acronyms}
+\input{acronyms.tex}
 \end{document}
