@@ -47,7 +47,13 @@
 
 % Create the title page.
 % Table of contents is added automatically with the "toc" class option.
+{% if cookiecutter.series in ['LDM', 'LSE', 'LPM'] -%}
 \maketitle
+{% else %}
+\mkshorttitle
+%switch to \maketitle if you wan the title page and toc
+{%- endif %}
+
 
 % ADD CONTENT HERE ... a file per section can be good for editing
 \input{intro}
