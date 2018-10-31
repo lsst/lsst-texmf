@@ -218,8 +218,8 @@
    \renewcommand{\CU}{SE}
    \renewcommand{\docType}{Systems Engineering}
 }
-\DeclareOption{PM}{
-   \renewcommand{\CU}{PM}
+\DeclareOption{PMO}{
+   \renewcommand{\CU}{PMO}
    \renewcommand{\docType}{LSST Project Office}
 }
 
