@@ -12,7 +12,7 @@
 
 {{ cookiecutter.abstract }}
 
-To compile this document you need to have set up https://github.com/lsst/lsst-texmf. The bin directory of texmf must be in your path for generateAcronyms.py to be found and  work. 
+To compile this document you need to have set up  lsst-texmf see  http:\\lsst-texmf.lsst.io . The bin directory of texmf must be in your path for generateAcronyms.py to be found and  work. 
 **Links**
 
 {% if cookiecutter.docushare_url|length > 0 %}

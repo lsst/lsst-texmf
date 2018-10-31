@@ -10,9 +10,9 @@ OBJ=$(SRC:.tex=.pdf)
 all: $(OBJ)
 
 $(OBJ): $(tex) acronyms.tex
-	latexmk -bibtex -pdf -f $(SRC)
+	latexmk -bibtex -xelatex -f $(SRC)
 
-#Thi generateAcronyms.py  script is in lsst-texmf/bin - put that in the path
+#The generateAcronyms.py  script is in lsst-texmf/bin - put that in the path
 acronyms.tex :$(tex) myacronyms.txt
 	generateAcronyms.py   $(tex)
 
