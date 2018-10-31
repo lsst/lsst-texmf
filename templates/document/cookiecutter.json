@@ -1,8 +1,14 @@
 {
+  "org": [
+    "DM",
+    "PST",
+    "SE",
+    "PMO"],
   "series": [
     "LDM",
     "DMTN",
     "SQR",
+    "PSTN",
     "SMTN",
     "LSE",
     "TEST"],
@@ -10,6 +16,7 @@
   "github_org": [
     "lsst",
     "lsst-dm",
+    "lsst-pst",
     "lsst-sqre",
     "lsst-sims"
   ],

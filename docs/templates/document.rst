@@ -41,9 +41,18 @@ Template configurations
 
 This section describes configurations requested by :command:`cookiecutter`.
 
+``org``
+   Which part of DM the note is from (this comes out on the title page):
+
+   - PST - Project Science Team
+   - DM  - Data Management
+   - SE  - Systems Engineering
+   - PMO - Project Office
+
+
 ``series``
    Handle of the documentation series.
-   Technical notes can be ``DMTN``, ``SQR``, or ``SMTN`` (see the `DM Developer Guide <https://developer.lsst.io/docs/technotes.html>`__ for more information).
+   Technical notes can be ``DMTN``, ``SQR``, ``PSTN`` or ``SMTN`` (see the `DM Developer Guide <https://developer.lsst.io/docs/technotes.html>`__ for more information).
 
 ``serial_number``
    Serial number of the document.
@@ -54,6 +63,7 @@ This section describes configurations requested by :command:`cookiecutter`.
    - `DMTN <https://github.com/lsst-dm?utf8=✓&q=DMTN-&type=&language=>`__
    - `SQR <https://github.com/lsst-sqre?utf8=✓&q=SQR-&type=&language=>`__
    - `SMTN <https://github.com/lsst-sims?utf8=✓&q=SMTN-&type=&language=>`__
+   - `PSTN <https://github.com/lsst-pst?utf8=✓&q=PSTN-&type=&language=>`__
 
 ``github_org``
     Documents belong in specific GitHub organizations:
@@ -62,6 +72,7 @@ This section describes configurations requested by :command:`cookiecutter`.
     - DMTN: `lsst-dm <https://github.com/lsst-dm>`__
     - SQR: `lsst-sqr <https://github.com/lsst-sqre>`__
     - SMTN: `lsst-sims <https://github.com/lsst-sims>`__
+    - PSTN: `lsst-pst <https://github.com/lsst-sims>`__
 
 ``docushare_url``
    Provide a URL to the document in DocuShare, if available.
