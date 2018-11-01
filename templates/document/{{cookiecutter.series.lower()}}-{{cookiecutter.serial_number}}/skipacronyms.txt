@@ -1,0 +1,12 @@
+#Put acronyms in this file which you want to ignore (initials of people single letters .. 
+PATH
+MM
+DD
+YYYY
+Z
+AS
+I
+http
+p
+s
+A

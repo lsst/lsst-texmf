@@ -1,4 +1,4 @@
-![lsst-texmf.lsst.io](https://img.shields.io/badge/lsst--texmf-lsst.io-blue.svg "Documentaton") ![Travis](https://img.shields.io/travis/lsst/lsst-texmf/master.svg "Build status")
+![lsst-texmf.lsst.io](https://img.shields.io/badge/lsst--texmf-lsst.io-blue.svg "Documentation") ![Travis](https://img.shields.io/travis/lsst/lsst-texmf/master.svg "Build status")
 
 # LSST LaTeX document class files
 
@@ -17,6 +17,9 @@ For example, with `bash` or `sh`:
 git clone https://github.com/lsst/lsst-texmf
 export TEXMFHOME=`pwd`/lsst-texmf/texmf
 ```
+
+In addition you need to add lsst-texmf/bin to you PATH so generateAcronyms.py is found.
+
 
 Next, read the docs at https://lsst-texmf.lsst.io.
 
