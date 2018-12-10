@@ -214,6 +214,10 @@
    \renewcommand{\CU}{DM}
    \renewcommand{\docType}{Data Management}
 }
+\DeclareOption{TS}{
+   \renewcommand{\CU}{TS}
+   \renewcommand{\docType}{Telescope \& Site}
+}
 \DeclareOption{SE}{
    \renewcommand{\CU}{SE}
    \renewcommand{\docType}{Systems Engineering}
@@ -221,6 +225,10 @@
 \DeclareOption{PMO}{
    \renewcommand{\CU}{PMO}
    \renewcommand{\docType}{LSST Project Office}
+}
+\DeclareOption{OPS}{
+   \renewcommand{\CU}{OPS}
+   \renewcommand{\docType}{LSST Operations }
 }
 
 

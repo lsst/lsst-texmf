@@ -3,6 +3,8 @@
     "DM",
     "PST",
     "SE",
+    "TS",
+    "OPS",
     "PMO"],
   "series": [
     "LDM",
@@ -11,6 +13,13 @@
     "PSTN",
     "SMTN",
     "LSE",
+    "LDO",
+    "LOO",
+    "LDF",
+    "LSO",
+    "LEP",
+    "LSP",
+    "OPSTN",
     "TEST"],
   "serial_number": "000",
   "github_org": [
