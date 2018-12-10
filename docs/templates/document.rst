@@ -48,11 +48,13 @@ This section describes configurations requested by :command:`cookiecutter`.
    - DM  - Data Management
    - SE  - Systems Engineering
    - PMO - Project Office
+   - POS - Operations
+   - TS  - Telescope and Site
 
 
 ``series``
    Handle of the documentation series.
-   Technical notes can be ``DMTN``, ``SQR``, ``PSTN`` or ``SMTN`` (see the `DM Developer Guide <https://developer.lsst.io/docs/technotes.html>`__ for more information).
+   Technical notes can be ``DMTN``, ``SQR``, ``PSTN``, ``OPSTN''  or ``SMTN`` (see the `DM Developer Guide <https://developer.lsst.io/docs/technotes.html>`__ for more information).
 
 ``serial_number``
    Serial number of the document.
@@ -72,7 +74,9 @@ This section describes configurations requested by :command:`cookiecutter`.
     - DMTN: `lsst-dm <https://github.com/lsst-dm>`__
     - SQR: `lsst-sqr <https://github.com/lsst-sqre>`__
     - SMTN: `lsst-sims <https://github.com/lsst-sims>`__
-    - PSTN: `lsst-pst <https://github.com/lsst-sims>`__
+    - PSTN: `lsst-pst <https://github.com/lsst-pst>`__
+    - OPSTN: `lsst-pst <https://github.com/lsst-ops>`__
+
 
 ``docushare_url``
    Provide a URL to the document in DocuShare, if available.
