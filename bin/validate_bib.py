@@ -30,8 +30,7 @@ def main():
             print('Cannot find bib for testing: {}'.format(bibpath))
             sys.exit(1)
 
-    # We use the latex+latin code with Sphinx workflows.
-    parser = bibtex.Parser('latex+latin')
+    parser = bibtex.Parser()
     for bibpath in args.paths:
         print('Parsing {}'.format(bibpath))
         parser.parse_file(bibpath)
