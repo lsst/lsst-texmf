@@ -1,0 +1,20 @@
+# Repo files not needed in the image
+.github
+docs
+.gitignore
+.travis.yml
+Makefile
+
+# Files built by tests
+*.pdf
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.pdf
+*.toc
+*.nav
+*.snm
