@@ -14,20 +14,17 @@ RUN apt-get update && \
         default-jre && \
     apt-get clean
 
+# Create a directory the lsst-texmf installation
+RUN mkdir lsst-texmf
+
 # Point $TEXMFHOME to the container's lsst-texmf. This environment variable
 # exists for container runs by a user.
-ENV TEXMFHOME "/texmf"
+ENV TEXMFHOME "/lsst-texmf/texmf"
 
 # Add lsst-texmf's bin/ directory to the path
-ENV PATH="/lsst-texmf-bin:${PATH}"
+ENV PATH="/lsst-texmf/bin:${PATH}"
 
-RUN mkdir $TEXMFHOME && mkdir /lsst-texmf-bin
-
-# Contents of the lsst-texmf Git repo's texmf/ directory copied to container's
-# $TEXMFHOME directory.
-COPY texmf $TEXMFHOME/
-
-# Copy contents of lsst-texmf's bin directory to the image
-COPY bin /lsst-texmf-bin/
+# Copy lsst-texmf repo in /lsst-texmf/
+COPY . /lsst-texmf
 
 CMD ["/bin/echo", "See https://lsst-texmf.lsst.io/docker.html for usage."]
