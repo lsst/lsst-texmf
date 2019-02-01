@@ -1,5 +1,7 @@
 Adapted from the list of Gaia acronyms maintained by Jos de Bruijne.
+See also LSST-specific acronyms in lsstacronyms.txt.
 
+AURA       : Association of Universities for Research in Astronomy
 1D         : One-dimensional
 2D         : Two-dimensional
 2MASS      : Two-Micron All Sky Survey
@@ -106,6 +108,11 @@ MSB        : Most Significant Bit
 NAOJ       : National Astronomical Observatory of Japan
 NEO        : Near-Earth Object
 NFS        : Network File System
+NSF        : National Science Foundation
+ITIL       : Information Technology Infrastructure Library
+MC         : Monte-Carlo (simulation/process)
+SW         : Software (also denoted S/W)
+MREFC      : Major Research Equipment and Facilities Construction (NSF)
 NIST       : National Institute of Standards and Technology (USA)
 NOAO       : National Optical Astronomy Observatories (USA)
 OBS        : Organisation Breakdown Structure
@@ -165,3 +172,6 @@ XMM        : X-ray Multi-mirror Mission (ESA; officially known as XMM-Newton)
 XSD        : XML Schema Definition
 XSL        : eXtensible Stylesheet Language
 XSLT       : eXtensible Stylesheet Language Transformation
+WCS        : World Coordinate System
+UW         : University of Washington
+US         : United States

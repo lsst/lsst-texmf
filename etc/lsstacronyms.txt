@@ -1,29 +1,28 @@
-AP:Alerts Production
-AURA:Association of Universities for Research in Astronomy
-CAM: CAMera
-CAM:Control Account Manager
+LSST-specific terminology.
+See also the general glossary in glossary.txt.
+
+AP:Alert Production
+CAM:CAMera
+CAM:Control (or Cost) Account Manager
 CB:Configuration Baseline
 CCB:Change Control Board
-CI:Configuration Item
-CIL:Configuration Item List
 CM:Configuration Management
 CR:Change Request
 DAC:Data Access Center
-DAX:Data access services
+DAX:Data Access Services
 DC:Data Center
-DCR:Document Change Request
 DDMPM:Data Management Deputy Project Manager
 DM:Data Management
 DMCCB:DM Change Control Board
 DMIS:DM Interface Scientist
-DMLT: DM Leadership Team
+DMLT:DM Leadership Team
 DMO:Data Management Organization
 DMPM:Data Management Project Manager
 DMQA:Data Management Quality Assurance
-DMS:Data Management Sub-system
+DMS:Data Management Subsystem
 DMSR:DM System Requirements
 DMSS:DM Subsystem Scientist
-DMSST: DM System Science Team
+DMSST:DM System Science Team
 DMTN:DM Technical Note
 DPDD:Data Product Definition Document
 DRP:Data Release Production
@@ -32,43 +31,30 @@ EFD:Engineering Facilities Database
 ETC:Estimate To Complete
 FDR:Final Design Review
 ICBS:International Communications and Base Site
-IPAC: No longer an acronym
+IPAC:No longer an acronym; science and data center at Caltech
 IS:Interface Scientist
 ISR:Instrument Signal Removal
 IT:Integration Test
 ITC:Information Technology Center
-ITIL:Information Technology Infrastructure Library
 LCR:LSST Change Request
 LDF:LSST Data Facility
 LPM:LSST Project Management (Document Handle)
 LSE:LSST Systems Engineering (Document Handle)
 LSST:Large Synoptic Survey Telescope
-MC:Monte-Carlo (simulation/process)
-MREFC:NSF's Major Research Equipment and Facilities
-NCSA: National Center for Supercomputing Applications
-NSF:National Science Foundation
+NCSA:National Center for Supercomputing Applications
 OCS:Observatory Control System
 OSS:Observatory System Specifications
-PDF:Portable Document Format
 PM:Project Manager
 PMCS:Project Management Control System
 PS:Project Scientist
 PST:Project Science Team
-SA:Science Alert(s)
 SEMP:Systems Engineering Management Plan
 SLA:Service Level Agreement
-SLAC:Stanford Linear Accelerator Center
+SLAC:No longer an acronum; formerly Stanford Linear Accelerator Center
 SS:Subsystem Scientist
 SUI:Science User Interface
 SUIT:Science User Interface and Tools
-SW:Software (also denoted S/W)
 T&S:Telescope and Site
-TCAM:Technical Control Account Manager
-TCAMS:Technical Control/Account Manager
+T/CAM:Technical/Control Account Manager
 TCT:Technical Control Team (Obsolete - now DMCCB)
 TS:Test Specification
-US:United States
-UW:University of Washington
-VO:Virtual Observatory
-WCS:World Coordinate System
-bps:bit(s) per second
