@@ -1,78 +1,74 @@
-MREFC:NSF's Major Research Equipment and Facilities
-DMSST: DM System Science Team
-DPDD:Data Product Definition Document
-ITIL:Information Technology Infrastructure Library
-DMQA:Data Management Quality Assurance
-DWDM:Dense Wave Division Multiplex
-UW:University of Washington
-FDR:Final Design Review
-ETC:Estimate To Complete
-ITC:Information Technology Center
-SLA:Service Level Agreement
-LSST:Large Synoptic Survey Telescope
-LDF:LSST Data Facility
-IPAC: No longer an acronym
-WCS:World Coordinate System
-SLAC:Stanford Linear Accelerator Center
-AURA:Association of Universities for Research in Astronomy
-ICBS:International Communications and Base Site
-DAX:Data access services
-CB:Configuration Baseline
-CM:Configuration Management
-DMTN:DM Technical Note
-DRP:Data Release Production
-SUIT:Science User Interface and Tools
-DMCCB:DM Change Control Board
-LCR:LSST Change Request
-DMSS:DM Subsystem Scientist
-TCAMS:Technical Control/Account Manager
-OSS:Observatory System Specifications
-DMIS:DM Interface Scientist
-IS:Interface Scientist
-PMCS:Project Management Control System
-T&S:Telescope and Site
-
-ISR:Instrument Signal Removal
-OCS:Observatory Control System
 AP:Alerts Production
-CI:Configuration Item
-DCR:Document Change Request
-IT:Integration Test
-MC:Monte-Carlo (simulation/process)
-PDF:Portable Document Format
-SW:Software (also denoted S/W)
-SS:Subsystem Scientist
-TS:Test Specification
-US:United States
-VO:Virtual Observatory
-bps:bit(s) per second
-CR:Change Request
-CAM:Control Account Manager
-
-CCB:Change Control Board
-DAC:Data Access Center
-DC:Data Center
-DMS:Data Management Sub-system
-DMO:Data Management Organization
-DM:Data Management
-
-TCAM:Technical Control Account Manager
-TCT:Technical Control Team (Obsolete - now DMCCB)
-LSE:LSST Systems Engineering (Document Handle)
-LPM:LSST Project Management (Document Handle)
-DMLT: DM Leadership Team
-NCSA: National Center for Supercomputing Applications
+AURA:Association of Universities for Research in Astronomy
 CAM: CAMera
-DMSR:DM System Requirements
-SEMP:Systems Engineering Management Plan
-NSF:National Science Foundation
-# DMS:Document Management System (ESA)
-PM:Project Manager
-DMPM:Data Management Project Manager
+CAM:Control Account Manager
+CB:Configuration Baseline
+CCB:Change Control Board
+CI:Configuration Item
+CIL:Configuration Item List
+CM:Configuration Management
+CR:Change Request
+DAC:Data Access Center
+DAX:Data access services
+DC:Data Center
+DCR:Document Change Request
 DDMPM:Data Management Deputy Project Manager
+DM:Data Management
+DMCCB:DM Change Control Board
+DMIS:DM Interface Scientist
+DMLT: DM Leadership Team
+DMO:Data Management Organization
+DMPM:Data Management Project Manager
+DMQA:Data Management Quality Assurance
+DMS:Data Management Sub-system
+DMSR:DM System Requirements
+DMSS:DM Subsystem Scientist
+DMSST: DM System Science Team
+DMTN:DM Technical Note
+DPDD:Data Product Definition Document
+DRP:Data Release Production
+DWDM:Dense Wave Division Multiplex
+EFD:Engineering Facilities Database
+ETC:Estimate To Complete
+FDR:Final Design Review
+ICBS:International Communications and Base Site
+IPAC: No longer an acronym
+IS:Interface Scientist
+ISR:Instrument Signal Removal
+IT:Integration Test
+ITC:Information Technology Center
+ITIL:Information Technology Infrastructure Library
+LCR:LSST Change Request
+LDF:LSST Data Facility
+LPM:LSST Project Management (Document Handle)
+LSE:LSST Systems Engineering (Document Handle)
+LSST:Large Synoptic Survey Telescope
+MC:Monte-Carlo (simulation/process)
+MREFC:NSF's Major Research Equipment and Facilities
+NCSA: National Center for Supercomputing Applications
+NSF:National Science Foundation
+OCS:Observatory Control System
+OSS:Observatory System Specifications
+PDF:Portable Document Format
+PM:Project Manager
+PMCS:Project Management Control System
 PS:Project Scientist
 PST:Project Science Team
 SA:Science Alert(s)
+SEMP:Systems Engineering Management Plan
+SLA:Service Level Agreement
+SLAC:Stanford Linear Accelerator Center
+SS:Subsystem Scientist
 SUI:Science User Interface
-CIL:Configuration Item List
-EFD:Engineering Facilities Database
+SUIT:Science User Interface and Tools
+SW:Software (also denoted S/W)
+T&S:Telescope and Site
+TCAM:Technical Control Account Manager
+TCAMS:Technical Control/Account Manager
+TCT:Technical Control Team (Obsolete - now DMCCB)
+TS:Test Specification
+US:United States
+UW:University of Washington
+VO:Virtual Observatory
+WCS:World Coordinate System
+bps:bit(s) per second
