@@ -1,14 +1,13 @@
 Adapted from the list of Gaia acronyms maintained by Jos de Bruijne.
 See also LSST-specific acronyms in lsstacronyms.txt.
 
-AURA       : Association of Universities for Research in Astronomy
 1D         : One-dimensional
 2D         : Two-dimensional
 2MASS      : Two-Micron All Sky Survey
 3D         : Three-dimensional
+A/D        : Analogue-to-Digital (converter)
 ABI        : Application Binary Interface
 AC         : Alternating Current
-A/D        : Analogue-to-Digital (converter)
 ADASS      : Astronomical Data Analysis Software and Systems
 ADC        : Analogue-to-Digital Converter
 ADQL       : Astronomical Data Query Language
@@ -23,6 +22,7 @@ ASAP       : As Soon As Possible
 ASCII      : American Standard Code for Information Interchange
 au         : astronomical unit
 AU         : deprecated acronym for astronomical unit; use au instead
+AURA       : Association of Universities for Research in Astronomy
 b          : bit
 B          : Byte (8 bit)
 BNF        : Backus-Naur Form
@@ -46,6 +46,7 @@ DoF        : Degree(s) of Freedom (also known as DOF)
 DOM        : Document Object Model
 DoNM       : Date of Next Meeting
 DS9        : Deep Space 9 (specific astronomical data visualisation application; SAOImage)
+DWDM       : Dense Wave Division Multiplex
 EEPROM     : Electrically Erasable Programmable Read-Only Memory
 ESA        : European Space Agency
 eV         : electron-Volt
@@ -72,14 +73,17 @@ HST        : Hubble Space Telescope
 HTM        : Hierarchical Triangular Mesh
 HTML       : HyperText Markup Language
 HTTP       : HyperText Transfer Protocol
+I&T        : Integration and Test
 IAU        : International Astronomical Union
 IDL        : Interactive Data Language
 IoA        : Institute of Astronomy (Cambridge; also denoted IOA)
+IPAC       : No longer an acronym; science and data center at Caltech
+IRSA       : Infrared Science Archive
 IT         : Information Technology
-I&T        : Integration and Test
+ITIL       : Information Technology Infrastructure Library
 IVOA       : International Virtual-Observatory Alliance
-JDBC       : Java DataBase Connectivity
 JD         : Julian Date
+JDBC       : Java DataBase Connectivity
 JHU        : Johns Hopkins University
 JIRA       : issue tracking product (not an acronym, but a truncation of Gojira, the Japanese name for Godzilla)
 JPL        : Jet Propulsion Laboratory (DE ephemerides)
@@ -98,23 +102,21 @@ LPGL       : Lesser Public GNU general License
 LUT        : Look-Up Table
 Mb         : Megabit (1,000,000 bit)
 MB         : MegaByte
-Mbps       : Megabits per second
 MBps       : Megabits per second
+MC         : Monte-Carlo (simulation/process)
 MCMC       : Monte Carlo Markov Chain
 MIDAS      : Munich Image Data Analysis System (ESO)
 MJD        : Modified Julian Date (to be avoided; see also JD)
 MOSFET     : Metal-Oxide Semiconductor Field-Electric Transistor
+MREFC      : Major Research Equipment and Facilities Construction (NSF)
 MSB        : Most Significant Bit
 NAOJ       : National Astronomical Observatory of Japan
+NCSA       : National Center for Supercomputing Applications
 NEO        : Near-Earth Object
 NFS        : Network File System
-NSF        : National Science Foundation
-ITIL       : Information Technology Infrastructure Library
-MC         : Monte-Carlo (simulation/process)
-SW         : Software (also denoted S/W)
-MREFC      : Major Research Equipment and Facilities Construction (NSF)
 NIST       : National Institute of Standards and Technology (USA)
 NOAO       : National Optical Astronomy Observatories (USA)
+NSF        : National Science Foundation
 OBS        : Organisation Breakdown Structure
 OS         : Operating System
 Pan-STARRS : Panoramic Survey Telescope and Rapid Response System
@@ -125,45 +127,51 @@ PDF        : Probability Density Function
 PLL        : Phase-Locked Loop
 POSIX      : Portable Operating System Interface
 PSF        : Point Spread Function
+RA         : Right Ascension
 RAID       : Redundant Array of Inexpensive Disks
 RAL        : Rutherford Appleton Laboratory (UK)
 RAM        : Random Access Memory
-RA         : Right Ascension
+REUNA      : Red Universitaria Nacional
 RMS        : Root-Mean-Square
 ROOT       : Object-oriented data analysis framework developed at CERN
 RS232C     : Standard 25-pin serial connection between computers and modems
 SaaS       : Software as a Service
 SDSS       : Sloan Digital Sky Survey
 SI         : Syst\`eme International (International System of units, defined by ISO)
+SLA        : Service Level Agreement
 SOAP       : Simple Object Access Protocol
 SSD        : Solid-State Disk
 SSH        : Secure SHell
 stdin      : standard input
 stdout     : standard output
+SW         : Software (also denoted S/W)
 TAI        : International Atomic Time
 TAP        : Table Access Protocol
+TB         : TeraByte
 TBA        : To Be Announced
 TBA        : To Be Assigned
 TBC        : To Be Confirmed
 TBD        : To Be Defined (Determined)
 TBR        : To Be Resolved
-TB         : TeraByte
 TFLOP      : Tera FLOP
 TOPCAT     : Tool for OPerations on Catalogues And Tables
 UCL        : University College London (UK)
 UDP        : User Datagram Protocol
 UI         : User Interface
+US         : United States
 USNO       : United States Naval Observatory
+UT         : Universal Time
 UT1        : Universal Time 1
 UTC        : Coordinated Universal Time
-UT         : Universal Time
+UW         : University of Washington
 VLA        : Very Large Array (NRAO)
 VLBA       : Very Long Baseline Array
 VLBI       : Very Long Baseline Interferometry
-VLTI       : Very Large Telescope Interferometer (ESO)
 VLT        : Very Large Telescope (ESO)
+VLTI       : Very Large Telescope Interferometer (ESO)
 VM         : Virtual Machine
 VO         : Virtual Observatory
+WCS        : World Coordinate System
 WISE       : Wide-field Survey Explorer
 WSDL       : Web Services Description Language
 XHTML      : eXtensible HyperText Markup Language
@@ -172,6 +180,3 @@ XMM        : X-ray Multi-mirror Mission (ESA; officially known as XMM-Newton)
 XSD        : XML Schema Definition
 XSL        : eXtensible Stylesheet Language
 XSLT       : eXtensible Stylesheet Language Transformation
-WCS        : World Coordinate System
-UW         : University of Washington
-US         : United States

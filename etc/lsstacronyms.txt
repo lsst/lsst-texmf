@@ -1,60 +1,65 @@
 LSST-specific terminology.
 See also the general glossary in glossary.txt.
 
-AP:Alert Production
-CAM:CAMera
-CAM:Control (or Cost) Account Manager
-CB:Configuration Baseline
-CCB:Change Control Board
-CM:Configuration Management
-CR:Change Request
-DAC:Data Access Center
-DAX:Data Access Services
-DC:Data Center
-DDMPM:Data Management Deputy Project Manager
-DM:Data Management
-DMCCB:DM Change Control Board
-DMIS:DM Interface Scientist
-DMLT:DM Leadership Team
-DMO:Data Management Organization
-DMPM:Data Management Project Manager
-DMQA:Data Management Quality Assurance
-DMS:Data Management Subsystem
-DMSR:DM System Requirements
-DMSS:DM Subsystem Scientist
-DMSST:DM System Science Team
-DMTN:DM Technical Note
-DPDD:Data Product Definition Document
-DRP:Data Release Production
-DWDM:Dense Wave Division Multiplex
-EFD:Engineering Facilities Database
-ETC:Estimate To Complete
-FDR:Final Design Review
-ICBS:International Communications and Base Site
-IPAC:No longer an acronym; science and data center at Caltech
-IS:Interface Scientist
-ISR:Instrument Signal Removal
-IT:Integration Test
-ITC:Information Technology Center
-LCR:LSST Change Request
-LDF:LSST Data Facility
-LPM:LSST Project Management (Document Handle)
-LSE:LSST Systems Engineering (Document Handle)
-LSST:Large Synoptic Survey Telescope
-NCSA:National Center for Supercomputing Applications
-OCS:Observatory Control System
-OSS:Observatory System Specifications
-PM:Project Manager
-PMCS:Project Management Control System
-PS:Project Scientist
-PST:Project Science Team
-SEMP:Systems Engineering Management Plan
-SLA:Service Level Agreement
-SLAC:No longer an acronum; formerly Stanford Linear Accelerator Center
-SS:Subsystem Scientist
-SUI:Science User Interface
-SUIT:Science User Interface and Tools
-T&S:Telescope and Site
-T/CAM:Technical/Control Account Manager
-TCT:Technical Control Team (Obsolete - now DMCCB)
-TS:Test Specification
+AP         : Alert Production
+CAM        : CAMera
+CAM        : Control (or Cost) Account Manager
+CB         : Configuration Baseline
+CCB        : Change Control Board
+CM         : Configuration Management
+CR         : Change Request
+DAC        : Data Access Center
+DAX        : Data Access Services
+DBB        : Data Back Bone
+DC         : Data Center
+DDMPM      : Data Management Deputy Project Manager
+DM         : Data Management
+DMCCB      : DM Change Control Board
+DMIS       : DM Interface Scientist
+DMLT       : DM Leadership Team
+DMO        : Data Management Organization
+DMPM       : Data Management Project Manager
+DMQA       : Data Management Quality Assurance
+DMS        : Data Management Subsystem
+DMSE       : Data Management System Engineer
+DMSR       : DM System Requirements; LSE-61
+DMSS       : DM Subsystem Scientist
+DMSST      : DM System Science Team
+DMTN       : DM Technical Note
+DPDD       : Data Product Definition Document
+DR         : Data Release
+DRP        : Data Release Production
+EFD        : Engineering Facilities Database
+ETC        : Estimate To Complete
+FDR        : Final Design Review
+ICBS       : International Communications and Base Site
+IS         : Interface Scientist
+ISR        : Instrument Signal Removal
+IT         : Integration Test
+ITC        : Information Technology Center
+LCR        : LSST Change Request
+LDF        : LSST Data Facility
+LPM        : LSST Project Management (Document Handle)
+LSE        : LSST Systems Engineering (Document Handle)
+LSR        : LSST System Requirements; LSE-29
+LSST       : Large Synoptic Survey Telescope
+MOPS       : Moving Object Processing System
+NET        : Network Engineering Team
+OCS        : Observatory Control System
+OSS        : Observatory System Specifications; LSE-30
+PM         : Project Manager
+PMCS       : Project Management Control System
+PS         : Project Scientist
+PST        : Project Science Team
+RM         : Release Manager
+SEMP       : Systems Engineering Management Plan
+SLAC       : No longer an acronum; formerly Stanford Linear Accelerator Center
+SRD        : LSST Science Requirements; LPM-17
+SS         : Subsystem Scientist
+SST        : Subsystem Science Team
+SUI        : Science User Interface
+SUIT       : Science User Interface and Tools
+T&S        : Telescope and Site
+T/CAM      : Technical/Control (or Cost) Account Manager
+TCT        : Technical Control Team (Obsolete - now DMCCB)
+TS         : Test Specification
