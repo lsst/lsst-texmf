@@ -13,7 +13,10 @@ import re
 
 try:
     import pypandoc
-except ImportError:
+
+    # raises OSError if pypandoc is available but pandoc isn't.
+    pypandoc.get_pandoc_path()
+except (ImportError, OSError):
     pypandoc = None
 
 MATCH_ACRONYM = "^([\w/&\-\+]+)\s*:\s*(.*)$"
