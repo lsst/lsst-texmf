@@ -15,6 +15,7 @@ ADU        : Analogue-to-Digital Unit
 AIT        : Assembly, Integration, and Test
 AIV        : Assembly, Integration, and Verification
 ALMA       : Atacama Large Millimeter Array (ESO)
+API        : Application Programming Interface
 AOB        : Any Other Business
 arcmin     : arcminute, minute of arc (unit of angle)
 arcsec     : arcsecond, second of arc (unit of angle)
@@ -65,6 +66,7 @@ gcc        : specific C and C++ compiler (GNU)
 GCN        : GRB Coordinates Network
 GLONASS    : GLObal NAvigation Satellite System
 GPL        : GNU Public License
+GPFS       : General Parallel File System 
 GPS        : Global Positioning System
 GRB        : Gamma-Ray Burst
 GST        : Greenwich Sidereal Time
@@ -73,6 +75,7 @@ HST        : Hubble Space Telescope
 HTM        : Hierarchical Triangular Mesh
 HTML       : HyperText Markup Language
 HTTP       : HyperText Transfer Protocol
+HW         : HardWare
 I&T        : Integration and Test
 IAU        : International Astronomical Union
 IDL        : Interactive Data Language
@@ -92,6 +95,7 @@ JVM        : Java Virtual Machine
 JWST       : James Webb Space Telescope (formerly known as NGST)
 KBO        : Kuiper-Belt Object
 kbps       : kilobits per second
+LAN        : Local Area Network
 LAPACK     : Linear Algebra PACKage
 LASER      : Light Amplification by Stimulated Emission of Radiation
 LaTeX      : (Leslie) Lamport TeX (document markup language and document preparation system)
@@ -110,6 +114,7 @@ MJD        : Modified Julian Date (to be avoided; see also JD)
 MOSFET     : Metal-Oxide Semiconductor Field-Electric Transistor
 MREFC      : Major Research Equipment and Facilities Construction (NSF)
 MSB        : Most Significant Bit
+NASA       : National Air and Space Administration
 NAOJ       : National Astronomical Observatory of Japan
 NCSA       : National Center for Supercomputing Applications
 NEO        : Near-Earth Object
@@ -127,6 +132,8 @@ PDF        : Probability Density Function
 PLL        : Phase-Locked Loop
 POSIX      : Portable Operating System Interface
 PSF        : Point Spread Function
+QA         : Quality Assurance
+QC         : Quality Control
 RA         : Right Ascension
 RAID       : Redundant Array of Inexpensive Disks
 RAL        : Rutherford Appleton Laboratory (UK)
@@ -171,6 +178,7 @@ VLT        : Very Large Telescope (ESO)
 VLTI       : Very Large Telescope Interferometer (ESO)
 VM         : Virtual Machine
 VO         : Virtual Observatory
+WBS        : Work Breakdown Structure 
 WCS        : World Coordinate System
 WISE       : Wide-field Survey Explorer
 WSDL       : Web Services Description Language
