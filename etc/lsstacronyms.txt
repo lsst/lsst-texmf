@@ -1,78 +1,65 @@
-MREFC:NSF's Major Research Equipment and Facilities
-DMSST: DM System Science Team
-DPDD:Data Product Definition Document
-ITIL:Information Technology Infrastructure Library
-DMQA:Data Management Quality Assurance
-DWDM:Dense Wave Division Multiplex
-UW:University of Washington
-FDR:Final Design Review
-ETC:Estimate To Complete
-ITC:Information Technology Center
-SLA:Service Level Agreement
-LSST:Large Synoptic Survey Telescope
-LDF:LSST Data Facility
-IPAC: No longer an acronym
-WCS:World Coordinate System
-SLAC:Stanford Linear Accelerator Center
-AURA:Association of Universities for Research in Astronomy
-ICBS:International Communications and Base Site
-DAX:Data access services
-CB:Configuration Baseline
-CM:Configuration Management
-DMTN:DM Technical Note
-DRP:Data Release Production
-SUIT:Science User Interface and Tools
-DMCCB:DM Change Control Board
-LCR:LSST Change Request
-DMSS:DM Subsystem Scientist
-TCAMS:Technical Control/Account Manager
-OSS:Observatory System Specifications
-DMIS:DM Interface Scientist
-IS:Interface Scientist
-PMCS:Project Management Control System
-T&S:Telescope and Site
+LSST-specific terminology.
+See also the general glossary in glossary.txt.
 
-ISR:Instrument Signal Removal
-OCS:Observatory Control System
-AP:Alerts Production
-CI:Configuration Item
-DCR:Document Change Request
-IT:Integration Test
-MC:Monte-Carlo (simulation/process)
-PDF:Portable Document Format
-SW:Software (also denoted S/W)
-SS:Subsystem Scientist
-TS:Test Specification
-US:United States
-VO:Virtual Observatory
-bps:bit(s) per second
-CR:Change Request
-CAM:Control Account Manager
-
-CCB:Change Control Board
-DAC:Data Access Center
-DC:Data Center
-DMS:Data Management Sub-system
-DMO:Data Management Organization
-DM:Data Management
-
-TCAM:Technical Control Account Manager
-TCT:Technical Control Team (Obsolete - now DMCCB)
-LSE:LSST Systems Engineering (Document Handle)
-LPM:LSST Project Management (Document Handle)
-DMLT: DM Leadership Team
-NCSA: National Center for Supercomputing Applications
-CAM: CAMera
-DMSR:DM System Requirements
-SEMP:Systems Engineering Management Plan
-NSF:National Science Foundation
-# DMS:Document Management System (ESA)
-PM:Project Manager
-DMPM:Data Management Project Manager
-DDMPM:Data Management Deputy Project Manager
-PS:Project Scientist
-PST:Project Science Team
-SA:Science Alert(s)
-SUI:Science User Interface
-CIL:Configuration Item List
-EFD:Engineering Facilities Database
+AP         : Alert Production
+CAM        : CAMera
+CAM        : Control (or Cost) Account Manager
+CB         : Configuration Baseline
+CCB        : Change Control Board
+CM         : Configuration Management
+CR         : Change Request
+DAC        : Data Access Center
+DAX        : Data Access Services
+DBB        : Data Back Bone
+DC         : Data Center
+DDMPM      : Data Management Deputy Project Manager
+DM         : Data Management
+DMCCB      : DM Change Control Board
+DMIS       : DM Interface Scientist
+DMLT       : DM Leadership Team
+DMO        : Data Management Organization
+DMPM       : Data Management Project Manager
+DMQA       : Data Management Quality Assurance
+DMS        : Data Management Subsystem
+DMSE       : Data Management System Engineer
+DMSR       : DM System Requirements; LSE-61
+DMSS       : DM Subsystem Scientist
+DMSST      : DM System Science Team
+DMTN       : DM Technical Note
+DPDD       : Data Product Definition Document
+DR         : Data Release
+DRP        : Data Release Production
+EFD        : Engineering Facilities Database
+ETC        : Estimate To Complete
+FDR        : Final Design Review
+ICBS       : International Communications and Base Site
+IS         : Interface Scientist
+ISR        : Instrument Signal Removal
+IT         : Integration Test
+ITC        : Information Technology Center
+LCR        : LSST Change Request
+LDF        : LSST Data Facility
+LPM        : LSST Project Management (Document Handle)
+LSE        : LSST Systems Engineering (Document Handle)
+LSR        : LSST System Requirements; LSE-29
+LSST       : Large Synoptic Survey Telescope
+MOPS       : Moving Object Processing System
+NET        : Network Engineering Team
+OCS        : Observatory Control System
+OSS        : Observatory System Specifications; LSE-30
+PM         : Project Manager
+PMCS       : Project Management Control System
+PS         : Project Scientist
+PST        : Project Science Team
+RM         : Release Manager
+SEMP       : Systems Engineering Management Plan
+SLAC       : No longer an acronum; formerly Stanford Linear Accelerator Center
+SRD        : LSST Science Requirements; LPM-17
+SS         : Subsystem Scientist
+SST        : Subsystem Science Team
+SUI        : Science User Interface
+SUIT       : Science User Interface and Tools
+T&S        : Telescope and Site
+T/CAM      : Technical/Control (or Cost) Account Manager
+TCT        : Technical Control Team (Obsolete - now DMCCB)
+TS         : Test Specification
