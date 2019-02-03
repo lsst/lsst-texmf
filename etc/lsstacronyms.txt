@@ -7,7 +7,9 @@ CAM        : Control (or Cost) Account Manager
 CB         : Configuration Baseline
 CCB        : Change Control Board
 CM         : Configuration Management
+CMDB       : Configuration Management Database
 CR         : Change Request
+DAQ        : Data Acquisition System
 DAC        : Data Access Center
 DAX        : Data Access Services
 DBB        : Data Back Bone
@@ -39,21 +41,25 @@ IT         : Integration Test
 ITC        : Information Technology Center
 LCR        : LSST Change Request
 LDF        : LSST Data Facility
+LDM        : LSST Data  Management (Document Handle)
 LPM        : LSST Project Management (Document Handle)
 LSE        : LSST Systems Engineering (Document Handle)
+LSP        : LSST Science Platform
 LSR        : LSST System Requirements; LSE-29
 LSST       : Large Synoptic Survey Telescope
 MOPS       : Moving Object Processing System
 NET        : Network Engineering Team
 OCS        : Observatory Control System
 OSS        : Observatory System Specifications; LSE-30
+PDR        : Preliminary Design Review
 PM         : Project Manager
 PMCS       : Project Management Control System
 PS         : Project Scientist
 PST        : Project Science Team
+RFC        : Request For Comment
 RM         : Release Manager
 SEMP       : Systems Engineering Management Plan
-SLAC       : No longer an acronum; formerly Stanford Linear Accelerator Center
+SLAC       : No longer an acronym; formerly Stanford Linear Accelerator Center
 SRD        : LSST Science Requirements; LPM-17
 SS         : Subsystem Scientist
 SST        : Subsystem Science Team
@@ -63,3 +69,4 @@ T&S        : Telescope and Site
 T/CAM      : Technical/Control (or Cost) Account Manager
 TCT        : Technical Control Team (Obsolete - now DMCCB)
 TS         : Test Specification
+WG         : Working Group
