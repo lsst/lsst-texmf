@@ -46,6 +46,7 @@ deg        : degree; unit of angle
 DoF        : Degree(s) of Freedom (also known as DOF)
 DOM        : Document Object Model
 DoNM       : Date of Next Meeting
+DPAC       : Data Processing and Analysis Consortium (Gaia)
 DS9        : Deep Space 9 (specific astronomical data visualisation application; SAOImage)
 DWDM       : Dense Wave Division Multiplex
 EEPROM     : Electrically Erasable Programmable Read-Only Memory
@@ -54,11 +55,13 @@ eV         : electron-Volt
 FAQ        : Frequently Asked Question
 FFT        : Fast Fourier Transform
 FIFO       : First In, First Out
+FITS       : Flexible Image Transport System
 FK5        : Fifth Fundamental Catalogue
 FoM        : Figure of Merit
 FoV        : Field of View (also denoted FOV)
 FPGA       : Field-Programmable Gate Array
 FS         : File System
+FTE        : Full Time Equivalent
 FWHM       : Full Width at Half-Maximum
 Gb         : Gigabit
 GB         : GigaByte
@@ -70,6 +73,7 @@ GPFS       : General Parallel File System
 GPS        : Global Positioning System
 GRB        : Gamma-Ray Burst
 GST        : Greenwich Sidereal Time
+GUI        : Graphical User Interface 
 HEALPix    : Hierarchical Equal-Area iso-Latitude Pixelisation
 HST        : Hubble Space Telescope
 HTM        : Hierarchical Triangular Mesh
@@ -147,11 +151,13 @@ SDSS       : Sloan Digital Sky Survey
 SI         : Syst\`eme International (International System of units, defined by ISO)
 SLA        : Service Level Agreement
 SOAP       : Simple Object Access Protocol
+SODA       : Server-side Operations for Data Access
 SSD        : Solid-State Disk
 SSH        : Secure SHell
 stdin      : standard input
 stdout     : standard output
 SW         : Software (also denoted S/W)
+SQL        : Structured Query Language
 TAI        : International Atomic Time
 TAP        : Table Access Protocol
 TB         : TeraByte

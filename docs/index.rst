@@ -13,6 +13,7 @@ lsst-texmf is on GitHub at https://github.com/lsst/lsst-texmf.
    :maxdepth: 2
 
    install
+   submodule
    docker
    examples/index
    templates/index
