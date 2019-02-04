@@ -52,6 +52,7 @@ NET        : Network Engineering Team
 OCS        : Observatory Control System
 OSS        : Observatory System Specifications; LSE-30
 PDR        : Preliminary Design Review
+PDU        : Power Distribution Unit 
 PM         : Project Manager
 PMCS       : Project Management Control System
 PS         : Project Scientist
