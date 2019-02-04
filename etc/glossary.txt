@@ -59,11 +59,13 @@ EEPROM     : Electrically Erasable Programmable Read-Only Memory
 ESA        : European Space Agency
 ETC        : Estimate To Complete
 eV         : electron-Volt
+EVM        : Earned Value Management
 EVMS       : Earned Value Management System
 FAQ        : Frequently Asked Question
 FFT        : Fast Fourier Transform
 FIFO       : First In, First Out
 FITS       : Flexible Image Transport System
+FIU        : Florida International University
 FK5        : Fifth Fundamental Catalogue
 FoM        : Figure of Merit
 FoV        : Field of View (also denoted FOV)
@@ -193,6 +195,7 @@ VLT        : Very Large Telescope (ESO)
 VLTI       : Very Large Telescope Interferometer (ESO)
 VM         : Virtual Machine
 VO         : Virtual Observatory
+WAN        : Wide Area Network
 WBS        : Work Breakdown Structure
 WCS        : World Coordinate System
 WISE       : Wide-field Survey Explorer

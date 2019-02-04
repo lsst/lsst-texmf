@@ -54,6 +54,7 @@ PDR        : Preliminary Design Review
 PDU        : Power Distribution Unit
 PM         : Project Manager
 PMCS       : Project Management Control System
+PMP        : (DM) Project Management Plan; LDM-294
 PS         : Project Scientist
 PST        : Project Science Team
 RFC        : Request For Comment
