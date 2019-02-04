@@ -8,6 +8,7 @@ See also LSST-specific acronyms in lsstacronyms.txt.
 A/D        : Analogue-to-Digital (converter)
 ABI        : Application Binary Interface
 AC         : Alternating Current
+ACWP       : Actual Cost of Work Performed
 ADASS      : Astronomical Data Analysis Software and Systems
 ADC        : Analogue-to-Digital Converter
 ADQL       : Astronomical Data Query Language
@@ -15,8 +16,8 @@ ADU        : Analogue-to-Digital Unit
 AIT        : Assembly, Integration, and Test
 AIV        : Assembly, Integration, and Verification
 ALMA       : Atacama Large Millimeter Array (ESO)
-API        : Application Programming Interface
 AOB        : Any Other Business
+API        : Application Programming Interface
 arcmin     : arcminute, minute of arc (unit of angle)
 arcsec     : arcsecond, second of arc (unit of angle)
 ASAP       : As Soon As Possible
@@ -26,15 +27,20 @@ AU         : deprecated acronym for astronomical unit; use au instead
 AURA       : Association of Universities for Research in Astronomy
 b          : bit
 B          : Byte (8 bit)
+BAC        : Budget At Complete
+BCWP       : Budgeted Cost of Work Performed
+BCWS       : Budgeted Cost of Work Scheduled
 BNF        : Backus-Naur Form
 bps        : bit(s) per second
 Bps        : Bytes per second
+CAM        : Control (or Cost) Account Manager
 CC         : Change Control
 CCD        : Charge-Coupled Device
 CfA        : (Harvard-Smithsonian) Center for Astrophysics
 COMPASS    : Catalogues of Objects and Measured Parameters from All Sky Surveys
 CORBA      : Common Object Request Broker Architecture
 COTS       : Commercial-Off-The-Shelf
+CPI        : Cost Performance Index
 CR         : Cosmic Ray
 CV         : Curriculum Vitae
 DB         : DataBase
@@ -51,7 +57,9 @@ DS9        : Deep Space 9 (specific astronomical data visualisation application;
 DWDM       : Dense Wave Division Multiplex
 EEPROM     : Electrically Erasable Programmable Read-Only Memory
 ESA        : European Space Agency
+ETC        : Estimate To Complete
 eV         : electron-Volt
+EVMS       : Earned Value Management System
 FAQ        : Frequently Asked Question
 FFT        : Fast Fourier Transform
 FIFO       : First In, First Out
@@ -64,16 +72,16 @@ FS         : File System
 FTE        : Full Time Equivalent
 FWHM       : Full Width at Half-Maximum
 Gb         : Gigabit
-GB         : GigaByte
-gcc        : specific C and C++ compiler (GNU)
+GB         : Gigabyte
+gcc        : The GNU Compiler Collection; a C and C++ compiler
 GCN        : GRB Coordinates Network
 GLONASS    : GLObal NAvigation Satellite System
+GPFS       : General Parallel File System (now IBM Spectrum Scale)
 GPL        : GNU Public License
-GPFS       : General Parallel File System 
 GPS        : Global Positioning System
 GRB        : Gamma-Ray Burst
 GST        : Greenwich Sidereal Time
-GUI        : Graphical User Interface 
+GUI        : Graphical User Interface
 HEALPix    : Hierarchical Equal-Area iso-Latitude Pixelisation
 HST        : Hubble Space Telescope
 HTM        : Hierarchical Triangular Mesh
@@ -118,8 +126,8 @@ MJD        : Modified Julian Date (to be avoided; see also JD)
 MOSFET     : Metal-Oxide Semiconductor Field-Electric Transistor
 MREFC      : Major Research Equipment and Facilities Construction (NSF)
 MSB        : Most Significant Bit
-NASA       : National Air and Space Administration
 NAOJ       : National Astronomical Observatory of Japan
+NASA       : National Aeronautics and Space Administration
 NCSA       : National Center for Supercomputing Applications
 NEO        : Near-Earth Object
 NFS        : Network File System
@@ -152,12 +160,13 @@ SI         : Syst\`eme International (International System of units, defined by 
 SLA        : Service Level Agreement
 SOAP       : Simple Object Access Protocol
 SODA       : Server-side Operations for Data Access
+SPI        : Schedule Performance Index
+SQL        : Structured Query Language
 SSD        : Solid-State Disk
 SSH        : Secure SHell
 stdin      : standard input
 stdout     : standard output
 SW         : Software (also denoted S/W)
-SQL        : Structured Query Language
 TAI        : International Atomic Time
 TAP        : Table Access Protocol
 TB         : TeraByte
@@ -184,7 +193,7 @@ VLT        : Very Large Telescope (ESO)
 VLTI       : Very Large Telescope Interferometer (ESO)
 VM         : Virtual Machine
 VO         : Virtual Observatory
-WBS        : Work Breakdown Structure 
+WBS        : Work Breakdown Structure
 WCS        : World Coordinate System
 WISE       : Wide-field Survey Explorer
 WSDL       : Web Services Description Language
