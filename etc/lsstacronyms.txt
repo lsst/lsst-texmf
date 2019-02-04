@@ -3,7 +3,6 @@ See also the general glossary in glossary.txt.
 
 AP         : Alert Production
 CAM        : CAMera
-CAM        : Control (or Cost) Account Manager
 CB         : Configuration Baseline
 CCB        : Change Control Board
 CM         : Configuration Management
@@ -41,7 +40,7 @@ IT         : Integration Test
 ITC        : Information Technology Center
 LCR        : LSST Change Request
 LDF        : LSST Data Facility
-LDM        : LSST Data  Management (Document Handle)
+LDM        : LSST Data Management (Document Handle)
 LPM        : LSST Project Management (Document Handle)
 LSE        : LSST Systems Engineering (Document Handle)
 LSP        : LSST Science Platform
@@ -52,9 +51,10 @@ NET        : Network Engineering Team
 OCS        : Observatory Control System
 OSS        : Observatory System Specifications; LSE-30
 PDR        : Preliminary Design Review
-PDU        : Power Distribution Unit 
+PDU        : Power Distribution Unit
 PM         : Project Manager
 PMCS       : Project Management Control System
+PMP        : (DM) Project Management Plan; LDM-294
 PS         : Project Scientist
 PST        : Project Science Team
 RFC        : Request For Comment
@@ -68,6 +68,6 @@ SUI        : Science User Interface
 SUIT       : Science User Interface and Tools
 T&S        : Telescope and Site
 T/CAM      : Technical/Control (or Cost) Account Manager
-TCT        : Technical Control Team (Obsolete - now DMCCB)
+TCT        : Technical Control Team (obsolete; now DMCCB)
 TS         : Test Specification
 WG         : Working Group
