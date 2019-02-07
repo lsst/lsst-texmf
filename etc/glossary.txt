@@ -42,6 +42,7 @@ CORBA      : Common Object Request Broker Architecture
 COTS       : Commercial-Off-The-Shelf
 CPI        : Cost Performance Index
 CR         : Cosmic Ray
+CTIO       : Cerro Tololo Inter-American Observatory
 CV         : Curriculum Vitae
 DB         : DataBase
 Db         : Decibel
@@ -85,6 +86,7 @@ GRB        : Gamma-Ray Burst
 GST        : Greenwich Sidereal Time
 GUI        : Graphical User Interface
 HEALPix    : Hierarchical Equal-Area iso-Latitude Pixelisation
+HSC        : Hyper Suprime-Cam
 HST        : Hubble Space Telescope
 HTM        : Hierarchical Triangular Mesh
 HTML       : HyperText Markup Language
@@ -143,6 +145,7 @@ PB         : PetaByte
 PCA        : Principal Component Analysis
 PDF        : Portable Document Format
 PDF        : Probability Density Function
+PFS        : Prime Focus Spectrograph
 PLL        : Phase-Locked Loop
 POSIX      : Portable Operating System Interface
 PSF        : Point Spread Function
@@ -157,6 +160,7 @@ RMS        : Root-Mean-Square
 ROOT       : Object-oriented data analysis framework developed at CERN
 RS232C     : Standard 25-pin serial connection between computers and modems
 SaaS       : Software as a Service
+SAMP       : Simple Application Messaging Protocol
 SDSS       : Sloan Digital Sky Survey
 SI         : Syst\`eme International (International System of units, defined by ISO)
 SLA        : Service Level Agreement
@@ -188,6 +192,7 @@ UT         : Universal Time
 UT1        : Universal Time 1
 UTC        : Coordinated Universal Time
 UW         : University of Washington
+UX         : User Experience
 VLA        : Very Large Array (NRAO)
 VLBA       : Very Long Baseline Array
 VLBI       : Very Long Baseline Interferometry
