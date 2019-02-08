@@ -2,14 +2,15 @@ LSST-specific terminology.
 See also the general glossary in glossary.txt.
 
 AP         : Alert Production
+ATM        : Adaptavist Test Management
 CAM        : CAMera
 CB         : Configuration Baseline
 CCB        : Change Control Board
 CM         : Configuration Management
 CMDB       : Configuration Management Database
 CR         : Change Request
-DAQ        : Data Acquisition System
 DAC        : Data Access Center
+DAQ        : Data Acquisition System
 DAX        : Data Access Services
 DBB        : Data Back Bone
 DC         : Data Center
@@ -31,6 +32,7 @@ DPDD       : Data Product Definition Document
 DR         : Data Release
 DRP        : Data Release Production
 EFD        : Engineering Facilities Database
+EPO        : Education and Public Outreach
 ETC        : Estimate To Complete
 FDR        : Final Design Review
 ICBS       : International Communications and Base Site
@@ -38,6 +40,8 @@ IS         : Interface Scientist
 ISR        : Instrument Signal Removal
 IT         : Integration Test
 ITC        : Information Technology Center
+JTM        : Joint Technical Meeting
+KPM        : Key Performance Metric
 LCR        : LSST Change Request
 LDF        : LSST Data Facility
 LDM        : LSST Data Management (Document Handle)
@@ -49,7 +53,9 @@ LSST       : Large Synoptic Survey Telescope
 MOPS       : Moving Object Processing System
 NET        : Network Engineering Team
 OCS        : Observatory Control System
+OPS        : Operations
 OSS        : Observatory System Specifications; LSE-30
+PDAC       : Prototype Data Access Center
 PDR        : Preliminary Design Review
 PDU        : Power Distribution Unit
 PM         : Project Manager
@@ -57,17 +63,21 @@ PMCS       : Project Management Control System
 PMP        : (DM) Project Management Plan; LDM-294
 PS         : Project Scientist
 PST        : Project Science Team
+Qserv      : Proprietary LSST Database system
 RFC        : Request For Comment
 RM         : Release Manager
 SEMP       : Systems Engineering Management Plan
 SLAC       : No longer an acronym; formerly Stanford Linear Accelerator Center
+SQuaRE     : Science Quality and Reliability Engineering
 SRD        : LSST Science Requirements; LPM-17
 SS         : Subsystem Scientist
 SST        : Subsystem Science Team
 SUI        : Science User Interface
 SUIT       : Science User Interface and Tools
+SV         : Science Validation
 T&S        : Telescope and Site
 T/CAM      : Technical/Control (or Cost) Account Manager
 TCT        : Technical Control Team (obsolete; now DMCCB)
 TS         : Test Specification
+VCD        : Verification Control Document
 WG         : Working Group
