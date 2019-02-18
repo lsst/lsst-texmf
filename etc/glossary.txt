@@ -41,6 +41,7 @@ COMPASS    : Catalogues of Objects and Measured Parameters from All Sky Surveys
 CORBA      : Common Object Request Broker Architecture
 COTS       : Commercial-Off-The-Shelf
 CPI        : Cost Performance Index
+CPU        : Central Processing Unit
 CR         : Cosmic Ray
 CTIO       : Cerro Tololo Inter-American Observatory
 CV         : Curriculum Vitae
@@ -94,6 +95,7 @@ HTTP       : HyperText Transfer Protocol
 HW         : HardWare
 I&T        : Integration and Test
 IAU        : International Astronomical Union
+IBM        : International Business Machines
 IDL        : Interactive Data Language
 IoA        : Institute of Astronomy (Cambridge; also denoted IOA)
 IPAC       : No longer an acronym; science and data center at Caltech
