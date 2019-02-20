@@ -37,6 +37,7 @@ CAM        : Control (or Cost) Account Manager
 CC         : Change Control
 CCD        : Charge-Coupled Device
 CfA        : (Harvard-Smithsonian) Center for Astrophysics
+CI         : Continuous Integration
 COMPASS    : Catalogues of Objects and Measured Parameters from All Sky Surveys
 CORBA      : Common Object Request Broker Architecture
 COTS       : Commercial-Off-The-Shelf
@@ -150,6 +151,7 @@ PDF        : Probability Density Function
 PFS        : Prime Focus Spectrograph
 PLL        : Phase-Locked Loop
 POSIX      : Portable Operating System Interface
+PR         : Pull Request 
 PSF        : Point Spread Function
 QA         : Quality Assurance
 QC         : Quality Control
@@ -157,6 +159,7 @@ RA         : Right Ascension
 RAID       : Redundant Array of Inexpensive Disks
 RAL        : Rutherford Appleton Laboratory (UK)
 RAM        : Random Access Memory
+RC         : Release Candidate
 REUNA      : Red Universitaria Nacional
 RMS        : Root-Mean-Square
 ROOT       : Object-oriented data analysis framework developed at CERN
