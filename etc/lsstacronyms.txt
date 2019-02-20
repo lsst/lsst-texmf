@@ -63,12 +63,14 @@ PMCS       : Project Management Control System
 PMP        : (DM) Project Management Plan; LDM-294
 PS         : Project Scientist
 PST        : Project Science Team
+PSTN       : Project Science Technical Note
 Qserv      : Proprietary LSST Database system
 RFC        : Request For Comment
 RM         : Release Manager
 SEMP       : Systems Engineering Management Plan
 SLAC       : No longer an acronym; formerly Stanford Linear Accelerator Center
 SQuaRE     : Science Quality and Reliability Engineering
+SQR        : SQuARE document handle 
 SRD        : LSST Science Requirements; LPM-17
 SS         : Subsystem Scientist
 SST        : Subsystem Science Team
