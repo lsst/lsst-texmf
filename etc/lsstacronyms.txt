@@ -2,11 +2,13 @@ LSST-specific terminology.
 See also the general glossary in glossary.txt.
 
 AOS        : Active Optics System
+ACCS       : Auxiliary Camera Control System
 AP         : Alert Production
 ATM        : Adaptavist Test Management
 CAM        : CAMera
 CB         : Configuration Baseline
 CCB        : Change Control Board
+CCOB       : Camera Calibration Optical Bench
 CM         : Configuration Management
 CMDB       : Configuration Management Database
 CR         : Change Request
@@ -18,6 +20,7 @@ DC         : Data Center
 DDMPM      : Data Management Deputy Project Manager
 DM         : Data Management
 DMCCB      : DM Change Control Board
+DMCS       : Data Management Control System
 DMIS       : DM Interface Scientist
 DMLT       : DM Leadership Team
 DMO        : Data Management Organization
@@ -30,12 +33,14 @@ DMSS       : DM Subsystem Scientist
 DMSST      : DM System Science Team
 DMTN       : DM Technical Note
 DPDD       : Data Product Definition Document
+DWDM       : Dense Wave Division Multiplex
 DR         : Data Release
 DRP        : Data Release Production
 EFD        : Engineering Facilities Database
 EIE        : European Industrial Engineering  - Italian engineering company (Dome)
 EPO        : Education and Public Outreach
 ETC        : Estimate To Complete
+ETU        : Engineering Test Unit
 FDR        : Final Design Review
 ICBS       : International Communications and Base Site
 IS         : Interface Scientist
@@ -47,6 +52,7 @@ KPM        : Key Performance Metric
 LCR        : LSST Change Request
 LDF        : LSST Data Facility
 LDM        : LSST Data Management (Document Handle)
+LOVE       : LSST Operations Visualization Environment
 LPM        : LSST Project Management (Document Handle)
 LSE        : LSST Systems Engineering (Document Handle)
 LSP        : LSST Science Platform
@@ -67,8 +73,10 @@ PS         : Project Scientist
 PST        : Project Science Team
 PSTN       : Project Science Technical Note
 Qserv      : Proprietary LSST Database system
+REB        : Readout Electronics Board
 RFC        : Request For Comment
 RM         : Release Manager
+SAC        : Science Advisory Committee
 SEMP       : Systems Engineering Management Plan
 SLAC       : No longer an acronym; formerly Stanford Linear Accelerator Center
 SQuaRE     : Science Quality and Reliability Engineering
