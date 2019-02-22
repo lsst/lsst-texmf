@@ -3,10 +3,8 @@ AI:Action Item
 AI\&T:Assembly, Integration and Test
 MC:Monte-Carlo (simulation/process)
 NET:NETworking
-EPO:Education and Public Outreach
 BBC: German shipping company
 TSESO:Thales SESO (Optics coating)
-ESNET:Energy Sciences Network
 MIA:Missing In Action
 MREN:Montenegrin Research and Education Network
 
