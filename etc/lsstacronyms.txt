@@ -1,6 +1,7 @@
 LSST-specific terminology.
 See also the general glossary in glossary.txt.
 
+AOS        : Active Optics System
 ACCS       : Auxiliary Camera Control System
 AP         : Alert Production
 ATM        : Adaptavist Test Management
@@ -36,6 +37,7 @@ DWDM       : Dense Wave Division Multiplex
 DR         : Data Release
 DRP        : Data Release Production
 EFD        : Engineering Facilities Database
+EIE        : European Industrial Engineering  - Italian engineering company (Dome)
 EPO        : Education and Public Outreach
 ETC        : Estimate To Complete
 ETU        : Engineering Test Unit

@@ -31,6 +31,7 @@ BAC        : Budget At Complete
 BCWP       : Budgeted Cost of Work Performed
 BCWS       : Budgeted Cost of Work Scheduled
 BNF        : Backus-Naur Form
+BOE        : Basis Of Estimate
 bps        : bit(s) per second
 Bps        : Bytes per second
 CAM        : Control (or Cost) Account Manager
@@ -60,6 +61,7 @@ DS9        : Deep Space 9 (specific astronomical data visualisation application;
 DWDM       : Dense Wave Division Multiplex
 EEPROM     : Electrically Erasable Programmable Read-Only Memory
 ESA        : European Space Agency
+ESNET      : Energy Sciences Network
 ETC        : Estimate To Complete
 eV         : electron-Volt
 EVM        : Earned Value Management
@@ -132,9 +134,11 @@ MIDAS      : Munich Image Data Analysis System (ESO)
 MJD        : Modified Julian Date (to be avoided; see also JD)
 MOSFET     : Metal-Oxide Semiconductor Field-Electric Transistor
 MREFC      : Major Research Equipment and Facilities Construction (NSF)
+MREN       : Montenegrin Research and Education Network
 MSB        : Most Significant Bit
 NAOJ       : National Astronomical Observatory of Japan
 NASA       : National Aeronautics and Space Administration
+NCOA       : National Center for Optical-Infrared Astronomy
 NCSA       : National Center for Supercomputing Applications
 NEO        : Near-Earth Object
 NFS        : Network File System
