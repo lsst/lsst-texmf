@@ -41,6 +41,7 @@ EIE        : European Industrial Engineering  - Italian engineering company (Dom
 EPO        : Education and Public Outreach
 ETC        : Estimate To Complete
 ETU        : Engineering Test Unit
+EUPS       : Extended Unix Product System
 FDR        : Final Design Review
 ICBS       : International Communications and Base Site
 IS         : Interface Scientist
