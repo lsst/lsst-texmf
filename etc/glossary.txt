@@ -147,6 +147,7 @@ NOAO       : National Optical Astronomy Observatories (USA)
 NSF        : National Science Foundation
 OBS        : Organisation Breakdown Structure
 OS         : Operating System
+OSX        : Macintosh Operating System
 Pan-STARRS : Panoramic Survey Telescope and Rapid Response System
 PB         : PetaByte
 PCA        : Principal Component Analysis
