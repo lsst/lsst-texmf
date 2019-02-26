@@ -36,6 +36,7 @@ DPDD       : Data Product Definition Document
 DWDM       : Dense Wave Division Multiplex
 DR         : Data Release
 DRP        : Data Release Production
+EAC        : Estimate At Completion
 EFD        : Engineering Facilities Database
 EIE        : European Industrial Engineering  - Italian engineering company (Dome)
 EPO        : Education and Public Outreach
@@ -49,6 +50,7 @@ ISR        : Instrument Signal Removal
 IT         : Integration Test
 ITC        : Information Technology Center
 JTM        : Joint Technical Meeting
+JSR        : Joint Status Review
 KPM        : Key Performance Metric
 LCR        : LSST Change Request
 LDF        : LSST Data Facility
@@ -64,6 +66,7 @@ NET        : Network Engineering Team
 OCS        : Observatory Control System
 OPS        : Operations
 OSS        : Observatory System Specifications; LSE-30
+PCW        : Project Community Workshop
 PDAC       : Prototype Data Access Center
 PDR        : Preliminary Design Review
 PDU        : Power Distribution Unit
