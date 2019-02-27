@@ -11,6 +11,7 @@ CCB        : Change Control Board
 CCOB       : Camera Calibration Optical Bench
 CM         : Configuration Management
 CMDB       : Configuration Management Database
+CPP        : Calibration Production Processing
 CR         : Change Request
 DAC        : Data Access Center
 DAQ        : Data Acquisition System
