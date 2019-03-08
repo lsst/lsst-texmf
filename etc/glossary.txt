@@ -37,6 +37,7 @@ Bps        : Bytes per second
 CAM        : Control (or Cost) Account Manager
 CC         : Change Control
 CCD        : Charge-Coupled Device
+CDS        : Centre de Données astronomiques de Strasbourg
 CfA        : (Harvard-Smithsonian) Center for Astrophysics
 CI         : Continuous Integration
 COMPASS    : Catalogues of Objects and Measured Parameters from All Sky Surveys
@@ -90,6 +91,7 @@ GRB        : Gamma-Ray Burst
 GST        : Greenwich Sidereal Time
 GUI        : Graphical User Interface
 HEALPix    : Hierarchical Equal-Area iso-Latitude Pixelisation
+HIPS       : Hierarchical Progressive Survey
 HSC        : Hyper Suprime-Cam
 HST        : Hubble Space Telescope
 HTM        : Hierarchical Triangular Mesh
