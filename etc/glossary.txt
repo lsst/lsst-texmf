@@ -56,6 +56,7 @@ DBMS       : DataBase Management System
 DCR        : Differential Chromatic Refraction
 DEC        : Declination
 deg        : degree; unit of angle
+DIMM       : Differential Image Motion Monitor
 DOE        : Department Of Energy
 DoF        : Degree(s) of Freedom (also known as DOF)
 DOM        : Document Object Model
