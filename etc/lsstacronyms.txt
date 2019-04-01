@@ -33,10 +33,12 @@ DMSR       : DM System Requirements; LSE-61
 DMSS       : DM Subsystem Scientist
 DMSST      : DM System Science Team
 DMTN       : DM Technical Note
+DMTR       : DM Test Report 
 DPDD       : Data Product Definition Document
-DWDM       : Dense Wave Division Multiplex
 DR         : Data Release
 DRP        : Data Release Production
+DTN        : Data Transfer Node
+DWDM       : Dense Wave Division Multiplex
 EAC        : Estimate At Completion
 EFD        : Engineering Facilities Database
 EIE        : European Industrial Engineering  - Italian engineering company (Dome)

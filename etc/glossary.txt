@@ -121,6 +121,7 @@ JHU        : Johns Hopkins University
 JIRA       : issue tracking product (not an acronym, but a truncation of Gojira, the Japanese name for Godzilla)
 JPL        : Jet Propulsion Laboratory (DE ephemerides)
 JRE        : Java Runtime Environment
+JSON       : JavaScript Object Notation
 JVM        : Java Virtual Machine
 JWST       : James Webb Space Telescope (formerly known as NGST)
 KBO        : Kuiper-Belt Object
@@ -190,12 +191,14 @@ SLA        : Service Level Agreement
 SOAP       : Simple Object Access Protocol
 SODA       : Server-side Operations for Data Access
 SPI        : Schedule Performance Index
+SPIE       : The international society for optics and photonics
 SQL        : Structured Query Language
 SSD        : Solid-State Disk
 SSH        : Secure SHell
 stdin      : standard input
 stdout     : standard output
 SW         : Software (also denoted S/W)
+TACC       : Texas Advanced Computing Center
 TAI        : International Atomic Time
 TAP        : Table Access Protocol
 TB         : TeraByte
@@ -234,3 +237,4 @@ XMM        : X-ray Multi-mirror Mission (ESA; officially known as XMM-Newton)
 XSD        : XML Schema Definition
 XSL        : eXtensible Stylesheet Language
 XSLT       : eXtensible Stylesheet Language Transformation
+YAML       : Yet Another Markup Language
