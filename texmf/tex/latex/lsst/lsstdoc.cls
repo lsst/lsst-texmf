@@ -78,6 +78,7 @@
 %\RequirePackage{nameref}
 %\RequirePackage{mathptmx} % note this messes up \vec definition... do not e add put in your doc if you want it
 \RequirePackage{tocstyle}
+\RequirePackage{glossaries}
 
 % Standardize bibliography styling
 \bibliographystyle{lsst_aa}
