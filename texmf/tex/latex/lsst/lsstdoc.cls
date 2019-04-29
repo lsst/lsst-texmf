@@ -80,6 +80,8 @@
 \RequirePackage{tocstyle}
 \RequirePackage{glossaries}
 
+\RequirePackage{newtxtext} % Gloassary needs this .. 
+
 % Standardize bibliography styling
 \bibliographystyle{lsst_aa}
 
