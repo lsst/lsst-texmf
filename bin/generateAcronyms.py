@@ -510,7 +510,7 @@ def update(texfiles):
         raise RuntimeError("No files supplied.")
 
 
-    print ("Updating gls items in " + texfiles  +" the orignals file will be .old ")
+    print ("Updating gls texfiles  the orignals file will be .old ")
     print ("If glosarray items contian \gls refs you may need to run this again to catch the entries in aglossary.tex ")
     GLSlist=loadGLSlist() #Grab all the found glossary and acronyms
     for f in texfiles:
