@@ -35,8 +35,6 @@ except (ImportError, OSError):
 
 #  DO glossary or not  (-g)
 GLS = False
-#  Go through files on second pass and \gls  or not (-u)
-UPD = False
 
 #  Match for extracting acronyms from the glaossry myacronyns .txt files
 MATCH_ACRONYM = r"^([\w/&\-\+ -]+)\s*:\s*(.*)$"
@@ -274,7 +272,7 @@ def find_matches_combo(filename, acronyms, ignore_str=" %"):
         # Use markdown rather than plain text because
         # for plain text \textbf{Int} is converted to "INT"
         # for emphasis.
-        # \gls{XXX} however is comletely removed
+        # \gls{XXX} however is completely removed
         text = pypandoc.convert_file(filename, "markdown", format="latex")
     else:
         # Read the content of the file into a single string
@@ -559,10 +557,10 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
     GLS = args.glossary
-    UPD = args.update
 
     texfiles = args.files
 
     main(texfiles)
-    if (UPD):
+    #  Go through files on second pass and \gls  or not (-u)
+    if (args.update):
         update(texfiles)
