@@ -5,11 +5,24 @@ Utility that can be used to generate automatically the Acronyms of
 multiple TeX files, it reads the known acronyms from the Web and the
 "myacronyms.tex" and "skipacronyms.txt" files if exist and generates a
 "acronyms.tex" that can be included in the document
+
+This will now also output a glossary file  "aglossary.tex"
+All glossary lookup keys are the glossary name.
+For items to appear in the glossary you must \\gls{ITEM} at least once.
+--update will try to find other occurances for you.
+
+Passing -g or --glossary will supress the acronyms.tex production
+Passing -u or --update  post process all files to \\gls acronyms and
+glosary entires.
+
 """
+
 import warnings
 import os.path
 import sys
 import re
+import argparse
+
 
 try:
     import pypandoc
@@ -19,8 +32,14 @@ try:
 except (ImportError, OSError):
     pypandoc = None
 
-MATCH_ACRONYM = "^([\w/&\-\+]+)\s*:\s*(.*)$"
+
+#  Match for extracting acronyms from the glaossry myacronyns .txt files
+MATCH_ACRONYM = r"^([\w/&\-\+ -]+)\s*:\s*(.*)$"
 MATCH_ACRONYM_RE = re.compile(MATCH_ACRONYM)
+
+CAP_ACRONYM = re.compile(r"\b[A-Z][A-Z]+\b")
+
+pypandoc = None  # it can not hangle gls
 
 
 def _parse_line(line):
@@ -53,7 +72,7 @@ def _parse_line(line):
         return nothing
 
     acr, defn = matched.groups()
-    return (acr, defn)
+    return (acr.rstrip(), defn)
 
 
 def read_definitions(filename, init=None):
@@ -93,10 +112,11 @@ def read_definitions(filename, init=None):
     return definitions
 
 
-def read_myacronyms(filename="myacronyms.txt", allow_duplicates=False, defaults=None):
+def read_myacronyms(filename="myacronyms.txt", allow_duplicates=False,
+                    defaults=None):
     """Read the supplied file and extract standard acronyms.
 
-    File must contain lines in format:
+    File must contain lines in format :
 
     ACRYONYM:Definition
 
@@ -128,10 +148,13 @@ def read_myacronyms(filename="myacronyms.txt", allow_duplicates=False, defaults=
 
             if acr in definitions:
                 if defn != definitions[acr]:
-                    raise RuntimeError("Duplicate definitions of {} differ in {}".format(acr, filename))
+                    raise RuntimeError(
+                        "Duplicate definitions of {} differ in {}".
+                        format(acr, filename))
                 else:
-                    warnings.warn(UserWarning("Entry {} exists multiple times with same"
-                                              " definition in {}".format(acr, filename)))
+                    warnings.warn(UserWarning("Entry {} exists multiple times"
+                                              " with same definition in {}".
+                                              format(acr, filename)))
 
             definitions[acr] = defn
 
@@ -174,8 +197,8 @@ def read_skip_acronyms(file_name="skipacronyms.txt"):
                 continue
 
             if " " in line:
-                warnings.warn(UserWarning("Entry '{}' contains a space. Ignoring it for"
-                                          " skip list".format(line)))
+                warnings.warn(UserWarning("Entry '{}' contains a space. Ignor"
+                                          "ing it for skip list".format(line)))
                 continue
             skip.add(line)
     return skip
@@ -246,6 +269,7 @@ def find_matches_combo(filename, acronyms, ignore_str=" %"):
         # Use markdown rather than plain text because
         # for plain text \textbf{Int} is converted to "INT"
         # for emphasis.
+        # \gls{XXX} however is completely removed
         text = pypandoc.convert_file(filename, "markdown", format="latex")
     else:
         # Read the content of the file into a single string
@@ -259,12 +283,13 @@ def find_matches_combo(filename, acronyms, ignore_str=" %"):
                 line = line.strip()
 
                 # Latex specific ignore
-                if (line.startswith(r"\def") or line.startswith(r"\newcommand") or
-                        line.startswith(r"\renewcommand") or line.startswith("%")):
+                if (line.startswith(r"\def") or
+                        line.startswith(r"\newcommand") or
+                        line.startswith(r"\renewcommand") or
+                        line.startswith("%")):
                     continue
                 line = line.replace(r"\&", "&")
                 line = line.replace(r"\_", "_")
-
                 lines.append(line)
 
             text = " ".join(lines)
@@ -273,7 +298,8 @@ def find_matches_combo(filename, acronyms, ignore_str=" %"):
     # case characters, number or special characters.
     # These do not look like "normal" acronyms so special case them.
     # Also single character acronyms (which should probably be banned)
-    nonstandard = {a for a in acronyms if not a.isupper() or not a.isalpha() or len(a) == 1}
+    nonstandard = {a for a in acronyms if not a.isupper()
+                   or not a.isalpha() or len(a) == 1}
 
     # findall matches non-overlapping left to right in the order that
     # we give alternate strings. Therefore when we build the regex
@@ -284,20 +310,31 @@ def find_matches_combo(filename, acronyms, ignore_str=" %"):
 
     # This pattern matches all defined acronyms, even those with lower
     # case characters and things like "&"
-    pattern = r"\b(" + "|".join(re.escape(w) for w in sorted_nonstandard) + r")\b"
+    pattern = r"\b(" + "|".join(re.escape(w)
+                                for w in sorted_nonstandard) + r")\b"
     regex = re.compile(pattern)
 
     matches = set(regex.findall(text))
-
     # Now look for all acronym-like strings in the text, defined as a
     # collection of 2 or more upper case characters with word boundaries
     # either side.
-    regex = re.compile(r"\b[A-Z][A-Z]+\b")
+    regex = CAP_ACRONYM
+    regex = CAP_ACRONYM
+    used = set(regex.findall(text))
     used = set(regex.findall(text))
 
+    # now Glossary entries Gls gls use group ( ) to catch what's between { }
+    regex = re.compile(r"ls{([\w ]+)}")
+    gls = set(regex.findall(text))
+
+    used.update(gls)
     # For all acronyms that were used and have existing definitions, add
     # them to the current list of matches
     matches.update(used & acronyms)
+    # For all gls entries  that were used and have existing definitions, add
+    matches.update(gls & acronyms)
+    # still a problems for COMPOUND ENTRIES like NASA ROSES  ..
+    # ROSES is tagged as missing
 
     # Calculate all the acronyms we found in the text but which do not
     # have definitions.
@@ -307,6 +344,30 @@ def find_matches_combo(filename, acronyms, ignore_str=" %"):
 
 
 find_matches = find_matches_combo
+
+
+def write_latex_glossary(acronyms, fd=sys.stdout):
+    """ Write a glossary file with newglossaryitem per definiton  -
+    or new acronym if its all CAPS.
+
+    Parameters
+    ----------
+    acronyms : `list`
+        List of 2-tuples with acronym and definition.
+    fd : `file`, optional
+    """
+
+    print("% DO NOT EDIT - generated by " +
+          sys.argv[0] + " from https://lsst-texmf.lsst.io/.", file=fd)
+    for acr, defn in acronyms:
+        # why \ for some stuff but {{ for {
+        if (CAP_ACRONYM.match(acr)):
+            print("\\newacronym {{{}}} {{{}}} {{{}}}".format(
+                acr, acr, defn), file=fd)
+        else:
+            print("\\newglossaryentry {{{}}} {{name={{{}}},"
+                  " description={{{}}}}}".format(
+                      acr, acr, defn), file=fd)
 
 
 def write_latex_table(acronyms, fd=sys.stdout):
@@ -329,13 +390,14 @@ def write_latex_table(acronyms, fd=sys.stdout):
     print(r"\end{longtable}", file=fd)
 
 
-def main(texfiles):
+def main(texfiles, doGlossary):
     """Run program and generate acronyms file."""
 
     if not texfiles:
         raise RuntimeError("No files supplied.")
 
-    defaults_dir = os.path.join(os.path.dirname(__file__), os.path.pardir, "etc")
+    defaults_dir = os.path.join(
+        os.path.dirname(__file__), os.path.pardir, "etc")
     gaia_glossary_path = os.path.join(defaults_dir, "glossary.txt")
     lsst_acronyms_path = os.path.join(defaults_dir, "lsstacronyms.txt")
     global_skip_path = os.path.join(defaults_dir, "skipacronyms.txt")
@@ -410,11 +472,100 @@ def main(texfiles):
         else:
             raise RuntimeError("Internal error handling {}".format(acr))
 
-    with open("acronyms.tex", "w") as fd:
-        write_latex_table(results, fd=fd)
+    if (doGlossary):
+        with open("aglossary.tex", "w") as gfd:
+            write_latex_glossary(results, fd=gfd)
+    else:
+        with open("acronyms.tex", "w") as fd:
+            write_latex_table(results, fd=fd)
+
+
+def loadGLSlist():
+    """ Load all the gloassry items from the generated gloassary file.
+    we can then use thoose entires to go back and serach for them in the
+    tex files to see of they have \\gls """
+
+    fname = "aglossary.tex"
+    GLSlist = {}
+    with open(fname, 'r') as fin:
+        # match gls entry but only take the first group
+        regex = re.compile(r'\\new.+\s*{(.+)}\s*{.+}\s*')
+        text = fin.read()
+        GLSlist = set(regex.findall(text))
+    return GLSlist
+
+
+def glsfn(s):
+    """put \\gls{} -- used in the regexp substitution"""
+    return s.group(1)+"\\gls{"+s.group(2)+"}"+s.group(3)
+
+
+def updateFile(inFile, GLSlist):
+    """Update the tex file by looking for acronyms
+    and glossary items GLSlist."""
+    newf = inFile
+    oldf = newf.replace(".tex", ".tex.old")
+    os.rename(newf, oldf)
+    regexmap = {}
+    for g in GLSlist:
+        regexmap[g] = re.compile(r"([,\s(](?<!=\\gls))("+g+r")([)\s,'.])")
+    try:
+        with open(oldf, 'r') as fin, open(newf, 'w') as fout:
+            for line in fin:
+                if not line.startswith('%'):  # it is a comment ignore
+                    for g in GLSlist:
+                        regx = regexmap[g]
+                        res = regx.search(line)
+                        if (res is not None):  # ok now .. more checks
+                            # check its not a word in a GLS item but not too gready
+                            glsed = re.search(r"gls{.+"+g+"[a-z,A-Z, ]*}", line)
+                            if (glsed):  # already glsed or contianed in one
+                                continue
+                            else:  # .. find and add GLS -
+                                line = regx.sub(glsfn, line)
+                fout.write(line)
+    except BaseException:
+        print("Reverting File  because  error:", sys.exc_info()[0])
+        os.rename(oldf, newf)
+        sys.exit(1)
+
+def update(texfiles):
+    """Update the passed tex files by looking for acronyms and glossary items
+       loaded from aglossary.tex."""
+
+    if not texfiles:
+        raise RuntimeError("No files supplied.")
+
+    print("Updating texfiles the original files will be .old ")
+    print("""If glosarray items contain \\gls refs you may need to run this
+              again to catch the entries in aglossary.tex """)
+    GLSlist = loadGLSlist()  # Grab all the found glossary and acronyms
+    for f in texfiles:
+        # in each file look for each gloassary item and replace wit \gls{item}
+        updateFile(f, GLSlist)
 
 
 if __name__ == "__main__":
-    texfiles = sys.argv
-    texfiles.pop(0)
-    main(texfiles)
+    description = __doc__
+    formatter = argparse.RawDescriptionHelpFormatter
+    parser = argparse.ArgumentParser(description=description,
+                                     formatter_class=formatter)
+
+    parser.add_argument('files', metavar='FN', nargs='+',
+                        help='FILE to process')
+    parser.add_argument('-g', '--glossary', action='store_true',
+                        help=""" Generate aglossary.tex a glossary file for
+                                 acronyms and glossary entries.""")
+    parser.add_argument('-u', '--update', action='store_true',
+                        help="""Update files to put \\gls on acronyms and
+                                glossary entries .""")
+
+    args = parser.parse_args()
+    doGlossary = args.glossary
+
+    texfiles = args.files
+
+    main(texfiles, doGlossary)
+    #  Go through files on second pass and \gls  or not (-u)
+    if (args.update):
+        update(texfiles)

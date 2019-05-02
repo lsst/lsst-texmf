@@ -16,6 +16,10 @@
 \RequirePackage{bm}
 \RequirePackage{amsbsy}
 
+\usepackage[nonumberlist,nogroupskip,toc,numberedsection=autolabel,style=index]{glossaries}
+\usepackage{environ}
+\usepackage{enumitem}
+
 % LSST uses a sans serif font
 \RequirePackage{ifxetex}
 \ifxetex
@@ -78,6 +82,7 @@
 %\RequirePackage{nameref}
 %\RequirePackage{mathptmx} % note this messes up \vec definition... do not e add put in your doc if you want it
 \RequirePackage{tocstyle}
+
 
 % Standardize bibliography styling
 \bibliographystyle{lsst_aa}
