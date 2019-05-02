@@ -509,7 +509,7 @@ def updateFile(inFile, GLSlist):
     os.rename(newf, oldf)
     regexmap = {}
     for g in GLSlist:
-        regxmap[g] = re.compile(r"([,\s(](?<!=\\gls))("+g+r")([)\s,'.])")
+        regexmap[g] = re.compile(r"([,\s(](?<!=\\gls))("+g+r")([)\s,'.])")
     try:
         with  open(oldf, 'r') as fin,  open(newf, 'w') as fout:
             for line in fin:
