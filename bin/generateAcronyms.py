@@ -39,7 +39,7 @@ GLS = False
 UPD = False
 
 #  Match for extracting acronyms from the glaossry myacronyns .txt files
-MATCH_ACRONYM = "^([\w/&\-\+ -]+)\s*:\s*(.*)$"
+MATCH_ACRONYM = r"^([\w/&\-\+ -]+)\s*:\s*(.*)$"
 MATCH_ACRONYM_RE = re.compile(MATCH_ACRONYM)
 
 CAP_ACRONYM = re.compile(r"\b[A-Z][A-Z]+\b")
@@ -154,10 +154,12 @@ def read_myacronyms(filename="myacronyms.txt", allow_duplicates=False,
             if acr in definitions:
                 if defn != definitions[acr]:
                     raise RuntimeError(
-                        "Duplicate definitions of {} differ in {}".format(acr, filename))
+                        "Duplicate definitions of {} differ in {}".
+                        format(acr, filename))
                 else:
-                    warnings.warn(UserWarning("Entry {} exists multiple times with same"
-                                              " definition in {}".format(acr, filename)))
+                    warnings.warn(UserWarning("Entry {} exists multiple times"
+                                              " with same definition in {}".
+                                              format(acr, filename)))
 
             definitions[acr] = defn
 
@@ -200,8 +202,8 @@ def read_skip_acronyms(file_name="skipacronyms.txt"):
                 continue
 
             if " " in line:
-                warnings.warn(UserWarning("Entry '{}' contains a space. Ignoring it for"
-                                          " skip list".format(line)))
+                warnings.warn(UserWarning("Entry '{}' contains a space. Ignor"
+                                          "ing it for skip list".format(line)))
                 continue
             skip.add(line)
     return skip
@@ -286,8 +288,10 @@ def find_matches_combo(filename, acronyms, ignore_str=" %"):
                 line = line.strip()
 
                 # Latex specific ignore
-                if (line.startswith(r"\def") or line.startswith(r"\newcommand") or
-                        line.startswith(r"\renewcommand") or line.startswith("%")):
+                if (line.startswith(r"\def") or
+                        line.startswith(r"\newcommand") or
+                        line.startswith(r"\renewcommand") or
+                        line.startswith("%")):
                     continue
                 line = line.replace(r"\&", "&")
                 line = line.replace(r"\_", "_")
@@ -326,18 +330,17 @@ def find_matches_combo(filename, acronyms, ignore_str=" %"):
     used = set(regex.findall(text))
 
     # now Glossary entries Gls gls use group ( ) to catch what's between { }
-    regex = re.compile("ls{([\w ]+)}")
+    regex = re.compile(r"ls{([\w ]+)}")
     gls = set(regex.findall(text))
 
     used = used.union(gls)
-    #print (gls)
-    #print (acronyms)
     # For all acronyms that were used and have existing definitions, add
     # them to the current list of matches
     matches.update(used & acronyms)
     # For all gls entries  that were used and have existing definitions, add
     matches.update(gls & acronyms)
-    # still a probles for COMPOUND ENTRIES like NASA ROSES  .. ROSES is tagged as missing
+    # still a probles for COMPOUND ENTRIES like NASA ROSES  ..
+    # ROSES is tagged as missing
 
     # Calculate all the acronyms we found in the text but which do not
     # have definitions.
@@ -350,7 +353,8 @@ find_matches = find_matches_combo
 
 
 def write_latex_glossary(acronyms, fd=sys.stdout):
-    """ Write a glossary file with newgloassaryitem per definiton  - or new acronym if its all CAPS.
+    """ Write a glossary file with newgloassaryitem per definiton  -
+    or new acronym if its all CAPS.
 
     Parameters
     ----------
@@ -366,11 +370,9 @@ def write_latex_glossary(acronyms, fd=sys.stdout):
             print("\\newacronym {{{}}} {{{}}} {{{}}}".format(
                 acr, acr, defn), file=fd)
         else:
-            print("\\newglossaryentry {{{}}} {{name={{{}}}, description={{{}}}}}".format(
-                acr, acr, defn), file=fd)
-
-       # \newglossaryentry {APL} {name={APL}, description={ Apache Public License }}
-       # \newacronym{ci}{CI}{Continuous Integration}
+            print("\\newglossaryentry {{{}}} {{name={{{}}},"
+                  " description={{{}}}}}".format(
+                      acr, acr, defn), file=fd)
 
 
 def write_latex_table(acronyms, fd=sys.stdout):
@@ -490,17 +492,17 @@ def loadGLSlist():
     regex = re.compile(r'\\new.+\s*{(.+)}\s*{.+}\s*')
     text = fin.read()
     GLSlist = set(regex.findall(text))
-    print(GLSlist)
     return GLSlist
 
 
 def glsfn(s):
-    "put \gls{} -- used in the regexp substitution"
+    """put \\gls{} -- used in the regexp substitution"""
     return s.group(1)+"\\gls{"+s.group(2)+"}"+s.group(3)
 
 
 def updateFile(inFile, GLSlist):
-    """Update the tex file by looking for acronyms and glossary items GLSlist."""
+    """Update the tex file by looking for acronyms
+    and glossary items GLSlist."""
     nf = inFile
     of = nf.replace(".tex", ".tex.old")
     sh.copyfile(nf, of)
@@ -510,19 +512,15 @@ def updateFile(inFile, GLSlist):
     for line in fin:
         if not line.startswith('%'):  # its a comment ignore
             for g in GLSlist:
-                regx = re.compile("([,\s(](?<!=\\gls))("+g+")([)\s,'.])")
+                regx = re.compile(r"([,\s(](?<!=\\gls))("+g+r")([)\s,'.])")
                 res = regx.search(line)
                 if (res is not None):  # ok now .. more checks
-                    print(res)
-                    # chheck its not a word in a GLS item but not too gready
+                    # check its not a word in a GLS item but not too gready
                     glsed = re.search(r"gls{.+"+g+"[a-z,A-Z, ]*}", line)
-                    if (glsed):  # already glsed or contianed in one so dont sub
-                        print(glsed)
-                        print(line)
+                    if (glsed):  # already glsed or contianed in one
                         continue
                     else:  # .. find and add GLS -
                         line = regx.sub(glsfn, line)
-                        print(line)
         fout.write(line)
     fout.close()
     fin.close()
