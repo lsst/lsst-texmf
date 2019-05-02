@@ -33,8 +33,6 @@ try:
 except (ImportError, OSError):
     pypandoc = None
 
-#  DO glossary or not  (-g)
-GLS = False
 
 #  Match for extracting acronyms from the glaossry myacronyns .txt files
 MATCH_ACRONYM = r"^([\w/&\-\+ -]+)\s*:\s*(.*)$"
@@ -393,7 +391,7 @@ def write_latex_table(acronyms, fd=sys.stdout):
     print(r"\end{longtable}", file=fd)
 
 
-def main(texfiles):
+def main(texfiles, doGlossary):
     """Run program and generate acronyms file."""
 
     if not texfiles:
@@ -475,7 +473,7 @@ def main(texfiles):
         else:
             raise RuntimeError("Internal error handling {}".format(acr))
 
-    if (GLS):
+    if (doGlossary):
         with open("aglossary.tex", "w") as gfd:
             write_latex_glossary(results, fd=gfd)
     else:
@@ -556,11 +554,11 @@ if __name__ == "__main__":
                                 glossary entries .""")
 
     args = parser.parse_args()
-    GLS = args.glossary
+    doGlossary = args.glossary
 
     texfiles = args.files
 
-    main(texfiles)
+    main(texfiles, doGlossary)
     #  Go through files on second pass and \gls  or not (-u)
     if (args.update):
         update(texfiles)
