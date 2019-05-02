@@ -50,12 +50,12 @@ def _parse_line(line):
 
     Parameters
     ----------
-    line: `str`
+    line : `str`
         Line to analyze.
 
     Returns
     -------
-    acronym, definition: tuple(str, str)
+    acronym, definition : tuple(str, str)
         Acronym and definition. Tuple of None, None if the line has
         no acronym definition.
     """
@@ -83,14 +83,14 @@ def read_definitions(filename, init=None):
 
     Parameters
     ----------
-    filename: `str`
+    filename : `str`
         Path to Gaia format file.
-    init: `dict`
+    init : `dict`
         Initial definitions to augment with the content from this file.
 
     Returns
     -------
-    acronyms: `dict`
+    acronyms : `dict`
         Dictionary with the acronyms as keys. The values are sets containing
         one or more definition associated with that acronym.
         Empty dict if the file can not be opened.
@@ -119,7 +119,7 @@ def read_myacronyms(filename="myacronyms.txt", allow_duplicates=False,
                     defaults=None):
     """Read the supplied file and extract standard acronyms.
 
-    File must contain lines in format:
+    File must contain lines in format :
 
     ACRYONYM:Definition
 
@@ -128,9 +128,9 @@ def read_myacronyms(filename="myacronyms.txt", allow_duplicates=False,
 
     Parameters
     ----------
-    file_name: `str`
+    file_name : `str`
         Name of file to open.
-    defaults: `dict`, optional
+    defaults : `dict`, optional
         `dict` containing default values to seed the returned definitions.
         The caller's dictionary will not be updated.
         Items in the current file override the values from the defaults
@@ -138,7 +138,7 @@ def read_myacronyms(filename="myacronyms.txt", allow_duplicates=False,
 
     Returns
     -------
-    definitions: `dict`
+    definitions : `dict`
         Dictionary with acronym as key and definition as value.
     """
     definitions = {}
@@ -184,7 +184,7 @@ def read_skip_acronyms(file_name="skipacronyms.txt"):
 
     Returns
     -------
-    skip: `set`
+    skip : `set`
         Set containing acronyms to be skipped.
     """
     skip = set()
@@ -212,19 +212,19 @@ def find_matches_per_line(filename, acronyms, ignore_str=" %"):
 
     Parameters
     ----------
-    filename: `str`
+    filename : `str`
         Path to file.
-    acronyms: `set`
+    acronyms : `set`
         List of possible acronyms present in file.
-    ignore_str: `str`, optional
+    ignore_str : `str`, optional
         Anything from this string on in a line is not searched.
         Every line is searched if set to None. Default is tex comment.
 
     Returns
     -------
-    matches: `set`
+    matches : `set`
         List of matching acronyms from supplied list.
-    missing: `set`
+    missing : `set`
         List of acronyms used but not matched.
     """
 
