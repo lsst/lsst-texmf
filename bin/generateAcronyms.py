@@ -22,7 +22,6 @@ import os.path
 import sys
 import re
 import argparse
-import shutil as sh
 
 
 try:
@@ -488,7 +487,7 @@ def loadGLSlist():
 
     fname = "aglossary.tex"
     GLSlist = {}
-    with  open(fname, 'r') as fin:
+    with open(fname, 'r') as fin:
         # match gls entry but only take the first group
         regex = re.compile(r'\\new.+\s*{(.+)}\s*{.+}\s*')
         text = fin.read()
@@ -511,7 +510,7 @@ def updateFile(inFile, GLSlist):
     for g in GLSlist:
         regexmap[g] = re.compile(r"([,\s(](?<!=\\gls))("+g+r")([)\s,'.])")
     try:
-        with  open(oldf, 'r') as fin,  open(newf, 'w') as fout:
+        with open(oldf, 'r') as fin, open(newf, 'w') as fout:
             for line in fin:
                 if not line.startswith('%'):  # it is a comment ignore
                     for g in GLSlist:
@@ -525,9 +524,10 @@ def updateFile(inFile, GLSlist):
                             else:  # .. find and add GLS -
                                 line = regx.sub(glsfn, line)
                 fout.write(line)
-    except:
-       print ("Reverting File  because  error:", sys.exc_info()[0])
-       os.rename(oldf,newf)
+    except BaseException:
+        print("Reverting File  because  error:", sys.exc_info()[0])
+        os.rename(oldf, newf)
+        sys.exit(1)
 
 def update(texfiles):
     """Update the passed tex files by looking for acronyms and glossary items
