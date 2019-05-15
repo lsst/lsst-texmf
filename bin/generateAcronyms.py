@@ -9,11 +9,11 @@ multiple TeX files, it reads the known acronyms from the Web and the
 This will now also output a glossary file  "aglossary.tex"
 All glossary lookup keys are the glossary name.
 For items to appear in the glossary you must \\gls{ITEM} at least once.
---update will try to find other occurances for you.
+--update will try to find other occurrences for you.
 
-Passing -g or --glossary will supress the acronyms.tex production
+Passing -g or --glossary will suppress the acronyms.tex production
 Passing -u or --update  post process all files to \\gls acronyms and
-glosary entires.
+glossary entries.
 
 """
 
@@ -33,13 +33,13 @@ except (ImportError, OSError):
     pypandoc = None
 
 
-#  Match for extracting acronyms from the glaossry myacronyns .txt files
+#  Match for extracting acronyms from the glossary myacronyms .txt files
 MATCH_ACRONYM = r"^([\w/&\-\+ -]+)\s*:\s*(.*)$"
 MATCH_ACRONYM_RE = re.compile(MATCH_ACRONYM)
 
 CAP_ACRONYM = re.compile(r"\b[A-Z][A-Z]+\b")
 
-pypandoc = None  # it can not hangle gls
+pypandoc = None  # it can not handle gls
 
 
 def _parse_line(line):
@@ -84,14 +84,14 @@ def read_glossarydef(filename, utags, init=None):
         Path to LSST  format  glossary file. This is a csv file with the
         name, definition, tags etc ..
     tags : `set'
-        List of tags supplied by user to decide which definintion to keep when there are many.
+        List of tags supplied by user to decide which definition to keep when there are many.
     init : `dict`
         Initial definitions to augment with the content from this file.
 
     Returns
     -------
 
-    def acronyms : `dict`
+    acronyms : `dict`
         Dictionary with the acronyms as keys. The values are sets containing
         one or more definition associated with that acronym.
         Empty dict if the file can not be opened.
@@ -110,7 +110,7 @@ def read_glossarydef(filename, utags, init=None):
                 continue
             lc = lc + 1
             if (lc == 1):
-                continue  # There is a headerline
+                continue  # There is a header line
             ind = 0
             acr = row[ind]
             ind = ind + 1
@@ -128,12 +128,12 @@ def read_glossarydef(filename, utags, init=None):
             if acr not in definitions:
                 definitions[acr] = set()
             # Ok lets try to do something with Tags .. like if its tagged take this one
-            # should possilbe keep the tags with the acronym ..
-            # I will take the first deifnition - iff i get a tag match later replace it
+            # should possible keep the tags with the acronym ..
+            # I will take the first definition - iff i get a tag match later replace it
 
             if (hasTag and definitions[acr]):
-                definitions[acr] = set()  # reomved any other def take tagged one
-            if (not definitions[acr]):  # already have a def and not mathcnig tag so ignore new one
+                definitions[acr] = set()  # removed any other def take tagged one
+            if (not definitions[acr]):  # already have a def and not matching tag so ignore new one
                 definitions[acr].add(defn)
 
     return definitions
@@ -409,7 +409,7 @@ find_matches = find_matches_combo
 
 
 def write_latex_glossary(acronyms, fd=sys.stdout):
-    """ Write a glossary file with newglossaryitem per definiton  -
+    """ Write a glossary file with newglossaryitem per definition  -
     or new acronym if its all CAPS.
 
     Parameters
@@ -536,8 +536,8 @@ def main(texfiles, doGlossary, utags):
 
 
 def loadGLSlist():
-    """ Load all the gloassry items from the generated gloassary file.
-    we can then use thoose entires to go back and serach for them in the
+    """ Load all the glossary items from the generated glossary file.
+    we can then use those entries to go back and search for them in the
     tex files to see of they have \\gls """
 
     fname = "aglossary.tex"
@@ -572,9 +572,9 @@ def updateFile(inFile, GLSlist):
                         regx = regexmap[g]
                         res = regx.search(line)
                         if (res is not None):  # ok now .. more checks
-                            # check its not a word in a GLS item but not too gready
+                            # check its not a word in a GLS item but not too greedy
                             glsed = re.search(r"gls{.+"+g+"[a-z,A-Z, ]*}", line)
-                            if (glsed):  # already glsed or contianed in one
+                            if (glsed):  # already glsed or contained in one
                                 continue
                             else:  # .. find and add GLS -
                                 line = regx.sub(glsfn, line)
@@ -593,11 +593,11 @@ def update(texfiles):
         raise RuntimeError("No files supplied.")
 
     print("Updating texfiles the original files will be .old ")
-    print("""If glosarray items contain \\gls refs you may need to run this
+    print("""If glossary items contain \\gls refs you may need to run this
               again to catch the entries in aglossary.tex """)
     GLSlist = loadGLSlist()  # Grab all the found glossary and acronyms
     for f in texfiles:
-        # in each file look for each gloassary item and replace wit \gls{item}
+        # in each file look for each glossary item and replace wit \gls{item}
         updateFile(f, GLSlist)
 
 
@@ -616,8 +616,8 @@ if __name__ == "__main__":
                         help="""Update files to put \\gls on acronyms and
                                 glossary entries .""")
     parser.add_argument('-t', '--tags',
-                        help="""Space seprated list of tags between quotes
-                                to use in selecting definitioins.""")
+                        help="""Space separated list of tags between quotes
+                                to use in selecting definitions.""")
     args = parser.parse_args()
     doGlossary = args.glossary
 
