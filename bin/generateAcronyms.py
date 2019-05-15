@@ -180,7 +180,8 @@ def read_myacronyms(filename="myacronyms.txt", allow_duplicates=False,
                         format(acr, filename))
                 else:
                     warnings.warn(UserWarning("Entry {} exists multiple times"
-                                              " with same definition in {}".
+                                              " with same definition in {}, you may"
+                                              " want to try using a tag (-t)".
                                               format(acr, filename)))
 
             definitions[acr] = defn
@@ -390,10 +391,10 @@ def write_latex_glossary(acronyms, fd=sys.stdout):
             # some acronyms have long definitions - we should not \newacronym them
             doAcronym = len(defn.split()) == len(acr)
         if (doAcronym):
-            print("\\newacronym {{{}}} {{{}}} {{{}}}".format(
+            print("\\newacronym{{{}}} {{{}}} {{{}}}".format(
                 acr, acr, defn), file=fd)
         else:
-            print("\\newglossaryentry {{{}}} {{name={{{}}},"
+            print("\\newglossaryentry{{{}}} {{name={{{}}},"
                   " description={{{}}}}}".format(
                       acr, acr, defn), file=fd)
 
@@ -526,11 +527,13 @@ def updateFile(inFile, GLSlist):
     os.rename(newf, oldf)
     regexmap = {}
     for g in GLSlist:
-        regexmap[g] = re.compile(r"([,\s(](?<!=\\gls))("+g+r")([)\s,'.])")
+        regexmap[g] = re.compile(r"([,\s(](?<!={))("+g+r")([)\s,'.])")
+        #regexmap[g] = re.compile(r"([,\s(](?<!=\\gls))("+g+r")([)\s,'.])")
     try:
         with open(oldf, 'r') as fin, open(newf, 'w') as fout:
             for line in fin:
-                if not line.startswith('%'):  # it is a comment ignore
+                if not (line.startswith('%') or 'entry' in line or 'seciton' in line or
+                        'title' in line or 'author' in line):  # it is a comment ignore
                     for g in GLSlist:
                         regx = regexmap[g]
                         res = regx.search(line)
