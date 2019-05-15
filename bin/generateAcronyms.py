@@ -22,7 +22,7 @@ import os.path
 import sys
 import re
 import argparse
-
+import csv
 
 try:
     import pypandoc
@@ -73,6 +73,70 @@ def _parse_line(line):
 
     acr, defn = matched.groups()
     return (acr.rstrip(), defn)
+
+
+def read_glossarydef(filename, utags, init=None):
+    """Read glossary  definitions from LSST format glossarydefs.csv file.
+
+    Parameters
+    ----------
+    filename : `str`
+        Path to LSST  format  glossary file. This is a csv file with the
+        name, definition, tags etc ..
+    tags : `set'
+        List of tags supplied by user to decide which definintion to keep when there are many.
+    init : `dict`
+        Initial definitions to augment with the content from this file.
+
+    Returns
+    -------
+
+    def acronyms : `dict`
+        Dictionary with the acronyms as keys. The values are sets containing
+        one or more definition associated with that acronym.
+        Empty dict if the file can not be opened.
+    """
+
+    if init is None:
+        definitions = {}
+    else:
+        definitions = init.copy()
+
+    lc = 0
+    with open(filename, "r") as fd:
+        reader = csv.reader(fd, delimiter=',', quotechar='"')
+        for row in reader:
+            if len(row) < 2:  # blank line
+                continue
+            lc = lc + 1
+            if (lc == 1):
+                continue  # There is a headerline
+            ind = 0
+            acr = row[ind]
+            ind = ind + 1
+            defn = row[ind]
+            ind = ind + 1
+            tags = row[ind]
+            tagset = set()
+            hasTag = False
+            if tags:
+                tagset.update(tags.split())
+                hasTag = tagset.intersection(utags)
+            if acr is None:
+                continue
+
+            if acr not in definitions:
+                definitions[acr] = set()
+            # Ok lets try to do something with Tags .. like if its tagged take this one
+            # should possilbe keep the tags with the acronym ..
+            # I will take the first deifnition - iff i get a tag match later replace it
+
+            if (hasTag and definitions[acr]):
+                definitions[acr] = set()  # reomved any other def take tagged one
+            if (not definitions[acr]):  # already have a def and not mathcnig tag so ignore new one
+                definitions[acr].add(defn)
+
+    return definitions
 
 
 def read_definitions(filename, init=None):
@@ -391,7 +455,7 @@ def write_latex_table(acronyms, fd=sys.stdout):
     print(r"\end{longtable}", file=fd)
 
 
-def main(texfiles, doGlossary):
+def main(texfiles, doGlossary, utags):
     """Run program and generate acronyms file."""
 
     if not texfiles:
@@ -399,21 +463,11 @@ def main(texfiles, doGlossary):
 
     defaults_dir = os.path.join(
         os.path.dirname(__file__), os.path.pardir, "etc")
-    gaia_glossary_path = os.path.join(defaults_dir, "glossary.txt")
-    lsst_acronyms_path = os.path.join(defaults_dir, "lsstacronyms.txt")
+    lsst_glossary_path = os.path.join(defaults_dir, "glossarydefs.csv")
     global_skip_path = os.path.join(defaults_dir, "skipacronyms.txt")
 
-    # Read the Gaia set
-    global_definitions = read_definitions(gaia_glossary_path)
-
-    # Now read the LSST global definitions
-    lsst_definitions = read_definitions(lsst_acronyms_path)
-
-    # Merge global with lsst such that LSST overrides.
-    # If instead we wish to merge with global, use init kwarg in
-    # read_definitions above
-    global_definitions.update(lsst_definitions)
-    lsst_definitions = global_definitions
+    # Read the full set
+    lsst_definitions = read_glossarydef(lsst_glossary_path, utags)
 
     # Read the local set
     try:
@@ -561,13 +615,19 @@ if __name__ == "__main__":
     parser.add_argument('-u', '--update', action='store_true',
                         help="""Update files to put \\gls on acronyms and
                                 glossary entries .""")
-
+    parser.add_argument('-t', '--tags',
+                        help="""Space seprated list of tags between quotes
+                                to use in selecting definitioins.""")
     args = parser.parse_args()
     doGlossary = args.glossary
 
     texfiles = args.files
+    tagstr = args.tags
+    utags = set()
+    if tagstr:
+        utags.update(tagstr.split())
 
-    main(texfiles, doGlossary)
+    main(texfiles, doGlossary, utags)
     #  Go through files on second pass and \gls  or not (-u)
     if (args.update):
         update(texfiles)
