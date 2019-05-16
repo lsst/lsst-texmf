@@ -750,23 +750,22 @@
   \relax
 \else
 \begin{minipage}{0.9\textwidth}
-\begin{center}
-  \vspace*{0.2cm}
-  \scriptsize
-  \bfseries
-  \if@isdraft
-    \color{red}
-    DRAFT NOT YET APPROVED
-    \color{lsstfoot} --
-  \fi
-  \color{lsstfoot}
-  \@controlFootText
-  \if@isdraft
-    --
-    \color{red}
-    DRAFT NOT YET APPROVED
-  \fi
-\end{center}
+\centering
+\vspace*{0.2cm}
+\scriptsize
+\bfseries
+\if@isdraft
+  \color{red}
+  DRAFT NOT YET APPROVED
+  \color{lsstfoot} --
+\fi
+\color{lsstfoot}
+\@controlFootText
+\if@isdraft
+  --
+  \color{red}
+  DRAFT NOT YET APPROVED
+\fi
 \end{minipage}
 \\
 \fi
