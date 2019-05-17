@@ -528,7 +528,6 @@ def updateFile(inFile, GLSlist):
     regexmap = {}
     for g in GLSlist:
         regexmap[g] = re.compile(r"([,\s(](?<!={))("+g+r")([)\s,'.])")
-        #regexmap[g] = re.compile(r"([,\s(](?<!=\\gls))("+g+r")([)\s,'.])")
     try:
         with open(oldf, 'r') as fin, open(newf, 'w') as fout:
             for line in fin:
@@ -593,7 +592,9 @@ if __name__ == "__main__":
     if tagstr:
         utags.update(tagstr.split())
 
-    main(texfiles, doGlossary, utags)
-    #  Go through files on second pass and \gls  or not (-u)
+    if (doGlossary or (not args.update)):
+        # Allow update to really just update/rewrite files not regenerate glossary
+        main(texfiles, doGlossary, utags)
+    # Go through files on second pass  or on demand and \gls  or not (-u)
     if (args.update):
         update(texfiles)
