@@ -16,7 +16,6 @@
 \RequirePackage{bm}
 \RequirePackage{amsbsy}
 
-\usepackage[nonumberlist,nogroupskip,toc,numberedsection=autolabel,style=index]{glossaries}
 \usepackage{environ}
 \usepackage{enumitem}
 
@@ -69,6 +68,10 @@
 
 %\RequirePackage[linkcolor=blue,colorlinks=true]{hyperref}
 \RequirePackage{hyperref}
+
+% Must be loaded AFTER hyperref (page 3 of the glossaries manual)
+\RequirePackage[nonumberlist,nogroupskip,toc,numberedsection=autolabel,style=index]{glossaries}
+
 \RequirePackage{numprint}
 \RequirePackage[english,iso]{isodate}
 \RequirePackage{titlesec}
@@ -747,23 +750,22 @@
   \relax
 \else
 \begin{minipage}{0.9\textwidth}
-\begin{center}
-  \vspace*{0.2cm}
-  \scriptsize
-  \bfseries
-  \if@isdraft
-    \color{red}
-    DRAFT NOT YET APPROVED
-    \color{lsstfoot} --
-  \fi
-  \color{lsstfoot}
-  \@controlFootText
-  \if@isdraft
-    --
-    \color{red}
-    DRAFT NOT YET APPROVED
-  \fi
-\end{center}
+\centering
+\vspace*{0.2cm}
+\scriptsize
+\bfseries
+\if@isdraft
+  \color{red}
+  DRAFT NOT YET APPROVED
+  \color{lsstfoot} --
+\fi
+\color{lsstfoot}
+\@controlFootText
+\if@isdraft
+  --
+  \color{red}
+  DRAFT NOT YET APPROVED
+\fi
 \end{minipage}
 \\
 \fi
