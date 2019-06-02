@@ -401,6 +401,7 @@ def write_latex_glossary(acronyms, fd=sys.stdout):
 
 def write_latex_table(acronyms, fd=sys.stdout):
     """Write latex table to supplied file descriptor.
+    Strip any gls in teh acronym defs - so this is traditional acronym.
 
     Parameters
     ----------
@@ -411,9 +412,12 @@ def write_latex_table(acronyms, fd=sys.stdout):
 \begin{longtable}{|l|p{0.8\textwidth}|}\hline
 \textbf{Acronym} & \textbf{Description}  \\\hline
 """, file=fd)
+    glsreg = re.compile(r'(.*)\\gls{(.+)}(.*)')
     for acr, defn in acronyms:
         acr = acr.replace("&", r"\&")
         acr = acr.replace("_", r"\_")
+        m = glsreg.findall(defn)
+        defn = glsreg.sub(glsrmfn,defn)
         print("{} & {} {}".format(acr, defn, r"\\\hline"), file=fd)
 
     print(r"\end{longtable}", file=fd)
@@ -517,6 +521,11 @@ def loadGLSlist():
 def glsfn(s):
     """put \\gls{} -- used in the regexp substitution"""
     return s.group(1)+"\\gls{"+s.group(2)+"}"+s.group(3)
+
+
+def glsrmfn(s):
+    """remove \\gls{} -- used in the regexp substitution for acronym"""
+    return s.group(1)+" "+s.group(2)+" "+s.group(3)
 
 
 def updateFile(inFile, GLSlist):
