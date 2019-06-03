@@ -412,7 +412,7 @@ def write_latex_table(acronyms, fd=sys.stdout):
 \begin{longtable}{|l|p{0.8\textwidth}|}\hline
 \textbf{Acronym} & \textbf{Description}  \\\hline
 """, file=fd)
-    glsreg = re.compile(r'(.*)\\gls{(.+)}(.*)')
+    glsreg = re.compile(r'\\gls{([\w \-]+)}')
     for acr, defn in acronyms:
         acr = acr.replace("&", r"\&")
         acr = acr.replace("_", r"\_")
@@ -525,7 +525,7 @@ def glsfn(s):
 
 def glsrmfn(s):
     """remove \\gls{} -- used in the regexp substitution for acronym"""
-    return s.group(1)+" "+s.group(2)+" "+s.group(3)
+    return s.group(1)
 
 
 def updateFile(inFile, GLSlist):
