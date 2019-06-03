@@ -25,8 +25,8 @@ def find_meta(filename):
         Ready to use bib entry
     """
 
-    auth = re.compile(r"\\author{([\w'` ]+)}")
-    title = re.compile(r"\\title{([\w\\# ]+)}")
+    auth = re.compile(r"\\author{([\w'`,\- ]+)}")
+    title = re.compile(r"\\title{([\w\\#,\-\+ ]+)}")   # a real pit .+ consumes the closing }
     yearm = re.compile(r"\\date{([0-9]+)-([0-9]+)-.+}")  # only if its an actual date not a macro
     yearm2 = re.compile(r"\\vcsDate}{(.+)-(.+)-.+}")  # only chance from meta.tex if it was a macro
     handle = re.compile(r"\\setDocRef{([A-Z]+-[0-9]+)}")
