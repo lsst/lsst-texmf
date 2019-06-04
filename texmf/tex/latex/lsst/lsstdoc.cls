@@ -40,7 +40,7 @@
   BoldFont = *-Bold,
   }
   \RequirePackage[bold-style=ISO]{unicode-math}
-  \setmathfont{xits-math.otf}
+  \setmathfont{XITSMath-Regular.otf}
   \setmainfont[Ligatures=TeX]{OpenSans}
   \setmonofont{Inconsolata}
 \else
