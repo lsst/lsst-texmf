@@ -84,7 +84,8 @@ def read_glossarydef(filename, utags, init=None):
         Path to LSST  format  glossary file. This is a csv file with the
         name, definition, tags etc ..
     tags : `set'
-        List of tags supplied by user to decide which definition to keep when there are many.
+        List of tags supplied by user to decide which definition to keep when
+        there are many.
     init : `dict`
         Initial definitions to augment with the content from this file.
 
@@ -127,13 +128,17 @@ def read_glossarydef(filename, utags, init=None):
 
             if acr not in definitions:
                 definitions[acr] = set()
-            # Ok lets try to do something with Tags .. like if its tagged take this one
+            # Ok lets try to do something with Tags .. like if its tagged take
+            # this one
             # should possible keep the tags with the acronym ..
-            # I will take the first definition - iff i get a tag match later replace it
+            # I will take the first definition - iff i get a tag match later
+            # replace it
 
             if (hasTag and definitions[acr]):
-                definitions[acr] = set()  # removed any other def take tagged one
-            if (not definitions[acr]):  # already have a def and not matching tag so ignore new one
+                # removed any other def take tagged one
+                definitions[acr] = set()
+            if not definitions[acr]:
+                # already have a def and not matching tag so ignore new one
                 definitions[acr].add(defn)
 
     return definitions
@@ -388,7 +393,8 @@ def write_latex_glossary(acronyms, fd=sys.stdout):
     for acr, defn in acronyms:
         doAcronym = False
         if (CAP_ACRONYM.match(acr)):
-            # some acronyms have long definitions - we should not \newacronym them
+            # some acronyms have long definitions - we should not
+            # \newacronym them
             doAcronym = len(defn.split()) == len(acr)
         if (doAcronym):
             print("\\newacronym{{{}}} {{{}}} {{{}}}".format(
@@ -417,7 +423,7 @@ def write_latex_table(acronyms, fd=sys.stdout):
         acr = acr.replace("&", r"\&")
         acr = acr.replace("_", r"\_")
         m = glsreg.findall(defn)
-        defn = glsreg.sub(glsrmfn,defn)
+        defn = glsreg.sub(glsrmfn, defn)
         print("{} & {} {}".format(acr, defn, r"\\\hline"), file=fd)
 
     print(r"\end{longtable}", file=fd)
@@ -546,7 +552,8 @@ def updateFile(inFile, GLSlist):
                         regx = regexmap[g]
                         res = regx.search(line)
                         if (res is not None):  # ok now .. more checks
-                            # check its not a word in a GLS item but not too greedy
+                            # check its not a word in a GLS item but not
+                            # too greedy
                             glsed = re.search(r"gls{.+"+g+"[a-z,A-Z, ]*}", line)
                             if (glsed):  # already glsed or contained in one
                                 continue
@@ -602,7 +609,8 @@ if __name__ == "__main__":
         utags.update(tagstr.split())
 
     if (doGlossary or (not args.update)):
-        # Allow update to really just update/rewrite files not regenerate glossary
+        # Allow update to really just update/rewrite files not regenerate
+        # glossary
         main(texfiles, doGlossary, utags)
     # Go through files on second pass  or on demand and \gls  or not (-u)
     if (args.update):
