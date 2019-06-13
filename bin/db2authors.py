@@ -4,7 +4,12 @@
 Load the author list and database from the support directory and
 convert it to an author tex file using AASTeX6.1 syntax.
 
-  python3 support/db2authors.py > authors.tex
+  python3 db2authors.py > authors.tex
+
+The list of authors for the paper should be defined in a authors.yaml
+file in the current working directory.  This YAML file contains a
+sequence of author IDs matching the keys in the author database
+file in the etc/authordb.yaml file in this package.
 
 This program requires the "yaml" package to be installed.
 
@@ -23,15 +28,17 @@ WRITE_CSV = False
 # those authors to full names and affiliations
 
 # This is the author list. It's a yaml file with authorID that
-# maps to the database file below
-authorfile = os.path.join("support", "authors.yaml")
+# maps to the database file below.  For now we assume this file is in
+# the current working directory.
+authorfile = os.path.join("authors.yaml")
 
 with open(authorfile, "r") as fh:
     authors = yaml.safe_load(fh)
 
 # This is the database file with all the generic information
-# about authors
-dbfile = os.path.join("support", "authordb.yaml")
+# about authors. Locate it relative to this script.
+exedir = os.path.abspath(os.path.dirname(__file__))
+dbfile = os.path.normpath(os.path.join(exedir, os.path.pardir, "etc", "authordb.yaml"))
 
 with open(dbfile, "r") as fh:
     authordb = yaml.safe_load(fh)
