@@ -422,7 +422,6 @@ def write_latex_table(acronyms, fd=sys.stdout):
     for acr, defn in acronyms:
         acr = acr.replace("&", r"\&")
         acr = acr.replace("_", r"\_")
-        m = glsreg.findall(defn)
         defn = glsreg.sub(glsrmfn, defn)
         print("{} & {} {}".format(acr, defn, r"\\\hline"), file=fd)
 
