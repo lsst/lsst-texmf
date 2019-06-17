@@ -145,6 +145,7 @@ MIDAS,Munich Image Data Analysis System (ESO),Gen,,
 MJD,Modified \gls{Julian Date} (to be avoided; see also \gls{JD}),Gen,,
 MOSFET,Metal-Oxide Semiconductor Field-Electric Transistor,Gen,,
 MPA,Max Planck Institute for Astrophysics,Gen,,
+MPP,Massively Parralel Process,DM, , 
 MREFC,\gls{Major Research Equipment and Facility Construction},Gen,,NSF
 MREN,Montenegrin Research and Education Network,Gen,,
 MSB,Most Significant Bit,Gen,,
