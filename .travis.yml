@@ -8,6 +8,10 @@ matrix:
     - python: "3.5"
       # Enable docker and documentation deployments
       env: LTD_MASON_BUILD=true DEPLOY_DOCKER_IMAGE=true
+    - python: '3.6'
+      install:
+      - pip install flake8
+      script: flake8
 before_install:
   - "sudo apt-get update && sudo apt-get install -y --no-install-recommends texlive-fonts-recommended texlive-latex-extra texlive-fonts-extra dvipng texlive-latex-recommended latexmk poppler-utils latex-xcolor latex-beamer lmodern texlive-xetex texlive-generic-recommended texlive-math-extra"
 install:

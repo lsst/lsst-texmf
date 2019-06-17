@@ -45,9 +45,9 @@ def find_meta(filename):
             line = line.strip()
             # Latex specific ignore
             if (not meta and (line.startswith(r"\def") or
-                    line.startswith(r"\newcommand") or
-                    line.startswith(r"\renewcommand") or
-                    line.startswith("%"))):
+                              line.startswith(r"\newcommand") or
+                              line.startswith(r"\renewcommand") or
+                              line.startswith("%"))):
                 continue
             line = comment.sub("", line)
             lines.append(line)
