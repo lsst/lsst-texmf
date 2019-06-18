@@ -214,3 +214,25 @@ If the ``authoryear`` class option is enabled the resulting output is:
 
 Where the author is used rather than a number but for ``@DocuShare`` Bibtex entries the year is replaced by the document handle.
 This is indicative of DocuShare documents evolving over time, such that the handle is more relevant than the particular year.
+
+Acronyms or Glossaries
+======================
+A global glossary and acronym files exists in ``lsst-texmf/etc/glossarydefs.csv``.   This file has the follwing format:
+
+.. code-block:: latex
+   Term,Description,Subsystem Tags,Documentation Tags,Associated Acronyms and Alternative Terms
+
+One should not particulalry the Subsystem Tags which may be used to diffentiate acronyms which are overloaded. 
+
+This file is read and processed in conjunction with your tex files by ``bin/generateAcronyms.py``. 
+This script expects to find two txt files in the directory with the tex:
+* ``skipacronyms.txt`` :  one item per liine which should be ignored.
+
+It has two modes of operation:
+
+Acronyms
+--------
+calling ``generateAcronyms.py`` with a list of tex files will parse the tex files looking for acronyms which exist in ``lsst-texmf/etc/glossarydefs.csv``
+
+Glossary
+--------
