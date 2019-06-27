@@ -33,7 +33,7 @@ The options for the document class control some of the layout:
   Other options include ``MN`` for minutes and ``CP`` for conference proceedings but these are holdovers from the original Gaia class file and currently have no effect on the document output.
   They are considered optional, but descriptive, at this time.
 * ``lsstdraft`` declares that the document is a draft and results in a back ground image.
-  For controlled documents this mode also disables the titlepage text indicating the document has been approved.
+  For controlled documents this mode also disables the title page text indicating the document has been approved.
   Remove this option when the document is finalized and is ready to be released by merging to the ``master`` branch.
 * ``toc`` enables a full table of contents to be included.
   This also results in the page style being reset to ``arabic``.
@@ -217,22 +217,47 @@ This is indicative of DocuShare documents evolving over time, such that the hand
 
 Acronyms or Glossaries
 ======================
-A global glossary and acronym files exists in ``lsst-texmf/etc/glossarydefs.csv``.   This file has the follwing format:
+A global glossary and acronym files exists in ``lsst-texmf/etc/glossarydefs.csv``.   This file has the following format:
 
 .. code-block:: latex
    Term,Description,Subsystem Tags,Documentation Tags,Associated Acronyms and Alternative Terms
 
-One should not particulalry the Subsystem Tags which may be used to diffentiate acronyms which are overloaded. 
+One should not particularly the Subsystem Tags which may be used to differentiate acronyms which are overloaded. 
 
 This file is read and processed in conjunction with your tex files by ``bin/generateAcronyms.py``. 
 This script expects to find two txt files in the directory with the tex:
-* ``skipacronyms.txt`` :  one item per liine which should be ignored.
+* ``skipacronyms.txt`` :  one item per line which should be ignored.
+
+To select a tag or tags for the definitions add ``-t "tag1 tag2"`` to the call to the script.
 
 It has two modes of operation:
-
 Acronyms
 --------
-calling ``generateAcronyms.py`` with a list of tex files will parse the tex files looking for acronyms which exist in ``lsst-texmf/etc/glossarydefs.csv``
+calling ``generateAcronyms.py -t "DM"`` with a list of tex files will parse the tex files looking for acronyms which exist in ``lsst-texmf/etc/glossarydefs.csv``, the -t selects DM definitions over other conflicting definitions.  This will generate a file ``acronyms.tex`` containing a longtable with all
+the definitions in it. You can include this in your document. 
+This can be added to the make file for auto generation. 
+
 
 Glossary
 --------
+
+calling ``generateAcronyms.py -g -t "DM``  with a list of files will parse the tex files looking for acronyms which exist in ``lsst-texmf/etc/glossarydefs.csv`` and generate ``aglossary.tex``. This contains a set of tex glossary and acronym definitions for use with the ``\gls{}`` macro in your tex files.   Some definitions refer to other definitions so you may need to run ``generateAcronyms.py -g -t "DM"``  including aglossary.tex several times to get them all. 
+
+To use this you must include ``aglossary.tex`` before your document begins in the main latex file e.g.
+.. code-block:: latex
+\input{aglossary.tex}
+\makeglossaries
+\begin{document}
+...
+
+At the point where you wish to have the glossary produced in your tex file  you must add:
+.. code-block:: latex
+\printglossaries
+
+You must also have some ``\gls{}`` appearing in your tex files. If you run ``generateAcronyms.py -t "DM" -gu`` on one or more tex files the script will update your file and for definitions in ``aglossary.tex`` add a ``\gls{}`` around them. 
+We do not suggest adding this to the make file as it occasionally does something unexpected so you should run it and check the result by building the document.
+
+
+
+
+
