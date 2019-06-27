@@ -222,7 +222,7 @@ A global glossary and acronym files exists in ``lsst-texmf/etc/glossarydefs.csv`
 .. code-block:: latex
    Term,Description,Subsystem Tags,Documentation Tags,Associated Acronyms and Alternative Terms
 
-One should not particularly the Subsystem Tags which may be used to differentiate acronyms which are overloaded. 
+One should note particularly the Subsystem Tags which may be used to differentiate acronyms which are overloaded. 
 
 This file is read and processed in conjunction with your tex files by ``bin/generateAcronyms.py``. 
 This script expects to find two txt files in the directory with the tex:
@@ -230,34 +230,57 @@ This script expects to find two txt files in the directory with the tex:
 
 To select a tag or tags for the definitions add ``-t "tag1 tag2"`` to the call to the script.
 
-It has two modes of operation:
+``generateAcronyms.py`` can generate either an acronyms table or a glossary. These modes are described in the following sections.
+
 Acronyms
 --------
-calling ``generateAcronyms.py -t "DM"`` with a list of tex files will parse the tex files looking for acronyms which exist in ``lsst-texmf/etc/glossarydefs.csv``, the -t selects DM definitions over other conflicting definitions.  This will generate a file ``acronyms.tex`` containing a longtable with all
-the definitions in it. You can include this in your document. 
-This can be added to the make file for auto generation. 
+
+By default, ``generateAcronyms.py`` generates a file called ``acronyms.tex`` with a table of acronyms and definitions based on acronyms detected in the document's tex files. You can include this file in your document using ``\input{acronyms.tex}``.
+
+Example usage:
+
+.. code-block:: sh
+
+   generateAcronyms.py -t "DM"
+
+The ``-t "DM"`` flag selects DM definitions over other conflicting definitions.
+
+This ``generateAcronyms.py`` can be added to the document's ``Makefile`` for auto-generation.
 
 
 Glossary
 --------
+You can generate a glossary (instead of an acronym table) by passing a ``-g`` flag:
 
-calling ``generateAcronyms.py -g -t "DM``  with a list of files will parse the tex files looking for acronyms which exist in ``lsst-texmf/etc/glossarydefs.csv`` and generate ``aglossary.tex``. This contains a set of tex glossary and acronym definitions for use with the ``\gls{}`` macro in your tex files.   Some definitions refer to other definitions so you may need to run ``generateAcronyms.py -g -t "DM"``  including aglossary.tex several times to get them all. 
+.. code-block:: sh
 
-To use this you must include ``aglossary.tex`` before your document begins in the main latex file e.g.
+   generateAcronyms.py -g -t "DM"
+
+In this mode, the script parses the document's tex files looking for acronyms that exist in ``lsst-texmf/etc/glossarydefs.csv`` to generate an ``aglossary.tex``. That glossary file contains a set of tex glossary and acronym definitions that use the ``\gls{}`` macro in your tex file.
+
+.. note::
+
+   Some definitions refer to other definitions. You may need to run the ``generateAcronyms.py -g -t "DM"`` command, including ``aglossary.tex`` several times to get them all.
+
+To use the glossary, include the ``aglossary.tex`` file before the document begins:
+
 .. code-block:: latex
-\input{aglossary.tex}
-\makeglossaries
-\begin{document}
-...
 
-At the point where you wish to have the glossary produced in your tex file  you must add:
+   \input{aglossary.tex}
+   \makeglossaries
+
+   \begin{document}
+   ...
+
+At the point where you wish to have the glossary produced in your tex file, you must add:
+
 .. code-block:: latex
-\printglossaries
 
-You must also have some ``\gls{}`` appearing in your tex files. If you run ``generateAcronyms.py -t "DM" -gu`` on one or more tex files the script will update your file and for definitions in ``aglossary.tex`` add a ``\gls{}`` around them. 
-We do not suggest adding this to the make file as it occasionally does something unexpected so you should run it and check the result by building the document.
+   \printglossaries
 
+You must also wrap terms that appear in the document's text with a ``\gls{}`` command. If you run ``generateAcronyms.py -t "DM" -gu`` on one or more tex files the script will update your file and, for definitions in ``aglossary.tex``, add a ``\gls{}`` around terms.
 
+.. important::
 
-
+   We do not suggest adding ``generateAcronyms.py`` with the ``-gu`` flags to Makefile as it occasionally does something unexpected so you should run it and check the result by building the document.
 
