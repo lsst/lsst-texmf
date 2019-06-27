@@ -56,6 +56,7 @@ DBMS,DataBase Management System,Gen,,
 DCR,Differential Chromatic Refraction,Gen,,
 DEC,Declination,Gen,,
 deg,degree; unit of angle,Gen,,
+DIA,Difference Image Analysis,DM,,
 DIMM,Differential Image Motion Monitor,Gen,,
 DOE,\gls{Department of Energy},Gen,,
 DoF,Degree(s) of Freedom (also known as DOF),Gen,,
@@ -149,6 +150,7 @@ MPP,Massively Parallel Process,DM, ,
 MREFC,\gls{Major Research Equipment and Facility Construction},Gen,,NSF
 MREN,Montenegrin Research and Education Network,Gen,,
 MSB,Most Significant Bit,Gen,,
+MYDB,"My Database, the notion of having a local storage beside the queriable database to store either temporary tables or uploaded catalogs",DM Gen, ,
 NAOJ,National Astronomical Observatory of Japan,Gen,,
 NASA,National Aeronautics and Space Administration,Gen,,
 NED,NASA/IPAC Extragalactic Database,Gen,,
@@ -174,6 +176,7 @@ PR,Pull Request,Gen,,
 PSF,Point Spread Function,Gen,,
 QA,Quality Assurance,Gen,,
 QC,Quality Control,Gen,,
+Qserv,Proprietary Database built by SLAC for LSST,DM,,
 RA,Right Ascension,Gen,,
 RAID,Redundant Array of Inexpensive Disks,Gen,,
 RAL,Rutherford Appleton Laboratory (UK),Gen,,
@@ -314,7 +317,7 @@ PDAC,Prototype Data Access Center,LSST DM,,
 PDR,Preliminary Design Review,LSST DM,,
 PDU,Power Distribution Unit,LSST DM,,
 PM,Project Manager,LSST DM,,
-PMCS,\gls{Project Management Control System},LSST DM,,
+PMCS,\gls{Project Management Controls System},LSST DM,,
 PMP,(DM) Project Management Plan; LDM-294,LSST DM,,
 PS,Project Scientist,LSST DM,,
 PST,\gls{Project Science Team},LSST DM,,
@@ -544,7 +547,7 @@ DIAObject,"A DIAObject is the association of DIASources, by coordinate, that hav
 DIASource,A DIASource is a detection with signal-to-noise ratio greater than 5 in a difference image.,DM,LSE-163,DIA Source
 Difference Image,"Refers to the result formed from the pixel-by-pixel difference of two images of the sky, after warping to the same pixel grid, scaling to the same photometric response, matching to the same PSF shape, and applying a correction for Differential Chromatic Refraction. The pixels in a difference thus formed should be zero (apart from noise) except for sources that are new, or have changed in brightness or position. In the LSST context, the difference is generally taken between a visit image and template. ",DM,"LDM-151, LSE-163",DiffIm
 Difference Image Analysis,"The detection and characterization of sources in the Difference Image that are above a configurable threshold, done as part of Alert Generation Pipeline.",DM,"LDM-151, LSE-163","DIA, Difference Image Processing"
-Differential Chromatic Refraction,"The refraction of incident light by Earth's atmosphere causes the apparent position of objects to be shifted, and the size of this shift depends on both the wavelength of the source and its airmass at the time of observation. DRC corrections are done as a part of DIA.",DM,DMTN-017,DCR
+Differential Chromatic Refraction,"The refraction of incident light by Earth's atmosphere causes the apparent position of objects to be shifted, and the size of this shift depends on both the wavelength of the source and its airmass at the time of observation. DCR corrections are done as a part of DIA.",DM,DMTN-017,DCR
 Enclave,"Individually defined portions of the computational resources at the Summit, Base, NCSA, and Satellite Facilities, such as the Prompt Enclave, the Archive Enclave, etc. ",DM,LDM-148,
 eups,"ExtUPS (usually abbreviated as eups) is the software component management system that is used for the LSST Stack. It enables a choice of which versions of components should be used for a software build, and ensures that a consistent set is chosen. See the Eups Tutorial for details.",DM,https://developer.lsst.io/stack/eups-tutorial.html,ExtUPS
 eups-tag,A versioned tag for eups that identifies a build product with its git-source SHA-1 identifier.,DM,https://developer.lsst.io/stack/eups-tutorial.html,
