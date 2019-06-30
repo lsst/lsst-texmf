@@ -118,7 +118,7 @@
   \hspace*{-4pt} \hbox{%
   \begin{tikzpicture}[background rectangle/.style={fill=LSSTcyan}, show background rectangle]
  \node (logo) at (0,0){\includegraphics[height=0.7cm]{lsst_logo_notext}};
-	\node (title) [right=of logo, text width=\textwidth-5.8cm]{};
+	\node (title) [right=of logo, text width=\textwidth-6.0cm]{};
     \node (scope) [right= of title ] {\includegraphics[height=0.7cm]{lsstscope}};
 	\node (fill) [right=of scope, text width=.2cm]{};
     \end{tikzpicture}
