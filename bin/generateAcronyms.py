@@ -407,7 +407,8 @@ def write_latex_glossary(acronyms, fd=sys.stdout):
 
 def write_latex_table(acronyms, fd=sys.stdout):
     """Write latex table to supplied file descriptor.
-    Strip any gls in teh acronym defs - so this is traditional acronym.
+
+    Strip any gls in the acronym defs - so this is traditional acronym.
 
     Parameters
     ----------
