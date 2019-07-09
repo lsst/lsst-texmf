@@ -415,7 +415,7 @@ def write_latex_table(acronyms, fd=sys.stdout):
         List of 2-tuples with acronym and definition.
     """
     print(r"""\addtocounter{table}{-1}
-\begin{longtable}{|l|p{0.8\textwidth}|}\hline
+\begin{longtable}{|p{0.145\textwidth}|p{0.8\textwidth}|}\hline
 \textbf{Acronym} & \textbf{Description}  \\\hline
 """, file=fd)
     glsreg = re.compile(r'\\gls{([\w \-]+)}')
