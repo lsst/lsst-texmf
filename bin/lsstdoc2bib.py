@@ -26,7 +26,7 @@ def find_meta(filename):
     """
 
     auth = re.compile(r"\\author\s*{([\w'`,\- ]+)}")
-    title = re.compile(r"\\title\s*[\[\]a-z A-Z]*{([\w\\#,\-\+ ]+)}")   # a real pitiy .+ consumes the closing }
+    title = re.compile(r"\\title\s*[\[\]a-z A-Z]*{([\w\\#,\-\+ ]+)}")  # a real pity .+ consumes closing }
     yearm = re.compile(r"\\date\s*{([0-9]+)-([0-9]+)-.+}")  # only if its an actual date not a macro
     yearm2 = re.compile(r"\\vcsDate}{(.+)-(.+)-.+}")  # only chance from meta.tex if it was a macro
     handle = re.compile(r"\\setDocRef\s*{([A-Z]+-[0-9]+)}")
