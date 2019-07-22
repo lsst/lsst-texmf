@@ -181,7 +181,7 @@ OBS,Organisation Breakdown Structure,Gen,,
 OS,Operating System,Gen,,
 OSX,Macintosh Operating System (obsolete; now macOS),Gen,,
 Pan-STARRS,Panoramic Survey Telescope and Rapid Response System,Gen,,
-Parsl,Parallel Scripting Library \url{http://parsl-project.org/} 
+Parsl,Parallel Scripting Library \url{http://parsl-project.org/},DM,,
 PB,PetaByte,Gen,,
 PCA,Principal Component Analysis,Gen,,
 PDF,Portable Document Format,Gen,,
