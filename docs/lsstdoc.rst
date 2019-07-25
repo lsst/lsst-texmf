@@ -30,8 +30,11 @@ The first step is to define the class:
 The options for the document class control some of the layout:
 
 * ``DM`` defines the document type to be a "Data Management" document.
-  Other options include ``MN`` for minutes and ``CP`` for conference proceedings but these are holdovers from the original Gaia class file and currently have no effect on the document output.
-  They are considered optional, but descriptive, at this time.
+  Other useful options include ``PST`` (Project science), ``TS`` (Telescope and site), ``SE`` (Systems engineering), ``PMO`` (Project office), and ``OPS`` (Operations).
+  The default is to use ``DM``.
+  The option currently solely controls the text displayed at the top of the title page of a document indicating the LSST group associated with the document.
+  There is currently no internal check to ensure that this document issuer and the document handle agree.
+  Other options include ``MN`` for minutes and ``CP`` for conference proceedings but these are holdovers from the original Gaia class file.
 * ``lsstdraft`` declares that the document is a draft and results in a back ground image.
   For controlled documents this mode also disables the title page text indicating the document has been approved.
   Remove this option when the document is finalized and is ready to be released by merging to the ``master`` branch.
