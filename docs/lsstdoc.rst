@@ -223,9 +223,9 @@ A global glossary and acronym files exists in ``lsst-texmf/etc/glossarydefs.csv`
 
    Term,Description,Subsystem Tags,Documentation Tags,Associated Acronyms and Alternative Terms
 
-One should note particularly the Subsystem Tags which may be used to differentiate acronyms which are overloaded. 
+One should note particularly the Subsystem Tags which may be used to differentiate acronyms which are overloaded.
 
-This file is read and processed in conjunction with your tex files by ``bin/generateAcronyms.py``. 
+This file is read and processed in conjunction with your tex files by ``bin/generateAcronyms.py``.
 This script expects to find two txt files in the directory with the tex:
 * ``skipacronyms.txt`` :  one item per line which should be ignored.
 
@@ -284,4 +284,3 @@ You must also wrap terms that appear in the document's text with a ``\gls{}`` co
 .. important::
 
    We do not suggest adding ``generateAcronyms.py`` with the ``-gu`` flags to Makefile as it occasionally does something unexpected so you should run it and check the result by building the document.
-
