@@ -30,8 +30,11 @@ The first step is to define the class:
 The options for the document class control some of the layout:
 
 * ``DM`` defines the document type to be a "Data Management" document.
-  Other options include ``MN`` for minutes and ``CP`` for conference proceedings but these are holdovers from the original Gaia class file and currently have no effect on the document output.
-  They are considered optional, but descriptive, at this time.
+  Other useful options include ``PST`` (Project science), ``TS`` (Telescope and site), ``SE`` (Systems engineering), ``PMO`` (Project office), and ``OPS`` (Operations).
+  The default is to use ``DM``.
+  The option currently solely controls the text displayed at the top of the title page of a document indicating the LSST group associated with the document.
+  There is currently no internal check to ensure that this document issuer and the document handle agree.
+  Other options include ``MN`` for minutes and ``CP`` for conference proceedings but these are holdovers from the original Gaia class file.
 * ``lsstdraft`` declares that the document is a draft and results in a back ground image.
   For controlled documents this mode also disables the title page text indicating the document has been approved.
   Remove this option when the document is finalized and is ready to be released by merging to the ``master`` branch.
@@ -223,9 +226,9 @@ A global glossary and acronym files exists in ``lsst-texmf/etc/glossarydefs.csv`
 
    Term,Description,Subsystem Tags,Documentation Tags,Associated Acronyms and Alternative Terms
 
-One should note particularly the Subsystem Tags which may be used to differentiate acronyms which are overloaded. 
+One should note particularly the Subsystem Tags which may be used to differentiate acronyms which are overloaded.
 
-This file is read and processed in conjunction with your tex files by ``bin/generateAcronyms.py``. 
+This file is read and processed in conjunction with your tex files by ``bin/generateAcronyms.py``.
 This script expects to find two txt files in the directory with the tex:
 * ``skipacronyms.txt`` :  one item per line which should be ignored.
 
@@ -284,4 +287,3 @@ You must also wrap terms that appear in the document's text with a ``\gls{}`` co
 .. important::
 
    We do not suggest adding ``generateAcronyms.py`` with the ``-gu`` flags to Makefile as it occasionally does something unexpected so you should run it and check the result by building the document.
-

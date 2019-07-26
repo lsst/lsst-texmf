@@ -212,7 +212,7 @@
    \renewcommand{\docType}{Software System Specification}
 }
 %
-% Define the groups  
+% Define the groups
 %
 \DeclareOption{PST}{
    \renewcommand{\CU}{PST}
