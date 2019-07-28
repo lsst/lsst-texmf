@@ -1,4 +1,4 @@
-.. _install:
+.. _submodule:
 
 ###################################
 Using lsst-texmf as a Git submodule
