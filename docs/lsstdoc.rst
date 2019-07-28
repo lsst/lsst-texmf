@@ -229,8 +229,15 @@ A global glossary and acronym files exists in ``lsst-texmf/etc/glossarydefs.csv`
 One should note particularly the Subsystem Tags which may be used to differentiate acronyms which are overloaded.
 
 This file is read and processed in conjunction with your tex files by ``bin/generateAcronyms.py``.
-This script expects to find two txt files in the directory with the tex:
-* ``skipacronyms.txt`` :  one item per line which should be ignored.
+This script expects to find two text files in the directory with the tex:
+
+:file:`myacronyms.txt`
+   Defines abbreviations which are specific to this document.
+   One line per abbreviation, formatted as ``Abbreviation:Definition`` (e.g. ``CI:Continuous Integration``).
+
+:file:`skipacronyms.txt`
+   Specifies abbreviations which should be omitted from the glossary.
+   One line per abbreviation.
 
 To select a tag or tags for the definitions add ``-t "tag1 tag2"`` to the call to the script.
 
