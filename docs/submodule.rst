@@ -1,4 +1,4 @@
-.. _install:
+.. _submodule:
 
 ###################################
 Using lsst-texmf as a Git submodule
@@ -15,7 +15,7 @@ To install lsst-texmf as a Git submodule, execute this within your document's re
 .. code-block:: bash
 
    git submodule add https://github.com/lsst/lsst-texmf
-    
+
 Add and commit as usual.
 
 Second, ensure that the document's :file:`Makefile` uses the lsst-texmf submodule.
