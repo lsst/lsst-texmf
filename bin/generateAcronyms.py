@@ -6,7 +6,7 @@ multiple TeX files, it reads the known acronyms from the Web and the
 "myacronyms.tex" and "skipacronyms.txt" files if exist and generates a
 "acronyms.tex" that can be included in the document
 
-This will now also output a glossary file  "aglossary.tex"
+This will now also output a glossary file  "aglossary.tex"(glsFile)
 All glossary lookup keys are the glossary name.
 For items to appear in the glossary you must \\gls{ITEM} at least once.
 --update will try to find other occurrences for you.
@@ -36,10 +36,9 @@ except (ImportError, OSError):
 #  Match for extracting acronyms from the glossary myacronyms .txt files
 MATCH_ACRONYM = r"^([\w/&\-\+ -]+)\s*:\s*(.*)$"
 MATCH_ACRONYM_RE = re.compile(MATCH_ACRONYM)
-
 CAP_ACRONYM = re.compile(r"\b[A-Z][A-Z]+\b")
-
 pypandoc = None  # it can not handle gls
+glsFile = "aglossary.tex"
 
 
 def _parse_line(line):
@@ -429,6 +428,18 @@ def write_latex_table(acronyms, fd=sys.stdout):
     print(r"\end{longtable}", file=fd)
 
 
+def forceConverge(prevCount, utags):
+    """Run through the glossary looking for defnitions until
+    no more are added.
+    """
+    while True:
+        count = main({glsFile}, True, utags)
+        # If no glossary items are added we are done
+        if (count == prevCount):
+            break
+        prevCount = count
+
+
 def main(texfiles, doGlossary, utags):
     """Run program and generate acronyms file."""
 
@@ -502,11 +513,12 @@ def main(texfiles, doGlossary, utags):
             raise RuntimeError("Internal error handling {}".format(acr))
 
     if (doGlossary):
-        with open("aglossary.tex", "w") as gfd:
+        with open(glsFile, "w") as gfd:
             write_latex_glossary(results, fd=gfd)
     else:
         with open("acronyms.tex", "w") as fd:
             write_latex_table(results, fd=fd)
+    return len(results)
 
 
 def loadGLSlist():
@@ -514,9 +526,8 @@ def loadGLSlist():
     we can then use those entries to go back and search for them in the
     tex files to see of they have \\gls """
 
-    fname = "aglossary.tex"
     GLSlist = {}
-    with open(fname, 'r') as fin:
+    with open(glsFile, 'r') as fin:
         # match gls entry but only take the first group
         regex = re.compile(r'\\new.+\s*{(.+)}\s*{.+}\s*')
         text = fin.read()
@@ -611,7 +622,9 @@ if __name__ == "__main__":
     if (doGlossary or (not args.update)):
         # Allow update to really just update/rewrite files not regenerate
         # glossary
-        main(texfiles, doGlossary, utags)
+        count = main(texfiles, doGlossary, utags)
+        if doGlossary:
+            forceConverge(count, utags)
     # Go through files on second pass  or on demand and \gls  or not (-u)
     if (args.update):
         update(texfiles)
