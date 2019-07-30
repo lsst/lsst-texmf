@@ -428,21 +428,15 @@ def write_latex_table(acronyms, fd=sys.stdout):
     print(r"\end{longtable}", file=fd)
 
 
-def forceConverge(incount, doGlossary, utags):
-    """Run throug the glossary looking for defnitions untill
+def forceConverge(prevCount, utags):
+    """Run through the glossary looking for defnitions until
     no more are added.
     """
-    if (not doGlossary):
-        return
-    files = set()
-    files.add(glsFile)
-    prevCount = incount
-    count = incount
-    while (True):
-        count = main(files, doGlossary, utags)
+    while True:
+        count = main({glsFile}, True, utags)
         # If no glossary items are added we are done
         if (count == prevCount):
-            return
+            break
         prevCount = count
 
 
@@ -629,7 +623,8 @@ if __name__ == "__main__":
         # Allow update to really just update/rewrite files not regenerate
         # glossary
         count = main(texfiles, doGlossary, utags)
-        forceConverge(count, doGlossary, utags)
+        if doGlossary:
+            forceConverge(count, utags)
     # Go through files on second pass  or on demand and \gls  or not (-u)
     if (args.update):
         update(texfiles)
