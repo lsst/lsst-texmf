@@ -201,9 +201,9 @@ def read_myacronyms(filename="myacronyms.txt", allow_duplicates=False,
 
 
 def read_skip_acronyms(file_name="skipacronyms.txt"):
-    """Read the supplied file to obtain list of acronyms to skip.
+    """Read the supplied file to obtain a list of terms to skip.
 
-    File must contain lines in format of one word per line. Repeat
+    File must contain lines in format of one term per line. Repeat
     values are ignored.
 
     Parameters
@@ -214,7 +214,7 @@ def read_skip_acronyms(file_name="skipacronyms.txt"):
     Returns
     -------
     skip : `set`
-        Set containing acronyms to be skipped.
+        Set containing terms to be skipped.
     """
     skip = set()
     if not os.path.exists(file_name):
@@ -228,10 +228,6 @@ def read_skip_acronyms(file_name="skipacronyms.txt"):
             if line.startswith("#"):  # comment
                 continue
 
-            if " " in line:
-                warnings.warn(UserWarning("Entry '{}' contains a space. Ignor"
-                                          "ing it for skip list".format(line)))
-                continue
             skip.add(line)
     return skip
 
