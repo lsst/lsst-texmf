@@ -1,20 +1,23 @@
 #!/usr/bin/env python3
 
-"""
-Utility that can be used to generate automatically the Acronyms of
-multiple TeX files, it reads the known acronyms from the Web and the
-"myacronyms.tex" and "skipacronyms.txt" files if exist and generates a
-"acronyms.tex" that can be included in the document
+r"""Utility that can be used to automatically generate a list of acronyms,
+abbreviations and glossary entries from multiple TeX files.
 
-This will now also output a glossary file  "aglossary.tex"(glsFile)
-All glossary lookup keys are the glossary name.
-For items to appear in the glossary you must \\gls{ITEM} at least once.
---update will try to find other occurrences for you.
+Acronymns and glossary entries are read from the :file:`glossarydefs.csv` in
+the lsst-texmf distribution. Optionally, this list may be augmented with local
+definitions stored in :file:`myacronyms.txt`. Adding terms to
+:file:`skipacronyms.txt` will cause them to be excluded.
 
-Passing -g or --glossary will suppress the acronyms.tex production
-Passing -u or --update  post process all files to \\gls acronyms and
-glossary entries.
+By default, terms are written to a table in :file:`acronyms.tex` which may
+then be included in a LaTeX document.
 
+Alternatively, if the ``-g`` (or ``--glossary``) option is passed, they will be
+written to :file:`aglossary.tex` in LaTeX glossary format instead. All
+glossary lookup keys are the glossary name. For items to appear in the
+glossary you must ``\gls{ITEM}`` at least once.
+
+Passing ``-u`` or ``--update`` will process all LaTeX files to identify
+potential glossary entries and will mark them with ``\gls``.
 """
 
 import warnings
