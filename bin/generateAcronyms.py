@@ -1,20 +1,23 @@
 #!/usr/bin/env python3
 
-"""
-Utility that can be used to generate automatically the Acronyms of
-multiple TeX files, it reads the known acronyms from the Web and the
-"myacronyms.tex" and "skipacronyms.txt" files if exist and generates a
-"acronyms.tex" that can be included in the document
+r"""Utility that can be used to automatically generate a list of acronyms,
+abbreviations and glossary entries from multiple TeX files.
 
-This will now also output a glossary file  "aglossary.tex"(glsFile)
-All glossary lookup keys are the glossary name.
-For items to appear in the glossary you must \\gls{ITEM} at least once.
---update will try to find other occurrences for you.
+Acronymns and glossary entries are read from the :file:`glossarydefs.csv` in
+the lsst-texmf distribution. Optionally, this list may be augmented with local
+definitions stored in :file:`myacronyms.txt`. Adding terms to
+:file:`skipacronyms.txt` will cause them to be excluded.
 
-Passing -g or --glossary will suppress the acronyms.tex production
-Passing -u or --update  post process all files to \\gls acronyms and
-glossary entries.
+By default, terms are written to a table in :file:`acronyms.tex` which may
+then be included in a LaTeX document.
 
+Alternatively, if the ``-g`` (or ``--glossary``) option is passed, they will be
+written to :file:`aglossary.tex` in LaTeX glossary format instead. All
+glossary lookup keys are the glossary name. For items to appear in the
+glossary you must ``\gls{ITEM}`` at least once.
+
+Passing ``-u`` or ``--update`` will process all LaTeX files to identify
+potential glossary entries and will mark them with ``\gls``.
 """
 
 import warnings
@@ -201,9 +204,9 @@ def read_myacronyms(filename="myacronyms.txt", allow_duplicates=False,
 
 
 def read_skip_acronyms(file_name="skipacronyms.txt"):
-    """Read the supplied file to obtain list of acronyms to skip.
+    """Read the supplied file to obtain a list of terms to skip.
 
-    File must contain lines in format of one word per line. Repeat
+    File must contain lines in format of one term per line. Repeat
     values are ignored.
 
     Parameters
@@ -214,7 +217,7 @@ def read_skip_acronyms(file_name="skipacronyms.txt"):
     Returns
     -------
     skip : `set`
-        Set containing acronyms to be skipped.
+        Set containing terms to be skipped.
     """
     skip = set()
     if not os.path.exists(file_name):
@@ -228,10 +231,6 @@ def read_skip_acronyms(file_name="skipacronyms.txt"):
             if line.startswith("#"):  # comment
                 continue
 
-            if " " in line:
-                warnings.warn(UserWarning("Entry '{}' contains a space. Ignor"
-                                          "ing it for skip list".format(line)))
-                continue
             skip.add(line)
     return skip
 
