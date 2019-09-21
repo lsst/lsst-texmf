@@ -1,4 +1,4 @@
-#!python3
+#!/usr/bin/env python3
 
 """
 Load the author list and database from the support directory and
