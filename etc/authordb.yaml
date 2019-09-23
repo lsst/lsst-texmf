@@ -1868,6 +1868,13 @@ authors:
     initials: Veljko
     name: Radeka
     orcid: null
+  ribeirot:
+    affil:
+    - LSST
+    altaffil: []
+    initials: Ribeiro
+    name: Tiago
+    orcid: null
   rajagopalj:
     affil:
     - NOAO
@@ -2421,7 +2428,7 @@ authors:
     initials: David
     name: Wittman
     orcid: 0000-0002-0813-5888
-  barddj:
+  wolfej:
     affil:
     - SLAC
     altaffil: []
