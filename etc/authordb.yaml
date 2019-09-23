@@ -2421,6 +2421,13 @@ authors:
     initials: David
     name: Wittman
     orcid: 0000-0002-0813-5888
+  barddj:
+    affil:
+    - SLAC
+    altaffil: []
+    initials: Justin 
+    name: Wolfe
+    orcid: 
   wolffsc:
     affil:
     - LSST
