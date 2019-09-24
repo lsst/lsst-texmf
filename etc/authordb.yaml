@@ -2192,6 +2192,13 @@ authors:
     initials: Christine
     name: Soldahl
     orcid: null
+  stalderb:
+    affil:
+    - LSST
+    altaffil: []
+    initials: Brian
+    name: Stalder
+    orcid: null
   storrielombardil:
     affil:
     - IPAC
