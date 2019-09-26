@@ -357,7 +357,7 @@
 "RM","Release Manager","LSST DM","",""
 "SAC","Science Advisory Committee","LSST DM","",""
 "SEMP","Systems Engineering Management Plan","LSST DM","",""
-"SLAC","No longer an acronym; formerly Stanford Linear Accelerator Center","LSST DM","",""
+"SLAC","SLAC National Accelerator Laboratory (formerly Stanford Linear Accelereator Center; SLAC is now no longer an acronym)","LSST DM","",""
 "SQuaRE","Science Quality and Reliability Engineering","LSST DM","LDM-204",""
 "SQuaSH","\gls{Science Quality Analysis Harness}","DM","https://squash.lsst.codes/",""
 "SQR","SQuARE document handle","LSST DM","",""
