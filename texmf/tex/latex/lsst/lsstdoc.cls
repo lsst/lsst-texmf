@@ -1058,6 +1058,7 @@ No actions have been identified.}
 \def\procspie{Proc.\ SPIE} % Proceedings of the SPIE
 \newcommand{\pasa}{PASA}   % Publications of the Astronomical Society of Australia
 \newcommand{\ao}{Appl.~Opt.}  % Applied Optics
+\def\pasj{PASJ}            % Publications of the Astronomical Society of Japan
 
 \def\degr{\hbox{$^\circ$}}
 \def\arcmin{\hbox{$^\prime$}}
