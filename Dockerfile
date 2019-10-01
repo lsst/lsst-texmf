@@ -11,6 +11,8 @@ MAINTAINER LSST SQuaRE <sqre-admin@lists.lsst.org>
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
         csh \
+        python3-pip \
+        python3-setuptools \ 
         default-jre && \
     apt-get clean
 
@@ -26,5 +28,8 @@ ENV PATH="/lsst-texmf/bin:${PATH}"
 
 # Copy lsst-texmf repo in /lsst-texmf/
 COPY . /lsst-texmf
+
+# Python dependencies
+RUN pip3 install -r /lsst-texmf/requirements.txt
 
 CMD ["/bin/echo", "See https://lsst-texmf.lsst.io/docker.html for usage."]
