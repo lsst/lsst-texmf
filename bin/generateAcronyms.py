@@ -37,7 +37,7 @@ except (ImportError, OSError):
 
 
 #  Match for extracting acronyms from the glossary myacronyms .txt files
-MATCH_ACRONYM = r"^([\w/&\-\+ -]+)\s*:\s*(.*)$"
+MATCH_ACRONYM = r"^([\w/&\-\+ -']+)\s*:\s*(.*)$"
 MATCH_ACRONYM_RE = re.compile(MATCH_ACRONYM)
 CAP_ACRONYM = re.compile(r"\b[A-Z][A-Z]+\b")
 pypandoc = None  # it can not handle gls
