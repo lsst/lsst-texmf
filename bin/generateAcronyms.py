@@ -480,6 +480,10 @@ def main(texfiles, doGlossary, utags):
     # Master list of all acronyms
     acronyms = set(lsst_definitions) | set(local_definitions)
 
+    if not doGlossary:
+        # I include in the acronyms list only capitalized ones
+        acronyms = set([acr for acr in acronyms if CAP_ACRONYM.match(acr)])
+
     # Scan each supplied tex file looking for the acronym
     matches = set()
     missing = set()
@@ -492,6 +496,8 @@ def main(texfiles, doGlossary, utags):
 
     # Report missing definitions, taking into account skips
     missing = missing - skip
+    if not doGlossary:
+        missing = set([acr for acr in missing if CAP_ACRONYM.match(acr)])
     for m in missing:
         print("Missing definition: {}".format(m), file=sys.stderr)
 
