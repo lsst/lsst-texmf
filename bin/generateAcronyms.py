@@ -39,6 +39,10 @@ except (ImportError, OSError):
 #  Match for extracting acronyms from the glossary myacronyms .txt files
 MATCH_ACRONYM = r"^([\w/&\-\+ -']+)\s*:\s*(.*)$"
 MATCH_ACRONYM_RE = re.compile(MATCH_ACRONYM)
+# following regular expression define an acronym as follows:
+# - including upper case characters, numbers and /
+# - starting with an upper case character or a number
+# - can't be composed by only numbers
 CAP_ACRONYM = re.compile(r"\b(?!\d+\b)[A-Z0-9][A-Z0-9/]+\b")
 pypandoc = None  # it can not handle gls
 glsFile = "aglossary.tex"
