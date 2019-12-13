@@ -499,11 +499,12 @@ def main(texfiles, doGlossary, utags):
     # Report missing definitions, taking into account skips
     missing = missing - skip
 
-    print("List of potential acronyms found in your text"
-          "that you may be missing. Please ignore if not relevant"
-          " (note that the list may not be complete.")
-    for m in missing:
-        print("Missing definition: {}".format(m), file=sys.stderr)
+    if len(missing) > 0:
+        print("List of potential acronyms found in your text "
+              "that you may be missing. Please ignore if not relevant "
+              "(note that the list may not be complete).")
+        for m in missing:
+            print("Missing definition: {}".format(m), file=sys.stderr)
 
     # Attach definitions to matches
     results = []
