@@ -42,7 +42,7 @@ MATCH_ACRONYM_RE = re.compile(MATCH_ACRONYM)
 # following regular expression define an acronym-like string as follows:
 # - including upper case characters and numbers
 # - starting with a letter
-CAP_ACRONYM = re.compile(r"\b(?!\d+\b)[A-Z][A-Z0-9]+\b")
+CAP_ACRONYM = re.compile(r"\b[A-Z][A-Z0-9]+\b")
 pypandoc = None  # it can not handle gls
 glsFile = "aglossary.tex"
 
