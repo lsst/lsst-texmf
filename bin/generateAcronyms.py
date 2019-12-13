@@ -39,11 +39,11 @@ except (ImportError, OSError):
 #  Match for extracting acronyms from the glossary myacronyms .txt files
 MATCH_ACRONYM = r"^([\w/&\-\+ -']+)\s*:\s*(.*)$"
 MATCH_ACRONYM_RE = re.compile(MATCH_ACRONYM)
-# following regular expression define an acronym as follows:
-# - including upper case characters, numbers and /
-# - starting with an upper case character or a number
-# - can't be composed by only numbers
-CAP_ACRONYM = re.compile(r"\b(?!\d+\b)[A-Z0-9][A-Z0-9/]+\b")
+# following regular expression define an acronym-like string as follows:
+# - including upper case characters and numbers
+# - starting with a letter
+CAP_ACRONYM = re.compile(r"\b(?!\d+\b)[A-Z][A-Z]+\b")
+# CAP_ACRONYM = re.compile(r"\b(?!\d+\b)[A-Z][A-Z0-9]+\b")
 pypandoc = None  # it can not handle gls
 glsFile = "aglossary.tex"
 
@@ -116,14 +116,17 @@ def read_glossarydef(filename, utags, init=None):
             if len(row) < 2:  # blank line
                 continue
             lc = lc + 1
-            if (lc == 1):
+            if lc == 1:
                 continue  # There is a header line
             ind = 0
             acr = row[ind]
-            ind = ind + 1
-            defn = row[ind]
-            ind = ind + 1
-            tags = row[ind]
+            defn = row[ind + 1]
+            tags = row[ind + 2]
+            type = row[ind + 5]
+            if not doGlossary and type == "G":
+                # in the case I want only the acronym table and
+                # I read a type "G" (glossary) definition, I discard it
+                continue
             tagset = set()
             hasTag = False
             if tags:
@@ -140,12 +143,12 @@ def read_glossarydef(filename, utags, init=None):
             # I will take the first definition - iff i get a tag match later
             # replace it
 
-            if (hasTag and definitions[acr]):
+            if hasTag and definitions[acr]:
                 # removed any other def take tagged one
                 definitions[acr] = set()
             if not definitions[acr]:
                 # already have a def and not matching tag so ignore new one
-                definitions[acr].add(defn)
+                definitions[acr].add((defn, type))
 
     return definitions
 
@@ -333,8 +336,7 @@ def find_matches_combo(filename, acronyms, ignore_str=" %"):
     # case characters, number or special characters.
     # These do not look like "normal" acronyms so special case them.
     # Also single character acronyms (which should probably be banned)
-    nonstandard = {a for a in acronyms if not a.isupper() or not
-                   a.isalpha() or len(a) == 1}
+    nonstandard = {a for a in acronyms if not CAP_ACRONYM.match(a)}
 
     # findall matches non-overlapping left to right in the order that
     # we give alternate strings. Therefore when we build the regex
@@ -356,11 +358,13 @@ def find_matches_combo(filename, acronyms, ignore_str=" %"):
     regex = CAP_ACRONYM
     used = set(regex.findall(text))
 
-    # now Glossary entries Gls gls use group ( ) to catch what's between { }
-    regex = re.compile(r"ls{([\w ]+)}")
-    gls = set(regex.findall(text))
+    gls = set()
+    if doGlossary:
+        # now Glossary entries Gls gls use group ( ) to catch what's between { }
+        regex = re.compile(r"ls{([\w ]+)}")
+        gls = set(regex.findall(text))
+        used.update(gls)
 
-    used.update(gls)
     # For all acronyms that were used and have existing definitions, add
     # them to the current list of matches
     matches.update(used & acronyms)
@@ -394,17 +398,18 @@ def write_latex_glossary(acronyms, fd=sys.stdout):
           sys.argv[0] + " from https://lsst-texmf.lsst.io/.", file=fd)
     for acr, defn in acronyms:
         doAcronym = False
-        if (CAP_ACRONYM.match(acr)):
+        if defn[1] == "A":
             # some acronyms have long definitions - we should not
             # \newacronym them
-            doAcronym = len(defn.split()) == len(acr)
-        if (doAcronym):
+            #  -- should we ensure this in the glossarydefs.csv?
+            doAcronym = len(defn[0].split()) == len(acr)
+        if doAcronym:
             print("\\newacronym{{{}}} {{{}}} {{{}}}".format(
-                acr, acr, defn), file=fd)
+                acr, acr, defn[0]), file=fd)
         else:
             print("\\newglossaryentry{{{}}} {{name={{{}}},"
                   " description={{{}}}}}".format(
-                      acr, acr, defn), file=fd)
+                      acr, acr, defn[0]), file=fd)
 
 
 def write_latex_table(acronyms, fd=sys.stdout):
@@ -425,7 +430,7 @@ def write_latex_table(acronyms, fd=sys.stdout):
     for acr, defn in acronyms:
         acr = acr.replace("&", r"\&")
         acr = acr.replace("_", r"\_")
-        defn = glsreg.sub(glsrmfn, defn)
+        defn = glsreg.sub(glsrmfn, defn[0])
         print("{} & {} {}".format(acr, defn, r"\\\hline"), file=fd)
 
     print(r"\end{longtable}", file=fd)
@@ -484,10 +489,6 @@ def main(texfiles, doGlossary, utags):
     # Master list of all acronyms
     acronyms = set(lsst_definitions) | set(local_definitions)
 
-    if not doGlossary:
-        # I include in the acronyms list only capitalized ones
-        acronyms = set([acr for acr in acronyms if CAP_ACRONYM.match(acr)])
-
     # Scan each supplied tex file looking for the acronym
     matches = set()
     missing = set()
@@ -500,8 +501,7 @@ def main(texfiles, doGlossary, utags):
 
     # Report missing definitions, taking into account skips
     missing = missing - skip
-    if not doGlossary:
-        missing = set([acr for acr in missing if CAP_ACRONYM.match(acr)])
+
     for m in missing:
         print("Missing definition: {}".format(m), file=sys.stderr)
 
@@ -521,7 +521,7 @@ def main(texfiles, doGlossary, utags):
         else:
             raise RuntimeError("Internal error handling {}".format(acr))
 
-    if (doGlossary):
+    if doGlossary:
         with open(glsFile, "w") as gfd:
             write_latex_glossary(results, fd=gfd)
     else:
@@ -535,7 +535,6 @@ def loadGLSlist():
     we can then use those entries to go back and search for them in the
     tex files to see of they have \\gls """
 
-    GLSlist = {}
     with open(glsFile, 'r') as fin:
         # match gls entry but only take the first group
         regex = re.compile(r'\\new.+\s*{(.+)}\s*{.+}\s*')
