@@ -121,8 +121,8 @@ def read_glossarydef(filename, utags, init=None):
             acr = row[ind]
             defn = row[ind + 1]
             tags = row[ind + 2]
-            type = row[ind + 5]
-            if not doGlossary and type == "G":
+            entryType = row[ind + 5]
+            if not doGlossary and entryType == "G":
                 # in the case I want only the acronym table and
                 # I read a type "G" (glossary) definition, I discard it
                 continue
@@ -147,7 +147,7 @@ def read_glossarydef(filename, utags, init=None):
                 definitions[acr] = set()
             if not definitions[acr]:
                 # already have a def and not matching tag so ignore new one
-                definitions[acr].add((defn, type))
+                definitions[acr].add((defn, entryType))
 
     return definitions
 
@@ -335,9 +335,9 @@ def find_matches_combo(filename, acronyms, ignore_str=" %"):
     # case characters, number or special characters.
     # These do not look like "normal" acronyms so special case them.
     # Also single character acronyms (which should probably be banned)
+    # CAP_ACRONYM cannot be used here since it search for substrings
     nonstandard = {a for a in acronyms if not a.isupper() or not
                    a.isalpha() or len(a) == 1}
-    # CAP_ACRONYM cannot be used here since it search for substrings
 
     # findall matches non-overlapping left to right in the order that
     # we give alternate strings. Therefore when we build the regex
@@ -499,7 +499,7 @@ def main(texfiles, doGlossary, utags):
     # Report missing definitions, taking into account skips
     missing = missing - skip
 
-    if len(missing) > 0:
+    if len(missing):
         print("List of potential acronyms found in your text "
               "that you may be missing. Please ignore if not relevant "
               "(note that the list may not be complete).")
