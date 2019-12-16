@@ -665,6 +665,13 @@ authors:
     initials: Rebecca
     name: Coles
     orcid: 0000-0002-4774-9364
+  comorettog:
+    affil:
+    - LSST
+    altaffil: []
+    initials: Gabriele
+    name: Comoretto
+    orcid: null
   connollyaj:
     affil:
     - Washington
