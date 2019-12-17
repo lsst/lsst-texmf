@@ -196,8 +196,8 @@ def read_myacronyms(filename="myacronyms.txt", allow_duplicates=False,
                                               " with same definition in {}, you may"
                                               " want to try using a tag (-t)".
                                               format(acr, filename)))
-
-            definitions[acr] = defn
+            # myacronyms will contains by definition only acronyms
+            definitions[acr] = (defn, "A")
 
     # Merge with the defaults
     if defaults is None:
