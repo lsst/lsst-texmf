@@ -81,7 +81,7 @@
 "ESNET","Energy Sciences Network","Gen","","","A"
 "ETC","Estimate To Complete","Gen LSST DM","","","A"
 "eV","electron-Volt","Gen","","","A"
-"EVM","Earned Value Management",""Adm Gen","","","A"
+"EVM","Earned Value Management","Adm Gen","","","A"
 "Earned Value Management","A project management technique for objectively measuring project performance and progress in terms of budget and schedule","Adm Gen","","","G"
 "EVMS","Earned Value Management System","Adm Gen","","","A"
 "Earned Value Management System","A set of tools, techniques and procedures which are used to implement a \gls{EVM} approach to project management","Adm Gen","","","G"
