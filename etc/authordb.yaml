@@ -2249,6 +2249,13 @@ authors:
     initials: Christopher W.
     name: Stubbs
     orcid: 0000-0003-0347-1724
+  suberlakc:
+    affil:
+    - Washington
+    altaffil: []
+    initials: Chris
+    name: Suberlak
+    orcid: null
   sullivanis:
     affil:
     - Washington
@@ -2341,6 +2348,13 @@ authors:
     initials: David E.
     name: Trilling
     orcid: 0000-0003-4580-3790
+  tsait:
+    affil:
+    - LSST
+    altaffil: []
+    initials: Te-Wei
+    name: Tsai
+    orcid: null
   turrim:
     affil:
     - SLAC
