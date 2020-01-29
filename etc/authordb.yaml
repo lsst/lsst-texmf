@@ -826,6 +826,13 @@ authors:
     initials: Frossie
     name: Economou
     orcid: 0000-0002-8333-7615
+  eggls:
+    affil:
+    - Washington
+    altaffil: []
+    initials: Siegfried
+    name: Eggl
+    orcid: 0000-0002-1398-6302 
   eiflert:
     affil:
     - UA-Steward
