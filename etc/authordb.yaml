@@ -693,6 +693,13 @@ authors:
     initials: Asantha
     name: Cooray
     orcid: null
+  corliesl:
+    affil:
+    - LSST
+    altaffil: []
+    initials: Lauren
+    name: Corlies
+    orcid: 0000-0002-0646-1540
   coveykr:
     affil:
     - WestWashington
@@ -846,7 +853,7 @@ authors:
     altaffil: []
     initials: Siegfried
     name: Eggl
-    orcid: 0000-0002-1398-6302 
+    orcid: 0000-0002-1398-6302
   eiflert:
     affil:
     - UA-Steward
@@ -1083,9 +1090,9 @@ authors:
     affil:
     - LSST
     altaffil: []
-    initials: Ardis 
+    initials: Ardis
     name: Herrold
-    orcid: 
+    orcid:
   hernandezf:
     affil:
     - Lyon-CC-IN2P3
@@ -1543,6 +1550,13 @@ authors:
     altaffil: []
     initials: Stuart
     name: Marshall
+    orcid: null
+  masonb:
+    affil:
+    - LSST
+    altaffil: []
+    initials: Blake
+    name: Mason
     orcid: null
   marshds:
     affil:
@@ -2495,9 +2509,9 @@ authors:
     affil:
     - SLAC
     altaffil: []
-    initials: Justin 
+    initials: Justin
     name: Wolfe
-    orcid: 
+    orcid:
   wolffsc:
     affil:
     - LSST
