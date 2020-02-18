@@ -90,14 +90,14 @@
 % Standardize bibliography styling
 \bibliographystyle{lsst_aa}
 
-% The standard word template uses different blue for
-% title, section headings and the banner.
-% define lsstblue as the banner color
-\definecolor{lsstblue}{RGB}{ 69,106,153}
-\definecolor{lsstsect}{RGB}{ 23, 54, 93}
-\definecolor{lssttitle}{RGB}{ 54, 95,145}
-\definecolor{lssthead}{RGB}{ 79,129,189}
-\definecolor{lsstfoot}{RGB}{ 31, 73,125}
+% Allow different colors for each component (the original LSST
+% word template was not consistent) even though for Rubin Observatory
+% a single value is used of RAL5018 #058b8c (5, 139, 140)
+\definecolor{lsstblue}{RGB}{ 5, 139, 140}
+\definecolor{lsstsect}{RGB}{ 5, 139, 140}
+\definecolor{lssttitle}{RGB}{ 5, 139, 140}
+\definecolor{lssthead}{RGB}{ 5, 139, 140}
+\definecolor{lsstfoot}{RGB}{ 5, 139, 140}
 
 % Switch off the onecolumn and twocolumn options
 \DeclareOption{onecolumn}{\OptionNotUsed}
