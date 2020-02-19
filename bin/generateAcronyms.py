@@ -421,7 +421,9 @@ def write_latex_table(acronyms, notex=False, fd=sys.stdout):
     acronyms : `list`
         List of 2-tuples with acronym and definition.
     """
-    if (not notex):
+    if (notex):
+       print("Acronym\tDescription", file=fd)
+    else:
        print(r"""\addtocounter{table}{-1}
 \begin{longtable}{p{0.145\textwidth}p{0.8\textwidth}}\hline
 \textbf{Acronym} & \textbf{Description}  \\\hline
