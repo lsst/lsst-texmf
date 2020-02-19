@@ -422,9 +422,9 @@ def write_latex_table(acronyms, notex=False, fd=sys.stdout):
         List of 2-tuples with acronym and definition.
     """
     if (notex):
-       print("Acronym\tDescription", file=fd)
+        print("Acronym\tDescription", file=fd)
     else:
-       print(r"""\addtocounter{table}{-1}
+        print(r"""\addtocounter{table}{-1}
 \begin{longtable}{p{0.145\textwidth}p{0.8\textwidth}}\hline
 \textbf{Acronym} & \textbf{Description}  \\\hline
 """, file=fd)
@@ -540,7 +540,7 @@ def main(texfiles, doGlossary, utags, notex):
             write_latex_glossary(results, fd=gfd)
     else:
         with open(acrFile, "w") as fd:
-            write_latex_table(results, notex, fd=fd )
+            write_latex_table(results, notex, fd=fd)
     return len(results)
 
 
