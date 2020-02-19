@@ -19,7 +19,7 @@ glossary you must ``\gls{ITEM}`` at least once.
 Passing ``-u`` or ``--update`` will process all LaTeX files to identify
 potential glossary entries and will mark them with ``\gls``.
 
-Passing ``-n`` or ``-notex`` will produce a plain text tab delimeted list.
+Passing ``-n`` or ``--notex`` will produce a plain text tab delimited list.
 """
 
 import warnings
@@ -421,8 +421,12 @@ def write_latex_table(acronyms, notex=False, fd=sys.stdout):
     acronyms : `list`
         List of 2-tuples with acronym and definition.
     """
-    if (notex):
+    sep = " & "
+    end = r" \\\hline"
+    if notex:
         print("Acronym\tDescription", file=fd)
+        sep = "\t"
+        end = ""
     else:
         print(r"""\addtocounter{table}{-1}
 \begin{longtable}{p{0.145\textwidth}p{0.8\textwidth}}\hline
@@ -433,12 +437,8 @@ def write_latex_table(acronyms, notex=False, fd=sys.stdout):
         acr = acr.replace("&", r"\&")
         acr = acr.replace("_", r"\_")
         defn = glsreg.sub(glsrmfn, defn[0])
-        if (notex):
-            print("{}\t{}".format(acr, defn), file=fd)
-        else:
-            print("{} & {} {}".format(acr, defn, r"\\\hline"), file=fd)
-
-    if (not notex):
+        print(f"{acr}{sep}{defn}{end}", file=fd)
+    if not notex:
         print(r"\end{longtable}", file=fd)
 
 
@@ -531,10 +531,9 @@ def main(texfiles, doGlossary, utags, notex):
         else:
             raise RuntimeError("Internal error handling {}".format(acr))
 
-    acrFile = "acronyms.tex"
-    if (notex):
-        acrFile = "acronyms.txt"
 
+    ext = ".txt" if notex else ".tex"
+    acrFile = f"acronyms.{ext}"
     if doGlossary:
         with open(glsFile, "w") as gfd:
             write_latex_glossary(results, fd=gfd)
