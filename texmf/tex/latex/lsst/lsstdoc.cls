@@ -121,6 +121,25 @@
     \@isdrafttrue
 }
 
+\newif\if@isobsolete
+\@isobsoletefalse
+\DeclareOption{obsolete}{
+    % DRAFT
+    \AddToShipoutPicture{%
+            \setlength{\unitlength}{0.7pt}%
+        \makeatletter
+            \put(\strip@pt \textwidth,\strip@pt \textheight){%
+                \makebox(0,0){%
+                \rotatebox{45}{%
+                    \textcolor[gray]{0.95}{%
+                        \fontsize{5cm}{5cm}\textsf{Obsolete}%
+                    }}}}%
+        \makeatother
+    }%
+    \@isobsoletetrue
+}
+
+
 % Enable author year cite mode
 \newif\if@authoryear
 \@authoryearfalse
@@ -476,6 +495,16 @@
    }
    \fi
 
+   % For obsolete documents we never want to report that the document is approved
+   \if@isobsolete
+   \def\@controlText{%
+   This document is obsolete, no longer part of the baseline, and carries no authority; it is preserved for historical information only.
+   }
+   \def\@controlFootText{%
+   This document is preserved for historical information only.
+   }
+   \fi
+
 
    % If this is a controlled document we need to report that.
    % For draft controlled documents we splash some red text in appropriate places.
@@ -487,6 +516,13 @@
        \textbf{D R A F T}
        \end{center}
      \fi
+     \if@isobsolete
+       \begin{center}
+       \color{red}
+       \Large
+       \textbf{O B S O L E T E}
+       \end{center}
+     \fi
    \else
      \begin{spacing}{1.5}
        \textbf{\small
@@ -495,10 +531,18 @@
          Draft Revision NOT YET Approved
          \color{black} --
        \fi
+       \if@isobsolete
+         \color{red}
+         Obsolete Document
+         \color{black} --
+       \fi
        \color{black}
        \@controlText
        \if@isdraft
        -- \color{red} Draft Revision NOT YET Approved
+       \fi
+       \if@isobsolete
+       -- \color{red} Obsolete Document
        \fi
        \color{black}
        }
@@ -739,6 +783,9 @@
   \if@isdraft
     \color{red}\textbf{D R A F T}
   \fi
+  \if@isobsolete
+    \color{red}\textbf{O B S O L E T E}
+  \fi
 \fi
 }
 
@@ -759,12 +806,22 @@
   DRAFT NOT YET APPROVED
   \color{lsstfoot} --
 \fi
+\if@isobsolete
+  \color{red}
+  OBSOLETE
+  \color{lsstfoot} --
+\fi
 \color{lsstfoot}
 \@controlFootText
 \if@isdraft
   --
   \color{red}
   DRAFT NOT YET APPROVED
+\fi
+\if@isobsolete
+  --
+  \color{red}
+  OBSOLETE
 \fi
 \end{minipage}
 \\
