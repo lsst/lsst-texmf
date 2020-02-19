@@ -1,0 +1,118 @@
+\def\LSST@setFootlineColor{\color{yellow}}
+
+\setbeamercolor{frametitle}{fg=gray}
+\setbeamercolor{structure}{fg=white}
+
+\setbeamercolor{normal text}{fg=white, bg=black}
+  \definecolor{OwlRed}{RGB}{    255,  92, 168}
+  \definecolor{OwlGreen}{RGB}{   90, 168,   0}
+  \definecolor{OwlBlue}{RGB}{     0, 152, 233}
+  \definecolor{OwlYellow}{RGB}{ 242, 147,  24}
+  \colorlet{OwlViolet}{OwlRed!50!OwlBlue}
+  \colorlet{OwlBrown}{OwlRed!50!OwlGreen}
+  \colorlet{OwlOrange}{OwlRed!50!OwlYellow}
+  \colorlet{OwlCyan}{OwlGreen!50!OwlBlue}
+
+    \setbeamercolor*{alerted text}{
+      fg=OwlRed
+    }
+    \setbeamercolor*{example text}{
+      fg=OwlGreen
+    }
+    \setbeamercolor*{title}{
+      use=normal text,
+      fg=normal text.fg
+    }
+    \setbeamercolor*{title in sidebar}{
+      use=normal text,
+      fg=normal text.fg
+    }
+    \setbeamercolor*{titlelike}{
+      use=normal text,
+      parent=normal text.fg
+    }
+    \setbeamercolor*{author}{
+      use=normal text,
+      parent=normal text.fg
+    }
+    \setbeamercolor*{date}{
+      use=normal text,
+      parent=normal text.fg
+    }
+    \setbeamercolor*{institute}{
+      use=normal text,
+      parent=normal text.fg
+    }
+    \setbeamercolor*{structure}{
+      use=normal text,
+      fg=normal text.fg!50!normal text.bg
+    }
+    \setbeamercolor*{palette primary}{
+      use=normal text,
+      fg=normal text.fg!90!normal text.bg,
+      bg=normal text.bg!90!normal text.fg
+    }
+    \setbeamercolor*{palette secondary}{
+      use=normal text,
+      fg=alerted text.fg!75!normal text.bg,
+      bg=normal text.bg!90!normal text.fg
+    }
+    \setbeamercolor*{palette tertiary}{
+      use=normal text,
+      fg=example text.fg!75!normal text.bg,
+      bg=normal text.bg!90!normal text.fg
+    }
+    \setbeamercolor*{palette quaternary}{
+      use=normal text,
+      fg=normal text.fg!75!normal text.bg,
+      bg=normal text.bg!90!normal text.fg
+    }
+    \setbeamercolor*{sidebar}{
+      use=normal text,
+      fg=normal text.fg!80!normal text.bg,
+      bg=normal text.bg!80!normal text.fg
+    }
+    \setbeamercolor*{palette sidebar primary}{
+      use=palette primary,
+      parent=palette primary
+    }
+    \setbeamercolor*{palette sidebar secondary}{
+      use=palette primary,
+      parent=palette primary
+    }
+    \setbeamercolor*{palette sidebar tertiary}{
+      use=palette quaternary,
+      parent=palette quaternary
+    }
+    \setbeamercolor*{palette sidebar quaternary}{
+      use=palette quaternary,
+      parent=palette quaternary
+    }
+    \setbeamercolor*{block title}{
+      use=normal text,
+      fg=normal text.fg,
+      bg=
+    }
+    \setbeamercolor{block body}{
+      bg=
+    }
+    \setbeamercolor*{block title alerted}{%
+        use={block title, alerted text},
+        fg=alerted text.fg,
+        bg=block title.bg
+    }
+    \setbeamercolor*{block title example}{%
+        use={block title, example text},
+        fg=example text.fg,
+        bg=block title.bg
+    }
+    \setbeamercolor*{block body alerted}{
+      use=block body,
+      parent=block body
+    }
+    \setbeamercolor*{block body example}{
+      use=block body,
+      parent=block body
+    }
+    \def\beamer@themerounded@shadow{false}
+    \setbeamertemplate{navigation symbols}{}

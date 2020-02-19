@@ -17,7 +17,7 @@
 \DeclareStringOption[Boadilla]{theme}   % Beamer theme to use (e.g. default, Boadilla, Frankfurt)
 \DeclareStringOption[]{colortheme} % Beamer colour theme (e.g. crane, tiger [locally])
 \DeclareStringOption[]{colorthemeArgs}  % Extra arguments for Beamer colour theme
-\DeclareStringOption[default]{backgroundTheme} % location of LSST{cover,main}.pdf
+\DeclareStringOption[]{backgroundTheme} % location of LSST{cover,main}.pdf
 \DeclareStringOption[]{institute} 	% Speaker's institute to put on the title page (defaults to \institute)
 \DeclareStringOption[]{position} 	% Speaker's r\^ole to put on the title page
 \DeclareStringOption[]{meeting} 	% Meeting description to put on the title page
@@ -39,6 +39,16 @@
 \newif\if@slide\@slidefalse
 %\ExecuteOptions{default}
 \ProcessKeyvalOptions*
+
+%------------------------------------------------------------------------------
+% Load options from the chosen directory in LSST-themes
+
+\ifx\LSST@backgroundTheme\empty\else
+   \input{LSST-themes/\LSST@backgroundTheme/LSSToptions.tex}
+\fi
+
+%------------------------------------------------------------------------------
+
 
 % -- Option quiet
 \ifLSST@quiet
