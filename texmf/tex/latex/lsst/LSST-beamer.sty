@@ -155,6 +155,38 @@
 \ifx\LSST@institute\empty
    \def\LSST@institute{\insertinstitute}
 \fi
+%
+% Handle screen aspect ratio
+%  \ifaspectratio{43}{code in case aspect ratio is 43}{code otherwise}
+% (only 43 and 169 are supported)
+%
+% https://tex.stackexchange.com/questions/123106/detect-aspect-ratio-in-beamer
+%
+\newcommand\ifaspectratio[3]{%
+\ifnum#1=169%
+    \ifdim\beamer@paperwidth=16.00cm\relax%
+        \ifdim\beamer@paperheight=9.00cm\relax%
+            #2%
+        \else%
+            #3%
+        \fi%
+    \else%
+        #3%
+    \fi%
+\else%
+    \ifnum#1=43%
+        \ifdim\beamer@paperwidth=12.80cm\relax%
+            \ifdim\beamer@paperheight=9.60cm\relax%
+                #2%
+            \else%
+                #3%
+            \fi%
+        \else%
+            #3%
+        \fi%
+    \fi%
+\fi%
+}
 
 %------------------------------------------------------------------------------
 
@@ -263,7 +295,9 @@
                      \begin{beamercolorbox}[wd=0.995\textwidth]{XXX} % avoid overfull \hbox
                        \LSST@setFootlineColor
                        \raisebox{\LSST@footlineVspace}[0pt][2mm]{
-                         \hbox to \textwidth{\hfill \LSST@footline \hfill \hbox to 0pt{\hss \insertframenumber\hspace{5mm}}}
+                         \hbox to \textwidth{\hfill \LSST@footline
+                           \hfill \hbox to 0pt{\hss \insertframenumber\ifaspectratio{43}{\hspace{19mm}}%
+                                                                                        {\hspace{22.5mm}}}}
                        }
                      \end{beamercolorbox}
                    }
