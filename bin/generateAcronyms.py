@@ -411,7 +411,7 @@ def write_latex_glossary(acronyms, fd=sys.stdout):
                       acr, acr, defn[0]), file=fd)
 
 
-def write_latex_table(acronyms, notex=False, fd=sys.stdout):
+def write_latex_table(acronyms, dotex=True, fd=sys.stdout):
     """Write latex table to supplied file descriptor.
 
     Strip any gls in the acronym defs - so this is traditional acronym.
@@ -423,22 +423,22 @@ def write_latex_table(acronyms, notex=False, fd=sys.stdout):
     """
     sep = " & "
     end = r" \\\hline"
-    if notex:
-        print("Acronym\tDescription", file=fd)
-        sep = "\t"
-        end = ""
-    else:
+    if dotex:
         print(r"""\addtocounter{table}{-1}
 \begin{longtable}{p{0.145\textwidth}p{0.8\textwidth}}\hline
 \textbf{Acronym} & \textbf{Description}  \\\hline
 """, file=fd)
+    else:
+        print("Acronym\tDescription", file=fd)
+        sep = "\t"
+        end = ""
     glsreg = re.compile(r'\\gls{([\w \-]+)}')
     for acr, defn in acronyms:
         acr = acr.replace("&", r"\&")
         acr = acr.replace("_", r"\_")
         defn = glsreg.sub(glsrmfn, defn[0])
         print(f"{acr}{sep}{defn}{end}", file=fd)
-    if not notex:
+    if dotex:
         print(r"\end{longtable}", file=fd)
 
 
@@ -447,14 +447,14 @@ def forceConverge(prevCount, utags):
     no more are added.
     """
     while True:
-        count = main({glsFile}, True, utags)
+        count = main({glsFile}, True, utags, True)
         # If no glossary items are added we are done
         if (count == prevCount):
             break
         prevCount = count
 
 
-def main(texfiles, doGlossary, utags, notex):
+def main(texfiles, doGlossary, utags, dotex):
     """Run program and generate acronyms file."""
 
     if not texfiles:
@@ -532,14 +532,14 @@ def main(texfiles, doGlossary, utags, notex):
             raise RuntimeError("Internal error handling {}".format(acr))
 
 
-    ext = ".txt" if notex else ".tex"
+    ext = "tex" if dotex else "txt"
     acrFile = f"acronyms.{ext}"
     if doGlossary:
         with open(glsFile, "w") as gfd:
             write_latex_glossary(results, fd=gfd)
     else:
         with open(acrFile, "w") as fd:
-            write_latex_table(results, notex, fd=fd)
+            write_latex_table(results, dotex, fd=fd)
     return len(results)
 
 
@@ -639,7 +639,7 @@ if __name__ == "__main__":
     texfiles = args.files
     tagstr = args.tags
     utags = set()
-    notex = args.notex
+    dotex = not args.notex
 
     if tagstr:
         utags.update(tagstr.split())
@@ -647,7 +647,7 @@ if __name__ == "__main__":
     if (doGlossary or (not args.update)):
         # Allow update to really just update/rewrite files not regenerate
         # glossary
-        count = main(texfiles, doGlossary, utags, notex)
+        count = main(texfiles, doGlossary, utags, dotex)
         if doGlossary:
             forceConverge(count, utags)
     # Go through files on second pass  or on demand and \gls  or not (-u)
