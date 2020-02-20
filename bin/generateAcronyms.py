@@ -531,7 +531,6 @@ def main(texfiles, doGlossary, utags, dotex):
         else:
             raise RuntimeError("Internal error handling {}".format(acr))
 
-
     ext = "tex" if dotex else "txt"
     acrFile = f"acronyms.{ext}"
     if doGlossary:
