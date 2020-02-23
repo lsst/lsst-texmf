@@ -1,0 +1,98 @@
+#! /usr/bin/env python
+
+import glob
+import os
+import sys
+
+def makeThemesDocument(xetex, aspectratio):
+    themeDir = None
+    for envvar in ["TEXMFHOME", "TEXINPUTS"]:
+        if themeDir is None:
+            for d in os.environ[envvar].split(":"):
+                d = os.path.join(d, "tex/LSST-themes")
+                if os.path.exists(d):
+                    themeDir = d
+                    break
+
+    if themeDir is None:
+        print("Unable to find LSST-themes on your TeX search path")
+        sys.exit(1)
+
+    #-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+    print(r"""
+    \documentclass[12pt, t, aspectratio=%(aspectratio)s, %(xetex)s]{beamer}
+    \tolerance=1000
+    \usepackage[
+       position={Farmer and Lawyer},
+       institute={, Bergsthorknoll},
+       meeting={The Althing},
+       footline={Althing $\bullet$ 1000},
+       fonts=false,
+    ]{LSST-beamer}
+    \usetheme{default}
+    \author{Njal Thorgeirsson}
+    \date{1000-06-21}
+
+    \begin{document}
+
+    %%------------------------------------------------------------------------------
+
+    \newcommand{\showStyle}[1]{
+    \begingroup
+    \setbeamertemplate{background canvas}{
+      \setBackground{LSST-themes/#1/LSSTcover}
+    }
+
+    \makeatletter
+    \input{LSST-themes/#1/LSSToptions.tex}
+    \makeatother
+
+    \title{#1}
+    \maketitle
+
+    \setbeamertemplate{background canvas}{
+      \setBackground{LSST-themes/#1/LSSTmain}
+      }
+
+    \begin{frame}{#1}
+    \begin{itemize}
+       \item Hello
+    \end{itemize}
+    \end{frame}
+    \endgroup
+    }
+
+    %%------------------------------------------------------------------------------
+
+    """ % dict(xetex=("xetex, " if xetex else ""),
+               aspectratio=aspectratio))
+
+    for d in glob.glob(os.path.join(themeDir, "*")):
+        d = os.path.split(d)[1]
+
+        print(r"   \showStyle{%s}" % d)
+
+    print(r"""
+
+    %------------------------------------------------------------------------------
+
+    \end{document}
+    """
+    )
+
+if __name__ == "__main__":
+    import argparse
+    parser = argparse.ArgumentParser(description="""
+Write a beamer file to illustrate all the available themes:
+    showBeamerThemes > themes.tex && xelatex themes.tex""",
+                                     formatter_class=argparse.RawTextHelpFormatter)
+    
+    parser.add_argument('ARG', type=str, nargs="?", help="XXX")
+    parser.add_argument('--aspectratio', type=int, help="Aspect ratio (e.g. 169)", default=43)
+    parser.add_argument('--xetex', help="Use xelatex?", action="store_true", default=False)
+    parser.add_argument('--verbose', action="store_true", help="How chatty should I be?", default=False)
+    
+    args = parser.parse_args()
+
+    makeThemesDocument(xetex=args.xetex, aspectratio=args.aspectratio)
