@@ -28,6 +28,7 @@ import sys
 import re
 import argparse
 import csv
+glsFile = "aglossary.tex"
 
 try:
     import pypandoc
@@ -46,7 +47,6 @@ MATCH_ACRONYM_RE = re.compile(MATCH_ACRONYM)
 # - starting with a letter
 CAP_ACRONYM = re.compile(r"\b[A-Z][A-Z0-9]+\b")
 pypandoc = None  # it can not handle gls
-glsFile = "aglossary.tex"
 
 
 def _parse_line(line):
@@ -533,7 +533,7 @@ def main(texfiles, doGlossary, utags, dotex):
 
     ext = "tex" if dotex else "txt"
     acrFile = f"acronyms.{ext}"
-    if doGlossary:
+    if doGlossary and dotex:  # otherwise its just a table
         with open(glsFile, "w") as gfd:
             write_latex_glossary(results, fd=gfd)
     else:
@@ -647,7 +647,7 @@ if __name__ == "__main__":
         # Allow update to really just update/rewrite files not regenerate
         # glossary
         count = main(texfiles, doGlossary, utags, dotex)
-        if doGlossary:
+        if doGlossary and dotex:
             forceConverge(count, utags)
     # Go through files on second pass  or on demand and \gls  or not (-u)
     if (args.update):
