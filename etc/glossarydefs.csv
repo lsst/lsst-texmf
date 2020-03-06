@@ -177,6 +177,7 @@
 "DIAObject","A DIAObject is the association of DIASources, by coordinate, that have been detected with signal-to-noise ratio greater than 5 in at least one difference image. It is distinguished from a regular Object in that its brightness varies in time, and from a SSObject in that it is stationary (non-moving)","DM","LSE-163","DIA Object","G"
 "DIASource","A DIASource is a detection with signal-to-noise ratio greater than 5 in a difference image","DM","LSE-163","DIA Source","G"
 "DIMM","Differential Image Motion Monitor","Gen","","","A"
+"DOI","Digital Object Identifier","DM OPS","","","A"
 "DKIST","Daniel K. Inouye Solar Telescope ","OPS","","","A"
 "DM","\gls{Data Management}","LSST DM","","","A"
 "DM-SST","DM System Science Team","LSST DM","","DMSST","A"
