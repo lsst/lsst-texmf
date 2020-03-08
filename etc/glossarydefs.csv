@@ -141,7 +141,7 @@
 "Change Controlled Documents","Those documents which have been designated by the project as under formal configuration control","Adm","","","G"
 "Channel","An amplifier on an LSST camera CCD (see sensor). For LSST there are 16 amplifiers for each science sensor, resulting in 16 parallel data channels from each device. The 16 channels comprising a sensor are numbered from ""0,0"" through '1,7'.  This term may also refer to the raw data from a read-out amplifier of a sensor","Cam","","","G"
 "Charge-Coupled Device","a particular kind of solid-state sensor for detecting optical-band photons. It is composed of a 2-D array of pixels, and one or more read-out amplifiers","Cam Sci","","","G"
-"Chi-squared Coadd Image","A Coadd Image that is the weighted sum of multiple input images, where for each input:
+"Chi-squared Coadd Image","A Coadd Image that is the weighted sum of multiple input images, where for each input: coadd.image += image.image**2 / image.variance coadd.mask |= image.weightMap += weight For bad pixels, coadd and weightMap are not altered. Note that the inputs must be aligned to a common projection and pixel grid and corrected to the same photometric scale and zero-point","DM","","Coadd Image","G"
 "Chief Scientist","The principal scientific advisor  to the LSST Director; he or she acts as an interface to the science community in order to ensure that the LSST program is scientifically and technologically well founded and that the specifications are appropriate for achieving the scientific goals of the project","Adm","","","G"
 "CmdLineTask","A special kind of Task that can read its inputs and write its outputs using a Butler, and can run easily from the command-line. CmdLineTask is a specific implementation of the concept of a command-line task. CmdLineTasks are being phased out in favor of PipelineTasks. ","DM","","PipelineTask","G"
 "Coadd Image","An image that is the combination of multiple input images. The inputs are aligned to a common projection and pixel grid, corrected to the same photometric scale and zero-point, with bad pixels and artifacts rejected. (Image PSFs may also be matched prior to co-addition.) Coadd Images have had non-astrophysical background removed","DM","","Co-Add, CoAdd, co-add, coadd","G"
@@ -312,6 +312,7 @@
 "GUI","Graphical User Interface","Gen","","","A"
 "Gb","Gigabit","Gen","","","A"
 "General Parallel File System","The bulk data storage provided through a POSIX filesystem interface at the LSST Data Facility. Refers specifically to IBM’s General Parallel File System; also known as IBM Spectrum Scale","DM QA","DMTN-085","GBFS","G"
+"GIS","\gls{Global Interlock System}",,,,"A"
 "Global Interlock System","A safety system that makes mechanisms or functions of the observatory system mutually dependent in order to prevent equipment from harming people or equipment by preventing  one element from changing state due to the state of another element, and vice versa","TS","","","G"
 "GW","Gravitational Wave","Sci OPS","","","A"
 "HDD"," Hard Disk Drive","DM Gen","","","A"
@@ -368,6 +369,7 @@
 "Interface Support Document","Constrains an \gls{ICD} through such things as dictionaries, protocols, or definitions of system-wide architectural frameworks by which the subsystem teams must abide. However, ISDs do NOT contain requirements. ISDs are written by the subsystem teams with a stake in the subject matter; they are change controlled documents","Adm","","","G"
 "International Affiliate","An organization outside of the United States or Chile such as an institute, university, consortium, or government agency that has agreed to share in the annual operating costs of the LSST in exchange for data rights for a specified list of principal investigators during LSST operations and commissioning. These data rights may include access to specified project resources prior to operations. Rights also come with responsibilities, similar to those required of U.S.-based scientists, regarding unauthorized redistribution of data","Adm","","","G"
 "IoA","Institute of Astronomy (Cambridge; also denoted IOA)","Gen","","","A"
+"J2000","\gls{Julian Date} referring to the instant of 12 noon (midday) on January 1, 2000. IAU standard equinox.","Sci","","","G"
 "JD","\gls{Julian Date}","Gen","","","A"
 "JDBC","Java DataBase Connectivity","Gen","","","A"
 "JDR","Joint Directors Review","LSST","","","A"
@@ -825,6 +827,7 @@
 "deepCoadd","A Coadd Image designed to produce detections as maximum depth. Produced by AssembleCoaddTask","DM","","Coadd","G"
 "deepDiff","A Difference Image that results from subtracting a template from a CalExp","DM","","DiffIm","G"
 "deg","degree; unit of angle","Gen","","","A"
+"deVaucouleurs profile","The radial distribution of flux of an astronomical source that is characterized as: I(r)=I0exp(7.67(r/re)1/4) An elliptical version of this profile can be fit to every detected source, yielding the deVaucouleurs parameters.","Sci","","","G"
 "drill down","Move from a higher level aggregation of data to its inputs. For example, given data describing a tract, to drill down to constituent patches and then to objects. Also refers to the act of identifying an issue in a high-level summary of the data (e.g. an aberrant metric value) and interactively investigating its inputs to find the source of the problem","DM QA","DMTN-085","","G"
 "eV","electron-Volt","Gen","","","A"
 "ephemeris","An ephemeris (pl: ephemerides) gives the predicted positions of astronomical objects or artificial satellites in the sky with time. The ephemerides are computed from mathematical models of motion of the object and the Earth. In LSST Solar System Processing, it refers to a predicted position (RA/Dec/time/etc) of a Solar System Object (SSObject)","Sci","","","G"
@@ -843,7 +846,7 @@
 "kbps","kilobits per second","Gen","","","A"
 "magnitude, PSF","For isolated stars that are well described by the PSF, the optimal measure of the total flux is determined by fitting a PSF model to the object","Sci","","","G"
 "magnitude, Petrosian","A magnitude determined from a fit to a Petrosian brightness profile: Rp(r) = stuf f Appropriate for galaxies","Sci","","","G"
-"magnitude, Pogson","Usually simply magnitude, it is a logarithmic measure of integrated source brightness, usually within a standard photometric passband, such that:
+"magnitude, Pogson","Usually simply magnitude, it is a logarithmic measure of integrated source brightness, usually within a standard photometric passband, such that: MM0=2.5log(F/F0) where the zero-point flux is defined by a photometric standard","Sci","","","G"
 "metadata","General term for data about data, e.g., attributes of astronomical objects (e.g. images, sources, astroObjects, etc.) that are characteristics of the objects themselves, and facilitate the organization, preservation, and query of data sets. (E.g., a FITS header contains metadata)","DM","","","G"
 "metric value","The result of computing a particular metric on some given data. Note that metric values are typically computed rather than measured. See also: metric","DM QA","DMTN-085","","G"
 "metric","A measurable quantity which may be tracked. A metric has a name, description, unit, references, and tags (which are used for grouping). A metric is a scalar by definition. See also: aggregate metric, model metric, point metric","DM QA","DMTN-085","","G"
@@ -877,12 +880,3 @@
 "tract","A portion of sky, a spherical convex polygon, within the LSST all-sky tessellation (sky map). Each tract is subdivided into sky patches","DM","LDM-151","sky tract","G"
 "transient","A transient source is one that has been detected on a difference image, but has not been associated with either an astronomical object or a solar system body","Sci","","","G"
 "warp","(noun) The pixels from a single CCD Exposure that overlap a given coadd patch, trimmed and resampled into the patch's coordinate system; in other words, an image that has been astrometrically registered to the common coordinate system of a tract","DM","LDM-151","","G"
-An elliptical version of this profile can be fit to every detected source, yielding the deVaucouleurs parameters.","Sci","","","G"
-For bad pixels, coadd and weightMap are not altered. Note that the inputs must be aligned to a common projection and pixel grid and corrected to the same photometric scale and zero-point","DM","","Coadd Image","G"
-GIS,\gls{Global Interlock System},,,,A
-I(r)=I0exp(7.67(r/re)1/4)
-MM0=2.5log(F/F0)
-coadd.image += image.image**2 / image.variance
-coadd.mask |= image.weightMap += weight
-deVaucouleurs profile,"The radial distribution of flux of an astronomical source that is characterized as:
-where the zero-point flux is defined by a photometric standard","Sci","","","G"
