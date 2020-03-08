@@ -368,6 +368,7 @@
 "Interface Support Document","Constrains an \gls{ICD} through such things as dictionaries, protocols, or definitions of system-wide architectural frameworks by which the subsystem teams must abide. However, ISDs do NOT contain requirements. ISDs are written by the subsystem teams with a stake in the subject matter; they are change controlled documents","Adm","","","G"
 "International Affiliate","An organization outside of the United States or Chile such as an institute, university, consortium, or government agency that has agreed to share in the annual operating costs of the LSST in exchange for data rights for a specified list of principal investigators during LSST operations and commissioning. These data rights may include access to specified project resources prior to operations. Rights also come with responsibilities, similar to those required of U.S.-based scientists, regarding unauthorized redistribution of data","Adm","","","G"
 "IoA","Institute of Astronomy (Cambridge; also denoted IOA)","Gen","","","A"
+"J2000","\gls{Julian Date} referring to the instant of 12 noon (midday) on January 1, 2000. IAU standard equinox.","Sci","","","G"
 "JD","\gls{Julian Date}","Gen","","","A"
 "JDBC","Java DataBase Connectivity","Gen","","","A"
 "JDR","Joint Directors Review","LSST","","","A"
