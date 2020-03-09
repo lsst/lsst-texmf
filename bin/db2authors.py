@@ -33,17 +33,20 @@ WRITE_CSV = False
 # the current working directory.
 authorfile = os.path.join("authors.yaml")
 
+OUTPUT_MODES = ["aas", "spie"]
+
 description = __doc__
 formatter = argparse.RawDescriptionHelpFormatter
 parser = argparse.ArgumentParser(description=description,
                                  formatter_class=formatter)
 
-parser.add_argument('-s', '--spie', action='store_true',
-                    help=""" iOutput suitable for SPIE paper.""")
+parser.add_argument("-m", "--mode", default="aas", choices=OUTPUT_MODES,
+                    help="""Display mode for translated parameters.
+                         'verbose' displays all the information...""")
 args = parser.parse_args()
 
 affil_cmd = "affiliation"
-if args.spie:
+if args.mode == "spie":
     affil_cmd = "authorinfo"
 
 
