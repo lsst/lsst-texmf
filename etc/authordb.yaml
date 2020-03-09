@@ -29,6 +29,7 @@ affiliations:
   Duke: Department of Physics, Duke University, Durham, NC 27708, USA
   EPFL: Institute of Physics, Laboratory of Astrophysics, \'{E}cole Polytechnique
     Fed\`{e}rale de Lausanne (EPFL), Observatoire de Sauverny, 1290 Versoix, Switzerland
+  Facebook: Facebook,  1 Hacker Way, Menlo Park, California, USA
   GMTO: Giant Magellan Telescope Organization (GMTO), 465 N.\ Halstead Street, Suite
     250, Pasadena, CA 91107, USA
   GMU: School of Physics, Astronomy and Computational Sciences, George Mason University,
@@ -644,6 +645,13 @@ authors:
     initials: Charles F.
     name: Claver
     orcid: null
+  clementsaw:
+    affil:
+    - LSST
+    altaffil: []
+    initials: Andy W.
+    name: Clements
+    orcid: null
   cockrumjj:
     affil:
     - LSST
@@ -700,6 +708,13 @@ authors:
     initials: Lauren
     name: Corlies
     orcid: 0000-0002-0646-1540
+  corrall:
+    affil:
+    - LSST
+    altaffil: []
+    initials: Luis 
+    name: Corral
+    orcid: null
   coveykr:
     affil:
     - WestWashington
@@ -2185,6 +2200,13 @@ authors:
     initials: Jonathan
     name: Sick
     orcid: 0000-0003-3001-676X
+  silvac:
+    affil:
+    - LSST
+    altaffil: []
+    initials: Cristian
+    name: Silva
+    orcid: null
   silvestrin:
     affil:
     - Washington
@@ -2334,6 +2356,13 @@ authors:
     initials: John Gregg
     name: Thayer
     orcid: null
+  theboa:
+    affil:
+    - LSST
+    altaffil: []
+    initials: Thebo
+    name: Adrein
+    orcid: null
   thomass:
     affil:
     - LSST
@@ -2411,6 +2440,13 @@ authors:
     altaffil: []
     initials: Kurt
     name: Vetter
+    orcid: null
+  villalobosa:
+    affil:
+    - Facebook
+    altaffil: []
+    initials: Andres
+    name: Villalobos
     orcid: null
   virieuxf:
     affil:
