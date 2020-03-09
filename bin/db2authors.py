@@ -33,6 +33,8 @@ WRITE_CSV = False
 # the current working directory.
 authorfile = os.path.join("authors.yaml")
 
+# this should probably be a dict with the value of affil_cmd
+# the keys could then be passed to the arg parser.
 OUTPUT_MODES = ["aas", "spie"]
 
 description = __doc__
