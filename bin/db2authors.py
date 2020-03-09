@@ -20,6 +20,7 @@ import sys
 import os.path
 import re
 import yaml
+import argparse
 
 # Set to True to write a comma separated list of authors
 WRITE_CSV = False
@@ -31,6 +32,20 @@ WRITE_CSV = False
 # maps to the database file below.  For now we assume this file is in
 # the current working directory.
 authorfile = os.path.join("authors.yaml")
+
+description = __doc__
+formatter = argparse.RawDescriptionHelpFormatter
+parser = argparse.ArgumentParser(description=description,
+                                 formatter_class=formatter)
+
+parser.add_argument('-s', '--spie', action='store_true',
+                    help=""" iOutput suitable for SPIE paper.""")
+args = parser.parse_args()
+
+cmd = "affiliation"
+if args.spie:
+    cmd = "authorinfo"
+
 
 with open(authorfile, "r") as fh:
     authors = yaml.safe_load(fh)
@@ -102,6 +117,6 @@ for authorid in authors:
 
     # The affiliations have to be retrieved via label
     for aflab in auth["affil"]:
-        print(r"\affiliation{{{}}}".format(affil[aflab]))
+        print(r"\{}{{{}}}".format(cmd, affil[aflab]))
 
     print()
