@@ -541,7 +541,13 @@ def main(texfiles, doGlossary, utags, dotex, dorst):
         else:
             raise RuntimeError("Internal error handling {}".format(acr))
 
-    ext = "tex" if dotex else "txt"
+    if dotex:
+        ext = "tex"
+    if dorst:
+        ext = "rst"
+    else:
+        ext = "txt"
+
     acrFile = f"acronyms.{ext}"
     if doGlossary and dotex:  # otherwise its just a table
         with open(glsFile, "w") as gfd:
