@@ -19,7 +19,7 @@ glossary you must ``\gls{ITEM}`` at least once.
 Passing ``-u`` or ``--update`` will process all LaTeX files to identify
 potential glossary entries and will mark them with ``\gls``.
 
-Passing ``-n`` or ``--notex`` will produce a plain text tab delimited list.
+Use ``-m`` or ``--mode`` with ["txt", "rst","tex"] to choose output formats
 """
 
 import warnings
@@ -29,6 +29,8 @@ import re
 import argparse
 import csv
 glsFile = "aglossary.tex"
+
+OUTPUT_MODES = ["txt", "rst", "tex"]
 
 try:
     import pypandoc
@@ -411,7 +413,7 @@ def write_latex_glossary(acronyms, fd=sys.stdout):
                       acr, acr, defn[0]), file=fd)
 
 
-def write_latex_table(acronyms, dotex=True, fd=sys.stdout):
+def write_latex_table(acronyms, dotex=True, dorst=False, fd=sys.stdout):
     """Write latex table to supplied file descriptor.
 
     Strip any gls in the acronym defs - so this is traditional acronym.
@@ -423,6 +425,10 @@ def write_latex_table(acronyms, dotex=True, fd=sys.stdout):
     """
     sep = " & "
     end = r" \\\hline"
+    if dorst:
+        print(r""".. _table-label: """, file=fd)
+        print(r"""======= ===========""", file=fd)
+
     if dotex:
         print(r"""\addtocounter{table}{-1}
 \begin{longtable}{p{0.145\textwidth}p{0.8\textwidth}}\hline
@@ -430,6 +436,8 @@ def write_latex_table(acronyms, dotex=True, fd=sys.stdout):
 """, file=fd)
     else:
         print("Acronym\tDescription", file=fd)
+        if dorst:
+            print(r"""======= ===========""", file=fd)
         sep = "\t"
         end = ""
     glsreg = re.compile(r'\\gls{([\w \-]+)}')
@@ -440,6 +448,8 @@ def write_latex_table(acronyms, dotex=True, fd=sys.stdout):
         print(f"{acr}{sep}{defn}{end}", file=fd)
     if dotex:
         print(r"\end{longtable}", file=fd)
+    if dorst:
+        print(r"""======= ===========""", file=fd)
 
 
 def forceConverge(prevCount, utags):
@@ -447,14 +457,14 @@ def forceConverge(prevCount, utags):
     no more are added.
     """
     while True:
-        count = main({glsFile}, True, utags, True)
+        count = main({glsFile}, True, utags, True, False)
         # If no glossary items are added we are done
         if (count == prevCount):
             break
         prevCount = count
 
 
-def main(texfiles, doGlossary, utags, dotex):
+def main(texfiles, doGlossary, utags, dotex, dorst):
     """Run program and generate acronyms file."""
 
     if not texfiles:
@@ -531,14 +541,20 @@ def main(texfiles, doGlossary, utags, dotex):
         else:
             raise RuntimeError("Internal error handling {}".format(acr))
 
-    ext = "tex" if dotex else "txt"
+    if dotex:
+        ext = "tex"
+    if dorst:
+        ext = "rst"
+    else:
+        ext = "txt"
+
     acrFile = f"acronyms.{ext}"
     if doGlossary and dotex:  # otherwise its just a table
         with open(glsFile, "w") as gfd:
             write_latex_glossary(results, fd=gfd)
     else:
         with open(acrFile, "w") as fd:
-            write_latex_table(results, dotex, fd=fd)
+            write_latex_table(results, dotex, dorst, fd=fd)
     return len(results)
 
 
@@ -627,8 +643,9 @@ if __name__ == "__main__":
     parser.add_argument('-u', '--update', action='store_true',
                         help="""Update files to put \\gls on acronyms and
                                 glossary entries .""")
-    parser.add_argument('-n', '--notex', action='store_true',
-                        help="""Tab separated not tex output.""")
+    parser.add_argument("-m", "--mode", default="tex", choices=OUTPUT_MODES,
+                        help="""Output mode for table.
+                                verbose' displays all the information...""")
     parser.add_argument('-t', '--tags',
                         help="""Space separated list of tags between quotes
                                 to use in selecting definitions.""")
@@ -638,7 +655,8 @@ if __name__ == "__main__":
     texfiles = args.files
     tagstr = args.tags
     utags = set()
-    dotex = not args.notex
+    dotex = args.mode == "tex"
+    dorst = args.mode == "rst"
 
     if tagstr:
         utags.update(tagstr.split())
@@ -646,7 +664,7 @@ if __name__ == "__main__":
     if (doGlossary or (not args.update)):
         # Allow update to really just update/rewrite files not regenerate
         # glossary
-        count = main(texfiles, doGlossary, utags, dotex)
+        count = main(texfiles, doGlossary, utags, dotex, dorst)
         if doGlossary and dotex:
             forceConverge(count, utags)
     # Go through files on second pass  or on demand and \gls  or not (-u)

@@ -228,7 +228,7 @@ A global glossary and acronym files exists in ``lsst-texmf/etc/glossarydefs.csv`
 
 One should note particularly the Subsystem Tags which may be used to differentiate acronyms which are overloaded.
 
-This file is read and processed in conjunction with your tex files by ``bin/generateAcronyms.py``.
+This file is read and processed in conjunction with your tex or rst  files by ``bin/generateAcronyms.py``.
 This script expects to find two text files in the directory with the tex:
 
 :file:`myacronyms.txt`
@@ -294,3 +294,16 @@ You must also wrap terms that appear in the document's text with a ``\gls{}`` co
 .. important::
 
    We do not suggest adding ``generateAcronyms.py`` with the ``-gu`` flags to Makefile as it occasionally does something unexpected so you should run it and check the result by building the document.
+
+Output mode 
+-----------
+You may output acronyms as text, rst or tex
+using the ``-m`` or ``-mode`` flag:
+
+.. code-block:: sh
+
+   generateAcronyms.py -m rst -t "DM"
+
+for example would output an rst file. 
+
+The current modes are ``tex, rst, txt`` and the default is tex. ``txt`` outputs a tab separated list. ``rst`` adorns the tex output with RST markup to make an RST table.
