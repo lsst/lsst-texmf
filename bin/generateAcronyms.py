@@ -457,14 +457,14 @@ def forceConverge(prevCount, utags):
     no more are added.
     """
     while True:
-        count = main({glsFile}, True, utags, True, False)
+        count = main({glsFile}, True, utags, True, False, "tex")
         # If no glossary items are added we are done
         if (count == prevCount):
             break
         prevCount = count
 
 
-def main(texfiles, doGlossary, utags, dotex, dorst):
+def main(texfiles, doGlossary, utags, dotex, dorst, mode):
     """Run program and generate acronyms file."""
 
     if not texfiles:
@@ -541,14 +541,7 @@ def main(texfiles, doGlossary, utags, dotex, dorst):
         else:
             raise RuntimeError("Internal error handling {}".format(acr))
 
-    if dotex:
-        ext = "tex"
-    if dorst:
-        ext = "rst"
-    else:
-        ext = "txt"
-
-    acrFile = f"acronyms.{ext}"
+    acrFile = f"acronyms.{mode}"
     if doGlossary and dotex:  # otherwise its just a table
         with open(glsFile, "w") as gfd:
             write_latex_glossary(results, fd=gfd)
@@ -664,7 +657,7 @@ if __name__ == "__main__":
     if (doGlossary or (not args.update)):
         # Allow update to really just update/rewrite files not regenerate
         # glossary
-        count = main(texfiles, doGlossary, utags, dotex, dorst)
+        count = main(texfiles, doGlossary, utags, dotex, dorst, args.mode)
         if doGlossary and dotex:
             forceConverge(count, utags)
     # Go through files on second pass  or on demand and \gls  or not (-u)
