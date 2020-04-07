@@ -427,6 +427,7 @@ def write_latex_table(acronyms, dotex=True, dorst=False, fd=sys.stdout):
     end = r" \\\hline"
     if dorst:
         print(r""".. _table-label: """, file=fd)
+        print(r"""""", file=fd)
         print(r"""======= ===========""", file=fd)
 
     if dotex:
