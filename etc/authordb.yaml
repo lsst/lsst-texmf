@@ -63,7 +63,7 @@ affiliations:
   LLNL: Lawrence Livermore National Laboratory, 7000 East Avenue, Livermore, CA 94550,
     USA
   LOC: Library of Congress, 101 Independence Ave.\ SE, Washington, DC 20540, USA
-  LSST: Rubin Observatory Project Office, 950 N.\ Cherry Ave., Tucson, AZ  85719, USA
+  RubinObs: Rubin Observatory Project Office, 950 N.\ Cherry Ave., Tucson, AZ  85719, USA
   LUPM: Laboratoire Univers et Particules de Montpellier (LUPM), Universit\'{e} de
     Montpellier, CNRS/IN2P3, Place Eug\`{e}ne Bataillon, F-34095 Montpellier, France
   Longhorn: Longhorn Industries, Ellensburg, WA 98926, USA
@@ -166,14 +166,14 @@ authors:
     orcid: null
   acostae:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Emily
     name: Acosta
     orcid: null
   allsmanr:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Robyn
     name: Allsman
@@ -201,7 +201,7 @@ authors:
     orcid: null
   andrewj:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: John
     name: Andrew
@@ -236,7 +236,7 @@ authors:
     orcid: null
   araujoc:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Constanza
     name: Araujo
@@ -271,7 +271,7 @@ authors:
     orcid: null
   auzan:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Nicole
     name: Auza
@@ -299,7 +299,7 @@ authors:
     orcid: null
   barrjd:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Jeff D.
     name: Barr
@@ -313,7 +313,7 @@ authors:
     orcid: null
   bauerae:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Amanda E.
     name: Bauer
@@ -335,14 +335,14 @@ authors:
     orcid: null
   bechtole:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Ellen
     name: Bechtol
     orcid: null
   bechtolk:
     affil:
-    - LSST
+    - RubinObs
     - WisconsinMadison
     altaffil: []
     initials: Keith
@@ -444,7 +444,7 @@ authors:
     orcid: null
   boothmt:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Michael T.
     name: Booth
@@ -542,14 +542,14 @@ authors:
     orcid: null
   calabresed:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Daniel
     name: Calabrese
     orcid: null
   callahans:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Shawn
     name: Callahan
@@ -563,14 +563,14 @@ authors:
     orcid: null
   carlinjl:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Jeffrey L.
     name: Carlin
     orcid: 0000-0002-3936-9628
   carlsonel:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Erin L.
     name: Carlson
@@ -584,7 +584,7 @@ authors:
     orcid: null
   charlesemersong:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Glenaver
     name: Charles-Emerson
@@ -605,7 +605,7 @@ authors:
     orcid: null
   chiangh:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Hsin-Fang
     name: Chiang
@@ -619,7 +619,7 @@ authors:
     orcid: null
   chirinoc:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Carol
     name: Chirino
@@ -640,21 +640,21 @@ authors:
     orcid: null
   clavercf:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Charles F.
     name: Claver
     orcid: null
   clementsaw:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Andy W.
     name: Clements
     orcid: null
   cockrumjj:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Joseph J.
     name: Cockrum
@@ -675,7 +675,7 @@ authors:
     orcid: 0000-0002-4774-9364
   comorettog:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Gabriele
     name: Comoretto
@@ -703,14 +703,14 @@ authors:
     orcid: null
   corliesl:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Lauren
     name: Corlies
     orcid: 0000-0002-0646-1540
   corrall:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Luis 
     name: Corral
@@ -759,7 +759,7 @@ authors:
     orcid: null
   daruichf:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Felipe
     name: Daruich
@@ -787,7 +787,7 @@ authors:
     orcid: 0000-0003-0248-6123
   delgadof:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Francisco
     name: Delgado
@@ -857,7 +857,7 @@ authors:
     orcid: null
   economouf:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Frossie
     name: Economou
@@ -878,7 +878,7 @@ authors:
     orcid: null
   emmonsbl:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Benjamin L.
     name: Emmons
@@ -892,7 +892,7 @@ authors:
     orcid: 0000-0002-3719-940X
   faustinetoa:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Angelo
     name: Fausti Neto
@@ -906,7 +906,7 @@ authors:
     orcid: 0000-0001-7113-2738
   figueroae:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Enrique
     name: Figueroa
@@ -983,7 +983,7 @@ authors:
     orcid: 0000-0002-7007-9725
   gessnercjb:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Charles J. B.
     name: Gessner
@@ -1033,7 +1033,7 @@ authors:
     orcid: 0000-0003-3461-8661
   goodenowi:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Iain
     name: Goodenow
@@ -1047,7 +1047,7 @@ authors:
     orcid: 0000-0002-9154-3136
   gresslerwj:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: William J.
     name: Gressler
@@ -1061,7 +1061,7 @@ authors:
     orcid: null
   guylp:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Leanne P.
     name: Guy
@@ -1103,7 +1103,7 @@ authors:
     orcid: null
   herrolda:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Ardis
     name: Herrold
@@ -1124,14 +1124,14 @@ authors:
     orcid: null
   hilemane:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Edward
     name: Hileman
     orcid: null
   hoblittj:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Joshua
     name: Hoblitt
@@ -1152,7 +1152,7 @@ authors:
     orcid: null
   howardjd:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: James D.
     name: Howard
@@ -1173,7 +1173,7 @@ authors:
     orcid: null
   ingrahamp:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Patrick
     name: Ingraham
@@ -1194,7 +1194,7 @@ authors:
     orcid: 0000-0001-5250-2633
   jacobysh:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Suzanne H.
     name: Jacoby
@@ -1222,7 +1222,7 @@ authors:
     orcid: null
   jennesst:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Tim
     name: Jenness
@@ -1285,7 +1285,7 @@ authors:
     orcid: 0000-0003-1996-9252
   kahnsm:
     affil:
-    - LSST
+    - RubinObs
     - SLAC-Kavli
     altaffil: []
     initials: Steven M.
@@ -1314,7 +1314,7 @@ authors:
     orcid: 0000-0002-6825-5283
   kantorjp:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Jeffrey P.
     name: Kantor
@@ -1349,7 +1349,7 @@ authors:
     orcid: 0000-0003-3221-0419
   kinnisonv:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Veronica
     name: Kinnison
@@ -1377,14 +1377,14 @@ authors:
     orcid: null
   krabbendamvl:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Victor L.
     name: Krabbendam
     orcid: null
   krughoffks:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: K. Simon
     name: Krughoff
@@ -1433,7 +1433,7 @@ authors:
     orcid: null
   lambertr:
     affil:
-    - LSST
+    - RubinObs
     - CTIO
     altaffil: []
     initials: Ron
@@ -1470,7 +1470,7 @@ authors:
     orcid: null
   liangm:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Ming
     name: Liang
@@ -1505,7 +1505,7 @@ authors:
     orcid: null
   lotzpj:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Paul J.
     name: Lotz
@@ -1568,7 +1568,7 @@ authors:
     orcid: null
   masonb:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Blake
     name: Mason
@@ -1589,7 +1589,7 @@ authors:
     orcid: null
   mckercherr:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Robert
     name: McKercher
@@ -1624,7 +1624,7 @@ authors:
     orcid: null
   millsdj:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: David J.
     name: Mills
@@ -1666,7 +1666,7 @@ authors:
     orcid: null
   montgomeryc:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Christopher
     name: Montgomery
@@ -1695,21 +1695,21 @@ authors:
     orcid: null
   mullergp:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Gary P.
     name: Muller
     orcid: null
   munozarancibiaf:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Freddy
     name: Mu\~noz Arancibia
     orcid: null
   neilldr:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Douglas R.
     name: Neill
@@ -1773,14 +1773,14 @@ authors:
     orcid: 0000-0002-7134-8296
   omullanew:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: William
     name: O'Mullane
     orcid: 0000-0003-4141-6195
   ortizs:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Sandra
     name: Ortiz
@@ -1836,7 +1836,7 @@ authors:
     orcid: 0000-0002-9701-5975
   petersonjm:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: J. Matt
     name: Peterson
@@ -1857,14 +1857,14 @@ authors:
     orcid: null
   petrickml:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: M.E. Libby
     name: Petrick
     orcid: null
   petryce:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Cathy E.
     name: Petry
@@ -1941,7 +1941,7 @@ authors:
     orcid: null
   ribeirot:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Ribeiro
     name: Tiago
@@ -1983,7 +1983,7 @@ authors:
     orcid: null
   reuterma:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Michael A.
     name: Reuter
@@ -2011,7 +2011,7 @@ authors:
     orcid: null
   robertsa:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Austin
     name: Roberts
@@ -2124,14 +2124,14 @@ authors:
     orcid: 0000-0002-8505-7094
   schoeningw:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: William
     name: Schoening
     orcid: null
   schumacherg:
     affil:
-    - LSST
+    - RubinObs
     - CTIO
     altaffil: []
     initials: German
@@ -2146,14 +2146,14 @@ authors:
     orcid: 0000-0003-4365-1455
   sebagj:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Jacques
     name: Sebag
     orcid: null
   selvyb:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Brian
     name: Selvy
@@ -2174,14 +2174,14 @@ authors:
     orcid: null
   serioa:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Andrew
     name: Serio
     orcid: null
   serranoe:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Eduardo
     name: Serrano
@@ -2202,14 +2202,14 @@ authors:
     orcid: null
   sickj:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Jonathan
     name: Sick
     orcid: 0000-0003-3001-676X
   silvac:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Cristian
     name: Silva
@@ -2258,7 +2258,7 @@ authors:
     orcid: null
   stalderb:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Brian
     name: Stalder
@@ -2272,7 +2272,7 @@ authors:
     orcid: null
   stovere:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Edward
     name: Stover
@@ -2315,7 +2315,7 @@ authors:
     orcid: 0000-0001-8708-251X
   sweeneyd:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Donald
     name: Sweeney
@@ -2365,21 +2365,21 @@ authors:
     orcid: null
   theboa:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Thebo
     name: Adrein
     orcid: null
   thomass:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Sandrine
     name: Thomas
     orcid: 0000-0002-9121-3436
   thorntonaj:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Adam J.
     name: Thornton
@@ -2407,7 +2407,7 @@ authors:
     orcid: 0000-0003-4580-3790
   tsait:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Te-Wei
     name: Tsai
@@ -2471,7 +2471,7 @@ authors:
     orcid: null
   vucinat:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Tomislav
     name: Vucina
@@ -2528,14 +2528,14 @@ authors:
     orcid: null
   wiechao:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Oliver
     name: Wiecha
     orcid: null
   willmanb:
     affil:
-    - LSST
+    - RubinObs
     - UA-Steward
     altaffil: []
     initials: Beth
@@ -2564,7 +2564,7 @@ authors:
     orcid:
   wolffsc:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Sidney C.
     name: Wolff
@@ -2585,7 +2585,7 @@ authors:
     orcid: null
   xinb:
     affil:
-    - LSST
+    - RubinObs
     altaffil: []
     initials: Bo
     name: Xin
