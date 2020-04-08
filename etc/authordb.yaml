@@ -63,7 +63,7 @@ affiliations:
   LLNL: Lawrence Livermore National Laboratory, 7000 East Avenue, Livermore, CA 94550,
     USA
   LOC: Library of Congress, 101 Independence Ave.\ SE, Washington, DC 20540, USA
-  LSST: LSST Project Office, 950 N.\ Cherry Ave., Tucson, AZ  85719, USA
+  LSST: Rubin Observatory Project Office, 950 N.\ Cherry Ave., Tucson, AZ  85719, USA
   LUPM: Laboratoire Univers et Particules de Montpellier (LUPM), Universit\'{e} de
     Montpellier, CNRS/IN2P3, Place Eug\`{e}ne Bataillon, F-34095 Montpellier, France
   Longhorn: Longhorn Industries, Ellensburg, WA 98926, USA
@@ -2009,6 +2009,13 @@ authors:
     initials: Steve
     name: Ritz
     orcid: null
+  robertsa:
+    affil:
+    - LSST
+    altaffil: []
+    initials: Austin
+    name: Roberts
+    orcid: null
   robinsons:
     affil:
     - BNL
@@ -2433,6 +2440,13 @@ authors:
     altaffil: []
     initials: Daniel
     name: Vanden Berk
+    orcid: null
+  vanklaverenb:
+    affil:
+    - SLAC
+    altaffil: []
+    initials: Brian
+    name: Van Klaveren
     orcid: null
   vetterk:
     affil:
