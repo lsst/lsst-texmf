@@ -106,16 +106,22 @@ for authorid in authors:
     except KeyError as e:
         raise RuntimeError(f"Author ID {authorid} now defined in author database.") from e
 
-    theAffil = auth["affil"][0]
-    affilOutput = ""
-    if (theAffil not in affilset):
-        affilset.append(theAffil)
-        # unforuneately you can not output an affil before an author
-        affilOutput = r"\{}[{}]{{{}}}".format(affil_cmd, len(affilset), affil[theAffil])
+    affilOutput = list()
+    affilAuth = ""
+    affilSep = ""
+    for theAffil in auth["affil"]:
+        if (theAffil not in affilset):
+            affilset.append(theAffil)
+            # unforuneately you can not output an affil before an author
+            affilOutput.append(r"\{}[{}]{{{}}}".format(affil_cmd, len(affilset), affil[theAffil]))
 
-    affilInd = affilset.index(theAffil) + 1
+        affilInd = affilset.index(theAffil) + 1
+        affilAuth = affilAuth + affilSep + str(affilInd)
+
+        affilSep = ","
+
     if SPIE:
-        orcid = "[{}]".format(affilInd)
+        orcid = "[{}]".format(affilAuth)
     else:
         if "orcid" in auth and auth["orcid"]:
             orcid = "[{}]".format(auth["orcid"])
@@ -131,7 +137,7 @@ for authorid in authors:
 
     print(r"\author{}{{{}~{}}}".format(orcid, initials, surname))
     if SPIE:
-        print(affilOutput)
+        print(*affilOutput, sep="\n")
     else:
         if "altaffil" in auth:
             for af in auth["altaffil"]:
