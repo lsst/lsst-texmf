@@ -76,7 +76,7 @@ authorinfo = authordb["authors"]
 # dict of all the affiliations, key is a label
 # used in author list
 affil = authordb["affiliations"]
-affilset = list()
+affilset = list()  # it will be a set but I want index() which is supported in list
 
 # AASTeX6.1 author files are of the form:
 # \author[ORCID]{Initials~Surname}
@@ -110,7 +110,7 @@ for authorid in authors:
     affilAuth = ""
     affilSep = ""
     for theAffil in auth["affil"]:
-        if (theAffil not in affilset):
+        if theAffil not in affilset:
             affilset.append(theAffil)
             # unforuneately you can not output an affil before an author
             affilOutput.append(r"\{}[{}]{{{}}}".format(affil_cmd, len(affilset), affil[theAffil]))
