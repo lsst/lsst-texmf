@@ -44,6 +44,8 @@ test-pybtex:
 docs: $(PDF) $(TESTS)
 	mkdir -p docs/_static/examples
 	cp *.pdf docs/_static/examples/
+	cp etc/glossary.html docs
+	cp etc/glossarydefs.csv docs
 	make -C docs html
 
 .PHONY: lsstthedocs
