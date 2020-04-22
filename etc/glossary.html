@@ -12,20 +12,22 @@
 @import url("https://www.lsst.org/modules/system/system.messages.css?q4mhql");
 @import url("https://www.lsst.org/modules/system/system.theme.css?q4mhql");
 </style>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="http://d3js.org/d3.v3.min.js?v=3.2.8"></script>
+<script src="https://d3js.org/d3.v3.min.js?v=3.2.8"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 
 <script type="text/javascript"charset="utf-8">
-	var gls;
-	d3.text("glossarydefs.csv", function(data) {
-		gls = d3.csv.parseRows(data, function(d, i) {
-		      return d.slice(0,3)
-	              });
-		 });
-        $(document).ready(function() {
-		    $('#gls').DataTable( {
+        var gls;
+	d3.text("glossarydefs.csv", function(error, data) {
+	    if (error) console.log("Failed: ", error);
+		    gls = d3.csv.parseRows(data, function(d, i) {
+		          return d.slice(0,3)
+	        });
+	});
+ 
+        function setupTable() {
+	     if (gls) {
+		  $('#gls').DataTable( {
 			paging: false,
 			data: gls,
 			columns: [
@@ -33,7 +35,15 @@
 				 { title: "Definition" },
 				 { title: "Tags" }
 		                 ]	
-		    });
+		  });
+              } else {
+		    console.log("Wait ..")
+		    setTimeout(setupTable, 300); // try again in 300 milliseconds
+	      }
+	};
+
+        $(document).ready(function() {
+            setupTable()	
 	});
 </script>
 </head>
