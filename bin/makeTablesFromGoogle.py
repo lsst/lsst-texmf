@@ -6,12 +6,12 @@ Identify your table by putting in a cell in column A `Table ID` where ID
 is the unique name used as the label in tex and will be the name of the
 file holding the table.
 Column B should hold the description.
-Column C is an integer value for the number fo colums you want to extract.
-COlumm D is an integer for the number of colums you want to skip
+Column C is an integer value for the number of columns you want to extract.
+Column D is an integer for the number of columns you want to skip
          not including the first
-The next row is assumed to be a title row and will be bolded.
-All following rows are output accordingly as tabel rows.
-If the word Total appears in Colum A the row will be bolded.
+The next row is assumed to be a title row and will be bold.
+All following rows are output accordingly as table rows.
+If the word Total appears in Column A the row will be bold.
 
 To access google you have to do some setup
 ``https://developers.google.com/sheets/api/quickstart/python``
