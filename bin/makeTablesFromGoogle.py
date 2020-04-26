@@ -35,7 +35,6 @@ import os
 
 from googleapiclient import discovery
 from oauth2client import client
-from oauth2client import tools
 from oauth2client.file import Storage
 
 import argparse
@@ -68,26 +67,27 @@ def get_credentials():
     if not credentials or credentials.invalid:
         flow = client.flow_from_clientsecrets(CLIENT_SECRET_FILE, SCOPES)
         flow.user_agent = APPLICATION_NAME
-        if flags:
-            credentials = tools.run_flow(flow, store, flags)
         print('Storing credentials to ' + credential_path)
     return credentials
 
 
-def outtail(tout):
-    print("\\end{longtable} \\normalsize", file=tout)
-    tout.close()
-    return
+def complete_and_close_table(tout):
+    if tout:
+        print(r"\end{longtable} \normalsize", file=tout)
+        tout.close()
+        return
+    else:
+        raise Exception('Expected and open file to end table in')
 
 
 def outhead(ncols, tout, name, cap):
-    print("\\tiny \\begin{longtable} {", file=tout, end='')
+    print(r"\tiny \begin{longtable} {", file=tout, end='')
     c = 1
     print(" |p{0.22\\textwidth} ", file=tout, end='')
     for c in range(1, ncols + 1):
         print(" |r ", file=tout, end='')
     print("|} ", file=tout, )
-    print("\\caption{%s \\label{tab:%s}}\\\\ " % (cap, name), file=tout)
+    print(r"\caption{%s \label{tab:%s}}\\ " % (cap, name), file=tout)
     print(r"\hline ", file=tout)
     return
 
@@ -104,7 +104,7 @@ def outputrow(tout, pre, row, cols, skip):
                 pass
             if i < cols-1:
                 print("&", end='', file=tout)
-    print(" \\\\ \\hline", file=tout)
+    print(r" \\ \hline", file=tout)
 
 
 def fixTex(text):
@@ -117,8 +117,21 @@ def fixTex(text):
 
 
 def genTables(values):
+    """
+    values contains the selected cells from a google sheet
+    this routine goes through the rows looking for rows indicating a new table
+    Such rows contain Table in the first cell followed by description,
+    number of columns, number of cols to skip eg. my table with 5 columns would
+    be preceded by
+    ``Table myTable, "This the description", 5, 0``
+    Sometimes for wide tables with yearly data we wish to skip some years
+    the last number allows that.
+    The next row after the declaration is the first output and it is in bold
+    assumed to contain the header.
+    """
+
     name = ''
-    tout = ''
+    tout = None
 
     if not values:
         print('No data found.')
@@ -129,7 +142,7 @@ def genTables(values):
         for row in values:
             if (row and 'Table' in row[0]):  # got a new table
                 if name:
-                    outtail(tout)
+                    complete_and_close_table(tout)
                 vals = row[0].split(' ')
                 name = vals[1]
                 print("Create new table %s" % name)
@@ -143,15 +156,15 @@ def genTables(values):
                 bold_next = True
             else:
                 if name and row:
-                    if (row[0].startswith('Year')
-                            or row[0].startswith('Total')
-                            or bold_next):
+                    if (row[0].startswith('Year') or
+                            row[0].startswith('Total') or
+                            bold_next):
                         # print header/total in bold
                         outputrow(tout, "\\textbf", row, cols, skip)
                         bold_next = False
                     else:
                         outputrow(tout, "", row, cols, skip)
-    outtail(tout)
+    complete_and_close_table(tout)
     return
 
 
