@@ -418,7 +418,7 @@
     % the logo on the title page.
     % Calculate the text width after here because pdflatex
     % can no calculate widths reliably in the preamble.
-    \newcommand{\lssttitletext}{\Large LARGE SYNOPTIC SURVEY TELESCOPE}
+    \newcommand{\lssttitletext}{\Large Vera C. Rubin Observatory}
     \newlength{\lssttitletextwidth}
     \settowidth{\lssttitletextwidth}{\lssttitletext}
 
@@ -432,7 +432,9 @@
     % Place logo on the foreground at the top with text centred underneath it
     \AddToShipoutPictureFG*{%
       \put(\LenToUnit{0.5\paperwidth},\LenToUnit{0.87\paperheight}){%
-        \makebox[0pt][c]{\includegraphics[width=3.5in]{lsst_logo_notext}}\\
+        \makebox[0pt][c]{
+		%\includegraphics[width=3.5in]{rubin_logo_notext}
+		}\\
       }
       \put(\LenToUnit{0.0\paperwidth},\LenToUnit{0.853\paperheight}){%
         \makebox[\lssttitlewidth]{\color{lsstblue}\rule{\lsstlefttitlerule}{2.5pt} \lower.3em\hbox{\lssttitletext}
@@ -446,7 +448,7 @@
    \begin{minipage}{1.0\textwidth}
      \begin{center}
     \color{lssttitle}
-    \textsf{\LARGE \bfseries Large Synoptic Survey Telescope (LSST)} \\
+    \textsf{\LARGE \bfseries Vera C. Rubin Observatory} \\
     \vspace*{0.1cm}
     \textsf{\LARGE \bfseries \docType } \\
     \vspace*{0.5cm}
@@ -474,10 +476,10 @@
 
    \if@ccb
    \def\@controlText{%
-   This LSST document has been approved as a Content-Controlled Document.
+   This Rubin document has been approved as a Content-Controlled Document.
    Its contents are subject to configuration control and may not be changed, altered, or their provisions waived without prior approval.
    If this document is changed or superseded, the new document will retain the Handle designation shown above.
-   The control is on the most recent digital document with this Handle in the LSST digital archive and not printed versions.
+   The control is on the most recent digital document with this Handle in the Rubin digital archive and not printed versions.
    }
    \def\@controlFootText{%
    The contents of this document are subject to configuration control and may not be changed, altered, or their provisions waived without prior approval.
@@ -485,13 +487,13 @@
    \fi
    \if@dmccb
    \def\@controlText{%
-   This LSST document has been approved as a Content-Controlled Document by the LSST DM Change Control Board.
+   This Rubin document has been approved as a Content-Controlled Document by the Rubin DM Change Control Board.
    If this document is changed or superseded, the new document will retain the Handle designation shown above.
-   The control is on the most recent digital document with this Handle in the LSST digital archive and not printed versions.
+   The control is on the most recent digital document with this Handle in the Rubin digital archive and not printed versions.
    Additional information may be found in the corresponding DM RFC.
    }
    \def\@controlFootText{%
-   The contents of this document are subject to configuration control by the LSST DM Change Control Board.
+   The contents of this document are subject to configuration control by the Rubin DM Change Control Board.
    }
    \fi
 
@@ -722,7 +724,7 @@
 \setlength{\lsstheadlogooffset}{\headextrawidth}
 
 % Text to use below the logo in the header
-\newcommand{\headertext}{\tiny LARGE SYNOPTIC SURVEY TELESCOPE}
+\newcommand{\headertext}{\tiny Vera C. Rubin Observatory}
 
 % Calculate space taken up by the LSST header text
 % \settowidth does not seem to work properly with pdflatex
@@ -748,7 +750,7 @@
 % Left heading is the logo and horizontal rule
 \lhead{%
 \hspace{\lsstheadlogooffset}
-\includegraphics[width=\lsstheadlogowidth]{lsst_logo_notext}\\
+%\includegraphics[width=\lsstheadlogowidth]{rubin_logo_notext}\\
 \vskip -1ex
 \begin{minipage}{\lsstheadwidth}
     \color{lsstblue}
