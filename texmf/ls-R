@@ -396,7 +396,6 @@ LSSToptions.tex
 lsst
 
 ./tex/latex/lsst:
-.lsstdoc.cls.swp
 LSST-beamer.sty
 LSSTlogo.png
 beamercolorthemebat.sty
