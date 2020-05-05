@@ -728,24 +728,13 @@
 
 % Left heading is the logo and horizontal rule
 \lhead{%
-\hspace{\lsstheadlogooffset}
-%\includegraphics[width=\lsstheadlogowidth]{rubin_logo_notext}\\
-\vskip -1ex
-\begin{minipage}{\lsstheadwidth}
-    \color{lsstblue}
-    \rule{\lsstleftheadrule}{2.0pt}
-    \lower 1pt
-    \hbox{\hspace{\lsstheadergap}\headertext\hspace{\lsstheadergap}}
-    \color{lsstblue}
-    \vhrulefill{2.0pt}
-\end{minipage}%
+\includegraphics[width=\lsstheadwidth]{rubin_logo}\\
 }
 
 % Right heading is the document description.
 \rhead{%
 \begin{minipage}{13.3cm}
-  % The skip is used to go below the horizontal rule from the lhead
-  \vskip 1.2em
+  \vspace {-4.8cm}
   \tiny
   \color{lssthead}
   \sffamily
