@@ -251,11 +251,11 @@
 }
 \DeclareOption{PMO}{
    \renewcommand{\CU}{PMO}
-   \renewcommand{\docType}{Rubin Project Office}
+   \renewcommand{\docType}{Rubin Observatory Project Office}
 }
 \DeclareOption{OPS}{
    \renewcommand{\CU}{OPS}
-   \renewcommand{\docType}{Rubin Operations }
+   \renewcommand{\docType}{Rubin Observatory Operations }
 }
 
 
@@ -268,7 +268,7 @@
 \newcommand{\setDocLocalLogo}[1]{\def\@docLocalLogo{#1}}
 \setDocLocalLogo{}
 
-\newcommand{\docType}{Rubin Document}
+\newcommand{\docType}{Rubin Observatory Document}
 \newcommand{\CU}{DM}
 
 \newcommand{\DU}{}
@@ -455,10 +455,10 @@
 
    \if@ccb
    \def\@controlText{%
-   This Rubin document has been approved as a Content-Controlled Document.
+   This Rubin Observatory document has been approved as a Content-Controlled Document.
    Its contents are subject to configuration control and may not be changed, altered, or their provisions waived without prior approval.
    If this document is changed or superseded, the new document will retain the Handle designation shown above.
-   The control is on the most recent digital document with this Handle in the Rubin digital archive and not printed versions.
+   The control is on the most recent digital document with this Handle in the Rubin Observatory digital archive and not printed versions.
    }
    \def\@controlFootText{%
    The contents of this document are subject to configuration control and may not be changed, altered, or their provisions waived without prior approval.
@@ -466,13 +466,13 @@
    \fi
    \if@dmccb
    \def\@controlText{%
-   This Rubin document has been approved as a Content-Controlled Document by the Rubin DM Change Control Board.
+   This Rubin Observatory document has been approved as a Content-Controlled Document by the Rubin Observatory DM Change Control Board.
    If this document is changed or superseded, the new document will retain the Handle designation shown above.
-   The control is on the most recent digital document with this Handle in the Rubin digital archive and not printed versions.
+   The control is on the most recent digital document with this Handle in the Rubin Observatory digital archive and not printed versions.
    Additional information may be found in the corresponding DM RFC.
    }
    \def\@controlFootText{%
-   The contents of this document are subject to configuration control by the Rubin DM Change Control Board.
+   The contents of this document are subject to configuration control by the Rubin Observatory DM Change Control Board.
    }
    \fi
 
