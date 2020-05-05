@@ -396,6 +396,7 @@ LSSToptions.tex
 lsst
 
 ./tex/latex/lsst:
+.lsstdoc.cls.swp
 LSST-beamer.sty
 LSSTlogo.png
 beamercolorthemebat.sty
@@ -409,4 +410,7 @@ opsproc.sty
 proc.sty
 risk.sty
 rr.sty
+rubin_logo.png
+rubin_logo_front.png
+rubinobs.png
 simureqs.sty

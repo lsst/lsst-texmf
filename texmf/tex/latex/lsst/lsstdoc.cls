@@ -251,11 +251,11 @@
 }
 \DeclareOption{PMO}{
    \renewcommand{\CU}{PMO}
-   \renewcommand{\docType}{LSST Project Office}
+   \renewcommand{\docType}{Rubin Project Office}
 }
 \DeclareOption{OPS}{
    \renewcommand{\CU}{OPS}
-   \renewcommand{\docType}{LSST Operations }
+   \renewcommand{\docType}{Rubin Operations }
 }
 
 
@@ -268,7 +268,7 @@
 \newcommand{\setDocLocalLogo}[1]{\def\@docLocalLogo{#1}}
 \setDocLocalLogo{}
 
-\newcommand{\docType}{LSST Document}
+\newcommand{\docType}{Rubin Document}
 \newcommand{\CU}{DM}
 
 \newcommand{\DU}{}
@@ -404,41 +404,20 @@
     \AddToShipoutPicture*{%
             \setlength{\unitlength}{0.65pt}%
         \makeatletter
-            \put(\strip@pt \textwidth,\strip@pt \textheight){%
+            \put(\strip@pt \textwidth,192){%
                 \makebox(0,0){%
-			\includegraphics[width=1.1\textwidth]{lsstscopegrey}\\
+			\includegraphics[width=1.01\paperwidth]{rubinobs}\\
                     }}%
-		\vspace{10cm}
-		{\hspace{-0.5in}\color{lsstblue}\rule{9in}{2.1cm}}
 
         \makeatother
     }%
-
-    % These calculations are used for the placement of the text below
-    % the logo on the title page.
-    % Calculate the text width after here because pdflatex
-    % can no calculate widths reliably in the preamble.
-    \newcommand{\lssttitletext}{\Large Vera C. Rubin Observatory}
-    \newlength{\lssttitletextwidth}
-    \settowidth{\lssttitletextwidth}{\lssttitletext}
-
-    % Length of ruler is derived from the page width and the width of the
-    % text we are centering and half a character either side.
-    \newlength{\lssttitlewidth}
-    \setlength{\lssttitlewidth}{\paperwidth}
-    \newlength{\lsstlefttitlerule}
-    \setlength{\lsstlefttitlerule}{0.5\lssttitlewidth - 0.5\lssttitletextwidth - 0.5em}
 
     % Place logo on the foreground at the top with text centred underneath it
     \AddToShipoutPictureFG*{%
       \put(\LenToUnit{0.5\paperwidth},\LenToUnit{0.87\paperheight}){%
         \makebox[0pt][c]{
-		%\includegraphics[width=3.5in]{rubin_logo_notext}
+		\includegraphics[width=\paperwidth]{rubin_logo_front}
 		}\\
-      }
-      \put(\LenToUnit{0.0\paperwidth},\LenToUnit{0.853\paperheight}){%
-        \makebox[\lssttitlewidth]{\color{lsstblue}\rule{\lsstlefttitlerule}{2.5pt} \lower.3em\hbox{\lssttitletext}
-          \vhrulefill{2.5pt}}
       }
     }
 
