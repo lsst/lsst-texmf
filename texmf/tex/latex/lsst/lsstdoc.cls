@@ -544,6 +544,7 @@
      \relax
     \fi
    \pagenumbering{roman}
+   \pagebreak
    \docAbstract
    \docChangeRecord
 
@@ -645,7 +646,7 @@
           textwidth=6.5in,
           includeall,
           lmargin=1in,
-          headheight=40pt,
+          headheight=55pt,
           headsep=2em,
           marginparwidth=60pt,
           footskip=40pt}
@@ -728,6 +729,7 @@
 
 % Left heading is the logo and horizontal rule
 \lhead{%
+\vspace {-10pt}
 \includegraphics[width=\lsstheadwidth]{rubin_logo}\\
 }
 
