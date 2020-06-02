@@ -9,6 +9,7 @@ Column B should hold the description.
 Column C is an integer value for the number of columns you want to extract.
 Column D is an integer for the number of columns you want to skip
          not including the first
+Column E can hold an optional Longtable format for the table.
 The next row is assumed to be a title row and will be bold.
 All following rows are output accordingly as table rows.
 If the word Total appears in Column A the row will be bold.
@@ -80,13 +81,17 @@ def complete_and_close_table(tout):
         raise Exception('Expected and open file to end table in')
 
 
-def outhead(ncols, tout, name, cap):
+def outhead(ncols, tout, name, cap, form=None):
     print(r"\tiny \begin{longtable} {", file=tout, end='')
     c = 1
-    print(" |p{0.22\\textwidth} ", file=tout, end='')
-    for c in range(1, ncols + 1):
-        print(" |r ", file=tout, end='')
-    print("|} ", file=tout, )
+    if (form is None):
+        print(" |p{0.22\\textwidth} ", file=tout, end='')
+        for c in range(1, ncols + 1):
+            print(" |r ", file=tout, end='')
+        print("|} ", file=tout, )
+    else:
+        print(form + "} ", file=tout, end='')
+
     print(r"\caption{%s \label{tab:%s}}\\ " % (cap, name), file=tout)
     print(r"\hline ", file=tout)
     return
@@ -151,8 +156,11 @@ def genTables(values):
                 cap = row[1]
                 cols = int(row[2])
                 skip = int(row[3])
+                form = None
+                if (row[4]):
+                    form = row[4]
 
-                outhead(cols-skip, tout, name, cap)
+                outhead(cols-skip, tout, name, cap, form)
                 bold_next = True
             else:
                 if name and row:
