@@ -693,7 +693,7 @@
 "RTN","Rubin Technical Note","LSST DM","","","A"
 "S3","(Amazon) Simple Storage Service ","IT","","","A"
 "SAC","Science Advisory Committee","LSST Adm","","","A"
-"SAL","Service Access Layer","OPS TSSW","","","A"
+"SAL","Service Abstraction Layer","OPS TSSW","https://ts-sal.lsst.io","","A"
 "SAMP","Simple Application Messaging Protocol","Gen","","","A"
 "SAO","Smithsonian Astrophysical Observatory","Gen","","","A"
 "SATA","Serial Advanced Technology Attachment","IT DM","","","A"
