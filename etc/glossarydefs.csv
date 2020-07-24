@@ -139,6 +139,7 @@
 "CR","Change Request","LSST DM","","","A"
 "CR","Cosmic Ray","Gen","","","A"
 "CSA"," Cooperative Support Agreement","Gen","","","A"
+"CSC","Commandable SAL Component","TS,"","SAL","A"
 "CSDC","Community Science Data Center","OPS OIR","","","A"
 "CSV","Comma Separated Values","Gen","","","A"
 "CTIO","Cerro Tololo Inter-American Observatory","Gen","","","A"
