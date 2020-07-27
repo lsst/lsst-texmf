@@ -30,6 +30,7 @@ affiliations:
   EPFL: Institute of Physics, Laboratory of Astrophysics, \'{E}cole Polytechnique
     Fed\`{e}rale de Lausanne (EPFL), Observatoire de Sauverny, 1290 Versoix, Switzerland
   FacebookNE: Facebook,  14734 Friend Plaza, Springfield, NE 68059, USA
+  Fermilab: Fermi National Accelerator Laboratory, P. O. Box 500, Batavia, IL 60510, USA
   GMTO: Giant Magellan Telescope Organization (GMTO), 465 N.\ Halstead Street, Suite
     250, Pasadena, CA 91107, USA
   GMU: School of Physics, Astronomy and Computational Sciences, George Mason University,
@@ -213,7 +214,7 @@ authors:
     initials: George Z.
     name: Angeli
     orcid: null
-  angeljrp:
+ angeljrp:
     affil:
     - UA-Steward
     altaffil: []
@@ -1714,6 +1715,13 @@ authors:
     initials: Douglas R.
     name: Neill
     orcid: null
+  neilsene:
+   affil:
+   - Fermilab
+   altaffil: []
+   initials: Eric H.
+   name: Neilsen, Jr.
+   orcid: 0000-0002-7357-0317
   newbrysp:
     affil:
     - SLAC
