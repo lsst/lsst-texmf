@@ -241,6 +241,8 @@
 "DPDD","Data Product Definition Document","LSST DM","","","A"
 "DR","Data Release","LSST DM","","","A"
 "DR1","Data Release 1","OPS","","","A"
+"DR10","Data Release 10","OPS","","","A"
+"DR11","Data Release 11","OPS","","","A"
 "DRB","Data Release Board","OPS","","","A"
 "DRP","Data Release Production","LSST DM","","","A"
 "DS9","Deep Space 9 (specific astronomical data visualisation application; SAOImage)","Gen","","","A"
