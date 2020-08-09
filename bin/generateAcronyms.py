@@ -29,7 +29,6 @@ import re
 import argparse
 import csv
 glsFile = "aglossary.tex"
-
 OUTPUT_MODES = ["txt", "rst", "tex"]
 
 try:
@@ -122,10 +121,16 @@ def read_glossarydef(filename, utags, init=None):
             if lc == 1:
                 continue  # There is a header line
             ind = 0
-            acr = row[ind]
-            defn = row[ind + 1]
-            tags = row[ind + 2]
-            entryType = row[ind + 5]
+            try:
+                acr = row[ind]
+                defn = row[ind + 1]
+                tags = row[ind + 2]
+                entryType = row[ind + 5]
+            except BaseException as ex:
+                print("Error reading {} on line {} - {}".format(filename, lc, row),
+                      sys.exc_info()[0])
+                raise ex
+
             if not doGlossary and entryType == "G":
                 # in the case I want only the acronym table and
                 # I read a type "G" (glossary) definition, I discard it
@@ -465,16 +470,21 @@ def forceConverge(prevCount, utags):
         prevCount = count
 
 
+def setup_paths():
+    defaults_dir = os.path.join(
+        os.path.dirname(__file__), os.path.pardir, "etc")
+    lsst_glossary_path = os.path.join(defaults_dir, "glossarydefs.csv")
+    global_skip_path = os.path.join(defaults_dir, "skipacronyms.txt")
+    return [lsst_glossary_path, global_skip_path]
+
+
 def main(texfiles, doGlossary, utags, dotex, dorst, mode):
     """Run program and generate acronyms file."""
 
     if not texfiles:
         raise RuntimeError("No files supplied.")
 
-    defaults_dir = os.path.join(
-        os.path.dirname(__file__), os.path.pardir, "etc")
-    lsst_glossary_path = os.path.join(defaults_dir, "glossarydefs.csv")
-    global_skip_path = os.path.join(defaults_dir, "skipacronyms.txt")
+    lsst_glossary_path, global_skip_path = setup_paths()
 
     # Read the full set
     lsst_definitions = read_glossarydef(lsst_glossary_path, utags)
@@ -643,8 +653,12 @@ if __name__ == "__main__":
     parser.add_argument('-t', '--tags',
                         help="""Space separated list of tags between quotes
                                 to use in selecting definitions.""")
+    parser.add_argument('-c', '--check', action='store_true',
+                        help="""Check the glossary file loads correctly
+                                 to run on push. Pass dummy filename""")
     args = parser.parse_args()
     doGlossary = args.glossary
+    doCheck = args.check
 
     texfiles = args.files
     tagstr = args.tags
@@ -654,6 +668,16 @@ if __name__ == "__main__":
 
     if tagstr:
         utags.update(tagstr.split())
+
+    if doCheck:
+        # For now load the gloassary .. see if we get an excpetion
+        # return approriate exit code to make travis pass or fail
+        status = 0
+        try:
+            read_glossarydef(setup_paths()[0], utags)
+        except BaseException:
+            status = 1
+        exit(status)
 
     if (doGlossary or (not args.update)):
         # Allow update to really just update/rewrite files not regenerate

@@ -34,6 +34,12 @@ $(PDF): %.pdf: examples/%.tex
 $(TESTS): %.pdf: tests/%.tex
 	latexmk -pdf -bibtex -f $<
 
+.PHONY: test-acronyms
+test-acronyms:
+	@echo "Testing glossarydefs"
+	@echo
+	bin/generateAcronyms.py -c dummy 
+
 .PHONY: test-pybtex
 test-pybtex:
 	@echo "Testing pybtex compatibility"

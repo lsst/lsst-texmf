@@ -23,6 +23,7 @@ script:
   - make
   - make test-pybtex
   - make docs
+  - make test-acronyms
   # Build the Docker image
   - "docker build -t ${IMAGE_NAME}:build ."
   # Deploy the Docker image
