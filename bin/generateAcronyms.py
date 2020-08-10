@@ -127,8 +127,7 @@ def read_glossarydef(filename, utags, init=None):
                 tags = row[ind + 2]
                 entryType = row[ind + 5]
             except BaseException as ex:
-                print("Error reading {} on line {} - {}".format(filename, lc, row),
-                      sys.exc_info()[0])
+                print("Error reading {} on line {} - {}".format(filename, lc, row))
                 raise ex
 
             if not doGlossary and entryType == "G":
@@ -475,7 +474,7 @@ def setup_paths():
         os.path.dirname(__file__), os.path.pardir, "etc")
     lsst_glossary_path = os.path.join(defaults_dir, "glossarydefs.csv")
     global_skip_path = os.path.join(defaults_dir, "skipacronyms.txt")
-    return [lsst_glossary_path, global_skip_path]
+    return (lsst_glossary_path, global_skip_path)
 
 
 def main(texfiles, doGlossary, utags, dotex, dorst, mode):
