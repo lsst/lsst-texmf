@@ -11,6 +11,8 @@
 @import url("https://www.lsst.org/sites/default/files/fontyourface/font.css");
 @import url("https://www.lsst.org/sites/default/files/css_injector/css_injector_4.css");
 </style>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+
 <script src="https://d3js.org/d3.v3.min.js?v=3.2.8"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
@@ -27,7 +29,7 @@
         function setupTable() {
 	     if (gls) {
 		  $('#gls').DataTable( {
-			paging: false,
+			paging: true,
 			data: gls,
 			columns: [
 				 { title: "Term" },
@@ -35,20 +37,75 @@
 				 { title: "Tags" }
 		                 ]	
 		  });
+	          setupCol();
               } else {
 		    console.log("Wait ..")
 		    setTimeout(setupTable, 300); // try again in 300 milliseconds
 	      }
 	};
 
+
+
+        function setupColA() {
+		var table = $('#gls').DataTable();
+		 
+		table.columns().flatten().each( function ( colIdx ) {
+			// Create the select list and/or search box add  operation
+			var search = $('<input type="text" placeholder="Search" />')
+			if ([0].includes(colIdx)) {
+		             search.appendTo(
+			         table.column(colIdx).footer()
+			     )
+			     .on( 'keyup change clear', function () {
+				table.column( colIdx )
+					 .search( $(this).val()).draw();
+			    });
+		       }
+		} );
+	}
+
+
+
+        function setupCol() {
+		var table = $('#gls').DataTable();
+		 
+		table.columns().flatten().each( function ( colIdx ) {
+			// Create the select list and/or search box add  operation
+			var search = $('<input type="text" placeholder="Search" />')
+			if ([2].includes(colIdx)) {
+			    search  = $('<select />')
+			    // Get the search data for the first column and add to the select list
+			    table
+			        .column( colIdx )
+			        .cache( 'search' )
+			        .sort()
+			        .unique()
+			        .each( function ( d ) {
+					            search.append( $('<option value="'+d+'">'+d+'</option>') );
+					        } );
+		       }
+			search.appendTo(
+			     table.column(colIdx).footer()
+			)
+			.on( 'keyup change clear', function () {
+				table.column( colIdx )
+					 .search( $(this).val()).draw();
+			    });
+		} );
+	}
+
+
         $(document).ready(function() {
-            setupTable()	
+            setupTable();
 	});
 </script>
 </head>
 
 <body>
-<table id="gls" class="display" width="100%"></table>
+<table id="gls" class="display compact" width="100%" data-page-length='15'>
+     <tfoot> <tr> <th></th> <th></th> <th></th>  </tr> </tfoot>
+</table>
+
 </body>
 </html>
 
