@@ -5,9 +5,6 @@ services:
   - docker
 matrix:
   include:
-    - python: "3.5"
-      # Enable docker and documentation deployments
-      env: LTD_MASON_BUILD=true DEPLOY_DOCKER_IMAGE=true
     - python: '3.6'
       install:
       - pip install flake8
