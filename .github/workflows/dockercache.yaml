@@ -1,0 +1,40 @@
+# This workflow runs weekly. Its purpose is to rebuild the base Docker images
+# to get the latest security updates and versions of Python dependencies
+# (otherwise the regular CI workflow will continue to use the existing base
+# images).
+
+name: Refresh Docker cache
+
+on:
+  schedule:
+    - cron: "0 4 * * MON"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Build the dependencies Docker image without caching
+        run: |
+          DOCKER_BUILDKIT=1 docker build \
+            --build-arg BUILDKIT_INLINE_CACHE=1 \
+            --target dependencies \
+            --no-cache \
+            --tag lsstsqre/lsst-texmf:dependencies .
+
+      - name: Build the base Docker image (for pushing as a separate tag)
+        run: |
+          DOCKER_BUILDKIT=1 docker build \
+            --build-arg BUILDKIT_INLINE_CACHE=1 \
+            --target base \
+            --tag lsstsqre/lsst-texmf:base .
+
+      - name: Log into Docker Hub
+        run: echo ${{ secrets.DOCKER_TOKEN }} | docker login --username ${{ secrets.DOCKER_USERNAME }} --password-stdin
+
+      - name: Push Docker images
+        run: |
+          docker push lsstsqre/lsst-texmf:base
+          docker push lsstsqre/lsst-texmf:dependencies
