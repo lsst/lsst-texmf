@@ -5,6 +5,9 @@ services:
   - docker
 matrix:
   include:
+    - python: "3.5"
+    # Enable docker and documentation deployments
+      env: LTD_MASON_BUILD=true DEPLOY_DOCKER_IMAGE=true
     - python: '3.6'
       install:
       - pip install flake8
@@ -20,7 +23,7 @@ script:
   - make
   - make test-pybtex
   - make docs
-  - make test-acronyms
+  # until we can drop python 3.5 - make test-acronyms
   # Build the Docker image
   - "docker build -t ${IMAGE_NAME}:build ."
   # Deploy the Docker image
