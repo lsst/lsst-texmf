@@ -31,20 +31,23 @@ apt-get -y install --no-install-recommends \
     csh \
     make \
     git \
-    texlive-fonts-recommended \
-    texlive-latex-extra \
-    texlive-fonts-extra \
-    dvipng \
-    texlive-latex-recommended \
     latexmk \
+    dvipng \
     poppler-utils \
-    lmodern \
-    texlive-xetex \
-    texlive-generic-recommended \
-    texlive-full \
-    fonts-inconsolata \
     graphviz \
-    pandoc
+    pandoc \
+    texlive \
+    texlive-generic-recommended \
+    texlive-latex-recommended \
+    texlive-latex-extra \
+    texlive-xetex \
+    texlive-publishers \
+    texlive-science \
+    texlive-bibtex-extra \
+    texlive-fonts-recommended \
+    texlive-fonts-extra \
+    lmodern \
+    fonts-inconsolata
 
 # Delete cached files we don't need anymore:
 apt-get clean
