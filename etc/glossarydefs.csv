@@ -6,6 +6,7 @@ Term,Description,Subsystem Tags,Documentation Tags,Associated Acronyms and Alter
 A/D,Analogue-to-Digital (converter),Gen,,,A
 AA,Authentication and Authorization,TS,Document-11921,,A
 AAAC,Astronomy and Astrophysics Advisory Committee,TS,Document-11921,,A
+AAAS,American Association for the Advancement of Science,Gen,,,A
 AAPT,American Association of Physics Teachers,TS,Document-11921,,A
 AAS,American Astronomical Society,Gen,,,A
 AAVSO,American Association of Variable Star Observers,TS,Document-11922,,A
@@ -30,6 +31,8 @@ AEON,Alert Event Observatory Network,OPS Sci,,,A
 AGN,active galactic nuclei,TS,Document-11927,,A
 AGN,Active Galactic Nuclei,OPS,,,A
 AGU,American Geophysical Society,TS,Document-11928,,A
+AIP,American Institute of Physics,Gen,,,A
+AISES,American Indian Science and Engineering Society,DEI,,,A
 AIT,Assembly Integration and Test,Gen,,,A
 AIV,Assembly Integration and Verification,Gen,,,A
 ALD,Associate Lab Director,OPS DOE,,,A
@@ -63,6 +66,7 @@ ATM,Adaptavist Test Management,LSST DM,,,A
 AU,deprecated acronym for astronomical unit; use au instead,Gen,,,A
 au,astronomical unit,Gen,,,A
 AURA,\gls{Association of Universities for Research in Astronomy},Gen,,,A
+AWIS,Association for Women in Science,DEI,,,A
 AWS,Amazon Web Services,Gen,,,A
 B,Byte (8 bit),Gen,,,A
 b,bit,Gen,,,A
@@ -167,6 +171,7 @@ DDS,Data Distribution System,TSSW,,,A
 DE,dark energy,TS,Document-12028,,A
 DEC,Declination,Gen,,,A
 deg,degree; unit of angle,Gen,,,A
+DEI,"Diversity, Equity, and Inclusion",DIV,,A
 DES,Dark Energy Survey,LSST DM OPS,,,A
 DESC,Dark Energy Science Collaboration,LSST DM OPS,,,A
 DESI,Dark Energy Spectroscopic Instrument,LSST DM OPS,,,A
@@ -316,7 +321,7 @@ GRB,Gamma-Ray Burst,Gen,,,A
 GST,Greenwich Sidereal Time,Gen,,,A
 GUI,Graphical User Interface,Gen,,,A
 GW,Gravitational Wave,Sci OPS,,,A
-HBCU,Historicaly Black Colleges and Univerities,Gen,,,A
+HBCU,Historically Black Colleges and Universities,DEI,,,A
 HD,historical data,TS,Document-12003,,A
 HDD, Hard Disk Drive,DM Gen,,,A
 HEALPix,Hierarchical Equal-Area iso-Latitude Pixelisation,Gen,,,A
@@ -328,7 +333,7 @@ HPC,High Performance Computing,DM,,,A
 HQ,Head Quarters,OPS,,,A
 HR,Human Resources,Gen,,,A
 HSC,Hyper Suprime-Cam,Gen,,,A
-HSI,Hispanic Serving Institutions,Gen,,,A
+HSI,Hispanic Serving Institutions,DEI,,,A
 HST,Hubble Space Telescope,Gen,,,A
 HTC,High Throughput Computing,DM,,,A
 HTM,\gls{Hierarchical Triangular Mesh},Gen,,,A
@@ -351,6 +356,7 @@ IN2P3,Institut National de Physique Nucléaire et de Physique des Particules,Gen
 IoA,Institute of Astronomy (Cambridge; also denoted IOA),Gen,,,A
 IP,Internet Protocol,DM,,,A
 IPAC,No longer an acronym; science and data center at Caltech,Gen,,,A
+IPEDS,Integrated Postsecondary Educational Data System,DEI,,,A
 IPS,Integrated Project Schedule,Adm,,,A
 IR,infrared,TS,Document-11949,,A
 IRAF,Image Reduction and Analysis Facility,Hist,,,A
@@ -404,6 +410,7 @@ LCA,Document handle LSST camera subsystem controlled documents,CAM,,,A
 LCLS,Linac Coherent Light Source,Gen,,,A
 LCO,Las Cumbres Observatories,Gen,,,A
 LCR,\gls{LSST Change Request},LSST DM,,,A
+LCURM,AIP Liaison Committee on Underrepresented Minorities,DEI,https://www.aip.org/member-benefits/liaison-committees/,,A
 LDF,LSST Data Facility,LSST DM,,,A
 LDM,LSST Data Management (Document Handle),LSST DM,,,A
 LDO,LSST Document Operations (Document Handle),LSST OPS,,,A
@@ -480,13 +487,14 @@ MTM2,Main Telescope Secondary Mirror,TS ,,,A
 MTOFC,Main Telescope  Optical Feedback Control ,TS ,,,A
 MTTR,Mean Time To Repair,OPS ,,,A
 MYDB,My Database,DM Gen, ,,A
+NACME,National Action Council for Minorities in Engineering,DEI,,,A
 NAOJ,National Astronomical Observatory of Japan,Gen,,,A
 NAS,National Academy of Science,Sci,,,A
 NAS,Network Attached Storage,DM,,,A
 NASA,National Aeronautics and Space Administration,Gen,,,A
 NAT,nodal aberration theory,TS,Document-11993,,A
 NCOA,National Center for Optical-Infrared Astronomy,Gen,,,A
-NCOIRA,National Center for Optical and Infrared Astronomy,TS,Document-11999,,A
+NCOIRA,(Obsolete now NOIRLab) National Center for Optical and Infrared Astronomy,TS,Document-11999,,A
 NCR,Non Conformance Report,PMO,,,A
 NCSA,National Center for Supercomputing Applications,Gen,,,A
 NCW,Non Conformance Waiver,PMO,,,A
@@ -499,17 +507,19 @@ NFS,Network File System,Gen,,,A
 NGSS,Next-Generation Science Standards,OPS,,,A
 NIR,Near Infrared,Sci,,,A
 NIST,National Institute of Standards and Technology (USA),Gen,,,A
-NLR,National LambdaRail,TS,Document-11941,,A
+NLR,National Lambda Rail,TS,Document-11941,,A
 NMOC,NSF's OIR Lab Management Oversight Council,Gen,,,A
 NOAA,National Oceanic and Atmospheric Administration,Gen,,,A
 NOAO,National Optical Astronomy Observatories (USA),Gen,,,A
 NOC,Network Operations Center,NET ,,,A
+NOGLSTP,National Organization of Gay and Lesbian Scientists and Technical Professionals,DEI,,,A
 NOIR,\gls{NSF}'s National Optical-Infrared Astronomy Research Laboratory; \url{https://nationalastro.org},Gen,,,A
 NOS,NSF's OIR Lab Operations Services ,OPS OIR,,,A
 NPCF,National Petascale Computing Facility,OPS OIR,,,A
 NRAO,National Radio Astronomy Observatory,Gen,,,A
 NRC,National Research Council,OPS,,,A
 NSB,National Science Board,TS,Document-11963,,A
+NSBP,National Society of Black Physicists,DEI,,,A
 NSF,\gls{National Science Foundation},Gen,,,A
 NSF's OIR Lab,\gls{NSF}'s National Optical-Infrared Astronomy Research Laboratory; \url{https://nationalastro.org},Gen,,,A
 NSO,National Solar Observatory,OPS,,,A
@@ -545,6 +555,7 @@ OTS,observatory telemetry system,TS,Document-12015,,A
 Pan-STARRS,Panoramic Survey Telescope and Rapid Response System,Gen,,,A
 Parsl,Parallel Scripting Library \url{http://parsl-project.org/},DM,,,A
 PB,PetaByte,Gen,,,A
+PBI,\gls{Predominantly Black Institution},DEI,,,A
 PCA,Principal Component Analysis,Gen,,,A
 PCB,printed circuit boards,TS,Document-12030,,A
 PCI,Peripheral Component Interconnect,Gen,,,A
@@ -569,6 +580,7 @@ PMM,precision measuring machine,TS,Document-11988,,A
 PMO,\gls{Project Management Office},Adm,,,A
 PMP,(DM) Project Management Plan; LDM-294,LSST DM,,,A
 POC,Proof Of Concept,Gen,,,A
+POCIT,People Of Color In Tech,DEI,,,A
 POE,POly Esters,OPS,,,A
 POP,Project Operating Plan,LSST OPS,,,A
 POSIX,Portable Operating System Interface,Gen,,,A
@@ -583,6 +595,7 @@ PSF,Point Spread Function,Gen,,,A
 PST,\gls{Project Science Team},LSST DM,,,A
 PSTN,Project Science Technical Note,LSST DM,,,A
 PVI,Processed Visit Image,DM,,,A
+PWI,Predominantly White institution,DEI,,,A
 QA,Quality Assurance,Gen,,,A
 QAP,Quality Assurance Plan,TS,Document-11951,,A
 QC,Quality Control,Gen,,,A
@@ -624,6 +637,7 @@ RTV,raster to vector,TS,Document-11984,,A
 S3,(Amazon) Simple Storage Service ,IT,,,A
 SaaS,Software as a Service,Gen,,,A
 SAC,Science Advisory Committee,LSST Adm,,,A
+SACNAS,Society for Advancement of Chicanos/Hispanics and Native Americans in Science,DEI,,,A
 SAL,Service Abstraction Layer,OPS TSSW,https://ts-sal.lsst.io,,A
 SAMP,Simple Application Messaging Protocol,Gen,,,A
 SAO,Smithsonian Astrophysical Observatory,Gen,,,A
@@ -645,6 +659,7 @@ SEMP,Systems Engineering Management Plan,LSST DM,,,A
 SEWG,Survey Evaluation Working Group,OPS,,,A
 SHA-1,Secure Hash Algorithm 1,Gen,,,A
 SHE,"Safety, Health, and Environmental",,,,A
+SHPE,Society of Hispanic Professional Engineers,DEI,,,A
 SI,Syst\`eme International (International System of units defined by ISO),Gen,,,A
 SIA,Simple Image Access,Gen,,,A
 SIT,"System Integration, Test",LSST OPS ,,,A
@@ -693,6 +708,7 @@ SUI,Science User Interface (original name for the LSP Portal and API Aspects),LS
 SUIT,"Science User Interface and Tools (LSST Data Management WBS element and team, responsible for LSP Portal Aspect)",LSST DM,,,A
 SV,Science Validation,LSST DM,,,A
 SW,Software (also denoted S/W),Gen,,,A
+SWE,Society of Women Engineers,DEI,,,A
 T/CAM,Technical/Control (or Cost) Account Manager,LSST DM,,,A
 T&S,Telescope and Site,LSST DM,,,A
 TAC,Time Allocation Committee,OPS,,,A
@@ -733,9 +749,9 @@ UIUC,University of Illinois at Urbana-Champaign,TS,Document-11980,,A
 UK,United Kingdom,Gen OPS,,,A
 UKIDSS,UKIRT Infrared Deep Sky Survey,Gen,,,A
 UKIRT,United Kingdom Infrared Telescope,Gen,,,A
-UML,unified modelling language,TS,Document-12027,,A
+UML,unified modeling language,TS,Document-12027,,A
 UNSO,United States Naval Observatory,TS,Document-11938,,A
-UPS,uninterruptable power supply,TS,Document-11989,,A
+UPS,uninterruptible power supply,TS,Document-11989,,A
 URL,Universal Resource Locator,Gen,,,A
 US,United States,Gen,,,A
 USD,United States dollar,TS,Document-11967,,A
@@ -768,9 +784,11 @@ WAN,Wide Area Network,Gen,,,A
 WBS,\gls{Work Breakdown Structure},Gen,,,A
 WCAG,Web Content Accessibility Guidelines,OPS,,,A
 WCS,\gls{World Coordinate System},Gen,,,A
+WEPAN,Women in Engineering ProAvtive Network,DEI,,,A
 WFD,Wide Fast Deep,OPS,,,A
 WFS,WaveFront Sensor,TS,,,A
 WG,Working Group,LSST DM,,,A
+WIED,Women In Engineering Division,DEI,,,A
 WISE,Wide-field Survey Explorer,Gen,,,A
 WIYN,"(No longer an acronym - formerly:) Wisconsin, Indiana University, Yale University, NOAO (National Optical Astronomy Observatories) Observatory",Gen,,,A
 WL,Weak gravitational Lens cosmic shear,Sci,,,A
@@ -1011,6 +1029,7 @@ Policy file,A structured ASCII file that contains set of attributes for input to
 postage stamp,"Image cutouts that are ~30x30 arcseconds, centered on an Object, and included in every Alert",DM,"LDM-151, LSE-163",,G
 precovery,"The process of finding, or putting upper limits on, detections of a newly discovered DIAObject in previously obtained images, typically using forced photometry. Alert Packets will contain precovery data derived from the past 30 days of images that include the location of a new DIAObject",DM,LSE-163,,G
 Preferred Version,"The default version of a document served to a DocuShare user. For change controlled documents, the preferred version represents the document's current, approved baseline. For other documents, the preferred version represents the most current iteration",Adm,,,G
+Predominantly Black Institution,"A college or university with at least 1,000 enrolled students, of whom at least 40\% are Black or African American and at least 50\% are low income or first generation to college.",DEI,,,G
 Primavera,The trade name for the project management software suite used by LSST to maintain its program plan and schedule,Adm,,,G
 Processed Visit Image,"A fully-qualified LSST image from a single visit that includes the science pixel array and concomitant data including a quality mask and a variance array, in addition to a PSF characterization and metadata (including calibration metadata) about the image. It is stored with the background already subtracted",DM,"LDM-151, LSE-163",PVI,G
 Procurement,"The activities involved with or the actual purchase, subcontract, lease, rent, or otherwise acquire supplies or services, and actions associated therewith",Adm,,,G
