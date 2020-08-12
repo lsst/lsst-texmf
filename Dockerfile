@@ -11,6 +11,9 @@
 
 FROM python:3.7-buster AS base
 
+# Copy a file to prevent docs from being installed
+COPY docker/01_nodoc /etc/dpkg/dpkg.cfg.d
+
 # Update system packages
 COPY docker/install-base-packages.sh .
 RUN ./install-base-packages.sh
