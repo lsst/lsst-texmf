@@ -65,5 +65,8 @@ clean:
 	rm -f *.toc
 	rm -f *.nav
 	rm -f *.snm
+	rm -f *.bbl
+	rm -f *.bbg
+	rm -f *.xdv
 	make -C docs clean
 	rm -f docs/_static/examples/*.pdf
