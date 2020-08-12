@@ -316,6 +316,7 @@ GRB,Gamma-Ray Burst,Gen,,,A
 GST,Greenwich Sidereal Time,Gen,,,A
 GUI,Graphical User Interface,Gen,,,A
 GW,Gravitational Wave,Sci OPS,,,A
+HBCU,Historicaly Black Colleges and Univerities,Gen,,,A
 HD,historical data,TS,Document-12003,,A
 HDD, Hard Disk Drive,DM Gen,,,A
 HEALPix,Hierarchical Equal-Area iso-Latitude Pixelisation,Gen,,,A
@@ -327,6 +328,7 @@ HPC,High Performance Computing,DM,,,A
 HQ,Head Quarters,OPS,,,A
 HR,Human Resources,Gen,,,A
 HSC,Hyper Suprime-Cam,Gen,,,A
+HSI,Hispanic Serving Institutions,Gen,,,A
 HST,Hubble Space Telescope,Gen,,,A
 HTC,High Throughput Computing,DM,,,A
 HTM,\gls{Hierarchical Triangular Mesh},Gen,,,A
