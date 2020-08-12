@@ -580,6 +580,7 @@ PMM,precision measuring machine,TS,Document-11988,,A
 PMO,\gls{Project Management Office},Adm,,,A
 PMP,(DM) Project Management Plan; LDM-294,LSST DM,,,A
 POC,Proof Of Concept,Gen,,,A
+POC,People Of Color,DEI,,,A
 POCIT,People Of Color In Tech,DEI,,,A
 POE,POly Esters,OPS,,,A
 POP,Project Operating Plan,LSST OPS,,,A
@@ -595,7 +596,7 @@ PSF,Point Spread Function,Gen,,,A
 PST,\gls{Project Science Team},LSST DM,,,A
 PSTN,Project Science Technical Note,LSST DM,,,A
 PVI,Processed Visit Image,DM,,,A
-PWI,Predominantly White institution,DEI,,,A
+PWI,Predominantly White Institution,DEI,,,A
 QA,Quality Assurance,Gen,,,A
 QAP,Quality Assurance Plan,TS,Document-11951,,A
 QC,Quality Control,Gen,,,A
@@ -784,7 +785,7 @@ WAN,Wide Area Network,Gen,,,A
 WBS,\gls{Work Breakdown Structure},Gen,,,A
 WCAG,Web Content Accessibility Guidelines,OPS,,,A
 WCS,\gls{World Coordinate System},Gen,,,A
-WEPAN,Women in Engineering ProAvtive Network,DEI,,,A
+WEPAN,Women in Engineering ProActive Network,DEI,,,A
 WFD,Wide Fast Deep,OPS,,,A
 WFS,WaveFront Sensor,TS,,,A
 WG,Working Group,LSST DM,,,A
