@@ -40,8 +40,8 @@ RUN mkdir lsst-texmf
 # exists for container runs by a user.
 ENV TEXMFHOME "/lsst-texmf/texmf"
 
-# Make sure we use the virtualenv
-ENV PATH="/opt/venv/bin:$PATH"
+# Make sure we use the virtualenv; also add lsst-texmf's scripts to the path.
+ENV PATH="/lsst-texmf/bin:/opt/venv/bin:$PATH"
 
 # Install Python dependencies
 COPY --from=dependencies /opt/venv /opt/venv
