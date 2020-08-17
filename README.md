@@ -1,6 +1,6 @@
-![lsst-texmf.lsst.io](https://img.shields.io/badge/lsst--texmf-lsst.io-blue.svg "Documentation") ![Travis](https://img.shields.io/travis/lsst/lsst-texmf/master.svg "Build status")
+![lsst-texmf.lsst.io](https://img.shields.io/badge/lsst--texmf-lsst.io-blue.svg "Documentation") ![CI](https://github.com/lsst/lsst-texmf/workflows/CI/badge.svg)
 
-# LSST LaTeX document class files
+# Rubin Observatory LSST LaTeX document class files
 
 This repository contains LaTeX class and style files that can be used to create documents matching (reasonably closely) the LSST documentation standard.
 This includes the `lsstdoc` class for documents (including LDM, DMTN, and SQR) and a `LSST-beamer` package for making Beamer slide decks.
@@ -18,10 +18,19 @@ git clone https://github.com/lsst/lsst-texmf
 export TEXMFHOME=`pwd`/lsst-texmf/texmf
 ```
 
-In addition you need to add lsst-texmf/bin to you PATH so generateAcronyms.py is found.
-
+Additionally, add `lsst-texmf/bin` to you `PATH` so lsst-texmf's scripts such as `generateAcronyms.py` and `db2authors.py` are available.
 
 Next, read the docs at https://lsst-texmf.lsst.io.
+
+## Docker image
+
+You can compile your document through an lsst-texmf Docker image to avoid installing LaTeX and lsst-texmf on your own computer:
+
+```bash
+docker run --rm -v `pwd`:/build -w /build lsstsqre/lsst-texmf:latest sh -c 'make'
+```
+
+[See the documentation for more information.](https://lsst-texmf.lsst.io/docker.html)
 
 ## Developers
 
