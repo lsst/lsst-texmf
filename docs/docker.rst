@@ -53,21 +53,28 @@ The next time you :command:`docker run` the new ``lsst-texmf:latest`` image will
 About the lsst-texmf Docker image
 =================================
 
-The `lsstsqre/lsst-texmf`_ Docker image is based on Ubuntu 14.04 (trusty).
-It contains a full `TeX Live`_ distribution, as well as ``make`` and ``git``, via the `lsstsqre/lsst-texlive`_ image.
-The image also contains a Java runtime for ``acronyms.csh``.
-``lsst-texmf`` is installed in the container's ``/texmf`` directory, with :envvar:`TEXMFHOME` pre-set to that directory.
-Scripts from ``lsst-texmf``\ ’s :file:`/bin` directory are available in the container's ``PATH``.
+The `lsstsqre/lsst-texmf`_ Docker image is based on the ``python:3.7-slim-buster`` (Debian) official Docker image.
+Using a Python base image ensures the correct version of Python is available for ``lsst-texmf``\ ’s Python scripts.
 
-The ``latest`` tag tracks the ``master`` branch.
-Other tags may be available for pinned versions and development branches.
-See the list of `tags on Docker Hub`_.
+System packages
+---------------
 
-Usually you'll want to use the ``latest`` tag.
+The Docker image contains a `TeX Live`_ distribution, as well as several utilities.
+See the `docker/install-base-packages.sh`_ script in the ``lsst-texmf`` repository for the current list of installed packages.
+
+Scripts and Python dependencies
+-------------------------------
+
+Inside the Docker container, ``lsst-texmf``\ ’s :file:`bin` directory is included in the :envvar:`PATH` environment variable.
+You can call scripts such as ``generateAcronyms.py`` and ``db2authors.py`` from your document's :file:`Makefile` directly.
+
+The Docker image also includes Python packages needed for ``lsst-texmf``\ ’s scripts, as well as scripts that might be run as part of your document's :file:`Makefile`.
+See the `requirements.txt`_ file in the ``lsst-texmf`` repository for the current list of installed Python packages.
 
 .. _`install Docker`: https://www.docker.com/community-edition#/download
 .. _`tags on Docker Hub`: https://hub.docker.com/r/lsstsqre/lsst-texmf/tags/
 .. _`lsstsqre/lsst-texmf`: https://hub.docker.com/r/lsstsqre/lsst-texmf/
-.. _`lsstsqre/lsst-texlive`: https://hub.docker.com/r/lsstsqre/lsst-texlive/
 .. _`TeX Live`: http://tug.org/texlive/
 .. _`lsst-texmf GitHub repository`: https://github.com/lsst/lsst-texmf
+.. _`docker/install-base-packages.sh`: https://github.com/lsst/lsst-texmf/blob/master/docker/install-base-packages.sh
+.. _`requirements.txt`: https://github.com/lsst/lsst-texmf/blob/master/requirements.txt

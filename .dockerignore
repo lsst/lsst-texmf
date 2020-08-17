@@ -1,9 +1,6 @@
 # Repo files not needed in the image
 .github
-docs
 .gitignore
-.travis.yml
-Makefile
 
 # Files built by tests
 *.pdf

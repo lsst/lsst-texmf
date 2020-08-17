@@ -54,10 +54,6 @@ docs: $(PDF) $(TESTS)
 	cp etc/glossarydefs.csv docs
 	make -C docs html
 
-.PHONY: lsstthedocs
-lsstthedocs:
-	ltd-mason-travis --html-dir docs/_build/html
-
 .PHONY: clean
 clean:
 	rm -f *.aux
@@ -69,5 +65,8 @@ clean:
 	rm -f *.toc
 	rm -f *.nav
 	rm -f *.snm
+	rm -f *.bbl
+	rm -f *.bbg
+	rm -f *.xdv
 	make -C docs clean
 	rm -f docs/_static/examples/*.pdf
