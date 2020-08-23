@@ -108,6 +108,7 @@ CEC,International in-kind Contribution Evaluation Committee,LSST,,,A
 CEE,"Communications, Education, and Engagement",OPS OIR,,,A
 CEP,Cost Estimating Plan,OPS,,,A
 CERN,European Organization for Nuclear Research,Gen,,,A
+CET,"Community Engagement Team",OPS OIR,,,A
 CfA,(Harvard-Smithsonian) Center for Astrophysics,Gen,,,A
 CFD,computational fluid dynamics,TS,Document-12005,,A
 CFHT,Canada-France-Hawaii Telescope,TS,Document-11945,,A
@@ -614,20 +615,25 @@ RCC,\gls{Raft} Control Rate,CAM,,,A
 RCI,\gls{Raft} Communication Interface,CAM,,,A
 RCM,\gls{Raft} Communication Module,CAM,,,A
 RDBMS,Relational Database Management System ,Gen,,,A
+RDO,Rubin Directors Office,OPS,,,A
+RDP,Rubin Data Production,OPS,,,A
 REB,Readout Electronics Board,LSST DM,,,A
 REN,Research and Education Network,OPS,,,A
 RENATER,Réseau National de télécommunications pour la Technologie l’Enseignement et la Recherche,OPS,,,A
+REO,Rubin Education and Outreach,OPS,,,A
 REUNA,Red Universitaria Nacional,Gen,,,A
 RFC,Request For Comment,LSST DM,,,A
 RFP,Request For Proposals,LSST OPS,,,A
 RFQ,Request For Quotations,LSST OPS,,,A
 RM,Release Manager,LSST DM,,,A
 RMS,Root-Mean-Square,Gen,,,A
+ROO,Rubin Observatory Operations,OPS,,,A
 ROOT,Object-oriented data analysis framework developed at CERN,Gen,,,A
 RPM,RPM Package Manager (originally Red Hat Package Manager; now a recursive acronym),IT,,,A
 RS232C,Standard 25-pin serial connection between computers and modems,Gen,,,A
 RSA,\gls{Raft} Sensor Array,CAM,,,A
-RSP,Rubin Science Platform,DM,,,A
+RSP,Rubin Science Platform,DM,,,A 
+RSP,Rubin System Performance,OPS,,,A 
 RSS,square root of the sum of the squares,TS,Document-11939,,A
 RTA,responsible technical authority,TS,Document-12013,,A
 RTD,Resistance Temperature Detector,OPS,,,A
