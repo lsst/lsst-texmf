@@ -412,6 +412,7 @@ LCLS,Linac Coherent Light Source,Gen,,,A
 LCO,Las Cumbres Observatories,Gen,,,A
 LCR,\gls{LSST Change Request},LSST DM,,,A
 LCURM,AIP Liaison Committee on Underrepresented Minorities,DEI,https://www.aip.org/member-benefits/liaison-committees/,,A
+LDAP,Lightweight Directory Access Protocol,IT,,,A
 LDF,LSST Data Facility,LSST DM,,,A
 LDM,LSST Data Management (Document Handle),LSST DM,,,A
 LDO,LSST Document Operations (Document Handle),LSST OPS,,,A
