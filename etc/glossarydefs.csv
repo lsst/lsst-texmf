@@ -77,6 +77,7 @@ BCR,Baseline Change Request,CAM,,,A
 BCWP,Budgeted Cost of Work Performed,Gen,,,A
 BCWS,Budgeted Cost of Work Scheduled,Gen,,,A
 BDC, Base Data Center, DM IT,,,A
+BGP, Border Gateway Protocol,IT,,,A
 BEE,back-end electronics,TS,Document-11970,,A
 BJD,barycentric corrected Julian date,TS,Document-11981,,A
 BNF,Backus-Naur Form,Gen,,,A
@@ -302,7 +303,9 @@ GB,Gigabyte,Gen,,,A
 Gb,Gigabit,Gen,,,A
 GC,NSF Grant Conditions,TS,Document-12021,,A
 gcc,The GNU Compiler Collection; a C and C++ compiler,Gen,,,A
+GCE,Google Cloud Engine,IT,,,A
 GCN,GRB Coordinates Network,Gen,,,A
+GCP,Google Cloud Platform,IT,,,A
 GCS,Generic Control System,TSSW,,,A
 GDS,Guider Data System,TS,,,A
 GFLOP,Giga FLOP,Gen,,,A
@@ -343,6 +346,7 @@ HTTP,HyperText Transfer Protocol,Gen,,,A
 HVAC,"Heating, Ventilation, and Air Conditioning",OPS,,,A
 HW,HardWare,Gen,,,A
 I&T,Integration and Test,Gen,,,A
+IAM,Identity Access Management,IT,,,A
 IAU,International Astronomical Union,Gen,,,A
 IBM,International Business Machines,Gen,,,A
 ICBS,International Communications and Base Site,LSST DM,,,A
@@ -482,6 +486,7 @@ MREN,Montenegrin Research and Education Network,Gen,,,A
 MSB,Most Significant Bit,Gen,,,A
 MSO,Mid-Scale Observatories,OPS OIR,,,A
 MT,Main Telescope,TS ,,,A
+MTU,Maximum Transmission Unit,IT NET,,,A
 MTBF,Mean Time Between Failures,OPS ,,,A
 MTDC,Modified Total Direct Costs,OPS,,,A
 MTM1M3,Main Telescope M1M3,TS ,,,A
@@ -775,6 +780,7 @@ VE,vendor estimate,TS,Document-11968,,A
 VF2F,Virtual Face 2 Face (meeting),DM,,,A
 VISTA,Visible and Infrared Survey Telescope for Astronomy,Gen,,,A
 VLA,Very Large Array (NRAO),Gen,,,A
+VLAN, Virtual Local Area Network,IT,,,A
 VLBA,Very Long Baseline Array,Gen,,,A
 VLBI,Very Long Baseline Interferometry,Gen,,,A
 VLT,Very Large Telescope (ESO),Gen,,,A
@@ -783,6 +789,7 @@ VM,Virtual Machine,Gen,,,A
 VNOC,Virtual Network Operations Center,NET ,,,A
 VO,Virtual Observatory,Gen,,,A
 VOIP,Voice Over Internet Protocol,IT DM,,,A
+VPC, Virtual Private Cloud,IT,,,A
 VPN,virtual private network,TS,Document-11966,,A
 VQ,vendor quote,TS,Document-12014,,A
 VRO,(not to be used)Vera C. Rubin Observatory,Gen,,,A
