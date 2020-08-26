@@ -303,7 +303,7 @@ GB,Gigabyte,Gen,,,A
 Gb,Gigabit,Gen,,,A
 GC,NSF Grant Conditions,TS,Document-12021,,A
 gcc,The GNU Compiler Collection; a C and C++ compiler,Gen,,,A
-GCE,Google Cloud Engine,IT,,,A
+GCE,Google Compute Engine,IT,,,A
 GCN,GRB Coordinates Network,Gen,,,A
 GCP,Google Cloud Platform,IT,,,A
 GCS,Generic Control System,TSSW,,,A
@@ -346,7 +346,7 @@ HTTP,HyperText Transfer Protocol,Gen,,,A
 HVAC,"Heating, Ventilation, and Air Conditioning",OPS,,,A
 HW,HardWare,Gen,,,A
 I&T,Integration and Test,Gen,,,A
-IAM,Identity Access Management,IT,,,A
+IAM,Identity and Access Management,IT,,,A
 IAU,International Astronomical Union,Gen,,,A
 IBM,International Business Machines,Gen,,,A
 ICBS,International Communications and Base Site,LSST DM,,,A
