@@ -197,7 +197,7 @@ def read_myacronyms(filename="myacronyms.txt", allow_duplicates=False,
     definitions = {}
     if filename.endswith(".csv"):
         localdefs = read_glossarydef(filename, utags)
-        #flatten the set to a single entry for each glossarydef
+        # flatten the set to a single entry for each glossarydef
         for d in localdefs:
             options = localdefs[d]
             definitions[d] = options.pop()
@@ -502,12 +502,12 @@ def main(texfiles, doGlossary, utags, dotex, dorst, mode):
     # Read the full set
     lsst_definitions = read_glossarydef(lsst_glossary_path, utags)
 
-    # Read the local set default myacronyms.txt, but try also myglossarydefs.csv
+    # Read the local set  myacronyms.txt or  myglossarydefs.csv
     try:
         local_definitions = read_myacronyms()
     except FileNotFoundError:
-        try :
-            local_definitions = read_myacronyms(filename="myglossarydefs.csv",utags=utags)
+        try:
+            local_definitions = read_myacronyms(filename="myglossarydefs.csv", utags=utags)
         except FileNotFoundError:
             local_definitions = {}
 
