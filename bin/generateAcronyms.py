@@ -146,7 +146,7 @@ def read_glossarydef(filename, utags, init=None):
                 definitions[acr] = set()
             # Ok lets try to do something with Tags .. like if its tagged take
             # this one
-            # should possible keep the tags with the acronym ..
+            # should possibly keep the tags with the acronym ..
             # I will take the first definition - iff i get a tag match later
             # replace it
 
@@ -161,15 +161,23 @@ def read_glossarydef(filename, utags, init=None):
 
 
 def read_myacronyms(filename="myacronyms.txt", allow_duplicates=False,
-                    defaults=None):
-    """Read the supplied file and extract standard acronyms.
+                    defaults=None, utags=None):
+    """Read the supplied file and extract acronyms or glossary entries.
 
-    File must contain lines in format :
+    File must contain lines in format if it is myacronyms.txt :
 
-    ACRYONYM:Definition
+    ACRONYM:Definition
 
-    A warning is issued if a duplicate identical definition is found.
-    It is an error for the same acronym to have multiple differing entries.
+    but may be of the full glossarydef format if it is myglossarydefs.csv:
+
+    ENTRY,Definition,TAGs,Doc Tags, Alternative terms ,Type
+
+    The last entry, Type,  being A for acronym, G for glossary entry.
+
+
+    A warning is issued if a duplicate identical definition is found in the
+    simple format (for only acronyms). It is an error for the same acronym
+    to have multiple differing entries.
 
     Parameters
     ----------
@@ -187,25 +195,31 @@ def read_myacronyms(filename="myacronyms.txt", allow_duplicates=False,
         Dictionary with acronym as key and definition as value.
     """
     definitions = {}
+    if filename.endswith(".csv"):
+        localdefs = read_glossarydef(filename, utags)
+        #flatten the set to a single entry for each glossarydef
+        for d in localdefs:
+            options = localdefs[d]
+            definitions[d] = options.pop()
+    else:
+        with open(filename, "r") as fd:
+            for line in fd:
+                acr, defn = _parse_line(line)
+                if acr is None:
+                    continue
 
-    with open(filename, "r") as fd:
-        for line in fd:
-            acr, defn = _parse_line(line)
-            if acr is None:
-                continue
-
-            if acr in definitions:
-                if defn != definitions[acr]:
-                    raise RuntimeError(
-                        "Duplicate definitions of {} differ in {}".
-                        format(acr, filename))
-                else:
-                    warnings.warn(UserWarning("Entry {} exists multiple times"
-                                              " with same definition in {}, you may"
-                                              " want to try using a tag (-t)".
-                                              format(acr, filename)))
-            # myacronyms will contains by definition only acronyms
-            definitions[acr] = (defn, "A")
+                if acr in definitions:
+                    if defn != definitions[acr]:
+                        raise RuntimeError(
+                            "Duplicate definitions of {} differ in {}".
+                            format(acr, filename))
+                    else:
+                        warnings.warn(UserWarning("Entry {} exists multiple times"
+                                                  " with same definition in {}, you may"
+                                                  " want to try using a tag (-t)".
+                                                  format(acr, filename)))
+                # myacronyms will contains by definition only acronyms
+                definitions[acr] = (defn, "A")
 
     # Merge with the defaults
     if defaults is None:
@@ -488,11 +502,14 @@ def main(texfiles, doGlossary, utags, dotex, dorst, mode):
     # Read the full set
     lsst_definitions = read_glossarydef(lsst_glossary_path, utags)
 
-    # Read the local set
+    # Read the local set default myacronyms.txt, but try also myglossarydefs.csv
     try:
         local_definitions = read_myacronyms()
     except FileNotFoundError:
-        local_definitions = {}
+        try :
+            local_definitions = read_myacronyms(filename="myglossarydefs.csv",utags=utags)
+        except FileNotFoundError:
+            local_definitions = {}
 
     # Get list of acronyms to ignore
     global_skip = read_skip_acronyms(global_skip_path)
@@ -669,7 +686,7 @@ if __name__ == "__main__":
         utags.update(tagstr.split())
 
     if doCheck:
-        # For now load the gloassary .. see if we get an excpetion
+        # For now load the glossary .. see if we get an excpetion
         # return approriate exit code to make travis pass or fail
         status = 0
         try:
