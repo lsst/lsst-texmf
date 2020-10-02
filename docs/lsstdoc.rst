@@ -231,13 +231,21 @@ One should note particularly the Subsystem Tags which may be used to differentia
 This file is read and processed in conjunction with your tex or rst  files by ``bin/generateAcronyms.py``.
 This script expects to find two text files in the directory with the tex:
 
+:file:`skipacronyms.txt`
+   Specifies abbreviations which should be omitted from the glossary.
+   One line per abbreviation.
+
 :file:`myacronyms.txt`
    Defines abbreviations which are specific to this document.
    One line per abbreviation, formatted as ``Abbreviation:Definition`` (e.g. ``CI:Continuous Integration``).
 
-:file:`skipacronyms.txt`
-   Specifies abbreviations which should be omitted from the glossary.
-   One line per abbreviation.
+   **OR**
+
+:file:`myglossarydefs.csv`
+   Defines abbreviations and glossary entries which are specific to this document.
+   One line per definition os the same format as glossarydefs.csv given above.
+
+
 
 To select a tag or tags for the definitions add ``-t "tag1 tag2"`` to the call to the script.
 

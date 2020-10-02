@@ -31,7 +31,7 @@ For example:
 .. code-block:: make
 
    acronyms.tex :$(tex) myacronyms.txt skipacronyms.txt
-       python3 ${TEXMFHOME}/../bin/generateAcronyms.py $(tex)
+       python3 ${TEXMFHOME}/../bin/generateAcronyms.py -t "DM" $(tex)
 
 Lastly, it's a good idea to include the ``git submodule`` code snippet from the next section in the document's README to remind others how to set up the submodule.
 
