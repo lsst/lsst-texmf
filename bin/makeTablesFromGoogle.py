@@ -31,7 +31,6 @@ from this machine.
 """
 
 
-import httplib2
 import os
 import os.path
 import pickle
@@ -79,7 +78,6 @@ def get_credentials() -> Credentials:
         with open('token.pickle', 'wb') as token:
             pickle.dump(creds, token)
     return creds
-
 
 
 def complete_and_close_table(tout):
@@ -189,15 +187,16 @@ def genTables(values):
 def get_sheet(sheet_id, range):
     """
     grab the google sheet and return data from sheet
-    :String sheetId: GoogelSheet Id like 1R1h41KVtN2gKXJAVzd4KLlcF-FnNhpt1G06YhzwuWiY
-    :String sheets: List of TabName\!An:Zn  ranges
+    :String sheetId: GoogelSheet Id like
+        1R1h41KVtN2gKXJAVzd4KLlcF-FnNhpt1G06YhzwuWiY
+    :String sheets: List of TabName!An:Zn  ranges
 
     """
     creds = get_credentials()
     service = build('sheets', 'v4', credentials=creds)
     sheet = service.spreadsheets()
     result = sheet.values().get(spreadsheetId=sheet_id,
-                                range=range ).execute()
+                                range=range).execute()
     return result
 
 
