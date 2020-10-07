@@ -198,9 +198,7 @@ def read_myacronyms(filename="myacronyms.txt", allow_duplicates=False,
     if filename.endswith(".csv"):
         localdefs = read_glossarydef(filename, utags)
         # flatten the set to a single entry for each glossarydef
-        for d in localdefs:
-            options = localdefs[d]
-            definitions[d] = options.pop()
+        definitions = {d: options.pop() for d, options in localdefs.items()}
     else:
         with open(filename, "r") as fd:
             for line in fd:
