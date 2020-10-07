@@ -244,8 +244,12 @@ This script expects to find two text files in the directory with the tex:
 :file:`myglossarydefs.csv`
    Defines abbreviations and glossary entries which are specific to this document.
    One line per definition os the same format as glossarydefs.csv given above.
+   Only read if myacronyms.txt does not exist.
 
 
+.. note::
+Only one of myacronyms.txt or myglossarydefs.csv is used you should not have both files.
+If you have both only myacronyms.txt is used.
 
 To select a tag or tags for the definitions add ``-t "tag1 tag2"`` to the call to the script.
 
