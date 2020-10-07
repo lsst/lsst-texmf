@@ -33,21 +33,24 @@ from this machine.
 
 import httplib2
 import os
+import os.path
+import pickle
 
-from googleapiclient import discovery
-from oauth2client import client
-from oauth2client.file import Storage
+from google.auth.transport.requests import Request
+from google_auth_oauthlib.flow import InstalledAppFlow
+from googleapiclient.discovery import build
+from oauth2client.client import Credentials
 
 import argparse
 
 # If modifying these scopes, delete your previously saved credentials
 # at ~/.credentials/sheets.googleapis.com-python-quickstart.json
-SCOPES = 'https://www.googleapis.com/auth/spreadsheets.readonly'
+SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly']
 CLIENT_SECRET_FILE = 'client_secret.json'
 APPLICATION_NAME = 'LSST Tables from Google Sheet'
 
 
-def get_credentials():
+def get_credentials() -> Credentials:
     """Gets valid user credentials from storage.
 
     If nothing has been stored, or if the stored credentials are invalid,
@@ -56,20 +59,27 @@ def get_credentials():
     Returns:
         Credentials, the obtained credential.
     """
-    home_dir = os.path.expanduser('~')
-    credential_dir = os.path.join(home_dir, '.credentials')
-    json = 'sheets.googleapis.com-python-quickstart.json'
-    if not os.path.exists(credential_dir):
-        os.makedirs(credential_dir)
-    credential_path = os.path.join(credential_dir, json)
 
-    store = Storage(credential_path)
-    credentials = store.get()
-    if not credentials or credentials.invalid:
-        flow = client.flow_from_clientsecrets(CLIENT_SECRET_FILE, SCOPES)
-        flow.user_agent = APPLICATION_NAME
-        print('Storing credentials to ' + credential_path)
-    return credentials
+    # The file token.pickle stores the user's access and refresh tokens, and is
+    # created automatically when the authorization flow completes for the first
+    # time.
+    creds = None
+    if os.path.exists('token.pickle'):
+        with open('token.pickle', 'rb') as token:
+            creds = pickle.load(token)
+    # If there are no (valid) credentials available, let the user log in.
+    if not creds or not creds.valid:
+        if creds and creds.expired and creds.refresh_token:
+            creds.refresh(Request())
+        else:
+            flow = InstalledAppFlow.from_client_secrets_file(
+                CLIENT_SECRET_FILE, SCOPES)
+            creds = flow.run_local_server(port=0)
+        # Save the credentials for the next run
+        with open('token.pickle', 'wb') as token:
+            pickle.dump(creds, token)
+    return creds
+
 
 
 def complete_and_close_table(tout):
@@ -176,26 +186,29 @@ def genTables(values):
     return
 
 
+def get_sheet(sheet_id, range):
+    """
+    grab the google sheet and return data from sheet
+    :String sheetId: GoogelSheet Id like 1R1h41KVtN2gKXJAVzd4KLlcF-FnNhpt1G06YhzwuWiY
+    :String sheets: List of TabName\!An:Zn  ranges
+
+    """
+    creds = get_credentials()
+    service = build('sheets', 'v4', credentials=creds)
+    sheet = service.spreadsheets()
+    result = sheet.values().get(spreadsheetId=sheet_id,
+                                range=range ).execute()
+    return result
+
+
 def main(sheetId, sheets):
     """
     grab the googlesheet and process tables in each sheet
     """
-    discoveryUrl = ('https://sheets.googleapis.com/$discovery/rest?'
-                    'version=v4')
-    if "GOOGLE_API_KEY" in os.environ:
-        http = httplib2.Http()
-        key = os.environ["GOOGLE_API_KEY"]
-    else:
-        credentials = get_credentials()
-        http = credentials.authorize(httplib2.Http())
-        key = None
-    service = discovery.build('sheets', 'v4', http=http, developerKey=key,
-                              discoveryServiceUrl=discoveryUrl)
 
     for r in sheets:
         print("Google %s , Sheet %s" % (sheetId, r))
-        result = service.spreadsheets().values().get(
-            spreadsheetId=sheetId, range=r).execute()
+        result = get_sheet(sheetId, r)
         values = result.get('values', [])
         genTables(values)
 
