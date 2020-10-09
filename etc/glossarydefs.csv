@@ -641,7 +641,6 @@ RPM,RPM Package Manager (originally Red Hat Package Manager; now a recursive acr
 RS232C,Standard 25-pin serial connection between computers and modems,Gen,,,A
 RSA,\gls{Raft} Sensor Array,CAM,,,A
 RSP,Rubin Science Platform,DM,,,A 
-RSP,Rubin System Performance,OPS,,,A 
 RSS,square root of the sum of the squares,TS,Document-11939,,A
 RTA,responsible technical authority,TS,Document-12013,,A
 RTD,Resistance Temperature Detector,OPS,,,A
