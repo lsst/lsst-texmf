@@ -630,17 +630,17 @@ RENATER,Réseau National de télécommunications pour la Technologie l’Enseign
 REO,Rubin Education and Outreach,OPS,,,A
 REUNA,Red Universitaria Nacional,Gen,,,A
 RFC,Request For Comment,LSST DM,,,A
-RFP,Request For Proposals,LSST OPS,,,A
+RFP,Request For Proposals,PMO,,,A
 RFQ,Request For Quotations,LSST OPS,,,A
 RM,Release Manager,LSST DM,,,A
 RMS,Root-Mean-Square,Gen,,,A
 ROO,Rubin Observatory Operations,OPS,,,A
 ROOT,Object-oriented data analysis framework developed at CERN,Gen,,,A
+RPF,Rubin System PerFormance,OPS,,,A
 RPM,RPM Package Manager (originally Red Hat Package Manager; now a recursive acronym),IT,,,A
 RS232C,Standard 25-pin serial connection between computers and modems,Gen,,,A
 RSA,\gls{Raft} Sensor Array,CAM,,,A
 RSP,Rubin Science Platform,DM,,,A 
-RSP,Rubin System Performance,OPS,,,A 
 RSS,square root of the sum of the squares,TS,Document-11939,,A
 RTA,responsible technical authority,TS,Document-12013,,A
 RTD,Resistance Temperature Detector,OPS,,,A
@@ -694,6 +694,7 @@ SOML,Steward Observatory Mirror Lab (University of Arizona),Gen,,,A
 SOS,Science Operations Services,OPS,,,A
 SOW,Statement Of Work,Gen,,,A
 SP,Survey Performance,Sci,,,A
+SP,System PerFormance,OPS,,,A
 SP,Story Point,DM,,,A
 SPI,Schedule Performance Index,Gen,,,A
 SPIE,The international society for optics and photonics,Gen,,,A
