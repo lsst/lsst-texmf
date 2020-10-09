@@ -630,12 +630,13 @@ RENATER,Réseau National de télécommunications pour la Technologie l’Enseign
 REO,Rubin Education and Outreach,OPS,,,A
 REUNA,Red Universitaria Nacional,Gen,,,A
 RFC,Request For Comment,LSST DM,,,A
-RFP,Request For Proposals,LSST OPS,,,A
+RFP,Request For Proposals,PMO,,,A
 RFQ,Request For Quotations,LSST OPS,,,A
 RM,Release Manager,LSST DM,,,A
 RMS,Root-Mean-Square,Gen,,,A
 ROO,Rubin Observatory Operations,OPS,,,A
 ROOT,Object-oriented data analysis framework developed at CERN,Gen,,,A
+RPF,Rubin System PerFormance,OPS,,,A
 RPM,RPM Package Manager (originally Red Hat Package Manager; now a recursive acronym),IT,,,A
 RS232C,Standard 25-pin serial connection between computers and modems,Gen,,,A
 RSA,\gls{Raft} Sensor Array,CAM,,,A
