@@ -37,8 +37,8 @@ AIT,Assembly Integration and Test,Gen,,,A
 AIV,Assembly Integration and Verification,Gen,,,A
 ALD,Associate Lab Director,OPS DOE,,,A
 ALMA,Atacama Large Millimeter Array (ESO),Gen,,,A
-AMCL,\gls{AURA Management Council for LSST},LSST,,,A
-AMCR,\gls{AURA management Council for Rubin Observatory},OPS Rubin,,,A
+AMCL,AURA Management Council for LSST,LSST,,,A
+AMCR,AURA management Council for Rubin Observatory,OPS Rubin,,,A
 AMD,Advanced Micro Devices,OPS,,,A
 AMPATH,Americas Pathway (Network),Gen,,,A
 ANSI,American National Standards Institute,Gen OPS,,,A
@@ -65,7 +65,7 @@ ATCS,Auxiliary Telescope Control System,TSSW,,,A
 ATM,Adaptavist Test Management,LSST DM,,,A
 AU,deprecated acronym for astronomical unit; use au instead,Gen,,,A
 au,astronomical unit,Gen,,,A
-AURA,\gls{Association of Universities for Research in Astronomy},Gen,,,A
+AURA,Association of Universities for Research in Astronomy,Gen,,,A
 AWIS,Association for Women in Science,DEI,,,A
 AWS,Amazon Web Services,Gen,,,A
 B,Byte (8 bit),Gen,,,A
@@ -82,7 +82,7 @@ BEE,back-end electronics,TS,Document-11970,,A
 BJD,barycentric corrected Julian date,TS,Document-11981,,A
 BNF,Backus-Naur Form,Gen,,,A
 BNL,Brookhaven National Laboratory,Gen,,,A
-BOE,\gls{Basis of Estimate},Gen,,,A
+BOE,Basis of Estimate,Gen,,,A
 BPS,Batch Production Service,DF LDF DM,,,A
 Bps,Bytes per second,Gen,,,A
 bps,bit(s) per second,Gen,,,A
@@ -92,16 +92,16 @@ CADC,Canadian Astronomy Data Centre,Gen,,,A
 CAM,CAMera,LSST DM,,,A
 CAM,Control (or Cost) Account Manager,Gen,,,A
 CAOM,Common Archive Observation Model,DM Gen,,,A
-CAS,\gls{Central Administrative Services},Adm,,,A
+CAS,Central Administrative Services,Adm,,,A
 CASNET,AURA's financial reporting database,Adm,,,A
 CB,Configuration Baseline,LSST DM,,,A
 CBP,Collimated Beam Projector,DM LSST OPS ,,,A
 CC,Change Control,Gen,,,A
 CC-IN2P3,Centre de Calcul de l'IN2P3,Gen,,,A
-CCB,\gls{Change Control Board},LSST DM,,,A
-CCD,\gls{Charge-Coupled Device},Gen,,,A
+CCB,Change Control Board,LSST DM,,,A
+CCD,Charge-Coupled Device,Gen,,,A
 CCOB,Camera Calibration Optical Bench,LSST DM,,,A
-CCP,\gls{Change Control Process},Adm,,,A
+CCP,Change Control Process,Adm,,,A
 CCS,Camera Control System,LSST DM,,,A
 CDN,Content Delivery Network,DM IT,,,A
 CDS,Centre de Donnes astronomiques de Strasbourg,Gen,,,A
@@ -137,7 +137,7 @@ CPI,Cost Performance Index,Gen,,,A
 CPP,Calibration Production Processing,LSST DM,,,A
 CPR,Cardiopulmonary resuscitation,Gen,,,A
 CPU,Central Processing Unit,Gen,,,A
-CQA,\gls{Compliance and Quality Administrator},,,,A
+CQA,Compliance and Quality Administrator,,,,A
 CR,Change Request,LSST DM,,,A
 CR,Cosmic Ray,Gen,,,A
 CRB,cluster reference boards,TS,Document-11956,,A
@@ -150,7 +150,7 @@ CSDC,Community Science Data Center,OPS OIR,,,A
 CSV,Comma Separated Values,Gen,,,A
 CTIO,Cerro Tololo Inter-American Observatory,Gen,,,A
 CV,Curriculum Vitae,Gen,,,A
-DAC,\gls{Data Access Center},LSST DM,,,A
+DAC,Data Access Center,LSST DM,,,A
 DAF,data access framework,TS,Document-11936,,A
 DAQ,Data Acquisition System,LSST DM,,,A
 DAX,Data Access Services,LSST DM,,,A
@@ -183,7 +183,7 @@ DIA,Difference Image Analysis,DM,,,A
 DIMM,Differential Image Motion Monitor,Gen,,,A
 DKIST,Daniel K. Inouye Solar Telescope ,OPS,,,A
 DLS,Deep Lens Survey,TS,Document-11937,,A
-DM,\gls{Data Management},LSST DM,,,A
+DM,Data Management,LSST DM,,,A
 DM-SST,DM System Science Team,LSST DM,,DMSST,A
 DMCCB,DM Change Control Board,LSST DM,,,A
 DMCS,Data Management Control System,LSST DM,,,A
@@ -203,7 +203,7 @@ DMSST,DM System Science Team,LSST DM,,DM-SST,A
 DMTN,DM Technical Note,LSST DM,,,A
 DMTR,DM Test Report,LSST DM,,,A
 DNS,Domain Name Service,OPS ,,,A
-DOE,\gls{Department of Energy},Gen,,,A
+DOE,Department of Energy,Gen,,,A
 DoF,Degree(s) of Freedom (also known as DOF),Gen,,,A
 DOI,Digital Object Identifier,DM OPS,,,A
 DOM,Document Object Model,Gen,,,A
@@ -271,7 +271,7 @@ FFT,Fast Fourier Transform,Gen,,,A
 FGCM,Forward Global Calibration Model,DM,,,A
 FGST,Fermi Gamma-ray Space Telescope,Sci OPS,,,A
 FIFO,First In First Out,Gen,,,A
-FITS,\gls{Flexible Image Transport System},Gen,,,A
+FITS,Flexible Image Transport System,Gen,,,A
 FIU,Florida International University,Gen,,,A
 FK5,Fifth Fundamental Catalogue,Gen,,,A
 FLOP,FLoating point Operation,IT,,,A
@@ -311,7 +311,7 @@ GDS,Guider Data System,TS,,,A
 GFLOP,Giga FLOP,Gen,,,A
 GFLOPS,Giga FLOP per Second,Gen,,,A
 GID,Group Identifier,IT,,,A
-GIS,\gls{Global Interlock System},,,,A
+GIS,Global Interlock System,,,,A
 GLAST,Gamma-Ray Large Area Space Telescope,TS,Document-11965,,A
 GLONASS,GLObal NAvigation Satellite System,Gen,,,A
 GMT,Giant Magellan Telescope,OPS,,,A
@@ -340,7 +340,7 @@ HSC,Hyper Suprime-Cam,Gen,,,A
 HSI,Hispanic Serving Institutions,DEI,,,A
 HST,Hubble Space Telescope,Gen,,,A
 HTC,High Throughput Computing,DM,,,A
-HTM,\gls{Hierarchical Triangular Mesh},Gen,,,A
+HTM,Hierarchical Triangular Mesh,Gen,,,A
 HTML,HyperText Markup Language,Gen,,,A
 HTTP,HyperText Transfer Protocol,Gen,,,A
 HVAC,"Heating, Ventilation, and Air Conditioning",OPS,,,A
@@ -380,11 +380,11 @@ ITIL,Information Technology Infrastructure Library,Gen,,,A
 ITO,IT Operations,OPS OIR,,,A
 ITSC,Information Technology Services Committee,Adm,,,A
 IVOA,International Virtual-Observatory Alliance,Gen,,,A
-JD,\gls{Julian Date},Gen,,,A
+JD,Julian Date,Gen,,,A
 JDBC,Java DataBase Connectivity,Gen,,,A
 JDR,Joint Directors Review,LSST,,,A
 JHU,Johns Hopkins University,Gen,,,A
-JOG,\gls{Joint Oversight Group},Adm,,,A
+JOG,Joint Oversight Group,Adm,,,A
 JPL,Jet Propulsion Laboratory (DE ephemerides),Gen,,,A
 JRE,Java Runtime Environment,Gen,,,A
 JSON,JavaScript Object Notation,Gen,,,A
@@ -392,7 +392,7 @@ JSR,Joint Status Review,LSST DM,,,A
 JTM,Joint Technical Meeting,LSST DM,,,A
 JVM,Java Virtual Machine,Gen,,,A
 JWST,James Webb Space Telescope (formerly known as NGST),Gen,,,A
-K8S,\gls{Kubernetes} provisioning system,IT LSST DM,,,A
+K8S,Kubernetes provisioning system,IT LSST DM,,,A
 KB,KiloByte,Gen,,,A
 KBO,Kuiper-Belt Object,Gen,,,A
 kbps,kilobits per second,Gen,,,A
@@ -415,7 +415,7 @@ LBTO,Large Binocular Telescope Observatory,OPS,,,A
 LCA,Document handle LSST camera subsystem controlled documents,CAM,,,A
 LCLS,Linac Coherent Light Source,Gen,,,A
 LCO,Las Cumbres Observatories,Gen,,,A
-LCR,\gls{LSST Change Request},LSST DM,,,A
+LCR,LSST Change Request,LSST DM,,,A
 LCURM,AIP Liaison Committee on Underrepresented Minorities,DEI,https://www.aip.org/member-benefits/liaison-committees/,,A
 LDAP,Lightweight Directory Access Protocol,IT,,,A
 LDF,LSST Data Facility,LSST DM,,,A
@@ -440,8 +440,8 @@ LSE,LSST Systems Engineering (Document Handle),LSST DM,,,A
 LSP,LSST Science Platform (now Rubin Science Platform),LSST DM,,,A
 LSR,LSST System Requirements; LSE-29,LSST DM,,,A
 LSST,Legacy Survey of Space and Time (formerly Large Synoptic Survey Telescope),Gen,,,A
-LSSTC,\gls{LSST} Corporation,Adm,,,A
-LSSTPO,\gls{LSST} Project Office,Adm,,,A
+LSSTC,LSST Corporation,Adm,,,A
+LSSTPO,LSST Project Office,Adm,,,A
 LTS,LSST Telescope and Site  (Document Handle),TS,,,A
 LUT,Look-Up Table,Gen,,,A
 LZ,LUX-ZEPELIN (Dark Matter Mission),Sci,,,A
@@ -466,7 +466,7 @@ MEMS,micro-electronic mechanical systems,TS,Document-11995,,A
 MERRA,Modern-Era Retrospective analysis for Research and Applications,NASA,,,A
 MIDAS,Munich Image Data Analysis System (ESO),Gen,,,A
 MIE,Major Item of Equipment,OPS,,,A
-MJD,Modified \gls{Julian Date} (to be avoided; see also \gls{JD}),Gen,,,A
+MJD,Modified Julian Date (to be avoided; see also JD),Gen,,,A
 MMT,Multiple Mirror Telescope,OPS,,,A
 MNRAS,Monthly Notices of the Royal Astronomical Society,TS,Document-12016,,A
 MOA,Memo Of Agreement,OPS,,,A
@@ -482,7 +482,7 @@ MPO,Memorandum Purchase Order,OPS DOE,,,A
 MPP,Massively Parallel Process,DM, ,,A
 MPS,NSF Mathematical and Physical Sciences directorate,OPS,,,A
 MPS/AST,NSF Mathematical and Physical Sciences directorate’s Division of Astronomical Sciences,OPS,,,A
-MREFC,\gls{Major Research Equipment and Facility Construction},Gen,,NSF,A
+MREFC,Major Research Equipment and Facility Construction,Gen,,NSF,A
 MREN,Montenegrin Research and Education Network,Gen,,,A
 MSB,Most Significant Bit,Gen,,,A
 MSO,Mid-Scale Observatories,OPS OIR,,,A
@@ -521,19 +521,19 @@ NOAA,National Oceanic and Atmospheric Administration,Gen,,,A
 NOAO,National Optical Astronomy Observatories (USA),Gen,,,A
 NOC,Network Operations Center,NET ,,,A
 NOGLSTP,National Organization of Gay and Lesbian Scientists and Technical Professionals,DEI,,,A
-NOIR,\gls{NSF}'s National Optical-Infrared Astronomy Research Laboratory; \url{https://nationalastro.org},Gen,,,A
+NOIR,NSF's National Optical-Infrared Astronomy Research Laboratory; \url{https://nationalastro.org,Gen,,,A
 NOS,NSF's OIR Lab Operations Services ,OPS OIR,,,A
 NPCF,National Petascale Computing Facility,OPS OIR,,,A
 NRAO,National Radio Astronomy Observatory,Gen,,,A
 NRC,National Research Council,OPS,,,A
 NSB,National Science Board,TS,Document-11963,,A
 NSBP,National Society of Black Physicists,DEI,,,A
-NSF,\gls{National Science Foundation},Gen,,,A
-NSF's OIR Lab,\gls{NSF}'s National Optical-Infrared Astronomy Research Laboratory; \url{https://nationalastro.org},Gen,,,A
+NSF,National Science Foundation,Gen,,,A
+NSF's OIR Lab,NSF's National Optical-Infrared Astronomy Research Laboratory; \url{https://nationalastro.org,Gen,,,A
 NSO,National Solar Observatory,OPS,,,A
 NSS,NOAO Support Services,OPS,,,A
 NTP,Network Time Protocol,OPS ,,,A
-NTS,NCSA \gls{Test Stand},DM CAM,,,A
+NTS,NCSA Test Stand,DM CAM,,,A
 NUV,Near Ultraviolet,Sci,,,A
 NVMe,Non Volatile Memory Express,DM IT,,,A
 NYT,New York Times,Gen,,,A
@@ -550,7 +550,7 @@ OODS,Observatory Operations Data Service,DM,,,A
 OPCC,Oficina de Protección de la Calidad del Cielo,OPS ,,,A
 OPD,optical path difference,TS,Document-12036,,A
 OPS,Operations,LSST DM,,,A
-OpSim,\gls{Operations Simulation},Sims,,,A
+OpSim,Operations Simulation,Sims,,,A
 OPSTN,Operations Technical Note,LSST DM,,,A
 ORR,Operations Readiness Review,OPS,,,A
 OS,Operating System,Gen,,,A
@@ -561,9 +561,9 @@ OSX,Macintosh Operating System (obsolete; now macOS),Gen,,,A
 OTB,Over Target Baseline,Gen,,,A
 OTS,observatory telemetry system,TS,Document-12015,,A
 Pan-STARRS,Panoramic Survey Telescope and Rapid Response System,Gen,,,A
-Parsl,Parallel Scripting Library \url{http://parsl-project.org/},DM,,,A
+Parsl,Parallel Scripting Library \url{http://parsl-project.org/,DM,,,A
 PB,PetaByte,Gen,,,A
-PBI,\gls{Predominantly Black Institution},DEI,,,A
+PBI,Predominantly Black Institution,DEI,,,A
 PCA,Principal Component Analysis,Gen,,,A
 PCB,printed circuit boards,TS,Document-12030,,A
 PCI,Peripheral Component Interconnect,Gen,,,A
@@ -576,16 +576,16 @@ PDR,Preliminary Design Review,LSST DM,,,A
 PDR1,Public Data Release 1 (HSC),OPS,,,A
 PDR2,Public Data Release 2 (HSC),OPS,,,A
 PDU,Power Distribution Unit,LSST DM,,,A
-PEP,\gls{Project Execution Plan},Adm,,,A
+PEP,Project Execution Plan,Adm,,,A
 PFS,Prime Focus Spectrograph,Gen,,,A
 PHA,potentially hazardous asteroids,TS,Document-11971,,A
 PI,Principle Investigator,Sci OPS,,,A
 PII,personally identifiable information,TS,Document-11976,,A
 PLL,Phase-Locked Loop,Gen,,,A
 PM,Project Manager,LSST DM,,,A
-PMCS,\gls{Project Management Controls System},LSST DM,,,A
+PMCS,Project Management Controls System,LSST DM,,,A
 PMM,precision measuring machine,TS,Document-11988,,A
-PMO,\gls{Project Management Office},Adm,,,A
+PMO,Project Management Office,Adm,,,A
 PMP,(DM) Project Management Plan; LDM-294,LSST DM,,,A
 POC,Proof Of Concept,Gen,,,A
 POC,People Of Color,DEI,,,A
@@ -601,7 +601,7 @@ PRT,Personal Research Time,OPS,,,A
 PS,Project Scientist,LSST DM,,,A
 PSD,power spectral density,TS,Document-11996,,A
 PSF,Point Spread Function,Gen,,,A
-PST,\gls{Project Science Team},LSST DM,,,A
+PST,Project Science Team,LSST DM,,,A
 PSTN,Project Science Technical Note,LSST DM,,,A
 PVI,Processed Visit Image,DM,,,A
 PWI,Predominantly White Institution,DEI,,,A
@@ -618,9 +618,9 @@ RAM,Random Access Memory,Gen,,,A
 RAVE,Radial Velocity Experiment (spectroscopic survey),TS,Document-12004,,A
 RBSE,Research-Based Science Education (AURA),OPS,,,A
 RC,Release Candidate,Gen,,,A
-RCC,\gls{Raft} Control Rate,CAM,,,A
-RCI,\gls{Raft} Communication Interface,CAM,,,A
-RCM,\gls{Raft} Communication Module,CAM,,,A
+RCC,Raft Control Rate,CAM,,,A
+RCI,Raft Communication Interface,CAM,,,A
+RCM,Raft Communication Module,CAM,,,A
 RDBMS,Relational Database Management System ,Gen,,,A
 RDO,Rubin Directors Office,OPS,,,A
 RDP,Rubin Data Production,OPS,,,A
@@ -640,13 +640,13 @@ ROOT,Object-oriented data analysis framework developed at CERN,Gen,,,A
 RPF,Rubin system PerFormance,OPS,,,A
 RPM,RPM Package Manager (originally Red Hat Package Manager; now a recursive acronym),IT,,,A
 RS232C,Standard 25-pin serial connection between computers and modems,Gen,,,A
-RSA,\gls{Raft} Sensor Array,CAM,,,A
+RSA,Raft Sensor Array,CAM,,,A
 RSP,Rubin Science Platform,DM,,,A 
 RSS,square root of the sum of the squares,TS,Document-11939,,A
 RTA,responsible technical authority,TS,Document-12013,,A
 RTD,Resistance Temperature Detector,OPS,,,A
 RTI,rise time invariance,TS,Document-12037,,A
-RTM,\gls{Raft} Tower Module,CAM,,,A
+RTM,Raft Tower Module,CAM,,,A
 RTN,Rubin Technical Note,LSST DM,,,A
 RTV,raster to vector,TS,Document-11984,,A
 S3,(Amazon) Simple Storage Service ,IT,,,A
@@ -664,12 +664,12 @@ SCADA,Supervisory Control And Data Acquisition,TS,,,A
 SCIDAR,Scintillation Detection And Ranging,TS,,,A
 SCOC,Survey Cadence Optimization Committee,OPS ,,,A
 SCOSC,Survey Cadence Optimization Strategy Committee,OPS ,,,A
-SDQA,\gls{Science Data Quality Assessment},DM LSST,,,A
+SDQA,Science Data Quality Assessment,DM LSST,,,A
 SDS,Science array Data acquisition Subsystem,TS,,,A
-SDSS,\gls{Sloan Digital Sky Survey},Gen,,,A
+SDSS,Sloan Digital Sky Survey,Gen,,,A
 SE,System Engineering,Rubin,,,A
-SED,\gls{Spectral Energy Distribution},Sci,,,A
-SEM,\gls{Systems Engineering Manager},Adm,,,A
+SED,Spectral Energy Distribution,Sci,,,A
+SEM,Systems Engineering Manager,Adm,,,A
 SEMP,Systems Engineering Management Plan,LSST DM,,,A
 SEWG,Survey Evaluation Working Group,OPS,,,A
 SHA-1,Secure Hash Algorithm 1,Gen,,,A
@@ -703,15 +703,15 @@ SPL,Science PipeLines,DM,,,A
 SQL,Structured Query Language,Gen,,,A
 SQR,SQuARE document handle,LSST DM,,,A
 SQuaRE,Science Quality and Reliability Engineering,LSST DM,LDM-204,,A
-SQuaSH,\gls{Science Quality Analysis Harness},DM,https://squash.lsst.codes/,,A
+SQuaSH,Science Quality Analysis Harness,DM,https://squash.lsst.codes/,,A
 SRD,LSST Science Requirements; LPM-17,LSST DM,,,A
-SRT,Science \gls{Raft} Tower,CAM,,,A
+SRT,Science Raft Tower,CAM,,,A
 SS,Subsystem Scientist,LSST DM,,,A
 SSC,Survey Strategy Committee,OPS,,,A
 SSD,Solid-State Disk,Gen,,,A
 SSH,Secure SHell,Gen,,,A
 SSL,Secure Sockets Layer,IT,,,A
-SSM,\gls{Subsystem Manager},Adm,,,A
+SSM,Subsystem Manager,Adm,,,A
 SSP,Solar System Processing,LSST DM,,,A
 SST,Simonyi Survey Telescope,Gen,,,A
 SST,Subsystem Science Team,LSST DM,,,A
@@ -799,9 +799,9 @@ VRO,(not to be used)Vera C. Rubin Observatory,Gen,,,A
 VST,VLT Survey Telescope,Gen,,,A
 W3C,World Wide Web Consortium,Gen,,,A
 WAN,Wide Area Network,Gen,,,A
-WBS,\gls{Work Breakdown Structure},Gen,,,A
+WBS,Work Breakdown Structure,Gen,,,A
 WCAG,Web Content Accessibility Guidelines,OPS,,,A
-WCS,\gls{World Coordinate System},Gen,,,A
+WCS,World Coordinate System,Gen,,,A
 WEPAN,Women in Engineering ProActive Network,DEI,,,A
 WFD,Wide Fast Deep,OPS,,,A
 WFS,WaveFront Sensor,TS,,,A
@@ -868,7 +868,7 @@ Batch Production,"Computational processing that is executed as inputs become ava
 brighter-fatter effect,The common term used to refer to one of the photometric qualities of the LSST camera: sources with a higher flux have a broader PSF. This is accounted for during calibration,DM,"LDM-151, https://arxiv.org/pdf/1402.0725v1.pdf",,G
 Broker,"Software which receives and redistributes Alerts, and may also perform processing such as filtering for certain characteristics, cross-matching with non-LSST catalogs, and/or light-curve classification, in order to identify and prioritize targets for follow-up and/or make scientific analyses. ",DM,LDM-612,,G
 Builder,Individuals who have accumulated 2 FTE years worth of employment/contributions to the LSST Project,Adm,,,G
-Business Manager,"The person responsible for all business activities of the LSST Project and the LSST Corporation; he or she serves as liaison to AURA \gls{CAS}, develops and monitors contracts, and serves as the LSST Corporation Secretary",Adm,,,G
+Business Manager,"The person responsible for all business activities of the LSST Project and the LSST Corporation; he or she serves as liaison to AURA CAS, develops and monitors contracts, and serves as the LSST Corporation Secretary",Adm,,,G
 Butler,"A middleware component for persisting and retrieving image datasets (raw or processed), calibration reference data, and catalogs",DM,"LDM-152, https://ldm-463.lsst.io/v/draft/index.html#id1",,G
 Buyer,"Includes the terms 'Buyer' 'subcontract administrator or officer' 'contracts administrator or officer' sub-award administrator, or any other LSSTC authorized procurement official as used herein are inter-changeable",Adm,,,G
 CA-FACTS,NSF Cooperative Agreement Financial & Administrative Terms and Conditions,Gen,,,G
@@ -905,7 +905,7 @@ Compliance and Quality Administrator,"The person who directs activities designed
 configuration,"A task-specific set of configuration parameters, also called a 'config'. The config is read-only; once a task is constructed, the same configuration will be used to process all data. This makes the data processing more predictable: it does not depend on the order in which items of data are processed. This is distinct from arguments or options, which are allowed to vary from one task invocation to the next",DM,,config,G
 Configuration Item,"Any component of the LSST system, such as requirements, specifications, designs, characteristics, and/or documents describing the aforementioned, that has reached a baseline point and is under change control",Adm,,,G
 Constraint,An external limitation imposed on a delivered item under which it must meet its requirements (e.g. the survey performance must be met under the constraint of the historical weather pattern of the chosen site).  A constraint is not a characteristic possessed by the system or subsystem itself,Adm TS CAM DM SE,,,G
-Construction,"The period during which LSST observatory facilities, components, hardware, and software are built, tested, integrated, and commissioned. Construction follows design and development and precedes operations. The LSST construction phase is funded through the \gls{NSF} \gls{MREFC} account",Adm,,,G
+Construction,"The period during which LSST observatory facilities, components, hardware, and software are built, tested, integrated, and commissioned. Construction follows design and development and precedes operations. The LSST construction phase is funded through the NSF MREFC account",Adm,,,G
 Contingency,"The project's overall reserves in excess of the documented baselines for budget, schedule, and technical scope. Held in order to accommodate unexpected events or circumstances that represent potential risk to the project",Adm,,,G
 Contingency Management,"The formal process that provides the ability and flexibility to solve unforeseen issues that may impact the project's budget, schedule, and technical performance. The process incorporates activity-based uncertainties and high impact event-based uncertainties",Adm,,,G
 Contract,"A binding legal agreement between parties obligating the one (typically the  'seller') to furnish certain supplies or services and the other (typically, the buyer) to compensate the seller for the supplies or services with some form of consideration, (typically money). The term, 'contract' is used interchangeably with 'sub-award' 'agreement' 'memorandum of understanding and/or agreement' and 'purchase order' Each is a term used to differentiate between a purchase-order-format type document and a complex purchase in a subcontract/sub-award-format type document. These also include awards and notices of awards; job orders or task letters issued under basic ordering agreements; letter contracts; orders, such as purchase orders and subcontracts under which the order becomes effective by written acceptance or performance; and bilateral contract modifications",Adm,,,G
@@ -940,31 +940,31 @@ Difference Image,"Refers to the result formed from the pixel-by-pixel difference
 Difference Image Analysis,"The detection and characterization of sources in the Difference Image that are above a configurable threshold, done as part of Alert Generation Pipeline",DM,"LDM-151, LSE-163","DIA, Difference Image Processing",G
 Differential Chromatic Refraction,"The refraction of incident light by Earth's atmosphere causes the apparent position of objects to be shifted, and the size of this shift depends on both the wavelength of the source and its airmass at the time of observation. DCR corrections are done as a part of DIA",DM,DMTN-017,DCR,G
 Director,"The person responsible for the overall conduct of the project; the LSST director is charged with ensuring that both the scientific goals and management constraints on the project are met. S/he is the principal public spokesperson for the project in all matters and represents the project to the scientific community, AURA, the member institutions of LSSTC, and the funding agencies",Adm,,,G
-Docker,A system for packaging and distributing software using self-contained containers which may be run on any Linux system; \url{https://www.docker.com/},DM,,,G
+Docker,A system for packaging and distributing software using self-contained containers which may be run on any Linux system; \url{https://www.docker.com/,DM,,,G
 Document,Any object (in any application supported by DocuShare or design archives such as PDMWorks or GIT) that supports project management or records milestones and deliverables of the LSST Project,Adm,,,G
 Document Specialist,The person responsible for maintaining the Project's document archive (DocuShare) as well as providing editing and technical writing services. He or she also coordinates administrative support to the Project Management Office and the distributed Project team,Adm,,,G
 DocuShare,The trade name for the enterprise management software used by LSST to archive and manage documents,Adm,,,G
 drill down,"Move from a higher level aggregation of data to its inputs. For example, given data describing a tract, to drill down to constituent patches and then to objects. Also refers to the act of identifying an issue in a high-level summary of the data (e.g. an aberrant metric value) and interactively investigating its inputs to find the source of the problem",DM QA,DMTN-085,,G
 Earned Value,A measurement of how much work has been completed compared to how much was expected to have been completed at a given point in the project,Adm,,,G
 Earned Value Management,A project management technique for objectively measuring project performance and progress in terms of budget and schedule,Adm Gen,,,G
-Earned Value Management System,"A set of tools, techniques and procedures which are used to implement a \gls{EVM} approach to project management",Adm Gen,,,G
+Earned Value Management System,"A set of tools, techniques and procedures which are used to implement a EVM approach to project management",Adm Gen,,,G
 Education and Public Outreach,"The LSST subsystem responsible for the cyberinfrastructure, user interfaces, and outreach programs necessary to connect educators, planetaria, citizen scientists, amateur astronomers, and the general public to the transformative LSST dataset",EPO,,EPO,G
 Eimage,"An output product of PhoSim, an Eimage is a simulation of the response of a single sensor, where the outputs of the constituent amps have been integrated, and the effects of variations in pixel-to-pixel sensitivity and amplifier gains have been removed",Sims,,,G
-element,A node in the hierarchical project \gls{WBS},DM,,,G
+element,A node in the hierarchical project WBS,DM,,,G
 Enclave,"Individually defined portions of the computational resources at the Summit, Base, NCSA, and Satellite Facilities, such as the Prompt Enclave, the Archive Enclave, etc. ",DM,LDM-148,,G
 Encumbrances,"A contingent liability, contract, purchase order, payroll commitment, tax payable, or legal penalty that is chargeable to an account; it ceases to be an encumbrance when paid out or when the actual liability amount is determined and recorded as an expense",Adm,,,G
 ephemeris,"An ephemeris (pl: ephemerides) gives the predicted positions of astronomical objects or artificial satellites in the sky with time. The ephemerides are computed from mathematical models of motion of the object and the Earth. In LSST Solar System Processing, it refers to a predicted position (RA/Dec/time/etc) of a Solar System Object (SSObject)",Sci,,,G
-epic,A self contained work with a concrete deliverable which my be scheduled to take place with a single \gls{cycle} and \gls{WBS} \gls{element},DM,,,G
+epic,A self contained work with a concrete deliverable which my be scheduled to take place with a single cycle and WBS element,DM,,,G
 epoch,"Sky coordinate reference frame, e.g., J2000. Alternatively refers to a single observation (usually photometric, can be multi-band) of a variable source",Sci,,,G
 Escalation,Change in the cost or price of specific goods and services in a given economy over a period,Adm,,,G
 eups,"ExtUPS (usually abbreviated as eups) is the software component management system that is used for the LSST Stack. It enables a choice of which versions of components should be used for a software build, and ensures that a consistent set is chosen. See the Eups Tutorial for details",DM,https://developer.lsst.io/stack/eups-tutorial.html,ExtUPS,G
 eups-tag,A versioned tag for eups that identifies a build product with its git-source SHA-1 identifier,DM,https://developer.lsst.io/stack/eups-tutorial.html,,G
 exponential profile,The radial distribution of flux of an astronomical source that is characterized: I(r)=I0exp(.68(r/re)) The normalization 1.68 is chosen so that the model radius is a half-light radius. An 2-dimensional elliptical version of this profile is fit to every detected source,Sci,,,G
 Filter,"A filter in astronomy is an optical element used to restrict the passband of light reaching the focal plane, it transmits a selected range of wavelengths. Filters elements are often named after standard photometric passbands, such as those used in the SDSS survey: u, g, r, i, z",CAM,,,G
-Firefly,"A framework of software components written by IPAC for building web-based user interfaces to astronomical archives, through which data may be searched and retrieved, and viewed as \gls{FITS} images, catalogs, and/or plots. Firefly tools will be integrated into the Science Platform",DM,https://github.com/Caltech-IPAC/firefly,,G
+Firefly,"A framework of software components written by IPAC for building web-based user interfaces to astronomical archives, through which data may be searched and retrieved, and viewed as FITS images, catalogs, and/or plots. Firefly tools will be integrated into the Science Platform",DM,https://github.com/Caltech-IPAC/firefly,,G
 Flexible Image Transport System,"an international standard in astronomy for storing images, tables, and metadata in disk files. See the IAU FITS Standard for details",DM,,,G
 flux,"Shorthand for radiative flux, it is a measure of the transport of radiant energy per unit area per unit time. In astronomy this is usually expressed in cgs units: erg/cm2/s",Sci,,,G
-Focal plane array,"A focal plane array (\gls{FPA}) is the arrangement of multiple sensors in the focal plane of a camera. For LSST, the FPA is divided into an array of contiguous rafts, upon which 9 science sensors are mounted 3x3. Additional engineering sensors are mounted on rafts near the periphery to support wavefront sensing and telescope guiding",CAM,,,G
+Focal plane array,"A focal plane array (FPA) is the arrangement of multiple sensors in the focal plane of a camera. For LSST, the FPA is divided into an array of contiguous rafts, upon which 9 science sensors are mounted 3x3. Additional engineering sensors are mounted on rafts near the periphery to support wavefront sensing and telescope guiding",CAM,,,G
 footprint,"See 'source footprint', 'instrumental footprint', or 'survey footprint', `Footprint` is a Python class representing a source footprint",DM,LDM-151,,G
 forced photometry,"A measurement of the photometric properties of a source, or expected source, with one or more parameters held fixed. Most often this means fixing the location of the center of the brightness profile (which may be known or predicted in advance), and measuring other properties such as total brightness, shape, and orientation. Forced photometry will be done for all Objects in the Data Release Production",DM,"LDM-151, LSE-163",,G
 ForcedSource,DRP table resulting from forced photometry,DM,"LDM-151, LSE-163",,G
@@ -987,17 +987,17 @@ Information Technology Systems Administrator,"The person responsible for maintai
 Instance Catalog,"A catalog of astronomical sources containing source type, coordinates, brightnesses, and SEDs for use in creating simulated LSST images with PhoSim. Synonym with trim file",Sims,,,G
 Institutional Member,"An organization such as an institute, observatory, university, or company committed to making an intellectual, financial, or other significant contribution to LSST operations or to preparing the scientific community to use the LSST dataset. They are members of the LSST Corporation and pay an annual membership fee in an amount established by the LSSTC Board of Directors",Adm,,,G
 Instrument Signature Removal,"Instrument Signature Removal is a pipeline that applies calibration reference data in the course of raw data processing, to remove artifacts of the instrument or detector electronics, such as removal of overscan pixels, bias correction, and the application of a flat-field to correct for pixel-to-pixel variations in sensitivity",DM,LDM-151,ISR,G
-instrumental footprint,"The size and shape of a region on the sky that is covered by the field of view of an instrument, or part of an instrument, e.g., the LSST Camera, or \gls{ComCam}, or a single LSST CCD.  Often represented by a geometric region defined in field-angle space",DM,,,G
+instrumental footprint,"The size and shape of a region on the sky that is covered by the field of view of an instrument, or part of an instrument, e.g., the LSST Camera, or ComCam, or a single LSST CCD.  Often represented by a geometric region defined in field-angle space",DM,,,G
 Integrated Project Schedule,"Complete picture of the entire project life cycle. By incorporating all project phases into the same model, the IPS allows the project team to plan the critical interfaces not only among project work elements but also among the design, construction, commissioning, and operations phases",Adm,,,G
 Interface Control Document,"A Document that describes, defines, and controls the interface(s) of a system, thereby bounding its requirements. The description includes the inputs and outputs of a single system or element. An ICD may also describe the interface between two systems or subsystems. The purpose of the ICD is to communicate all possible inputs to and all potential outputs from a system for some potential or actual user of the system in operations. The internal interfaces of a system or subsystem are typically not documented in an ICD, but rather in a system design document",Adm,,,G
-Interface Support Document,"Constrains an \gls{ICD} through such things as dictionaries, protocols, or definitions of system-wide architectural frameworks by which the subsystem teams must abide. However, ISDs do NOT contain requirements. ISDs are written by the subsystem teams with a stake in the subject matter; they are change controlled documents",Adm,,,G
+Interface Support Document,"Constrains an ICD through such things as dictionaries, protocols, or definitions of system-wide architectural frameworks by which the subsystem teams must abide. However, ISDs do NOT contain requirements. ISDs are written by the subsystem teams with a stake in the subject matter; they are change controlled documents",Adm,,,G
 International Affiliate,"An organization outside of the United States or Chile such as an institute, university, consortium, or government agency that has agreed to share in the annual operating costs of the LSST in exchange for data rights for a specified list of principal investigators during LSST operations and commissioning. These data rights may include access to specified project resources prior to operations. Rights also come with responsibilities, similar to those required of U.S.-based scientists, regarding unauthorized redistribution of data",Adm,,,G
-J2000,"\gls{Julian Date} referring to the instant of 12 noon (midday) on January 1, 2000. IAU standard equinox.",Sci,,,G
+J2000,"Julian Date referring to the instant of 12 noon (midday) on January 1, 2000. IAU standard equinox.",Sci,,,G
 JIRA,issue tracking product (not an acronym but a truncation of Gojira the Japanese name for Godzilla),Gen,,,G
-Joint Oversight Group,oversight body comprised of representatives from the \gls{NSF} and \gls{DOE}; the JOG meets regularly with LSST senior management to coordinate the Project's activities,Adm,,,G
+Joint Oversight Group,oversight body comprised of representatives from the NSF and DOE; the JOG meets regularly with LSST senior management to coordinate the Project's activities,Adm,,,G
 jointcal,"The jointcal package optimizes the astrometric and photometric calibrations of a set of astronomical images that cover a sky tract and were obtained as a series of visits, which may be spread out in time. The jointcal algorithms incorporates object matching both between visits and to reference star catalogs, and produces more accurate distortion and throughput models than if the astrometry and photometry were fit independently. Jointcal is a part of the Science Pipelines",DM,"DMTN-036, LDM-151",,G
 Julian Date,"The Julian Date (JD) of any instant is the Julian day number for the preceding noon (UTC), plus the fraction of the day elapsed since that instant. The Julian day number is a running sequence of integral days, starting at noon, since the beginning of the Julian Period; JD 0.0 corresponds to noon on 1 January 4713 BCE. Various Julian Date converters are available on the Web. For example, 18h 00m 00.0s UT on 2014-July-01 (near the start of LSST construction) corresponds to JD 2456840.25",Sci,,,G
-Kubernetes,A system for automating application deployment and management using software containers (e.g. \gls{Docker}); \url{https://kubernetes.io},DM,,,G
+Kubernetes,A system for automating application deployment and management using software containers (e.g. Docker); \url{https://kubernetes.io,DM,,,G
 Level 1 Data Product,Deprecated term; see Prompt Data Product,DM,LPM-231,Prompt Data Product,G
 Level 1 Processing,Deprecated term; see Prompt Processing,DM,LPM-231,Prompt Processing,G
 Level 2 Data Product,Deprecated term; see Data Release Data Product,DM,LPM-231,Data Release Data Product,G
@@ -1006,7 +1006,7 @@ Level 3 Data Product,Deprecated term; see User Generated Data Product,DM,LPM-231
 Level 3 Processing,Deprecated term; see User Generated Processing,DM,LPM-231,User Generated Processing,G
 LSST Change Request,"document that proposes a change to a configuration item; after evaluation by the CCB and decision by the Project Manager, the change request is updated with the outcome, action items, and necessary notification",Adm,,,G
 LSST Corporation,"An Arizona 501(c)3 not-for-profit corporation formed in 2003 for the purpose of designing, constructing, and operating the LSST System. During design and development, the Corporation stewarded private funding used for such essential contributions as early site preparation, mirror construction, and early data management system development. During construction, LSSTC will secure private operations funding from international affiliates and play a key role in preparing the scientific community to use the LSST dataset",Adm,,,G
-LSST Project Office,Official name of the stand-alone AURA operating center responsible for execution of the LSST construction project under the NSF \gls{MREFC} account,Adm,,,G
+LSST Project Office,Official name of the stand-alone AURA operating center responsible for execution of the LSST construction project under the NSF MREFC account,Adm,,,G
 "magnitude, Petrosian",A magnitude determined from a fit to a Petrosian brightness profile: Rp(r) = stuf f Appropriate for galaxies,Sci,,,G
 "magnitude, Pogson","Usually simply magnitude, it is a logarithmic measure of integrated source brightness, usually within a standard photometric passband, such that: MM0=2.5log(F/F0) where the zero-point flux is defined by a photometric standard",Sci,,,G
 "magnitude, PSF","For isolated stars that are well described by the PSF, the optimal measure of the total flux is determined by fitting a PSF model to the object",Sci,,,G
@@ -1038,7 +1038,7 @@ Overscan,"Refers to the portion of the channel read-out of either a) non photo-a
 passband,"The window of wavelength or the energy range admitted by an optical system; specifically the transmission as a function of wavelength or energy. Typically the passband is limited by a filter. The width of the passband may be characterized in a variety of ways, including the width of the half-power points of the transmission curve, or by the equivalent width of a filter with 100\% transmission within the passband, and zero elsewhere",Sci,,,G
 patch,"An quadrilateral sub-region of a sky tract, with a size in pixels chosen to fit easily into memory on desktop computers",DM,LDM-151,sky patch,G
 PhoSim,The Photon Simulator (PhoSim) simulate realistic astronomical images by tracing photons through the atmosphere and a telescope and camera into pixels.,Sci,,,G
-photometric redshift,"Often abbreviated to photo-z, this is an estimate of the true redshift (of a galaxy) determined from multi-band photometry. Generally determined from a fit of source colors to grid of model \gls{SED}s with redshift",Sci,,,G
+photometric redshift,"Often abbreviated to photo-z, this is an estimate of the true redshift (of a galaxy) determined from multi-band photometry. Generally determined from a fit of source colors to grid of model SEDs with redshift",Sci,,,G
 pipeline,A configured sequence of software tasks (Stages) to process data and generate data products. Example: Association Pipeline,DM,,,G
 PipelineTask,"A special kind of Task that can read its inputs and write its outputs using a Butler, in addition to being able to have them passed in and out directly as Python objects. PipelineTasks may be connected together dynamically and executed by a generic workflow system. PipelineTasks typically (but not always) delegate most of their work to nested regular Tasks",DM,"LDM-556, DMTN-055",supertask,G
 point metric,"A metric that is associated with a single entry in a catalog. Examples include the shape of a source, the standard deviation of the flux of an object detected on a Coadd, the flux of an source detected on a difference image",DM QA,DMTN-085,,G
@@ -1063,9 +1063,9 @@ Prompt Processing,"The data processing which occurs at the Archive Center based 
 Prompt Products DataBase,Data products within LSST data releases relating to LSST Alert Production,DM,,,G
 provenance,"Information about how LSST images, Sources, and Objects were created (e.g., versions of pipelines, algorithmic components, or templates) and how to recreate them",DM,,,G
 PSF match,"To convolve an image to obtain a desired point spread function (PSF), typically in order to match it to another image. For example, Template Images are PSF matched to the new image before image subtraction when Difference Images are created",DM,LDM-151,PSFMatch,G
-QAWG,\gls{QA} Strategy Working Group,DM QA,DMTN-085,,G
+QAWG,QA Strategy Working Group,DM QA,DMTN-085,,G
 Qserv,"LSST's distributed parallel database. This database system is used for collecting, storing, and serving LSST Data Release Catalogs and Project metadata, and is part of the Software Stack",LSST DM,LDM-135,QSERV,G
-Quality Assurance,"All activities, deliverables, services, documents, procedures or artifacts which are designed to ensure the quality of DM deliverables. This may include \gls{QC} systems, in so far as they are covered in the charge described in LDM-622. Note that contrasts with the LDM-522 definition of “QA” as “Quality Analysis”, a manual process which occurs only during commissioning and operations. See also: Quality Control",DM QA,"DMTN-085, LDM-622",QA,G
+Quality Assurance,"All activities, deliverables, services, documents, procedures or artifacts which are designed to ensure the quality of DM deliverables. This may include QC systems, in so far as they are covered in the charge described in LDM-622. Note that contrasts with the LDM-522 definition of “QA” as “Quality Analysis”, a manual process which occurs only during commissioning and operations. See also: Quality Control",DM QA,"DMTN-085, LDM-622",QA,G
 Quality Control,"Services and processes which are aimed at measuring and monitoring a system to verify and characterize its performance (as in LDM-522). Quality Control systems run autonomously, only notifying people when an anomaly has been detected. See also Quality Assurance",DM QA,"DMTN-085, LDM-522",QC,G
 Raft,"The sensors in the LSST camera are packaged into replaceable electronic assemblies, called rafts, consisting of 9 butted sensors (CCDs) in a 3x3 mosaic. Each raft is a replaceable unit in the LSST camera. There are 21 science rafts in the camera plus 4 additional corner rafts with specialized, non-science sensors, making for a total of 189 CCDs per focal plane image. The 21 science rafts are numbered from ""0,1"" through ""0,3"", ""1,0"" through ""3,4"", and ""4,1"" through ""4,3"". (In other words, the 25 combinations from ""0,0"" through ""4,4"" minus the four corners which are non-science.)",CAM,,,G
 Raw Image,"The output from a camera, consisting of a set of image sections from each amplifier on each sensor on the focal plane array, including overscan",DM,LDM-151,"C3 Image, Raw Camera Image, Raw Exposure",G
@@ -1097,7 +1097,7 @@ Science Collaboration Chair,The leader of and spokesperson for a Science Collabo
 Science Data Quality Assessment,"An analysis system that examines and reports on the quality of LSST data and data products from a scientific perspective, and determines whether the data meets the science requirements in LPM-17",DM,LPM-17,SDQA,G
 Science Pipelines,"The library of software components and the algorithms and processing pipelines assembled from them that are being developed by DM to generate science-ready data products from LSST images. The Pipelines may be executed at scale as part of LSST Prompt or Data Release processing, or pieces of them may be used in a standalone mode or executed through the LSST Science Platform. The Science Pipelines are one component of the LSST Software Stack",DM,https://pipelines.lsst.io,Software Stack,G
 Science Platform,"A set of integrated web applications and services deployed at the LSST Data Access Centers (DACs) through which the scientific community will access, visualize, and perform next-to-the-data analysis of the LSST data products",DM,LSE-319,,G
-Science Quality Analysis Harness,provides a minimal infrastructure for monitoring the LSST verification metrics. It can be used and extended to preserve the code and knowledge developed during LSST construction \url{https://squash.lsst.codes/},DM,https://squash.lsst.codes/,,G
+Science Quality Analysis Harness,provides a minimal infrastructure for monitoring the LSST verification metrics. It can be used and extended to preserve the code and knowledge developed during LSST construction \url{https://squash.lsst.codes/,DM,https://squash.lsst.codes/,,G
 Science Verification,"The second phase of Commissioning for the LSST Construction Project, Science Verification demonstrates the system's compliance with the survey performance specifications detailed in the LSST Science Requirements Document (SRD, LPM-17). These activities are based solely on the measured 'on-sky' performance of the LSST system",DM,LPM-17,,G
 SCons,A piece of software developed externally to LSST. An automated build tool used for DM software development. See the SCons website for details,DM,https://scons.org,,G
 Scope,"The work needed to be accomplished in order to deliver the product, service, or result with the specified features and functions",Adm,,,G
@@ -1108,13 +1108,13 @@ SDQA Threshold,"The set of lower and upper thresholds associated with an SDQA Me
 seeing,"An astronomical term for characterizing the stability of the atmosphere, as measured by the width of the point-spread function on images. The PSF width is also affected by a number of other factors, including the airmass, passband, and the telescope and camera optics",Sci,,,G
 Sensor,"A sensor is a generic term for a light-sensitive detector, such as a CCD. For LSST, sensors consist of a 2-D array of roughly 4K x 4K pixels, which are mounted on a raft in a 3x3 mosaic. Each sensor is divided into 16 channels or amplifiers. The 9 sensors that make up a raft are numbered from ""0,0"" through ""2,2""",CAM,,,G
 shape,"In reference to a Source or Object, the shape is a functional characterization of its spatial intensity distribution, and the integral of the shape is the flux. Shape characterizations are a data product in the DIASource, DIAObject, Source, and Object catalogs",DM,,,G
-SHE Plans,"\gls{SHE} plans are site-specific guidelines for safe working conditions. LSST expects that each collaborating organization and contractor has established safety programs to govern the specific activities at that location. LSST has a minimum expectation for the criteria established in these plans and expects all staff, permanent to the location or visiting, to follow these local procedures. When LSST specific sites are established the project will issue specific SHE plans for those locations",Adm,,,G
+SHE Plans,"SHE plans are site-specific guidelines for safe working conditions. LSST expects that each collaborating organization and contractor has established safety programs to govern the specific activities at that location. LSST has a minimum expectation for the criteria established in these plans and expects all staff, permanent to the location or visiting, to follow these local procedures. When LSST specific sites are established the project will issue specific SHE plans for those locations",Adm,,,G
 Signature Authority,The individual designated by the LSSTC policy as authorized to approve the use of funds from a specific account; he or she must approve each Purchase Requisition for the account listed on the Purchase Requisition,Adm,,,G
 Simonyi Survey Telescope,"The telescope at the Rubin Observatory that will perform the LSST (this refers to all physical components: the mirror, the mount assembly, etc.).",,,SST,G
 Simulations Lead,"The person who oversees the activities of the LSST simulations efforts (ImSim, OpSim, PhoSim, etc.). The Simulations Lead is part of the Systems Engineering group and reports to the Systems Engineering Manager",Sims Adm,,,G
 Single Visit Image,See CalExp,DM,,"SVI, CalExp",G
-Singularity,A software containerization system; an alternative to Docker; \url{https://sylabs.io},DM,,,G
-Site Manager,"The LSST-delegated representative at the Cerro Pach\'{o}n, Chile Summit site who is authorized to approve and accept work, provide technical liaison, monitor safety, and interpret LSST plans and specifications on behalf of AURA/LSST",Adm,,,G
+Singularity,A software containerization system; an alternative to Docker; \url{https://sylabs.io,DM,,,G
+Site Manager,"The LSST-delegated representative at the Cerro Pach\'{on, Chile Summit site who is authorized to approve and accept work, provide technical liaison, monitor safety, and interpret LSST plans and specifications on behalf of AURA/LSST",Adm,,,G
 sky map,"A sky tessellation for LSST. The Stack includes software to define a geometric mapping from the representation of World Coordinates in input images to the LSST sky map. This tessellation is comprised of individual tracts which are, in turn, comprised of patches",DM,LDM-151,,G
 SLAC National Accelerator Laboratory (SLAC)," A national laboratory funded by the US Department of Energy (DOE); SLAC leads a consortium of DOE laboratories that has assumed responsibility for providing the LSST camera. Although the Camera project manages its own schedule and budget, including contingency, the Camera team’s schedule and requirements are integrated with the larger Project.  The camera effort is accountable to the LSSTPO.",TS,, ,G
 Sloan Digital Sky Survey,"is a digital survey of roughly 10,000 square degrees of sky around the north Galactic pole, plus a ~300 square degree stripe along the celestial equator",Sci,,,G
@@ -1136,27 +1136,27 @@ sqlite3,"A software package external to DM, sqlite3 provides a SQL interface com
 stack,"a grouping, usually in layers (hence stack), of software packages and services to achieve a common goal. Often providing a higher level set of end user oriented services and tools",DM,,,G
 Standard Visit,A single observation of a LSST field comprised of two 15 second 'Snap' exposures that are immediately combined. An 'Alternate Standard Visit' is a single observation of a LSST field comprised of one 30 second exposure,DM,LSE-30,,G
 Stop Work Authority,"The authority of any individual to stop work if unanticipated/unsafe conditions are identified or non-compliant practices are observed at the site. Workers shall be instructed stop the work immediately and notify their supervisor(s), safety and health representative(s), and the LSST site manager of this action. Disagreements or differences of opinion about the need to terminate an activity shall occur only after the activity is stopped and people are removed from the hazard. All workers at the site have the authority to stop work. Work may not proceed until the circumstances are investigated and deficiencies corrected",Adm,,,G
-story,"A \gls{JIRA} issue type describing a scheduled, self-contained task worked as part of an \gls{epic}.  Typically, stories are appropriate for work worth between a fraction of a \gls{SP} and 10 \glspl{SP}; beyond that, the work is insufficiently fine-grained to schedule as a story.  While fractional \glspl{SP} are fine, all stories involve work, so the \glspl{SP} total of an in progress or completed story should not be 0",DM,,,G
+story,"A JIRA issue type describing a scheduled, self-contained task worked as part of an epic.  Typically, stories are appropriate for work worth between a fraction of a SP and 10 \glspl{SP; beyond that, the work is insufficiently fine-grained to schedule as a story.  While fractional \glspl{SP are fine, all stories involve work, so the \glspl{SP total of an in progress or completed story should not be 0",DM,,,G
 Stripe 82,"A 2.5° wide equatorial band of sky covering roughly 300 square degrees that was observed repeatedly in 5 passbands during the course of the SDSS, In part for calibration purposes",Sci,,,G
 Subcontract,An agreement under which another entity will perform part or all of the project's contract obligations,Adm,,,G
 Subsystem,A set of elements comprising a system within the larger LSST system that is responsible for a key technical deliverable of the project,Adm,,,G
 Subsystem Manager,"responsible manager for an LSST subsystem; he or she exercises authority, within prescribed limits and under scrutiny of the Project Manager, over the relevant subsystem's cost, schedule, and work plans",Adm,,,G
 Subsystem Scientist,The principal science advisor  to a Subsystem Manager; he or she ensures that the subsystem specifications are appropriated for achieving the project's goals,Adm,,,G
 Subsystem Systems Engineer,A subsystem team member who works closely with the Subsystem Manager and the project Systems Engineering group on internal integration of the subsystem's component parts and the subsystem's integration with the larger LSST system,Adm,,,G
-Summit,"The site on the Cerro Pach\'{o}n, Chile mountaintop where the LSST observatory, support facilities, and infrastructure will be built",Adm,,,G
-Summit Facility,"The main Observatory and Auxiliary Telescope buildings at the Summit Site on Cerro Pach\'{o}n, Chile",DM,LDM-148,,G
+Summit,"The site on the Cerro Pach\'{on, Chile mountaintop where the LSST observatory, support facilities, and infrastructure will be built",Adm,,,G
+Summit Facility,"The main Observatory and Auxiliary Telescope buildings at the Summit Site on Cerro Pach\'{on, Chile",DM,LDM-148,,G
 supertask,Deprecated term; see PipelineTask,DM,,PipelineTask,G
-survey footprint,"The portion of the sky covered by data from an astronomical survey, e.g., the main wide-fast-deep LSST 10-year survey, the LSST deep drilling fields, or the Science Validation data taken during commissioning.  Sometimes represented by Boolean maps or other summary statistics in an all-sky representation, e.g., the \gls{IVOA} \gls{MOC} standard",DM,,,G
+survey footprint,"The portion of the sky covered by data from an astronomical survey, e.g., the main wide-fast-deep LSST 10-year survey, the LSST deep drilling fields, or the Science Validation data taken during commissioning.  Sometimes represented by Boolean maps or other summary statistics in an all-sky representation, e.g., the IVOA MOC standard",DM,,,G
 System Integration and Test,"The first year of the two-year Commissioning phase of the LSST Construction Project, during which the various technical components of the three subsystems will be integrated and compliance with ICDs and system level compliance as detailed in the LSST Observatory System Specifications document (OSS, LSE-30) will be shown. Roughly 4-6 months into the System I&T phase, the telescope and camera will be fully integrated and periodically producing science grade images over the full field of view, at which point 'System First Light' will be declared",TS CAM DM SE,,,G
 Systems Engineer,A member of the Systems Engineering group who works closely with the Systems Engineering Manager and the Systems Scientist on the integrated LSST system's various technical issues spanning the full life cycle of the entire project,Adm,,,G
 Systems Engineering,"an interdisciplinary field of engineering that focuses on how to design and manage complex engineering systems over their life cycles. Issues such as requirements engineering, reliability, logistics, coordination of different teams, testing and evaluation, maintainability and many other disciplines necessary for successful system development, design, implementation, and ultimate decommission become more difficult when dealing with large or complex projects. Systems engineering deals with work-processes, optimization methods, and risk management tools in such projects. It overlaps technical and human-centered disciplines such as industrial engineering, control engineering, software engineering, organizational studies, and project management. Systems engineering ensures that all likely aspects of a project or system are considered, and integrated into a whole",SE,,,G
 Systems Engineering Manager,"individual responsible for the oversight and coordination of the LSST systems engineering efforts as well as the management of the Systems Engineering group and work package. The SEM is also the CCB Chair and as such is responsible for the execution, technical oversight, and coordination of configuration control activities",Adm,,,G
 Systems Scientist,A member of the Systems Engineering group and chief liaison to all project scientists; the Systems Scientist works closely with the Systems Engineering Manager and is responsible for the flow-down of science requirements. The Systems Scientist ensures that acceptance testing and commissioning address the science requirements,Adm,,,G
 Task,"Tasks are the basic unit of code re-use in the LSST Stack. They perform a well defined, logically contained piece of functionality. Tasks come standard with configuration, logging, processing metadata, and debugging features. For further details, see How to Write a Task in the source code documentation.  Tasks can be nested, providing a natural way to structure - and configure - high level algorithms that delegate work to lower-level algorithms",DM,http://doxygen.lsst.codes/stack/doxygen/x_masterDoxyDoc/pipe_tasks_write_task.html,"command-line task, PipelineTask",G
-Technical Baseline Classified Index (LSE-90),"An index linking to the various requirements documents, specifications documents, ICDs, design documents, budgets and allocations, and \gls{WBS} dictionaries defining the current baseline of the LSST project's technical scope",Adm,,,G
+Technical Baseline Classified Index (LSE-90),"An index linking to the various requirements documents, specifications documents, ICDs, design documents, budgets and allocations, and WBS dictionaries defining the current baseline of the LSST project's technical scope",Adm,,,G
 Telescope and Site,"The LSST subsystem responsible for design and construction of the telescope structure, telescope mirrors, optical wavefront measurement and control system, telescope and observatory control systems software, and the summit and base facilities. The Telescope technical team is hosted by NOAO",Adm,,,G
 Template,"A co-added, single-band image of the sky that is deep, and created in a manner to remove transient or fast moving objects from the final image. Constituent images for templates may be selected from a limited range of quality parameters, such as PSF size or airmass. Such images are used to perform Difference Image Analysis in order to detect variable, transient, and Solar System astrophysical objects",DM,"LDM-151, LSE-163",Template Image,G
-test stand,"An environment used for testing the operation of the LSST Camera, or some component thereof. In the Data Management context, this generally refers to a simulated Camera readout system used to test the interface between the Camera and the DM system (see, for example, \gls{NTS})",DM CAM,,,G
+test stand,"An environment used for testing the operation of the LSST Camera, or some component thereof. In the Data Management context, this generally refers to a simulated Camera readout system used to test the interface between the Camera and the DM system (see, for example, NTS)",DM CAM,,,G
 Then-Year Cost,An extrapolation from the base year cost of a project element out to the year the cost actually will be incurred that accounts for escalation rates,Adm,,,G
 tidy data,"Tidy datasets have a specific structure: each variable is a column, each observation is a row, and each type of observational unit is a table (Wickham, H., 2014, Journal of Statistical Software, Articles, 59, 1)",DM QA,DMTN-085,,G
 tile,"Obsolete form of sky tessellation, superseded by tracts/patches",DM,,sky tile,G
@@ -1169,10 +1169,10 @@ User Generated Data Product,"The products of User Generated Processing pipelines
 User Generated Processing,"Any (re)processing of LSST data performed by a user, with either custom pipelines or reconfigured LSST software, to create User Generated Data Products. This processing will originate from the community, including project teams",DM,LPM-231,Level 3 Processing,G
 Validation,"A process of confirming that the delivered system will provide its desired functionality; overall, a validation process includes the evaluation, integration, and test activities carried out at the system level to ensure that the final developed system satisfies the intent and performance of that system in operations",Adm,,,G
 Verification,"The process of evaluating the design, including hardware and software - to ensure the requirements have been met;  verification (of requirements) is performed by test, analysis, inspection, and/or demonstration",Adm,,,G
-Visit,"A sequence of one or more consecutive exposures at a given position, orientation, and filter within the LSST cadence. See \gls{Standard Visit}, \gls{Alternate Standard Visit}, and \gls{Non-Standard Visit}",DM TS Sims,,,G
+Visit,"A sequence of one or more consecutive exposures at a given position, orientation, and filter within the LSST cadence. See Standard Visit, Alternate Standard Visit, and Non-Standard Visit",DM TS Sims,,,G
 warp,"(noun) The pixels from a single CCD Exposure that overlap a given coadd patch, trimmed and resampled into the patch's coordinate system; in other words, an image that has been astrometrically registered to the common coordinate system of a tract",DM,LDM-151,,G
 Wide-Fast-Deep,The main survey of the LSST to cover at least 18000 square degrees of the southern sky,DM TS,,WFD,G
 Work Breakdown Structure,a tool that defines and organizes the LSST project's total work scope through the enumeration and grouping of the project's discrete work elements,Adm,,,G
 Work Elements,The critical tasks of the LSST Project as represented in the WBS,Adm,,,G
-World Coordinate System,"a mapping from image pixel coordinates to physical coordinates; in the case of images the mapping is to sky coordinates, generally in an equatorial (RA, Dec) system. The \gls{WCS} is expressed in FITS file extensions as a collection of header keyword=value pairs (basically, the values of parameters for a selected functional representation of the mapping) that are specified in the FITS Standard",Sci,,,G
+World Coordinate System,"a mapping from image pixel coordinates to physical coordinates; in the case of images the mapping is to sky coordinates, generally in an equatorial (RA, Dec) system. The WCS is expressed in FITS file extensions as a collection of header keyword=value pairs (basically, the values of parameters for a selected functional representation of the mapping) that are specified in the FITS Standard",Sci,,,G
 ,,,,,
