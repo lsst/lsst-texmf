@@ -636,7 +636,7 @@ RM,Release Manager,LSST DM,,,A
 RMS,Root-Mean-Square,Gen,,,A
 ROO,Rubin Observatory Operations,OPS,,,A
 ROOT,Object-oriented data analysis framework developed at CERN,Gen,,,A
-RPF,Rubin System PerFormance,OPS,,,A
+RPF,Rubin system PerFormance,OPS,,,A
 RPM,RPM Package Manager (originally Red Hat Package Manager; now a recursive acronym),IT,,,A
 RS232C,Standard 25-pin serial connection between computers and modems,Gen,,,A
 RSA,\gls{Raft} Sensor Array,CAM,,,A
