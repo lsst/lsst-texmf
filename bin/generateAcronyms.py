@@ -405,11 +405,13 @@ def find_matches_combo(filename, acronyms, ignore_str=" %"):
 
 find_matches = find_matches_combo
 
+
 def escape_for_tex(str):
     """ Escape tex nasties and return new string"""
     nstr = str.replace("&", r"\&")
     nstr = nstr.replace("_", r"\_")
     return nstr
+
 
 def write_latex_glossary(acronyms, fd=sys.stdout):
     """ Write a glossary file with newglossaryitem per definition  -
@@ -463,7 +465,6 @@ def write_latex_table(acronyms, dotex=True, dorst=False, fd=sys.stdout):
             print(r"""======= ===========""", file=fd)
         sep = "\t"
         end = ""
-    glsreg = re.compile(r'\\gls{([\w \-]+)}')
     for acr, defn in acronyms:
         acr = escape_for_tex(acr)
         print(f"{acr}{sep}{defn}{end}", file=fd)
@@ -583,22 +584,22 @@ def main(texfiles, doGlossary, utags, dotex, dorst, mode, noadorn):
 
 
 def update_gls_entries(results, GLSlist):
-    """ Scan through the acronym anf gls definitions and add \gls where
+    r""" Scan through the acronym and gls definitions and add \gls where
     appropriate (similar to -u for the files)"""
 
     new_result = []
     regexmap = make_regexmap(GLSlist)
 
     for entry in results:
-        defn =  entry[1][0]
+        defn = entry[1][0]
         type = entry[1][1]
         acr = entry[0]
-        if type == 'A': # just see if we have a glossary match
-            if defn in GLSlist: # ok we gls the entire thing
-                defn=r"\gls{"+defn+"}"
+        if type == 'A':  # just see if we have a glossary match
+            if defn in GLSlist:  # ok we gls the entire thing
+                defn = r"\gls{"+defn+"}"
             else:
-                defn =  sub_line(entry[1][0],regexmap,GLSlist)
-        new_result.append((acr, (defn,type)))
+                defn = sub_line(entry[1][0], regexmap, GLSlist)
+        new_result.append((acr, (defn, type)))
 
     return new_result
 
@@ -620,31 +621,29 @@ def glsfn(s):
     """put \\gls{} -- used in the regexp substitution"""
     return s.group(1)+"\\gls{"+s.group(2)+"}"+s.group(3)
 
-def make_regexmap (GLSlist):
+
+def make_regexmap(GLSlist):
     """ Make a re map of regexps for substitution"""
     regexmap = {}
     for g in GLSlist:
-        if g != '':
-            regexmap[g] = re.compile(r"([,\s(](?<!={))("+g+r")(\b)")
+        regexmap[g] = re.compile(r"([,\s(](?<!={))("+g+r")(\b)")
     return regexmap
 
-def sub_line (line, regexmap, GLSlist):
-    """ for give line put \gls around gls items not already adorned.
-    :param line:
-    :param regexmap:
-    :param GLSlist:
-    :return: modifed line
+
+def sub_line(line, regexmap, GLSlist):
+    r""" for given line put \gls around gls items not already adorned.
+    :return: modified line
     """
     nline = line
     for g in GLSlist:
         regx = regexmap[g]
         res = regx.search(line)
-        if (res is not None):  # ok now .. more checks
+        if res is not None:  # ok now .. more checks
             # check its not a word in a GLS item but not
             # too greedy
             glsed = re.search(r"gls{.+" + g + "[a-z,A-Z, ]*}", line)
             if not glsed:  # already glsed or contained in one
-            # .. find and add \gls -
+                # .. find and add \gls -
                 nline = regx.sub(glsfn, line)
     return nline
 
@@ -661,7 +660,7 @@ def updateFile(inFile, GLSlist):
             for line in fin:
                 if not (line.startswith('%') or 'entry' in line or 'seciton' in line or
                         'title' in line or 'author' in line):  # it is a comment ignore
-                    sub_line(line,regexmap,GLSlist)
+                    line = sub_line(line, regexmap, GLSlist)
                 fout.write(line)
     except BaseException:
         print("Reverting File  because  error:", sys.exc_info()[0])
@@ -683,7 +682,6 @@ def update(texfiles):
     for f in texfiles:
         # in each file look for each glossary item and replace wit \gls{item}
         updateFile(f, GLSlist)
-
 
 
 if __name__ == "__main__":
@@ -710,7 +708,7 @@ if __name__ == "__main__":
                         help="""Check the glossary file loads correctly
                                  to run on push. Pass dummy filename""")
     parser.add_argument('-n', '--noadorn', action='store_true',
-                        help="""Do not adorn the glossary/acronym entries
+                        help=r"""Do not adorn the glossary/acronym entries
                                  with \gls (only done for glossary mode)""")
     args = parser.parse_args()
     doGlossary = args.glossary
