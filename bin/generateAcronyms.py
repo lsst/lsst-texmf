@@ -440,8 +440,6 @@ def write_latex_glossary(acronyms, fd=sys.stdout):
 def write_latex_table(acronyms, dotex=True, dorst=False, fd=sys.stdout):
     """Write latex table to supplied file descriptor.
 
-    Strip any gls in the acronym defs - so this is traditional acronym.
-
     Parameters
     ----------
     acronyms : `list`
@@ -466,6 +464,8 @@ def write_latex_table(acronyms, dotex=True, dorst=False, fd=sys.stdout):
         sep = "\t"
         end = ""
     for acr, defn in acronyms:
+        if len(defn) > 1:
+            defn = defn[0]
         acr = escape_for_tex(acr)
         print(f"{acr}{sep}{defn}{end}", file=fd)
     if dotex:
