@@ -21,8 +21,7 @@ AD,Associate Director,OPS,,,A
 ADASS,Astronomical Data Analysis Software and Systems,Gen,,,A
 ADC,atmospheric dispersion corrector,TS,Document-11924,,A
 ADC,Analogue-to-Digital Converter,Gen,,,A
-ADCO,Associate Director for Chilean Operations,TS,Document-11925,,A
-ADCO,Associate Director for Chilean Operations,Gen,,,A
+ADCO,Associate Director for Chilean Operations,TS Gen,Document-11925,,A
 ADQL,Astronomical Data Query Language,Gen,,,A
 ADS,Astrophysics Data System,OPS Gen,,,A
 ADU,Analogue-to-Digital Unit,Gen,,,A
@@ -357,6 +356,7 @@ IDAC,Independent Data Access Center,DM OPS,,,A
 IDF,Interim Data Facility,OPS,,,A
 IDL,Interactive Data Language,Gen,,,A
 IIP,image ingest and processing,TS,Document-12029,,A
+ImSim,Image Simulation,Sims,,,A
 IN2P3,Institut National de Physique Nucléaire et de Physique des Particules,Gen,,,A
 IoA,Institute of Astronomy (Cambridge; also denoted IOA),Gen,,,A
 IP,Internet Protocol,DM,,,A
@@ -680,7 +680,7 @@ SIA,Simple Image Access,Gen,,,A
 SIT,"System Integration, Test",LSST OPS ,,,A
 SIT-COM,"System Integration, Test and Commissioning",LSST OPS ,,,A
 SLA,Service Level Agreement,Gen,,,A
-SLAC,SLAC National Accelerator Laboratory (formerly Stanford Linear Accelerator Center; SLAC is now no longer an acronym),LSST DM,,,A
+SLAC,SLAC National Accelerator Laboratory,LSST DM,,,A
 SMARTS,Small and Moderate Aperture Research Telescope System,OPS,,,A
 SN,SuperNovae,Sci,,,A
 SO,scientific operations,TS,Document-12011,,A
@@ -979,7 +979,7 @@ Handle,The unique identifier assigned to a document uploaded to DocuShare,Adm,,,
 Head of Safety,See Safety Manager,Adm,,,G
 Hierarchical Triangular Mesh, is a partitioning scheme to divide the surface of the unit sphere into spherical triangles. It is a hierarchical scheme and the subdivisions have roughly equal areas. HTM is used to index the coordinates in the object databases for faster querying speeds,DM Sci,"http://www.skyserver.org/htm/,  https://www.microsoft.com/en-us/research/wp-content/uploads/2005/09/tr-2005-123.pdf",,G
 Image Decorrelation,"A method of improving the noise properties of the Difference Image in cases where the Template Image has a significant amount of noise, in order to use the same detection thresholds for defining DIASources",DM,"LDM-151, DMTN-021",,G
-Image Simulation (ImSim),"High fidelity end-to-end simulations of the sky; these simulated images are used in designing and testing algorithms for use by Data Management; evaluating the capabilities and scalability of the reduction and analysis pipelines; testing and optimizing the scientific returns of the LSST survey; and providing realistic LSST data to the science collaborations to evaluate the expected performance of LSST. Under the direction of the Systems Engineering group, the Image Simulation group's principle goal during construction is to deliver a simulator to support commissioning",Sims,,,G
+Image Simulation,"High fidelity end-to-end simulations of the sky; these simulated images are used in designing and testing algorithms for use by Data Management; evaluating the capabilities and scalability of the reduction and analysis pipelines; testing and optimizing the scientific returns of the LSST survey; and providing realistic LSST data to the science collaborations to evaluate the expected performance of LSST. Under the direction of the Systems Engineering group, the Image Simulation group's principle goal during construction is to deliver a simulator to support commissioning",Sims,,,G
 Incident,"An undesired event, which under slightly different circumstances, could have resulted in harm to people, damage to property, or loss to process",Adm,,,G
 Independent Data Access Center,"Externally supported and administered versions of the DAC to serve the full, or a limited subset of, the LSST data products and/or software to authorized users. ",DM,LPM-251,iDAC,G
 Information Technology Services Committee,"Internal LSST Project Office committee charged with managing project IT services, including advising management on which services LSST should use. The ITSC's goals are 1) to ensure interoperability exists among products, 2) to combine, reuse and/or, recycle existing services when possible, 3) to prevent applications from becoming stagnant or security hazards, 4) to make recommendations on whether a particular tool remains 5) to keep the project informed of what is going on at all spectrums, and 6) to make recommendations for how the Project Office will transition into commissioning and operations",Adm,,,G
@@ -1116,7 +1116,7 @@ Single Visit Image,See CalExp,DM,,"SVI, CalExp",G
 Singularity,A software containerization system; an alternative to Docker; \url{https://sylabs.io},DM,,,G
 Site Manager,"The LSST-delegated representative at the Cerro Pach\'{o}n, Chile Summit site who is authorized to approve and accept work, provide technical liaison, monitor safety, and interpret LSST plans and specifications on behalf of AURA/LSST",Adm,,,G
 sky map,"A sky tessellation for LSST. The Stack includes software to define a geometric mapping from the representation of World Coordinates in input images to the LSST sky map. This tessellation is comprised of individual tracts which are, in turn, comprised of patches",DM,LDM-151,,G
-SLAC National Accelerator Laboratory (SLAC)," A national laboratory funded by the US Department of Energy (DOE); SLAC leads a consortium of DOE laboratories that has assumed responsibility for providing the LSST camera. Although the Camera project manages its own schedule and budget, including contingency, the Camera team’s schedule and requirements are integrated with the larger Project.  The camera effort is accountable to the LSSTPO.",TS,, ,G
+SLAC National Accelerator Laboratory," A national laboratory funded by the US Department of Energy (DOE); SLAC leads a consortium of DOE laboratories that has assumed responsibility for providing the LSST camera. Although the Camera project manages its own schedule and budget, including contingency, the Camera team’s schedule and requirements are integrated with the larger Project.  The camera effort is accountable to the LSSTPO.",TS,, ,G
 Sloan Digital Sky Survey,"is a digital survey of roughly 10,000 square degrees of sky around the north Galactic pole, plus a ~300 square degree stripe along the celestial equator",Sci,,,G
 Snap,One 15 second exposure within a Standard Visit in the LSST cadence,DM,,,G
 Software Stack,"Often referred to as the LSST Stack, or just The Stack, it is the collection of software written by the LSST Data Management Team to process, generate, and serve LSST images, transient alerts, and catalogs. The Stack includes the LSST Science Pipelines, as well as packages upon which the DM software depends. It is open source and publicly available",DM,https://pipelines.lsst.io,"The Stack, Science Pipelines",G
@@ -1153,7 +1153,7 @@ Systems Engineering,"an interdisciplinary field of engineering that focuses on h
 Systems Engineering Manager,"individual responsible for the oversight and coordination of the LSST systems engineering efforts as well as the management of the Systems Engineering group and work package. The SEM is also the CCB Chair and as such is responsible for the execution, technical oversight, and coordination of configuration control activities",Adm,,,G
 Systems Scientist,A member of the Systems Engineering group and chief liaison to all project scientists; the Systems Scientist works closely with the Systems Engineering Manager and is responsible for the flow-down of science requirements. The Systems Scientist ensures that acceptance testing and commissioning address the science requirements,Adm,,,G
 Task,"Tasks are the basic unit of code re-use in the LSST Stack. They perform a well defined, logically contained piece of functionality. Tasks come standard with configuration, logging, processing metadata, and debugging features. For further details, see How to Write a Task in the source code documentation.  Tasks can be nested, providing a natural way to structure - and configure - high level algorithms that delegate work to lower-level algorithms",DM,http://doxygen.lsst.codes/stack/doxygen/x_masterDoxyDoc/pipe_tasks_write_task.html,"command-line task, PipelineTask",G
-Technical Baseline Classified Index (LSE-90),"An index linking to the various requirements documents, specifications documents, ICDs, design documents, budgets and allocations, and WBS dictionaries defining the current baseline of the LSST project's technical scope",Adm,,,G
+Technical Baseline Classified Index,"An index linking to the various requirements documents, specifications documents, ICDs, design documents, budgets and allocations, and WBS dictionaries defining the current baseline of the LSST project's technical scope (LSE-90)",Adm,LSE-90,,G
 Telescope and Site,"The LSST subsystem responsible for design and construction of the telescope structure, telescope mirrors, optical wavefront measurement and control system, telescope and observatory control systems software, and the summit and base facilities. The Telescope technical team is hosted by NOAO",Adm,,,G
 Template,"A co-added, single-band image of the sky that is deep, and created in a manner to remove transient or fast moving objects from the final image. Constituent images for templates may be selected from a limited range of quality parameters, such as PSF size or airmass. Such images are used to perform Difference Image Analysis in order to detect variable, transient, and Solar System astrophysical objects",DM,"LDM-151, LSE-163",Template Image,G
 test stand,"An environment used for testing the operation of the LSST Camera, or some component thereof. In the Data Management context, this generally refers to a simulated Camera readout system used to test the interface between the Camera and the DM system (see, for example, NTS)",DM CAM,,,G
