@@ -356,7 +356,7 @@ IDAC,Independent Data Access Center,DM OPS,,,A
 IDF,Interim Data Facility,OPS,,,A
 IDL,Interactive Data Language,Gen,,,A
 IIP,image ingest and processing,TS,Document-12029,,A
-ImSim,\gls{Image Simulation},Sims,,,A
+ImSim,Image Simulation,Sims,,,A
 IN2P3,Institut National de Physique Nucléaire et de Physique des Particules,Gen,,,A
 IoA,Institute of Astronomy (Cambridge; also denoted IOA),Gen,,,A
 IP,Internet Protocol,DM,,,A
@@ -680,7 +680,7 @@ SIA,Simple Image Access,Gen,,,A
 SIT,"System Integration, Test",LSST OPS ,,,A
 SIT-COM,"System Integration, Test and Commissioning",LSST OPS ,,,A
 SLA,Service Level Agreement,Gen,,,A
-SLAC,\gls{SLAC National Accelerator Laboratory},LSST DM,,,A
+SLAC,SLAC National Accelerator Laboratory,LSST DM,,,A
 SMARTS,Small and Moderate Aperture Research Telescope System,OPS,,,A
 SN,SuperNovae,Sci,,,A
 SO,scientific operations,TS,Document-12011,,A
