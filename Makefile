@@ -39,7 +39,7 @@ test-acronyms:
 	@echo "Testing glossarydefs"
 	@echo
 	bin/generateAcronyms.py -c glstab.tex 
-	latexmk -xelatex -pdf -f examples/glossary_table.tex 
+	latexmk -xelatex -pdf -f examples/glossary-table.tex 
 	
 
 

@@ -14,6 +14,7 @@ Documents
 
    LDM-nnn
    DMTN-nnn
+   glossary-table
 
 Presentations
 =============
@@ -30,3 +31,4 @@ Tests
 .. toctree::
 
    test-bibtex
+
