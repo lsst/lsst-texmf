@@ -6,10 +6,10 @@ beamer-LSST2016.tex \
 DMTN-nnn.tex \
 test-report.tex \
 test-specification.tex \
-LDM-nnn.tex
+LDM-nnn.tex 
 
 TESTFILES = \
-test-bibtex.tex
+test-bibtex.tex 
 
 # Bibliographies that are tested for pybtex compatibility
 # Ignores the gaialink bibliography
@@ -38,7 +38,10 @@ $(TESTS): %.pdf: tests/%.tex
 test-acronyms:
 	@echo "Testing glossarydefs"
 	@echo
-	bin/generateAcronyms.py -c dummy 
+	bin/generateAcronyms.py -c glstab.tex 
+	latexmk -xelatex -pdf -f examples/glossary_table.tex 
+	
+
 
 .PHONY: test-pybtex
 test-pybtex:

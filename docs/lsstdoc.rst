@@ -123,6 +123,13 @@ Once the preamble has been completed the document itself can begin and the title
 
 This assumes that the ``toc`` option was given above.
 
+If this is a technote and a full front page, TOC and Change Log are not needed you may choose instead:
+
+.. code-block:: latex
+
+   \begin{document}
+   \mkshorttitle
+
 After this the document can be written
 
 .. _lsstdoc-macros:
@@ -248,8 +255,8 @@ This script expects to find two text files in the directory with the tex:
 
 
 .. note::
-Only one of myacronyms.txt or myglossarydefs.csv is used you should not have both files.
-If you have both only myacronyms.txt is used.
+   Only one of myacronyms.txt or myglossarydefs.csv is used you should not have both files.
+   If you have both only myacronyms.txt is used.
 
 To select a tag or tags for the definitions add ``-t "tag1 tag2"`` to the call to the script.
 
