@@ -686,7 +686,7 @@ def update(texfiles):
 
 def dump_gls(filename, out_file):
     """Read the definintion file and just output a table"""
-    ofd = open(out_file,"w")
+    ofd = open(out_file, "w")
     print(r"""\addtocounter{table}{-1}
     \begin{longtable}{p{0.15\textwidth}p{0.7\textwidth}p{0.15\textwidth}}\hline
     \textbf{Entry} & \textbf{Description} & \textbf{Tags}  \\\hline
@@ -758,10 +758,9 @@ if __name__ == "__main__":
     dorst = args.mode == "rst"
     noadorn = args.noadorn
 
-
     if args.dump:
         # just format the full list in a table
-        dump_gls(setup_paths()[0],texfiles[0])
+        dump_gls(setup_paths()[0], texfiles[0])
         print("Dumped glossary defs to"+texfiles[0])
         exit(0)
 
