@@ -428,13 +428,16 @@ def write_latex_glossary(acronyms, fd=sys.stdout):
           sys.argv[0] + " from https://lsst-texmf.lsst.io/.", file=fd)
     for acr, defn in acronyms:
         definition = escape_for_tex(defn[0])
+        # entry has a lookup and a display version
+        # the display one needs escaping
+        acr2 = escape_for_tex(acr)
         if defn[1] == "A":
             print("\\newacronym{{{}}} {{{}}} {{{}}}".format(
-                acr, acr, definition), file=fd)
+                acr, acr2, definition), file=fd)
         else:
             print("\\newglossaryentry{{{}}} {{name={{{}}},"
                   " description={{{}}}}}".format(
-                      acr, acr, definition), file=fd)
+                      acr, acr2, definition), file=fd)
 
 
 def write_latex_table(acronyms, dotex=True, dorst=False, fd=sys.stdout):
