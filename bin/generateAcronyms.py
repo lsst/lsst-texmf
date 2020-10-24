@@ -127,7 +127,7 @@ def read_glossarydef(filename, utags, init=None):
                 tags = row[ind + 2]
                 entryType = row[ind + 5]
             except BaseException as ex:
-                print("Error reading {}  line {}-{}".format(filename, lc, row))
+                print(f"Error reading {filename} line {lc}-{row}")
                 raise ex
 
             if not doGlossary and entryType == "G":
@@ -685,36 +685,35 @@ def update(texfiles):
 
 
 def dump_gls(filename, out_file):
-    """Read the definintion file and just output a table"""
-    ofd = open(out_file, "w")
-    print(r"""\addtocounter{table}{-1}
-    \begin{longtable}{p{0.15\textwidth}p{0.7\textwidth}p{0.15\textwidth}}\hline
-    \textbf{Entry} & \textbf{Description} & \textbf{Tags}  \\\hline
-    """, file=ofd)
+    """Read the definition file and just output a latex table"""
 
     sep = " & "
     end = r" \\"
     lc = 0
     with open(filename, "r") as fd:
         reader = csv.reader(fd, delimiter=',', quotechar='"')
-        for row in reader:
-            if len(row) < 2:  # blank line
-                continue
-            lc = lc + 1
-            if lc == 1:
-                continue  # There is a header line
-            ind = 0
-            try:
-                acr = escape_for_tex(row[ind])
-                defn = escape_for_tex(row[ind + 1])
-                tags = row[ind + 2]
-                print(f"{acr}{sep}{defn}{sep}{tags}{end}", file=ofd)
-            except BaseException as ex:
-                print("Error reading {} on line {} - {}".format(filename, lc,
-                                                                row))
-                raise ex
-
-    print(r"\end{longtable}", file=ofd)
+        with open(out_file, "w") as ofd:
+            print(r"""\addtocounter{table}{-1}
+            \begin{longtable}{p{0.15\textwidth}p{0.7\textwidth}p{0.15\textwidth}}\hline
+            \textbf{Entry} & \textbf{Description} & \textbf{Tags}  \\\hline
+            """, file=ofd)
+            for row in reader:
+                if len(row) < 2:  # blank line
+                    continue
+                lc = lc + 1
+                if lc == 1:
+                    continue  # There is a header line
+                ind = 0
+                try:
+                    acr = escape_for_tex(row[ind])
+                    defn = escape_for_tex(row[ind + 1])
+                    tags = row[ind + 2]
+                    print(sep.join([acr, defn, tags])+end, file=ofd)
+                except BaseException as ex:
+                    print("Error reading {} on line {} - {}".format(filename, lc,
+                                                                    row))
+                    raise ex
+            print(r"\end{longtable}", file=ofd)
     return lc
 
 
@@ -746,7 +745,7 @@ if __name__ == "__main__":
                                  with \gls (only done for glossary mode)""")
     parser.add_argument('-d', '--dump', action='store_true',
                         help=""" Generate glossary dump file using passed
-                                 filename contaiing  all entries.""")
+                                 filename containing  all entries.""")
     args = parser.parse_args()
     doGlossary = args.glossary
     doCheck = args.check
@@ -761,7 +760,7 @@ if __name__ == "__main__":
     if args.dump:
         # just format the full list in a table
         dump_gls(setup_paths()[0], texfiles[0])
-        print("Dumped glossary defs to"+texfiles[0])
+        print("Dumped glossary defs to", texfiles[0])
         exit(0)
 
     if tagstr:
@@ -769,13 +768,14 @@ if __name__ == "__main__":
 
     if doCheck:
         # For now load the glossary .. see if we get an excpetion
-        # return approriate exit code to make travis pass or fail
+        # return appropriate exit code to make ci pass or fail
         # also dump all entries ot file so we can make a pdf outside
         status = 0
         try:
             dump_gls(setup_paths()[0], texfiles[0])
-        except BaseException:
+        except BaseException as ex:
             status = 1
+            print(ex)
         exit(status)
 
     if (doGlossary or (not args.update)):

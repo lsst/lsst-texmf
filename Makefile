@@ -6,10 +6,10 @@ beamer-LSST2016.tex \
 DMTN-nnn.tex \
 test-report.tex \
 test-specification.tex \
-LDM-nnn.tex 
+LDM-nnn.tex
 
 TESTFILES = \
-test-bibtex.tex 
+test-bibtex.tex
 
 # Bibliographies that are tested for pybtex compatibility
 # Ignores the gaialink bibliography
@@ -37,7 +37,7 @@ $(TESTS): %.pdf: tests/%.tex
 test-acronyms: glossary-table.pdf 
 
 glossary-table.pdf: glstab.tex
-	latexmk -pdf -f examples/glossary-table.tex 
+	latexmk -xelatex -f examples/glossary-table.tex 
 
 	
 glstab.tex:
@@ -52,7 +52,7 @@ test-pybtex:
 	bin/validate_bib.py $(BIBFILES)
 
 .PHONY: docs
-docs: $(PDF) $(TESTS) 
+docs: $(PDF) $(TESTS)
 	mkdir -p docs/_static/examples
 	cp *.pdf docs/_static/examples/
 	cp etc/glossary.html docs
