@@ -26,7 +26,7 @@ PDF = $(EXAMPLES:.tex=.pdf)
 
 TESTS = $(TESTFILES:.tex=.pdf)
 
-all: $(PDF) $(TESTS)
+all: $(PDF) $(TESTS) glossary-table.pdf
 
 $(PDF): %.pdf: examples/%.tex
 	latexmk -xelatex -f $<
@@ -34,11 +34,16 @@ $(PDF): %.pdf: examples/%.tex
 $(TESTS): %.pdf: tests/%.tex
 	latexmk -pdf -bibtex -f $<
 
-.PHONY: test-acronyms
-test-acronyms:
+test-acronyms: glossary-table.pdf 
+
+glossary-table.pdf: glstab.tex
+	latexmk -xelatex -f examples/glossary-table.tex 
+
+	
+glstab.tex:
 	@echo "Testing glossarydefs"
 	@echo
-	bin/generateAcronyms.py -c dummy 
+	bin/generateAcronyms.py -c glstab.tex 
 
 .PHONY: test-pybtex
 test-pybtex:

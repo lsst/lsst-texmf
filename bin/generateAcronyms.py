@@ -80,7 +80,7 @@ def _parse_line(line):
         return nothing
 
     acr, defn = matched.groups()
-    return (acr.rstrip(), defn)
+    return acr.rstrip(), defn
 
 
 def read_glossarydef(filename, utags, init=None):
@@ -91,7 +91,7 @@ def read_glossarydef(filename, utags, init=None):
     filename : `str`
         Path to LSST  format  glossary file. This is a csv file with the
         name, definition, tags etc ..
-    tags : `set'
+    utags : `set'
         List of tags supplied by user to decide which definition to keep when
         there are many.
     init : `dict`
@@ -127,7 +127,7 @@ def read_glossarydef(filename, utags, init=None):
                 tags = row[ind + 2]
                 entryType = row[ind + 5]
             except BaseException as ex:
-                print("Error reading {} on line {} - {}".format(filename, lc, row))
+                print(f"Error reading {filename} line {lc}-{row}")
                 raise ex
 
             if not doGlossary and entryType == "G":
@@ -181,7 +181,7 @@ def read_myacronyms(filename="myacronyms.txt", allow_duplicates=False,
 
     Parameters
     ----------
-    file_name : `str`
+    filename : `str`
         Name of file to open.
     defaults : `dict`, optional
         `dict` containing default values to seed the returned definitions.
@@ -428,13 +428,16 @@ def write_latex_glossary(acronyms, fd=sys.stdout):
           sys.argv[0] + " from https://lsst-texmf.lsst.io/.", file=fd)
     for acr, defn in acronyms:
         definition = escape_for_tex(defn[0])
+        # entry has a lookup and a display version
+        # the display one needs escaping
+        acr2 = escape_for_tex(acr)
         if defn[1] == "A":
             print("\\newacronym{{{}}} {{{}}} {{{}}}".format(
-                acr, acr, definition), file=fd)
+                acr, acr2, definition), file=fd)
         else:
             print("\\newglossaryentry{{{}}} {{name={{{}}},"
                   " description={{{}}}}}".format(
-                      acr, acr, definition), file=fd)
+                      acr, acr2, definition), file=fd)
 
 
 def write_latex_table(acronyms, dotex=True, dorst=False, fd=sys.stdout):
@@ -684,6 +687,39 @@ def update(texfiles):
         updateFile(f, GLSlist)
 
 
+def dump_gls(filename, out_file):
+    """Read the definition file and just output a latex table"""
+
+    sep = " & "
+    end = r" \\"
+    lc = 0
+    with open(filename, "r") as fd:
+        reader = csv.reader(fd, delimiter=',', quotechar='"')
+        with open(out_file, "w") as ofd:
+            print(r"""\addtocounter{table}{-1}
+            \begin{longtable}{p{0.15\textwidth}p{0.7\textwidth}p{0.15\textwidth}}\hline
+            \textbf{Entry} & \textbf{Description} & \textbf{Tags}  \\\hline
+            """, file=ofd)
+            for row in reader:
+                if len(row) < 2:  # blank line
+                    continue
+                lc = lc + 1
+                if lc == 1:
+                    continue  # There is a header line
+                ind = 0
+                try:
+                    acr = escape_for_tex(row[ind])
+                    defn = escape_for_tex(row[ind + 1])
+                    tags = row[ind + 2]
+                    print(sep.join([acr, defn, tags])+end, file=ofd)
+                except BaseException as ex:
+                    print("Error reading {} on line {} - {}".format(filename, lc,
+                                                                    row))
+                    raise ex
+            print(r"\end{longtable}", file=ofd)
+    return lc
+
+
 if __name__ == "__main__":
     description = __doc__
     formatter = argparse.RawDescriptionHelpFormatter
@@ -710,6 +746,9 @@ if __name__ == "__main__":
     parser.add_argument('-n', '--noadorn', action='store_true',
                         help=r"""Do not adorn the glossary/acronym entries
                                  with \gls (only done for glossary mode)""")
+    parser.add_argument('-d', '--dump', action='store_true',
+                        help=""" Generate glossary dump file using passed
+                                 filename containing  all entries.""")
     args = parser.parse_args()
     doGlossary = args.glossary
     doCheck = args.check
@@ -721,17 +760,25 @@ if __name__ == "__main__":
     dorst = args.mode == "rst"
     noadorn = args.noadorn
 
+    if args.dump:
+        # just format the full list in a table
+        dump_gls(setup_paths()[0], texfiles[0])
+        print("Dumped glossary defs to", texfiles[0])
+        exit(0)
+
     if tagstr:
         utags.update(tagstr.split())
 
     if doCheck:
         # For now load the glossary .. see if we get an excpetion
-        # return approriate exit code to make travis pass or fail
+        # return appropriate exit code to make ci pass or fail
+        # also dump all entries ot file so we can make a pdf outside
         status = 0
         try:
-            read_glossarydef(setup_paths()[0], utags)
-        except BaseException:
+            dump_gls(setup_paths()[0], texfiles[0])
+        except BaseException as ex:
             status = 1
+            print(ex)
         exit(status)
 
     if (doGlossary or (not args.update)):
