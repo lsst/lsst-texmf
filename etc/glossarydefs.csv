@@ -82,6 +82,7 @@ BJD,barycentric corrected Julian date,TS,Document-11981,,A
 BNF,Backus-Naur Form,Gen,,,A
 BNL,Brookhaven National Laboratory,Gen,,,A
 BOE,Basis of Estimate,Gen,,,A
+BOF,Birds of a Feather (Sessions at ADASS),Gen,,,A
 BPS,Batch Production Service,DF LDF DM,,,A
 Bps,Bytes per second,Gen,,,A
 bps,bit(s) per second,Gen,,,A
