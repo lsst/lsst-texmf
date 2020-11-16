@@ -65,6 +65,7 @@ affiliations:
     USA
   LOC: Library of Congress, 101 Independence Ave.\ SE, Washington, DC 20540, USA
   RubinObs: Rubin Observatory Project Office, 950 N.\ Cherry Ave., Tucson, AZ  85719, USA
+  RubinObsC: Vera C. Rubin Observatory, Casilla 603 Colina El Pino, La Serena, Chile
   LUPM: Laboratoire Univers et Particules de Montpellier (LUPM), Universit\'{e} de
     Montpellier, CNRS/IN2P3, Place Eug\`{e}ne Bataillon, F-34095 Montpellier, France
   Longhorn: Longhorn Industries, Ellensburg, WA 98926, USA
@@ -548,6 +549,13 @@ authors:
     initials: Daniel
     name: Calabrese
     orcid: null
+  callahann:
+    affil:
+    - Oxford
+    altaffil: []
+    initials: Nick
+    name: Callahan
+    orcid: null
   callahans:
     affil:
     - RubinObs
@@ -674,6 +682,13 @@ authors:
     initials: Rebecca
     name: Coles
     orcid: 0000-0002-4774-9364
+  colleonif:
+    affil:
+    - RubinObsC
+    altaffil: []
+    initials: Franco
+    name: Colleoni
+    orcid: null
   comorettog:
     affil:
     - RubinObs
@@ -1348,6 +1363,13 @@ authors:
     initials: Richard
     name: Kessler
     orcid: 0000-0003-3221-0419
+  khineh:
+    affil:
+    - NCSA
+    altaffil: []
+    initials: Htut
+    name: Khine
+    orcid: null
   kinnisonv:
     affil:
     - RubinObs
@@ -1602,6 +1624,13 @@ authors:
     initials: Michelle
     name: McQueen
     orcid: null
+  menanteauf:
+    affil:
+    - NCSA
+    altaffil: []
+    initials: Felipe
+    name: Menanteau
+    orcid: null
   meyersj:
     affil:
     - Princeton-Astro
@@ -1644,6 +1673,13 @@ authors:
     initials: Joachim
     name: Moeyens
     orcid: 0000-0001-5820-3925
+  mondrikn:
+    affil:
+    - Harvard-Physics
+    altaffil: []
+    initials: Nicholas
+    name: Mondrik
+    orcid: null
   monetdg:
     affil:
     - USNO
@@ -1954,6 +1990,13 @@ authors:
     initials: Tiago
     name: Ribeiro
     orcid: null
+  riveram:
+    affil:
+    - RubinObsC
+    altaffil: []
+    initials: Mario
+    name: Rivera
+    orcid: null
   rajagopalj:
     affil:
     - NOAO
@@ -2154,7 +2197,7 @@ authors:
     orcid: 0000-0003-4365-1455
   sebagj:
     affil:
-    - RubinObs
+    - RubinObsC
     altaffil: []
     initials: Jacques
     name: Sebag
@@ -2405,6 +2448,13 @@ authors:
     altaffil: []
     initials: Jeffrey
     name: Tice
+    orcid: null
+  tigher:
+    affil:
+    - RubinObsC
+    altaffil: []
+    initials: Roberto
+    name: Tighe
     orcid: null
   trillingde:
     affil:
