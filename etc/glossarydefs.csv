@@ -637,7 +637,7 @@ RFP,Request For Proposals,PMO,,,A
 RFQ,Request For Quotations,LSST OPS,,,A
 RM,Release Manager,LSST DM,,,A
 RMS,Root-Mean-Square,Gen,,,A
-RNP,Rede Nacional de Ensino e Pesquisa (National Education and Research Networki Brazil),IT,,,A
+RNP,Rede Nacional de Ensino e Pesquisa (National Education and Research Network Brazil),IT,,,A
 ROO,Rubin Observatory Operations,OPS,,,A
 ROOT,Object-oriented data analysis framework developed at CERN,Gen,,,A
 RPF,Rubin system PerFormance,OPS,,,A
@@ -748,6 +748,7 @@ TCS,Telescope Control System,TS DM,,,A
 TCT,Technical Control Team (obsolete; now DMCCB),LSST DM,,,A
 TEA,Top End Assembly,TS,,,A
 TFLOP,Tera FLOP,Gen,,,A
+TLD,Top Level Domain,IT,,,A
 TLS,Transport Layer Security,IT,,,A
 TMA,Telescope Mount Assembly,TS DM,,,A
 TMT,Thirty Meter Telescope,OPS,,,A
