@@ -35,6 +35,7 @@ AISES,American Indian Science and Engineering Society,DEI,,,A
 AIT,Assembly Integration and Test,Gen,,,A
 AIV,Assembly Integration and Verification,Gen,,,A
 ALD,Associate Lab Director,OPS DOE,,,A
+ALICE,A Large Ion Collider Experiment,Gen,,,A
 ALMA,Atacama Large Millimeter Array (ESO),Gen,,,A
 AMCL,AURA Management Council for LSST,LSST,,,A
 AMCR,AURA management Council for Rubin Observatory,OPS Rubin,,,A
@@ -61,6 +62,7 @@ AST,NSF Division of Astronomical Sciences,TS,Document-11935,,A
 AT,Auxiliary Telescope,TS,,,A
 ATCA,Advanced Telecommunications Architecture,TS,Document-11936,,A
 ATCS,Auxiliary Telescope Control System,TSSW,,,A
+ATLAS,A Toroidal LHC Apparatus,Gen,,,A
 ATM,Adaptavist Test Management,LSST DM,,,A
 AU,deprecated acronym for astronomical unit; use au instead,Gen,,,A
 au,astronomical unit,Gen,,,A
@@ -564,6 +566,7 @@ OSS,Observatory System Specifications; LSE-30,LSST DM,,,A
 OSX,Macintosh Operating System (obsolete; now macOS),Gen,,,A
 OTB,Over Target Baseline,Gen,,,A
 OTS,observatory telemetry system,TS,Document-12015,,A
+PanDA, Production ANd Distributed Analysis system,OPS,,,A
 Pan-STARRS,Panoramic Survey Telescope and Rapid Response System,Gen,,,A
 Parsl,Parallel Scripting Library \url{http://parsl-project.org/},DM,,,A
 PB,PetaByte,Gen,,,A
