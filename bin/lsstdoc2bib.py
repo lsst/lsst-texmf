@@ -9,6 +9,7 @@ produce a bib entry suitable to be put in lsst.bib in texmf.
 import sys
 import re
 import argparse
+from datetime import datetime
 
 
 def find_meta(filename):
@@ -34,8 +35,8 @@ def find_meta(filename):
 
     # Read the content of the file into a single string
     lines = []
-    year = ""
-    month = ""
+    year = datetime.now().year
+    month = datetime.now().strftime('%h')
     auths = ""
     titles = ""
     handles = ""
