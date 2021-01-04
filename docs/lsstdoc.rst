@@ -38,6 +38,8 @@ The options for the document class control some of the layout:
 * ``lsstdraft`` declares that the document is a draft and results in a back ground image.
   For controlled documents this mode also disables the title page text indicating the document has been approved.
   Remove this option when the document is finalized and is ready to be released by merging to the ``master`` branch.
+  Use here ``obsolete`` when a document needs to be marked as obsolete.
+  Change controlled documents need to be submitted to the CCB via RFC before the final obsolete version is uploaded to Docushare.
 * ``toc`` enables a full table of contents to be included.
   This also results in the page style being reset to ``arabic``.
   For backwards compatibility reasons this is not the default, and furthermore, without this option the page style must be explicitly set to ``arabic`` by the document author.
