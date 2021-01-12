@@ -414,9 +414,9 @@
 
     % Place logo on the foreground at the top with text centred underneath it
     \AddToShipoutPictureFG*{%
-      \put(\LenToUnit{0.5\paperwidth},\LenToUnit{0.87\paperheight}){%
+      \put(\LenToUnit{0.5\paperwidth},\LenToUnit{0.77\paperheight}){%
         \makebox[0pt][c]{
-		\includegraphics[width=\paperwidth]{rubin_logo_front}
+		\includegraphics[width=0.42\textwidth]{rubin_logo}
 		}\\
       }
     }
@@ -730,17 +730,17 @@
 % Left heading is the logo and horizontal rule
 \lhead{%
 \vspace {-10pt}
-\includegraphics[width=\lsstheadwidth]{rubin_logo}\\
+\includegraphics[width=\lsstheadlogowidth]{rubin_logo}\\
 }
 
 % Right heading is the document description.
 \rhead{%
 \begin{minipage}{13.3cm}
-  \vspace {-4.8cm}
+  \vspace {-2.8cm}
   \tiny
   \color{lssthead}
   \sffamily
-  \textbf{\@docShortTitle \hfill \docRef \hfill Latest Revision \docDate}
+  \textbf{\hfill \@docShortTitle ~|~\docRef ~|~ Latest Revision \docDate}
   \hspace{\headextrawidth}
 \end{minipage}%
 }
