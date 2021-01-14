@@ -414,9 +414,9 @@
 
     % Place logo on the foreground at the top with text centred underneath it
     \AddToShipoutPictureFG*{%
-      \put(\LenToUnit{0.5\paperwidth},\LenToUnit{0.87\paperheight}){%
+      \put(\LenToUnit{0.5\paperwidth},\LenToUnit{0.77\paperheight}){%
         \makebox[0pt][c]{
-		\includegraphics[width=\paperwidth]{rubin_logo_front}
+		\includegraphics[width=0.42\textwidth]{rubin_logo}
 		}\\
       }
     }
@@ -685,10 +685,6 @@
 % Clear all headings
 \fancyhead{}
 
-% Expand the width of the header into the margins by 1.8cm on each side
-\newlength{\headextrawidth}
-\setlength{\headextrawidth}{1.8cm}
-\fancyhfoffset[LH,RH]{\headextrawidth}
 
 % Dynamically calculate the spacing so that it is driven solely by
 % the amount of overhang required and the width of the logo.
@@ -697,11 +693,7 @@
 
 % Total width of header minipage
 \newlength{\lsstheadwidth}
-\setlength{\lsstheadwidth}{2\headextrawidth + \textwidth}
-
-% Horizontal offset of logo into header
-\newlength{\lsstheadlogooffset}
-\setlength{\lsstheadlogooffset}{\headextrawidth}
+\setlength{\lsstheadwidth}{ \textwidth}
 
 % Text to use below the logo in the header
 \newcommand{\headertext}{\tiny Vera C. Rubin Observatory}
@@ -721,7 +713,7 @@
 
 % Length of first part of ruler depends on text being centred below the logo.
 \newlength{\lsstleftheadrule}
-\setlength{\lsstleftheadrule}{\lsstheadlogooffset + 0.5\lsstheadlogowidth -
+\setlength{\lsstleftheadrule}{ 0.5\lsstheadlogowidth -
                               0.5\lsstheadertextwidth - \lsstheadergap}
 
 % Define command to fill the rest of the line with a rule of specified thickness
@@ -730,18 +722,17 @@
 % Left heading is the logo and horizontal rule
 \lhead{%
 \vspace {-10pt}
-\includegraphics[width=\lsstheadwidth]{rubin_logo}\\
+\includegraphics[width=\lsstheadlogowidth]{rubin_logo}\\
 }
 
 % Right heading is the document description.
 \rhead{%
 \begin{minipage}{13.3cm}
-  \vspace {-4.8cm}
+  \vspace {-2.8cm}
   \tiny
   \color{lssthead}
   \sffamily
-  \textbf{\@docShortTitle \hfill \docRef \hfill Latest Revision \docDate}
-  \hspace{\headextrawidth}
+  \textbf{\hfill \@docShortTitle ~|~\docRef ~|~ Latest Revision \docDate}
 \end{minipage}%
 }
 
