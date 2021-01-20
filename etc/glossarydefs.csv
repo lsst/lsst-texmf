@@ -712,6 +712,7 @@ SQL,Structured Query Language,Gen,,,A
 SQR,SQuARE document handle,LSST DM,,,A
 SQuaRE,Science Quality and Reliability Engineering,LSST DM,LDM-204,,A
 SQuaSH,Science Quality Analysis Harness,DM,https://squash.lsst.codes/,,A
+SRCF,Stanford Research Computing Facility,OPS,,,A
 SRD,LSST Science Requirements; LPM-17,LSST DM,,,A
 SRT,Science Raft Tower,CAM,,,A
 SS,Subsystem Scientist,LSST DM,,,A
