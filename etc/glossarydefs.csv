@@ -225,6 +225,7 @@ DQ,data quality,TS,Document-12020,,A
 DQA,data quality assurance,TS,Document-11974,,A
 DR,Data Release,LSST DM,,,A
 DR1,Data Release 1,OPS,,,A
+DR2,Data Release 2,OPS,,,A
 DR10,Data Release 10,OPS,,,A
 DR11,Data Release 11,OPS,,,A
 DRB,Data Release Board,OPS,,,A
