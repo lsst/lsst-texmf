@@ -166,7 +166,8 @@ def genTables(values):
                 skip = int(row[3])
                 form = None
                 if (len(row) > 4):
-                    form = row[4]
+                    if row[4].strip():
+                        form = row[4]
 
                 outhead(cols-skip, tout, name, cap, form)
                 bold_next = True
