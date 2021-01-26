@@ -225,6 +225,7 @@ DQ,data quality,TS,Document-12020,,A
 DQA,data quality assurance,TS,Document-11974,,A
 DR,Data Release,LSST DM,,,A
 DR1,Data Release 1,OPS,,,A
+DR2,Data Release 2,OPS,,,A
 DR10,Data Release 10,OPS,,,A
 DR11,Data Release 11,OPS,,,A
 DRB,Data Release Board,OPS,,,A
@@ -773,6 +774,7 @@ UI,User Interface,Gen,,,A
 UID,User Identifier,IT,,,A
 UIUC,University of Illinois at Urbana-Champaign,TS,Document-11980,,A
 UK,United Kingdom,Gen OPS,,,A
+UKDF,United Kingdom Data Facility,OPS,,,A
 UKIDSS,UKIRT Infrared Deep Sky Survey,Gen,,,A
 UKIRT,United Kingdom Infrared Telescope,Gen,,,A
 UML,unified modeling language,TS,Document-12027,,A

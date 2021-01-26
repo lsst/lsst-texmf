@@ -158,15 +158,16 @@ def genTables(values):
                     complete_and_close_table(tout)
                 vals = row[0].split(' ')
                 name = vals[1]
-                print("Create new table %s" % name)
+                print("Create new table %s %i " % (name, len(row)))
                 tout = open(name + '.tex', 'w')
 
                 cap = row[1]
                 cols = int(row[2])
                 skip = int(row[3])
                 form = None
-                if (row[4]):
-                    form = row[4]
+                if (len(row) > 4):
+                    if row[4].strip():
+                        form = row[4]
 
                 outhead(cols-skip, tout, name, cap, form)
                 bold_next = True
