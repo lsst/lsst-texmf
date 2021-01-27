@@ -702,11 +702,11 @@ def dump_gls(filename, out_file):
             """, file=ofd)
             for row in reader:
                 try:
+                    lc = lc + 1
                     if len(row) < 6:  # now strict no blanks and 6 cols
                         raise ValueError("Too few columns.")
                     if len(row) > 6:  # now strict no blanks and 6 cols
                         raise ValueError("Too many columns.")
-                    lc = lc + 1
                     if lc == 1:
                         continue  # There is a header line
                     ind = 0
