@@ -3,7 +3,7 @@
 r"""Utility that can be used to automatically generate a list of acronyms,
 abbreviations and glossary entries from multiple TeX files.
 
-Acronymns and glossary entries are read from the :file:`glossarydefs.csv` in
+Acronynm and glossary entries are read from the :file:`glossarydefs.csv` in
 the lsst-texmf distribution. Optionally, this list may be augmented with local
 definitions stored in :file:`myacronyms.txt`. Adding terms to
 :file:`skipacronyms.txt` will cause them to be excluded.
@@ -701,13 +701,15 @@ def dump_gls(filename, out_file):
             \textbf{Entry} & \textbf{Description} & \textbf{Tags}  \\\hline
             """, file=ofd)
             for row in reader:
-                if len(row) < 2:  # blank line
-                    continue
-                lc = lc + 1
-                if lc == 1:
-                    continue  # There is a header line
-                ind = 0
                 try:
+                    if len(row) < 6:  # now strict no blanks and 6 cols
+                        raise ValueError("Too few columns.")
+                    if len(row) > 6:  # now strict no blanks and 6 cols
+                        raise ValueError("Too many columns.")
+                    lc = lc + 1
+                    if lc == 1:
+                        continue  # There is a header line
+                    ind = 0
                     acr = escape_for_tex(row[ind])
                     defn = escape_for_tex(row[ind + 1])
                     tags = row[ind + 2]
