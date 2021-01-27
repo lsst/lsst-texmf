@@ -1042,7 +1042,7 @@ NCSA Facility,"The data center at the National Center for Supercomputing Applica
 Nightly Alert Processing,Deprecated term; see 'Alert Production',DM,,Alert Production,G
 Nightly Archive Processing,Deprecated term; see 'Prompt Processing',DM,,Prompt Processing,G
 Non-Standard Visit,"Any single observation of a LSST field that is not comprised of either two 15 second 'Snap' exposures (a standard visit) or one 30 second exposure (an alternative standard visit). For example, exposure times for Special Programs might be significantly shorter or longer than a standard visit (or of random length)",DM,DMTN-065,,G
-nublado,The service underpinning the Notebook Aspect of the Rubin Science Platform,DM,,G
+nublado,The service underpinning the Notebook Aspect of the Rubin Science Platform,DM,,,G
 Object,"In LSST nomenclature this refers to an astronomical object, such as a star, galaxy, or other physical entity. E.g., comets, asteroids are also Objects but typically called a Moving Object or a Solar System Object (SSObject). One of the DRP data products is a table of Objects detected by LSST which can be static, or change brightness or position with time",DM,"LDM-151, LSE-163",,G
 Offer,"A response to a solicitation that, if accepted, would bind the offeror to perform the work described in resultant contract. Responses to sealed bidding are offers that are often referred to as 'bids' or 'sealed bids;' responses to a request for proposals (RFP, negotiated-type procurements) are offers often referred to as 'proposals' responses to a request for quotations (RFQ) are not offers and are generally called 'quotes'",Adm,,,G
 Operations,The 10-year period following construction and commissioning during which the LSST Observatory conducts its survey,Adm,,,G
