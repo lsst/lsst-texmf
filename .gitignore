@@ -24,3 +24,6 @@ docs/_build/
 docs/_static/examples/
 glstab.tex
 glossary-table.pdf
+docs/glo*
+pythonProject
+bin/.idea/
