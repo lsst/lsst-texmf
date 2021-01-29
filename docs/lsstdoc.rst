@@ -233,7 +233,7 @@ A global glossary and acronym files exists in ``lsst-texmf/etc/glossarydefs.csv`
 
 .. code-block:: latex
 
-   Term,Description,Subsystem Tags,Documentation Tags,Associated Acronyms and Alternative Terms, Type
+   Term,Description,Subsystem Tags,Documentation Tags,Associated Acronyms and Alternative Terms,Type
 
 One should note particularly the Subsystem Tags which may be used to differentiate acronyms which are overloaded.
 
