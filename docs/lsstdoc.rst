@@ -233,7 +233,7 @@ A global glossary and acronym files exists in ``lsst-texmf/etc/glossarydefs.csv`
 
 .. code-block:: latex
 
-   Term,Description,Subsystem Tags,Documentation Tags,Associated Acronyms and Alternative Terms
+   Term,Description,Subsystem Tags,Documentation Tags,Associated Acronyms and Alternative Terms, Type
 
 One should note particularly the Subsystem Tags which may be used to differentiate acronyms which are overloaded.
 
@@ -263,6 +263,10 @@ This script expects to find two text files in the directory with the tex:
 To select a tag or tags for the definitions add ``-t "tag1 tag2"`` to the call to the script.
 
 ``generateAcronyms.py`` can generate either an acronyms table or a glossary. These modes are described in the following sections.
+
+The ``Type`` column indicates if a specific entry is an acronym or a glossary.
+An acronym entry provides the expansion of the alphanumeric ``Term`` in the first column, which is composed mainly of capital letters and numbers
+A glossary entry provides instead a more exhaustive description of the ``Term`` in the first column, which is in this case composed of one or more comprehensive words.
 
 Acronyms
 --------
