@@ -99,6 +99,7 @@ CASNET,AURA's financial reporting database,Adm,,,A
 CB,Configuration Baseline,LSST DM,,,A
 CBP,Collimated Beam Projector,DM LSST OPS ,,,A
 CC,Change Control,Gen,,,A
+CCW,Camera Cable Wrap,CAM,,,A
 CC-IN2P3,Centre de Calcul de l'IN2P3,Gen,,,A
 CCB,Change Control Board,LSST DM,,,A
 CCD,Charge-Coupled Device,Gen,,,A
