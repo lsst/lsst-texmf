@@ -1,1 +1,5 @@
 pyyaml
+google-api-python-client 
+google-auth-httplib2 i
+google-auth-oauthlib
+
