@@ -1955,6 +1955,13 @@ authors:
     initials: Stephen
     name: Plate
     orcid: null
+  plazasa:
+    affil:
+    - Princeton-Astro
+    altaffil: []
+    initials: Andr\'es M.
+    name: Plazas Malag\'on 
+    orcid: 0000-0002-2598-0514
   plutchakjp:
     affil:
     - NCSA
