@@ -48,7 +48,7 @@ For example:
 
 .. code-block:: bash
 
-   cookiecutter lsst-texmf/templates/document
+   cookiecutter lsst-texmf/templates/presentation
 
 Then answer the prompts to initialize the document.
 See the :ref:`template-list` section for information about specific templates.
@@ -62,8 +62,8 @@ These templates are included with ``lsst-texmf``:
 
 .. toctree::
 
-   document
    presentation
+   document
 
 .. _cookiecutter: https://cookiecutter.readthedocs.io/en/latest/index.html
 .. _Anaconda: https://www.continuum.io/downloads
