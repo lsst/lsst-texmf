@@ -1,4 +1,0 @@
-#Put acronyms in this file which are not found or which have multiple definitions (put the one you want here)
-# ACRONYM: Definition  example
-MIA:Missing In Action
-
