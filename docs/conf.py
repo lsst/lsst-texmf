@@ -8,13 +8,6 @@ import os
 import sphinx_rtd_theme
 from documenteer.sphinxconfig.utils import form_ltd_edition_name
 
-from pybtex.style.formatting.plain import Style as PlainStyle
-from pybtex.style.formatting import toplevel
-from pybtex.plugin import register_plugin
-from pybtex.style.template import (
-    join, field, sentence, tag, optional_field, href, first_of, optional
-)
-
 
 extensions = [
     'sphinx.ext.intersphinx',
@@ -23,7 +16,8 @@ extensions = [
     'sphinx.ext.ifconfig',
     'sphinx-prompt',
     'sphinxcontrib.bibtex',
-    'documenteer.sphinxext'
+    'documenteer.sphinxext',
+    'documenteer.sphinxext.bibtex',
 ]
 
 html_theme = 'sphinx_rtd_theme'
@@ -70,32 +64,14 @@ exclude_patterns = ['README.rst', '_build']
 
 source_encoding = 'utf-8'
 
-
-class LSSTStyle(PlainStyle):
-    """Add a new style that understands DocuShare entries"""
-
-    def format_docushare(self, e):
-        default_url = join['https://ls.st/', field('handle', raw=True)]
-
-        template = toplevel[
-            sentence[tag('b')['[', href[default_url, field('handle')], ']']],
-            self.format_names('author'),
-            self.format_title(e, 'title'),
-            sentence[field('year')],
-            sentence[optional_field('note')],
-            # Use URL if we have it, else provide own
-            first_of[
-                optional[
-                    self.format_url(e)
-                ],
-                # define our own URL
-                sentence['URL', href[default_url, default_url]]
-            ]
-        ]
-        return template.format_data(e)
-
-
-register_plugin('pybtex.style.formatting', 'lsst_aa', LSSTStyle)
+# BibTeX configuration
+bibtex_bibfiles = [
+    '../texmf/bibtex/bib/lsst.bib',
+    '../texmf/bibtex/bib/books.bib',
+    '../texmf/bibtex/bib/lsst-dm.bib',
+    '../texmf/bibtex/bib/refs.bib',
+    '../texmf/bibtex/bib/refs_ads.bib',
+]
 
 # Intersphinx configuration.
 # http://www.sphinx-doc.org/en/stable/ext/intersphinx.html
