@@ -34,7 +34,7 @@ html_short_title = 'lsst-texmf'
 
 author = 'LSST Data Management'
 
-copyright = '2017 Association of Universities for Research in Astronomy, Inc.'
+copyright = '2017-2021 Association of Universities for Research in Astronomy (AURA), Inc.'
 
 master_doc = 'index'
 
