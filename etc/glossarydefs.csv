@@ -110,6 +110,7 @@ CCP,Change Control Process,Adm,,,A
 CCS,Camera Control System,LSST DM,,,A
 CDN,Content Delivery Network,DM IT,,,A
 CDS,Centre de Donnes astronomiques de Strasbourg,Gen,,,A
+CE,Communications Engagement,OPS,,,A
 CEC,International in-kind Contribution Evaluation Committee,LSST,,,A
 CEE,"Communications, Education, and Engagement",OPS OIR,,,A
 CEP,Cost Estimating Plan,OPS,,,A
@@ -344,6 +345,7 @@ HEP, High Energy Physics,Gen,,,A
 HEPAP,HEP Advisory Panel,TS,Document-11986,,A
 HIPS,Hierarchical Progressive Survey,Gen,,,A
 HPC,High Performance Computing,DM,,,A
+HPO,Head of Program Operations ,OPS,,,A
 HQ,Head Quarters,OPS,,,A
 HR,Human Resources,Gen,,,A
 HSC,Hyper Suprime-Cam,Gen,,,A
@@ -603,6 +605,7 @@ PMCS,Project Management Controls System,LSST DM,,,A
 PMM,precision measuring machine,TS,Document-11988,,A
 PMO,Project Management Office,Adm,,,A
 PMP,(DM) Project Management Plan; LDM-294,LSST DM,,,A
+PO,Program Operations,OPS,,,A
 POC,Proof Of Concept,Gen,,,A
 POC,People Of Color,DEI,,,A
 POCIT,People Of Color In Tech,DEI,,,A
