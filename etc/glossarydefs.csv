@@ -67,6 +67,7 @@ ATM,Adaptavist Test Management,LSST DM,,,A
 AU,deprecated acronym for astronomical unit; use au instead,Gen,,,A
 au,astronomical unit,Gen,,,A
 AURA,Association of Universities for Research in Astronomy,Gen,,,A
+AVS, Alert Vetting System,OPS,,,A
 AWIS,Association for Women in Science,DEI,,,A
 AWS,Amazon Web Services,Gen,,,A
 B,Byte (8 bit),Gen,,,A
@@ -109,6 +110,7 @@ CCP,Change Control Process,Adm,,,A
 CCS,Camera Control System,LSST DM,,,A
 CDN,Content Delivery Network,DM IT,,,A
 CDS,Centre de Donnes astronomiques de Strasbourg,Gen,,,A
+CE,Communications Engagement,OPS,,,A
 CEC,International in-kind Contribution Evaluation Committee,LSST,,,A
 CEE,"Communications, Education, and Engagement",OPS OIR,,,A
 CEP,Cost Estimating Plan,OPS,,,A
@@ -219,6 +221,7 @@ DP,Data Production,OPS,,,A
 DP0,Data Preview 0,OPS,,,A
 DP1,Data Preview 1,OPS,,,A
 DP2,Data Preview 2,OPS,,,A
+DPA,Data and Processing Architecture,OPS,,,A
 DPAC,Data Processing and Analysis Consortium (Gaia),Gen,,,A
 DPC,Data Policy Committee,OPS,,,A
 DPDD,Data Product Definition Document,LSST DM,,,A
@@ -297,6 +300,7 @@ FPD,Fundamental Physics Directorate,OPS,,,A
 FPGA,Field-Programmable Gate Array,Gen,,,A
 FPRD,functional performance requirements document,TS,Document-11947,,A
 FPSL,Forced-Photometry Sensitivity Limit,TS,,,A
+FrDF,French Data Facility,OPS,,,A
 FS,File System,Gen,,,A
 FSAAS,Filesystem as a Service, IT,,,A
 FTE,Full-Time Equivalent,Adm Gen,,,A
@@ -341,6 +345,7 @@ HEP, High Energy Physics,Gen,,,A
 HEPAP,HEP Advisory Panel,TS,Document-11986,,A
 HIPS,Hierarchical Progressive Survey,Gen,,,A
 HPC,High Performance Computing,DM,,,A
+HPO,Head of Program Operations ,OPS,,,A
 HQ,Head Quarters,OPS,,,A
 HR,Human Resources,Gen,,,A
 HSC,Hyper Suprime-Cam,Gen,,,A
@@ -600,6 +605,7 @@ PMCS,Project Management Controls System,LSST DM,,,A
 PMM,precision measuring machine,TS,Document-11988,,A
 PMO,Project Management Office,Adm,,,A
 PMP,(DM) Project Management Plan; LDM-294,LSST DM,,,A
+PO,Program Operations,OPS,,,A
 POC,Proof Of Concept,Gen,,,A
 POC,People Of Color,DEI,,,A
 POCIT,People Of Color In Tech,DEI,,,A
