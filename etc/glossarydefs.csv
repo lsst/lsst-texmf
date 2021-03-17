@@ -220,6 +220,7 @@ DP,Data Production,OPS,,,A
 DP0,Data Preview 0,OPS,,,A
 DP1,Data Preview 1,OPS,,,A
 DP2,Data Preview 2,OPS,,,A
+DPA,Data and Processing Architecture,OPS,,,A
 DPAC,Data Processing and Analysis Consortium (Gaia),Gen,,,A
 DPC,Data Policy Committee,OPS,,,A
 DPDD,Data Product Definition Document,LSST DM,,,A
