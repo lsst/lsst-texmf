@@ -67,6 +67,7 @@ ATM,Adaptavist Test Management,LSST DM,,,A
 AU,deprecated acronym for astronomical unit; use au instead,Gen,,,A
 au,astronomical unit,Gen,,,A
 AURA,Association of Universities for Research in Astronomy,Gen,,,A
+AVS, Alert Vetting System,OPS,,,A
 AWIS,Association for Women in Science,DEI,,,A
 AWS,Amazon Web Services,Gen,,,A
 B,Byte (8 bit),Gen,,,A
