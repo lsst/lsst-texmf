@@ -156,6 +156,7 @@ CSC,Commandable SAL Component,TS,,SAL,A
 CSDC,Community Science Data Center,OPS OIR,,,A
 CSV,Comma Separated Values,Gen,,,A
 CTIO,Cerro Tololo Inter-American Observatory,Gen,,,A
+CUI,Controlled Unclassified Information,OPS,,,A
 CV,Curriculum Vitae,Gen,,,A
 DAC,Data Access Center,LSST DM,,,A
 DAF,data access framework,TS,Document-11936,,A
