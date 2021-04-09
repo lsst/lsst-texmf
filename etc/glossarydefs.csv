@@ -460,6 +460,7 @@ LSSTC,LSST Corporation,Adm,,,A
 LSSTPO,LSST Project Office,Adm,,,A
 LTS,LSST Telescope and Site  (Document Handle),TS,,,A
 LUT,Look-Up Table,Gen,,,A
+LVV,LSST Verification and Validation,Gen,,,A
 LZ,LUX-ZEPELIN (Dark Matter Mission),Sci,,,A
 M1,primary mirror,TS,Document-12017,,A
 M1M3,Primary Mirror Tertiary Mirror,LSST,,,A
