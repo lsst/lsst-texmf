@@ -624,6 +624,7 @@ PRC,Procurement Charge,OPS DOE,,,A
 PRT,Personal Research Time,OPS,,,A
 PS,Project Scientist,LSST DM,,,A
 PSD,power spectral density,TS,Document-11996,,A
+PSE,Project Systems Engineering,PSE,,,A
 PSF,Point Spread Function,Gen,,,A
 PST,Project Science Team,LSST DM,,,A
 PSTN,Project Science Technical Note,LSST DM,,,A
