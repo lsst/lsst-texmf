@@ -264,6 +264,7 @@ ETC,Estimate To Complete,Gen LSST DM,,,A
 ETL,extract-transform-load,TS,Document-11957,,A
 ETS,engineering and technical devices,TS,Document-11952,,A
 ETU,Engineering Test Unit,LSST DM,,,A
+EUI,Engineering User Interface System,PSE,,,A
 EUPS,Extended Unix Product System,LSST DM,,,A
 eV,electron-Volt,Gen,,,A
 EVM,Earned Value Management,Adm Gen,,,A
@@ -370,6 +371,8 @@ IDAC,Independent Data Access Center,DM OPS,,,A
 IDF,Interim Data Facility,OPS,,,A
 IDL,Interactive Data Language,Gen,,,A
 IIP,image ingest and processing,TS,Document-12029,,A
+ILC,Inner Loop Controler,PSE,,,A
+IMS,Integrated Master Schedule,PSE,,,A
 ImSim,Image Simulation,Sims,,,A
 IN2P3,Institut National de Physique Nucléaire et de Physique des Particules,Gen,,,A
 IoA,Institute of Astronomy (Cambridge; also denoted IOA),Gen,,,A
@@ -621,6 +624,7 @@ PRC,Procurement Charge,OPS DOE,,,A
 PRT,Personal Research Time,OPS,,,A
 PS,Project Scientist,LSST DM,,,A
 PSD,power spectral density,TS,Document-11996,,A
+PSE,Project Systems Engineering,PSE,,,A
 PSF,Point Spread Function,Gen,,,A
 PST,Project Science Team,LSST DM,,,A
 PSTN,Project Science Technical Note,LSST DM,,,A
