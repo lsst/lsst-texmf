@@ -302,6 +302,7 @@ FPD,Fundamental Physics Directorate,OPS,,,A
 FPGA,Field-Programmable Gate Array,Gen,,,A
 FPRD,functional performance requirements document,TS,Document-11947,,A
 FPSL,Forced-Photometry Sensitivity Limit,TS,,,A
+FRACAS,Failure Reporting Analysis and Corrective Action System,PSE,,,A
 FrDF,French Data Facility,OPS,,,A
 FS,File System,Gen,,,A
 FSAAS,Filesystem as a Service, IT,,,A
@@ -371,7 +372,7 @@ IDAC,Independent Data Access Center,DM OPS,,,A
 IDF,Interim Data Facility,OPS,,,A
 IDL,Interactive Data Language,Gen,,,A
 IIP,image ingest and processing,TS,Document-12029,,A
-ILC,Inner Loop Controler,PSE,,,A
+ILC,Inner Loop Controller,PSE,,,A
 IMS,Integrated Master Schedule,PSE,,,A
 ImSim,Image Simulation,Sims,,,A
 IN2P3,Institut National de Physique Nucléaire et de Physique des Particules,Gen,,,A
@@ -470,6 +471,7 @@ M1M3,Primary Mirror Tertiary Mirror,LSST,,,A
 M2,Secondary Mirror,LSST,,,A
 M3,tertiary mirror,TS,Document-12023,,A
 MACHO,massive compact halo object,TS,Document-11962,,A
+MASCARA,Multi-site All-Sky CAmeRA,TS,,,A
 MASS,Multi-Aperture Scintillation Sensor,TS,,,A
 MAST,Mikulski Archive for Space Telescopes,Gen,,,A
 MB,MegaByte,Gen,,,A
