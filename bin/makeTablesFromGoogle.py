@@ -122,10 +122,9 @@ def outputrow(tout, pre, row, cols, skip):
 
 def fixTex(text):
     specialChars = r"_/$&%^#"
-    ret = text
     for c in specialChars:
-        ret = ret.replace(c, "\\%s" % c)
-    return ret
+        text = text.replace(c, "\\%s" % c)
+    return text
 
 
 def genTables(values):
