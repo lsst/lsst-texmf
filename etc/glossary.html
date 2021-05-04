@@ -46,26 +46,6 @@
 
 
 
-        function setupColA() {
-		var table = $('#gls').DataTable();
-		 
-		table.columns().flatten().each( function ( colIdx ) {
-			// Create the select list and/or search box add  operation
-			var search = $('<input type="text" placeholder="Search" />')
-			if ([0].includes(colIdx)) {
-		             search.appendTo(
-			         table.column(colIdx).footer()
-			     )
-			     .on( 'keyup change clear', function () {
-				table.column( colIdx )
-					 .search( $(this).val()).draw();
-			    });
-		       }
-		} );
-	}
-
-
-
         function setupCol() {
 		var table = $('#gls').DataTable();
 		 
@@ -105,7 +85,14 @@
 
 
         $(document).ready(function() {
+	    queryString = window.location.search
+            urlParams = new URLSearchParams(queryString)
             setupTable();
+            if (urlParams.has("acr")) {
+                var acr = urlParams.get("acr")   
+        	var table = $('#gls').DataTable()
+                table.column(0).search(acr).draw()
+	    }
 	});
 </script>
 </head>
