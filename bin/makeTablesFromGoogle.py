@@ -121,13 +121,10 @@ def outputrow(tout, pre, row, cols, skip):
 
 
 def fixTex(text):
-    ret = text.replace("_", "\\_")
-    ret = ret.replace("/", "/ ")
-    ret = ret.replace("$", "\\$")
-    ret = ret.replace("&", "\\&")
-    ret = ret.replace("%", "\\%")
-    ret = ret.replace("^", "\\^")
-    return ret
+    specialChars = "_/$&%^#"
+    for c in specialChars:
+        text = text.replace(c, f"\\{c}")
+    return text
 
 
 def genTables(values):
