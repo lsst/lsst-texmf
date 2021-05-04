@@ -85,15 +85,16 @@
 
 
         $(document).ready(function() {
-	    queryString = window.location.search
+            queryString = window.location.search
             urlParams = new URLSearchParams(queryString)
             setupTable();
             if (urlParams.has("acr")) {
                 var acr = urlParams.get("acr")   
-        	var table = $('#gls').DataTable()
+                var table = $('#gls').DataTable({
+				        retrieve: true})
                 table.column(0).search(acr).draw()
-	    }
-	});
+            }
+        });
 </script>
 </head>
 
