@@ -121,13 +121,10 @@ def outputrow(tout, pre, row, cols, skip):
 
 
 def fixTex(text):
-    ret = text.replace("_", "\\_")
-    ret = ret.replace("/", "/ ")
-    ret = ret.replace("$", "\\$")
-    ret = ret.replace("&", "\\&")
-    ret = ret.replace("%", "\\%")
-    ret = ret.replace("#", "\\#")
-    ret = ret.replace("^", "\\^")
+    specialChars = r"_/$&%^#"
+    ret = text
+    for c in specialChars:
+        ret = ret.replace(c, "\\%s" % c)
     return ret
 
 
