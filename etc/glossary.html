@@ -19,6 +19,7 @@
 
 <script type="text/javascript"charset="utf-8">
         var gls;
+	var acrCol;
 	d3.text("glossarydefs.csv", function(error, data) {
 	    if (error) console.log("Failed: ", error);
 		    gls = d3.csv.parseRows(data, function(d, i) {
@@ -43,26 +44,6 @@
 		    setTimeout(setupTable, 300); // try again in 300 milliseconds
 	      }
 	};
-
-
-
-        function setupColA() {
-		var table = $('#gls').DataTable();
-		 
-		table.columns().flatten().each( function ( colIdx ) {
-			// Create the select list and/or search box add  operation
-			var search = $('<input type="text" placeholder="Search" />')
-			if ([0].includes(colIdx)) {
-		             search.appendTo(
-			         table.column(colIdx).footer()
-			     )
-			     .on( 'keyup change clear', function () {
-				table.column( colIdx )
-					 .search( $(this).val()).draw();
-			    });
-		       }
-		} );
-	}
 
 
 
@@ -101,12 +82,19 @@
 					 .search( $(this).val()).draw();
 			    });
 		} );
+		acrCol = table.column(0)
 	}
 
 
         $(document).ready(function() {
             setupTable();
-	});
+            queryString = window.location.search
+            urlParams = new URLSearchParams(queryString)
+            if (urlParams.has("acr")) {
+                var acr = urlParams.get("acr")   
+                acrCol.search(acr).draw()
+            }
+        });
 </script>
 </head>
 
