@@ -126,6 +126,7 @@ def fixTex(text):
     ret = ret.replace("$", "\\$")
     ret = ret.replace("&", "\\&")
     ret = ret.replace("%", "\\%")
+    ret = ret.replace("#", "\\#")
     ret = ret.replace("^", "\\^")
     return ret
 
