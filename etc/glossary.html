@@ -19,6 +19,7 @@
 
 <script type="text/javascript"charset="utf-8">
         var gls;
+	var acrCol;
 	d3.text("glossarydefs.csv", function(error, data) {
 	    if (error) console.log("Failed: ", error);
 		    gls = d3.csv.parseRows(data, function(d, i) {
@@ -81,18 +82,17 @@
 					 .search( $(this).val()).draw();
 			    });
 		} );
+		acrCol = table.column(0)
 	}
 
 
         $(document).ready(function() {
+            setupTable();
             queryString = window.location.search
             urlParams = new URLSearchParams(queryString)
-            setupTable();
             if (urlParams.has("acr")) {
                 var acr = urlParams.get("acr")   
-                var table = $('#gls').DataTable({
-				        retrieve: true})
-                table.column(0).search(acr).draw()
+                acrCol.search(acr).draw()
             }
         });
 </script>
