@@ -27,6 +27,12 @@ If the automated tests pass, the PR can be self-merged without review.
 In this way, we can ensure that all documents agree on references without duplication and with minimum overhead.
 Reminder that author lists in bibliography entries should use and to separate authors thus "William O'Mullane and Tim Jenness".
 
+For new documents made with sqrbot-jr a file will be created called ``bibentry.txt`` which will contain a bib entry for
+the the document which could be added to the appropriate bibfile. 
+
+For older documents a script ``lsstdoc2bib.py`` exist in the bin folder of lsst-texmf which attempts to get info from the
+tex macros of the document. Run it with the main file and the meta file like:``lsstdoc2bib.py meta.tex DMTN-nnn.tex`` where DMTN-nnn is the tex of the document you want the entry for. Its not very robust but gives you a start.
+
 Bibliography file organization
 ------------------------------
 
