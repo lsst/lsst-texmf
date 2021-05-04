@@ -30,7 +30,7 @@ Reminder that author lists in bibliography entries should use and to separate au
 For new documents made with sqrbot-jr a file will be created called ``bibentry.txt`` which will contain a bib entry for
 the the document which could be added to the appropriate bibfile. 
 
-For older documents a script ``lsstdoc2bib.py`` exist in the bin folder of lsst-texmf which attempts to get info from the
+For older LaTeX documents a script ``lsstdoc2bib.py`` exists in the bin folder of lsst-texmf which attempts to get info from the
 tex macros of the document. Run it with the main file and the meta file like:``lsstdoc2bib.py meta.tex DMTN-nnn.tex`` where DMTN-nnn is the tex of the document you want the entry for. Its not very robust but gives you a start.
 
 Bibliography file organization
