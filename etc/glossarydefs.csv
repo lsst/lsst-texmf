@@ -126,6 +126,7 @@ CFR,Code of Federal Regulations,OPS,,,A
 CI,Continuous Integration,Gen,,,A
 CI,Cyber Infrastructure,Petabytes,,,A
 CIS,Computer Infrastructure Support,TS,Document-11991,,A
+CLO,community.lsst.org - use of this acronym is discouraged. The language that should be used in official documents is "Community Forum" or "Vera C. Rubin Community Forum".,DM,,,A
 CLP,Chilean Peso,OPS,,,A
 CM,Configuration Management,LSST DM,,,A
 CMB,Cosmic Microwave Background,Sci OPS,,,A
@@ -531,6 +532,7 @@ NCW,Non Conformance Waiver,PMO,,,A
 NEA,Near-Earth Asteroid,Gen,,,A
 NED,NASA/IPAC Extragalactic Database,Gen,,,A
 NEO,Near-Earth Object,Gen,,,A
+NERSC,National Energy Research Scientific Computing Center,OPS,,,A
 NET,Network Engineering Team,LSST DM,,,A
 NFPA,National Fire Protection Association,OPS,,,A
 NFS,Network File System,Gen,,,A
