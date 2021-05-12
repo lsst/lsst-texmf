@@ -27,11 +27,14 @@ def find_meta(filename):
     """
 
     auth = re.compile(r"\\author\s*{([\w'`,\- ]+)}")
-    title = re.compile(r"\\title\s*[\[\]a-z A-Z\\]*{([\w\\#,\-\+ ]+)}")  # a real pity .+ consumes closing }
+    title = re.compile(r"\\title\s*[\[\]a-z A-Z\\]+{([\w\\#,:\-\+ ]+)}")  # a real pity .+ consumes closing }
+    title2 = re.compile(r"\\title\{(.+)} \\setD")  # a real pity .+ consumes closing }
     yearm = re.compile(r"\\date\s*{([0-9]+)-([0-9]+)-.+}")  # only if its an actual date not a macro
     yearm2 = re.compile(r"\\vcs[dD]ate}{(.+)-(.+)-.+}")  # only chance from meta.tex if it was a macro
     handle = re.compile(r"\\setDocRef\s*{([A-Z]+-[0-9]+)}")
     comment = re.compile(r"%.*")
+    doctype = re.compile(r"lsstDocType}{(.+)} .+\\")
+    docnum = re.compile(r"lsstDocNum}{([0-9]+)} .+\\")
 
     # Read the content of the file into a single string
     lines = []
@@ -40,6 +43,8 @@ def find_meta(filename):
     auths = ""
     titles = ""
     handles = ""
+    doctypes = ""
+    docnums = ""
     meta = filename == "meta.tex"
     with open(filename, "r") as fd:
         for line in fd:
@@ -55,6 +60,16 @@ def find_meta(filename):
         text = " ".join(lines)
 
     if (meta):
+        rset = doctype.findall(text)
+        if (rset):
+            doctypes = rset[0]
+            end = doctypes.find('}')
+            doctypes = doctypes[0:end]
+        rset = docnum.findall(text)
+        if (rset):
+            docnums = rset[0]
+        if not handles:
+            handles = f"{doctypes}-{docnums}"
         yearmm = yearm2.findall(text)
         if (yearmm):
             year = yearmm[0][0]
@@ -66,9 +81,15 @@ def find_meta(filename):
         rset = title.findall(text)
         if (rset):
             titles = rset[0]
+        else:
+            rset = title2.findall(text)
+            if (rset):
+                titles = rset[0]
         rset = handle.findall(text)
         if (rset):
             handles = rset[0]
+        else:
+            handles = f"{doctypes}-{docnums}"
         yearmm = yearm.findall(text)
         if (yearmm):
             year = yearmm[0][0]
