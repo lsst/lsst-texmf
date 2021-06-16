@@ -711,6 +711,7 @@ SI,Syst\`eme International (International System of units defined by ISO),Gen,,,
 SIA,Simple Image Access,Gen,,,A
 SIT,"System Integration, Test",LSST OPS ,,,A
 SIT-COM,"System Integration, Test and Commissioning",LSST OPS ,,,A
+SKF,Svenska Kullagerfabriken,PMO,,,A
 SLA,Service Level Agreement,Gen,,,A
 SLAC,SLAC National Accelerator Laboratory,LSST DM,,,A
 SMARTS,Small and Moderate Aperture Research Telescope System,OPS,,,A
@@ -785,6 +786,7 @@ TMT,Thirty Meter Telescope,OPS,,,A
 TNO,trans-Neptunian object,TS,Document-11979,,A
 TOPCAT,Tool for OPerations on Catalogues And Tables,Gen,,,A
 TOWG,Technical Operations Working Group,TS,,,A
+TPC,Total Project Cost,PMO,,,A
 TS,Test Specification,LSST DM,,,A
 TSIP, Telescope System Instrumentation Program,OPS,,,A
 TSS,Telescope and Site Software,LSST,,,A
