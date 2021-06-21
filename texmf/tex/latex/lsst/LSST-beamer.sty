@@ -13,6 +13,7 @@
 
 \DeclareBoolOption{quiet}
 \DeclareBoolOption{descTheme}           % Fiddle beamer to use DESC templates
+\DeclareBoolOption{rubinTheme}          % Rubin tmeplate has no logos in footer and no footer on totle page
 \DeclareBoolOption{serif}               % Use serif fonts
 \DeclareBoolOption[false]{colorlinks}   % Hyperref's colorlinks, but set colours for beamer
 \DeclareStringOption[Boadilla]{theme}   % Beamer theme to use (e.g. default, Boadilla, Frankfurt)
@@ -288,7 +289,11 @@
                         \hbox to \textwidth{\usebeamerfont{date}\hfil\insertdate\par}
 
                         \vspace{0.295\textheight}
-                        \hbox to \textwidth{\hfill \usebeamerfont{footline}\color{white}\LSST@footline \hfill}
+                        \ifLSST@rubinTheme
+			    \relax
+			 \else
+                            \hbox to \textwidth{\hfill \usebeamerfont{footline}\color{white}\LSST@footline \hfill}
+			\fi
                      \fi
                    }
                    \setbeamertemplate{footline}{
