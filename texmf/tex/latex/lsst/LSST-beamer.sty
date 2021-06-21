@@ -77,6 +77,9 @@
 \IfFileExists{tpslifonts.sty}{\usepackage{tpslifonts}}{} % use tpslifonts fonts
 \IfFileExists{bera.sty}{\usepackage{bera}}{} % use Bitstream Vera fonts
 
+\definecolor{lsstblue}{RGB}{ 5, 139, 140}
+
+
 %------------------------------------------------------------------------------
 %
 % Beamer style
@@ -210,6 +213,7 @@
   \fi
 }
 
+
 %
 % We need to tweak some things for DESC
 %
@@ -224,6 +228,13 @@
 \else
    \addtobeamertemplate{frametitle}{\vspace*{0mm}}{\vspace*{2mm}}
    \def\LSST@footlineVspace{0mm}      % move footline up by this distance
+\fi
+%
+% We need to tweak some things for Rubin
+%
+\ifLSST@rubinTheme
+   \setbeamersize{text margin left=7mm}
+   \def\LSST@footlineVspace{0.5mm}   % move footline up by this distance
 \fi
 
 \ifx\LSST@footlineColor\empty
@@ -296,17 +307,30 @@
 			\fi
                      \fi
                    }
+	   \ifLSST@rubinTheme
+                   \setbeamertemplate{footline}{
+                     \rule[0.3\baselineskip]{0pt}{0.7\baselineskip}
+                     \begin{beamercolorbox}[wd=0.995\textwidth]{XXX} % avoid overfull \hbox
+                       \LSST@setFootlineColor
+                       \raisebox{\LSST@footlineVspace}[0pt][2mm]{{\hspace{3mm}}
+			       \hbox to \textwidth{ \LSST@footline
+			     \hfill \hbox to 0pt{\hss {\color{lsstblue}\href{https://www.lsst.org/scientists/glossary-acronyms}{Acronyms \& Glossary}} | \insertframenumber {\hspace{9mm}}}}
+                       }
+                     \end{beamercolorbox}
+                   }
+	   \else
                    \setbeamertemplate{footline}{
                      \rule[0.3\baselineskip]{0pt}{0.7\baselineskip}
                      \begin{beamercolorbox}[wd=0.995\textwidth]{XXX} % avoid overfull \hbox
                        \LSST@setFootlineColor
                        \raisebox{\LSST@footlineVspace}[0pt][2mm]{
                          \hbox to \textwidth{\hfill \LSST@footline
-                           \hfill \hbox to 0pt{\hss \insertframenumber\ifaspectratio{43}{\hspace{19mm}}%
+			     \hfill \hbox to 0pt{\hss  \insertframenumber\ifaspectratio{43}{\hspace{19mm}}%
                                                                                         {\hspace{22.5mm}}}}
                        }
                      \end{beamercolorbox}
                    }
+	   \fi
                    \setbeamertemplate{section in toc shaded}[default][40]
                    \setbeamertemplate{itemize item}{\raisebox{2pt}{\rule{2mm}{1pt}}}
                    \setbeamertemplate{itemize subitem}[ball]
