@@ -110,6 +110,7 @@ CCOB,Camera Calibration Optical Bench,LSST DM,,,A
 CCP,Change Control Process,Adm,,,A
 CCS,Camera Control System,LSST DM,,,A
 CDN,Content Delivery Network,DM IT,,,A
+CD-4,Critical Decision 4,DOE,,,A
 CDS,Centre de Donnes astronomiques de Strasbourg,Gen,,,A
 CE,Communications Engagement,OPS,,,A
 CEC,International in-kind Contribution Evaluation Committee,LSST,,,A
@@ -951,6 +952,7 @@ Contingency,"The project's overall reserves in excess of the documented baseline
 Contingency Management,"The formal process that provides the ability and flexibility to solve unforeseen issues that may impact the project's budget, schedule, and technical performance. The process incorporates activity-based uncertainties and high impact event-based uncertainties",Adm,,,G
 Contract,"A binding legal agreement between parties obligating the one (typically the  'seller') to furnish certain supplies or services and the other (typically, the buyer) to compensate the seller for the supplies or services with some form of consideration, (typically money). The term, 'contract' is used interchangeably with 'sub-award' 'agreement' 'memorandum of understanding and/or agreement' and 'purchase order' Each is a term used to differentiate between a purchase-order-format type document and a complex purchase in a subcontract/sub-award-format type document. These also include awards and notices of awards; job orders or task letters issued under basic ordering agreements; letter contracts; orders, such as purchase orders and subcontracts under which the order becomes effective by written acceptance or performance; and bilateral contract modifications",Adm,,,G
 Cost Estimate,"An approximation of total costs required for completion of the project based on known resources (staff, physical assets, knowledge, etc.) that will be needed",Adm,,,G
+Critical Decision 4,"Approve Start of Operations or Project Completion. CD-4 approval marks the achievement of the completion criteria (i.e., KPPs) defined in the PEP (or in the PRD, for NNSA projects), and if applicable, subsequent approval of transition to operations. ",DOE,,,G
 cycle,"The time period over which detailed, short-term plans are defined and executed. Normally, cycles run for six months, and culminate in a new release of the LSST Software Stack, however this need not always be the case",DM,,planning,G
 dashboard,"A visual display of the most important information needed to achieve one or more objectives, consolidated and arranged on a single screen so that the information can be monitored at a glance (as in Few, S., 2013, Information Dashboard Design, Analytics Press, 2 edn.)",DM QA,DMTN-085,,G
 Data Access Center,"Part of the LSST Data Management System, the US and Chilean DACs will provide authorized access to the released LSST data products, software such as the Science Platform, and computational resources for data analysis. The US DAC also includes a service for distributing bulk data on daily and annual (Data Release) timescales to partner institutions, collaborations, and LSST Education and Public Outreach (EPO). ",DM,LDM-148,DAC,G
