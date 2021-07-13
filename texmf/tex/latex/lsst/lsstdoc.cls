@@ -1061,8 +1061,8 @@ No actions have been identified.}
 % -----------------------------------------------------------------------------
 % Useful definition
 % -----------------------------------------------------------------------------
-\def\VRO{Vera C. Rubin Observatory} 
-\def\RO{Rubin Observatory} 
+\def\VRO{Vera C. Rubin Observatory~} 
+\def\RO{Rubin Observatory~} 
 \def\aaps{A\&AS}           % Astronomy and Astrophysics Suplement
 \def\aap{A\&A}             % Astronomy and Astrophysics
 \def\ssr{Space~Sci.~Rev.}  % Space Science Reviews
