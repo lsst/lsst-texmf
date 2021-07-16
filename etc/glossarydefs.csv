@@ -448,6 +448,7 @@ LDO,LSST Document Operations (Document Handle),LSST OPS,,,A
 LED,Light-Emitting Diode,Gen,,,A
 LEP,LSST EPO (Document Handle),LSST EPO,,,A
 LF,luminosity function,TS,Document-11977,,A
+LFA,Large File Annex,TS,,,A
 LHC,Large Hadron Collider (at CERN),Gen,,,A
 LHN,long haul network,TS,Document-12032,,A
 LIGO,Laser Interferometer Gravitational-Wave Observatory,TS,Document-11985,,A
