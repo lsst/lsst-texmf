@@ -310,11 +310,17 @@ FrDF,French Data Facility,OPS,,,A
 FS,File System,Gen,,,A
 FSAAS,Filesystem as a Service, IT,,,A
 FTE,Full-Time Equivalent,Adm Gen,,,A
+FTS,File Transfer Service,OPS,,,A
 FUSE,a user space filesystem framework,IT,,,A
 FWHM,Full Width at Half-Maximum,Gen,,,A
 FWP,Field Work Proposals,OPS,,,A
 FY,Financial Year,OPS DM,,,A
+FY20,Financial Year 20,OPS,,,A
 FY21,Financial Year 21,OPS,,,A
+FY22,Financial Year 22,OPS,,,A
+FY23,Financial Year 23,OPS,,,A
+FY24,Financial Year 24,OPS,,,A
+FY25,Financial Year 25,OPS,,,A
 GAVO,German Astronomical Virtual Observatory,Gen,,,A
 GB,Gigabyte,Gen,,,A
 Gb,Gigabit,Gen,,,A
@@ -403,6 +409,7 @@ ITIL,Information Technology Infrastructure Library,Gen,,,A
 ITO,IT Operations,OPS OIR,,,A
 ITSC,Information Technology Services Committee,Adm,,,A
 IVOA,International Virtual-Observatory Alliance,Gen,,,A
+JBOD,Just a Bunch of Disks,OPS,,,A
 JEDI,Job Execution and Definition Interface,OPS,,,A
 JD,Julian Date,Gen,,,A
 JDBC,Java DataBase Connectivity,Gen,,,A
@@ -545,6 +552,7 @@ NIR,Near Infrared,Sci,,,A
 NIST,National Institute of Standards and Technology (USA),Gen,,,A
 NLR,National Lambda Rail,TS,Document-11941,,A
 NMOC,NSF's OIR Lab Management Oversight Council,Gen,,,A
+NNSA,National Nuclear Security Administration,OPS,,,A
 NOAA,National Oceanic and Atmospheric Administration,Gen,,,A
 NOAO,National Optical Astronomy Observatories (USA),Gen,,,A
 NOC,Network Operations Center,NET ,,,A
@@ -1133,6 +1141,7 @@ Risk Management,"The art and science of planning, assessing, and handling future
 "Risk, Programmatic","Produced by events that are beyond the control of the project manager. These events often are produced by decisions made by personnel at higher levels of authority, such as reductions in project priority, delays in receiving authorization to proceed with a project, reduced or delayed funding, changes in organization or national objectives, etc. Programmatic risk can be a source of risk in any of the other three risk categories",Adm,,,G
 "Risk, Schedule","The possibility that the project will fail to meet scheduled milestones. Schedule risk exists if there is inadequate allowance for acquisition delays or if difficulty is experienced in achieving scheduled technical accomplishments, such as the development of software. Schedule risk can be incurred at the total project level for milestones such as deployment of the first system element. The cascading effects of element-level schedule risks can produce schedule risk for the total project",Adm,,,G
 "Risk, Technical","The possibility that a technical requirement of the system may not be achieved in the system life cycle. Technical risk exists if the system may fail to achieve performance requirements; to meet operability, producibility, testability, or integration requirements; or to meet environmental protection requirements. A potential failure to meet any requirement that can be expressed in technical terms is a source of technical risk",Adm,,,G
+"Rucio","Rucio is a project that provides services and associated libraries for allowing scientific collaborations to manage large volumes of data spread across facilities at multiple institutions and organisations. Rucio has been developed by the ATLAS experiment",OPS,,,G
 Safety,The control of accidental loss,Adm,,,G
 Safety Council,A consulting body providing policy advice and evaluation of safety program effectiveness; the council is composed of independent safety professionals and representatives of LSST institutional members,Adm,,,G
 Safety Manager,"The person who manages, executes, and verifies compliance with the LSST Safety Policy (LPM-18); the Safety Manager is also chair of the Safety Council",Adm,,,G
