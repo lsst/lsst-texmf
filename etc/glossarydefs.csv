@@ -725,6 +725,7 @@ SIA,Simple Image Access,Gen,,,A
 SIT,"System Integration, Test",LSST OPS ,,,A
 SIT-COM,"System Integration, Test and Commissioning",LSST OPS ,,,A
 SKF,Svenska Kullagerfabriken,PMO,,,A
+SKU,Stock Keeping Unit (Google),OPS,,,A
 SLA,Service Level Agreement,Gen,,,A
 SLAC,SLAC National Accelerator Laboratory,LSST DM,,,A
 SMARTS,Small and Moderate Aperture Research Telescope System,OPS,,,A
