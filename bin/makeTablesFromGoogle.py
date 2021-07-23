@@ -10,6 +10,7 @@ Column C is an integer value for the number of columns you want to extract.
 Column D is an integer for the number of columns you want to skip
          not including the first
 Column E can hold an optional Longtable format for the table.
+Column F can hold d a directive for font size default \tiny
 The next row is assumed to be a title row and will be bold.
 All following rows are output accordingly as table rows.
 If the word Total appears in Column A the row will be bold.
@@ -89,8 +90,9 @@ def complete_and_close_table(tout):
         raise Exception('Expected and open file to end table in')
 
 
-def outhead(ncols, tout, name, cap, form=None):
-    print(r"\tiny \begin{longtable} {", file=tout, end='')
+def outhead(ncols, tout, name, cap, form=None, font=r"\tiny"):
+
+    print(r"%s \begin{longtable} {" % font, file=tout, end='')
     c = 1
     if (form is None):
         print(" |p{0.22\\textwidth} ", file=tout, end='')
@@ -159,15 +161,24 @@ def genTables(values):
                 print("Create new table %s %i " % (name, len(row)))
                 tout = open(name + '.tex', 'w')
 
-                cap = row[1]
-                cols = int(row[2])
-                skip = int(row[3])
+                col = 1
+                cap = row[col]
+                col = col + 1
+                cols = int(row[col])
+                col = col + 1
+                skip = int(row[col])
                 form = None
-                if (len(row) > 4):
-                    if row[4].strip():
-                        form = row[4]
+                font = r"\tiny"
+                col = col + 1
+                if (len(row) > col):
+                    if row[col].strip():
+                        form = row[col]
+                col = col + 1
+                if (len(row) > col):
+                    if row[col].strip():
+                        font = row[col]
 
-                outhead(cols-skip, tout, name, cap, form)
+                outhead(cols-skip, tout, name, cap, form, font)
                 bold_next = True
             else:
                 if name and row:
