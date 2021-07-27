@@ -286,6 +286,7 @@ FFT,Fast Fourier Transform,Gen,,,A
 FGCM,Forward Global Calibration Model,DM,,,A
 FGST,Fermi Gamma-ray Space Telescope,Sci OPS,,,A
 FIFO,First In First Out,Gen,,,A
+FIPS,Federal Information Processing Standards,OPS,,,A
 FITS,Flexible Image Transport System,Gen,,,A
 FIU,Florida International University,Gen,,,A
 FK5,Fifth Fundamental Catalogue,Gen,,,A
@@ -482,6 +483,7 @@ M1,primary mirror,TS,Document-12017,,A
 M1M3,Primary Mirror Tertiary Mirror,LSST,,,A
 M2,Secondary Mirror,LSST,,,A
 M3,tertiary mirror,TS,Document-12023,,A
+MAC,Media Access Control,IT,,,A
 MACHO,massive compact halo object,TS,Document-11962,,A
 MASCARA,Multi-site All-Sky CAmeRA,TS,,,A
 MASS,Multi-Aperture Scintillation Sensor,TS,,,A
@@ -534,6 +536,7 @@ NAOJ,National Astronomical Observatory of Japan,Gen,,,A
 NAS,National Academy of Science,Sci,,,A
 NAS,Network Attached Storage,DM,,,A
 NASA,National Aeronautics and Space Administration,Gen,,,A
+NAT,Network Address Translation,IT,,,A
 NAT,nodal aberration theory,TS,Document-11993,,A
 NCOA,National Center for Optical-Infrared Astronomy,Gen,,,A
 NCOIRA,(Obsolete now NOIRLab) National Center for Optical and Infrared Astronomy,TS,Document-11999,,A
@@ -821,6 +824,7 @@ UNSO,United States Naval Observatory,TS,Document-11938,,A
 UPS,uninterruptible power supply,TS,Document-11989,,A
 URL,Universal Resource Locator,Gen,,,A
 US,United States,Gen,,,A
+USB,Universal Serial Bus,IT,,,A
 USD,United States dollar,TS,Document-11967,,A
 USDF,United States Data Facility,OPS DF DM,,,A
 USNO,United States Naval Observatory,Gen,,,A
@@ -1143,7 +1147,7 @@ Risk Management,"The art and science of planning, assessing, and handling future
 "Risk, Programmatic","Produced by events that are beyond the control of the project manager. These events often are produced by decisions made by personnel at higher levels of authority, such as reductions in project priority, delays in receiving authorization to proceed with a project, reduced or delayed funding, changes in organization or national objectives, etc. Programmatic risk can be a source of risk in any of the other three risk categories",Adm,,,G
 "Risk, Schedule","The possibility that the project will fail to meet scheduled milestones. Schedule risk exists if there is inadequate allowance for acquisition delays or if difficulty is experienced in achieving scheduled technical accomplishments, such as the development of software. Schedule risk can be incurred at the total project level for milestones such as deployment of the first system element. The cascading effects of element-level schedule risks can produce schedule risk for the total project",Adm,,,G
 "Risk, Technical","The possibility that a technical requirement of the system may not be achieved in the system life cycle. Technical risk exists if the system may fail to achieve performance requirements; to meet operability, producibility, testability, or integration requirements; or to meet environmental protection requirements. A potential failure to meet any requirement that can be expressed in technical terms is a source of technical risk",Adm,,,G
-"Rucio","Rucio is a project that provides services and associated libraries for allowing scientific collaborations to manage large volumes of data spread across facilities at multiple institutions and organisations. Rucio has been developed by the ATLAS experiment",OPS,,,G
+"Rucio","Rucio is a project that provides services and associated libraries for allowing scientific collaborations to manage large volumes of data spread across facilities at multiple institutions and organizations. Rucio has been developed by the ATLAS experiment",OPS,,,G
 Safety,The control of accidental loss,Adm,,,G
 Safety Council,A consulting body providing policy advice and evaluation of safety program effectiveness; the council is composed of independent safety professionals and representatives of LSST institutional members,Adm,,,G
 Safety Manager,"The person who manages, executes, and verifies compliance with the LSST Safety Policy (LPM-18); the Safety Manager is also chair of the Safety Council",Adm,,,G
