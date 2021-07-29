@@ -736,7 +736,8 @@ SN,SuperNovae,Sci,,,A
 SO,scientific operations,TS,Document-12011,,A
 SOAP,Simple Object Access Protocol,Gen,,,A
 SOAR,Southern Astrophysical Research Telescope,Gen,,,A
-SOC,Science Operations Centre,OPS Gaia,,,A
+SOC,Science Operations Centre,Gaia,,,A
+SOC,Security Operations Centre,OPS,,,A
 SODA,Server-side Operations for Data Access,Gen,,,A
 SODAR,sonic detection and ranging,TS,Document-11997,,A
 SOF,Single-Object Fitting,OPS,,,A
