@@ -5,7 +5,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{lsstdoc}[2016/12/12 v1.1 LSST document class]
 
-\LoadClass[11pt,letterpaper]{article}
+\LoadClass[11pt,letterpaper]{scrartcl}
 
 % Define the default stretch
 \renewcommand{\baselinestretch}{1.25}
@@ -84,8 +84,8 @@
 \RequirePackage{listings}
 %\RequirePackage{nameref}
 %\RequirePackage{mathptmx} % note this messes up \vec definition... do not e add put in your doc if you want it
-\RequirePackage{tocstyle}
 
+\usepackage{tocbasic}[2020/07/22]% needs KOMA-Script version 3.31
 
 % Standardize bibliography styling
 \bibliographystyle{lsst_aa}
@@ -102,6 +102,20 @@
 % Switch off the onecolumn and twocolumn options
 \DeclareOption{onecolumn}{\OptionNotUsed}
 \DeclareOption{twocolumn}{\OptionNotUsed}
+
+%replaceing tocstyle
+
+\DeclareTOCStyleEntries[
+     raggedentrytext,
+     linefill=\hfill,
+     numwidth=0pt,
+     numsep=1ex,
+     dynnumwidth
+     ]{tocline}{chapter,section,subsection,subsubsection,paragraph,subparagraph}
+\DeclareTOCStyleEntries[
+     indent=0pt,
+     dynindent
+     ]{tocline}{section,subsection,subsubsection,paragraph,subparagraph}
 
 \newif\if@isdraft
 \@isdraftfalse
@@ -549,10 +563,7 @@
    \docChangeRecord
 
    \if@addtoc
-     \usetocstyle{standard}
-     \begin{spacing}{1.5}
      \tableofcontents
-     \end{spacing}
      \clearpage
      \pagenumbering{arabic}
      \begin{center}
