@@ -161,6 +161,8 @@ CSV,Comma Separated Values,Gen,,,A
 CTIO,Cerro Tololo Inter-American Observatory,Gen,,,A
 CUI,Controlled Unclassified Information,OPS,,,A
 CV,Curriculum Vitae,Gen,,,A
+CVE,Common Vulnerabilities and Exposures,IT,,,A
+CVSS,Common Vulnerability Scoring System,IT,,,A
 DAC,Data Access Center,LSST DM,,,A
 DAF,data access framework,TS,Document-11936,,A
 DAQ,Data Acquisition System,LSST DM,,,A
