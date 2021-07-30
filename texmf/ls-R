@@ -394,6 +394,7 @@ LSSToptions.tex
 
 ./tex/latex:
 lsst
+tocstyle
 
 ./tex/latex/lsst:
 LSST-beamer.sty
@@ -410,6 +411,8 @@ proc.sty
 risk.sty
 rr.sty
 rubin_logo.png
-rubin_logo_front.png
 rubinobs.png
 simureqs.sty
+
+./tex/latex/tocstyle:
+tocstyle.sty
