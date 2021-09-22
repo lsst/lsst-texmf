@@ -123,7 +123,7 @@ def outputrow(tout, pre, row, cols, skip):
 
 
 def fixTex(text):
-    specialChars = "_/$&%^#"
+    specialChars = "_$&%^#"
     for c in specialChars:
         text = text.replace(c, f"\\{c}")
     return text
