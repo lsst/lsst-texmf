@@ -219,5 +219,5 @@ if buffer_authors:
     print("}")
     print(*allAffil, sep="\n")
     print(*pAuthorOutput, sep="\n")
-    print("% Yes they said to have these index commands commented out ")
+    print("% Yes they said to have these index commands commented out.")
     print(*indexOutput, sep="\n")
