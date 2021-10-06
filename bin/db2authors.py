@@ -47,13 +47,13 @@ parser.add_argument("-m", "--mode", default="aas", choices=OUTPUT_MODES,
                          'verbose' displays all the information...""")
 args = parser.parse_args()
 
-buffer_affil = False #hold affiliation until after author output
-buffer_authors = False #out put authors in one \author command (adass)
+buffer_affil = False  # hold affiliation until after author output
+buffer_authors = False  # out put authors in one \author command (adass)
 affil_cmd = "affiliation"
 affil_form = r"\{}[{}]{{{}}}"
 auth_afil_form = "{}{}{}"
 author_form = r"\author{}{{{}~{}}}"
-author_super = False # Author affiliation as super script
+author_super = False  # Author affiliation as super script
 
 # The default is AAS and if no mode is specified you get that
 if args.mode == "spie":
