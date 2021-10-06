@@ -10,6 +10,7 @@ affiliations:
     CA 94720, USA
   Berkeley-Space: Space Sciences Lab, University of California, 7 Gauss Way, Berkeley,
     CA 94720-7450, USA
+  Burwood: Burwood Group, 125 South Wacker Drive Suite 2950, Chicago, IL 60606, USA
   CMU: McWilliams Center for Cosmology, Department of Physics, Carnegie Mellon University,
     Pittsburgh, PA 15213, USA
   COOK: Cook Astronomical Consulting, 220 Duxbury Ct., San Ramon, CA 94583, USA
@@ -1180,6 +1181,14 @@ authors:
     initials: Dajun
     name: Huang
     orcid: null
+  huangf:
+    affil:
+    - Google
+    altaffil: []
+    initials: Flora
+    name: Huang
+    email: huangflora@google.com
+    orcid: null
   hufferme:
     affil:
     - SLAC-Kavli
@@ -1589,6 +1598,13 @@ authors:
     initials: Stuart
     name: Marshall
     orcid: null
+  masciarellij:
+    affil:
+    - Google
+    altaffil: []
+    initials: Jess
+    name: Masciarelli
+    orcid: null
   masonb:
     affil:
     - RubinObs
@@ -1822,6 +1838,7 @@ authors:
     initials: William
     name: O'Mullane
     orcid: 0000-0003-4141-6195
+    email: womullan@lsst.org
   ortizs:
     affil:
     - RubinObs
@@ -2313,6 +2330,14 @@ authors:
     altaffil: []
     initials: Christine
     name: Soldahl
+    orcid: null
+  speckd:
+    affil:
+    - Burwood
+    altaffil: []
+    initials: Dan
+    name: Speck
+    email: dspeck@burwood.com
     orcid: null
   stalderb:
     affil:
