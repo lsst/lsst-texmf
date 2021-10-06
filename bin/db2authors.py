@@ -47,13 +47,15 @@ parser.add_argument("-m", "--mode", default="aas", choices=OUTPUT_MODES,
                          'verbose' displays all the information...""")
 args = parser.parse_args()
 
-buffer_affil = False
-buffer_authors = False
+buffer_affil = False #hold affiliation until after author output
+buffer_authors = False #out put authors in one \author command (adass)
 affil_cmd = "affiliation"
 affil_form = r"\{}[{}]{{{}}}"
 auth_afil_form = "{}{}{}"
 author_form = r"\author{}{{{}~{}}}"
-author_super = False
+author_super = False # Author affiliation as super script
+
+# The default is AAS and if no mode is specified you get that
 if args.mode == "spie":
     affil_cmd = "affil"
     buffer_affil = True
@@ -149,12 +151,8 @@ for authorid in authors:
         if "orcid" in auth and auth["orcid"]:
             orcid = "[{}]".format(auth["orcid"])
 
-    orc = ""
-    if "orcid" in auth and auth["orcid"]:
-        orc = auth["orcid"]
-    email = ""
-    if "email" in auth and auth["email"]:
-        email = auth["email"]
+    orc = auth.get("orcid", "")
+    email = auth.get("email", "")
     # For spaces in surnames use a ~
     surname = re.sub(r"\s+", "~", auth["name"])
 
