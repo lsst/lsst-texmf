@@ -73,7 +73,8 @@ with open(authorfile, "r") as fh:
 # This is the database file with all the generic information
 # about authors. Locate it relative to this script.
 exedir = os.path.abspath(os.path.dirname(__file__))
-dbfile = os.path.normpath(os.path.join(exedir, os.path.pardir, "etc", "authordb.yaml"))
+dbfile = os.path.normpath(
+    os.path.join(exedir, os.path.pardir, "etc", "authordb.yaml"))
 
 with open(dbfile, "r") as fh:
     authordb = yaml.safe_load(fh)
@@ -122,7 +123,8 @@ for authorid in authors:
     try:
         auth = authorinfo[authorid]
     except KeyError as e:
-        raise RuntimeError(f"Author ID {authorid} now defined in author database.") from e
+        raise RuntimeError(
+            f"Author ID {authorid} now defined in author database.") from e
 
     affilOutput = list()
     affilAuth = ""
@@ -133,7 +135,8 @@ for authorid in authors:
         if theAffil not in affilset:
             affilset.append(theAffil)
             # unforuneately you can not output an affil before an author
-            affilOutput.append(affil_form.format(affil_cmd, len(affilset), affil[theAffil]))
+            affilOutput.append(
+                affil_form.format(affil_cmd, len(affilset), affil[theAffil]))
 
         affilInd = affilset.index(theAffil) + 1
         affilAuth = auth_afil_form.format(affilAuth, affilSep, str(affilInd))
@@ -145,7 +148,6 @@ for authorid in authors:
     else:
         if "orcid" in auth and auth["orcid"]:
             orcid = "[{}]".format(auth["orcid"])
-
 
     orc = ""
     if "orcid" in auth and auth["orcid"]:
@@ -165,13 +167,13 @@ for authorid in authors:
     # adass has index and paper authors ..
     addr = affil[affilset[0]].split(',')
     tute = addr[0]
-    ind = len(addr)-1
+    ind = len(addr) - 1
     if ind > 0:
         country = addr[ind]
-        ind = ind -1
+        ind = ind - 1
     if ind > 0:
         sc = addr[ind].split()
-        ind = ind -1
+        ind = ind - 1
         state = sc[0]
         pcode = ""
         if (len(sc) == 2):
@@ -180,17 +182,19 @@ for authorid in authors:
     if ind > 0:
         city = addr[ind]
 
-    pAuthorOutput.append(r"\paperauthor{{{}~{}}}{{{}}}{{{}}}{{{}}}{{}}{{{}}}{{{}}}{{{}}}{{{}}}".\
-        format(initials, surname, email , orc, tute ,city, state, pcode, country))
+    pAuthorOutput.append(
+        r"\paperauthor{{{}~{}}}{{{}}}{{{}}}{{{}}}{{}}{{{}}}{{{}}}{{{}}}{{{}}}".
+        format(initials, surname, email, orc, tute, city, state, pcode,
+               country))
 
-    indexOutput.append(r"%\aindex{{{},{}}}".format(surname,initials))
+    indexOutput.append(r"%\aindex{{{},{}}}".format(surname, initials))
 
     if buffer_authors:
-        authOutput.append(r"{}~{}{}".format( initials, surname, affilAuth))
+        authOutput.append(r"{}~{}{}".format(initials, surname, affilAuth))
         allAffil = allAffil + affilOutput
     else:
         print(r"\author{}{{{}~{}}}".format(orcid, initials, surname))
-        if buffer_affil :
+        if buffer_affil:
             print(*affilOutput, sep="\n")
         else:
             if "altaffil" in auth:
@@ -217,5 +221,3 @@ if buffer_authors:
     print(*pAuthorOutput, sep="\n")
     print("% Yes they said to have these index commands commented out ")
     print(*indexOutput, sep="\n")
-
-
