@@ -35,6 +35,7 @@ AIP,American Institute of Physics,Gen,,,A
 AISES,American Indian Science and Engineering Society,DEI,,,A
 AIT,Assembly Integration and Test,Gen,,,A
 AIV,Assembly Integration and Verification,Gen,,,A
+ALeRCE,Automatic Learning for the Rapid Classification of Events,OPS,,,A
 ALD,Associate Lab Director,OPS DOE,,,A
 ALICE,A Large Ion Collider Experiment,Gen,,,A
 ALMA,Atacama Large Millimeter Array (ESO),Gen,,,A
@@ -42,6 +43,7 @@ AMCL,AURA Management Council for LSST,LSST,,,A
 AMCR,AURA management Council for Rubin Observatory,OPS Rubin,,,A
 AMD,Advanced Micro Devices,OPS,,,A
 AMPATH,Americas Pathway (Network),Gen,,,A
+AMPEL,"Alert Management, Photometry, and Evaluation of Light curves",OPS,doi:10.1051/0004-6361/201935634,,A
 ANSI,American National Standards Institute,Gen OPS,,,A
 ANTARES,Arizona-NOA Temporal Analysis and Response to Events System,OPS,,,A
 AOB,Any Other Business,Gen,,,A
@@ -87,13 +89,15 @@ BNF,Backus-Naur Form,Gen,,,A
 BNL,Brookhaven National Laboratory,Gen,,,A
 BOE,Basis of Estimate,Gen,,,A
 BOF,Birds of a Feather (Sessions at ADASS),Gen,,,A
-BPS,Batch Production Service,DF LDF DM,,,A
 BOT,Bench for Optical Testing,CAM,,,A
+BPS,Batch Production Service,DF LDF DM,,,A
 Bps,Bytes per second,Gen,,,A
 bps,bit(s) per second,Gen,,,A
+BSR,Business Systems Review,OPS,,,A
 BTU,British Thermal Unit,OPS,,,A
 CA,Control (or Cost) Account,Gen,,,A
 CADC,Canadian Astronomy Data Centre,Gen,,,A
+CALTECH,California Institute of Technology,Gen,,,A
 CAM,CAMera,LSST DM,,,A
 CAM,Control (or Cost) Account Manager,Gen,,,A
 CAOM,Common Archive Observation Model,DM Gen,,,A
@@ -123,6 +127,7 @@ CfA,(Harvard-Smithsonian) Center for Astrophysics,Gen,,,A
 CFD,computational fluid dynamics,TS,Document-12005,,A
 CFHT,Canada-France-Hawaii Telescope,TS,Document-11945,,A
 CFHT-LS,A 5-passband legacy imaging survey conducted at the Canada-France-Hawaii Telescope from 2003-2008,Sci,,,A
+CFO,Chief Financial Officer,OPS,,,A
 CFHTLS,Canada-France-Hawaii Telescope Legacy Survey,TS,Document-11959,,A
 CFR,Code of Federal Regulations,OPS,,,A
 CI,Continuous Integration,Gen,,,A
@@ -135,6 +140,7 @@ CMB,Cosmic Microwave Background,Sci OPS,,,A
 CMDB,Configuration Management Database,LSST DM,,,A
 CMMS,Computerized Maintenance Management System,OPS,,,A
 CMOS,complementary metal-oxide semiconductor,TS,Document-11961,,A
+CMS,Compact Muon Solenoid,Sci OPS,,,A
 CNRS,Centre national de la recherche scientifique,Gen,,,A
 ComCam,"The commissioning camera is a single-raft, 9-CCD camera that will be installed in LSST during commissioning, before the final camera is ready.",Gen,,,A
 COMPASS,Catalogues of Objects and Measured Parameters from All Sky Surveys,Gen,,,A
@@ -142,6 +148,7 @@ CORBA,Common Object Request Broker Architecture,Gen,,,A
 COS,Center Operations Services,OPS,,,A
 COTS,Commercial-Off-The-Shelf,Gen,,,A
 COVID,COrona VIrus Disease,Gen,,,A
+COVID19,COrona VIrus Disease 2019,Gen,,,A
 CP,catalog prices,TS,Document-12022,,A
 CPI,Cost Performance Index,Gen,,,A
 CPP,Calibration Production Processing,LSST DM,,,A
@@ -231,6 +238,7 @@ DPA,Data and Processing Architecture,OPS,,,A
 DPAC,Data Processing and Analysis Consortium (Gaia),Gen,,,A
 DPC,Data Policy Committee,OPS,,,A
 DPDD,Data Product Definition Document,LSST DM,,,A
+DPLT,DP Leadership Team,OPS,,,A
 DPP,Data Products Processing,TS,Document-11940,,A
 DQ,data quality,TS,Document-12020,,A
 DQA,data quality assurance,TS,Document-11974,,A
@@ -264,6 +272,7 @@ ESAC,European Space Astronomy Centre,Gen,,,A
 ESD,electrostatic discharge,TS,Document-12002,,A
 ESNet,Energy Sciences Network,Gen,,,A
 ESO,European Southern Observatory,OPS ,,,A
+ESP,Early Science Program,OPS,,,A
 ET,exposure time,TS,Document-12010,,A
 ETC,Estimate To Complete,Gen LSST DM,,,A
 ETL,extract-transform-load,TS,Document-11957,,A
@@ -398,6 +407,7 @@ IPS,Integrated Project Schedule,Adm,,,A
 IPsec,Internet Protocol Security,DM,,,A
 IR,infrared,TS,Document-11949,,A
 IRAF,Image Reduction and Analysis Facility,Hist,,,A
+IRIS,e-Infrastructure for Research and Innovation for STFC,OPS,,,A
 IRNC,International Research Network Connections,TS,Document-11973,,A
 IRSA,Infrared Science Archive,Gen,,,A
 IRU,indefinable right to use,TS,Document-11969,,A
@@ -426,6 +436,7 @@ JSR,Joint Status Review,LSST DM,,,A
 JTM,Joint Technical Meeting,LSST DM,,,A
 JVM,Java Virtual Machine,Gen,,,A
 JWST,James Webb Space Telescope (formerly known as NGST),Gen,,,A
+KASI,Korea Astronomy and Space Science Institute,Gen,,,A
 K8S,Kubernetes provisioning system,IT LSST DM,,,A
 KB,KiloByte,Gen,,,A
 KBO,Kuiper-Belt Object,Gen,,,A
@@ -454,6 +465,7 @@ LCR,LSST Change Request,LSST DM,,,A
 LCURM,AIP Liaison Committee on Underrepresented Minorities,DEI,https://www.aip.org/member-benefits/liaison-committees/,,A
 LDAP,Lightweight Directory Access Protocol,IT,,,A
 LDF,LSST Data Facility,LSST DM,,,A
+LMC,Large Magellanic Cloud,Sci,,,A
 LDM,LSST Data Management (Document Handle),LSST DM,,,A
 LDO,LSST Document Operations (Document Handle),LSST OPS,,,A
 LED,Light-Emitting Diode,Gen,,,A
@@ -464,6 +476,7 @@ LHC,Large Hadron Collider (at CERN),Gen,,,A
 LHN,long haul network,TS,Document-12032,,A
 LIGO,Laser Interferometer Gravitational-Wave Observatory,TS,Document-11985,,A
 LILA,Links Interconnecting Latin America,TS,Document-12008,,A
+LINCC,LSST Interdisciplinary Network for Collaboration and Computing,OPS,,,A
 LISA,Laser Interferometer Space Antenna,TS,Document-11983,,A
 LLNL,Lawrence Livermore National Laboratory,Gen,,,A
 LOE,Level of Effort,Gen,,,A
@@ -489,6 +502,7 @@ M3,tertiary mirror,TS,Document-12023,,A
 MAC,Media Access Control,IT,,,A
 MACHO,massive compact halo object,TS,Document-11962,,A
 MASCARA,Multi-site All-Sky CAmeRA,TS,,,A
+MAF,Metric Analysis Framework,OPS,,,A
 MASS,Multi-Aperture Scintillation Sensor,TS,,,A
 MAST,Mikulski Archive for Space Telescopes,Gen,,,A
 MB,MegaByte,Gen,,,A
@@ -557,6 +571,7 @@ NGSS,Next-Generation Science Standards,OPS,,,A
 NIR,Near Infrared,Sci,,,A
 NIST,National Institute of Standards and Technology (USA),Gen,,,A
 NLR,National Lambda Rail,TS,Document-11941,,A
+NLT,NOIRLab Leadership Team,OPS,,,A
 NMOC,NSF's OIR Lab Management Oversight Council,Gen,,,A
 NNSA,National Nuclear Security Administration,OPS,,,A
 NOAA,National Oceanic and Atmospheric Administration,Gen,,,A
@@ -639,6 +654,7 @@ POC,Proof Of Concept,Gen,,,A
 POC,People Of Color,DEI,,,A
 POCIT,People Of Color In Tech,DEI,,,A
 POE,POly Esters,OPS,,,A
+POI,Point Of Interest,OPS,,,A
 POP,Project Operating Plan,LSST OPS,,,A
 POSIX,Portable Operating System Interface,Gen,,,A
 PPDB,Prompt Products DataBase,DM,,,A
@@ -688,6 +704,7 @@ RNP,Rede Nacional de Ensino e Pesquisa (National Education and Research Network 
 ROE,Royal Observatory Edinburgh,OPS,,,A
 ROO,Rubin Observatory Operations,OPS,,,A
 ROOT,Object-oriented data analysis framework developed at CERN,Gen,,,A
+ROP,Rubin Operations Plan,OPS,,,A
 RPF,Rubin system PerFormance,OPS,,,A
 RPM,RPM Package Manager (originally Red Hat Package Manager; now a recursive acronym),IT,,,A
 RS232C,Standard 25-pin serial connection between computers and modems,Gen,,,A
@@ -731,13 +748,16 @@ SHPE,Society of Hispanic Professional Engineers,DEI,,,A
 SI,Syst\`eme International (International System of units defined by ISO),Gen,,,A
 SIA,Simple Image Access,Gen,,,A
 SIT,"System Integration, Test",LSST OPS ,,,A
-SIT-COM,"System Integration, Test and Commissioning",LSST OPS ,,,A
+SITCOM,"System Integration, Test and Commissioning",LSST OPS ,,,A
 SKF,Svenska Kullagerfabriken,PMO,,,A
 SKU,Stock Keeping Unit (Google),OPS,,,A
 SLA,Service Level Agreement,Gen,,,A
 SLAC,SLAC National Accelerator Laboratory,LSST DM,,,A
 SMARTS,Small and Moderate Aperture Research Telescope System,OPS,,,A
+SMC,Small Magellanic Cloud,Sci,,,A
 SN,SuperNovae,Sci,,,A
+SNAPS,Solar System Notification Alert Processing System,OPS,,,A
+SNR,Signal to Noise Ratio,DM,,,A
 SO,scientific operations,TS,Document-12011,,A
 SOAP,Simple Object Access Protocol,Gen,,,A
 SOAR,Southern Astrophysical Research Telescope,Gen,,,A
@@ -769,6 +789,7 @@ SSD,Solid-State Disk,Gen,,,A
 SSH,Secure SHell,Gen,,,A
 SSL,Secure Sockets Layer,IT,,,A
 SSM,Subsystem Manager,Adm,,,A
+SSO,Solar System Object,DM,,,A
 SSP,Solar System Processing,LSST DM,,,A
 SST,Simonyi Survey Telescope,Gen,,,A
 SST,Subsystem Science Team,LSST DM,,,A
@@ -862,6 +883,7 @@ VST,VLT Survey Telescope,Gen,,,A
 W3C,World Wide Web Consortium,Gen,,,A
 WAN,Wide Area Network,Gen,,,A
 WBS,Work Breakdown Structure,Gen,,,A
+WCA,Workplace Culture Advocate,Gen,,,A
 WCAG,Web Content Accessibility Guidelines,OPS,,,A
 WCS,World Coordinate System,Gen,,,A
 WEPAN,Women in Engineering ProActive Network,DEI,,,A
