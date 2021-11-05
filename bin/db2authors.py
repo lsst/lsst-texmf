@@ -119,7 +119,8 @@ allAffil = list()
 pAuthorOutput = list()
 indexOutput = list()
 
-for authorid in authors:
+anum = 0
+for anum, authorid in enumerate(authors):
     orcid = ""
 
     try:
@@ -131,7 +132,8 @@ for authorid in authors:
     affilOutput = list()
     affilAuth = ""
     affilSep = ""
-    if author_super:
+    if author_super and anum < len(authors) - 1:
+        # ADASS  comma before the affil except the last entry
         affilSep = ","
     for theAffil in auth["affil"]:
         if theAffil not in affilset:
