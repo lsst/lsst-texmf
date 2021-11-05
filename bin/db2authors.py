@@ -120,7 +120,7 @@ pAuthorOutput = list()
 indexOutput = list()
 
 anum = 0
-for authorid in authors:
+for anum, authorid in enumerate(authors):
     orcid = ""
 
     try:
@@ -132,8 +132,7 @@ for authorid in authors:
     affilOutput = list()
     affilAuth = ""
     affilSep = ""
-    anum = anum + 1
-    if author_super and anum < len(authors) :
+    if author_super and anum < len(authors) - 1:
         # ADASS  comma before the affil except the last entry
         affilSep = ","
     for theAffil in auth["affil"]:
