@@ -119,6 +119,7 @@ allAffil = list()
 pAuthorOutput = list()
 indexOutput = list()
 
+anum = 0
 for authorid in authors:
     orcid = ""
 
@@ -131,7 +132,9 @@ for authorid in authors:
     affilOutput = list()
     affilAuth = ""
     affilSep = ""
-    if author_super:
+    anum = anum +1
+    if author_super and anum < len(authors):
+        # ADASS insist on the comma before the affil exvept the last entry of course
         affilSep = ","
     for theAffil in auth["affil"]:
         if theAffil not in affilset:
