@@ -37,7 +37,7 @@ The options for the document class control some of the layout:
   Other options include ``MN`` for minutes and ``CP`` for conference proceedings but these are holdovers from the original Gaia class file.
 * ``lsstdraft`` declares that the document is a draft and results in a back ground image.
   For controlled documents this mode also disables the title page text indicating the document has been approved.
-  Remove this option when the document is finalized and is ready to be released by merging to the ``master`` branch.
+  Remove this option when the document is finalized and is ready to be released by merging to the ``main`` branch.
 * Use here ``obsolete`` when a document needs to be marked as obsolete. Note that in this case ``lsstdraft`` cannot be used anymore.
   Change controlled documents need to be submitted to the CCB via RFC before the final obsolete version is uploaded to Docushare.
 * ``toc`` enables a full table of contents to be included.
@@ -52,7 +52,7 @@ The options for the document class control some of the layout:
 This can be followed by any document-specific package imports and macros.
 The document metadata must then be defined.
 Title, author, and date match the standard commands required for ``\maketitle``, although a short title can be specified if a different title is to be used in the page headers.
-The date for a draft document can float during development, but should be fixed once the document has been finalized and is to be merged to master.
+The date for a draft document can float during development, but should be fixed once the document has been finalized and is to be merged to main.
 
 .. code-block:: latex
 
@@ -97,7 +97,7 @@ The abstract can be defined with this command and will be inserted in the correc
    }
 
 
-The change record should be updated whenever a document is to be released (by a merge to ``master``).
+The change record should be updated whenever a document is to be released (by a merge to ``main``).
 For change-controlled documents, the change record should include the relevant RFC or LCR number.
 The revision number should follow the policy defined in :cite:`LPM-51`.
 

@@ -24,7 +24,7 @@ html_theme = 'sphinx_rtd_theme'
 html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
 version = form_ltd_edition_name(
-    git_ref_name=os.getenv('TRAVIS_BRANCH', default='master'))
+    git_ref_name=os.getenv('TRAVIS_BRANCH', default='main'))
 # The full version, including alpha/beta/rc tags.
 release = version
 
@@ -43,8 +43,8 @@ html_context = {
     'display_github': True,
     'github_user': 'lsst',
     'github_repo': 'lsst-texmf',
-    # TRAVIS_BRANCH is available in CI, but master is a safe default
-    'github_version': os.getenv('TRAVIS_BRANCH', default='master') + '/docs/'
+    # TRAVIS_BRANCH is available in CI, but main is a safe default
+    'github_version': os.getenv('TRAVIS_BRANCH', default='main') + '/docs/'
 }
 
 # The name of an image file (relative to this directory) to place at the top

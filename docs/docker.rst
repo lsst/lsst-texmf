@@ -27,7 +27,7 @@ Here's what's happening:
 - ``docker run`` downloads the Docker image (if necessary) and runs a container.
 - ``--rm`` removes the container once the run completes.
 - ``lsstsqre/lsst-texmf:latest`` is the name of the Docker image.
-  This tracks the ``master`` branch of the `lsst-texmf GitHub repository`_.
+  This tracks the ``main`` branch of the `lsst-texmf GitHub repository`_.
 - ``-v `pwd`:/build`` *binds* the current directory (containing your document) into the ``/build`` directory in the container
 - ``-w /build`` makes the bound volume the working directory in the container.
 - ``sh -c 'make'`` is the command that's run from the container's working directory to compile your document.
@@ -76,5 +76,5 @@ See the `requirements.txt`_ file in the ``lsst-texmf`` repository for the curren
 .. _`lsstsqre/lsst-texmf`: https://hub.docker.com/r/lsstsqre/lsst-texmf/
 .. _`TeX Live`: http://tug.org/texlive/
 .. _`lsst-texmf GitHub repository`: https://github.com/lsst/lsst-texmf
-.. _`docker/install-base-packages.sh`: https://github.com/lsst/lsst-texmf/blob/master/docker/install-base-packages.sh
-.. _`requirements.txt`: https://github.com/lsst/lsst-texmf/blob/master/requirements.txt
+.. _`docker/install-base-packages.sh`: https://github.com/lsst/lsst-texmf/blob/main/docker/install-base-packages.sh
+.. _`requirements.txt`: https://github.com/lsst/lsst-texmf/blob/main/requirements.txt
