@@ -78,7 +78,7 @@ This documentation site is produced by Sphinx from the :file:`docs/` repository 
 For more information on writing reStructuredText-formatted documentation, see `DM's reStructuredText Style Guide <https://developer.lsst.io/docs/rst_styleguide.html>`_.
 You can contribute to the documentation using `DM's normal workflow <https://developer.lsst.io/processes/workflow.html>`_.
 When you have pushed a ticket branch to GitHub, you can find a rendered draft at https://lsst-texmf.lsst.io/v.
-The main site at https://lsst-texmf.lsst.io updates automatically once your PR is merged to ``master``.
+The main site at https://lsst-texmf.lsst.io updates automatically once your PR is merged to ``main``.
 
 .. _contrib-docker:
 
@@ -90,7 +90,7 @@ Contributors shouldn't need to worry about updating the Docker distribution.
 
 The following tags are generated through Travis:
 
-- ``latest`` corresponds to ``master`` on GitHub.
+- ``latest`` corresponds to ``main`` on GitHub.
 - Tags also correspond to git branches and tags on GitHub.
   The build system converts forward slashes in branch names to dashes in tags.
   For example, the ``tickets/DM-10642`` Git branch is published on Docker Hub as ``tickets-DM-10642``.
