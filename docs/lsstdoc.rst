@@ -227,6 +227,8 @@ If the ``authoryear`` class option is enabled the resulting output is:
 Where the author is used rather than a number but for ``@DocuShare`` Bibtex entries the year is replaced by the document handle.
 This is indicative of DocuShare documents evolving over time, such that the handle is more relevant than the particular year.
 
+.. _lsstdoc-acr:
+
 Acronyms or Glossaries
 ======================
 A global glossary and acronym files exists in ``lsst-texmf/etc/glossarydefs.csv``.   This file has the following format:
