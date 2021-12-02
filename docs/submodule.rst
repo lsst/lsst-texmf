@@ -54,15 +54,13 @@ If you need to update your lsst-texmf submodule, for example to use a newly-avai
     git submodule update --remote lsst-texmf
 
 Keep in mind that this will also update the texmf code, so you may have to resolve any incompatibilities.
-When you commit any changes to your repo, the new submodule hash will be committed as well.
+This change (to the submodule hash) can then be added and commited to your repo like any other.
 
 If you decide you want to revert this update before committing it, you execute:
 
 .. code-block:: bash
 
-    cd lsst-texmf
-    git checkout $(cat ../.git/modules/lsst-texmf/HEAD)
-    cd ..
+    git submodule update lsst-texmf
 
 If you last updated the submodule prior to the default branch transition, you will need to do this prior to the ``git submodule update``:
 
@@ -86,7 +84,7 @@ If you would like to edit the lsst-texmf submodule in place, rather than cloning
     git checkout main
 
 Then pull, edit, commit, push, and merge as usual within the submodule.
-Again, when you commit any changes to your repo, the new submodule hash will be committed as well.
+Again, when you commit any changes to your repo, the new submodule hash should be added and committed as well.
 
 If you last updated the submodule prior to the default branch transition, you will need to do this first:
 
