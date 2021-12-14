@@ -956,6 +956,13 @@ authors:
     initials: Enrique
     name: Figueroa
     orcid: null
+  findeisenk:
+    affil:
+    - Washington
+    altaffil: []
+    initials: Krzysztof
+    name: Findeisen
+    orcid: 0000-0003-1898-5760
   fisherlevinem:
     affil:
     - RubinObs
