@@ -830,6 +830,13 @@ authors:
     initials: Alfred
     name: Dellapenna
     orcid: null
+  dennihye:
+    affil:
+    - RubinObs
+    altaffil: []
+    initials: Erik
+    name: Dennihy
+    orcid: null
   depeysterr:
     affil:
     - SLAC
@@ -935,6 +942,13 @@ authors:
     initials: Henry
     name: Ferguson
     orcid: 0000-0001-7113-2738
+  fergusonps:
+    affil:
+    - WisconsinMadison
+    altaffil: []
+    initials: Peter S.
+    name: Ferguson
+    orcid: 0000-0001-6957-1627
   figueroae:
     affil:
     - RubinObs
@@ -942,6 +956,13 @@ authors:
     initials: Enrique
     name: Figueroa
     orcid: null
+  findeisenk:
+    affil:
+    - Washington
+    altaffil: []
+    initials: Krzysztof
+    name: Findeisen
+    orcid: 0000-0003-1898-5760
   fisherlevinem:
     affil:
     - RubinObs
@@ -1358,6 +1379,13 @@ authors:
     initials: Bryce
     name: Kalmbach
     orcid: 0000-0002-6825-5283
+  kannawadia:
+    affil:
+    - Princeton-Astro
+    altaffil: []
+    initials: Arun
+    name: Kannawadi
+    orcid: 0000-0001-8783-6529
   kantorjp:
     affil:
     - RubinObs
@@ -2063,6 +2091,13 @@ authors:
     initials: Andrew P.
     name: Rasmussen
     orcid: null
+  reeds:
+    affil:
+    - Princeton-Astro
+    altaffil: []
+    initials: Sophie
+    name: Reed
+    orcid: 0000-0002-4422-0553
   regnaultn:
     affil:
     - Paris-LPNHE
@@ -2453,6 +2488,13 @@ authors:
     initials: Peter
     name: Takacs
     orcid: null
+  taranuds:
+    affil:
+    - Princeton-Astro
+    altaffil: []
+    initials: Dan S.
+    name: Taranu
+    orcid: 0000-0001-6268-1882
   tethersa:
     affil:
     - SLAC
