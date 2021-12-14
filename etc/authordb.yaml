@@ -830,6 +830,13 @@ authors:
     initials: Alfred
     name: Dellapenna
     orcid: null
+  dennihye:
+    affil:
+    - RubinObs
+    altaffil: []
+    initials: Erik
+    name: Dennihy
+    orcid: null
   depeysterr:
     affil:
     - SLAC
@@ -935,6 +942,13 @@ authors:
     initials: Henry
     name: Ferguson
     orcid: 0000-0001-7113-2738
+  fergusonps:
+    affil:
+    - WisconsinMadison
+    altaffil: []
+    initials: Peter S.
+    name: Ferguson
+    orcid: 0000-0001-6957-1627
   figueroae:
     affil:
     - RubinObs
