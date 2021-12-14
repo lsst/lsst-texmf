@@ -2481,6 +2481,13 @@ authors:
     initials: Peter
     name: Takacs
     orcid: null
+  taranuds:
+    affil:
+    - Princeton-Astro
+    altaffil: []
+    initials: Dan S.
+    name: Taranu
+    orcid: 0000-0001-6268-1882
   tethersa:
     affil:
     - SLAC
