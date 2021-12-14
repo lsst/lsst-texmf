@@ -1372,6 +1372,13 @@ authors:
     initials: Bryce
     name: Kalmbach
     orcid: 0000-0002-6825-5283
+  kanawadia:
+    affil:
+    - Princeton-Astro
+    altaffil: []
+    initials: Arun
+    name: Kanawadi
+    orcid: 0000-0001-8783-6529
   kantorjp:
     affil:
     - RubinObs
@@ -2077,6 +2084,13 @@ authors:
     initials: Andrew P.
     name: Rasmussen
     orcid: null
+  reeds:
+    affil:
+    - Princeton-Astro
+    altaffil: []
+    initials: Sophie
+    name: Reed
+    orcid: 0000-0002-4422-0553
   regnaultn:
     affil:
     - Paris-LPNHE
