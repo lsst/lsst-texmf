@@ -89,7 +89,7 @@ If you would like to edit the lsst-texmf submodule in place, rather than cloning
     cd lsst-texmf
     git checkout main
 
-Then pull, edit, commit, push, and merge as usual within the submodule.
+Then pull, branch, edit, commit, push, and merge as usual within the submodule.
 Again, when you commit any changes to your repo, the new submodule hash should be added and committed as well.
 
 If you last updated the submodule prior to the default branch transition, you will need to do this first:
