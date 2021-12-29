@@ -47,6 +47,10 @@ When making a fresh clone of the repository, you will have to execute this withi
 Updating a submodule
 ====================
 
+The lsst-texmf captures the state of the lsst-texmf project at the time the submodule was added to your document.
+This is convenient: others can update lsst-texmf, change default options, adjust formatting options, and so on, without any risk of changes to your document.
+Occasionally, though, you will need to update your submodule to match the latest version of lsst-texmf.
+This is a two step process: you first need to fetch the latest changes, then you commit them to your own repository.
 If you need to update your lsst-texmf submodule, for example to use a newly-available bibliography reference, you execute:
 
 .. code-block:: bash
@@ -75,6 +79,8 @@ If you last updated the submodule prior to the default branch transition, you wi
 
 Editing a submodule
 ===================
+
+In general, it's easiest to use a local ``.bib`` file (see :ref:`the documentation on bibliographies <lsstdoc-bib>`) or ``myacronyms.txt``/``myglossarydefs.csv`` (:ref:`documentation <lsstdoc-acr>`) while you are working on the text of your document, and only make updates to lsst-texmf just before you are ready to merge your work to the document's ``main`` branch.
 
 If you would like to edit the lsst-texmf submodule in place, rather than cloning it separately, for example to add a bibliography reference, you execute:
 
