@@ -87,7 +87,7 @@ if __name__ == "__main__":
 
     outfile = sys.stdout
     if args.bibfile:
-        outfile = open(args.bibfile,'w')
+        outfile = open(args.bibfile, 'w')
 
     generate_bibfile(outfile)
     outfile.close()
