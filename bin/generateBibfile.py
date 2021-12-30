@@ -48,8 +48,8 @@ def generate_bibfile(outfile):
             'baseUrl',
             'sourceUpdateTime',
             'sourceUpdateTimestamp',
-        'authorNames'
-         ],
+            'authorNames'
+        ],
         'hitsPerPage': MAXREC
     }
 
@@ -68,8 +68,8 @@ def generate_bibfile(outfile):
         authors = authors.join(d['authorNames'])
         dt = d['sourceUpdateTimestamp']
         date = datetime.fromtimestamp(dt)
-        month =  calendar.month_abbr[date.month].lower()
-        write_latex_bibentry(authors,d['h1'], date.year, month, d['handle'], outfile)
+        month = calendar.month_abbr[date.month].lower()
+        write_latex_bibentry(authors, d['h1'], date.year, month, d['handle'], outfile)
         print(file=outfile)
 
     print(f"Got {count} records max:{MAXREC} produced {bcount} bibentries to {outfile}")
@@ -79,14 +79,15 @@ if __name__ == "__main__":
     description = __doc__
     formatter = argparse.RawDescriptionHelpFormatter
     parser = argparse.ArgumentParser(description=description,
-                                    formatter_class=formatter)
+                                     formatter_class=formatter)
 
     parser.add_argument('bibfile', help='Name of file to output bib entries to')
 
     args = parser.parse_args()
 
     outfile = sys.stdout
-    if args.bibfile: outfile = open(args.bibfile,'w')
+    if args.bibfile:
+        outfile = open(args.bibfile,'w')
 
     generate_bibfile(outfile)
     outfile.close()
