@@ -61,7 +61,7 @@ def generate_bibfile(outfile, query):
 
     bcount = 0
     for count, d in enumerate(res['hits']):
-        if (d['series'] == "TESTN"):
+        if d['series'] == "TESTN":
             continue
         bcount = bcount + 1
         authors = " and "
@@ -69,16 +69,25 @@ def generate_bibfile(outfile, query):
         dt = d['sourceUpdateTimestamp']
         date = datetime.fromtimestamp(dt)
         month = calendar.month_abbr[date.month].lower()
-        write_latex_bibentry(fixTexSS(authors), fixTex(d['h1']), date.year, month, d['handle'], outfile)
+        write_latex_bibentry(checkFixAuthAndComma(fixTexSS(authors)), fixTex(d['h1']),
+                             date.year, month, d['handle'], outfile)
         print(file=outfile)
 
     print(f"Got {count} records max:{MAXREC} produced {bcount} bibentries to {outfile}")
+
 
 def fixTex(text):
     specialChars = "_$&%^#"
     for c in specialChars:
         text = text.replace(c, f"\\{c}")
     return text
+
+
+def checkFixAuthAndComma(authors):
+    if "," in authors and "and" not in authors:
+        #a bit heav handed but
+        authors = authors.replace(",", "and")
+
 
 def fixTexSS(text):
     try:
@@ -92,10 +101,10 @@ def fixTexSS(text):
                        ('´', "'"),
                        (' ', ' '),
                        ('—', '-'),
-                       ('\U0010fc0e', '?'), # '?' in a square
+                       ('\U0010fc0e', '?'),  # '?' in a square
                        ('？', '?'),
-                       ('à', '\\`{a}'), # grave
-                       ('á', "\\'{a}"), # acute
+                       ('à', '\\`{a}'),  # grave
+                       ('á', "\\'{a}"),  # acute
                        ('â', '\\r{a}'),
                        ('Ç', '\\c{C}'),
                        ('ć', "\\'{c}"),
@@ -131,8 +140,8 @@ def fixTexSS(text):
                        ('⁸', ''),
                        ]:
             text = text.replace(ci, co)
-
     return text
+
 
 if __name__ == "__main__":
     description = __doc__
