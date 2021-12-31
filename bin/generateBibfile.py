@@ -85,7 +85,7 @@ def fixTex(text):
 
 def checkFixAuthAndComma(authors):
     if "," in authors and "and" not in authors:
-        #a bit heav handed but
+        # a bit heav handed but
         authors = authors.replace(",", "and")
 
 
