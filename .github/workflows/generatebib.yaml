@@ -22,12 +22,6 @@ jobs:
           python -m pip install -r requirements.txt
           python -m pip install ltd-conveyor
 
-      - name: Pull existing images
-        run: |
-          docker pull lsstsqre/lsst-texmf:base || true
-          docker pull lsstsqre/lsst-texmf:dependencies || true
-          docker pull lsstsqre/lsst-texmf:latest || true
-
       - name: Generate bibfile
         run: |
           docker run --rm -v `pwd`:/workspace -w /lsst-texmf lsstsqre/lsst-texmf:latest sh -c 'make lsst.bib'
