@@ -120,11 +120,11 @@ def fixTexSS(text):
     """
     try:
         text.encode('ascii')
-        #  If three are no non ascii chars i have nothing to do !!
-        #  the encoding here is only to see if there are any UTF-8s
-        #  the result is not used.
+        # If three are no non ascii chars i have nothing to do !!
+        # the encoding here is only to see if there are any UTF-8s
+        # the result is not used.
     except UnicodeEncodeError:
-        #  Some of these came from RHL's HSC code - I do not understand them all
+        # Some of these came from RHL's HSC code - I do not understand them all
         for ci, co in [('’', "'"),
                        ('…', '...'),
                        ('“', '"'),  # double quote unicode 8221 (LEFT)
