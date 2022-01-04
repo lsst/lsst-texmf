@@ -49,7 +49,7 @@ def generate_bibfile(outfile, query=""):
     :return: the file will be writed contianing the entries.
     """
     if query is None:
-        query = "";  # Algolia take None as string literal None
+        query = ""  # Algolia take None as string literal None
     client = SearchClient.create('0OJETYIVL5', 'b7bd2f1080a5c4fe5eee502462bcc9d3')
     index = client.init_index('document_dev')
 
