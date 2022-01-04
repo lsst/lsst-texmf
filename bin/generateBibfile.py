@@ -120,15 +120,18 @@ def fixTexSS(text):
     """
     try:
         text.encode('ascii')
+        #  If three are no non ascii chars i have nothing to do !!
+        #  the encoding here is only to see if there are any UTF-8s the result is not used.
     except UnicodeEncodeError:
+        #  Some of these came from RHL's HSC code - I do not understand them all.
         for ci, co in [('’', "'"),
                        ('…', '...'),
-                       ('…', '...'),
-                       ('“', '"'),
-                       ('”', '"'),
+                       ('“', '"'), #   two distinct double quote unicode characters. 8221 (LEFT)
+                       ('”', '"'), #  and 8220 (RIGHT) The may look the same in some renderings
                        ('´', "'"),
                        (' ', ' '),
-                       ('—', '-'),
+                       ('–', '-'), #  en-dash
+                       ('—', '-'), #  em-dash
                        ('\U0010fc0e', '?'),  # '?' in a square
                        ('？', '?'),
                        ('à', '\\`{a}'),  # grave
@@ -154,9 +157,8 @@ def fixTexSS(text):
                        ('􏰎', ' '),
                        ('ï', '\\"{i}'),  # really i dieresis
                        ('ô', '\\r{o}'),
-                       ('–', '-'),
                        ('‘', "'"),
-                       ('ʻ', '\''),
+                       ('ʻ', "'"),
                        ('¹', ''),
                        ('²', ''),
                        ('³', ''),
