@@ -59,6 +59,11 @@ docs: $(PDF) $(TESTS)
 	cp etc/glossarydefs.csv docs
 	make -C docs html
 
+lsst.bib: 
+	bin/generateBibfile.py texmf/bibtex/bib/lsst.bib
+	cat etc/static_entries.bib >> texmf/bibtex/bib/lsst.bib
+	
+
 .PHONY: clean
 clean:
 	rm -f *.aux
