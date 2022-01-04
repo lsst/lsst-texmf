@@ -43,7 +43,7 @@ def generate_bibfile(outfile, query):
     Only returning meta data needed for bib entries.
 
     :param outfile: File to write
-    :param query: Any workd or query string you would put in lsst.io empty for all
+    :param query: Any word/query string you would put in lsst.io empty for all
     :return: the file will be writed contianing the entries.
     """
 
@@ -121,17 +121,18 @@ def fixTexSS(text):
     try:
         text.encode('ascii')
         #  If three are no non ascii chars i have nothing to do !!
-        #  the encoding here is only to see if there are any UTF-8s the result is not used.
+        #  the encoding here is only to see if there are any UTF-8s
+        #  the result is not used.
     except UnicodeEncodeError:
-        #  Some of these came from RHL's HSC code - I do not understand them all.
+        #  Some of these came from RHL's HSC code - I do not understand them all
         for ci, co in [('’', "'"),
                        ('…', '...'),
-                       ('“', '"'), #   two distinct double quote unicode characters. 8221 (LEFT)
-                       ('”', '"'), #  and 8220 (RIGHT) The may look the same in some renderings
+                       ('“', '"'),  # double quote unicode 8221 (LEFT)
+                       ('”', '"'),  # and 8220 (RIGHT) The may look the same
                        ('´', "'"),
                        (' ', ' '),
-                       ('–', '-'), #  en-dash
-                       ('—', '-'), #  em-dash
+                       ('–', '-'),  # en-dash
+                       ('—', '-'),  # em-dash
                        ('\U0010fc0e', '?'),  # '?' in a square
                        ('？', '?'),
                        ('à', '\\`{a}'),  # grave
