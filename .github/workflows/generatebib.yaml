@@ -32,9 +32,11 @@ jobs:
         run: |
           docker run --rm -v `pwd`:/workspace -w /lsst-texmf lsstsqre/lsst-texmf:latest sh -c 'make lsst.bib'
 
-      - name: push changes to github 
-        run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git commit -m " lsst.bib generated from lsst.io and etc/static_entries.bib " texmf 
-          git push
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          token: ${{ secrets.WOM-UPDATEBIB-PAT }}
+          branch: update-bibfile
+          branch-suffix: short-commit-hash
+          title: Automatic bibfile  update 
