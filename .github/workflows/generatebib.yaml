@@ -1,0 +1,40 @@
+name: generatebib
+
+on: 
+  schedule:
+           - cron: '11 * * * *'
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.7
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+          python -m pip install ltd-conveyor
+
+      - name: Pull existing images
+        run: |
+          docker pull lsstsqre/lsst-texmf:base || true
+          docker pull lsstsqre/lsst-texmf:dependencies || true
+          docker pull lsstsqre/lsst-texmf:latest || true
+
+      - name: Generate bibfile
+        run: |
+          docker run --rm -v `pwd`:/workspace -w /lsst-texmf lsstsqre/lsst-texmf:latest sh -c 'make lsst.bib'
+
+      - name: push changes to github 
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git commit -m " lsst.bib generated from lsst.io and etc/static_entries.bib " texmf 
+          git push
