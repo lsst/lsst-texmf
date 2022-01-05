@@ -1,7 +1,6 @@
 name: generatebib
 
-on: 
-  workflow_dispatch
+on: workflow_dispatch
   schedule:
            - cron: '11 10 * * *'
 
