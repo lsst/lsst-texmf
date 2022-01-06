@@ -1,11 +1,12 @@
 name: generatebib
 
 on: 
+  workflow_dispatch:
   schedule:
-           - cron: '11 * * * *'
+           - cron: '11 10 * * *'
 
 jobs:
-  lint:
+  bib`:
     runs-on: ubuntu-latest
 
     steps:
@@ -30,7 +31,9 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
-          token: ${{ secrets.WOM-UPDATEBIB-PAT }}
+          token: ${{ secrets.WOM_UPDATEBIB_PAT }}
           branch: update-bibfile
           branch-suffix: short-commit-hash
           title: Automatic bibfile  update 
+          commit-message: bibgile update
+          body: Update bibfile from lsst.io and etc/static_entries.bib
