@@ -26,6 +26,7 @@ jobs:
       - name: Generate bibfile
         run: |
           docker run --rm -v `pwd`:/workspace -w /lsst-texmf lsstsqre/lsst-texmf:latest sh -c 'make lsst.bib'
+          git commit -m " generated lsst.bib " texmf
 
 
       - name: Create Pull Request
