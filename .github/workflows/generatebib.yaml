@@ -6,7 +6,7 @@ on:
            - cron: '11 10 * * *'
 
 jobs:
-  bib`:
+  bib:
     runs-on: ubuntu-latest
 
     steps:
