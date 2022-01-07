@@ -2,8 +2,8 @@ name: generatebib
 
 on: 
   workflow_dispatch:
-  schedule:
-           - cron: '11 10 * * *'
+  schedule: #  UTC min hour day month dayOfWeek
+           - cron: '03 6 * * *'
 
 jobs:
   bib:
