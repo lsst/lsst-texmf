@@ -6,7 +6,7 @@ on:
            - cron: '11 10 * * *'
 
 jobs:
-  bib`:
+  bib:
     runs-on: ubuntu-latest
 
     steps:
@@ -27,6 +27,10 @@ jobs:
         run: |
           docker run --rm -v `pwd`:/workspace -w /lsst-texmf lsstsqre/lsst-texmf:latest sh -c 'make lsst.bib'
 
+      - name: Commit new bib
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git commit -m " generated lsst.bib " texmf
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
