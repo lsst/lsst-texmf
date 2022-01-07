@@ -28,6 +28,7 @@ jobs:
           docker run --rm -v `pwd`:/workspace -w /lsst-texmf lsstsqre/lsst-texmf:latest sh -c 'make lsst.bib'
 
       - name: Commit new bib
+        run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
           git commit -m " generated lsst.bib " texmf
