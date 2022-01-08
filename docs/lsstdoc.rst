@@ -171,7 +171,7 @@ A number of standard bibliography database files are available from this package
 Detailed descriptions of these different files can be found below in :ref:`updating-bibliographies`, but can be summarized as:
 
 lsst
-    LSST DocuShare entries and tech notes.
+    LSST DocuShare entries and tech notes. Technotes are added to this by a daily automatic pull-request.
 lsst-dm
     Publications relating to LSST by members of the Data Management team.
     This includes unpublished presentations.
@@ -195,7 +195,7 @@ This enables a single known set of references to exist.
 
 References can be cited using the following commands:
 
-* ``\citeds`` should be used for LSST DocuShare documents (and in the future tech notes).
+* ``\citeds`` should be used for LSST DocuShare documents and tech notes.
   The output will show the document handle rather than the reference number.
 * ``\citedsp`` is the same as ``\citeds`` but adds parentheses around the document handle.
 * ``\citep`` should be used for non-LSST references.

@@ -28,7 +28,14 @@ In this way, we can ensure that all documents agree on references without duplic
 Reminder that author lists in bibliography entries should use and to separate authors thus "William O'Mullane and Tim Jenness".
 
 For new documents made with sqrbot-jr a file will be created called ``bibentry.txt`` which will contain a bib entry for
-the the document which could be added to the appropriate bibfile. 
+the the document which could be added to the appropriate local bibfile. 
+This should be a temporary measure as the entry should appear in lsst.bib the next day.
+
+A githubaction ``generatebib`` runs daily and gathers all the metadata from notes published on lsst.io and adds them to ``lsst.bib``. 
+This covers all notes created with sqrbot-jr. 
+Other documents from docushare still need to be manually added in ``etc/static-entries.bib``.
+This action may also be manually run (for the impatient). 
+It results in a pull-request which may be merged after CI passes.
 
 For older LaTeX documents a script ``lsstdoc2bib.py`` exists in the bin folder of lsst-texmf which attempts to get info from the
 tex macros of the document. Run it with the main file and the meta file like:``lsstdoc2bib.py meta.tex DMTN-nnn.tex`` where DMTN-nnn is the tex of the document you want the entry for. Its not very robust but gives you a start.
@@ -38,7 +45,8 @@ Bibliography file organization
 
 * :file:`lsst.bib` includes LSST documents (DocuShare documents and technical notes).
   Any document available on DocuShare should use the ``@DocuShare`` bib entry using the document handle as the key in the bib file.
-  In the longer term, this file will be auto-generated from DocuShare and should always be up to date and should not require manual editing.
+  This file should never be edited  rather docushare entries should be added to ``etc/static-entries.bib`` this is merged with the generated entries from lsst.io with ``make lsst.bib``.
+  One day DocuShare entries may also be auto-generated.
 * :file:`lsst-dm.bib` includes LSST Data Management publications (ADS and non-ADS) and presentations.
   Do not include DocuShare items in this file.
   Presentations should use a key of form ``YYYYauthor-meeting``. 
