@@ -36,7 +36,16 @@ jobs:
           git config user.email github-actions@github.com
           git commit -m " generated lsst.bib " texmf/bibtex/bib/lsst.bib
 
+      - name: Check diff
+        run: | #set an environment variable
+           if git diff --exit-code; then
+              echo "CHANGED=false" >> ${GITHUB_ENV}
+           else
+              echo "CHANGED=true" >> ${GITHUB_ENV}
+           fi
+
       - name: Create Pull Request
+        if: env.CHANGED == 'true'
         uses: peter-evans/create-pull-request@v3
         with:
           token: ${{ secrets.WOM_UPDATEBIB_PAT }}
