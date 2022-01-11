@@ -37,11 +37,12 @@ jobs:
           git commit -m " generated lsst.bib " texmf/bibtex/bib/lsst.bib
 
       - name: Check diff
-        run: | #set an environment variable
+        run: | #  set an environment variable
            if git diff --exit-code; then
               echo "CHANGED=false" >> ${GITHUB_ENV}
            else
               echo "CHANGED=true" >> ${GITHUB_ENV}
+              echo "Git changes - should make PR"
            fi
 
       - name: Create Pull Request
