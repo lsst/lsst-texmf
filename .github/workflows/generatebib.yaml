@@ -30,12 +30,6 @@ jobs:
           make lsst.bib
           wc -l texmf/bibtex/bib/lsst.bib
 
-      - name: Commit new bib
-        run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git commit -m " generated lsst.bib " texmf/bibtex/bib/lsst.bib
-
       - name: Check diff
         run: | #  set an environment variable
            if git diff --exit-code; then
@@ -46,6 +40,13 @@ jobs:
               echo "Git changes - should make PR"
            fi
            echo "env.CHANGED ${CHANGED}"
+
+      - name: Commit new bib
+        if: env.CHANGED == 'true'
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git commit -m " generated lsst.bib " texmf/bibtex/bib/lsst.bib
 
       - name: Create Pull Request
         if: env.CHANGED == 'true'
