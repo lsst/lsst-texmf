@@ -45,7 +45,7 @@ jobs:
               echo "CHANGED=true" >> ${GITHUB_ENV}
               echo "Git changes - should make PR"
            fi
-           echo "env.CHANGED ${{ env.CHANGED }}"
+           echo "env.CHANGED ${CHANGED}"
 
       - name: Create Pull Request
         if: env.CHANGED == 'true'
