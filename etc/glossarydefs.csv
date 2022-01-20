@@ -54,7 +54,7 @@ AP,Alert Production,LSST DM,,,A
 APDB,Alert Production DataBase,DM,,,A
 API,Application Programming Interface,Gen,,,A
 APS,American Physical Society,TS,Document-11933,,A
-ARC,Advanced Resource Connector,DP,http://www.nordugrid.org/documents/arc6/,,A
+ARC,Advanced Resource Connector,DM,http://www.nordugrid.org/documents/arc6/,,A
 arcmin,arcminute minute of arc (unit of angle),Gen,,,A
 arcsec,arcsecond second of arc (unit of angle),Gen,,,A
 ASAP,As Soon As Possible,Gen,,,A
@@ -118,7 +118,7 @@ CDN,Content Delivery Network,DM IT,,,A
 CD-4,Critical Decision 4,DOE,,,A
 CDS,Centre de Donnes astronomiques de Strasbourg,Gen,,,A
 CE,Communications Engagement,OPS,,,A
-CE,Computing Element,DP,,,A
+CE,Computing Element,DM,,,A
 CEC,International in-kind Contribution Evaluation Committee,LSST,,,A
 CEE,"Communications, Education, and Engagement",OPS OIR,,,A
 CEP,Cost Estimating Plan,OPS,,,A
@@ -160,7 +160,7 @@ CQA,Compliance and Quality Administrator,,,,A
 CR,Change Request,LSST DM,,,A
 CR,Cosmic Ray,Gen,,,A
 CRB,cluster reference boards,TS,Document-11956,,A
-CRIC,Computing Resource Information Catalogue,DP,,,A
+CRIC,Computing Resource Information Catalogue,DM,,,A
 CRIO,CompactRIO National Instruments,TSSW,,,A
 CRTS3,Catalina Real-Time Transient Survey,TS,Document-12006,,A
 CS,citizen science,TS,Document-11955,,A
@@ -172,7 +172,7 @@ CTIO,Cerro Tololo Inter-American Observatory,Gen,,,A
 CUI,Controlled Unclassified Information,OPS,,,A
 CV,Curriculum Vitae,Gen,,,A
 CVE,Common Vulnerabilities and Exposures,IT,,,A
-CVFMS,CernVM File System,DP,,,A
+CVFMS,CernVM File System,DM,,,A
 CVSS,Common Vulnerability Scoring System,IT,,,A
 DAC,Data Access Center,LSST DM,,,A
 DAF,data access framework,TS,Document-11936,,A
@@ -191,7 +191,7 @@ DCR,Differential Chromatic Refraction,Gen,,,A
 DCT,Discovery Channel Telescope (Lowell Observatory),TS,Document-11943,,A
 DDF,Deep Drilling Fields,OPS,,,A
 DDMPM,Data Management Deputy Project Manager,LSST DM,,,A
-DDM,Distributed Data Management,DP,,,A
+DDM,Distributed Data Management,DM,,,A
 DDN,Data Delivery Network,Gen,,,A
 DDOS,Distributed Denial Of Service,IT Gen,,,A
 DDP,Derived Data Products (e.g. Rubin/Euclid),OPS,,,A
@@ -382,7 +382,7 @@ HQ,Head Quarters,OPS,,,A
 HR,Human Resources,Gen,,,A
 HSC,Hyper Suprime-Cam,Gen,,,A
 HSI,Hispanic Serving Institutions,DEI,,,A
-HSM,Hierarchical Storage Management,DP,,,A
+HSM,Hierarchical Storage Management,DM,,,A
 HST,Hubble Space Telescope,Gen,,,A
 HTC,High Throughput Computing,DM,,,A
 HTM,Hierarchical Triangular Mesh,Gen,,,A
@@ -445,7 +445,7 @@ JSR,Joint Status Review,LSST DM,,,A
 JTM,Joint Technical Meeting,LSST DM,,,A
 JVM,Java Virtual Machine,Gen,,,A
 JWST,James Webb Space Telescope (formerly known as NGST),Gen,,,A
-JWT,JSON Web Token,DP,,,A
+JWT,JSON Web Token,DM,,,A
 KASI,Korea Astronomy and Space Science Institute,Gen,,,A
 K8S,Kubernetes provisioning system,IT LSST DM,,,A
 KB,KiloByte,Gen,,,A
@@ -723,6 +723,7 @@ RSA,Raft Sensor Array,CAM,,,A
 RSE,Rucio Storage Element,OPS,,,A
 RSP,Rubin Science Platform,DM,,,A 
 RSS,square root of the sum of the squares,TS,Document-11939,,A
+RSS,Resident Set Size,DM,,,A
 RTA,responsible technical authority,TS,Document-12013,,A
 RTD,Resistance Temperature Detector,OPS,,,A
 RTI,rise time invariance,TS,Document-12037,,A
@@ -887,7 +888,7 @@ VM,Virtual Machine,Gen,,,A
 VNOC,Virtual Network Operations Center,NET ,,,A
 VO,Virtual Observatory,Gen,,,A
 VOIP,Voice Over Internet Protocol,IT DM,,,A
-VOMS,VO Management Service,DP,,,A
+VOMS,VO Management Service,DM,,,A
 VPC, Virtual Private Cloud,IT,,,A
 VPN,virtual private network,TS,Document-11966,,A
 VQ,vendor quote,TS,Document-12014,,A
@@ -901,7 +902,7 @@ WCAG,Web Content Accessibility Guidelines,OPS,,,A
 WCS,World Coordinate System,Gen,,,A
 WEPAN,Women in Engineering ProActive Network,DEI,,,A
 WFD,Wide Fast Deep,OPS,,,A
-WFM,WorkFlow Management,DP,,,A
+WFM,WorkFlow Management,DM,,,A
 WFS,WaveFront Sensor,TS,,,A
 WG,Working Group,LSST DM,,,A
 WIED,Women In Engineering Division,DEI,,,A
