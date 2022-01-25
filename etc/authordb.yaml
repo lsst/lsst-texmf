@@ -1837,6 +1837,13 @@ authors:
     initials: Jean-Yves
     name: Nief
     orcid: null
+  nima:
+    affil:
+    - Washington
+    altaffil: []
+    initials: Nima
+    name: Sedaghat
+    orcid: 0000-0003-4734-2019
   nomerotskia:
     affil:
     - BNL
