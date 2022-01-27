@@ -48,6 +48,7 @@ jobs:
           git commit -m " generated lsst.bib " texmf/bibtex/bib/lsst.bib
 
       - name: Create Pull Request
+        id: cpr
         if: env.CHANGED == 'true'
         uses: peter-evans/create-pull-request@v3
         with:
@@ -57,3 +58,11 @@ jobs:
           title: Automatic bibfile  update 
           commit-message: bibgile update
           body: Update bibfile from lsst.io and etc/static_entries.bib
+
+      - name: Enable Pull Request Automerge
+        if: steps.cpr.outputs.pull-request-operation == 'created'
+        uses: peter-evans/enable-pull-request-automerge@v1
+        with:
+          token: ${{ secrets.PAT }}
+          pull-request-number: ${{ steps.cpr.outputs.pull-request-number }}
+          merge-method: squash
