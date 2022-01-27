@@ -65,4 +65,4 @@ jobs:
         with:
           token: ${{ secrets.WOM_UPDATEBIB_PAT }}
           pull-request-number: ${{ steps.cpr.outputs.pull-request-number }}
-          merge-method: squash
+          merge-method: merge
