@@ -56,7 +56,7 @@ jobs:
           branch: update-bibfile
           branch-suffix: short-commit-hash
           title: Automatic bibfile  update 
-          commit-message: bibgile update
+          commit-message: bibfile update
           body: Update bibfile from lsst.io and etc/static_entries.bib
 
       - name: Enable Pull Request Automerge
