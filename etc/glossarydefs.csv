@@ -261,6 +261,7 @@ DUNE,Deep Underground Neutrino Experiment,Sci,,,A
 DWDM,Dense Wave Division Multiplex,Gen LSST DM,,,A
 EA,enterprise architect,TS,Document-12035,,A
 EAC,Estimate At Completion,LSST DM,,,A
+EAS,Environmental Awareness System,TS,,,A
 EB,ExaByte,Gen,,,A
 EDC,EPO Data Center,OPS EPO,,,A
 EDR,early data release,TS,Document-11972,,A
@@ -292,6 +293,7 @@ EVM,Earned Value Management,Adm Gen,,,A
 EVMS,Earned Value Management System,Adm Gen,,,A
 EXIST,Energetic X-ray Imaging Survey Telescope,TS,Document-12026,,A
 F2F,Face 2 Face (meeting),DM,,,A
+FAFF,First-Look Analysis and Feedback Functionality,TS,,,A
 FAQ,Frequently Asked Question,Gen,,,A
 FAR,Federal Acquisition Regulations,TS,Document-11992,,A
 FDP,federated data product,TS,Document-11990,,A
