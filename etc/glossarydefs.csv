@@ -95,6 +95,7 @@ BPS,Batch Production Service,DF LDF DM,,,A
 Bps,Bytes per second,Gen,,,A
 bps,bit(s) per second,Gen,,,A
 BSR,Business Systems Review,OPS,,,A
+BTS,Base (La Serena) Test Stand,LSST,,,A
 BTU,British Thermal Unit,OPS,,,A
 CA,Control (or Cost) Account,Gen,,,A
 CADC,Canadian Astronomy Data Centre,Gen,,,A
@@ -851,6 +852,7 @@ TPC,Total Project Cost,PMO,,,A
 TS,Test Specification,LSST DM,,,A
 TSIP, Telescope System Instrumentation Program,OPS,,,A
 TSS,Telescope and Site Software,LSST,,,A
+TTS,Tucson Test Stand,LSST,,,A
 TVSS,transient voltage surge suppressor,TS,Document-12034,,A
 UA,University of Arizona,TS,Document-11946,,A
 UCL,University College London (UK),Gen,,,A
