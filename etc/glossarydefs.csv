@@ -395,6 +395,7 @@ HTTP,HyperText Transfer Protocol,Gen,,,A
 HVAC,"Heating, Ventilation, and Air Conditioning",OPS,,,A
 HW,HardWare,Gen,,,A
 I&T,Integration and Test,Gen,,,A
+IaC,Infrastructure as Code,IT,,,A
 IAM,Identity and Access Management,IT,,,A
 IAU,International Astronomical Union,Gen,,,A
 IBM,International Business Machines,Gen,,,A
