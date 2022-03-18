@@ -259,6 +259,7 @@ DRP,Data Release Production,LSST DM,,,A
 DS9,Deep Space 9 (specific astronomical data visualisation application; SAOImage),Gen,,,A
 DTN,Data Transfer Node,LSST DM,,,A
 DUNE,Deep Underground Neutrino Experiment,Sci,,,A
+Duo,2 factor authentication system,LSST DM,,,A
 DWDM,Dense Wave Division Multiplex,Gen LSST DM,,,A
 EA,enterprise architect,TS,Document-12035,,A
 EAC,Estimate At Completion,LSST DM,,,A
@@ -411,6 +412,8 @@ ImSim,Image Simulation,Sims,,,A
 IN2P3,Institut National de Physique Nucléaire et de Physique des Particules,Gen,,,A
 IoA,Institute of Astronomy (Cambridge; also denoted IOA),Gen,,,A
 IP,Internet Protocol,DM,,,A
+IPA,"FreeIPA is an integrated security imformation mangement solution",DM,,,A
+IPC,International Program Coordinator,OPS,,,A
 IPC,International Program Coordinator,OPS,,,A
 IPAC,No longer an acronym; science and data center at Caltech,Gen,,,A
 IPEDS,Integrated Postsecondary Educational Data System,DEI,,,A
