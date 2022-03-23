@@ -237,6 +237,14 @@
    \renewcommand{\CU}{PST}
    \renewcommand{\docType}{Project Science Team}
 }
+\DeclareOption{DP}{
+   \renewcommand{\CU}{DP}
+   \renewcommand{\docType}{Data Production}
+}
+\DeclareOption{PF}{
+   \renewcommand{\CU}{PF}
+   \renewcommand{\docType}{System Performance}
+}
 \DeclareOption{DM}{
    \renewcommand{\CU}{DM}
    \renewcommand{\docType}{Data Management}
@@ -248,6 +256,10 @@
 \DeclareOption{SE}{
    \renewcommand{\CU}{SE}
    \renewcommand{\docType}{Systems Engineering}
+}
+\DeclareOption{RDO}{
+   \renewcommand{\CU}{RDO}
+   \renewcommand{\docType}{Rubin Directors Office}
 }
 \DeclareOption{PMO}{
    \renewcommand{\CU}{PMO}
