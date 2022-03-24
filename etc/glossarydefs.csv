@@ -809,6 +809,7 @@ SS,Subsystem Scientist,LSST DM,,,A
 SSC,Survey Strategy Committee,OPS,,,A
 SSD,Solid-State Disk,Gen,,,A
 SSH,Secure SHell,Gen,,,A
+SSID,Service Set Identifier,IT,,,A
 SSL,Secure Sockets Layer,IT,,,A
 SSM,Subsystem Manager,Adm,,,A
 SSO,Solar System Object,DM,,,A
