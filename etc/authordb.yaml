@@ -2064,6 +2064,13 @@ authors:
     initials: Paul A.
     name: Price
     orcid: null
+  pricewhelana:
+    affil:
+    - CCA
+    altaffil: []
+    initials: adrian
+    name: Price-Whelan
+    orcid: null
   prouzam:
     affil:
     - Praha-ASCR
@@ -2231,6 +2238,13 @@ authors:
     altaffil: []
     initials: Benoit
     name: Sassolas
+    orcid: null
+  saundersc:
+    affil:
+    - Princeton-Astro
+    altaffil: []
+    initials: Clare
+    name: Saunders
     orcid: null
   schalktl:
     affil:
