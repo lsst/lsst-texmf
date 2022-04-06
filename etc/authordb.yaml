@@ -33,6 +33,7 @@ affiliations:
     Fed\`{e}rale de Lausanne (EPFL), Observatoire de Sauverny, 1290 Versoix, Switzerland
   FacebookNE: Facebook,  14734 Friend Plaza, Springfield, NE 68059, USA
   Fermilab: Fermi National Accelerator Laboratory, P. O. Box 500, Batavia, IL 60510, USA
+  GeorgiaState: Georgia State University, Atlanta, GA 30302, USA
   GMTO: Giant Magellan Telescope Organization (GMTO), 465 N.\ Halstead Street, Suite
     250, Pasadena, CA 91107, USA
   GMU: School of Physics, Astronomy and Computational Sciences, George Mason University,
@@ -1696,6 +1697,13 @@ authors:
     altaffil: []
     initials: Michelle
     name: McQueen
+    orcid: null
+  medani:
+    affil:
+    - GeorgiaState
+    altaffil: []
+    initials: Ilija
+    name: Medan
     orcid: null
   menanteauf:
     affil:
