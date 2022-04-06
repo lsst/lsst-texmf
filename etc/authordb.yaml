@@ -98,6 +98,8 @@ affiliations:
     Road, Oxford, OX1 3RH, UK
   PSU: Department of Astronomy and Astrophysics, The Pennsylvania State University,
     525 Davey Lab, University Park, PA 16802, USA
+  PSUCDS: Institute for Computational \& Data Sciences, The Pennsylvania State University, University Park, PA 16802, USA
+  PSUGC: Institute for Gravitation and the Cosmos, The Pennsylvania State University, University Park, PA 16802, USA
   Paris-APC: AstroParticule et Cosmologie, Universit\'{e} Paris Diderot, CNRS/IN2P3,
     CEA/lrfu, Observatoire de Paris, Sorbonne Paris Cit\'{e}, 10, rue Alice Domon
     et L\'{e}onie Duquet, Paris Cedex 13, France
@@ -148,6 +150,8 @@ affiliations:
   UCIrvine-CC: Center for Cosmology, University of California, Irvine, CA 92697, USA
   UCSC: Santa Cruz Institute for Particle Physics and Physics Department, University
     of California--Santa Cruz, 1156 High St., Santa Cruz, CA 95064, USA
+  UdG: Universidad de Guanajuato, Fraccionamiento 1, Col. El Establo S/N; C.P. 36250; Guanajuato, Gto
+  UNED:  Universidad Aut\'onoma de Madrid, Madrid, Madrid, ES 
   UPenn: Department of Physics \& Astronomy, University of Pennsylvania, 209 South
     33rd Street, Philadelphia, PA 19104-6396, USA
   USNO: US Naval Observatory Flagstaff Station, 10391 Naval Observatory Road, Flagstaff,
@@ -1092,6 +1096,13 @@ authors:
     initials: Daniel A.
     name: Goldstein
     orcid: 0000-0003-3461-8661
+  gonzalesa:
+    affil:
+    - UdG 
+    altaffil: []
+    initials: Alma
+    name: Gonzales
+    orcid: null
   goodenowi:
     affil:
     - RubinObs
@@ -2240,7 +2251,14 @@ authors:
     initials: Abhijit
     name: Saha
     orcid: 0000-0002-5091-0470
-  sassolasb:
+  sarrol:
+    affil:
+    - UNED 
+    altaffil: []
+    initials: Luis
+    name: Sarro
+    orcid: 0000-0002-5622-5191 
+  assolasb:
     affil:
     - Lyon-LMA-IN2P3
     altaffil: []
@@ -2659,6 +2677,15 @@ authors:
     initials: Andres
     name: Villalobos
     orcid: null
+  villara:
+    affil:
+    - PSU
+    - PSUCDS 
+    - PSUGC
+    altaffil: []
+    initials: Ashley
+    name: Villar
+    orcid: 0000-0002-5814-4061
   virieuxf:
     affil:
     - Paris-APC
