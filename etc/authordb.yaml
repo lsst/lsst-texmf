@@ -15,10 +15,13 @@ affiliations:
   CMU: McWilliams Center for Cosmology, Department of Physics, Carnegie Mellon University,
     Pittsburgh, PA 15213, USA
   COOK: Cook Astronomical Consulting, 220 Duxbury Ct., San Ramon, CA 94583, USA
+  COINCET: Consejo Nacional de Investigaciones Cient\'{i}ficas y T\'{e}cnicas, Argentina
   CPPM: Aix Marseille Univ, CNRS/IN2P3, CPPM, Marseille, France
   CTIO: Cerro Tololo Inter-American Observatory, La Serena, Chile
   CUMBRES: Las Cumbres Observatory, 6740 Cortona Dr., Suite 102, Santa Barbara, CA
     93117, USA
+  CUNY:  City University of New York
+  CUNYL:  City University of New York, Lehman College
   Caltech-Astro: Astronomy Department, California Institute of Technology, 1200 East
     California Blvd., Pasadena CA 91125, USA
   ChUniv: Astronomical Institute, Charles University, Praha, Czech Republic
@@ -49,6 +52,7 @@ affiliations:
     MA 02138, USA
   Haverford: Department of Astronomy, Haverford College, 370 Lancaster Avenue, Haverford,
     PA 19041, USA
+  IAFE: Institute for Research in Astronomy and Astrophysics, Argentina
   IPAC: IPAC, California Institute of Technology, MS 100-22, Pasadena, CA 91125, USA
   IRAM: Instituto de Radioastronom\'ia Milim\'{e}trica, Av.\ Divina Pastora 7, N\'{u}cleo
     Central, E-18012 Granada, Spain
@@ -136,6 +140,7 @@ affiliations:
     USA
   SVC: Saint Vincent College, Department of Physics, 300 Fraser Purchase Road, Latrobe,
     PA 15650, USA
+  TTU: Texas Tech University System 1508 Knoxville Avenue, Lubbock, TX 79409
   UA: University of Arizona, Tucson, AZ 85721, USA
   UA-CompSci: Department of Computer Science, The University of Arizona, 1040 E.\
     4th St., Tucson, AZ 85719, USA
@@ -151,6 +156,7 @@ affiliations:
   UCSC: Santa Cruz Institute for Particle Physics and Physics Department, University
     of California--Santa Cruz, 1156 High St., Santa Cruz, CA 95064, USA
   UdG: Universidad de Guanajuato, Fraccionamiento 1, Col. El Establo S/N; C.P. 36250; Guanajuato, Gto
+  UNAM:  Universidad Nacional Aut\'{o}noma de M\'{e}xico
   UNED:  Universidad Aut\'onoma de Madrid, Madrid, Madrid, ES 
   UPenn: Department of Physics \& Astronomy, University of Pennsylvania, 209 South
     33rd Street, Philadelphia, PA 19104-6396, USA
@@ -158,6 +164,7 @@ affiliations:
     AZ 86001, USA
   UVa: Department of Astronomy, University of Virginia, Charlottesville, VA 22904,
     USA
+  Vdb: Vanderbilt University, Nashville, Tennessee 37240
   Washington: University of Washington, Dept.\ of Astronomy, Box 351580, Seattle,
     WA 98195, USA
   WestWashington: Western Washington University, 516 High Street, Bellingham, WA 98225,
@@ -179,6 +186,14 @@ authors:
     altaffil: []
     initials: Emily
     name: Acosta
+    orcid: null
+  acquavivav:
+    affil:
+    - CCA
+    - CUNY
+    altaffil: []
+    initials: Viviana
+    name:  Acquaviva
     orcid: null
   allberyr:
     affil:
@@ -611,6 +626,13 @@ authors:
     altaffil: []
     initials: Erin L.
     name: Carlson
+    orcid: null
+  chanj:
+    affil:
+    - CUNY
+    altaffil: []
+    initials: James
+    name: Chan
     orcid: null
   chandrasekharans:
     affil:
@@ -1229,6 +1251,13 @@ authors:
     initials: Craig
     name: Hogan
     orcid: null
+  holleyk:
+    affil:
+    - Vdb
+    altaffil: []
+    initials: Kelly
+    name:  Holley-Bockelmann
+    orcid: null
   howardjd:
     affil:
     - RubinObs
@@ -1469,6 +1498,13 @@ authors:
     initials: Lloyd
     name: Knox
     orcid: null
+  kosakowskia:
+    affil:
+    - TTU
+    altaffil: []
+    initials: Alekzander
+    name: Kosakowski
+    orcid: null
   kotoviv:
     affil:
     - BNL
@@ -1611,6 +1647,14 @@ authors:
     initials: Paul J.
     name: Lotz
     orcid: null
+  lunag:
+    affil:
+    - IAFE
+    - COINCET 
+    altaffil: []
+    initials: Gerardo Juan Manuel 
+    name: Luna
+    orcid: 
   luptonrh:
     affil:
     - Princeton-Astro
@@ -1891,6 +1935,13 @@ authors:
     altaffil: []
     initials: Paul
     name: O'Connor
+    orcid: null
+  odowdm:
+    affil:
+    - CUNYL
+    altaffil: []
+    initials: Matt
+    name: O'Dowd
     orcid: null
   oliverj:
     affil:
@@ -2613,6 +2664,13 @@ authors:
     initials: Roberto
     name: Tighe
     orcid: null
+  torresn:
+    affil:
+    - CUNY
+    altaffil: []
+    initials: Nathalia
+    name:  Torres
+    orcid: null
   trillingde:
     affil:
     - NAU
@@ -2662,6 +2720,13 @@ authors:
     altaffil: []
     initials: Brian
     name: Van Klaveren
+    orcid: null
+  vazquezm:
+    affil:
+    - UNAM
+    altaffil: []
+    initials: Jose Antonio 
+    name: Vazquez-Mata
     orcid: null
   vetterk:
     affil:
