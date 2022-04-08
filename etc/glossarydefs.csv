@@ -492,6 +492,7 @@ LED,Light-Emitting Diode,Gen,,,A
 LEP,LSST EPO (Document Handle),LSST EPO,,,A
 LF,luminosity function,TS,Document-11977,,A
 LFA,Large File Annex,TS,,,A
+LG,Local Group,Sci,,,A
 LHC,Large Hadron Collider (at CERN),Gen,,,A
 LHN,long haul network,TS,Document-12032,,A
 LIGO,Laser Interferometer Gravitational-Wave Observatory,TS,Document-11985,,A
@@ -514,6 +515,7 @@ LSSTC,LSST Corporation,Adm,,,A
 LSSTPO,LSST Project Office,Adm,,,A
 LTS,LSST Telescope and Site  (Document Handle),TS,,,A
 LUT,Look-Up Table,Gen,,,A
+LV,Local Volume,Sci,,,A
 LVV,LSST Verification and Validation,Gen,,,A
 LZ,LUX-ZEPELIN (Dark Matter Mission),Sci,,,A
 M1,primary mirror,TS,Document-12017,,A
