@@ -37,6 +37,8 @@ affiliations:
     F-63000 Clermont-Ferrand, France
   DGPS: Division of Geological and Planetary Sciences, California Institute of Technology,
     Pasadena, CA 91125, USA
+  DIRAC: Institute for Data-intensive Research in Astrophysics and Cosmology, University of Washington, Seattle, WA
+  Drexel: Drexel University, 3141 Chestnut St, Philadelphia, PA 19104
   Duke: Department of Physics, Duke University, Durham, NC 27708, USA
   EPFL: Institute of Physics, Laboratory of Astrophysics, \'{E}cole Polytechnique
     Fed\`{e}rale de Lausanne (EPFL), Observatoire de Sauverny, 1290 Versoix, Switzerland
@@ -74,6 +76,7 @@ affiliations:
   JPL: Jet Propulsion Laboratory, California Institute of Technology, Pasadena, CA
     91109, USA
   JSI: Joint Space-Science Institute
+  KIPAC: Kavli Institute for Particle Astrophysics and Cosmology, SLAC
   KLOA: Key Laboratory of Optical Astronomy, National Astronomical Observatories,
     Chinese Academy of Sciences, 20A Datun Road, Chaoyang District, Beijing 100012,
     People's Republic of China
@@ -95,6 +98,7 @@ affiliations:
     cedex, France
   Lyon-LMA-IN2P3: Laboratoire des Materiaux Avances (LMA), CNRS/IN2P3, Universit\'{e}
     de Lyon, F-69622 Villeurbanne, Lyon, France
+  Maryland: University of Maryland, College Park, MD 20742
   NAOChina: National Astronomical Observatories, Chinese Academy of Sciences, A20
     Datun Rd, Chaoyang District, Beijing 100012, People's Republic of China
   NAU: Department of Physics and Astronomy, Northern Arizona University, P.O.\ Box
@@ -214,6 +218,13 @@ authors:
     altaffil: []
     initials: Viviana
     name:  Acquaviva
+    orcid: null
+  ahumadat:
+    affil:
+    -  Maryland
+    altaffil: []
+    initials: Tomas
+    name: Ahumada
     orcid: null
   allberyr:
     affil:
@@ -558,7 +569,8 @@ authors:
     orcid: null
   bradshawa:
     affil:
-    - UCDavis
+    - SLAC
+    - KIPAC
     altaffil: []
     initials: Andrew
     name: Bradshaw
@@ -668,6 +680,13 @@ authors:
     initials: Matteo
     name: Cantiello
     orcid: 
+  caplarn:
+    affil:
+    - Princeton-Astro
+    altaffil: []
+    initials: Neven
+    name: Caplar
+    orcid: 0000-0002-3936-9628
   carlinjl:
     affil:
     - RubinObs
@@ -1173,6 +1192,13 @@ authors:
     initials: Charles J. B.
     name: Gessner
     orcid: null
+  gezaris:
+    affil:
+    - STScI
+    altaffil: []
+    initials: Suvi
+    name: Gezari
+    orcid: null
   gibsonrr:
     affil:
     - Washington
@@ -1362,6 +1388,13 @@ authors:
     altaffil: []
     initials: Kelly
     name:  Holley-Bockelmann
+    orcid: null
+  holmanmj:
+    affil:
+    - Harvard-Astro
+    altaffil: []
+    initials: Matthew J
+    name: Holman
     orcid: null
   howardjd:
     affil:
@@ -1729,6 +1762,13 @@ authors:
     - IPAC
     altaffil: []
     initials: Deborah
+    name: Levine
+    orcid: null
+  levinewg:
+    affil:
+    - Yale
+    altaffil: []
+    initials: W. Garrett
     name: Levine
     orcid: null
   liangm:
@@ -2267,6 +2307,13 @@ authors:
     initials: James B.
     name: Parsons
     orcid: null
+  pearsons:
+    affil:
+    - NYU 
+    altaffil: []
+    initials: Sarah
+    name: Pearson
+    orcid: 
   peasenm:
     affil:
     - SLAC
@@ -2803,6 +2850,13 @@ authors:
     initials: Brian
     name: Stalder
     orcid: null
+  stetzlers:
+    affil:
+    - Washington
+    altaffil: []
+    initials: Steven
+    name: Stetzler
+    orcid: null
   storrielombardil:
     affil:
     - IPAC
@@ -3167,6 +3221,14 @@ authors:
     initials: Xiuqin
     name: Wu
     orcid: null
+  wyatts:
+    affil:
+    - Washington
+    - DIRAC
+    altaffil: []
+    initials: Samuel
+    name: Wyatt
+    orcid: null
   xinb:
     affil:
     - RubinObs
@@ -3181,6 +3243,13 @@ authors:
     initials: Peter
     name: Yoachim
     orcid: 0000-0003-2874-6464
+  yuw:
+    affil:
+    - Drexel
+    altaffil: []
+    initials: Weixiang
+    name: Yu
+    orcid: null
   zhanh:
     affil:
     - KLOA
