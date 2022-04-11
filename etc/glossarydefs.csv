@@ -58,6 +58,7 @@ ARC,Advanced Resource Connector,DM,http://www.nordugrid.org/documents/arc6/,,A
 arcmin,arcminute minute of arc (unit of angle),Gen,,,A
 arcsec,arcsecond second of arc (unit of angle),Gen,,,A
 ASAP,As Soon As Possible,Gen,,,A
+ASAS-SN,All-Sky Automated Survey for Supernovae,Sci,,,A
 ASCII,American Standard Code for Information Interchange,Gen,,,A
 ASDC,ASI Science Data Center (Italy),OPS,,,A
 ASI,Agenzia Spaziale Italiana,OPS,,,A
@@ -547,6 +548,7 @@ MERRA,Modern-Era Retrospective analysis for Research and Applications,NASA,,,A
 MIDAS,Munich Image Data Analysis System (ESO),Gen,,,A
 MIE,Major Item of Equipment,OPS,,,A
 MJD,Modified Julian Date (to be avoided; see also JD),Gen,,,A
+ML,Machine Learning,Sci,,,A
 MMT,Multiple Mirror Telescope,OPS,,,A
 MNRAS,Monthly Notices of the Royal Astronomical Society,TS,Document-12016,,A
 MOA,Memo Of Agreement,OPS,,,A
@@ -854,6 +856,7 @@ TCAM,Technical Control (or Cost) Account Manager,DM,,,A
 TCP,Transmission Control Protocol,IT,,,A
 TCS,Telescope Control System,TS DM,,,A
 TCT,Technical Control Team (obsolete; now DMCCB),LSST DM,,,A
+TDE,Tidal Disruption Event,Sci,,,A
 TEA,Top End Assembly,TS,,,A
 TFLOP,Tera FLOP,Gen,,,A
 TLD,Top Level Domain,IT,,,A
