@@ -144,6 +144,7 @@ CMDB,Configuration Management Database,LSST DM,,,A
 CMMS,Computerized Maintenance Management System,OPS,,,A
 CMOS,complementary metal-oxide semiconductor,TS,Document-11961,,A
 CMS,Compact Muon Solenoid,Sci OPS,,,A
+CNN,Convolutional Neural Network,Sci,,,A
 CNRS,Centre national de la recherche scientifique,Gen,,,A
 ComCam,"The commissioning camera is a single-raft, 9-CCD camera that will be installed in LSST during commissioning, before the final camera is ready.",Gen,,,A
 COMPASS,Catalogues of Objects and Measured Parameters from All Sky Surveys,Gen,,,A
@@ -345,6 +346,7 @@ FY23,Financial Year 23,OPS,,,A
 FY24,Financial Year 24,OPS,,,A
 FY25,Financial Year 25,OPS,,,A
 GALAH,GALactic Archaeology with HERMES,DM,,,A
+GAMA,Galaxy And Mass Assembly (survey),Sci,,,A
 GAVO,German Astronomical Virtual Observatory,Gen,,,A
 GB,Gigabyte,Gen,,,A
 Gb,Gigabit,Gen,,,A
@@ -378,6 +380,7 @@ HD,historical data,TS,Document-12003,,A
 HDD, Hard Disk Drive,DM Gen,,,A
 HEALPix,Hierarchical Equal-Area iso-Latitude Pixelisation,Gen,,,A
 HEASARC,NASA's Archive of Data on Energetic Phenomena,Gen,,,A
+HELP, Herschel Extragalactic Legacy Project,Gen,,,A
 HEP, High Energy Physics,Gen,,,A
 HEPAP,HEP Advisory Panel,TS,Document-11986,,A
 HIPS,Hierarchical Progressive Survey,Gen,,,A
@@ -507,6 +510,7 @@ LOVE,LSST Operations Visualization Environment,LSST DM,,,A
 LOY,LSST Operations Year,OPS,,,A
 LPGL,Lesser Public GNU general License,Gen,,,A
 LPM,LSST Project Management (Document Handle),LSST DM,,,A
+LSB,Low Surface Brightness,Sci,,,A
 LSE,LSST Systems Engineering (Document Handle),LSST DM,,,A
 LSP,LSST Science Platform (now Rubin Science Platform),LSST DM,,,A
 LSR,LSST System Requirements; LSE-29,LSST DM,,,A
@@ -665,6 +669,7 @@ PDU,Power Distribution Unit,LSST DM,,,A
 PEP,Project Execution Plan,Adm,,,A
 PFS,Prime Focus Spectrograph,Gen,,,A
 PHA,potentially hazardous asteroids,TS,Document-11971,,A
+photo-z,"photometric redshift",Sci,,,A
 PI,Principle Investigator,Sci OPS,,,A
 PII,personally identifiable information,TS,Document-11976,,A
 PLL,Phase-Locked Loop,Gen,,,A
@@ -748,6 +753,7 @@ SAACC,South American Astronomy Coordination Committee,LSST ,https://www.amlight.
 SaaS,Software as a Service,Gen,,,A
 SAC,Science Advisory Committee,LSST Adm,,,A
 SACNAS,Society for Advancement of Chicanos/Hispanics and Native Americans in Science,DEI,,,A
+SAGA,Satellites Around Galactic Analogs (Survery),Sci,https://sagasurvey.org,,A
 SAL,Service Abstraction Layer,OPS TSSW,https://ts-sal.lsst.io,,A
 SAMP,Simple Application Messaging Protocol,Gen,,,A
 SAO,Smithsonian Astrophysical Observatory,Gen,,,A
