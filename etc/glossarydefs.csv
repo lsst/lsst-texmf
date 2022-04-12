@@ -28,8 +28,8 @@ ADU,Analogue-to-Digital Unit,Gen,,,A
 AED,Automated External Defibrillator,OPS,,,A
 AEON,Alert Event Observatory Network,OPS Sci,,,A
 AES,Advanced Encryption Standard,OPS,,,A
-AGN,active galactic nuclei,TS,Document-11927,,A
-AGN,Active Galactic Nuclei,OPS,,,A
+AGN,Active Galactic Nuclei,TS,Document-11927,,A
+AGNs,Active Galactic Nuclei,OPS,,,A
 AGU,American Geophysical Society,TS,Document-11928,,A
 AIP,American Institute of Physics,Gen,,,A
 AISES,American Indian Science and Engineering Society,DEI,,,A
@@ -792,6 +792,7 @@ SKU,Stock Keeping Unit (Google),OPS,,,A
 SLA,Service Level Agreement,Gen,,,A
 SLAC,SLAC National Accelerator Laboratory,LSST DM,,,A
 SMARTS,Small and Moderate Aperture Research Telescope System,OPS,,,A
+SMBH,Supermassive Black Hole,Sci,,,A
 SMC,Small Magellanic Cloud,Sci,,,A
 SN,SuperNovae,Sci,,,A
 SNANA,SuperNova ANAlysis (\url{https://snana.uchicago.edu/}),Sci,,,A
@@ -862,6 +863,7 @@ TCP,Transmission Control Protocol,IT,,,A
 TCS,Telescope Control System,TS DM,,,A
 TCT,Technical Control Team (obsolete; now DMCCB),LSST DM,,,A
 TDE,Tidal Disruption Event,Sci,,,A
+TDEs,Tidal Disruption Events,Sci,,,A
 TEA,Top End Assembly,TS,,,A
 TFLOP,Tera FLOP,Gen,,,A
 TLD,Top Level Domain,IT,,,A
@@ -869,6 +871,8 @@ TLS,Transport Layer Security,IT,,,A
 TMA,Telescope Mount Assembly,TS DM,,,A
 TMT,Thirty Meter Telescope,OPS,,,A
 TNO,trans-Neptunian object,TS,Document-11979,,A
+TOO,Target Of Opportunity,Sci,,,A
+ToO,Target of Opportunity,Sci,,,A
 TOPCAT,Tool for OPerations on Catalogues And Tables,Gen,,,A
 TOWG,Technical Operations Working Group,TS,,,A
 TPC,Total Project Cost,PMO,,,A
