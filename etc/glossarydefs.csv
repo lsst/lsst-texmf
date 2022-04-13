@@ -193,7 +193,8 @@ DC2,Data Challenge 2 (DESC),OPS,,,A
 DCM,Directorate Communications Manager,OPS,,,A
 DCR,Differential Chromatic Refraction,Gen,,,A
 DCT,Discovery Channel Telescope (Lowell Observatory),TS,Document-11943,,A
-DDF,Deep Drilling Fields,OPS,,,A
+DDF,Deep Drilling Field,OPS,,,A
+DDFs,Deep Drilling Fields,OPS,,,A
 DDMPM,Data Management Deputy Project Manager,LSST DM,,,A
 DDM,Distributed Data Management,DM,,,A
 DDN,Data Delivery Network,Gen,,,A
@@ -1160,6 +1161,9 @@ metric,"A measurable quantity which may be tracked. A metric has a name, descrip
 metric value,The result of computing a particular metric on some given data. Note that metric values are typically computed rather than measured. See also: metric,DM QA,DMTN-085,,G
 middleware,Software that acts as a bridge between other systems or software usually a database or network. Specifically in the Data Management System this refers to Butler for data access and Workflow management for distributed processing.,DM OPS,,,G
 Mini-Broker,A tool provided by the LSST Science Platform that provides a limited amount of alert filtering capabilities,DM,LDM-612,,G
+micro-survey,"Mini-surveys whose use of observing time is up to 3\% of LSST survey time for
+regions outside of the baseline footprint. Examples include ToO follow-up to ID counterparts to GW sources, or short twilight visits for near-Sun objects incl. NEOs.",OPS,,,G
+Mini-survey,"portions of the sky that will be observed with a different cadence to the main survey, but not necessarily to a greater depth, to address science goals beyond the scope of the main survey, e.g the Galactic Plane, Ecliptic, or South Pole. They are different to DDFs in that DDFs are single pointings.",OPS,,,G
 model metric,"A metric describing a model related to the data. For example, the coefficients of a 2D polynomial fit to the background of a single CCD exposure",DM QA,DMTN-085,,G
 monitoring,"In DM QA, this refers to the process of collecting, storing, aggregating and visualizing metrics",DM QA,DMTN-085,,G
 Moving Object Processing System,Deprecated term; see Solar System Processing,DM,,MOPS,G
