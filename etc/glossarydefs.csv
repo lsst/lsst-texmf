@@ -28,8 +28,7 @@ ADU,Analogue-to-Digital Unit,Gen,,,A
 AED,Automated External Defibrillator,OPS,,,A
 AEON,Alert Event Observatory Network,OPS Sci,,,A
 AES,Advanced Encryption Standard,OPS,,,A
-AGN,active galactic nuclei,TS,Document-11927,,A
-AGN,Active Galactic Nuclei,OPS,,,A
+AGN,Active Galactic Nuclei,TS,Document-11927,,A
 AGU,American Geophysical Society,TS,Document-11928,,A
 AIP,American Institute of Physics,Gen,,,A
 AISES,American Indian Science and Engineering Society,DEI,,,A
@@ -58,6 +57,7 @@ ARC,Advanced Resource Connector,DM,http://www.nordugrid.org/documents/arc6/,,A
 arcmin,arcminute minute of arc (unit of angle),Gen,,,A
 arcsec,arcsecond second of arc (unit of angle),Gen,,,A
 ASAP,As Soon As Possible,Gen,,,A
+ASAS-SN,All-Sky Automated Survey for Supernovae,Sci,,,A
 ASCII,American Standard Code for Information Interchange,Gen,,,A
 ASDC,ASI Science Data Center (Italy),OPS,,,A
 ASI,Agenzia Spaziale Italiana,OPS,,,A
@@ -144,6 +144,7 @@ CMDB,Configuration Management Database,LSST DM,,,A
 CMMS,Computerized Maintenance Management System,OPS,,,A
 CMOS,complementary metal-oxide semiconductor,TS,Document-11961,,A
 CMS,Compact Muon Solenoid,Sci OPS,,,A
+CNN,Convolutional Neural Network,Sci,,,A
 CNRS,Centre national de la recherche scientifique,Gen,,,A
 ComCam,"The commissioning camera is a single-raft, 9-CCD camera that will be installed in LSST during commissioning, before the final camera is ready.",Gen,,,A
 COMPASS,Catalogues of Objects and Measured Parameters from All Sky Surveys,Gen,,,A
@@ -168,6 +169,7 @@ CS,citizen science,TS,Document-11955,,A
 CSA,Cooperative Support Agreement,Gen,,,A
 CSC,Commandable SAL Component,TS,,SAL,A
 CSDC,Community Science Data Center,OPS OIR,,,A
+CSM,Circum-Stellar Material,Sci,,,A
 CSV,Comma Separated Values,Gen,,,A
 CTIO,Cerro Tololo Inter-American Observatory,Gen,,,A
 CUI,Controlled Unclassified Information,OPS,,,A
@@ -190,7 +192,7 @@ DC2,Data Challenge 2 (DESC),OPS,,,A
 DCM,Directorate Communications Manager,OPS,,,A
 DCR,Differential Chromatic Refraction,Gen,,,A
 DCT,Discovery Channel Telescope (Lowell Observatory),TS,Document-11943,,A
-DDF,Deep Drilling Fields,OPS,,,A
+DDF,Deep Drilling Field,OPS,,,A
 DDMPM,Data Management Deputy Project Manager,LSST DM,,,A
 DDM,Distributed Data Management,DM,,,A
 DDN,Data Delivery Network,Gen,,,A
@@ -271,6 +273,7 @@ EE,engineering estimate,TS,Document-12024,,A
 EEPROM,Electrically Erasable Programmable Read-Only Memory,Gen,,,A
 EFD,Engineering and Facility Database,LSST DM,,,A
 EIE,European Industrial Engineering - Italian engineering company (Dome),LSST DM,,,A
+EM,Electro Magnetic,Sci,,,A
 EO,Electro Optical,CAM,,,A
 EOS,Engineering Operations Services,OPS,,,A
 EPA,Environmental Protection Agency,Gen,,,A
@@ -298,11 +301,14 @@ F2F,Face 2 Face (meeting),DM,,,A
 FAFF,First-Look Analysis and Feedback Functionality,TS,,,A
 FAQ,Frequently Asked Question,Gen,,,A
 FAR,Federal Acquisition Regulations,TS,Document-11992,,A
+FBOT,Fast blue optical transient,Sci,,,A
+FBOTs,Fast blue optical transients,Sci,,,A
 FDP,federated data product,TS,Document-11990,,A
 FDR,Final Design Review,LSST DM,,,A
 FEA,Finite Element Analysis,OPS,,,A
 FEC,Front-End Cage,TS,,,A
 FEE,Front-End Electronics,TS,,,A
+FELTs,Fast-Evolving Luminous Transients,Sci,,,A
 FFRDC,Federally Funded Research and Development Center,Gen OPS,,,A
 FFT,Fast Fourier Transform,Gen,,,A
 FGCM,Forward Global Calibration Model,DM,,,A
@@ -344,6 +350,8 @@ FY22,Financial Year 22,OPS,,,A
 FY23,Financial Year 23,OPS,,,A
 FY24,Financial Year 24,OPS,,,A
 FY25,Financial Year 25,OPS,,,A
+GALAH,GALactic Archaeology with HERMES,DM,,,A
+GAMA,Galaxy And Mass Assembly (survey),Sci,,,A
 GAVO,German Astronomical Virtual Observatory,Gen,,,A
 GB,Gigabyte,Gen,,,A
 Gb,Gigabit,Gen,,,A
@@ -377,6 +385,7 @@ HD,historical data,TS,Document-12003,,A
 HDD, Hard Disk Drive,DM Gen,,,A
 HEALPix,Hierarchical Equal-Area iso-Latitude Pixelisation,Gen,,,A
 HEASARC,NASA's Archive of Data on Energetic Phenomena,Gen,,,A
+HELP, Herschel Extragalactic Legacy Project,Gen,,,A
 HEP, High Energy Physics,Gen,,,A
 HEPAP,HEP Advisory Panel,TS,Document-11986,,A
 HIPS,Hierarchical Progressive Survey,Gen,,,A
@@ -408,6 +417,7 @@ IDF,Interim Data Facility,OPS,,,A
 IDL,Interactive Data Language,Gen,,,A
 IIP,image ingest and processing,TS,Document-12029,,A
 ILC,Inner Loop Controller,PSE,,,A
+IMF,Initial Mass Function,DM,,,A
 IMS,Integrated Master Schedule,PSE,,,A
 ImSim,Image Simulation,Sims,,,A
 IN2P3,Institut National de Physique Nucléaire et de Physique des Particules,Gen,,,A
@@ -490,6 +500,7 @@ LED,Light-Emitting Diode,Gen,,,A
 LEP,LSST EPO (Document Handle),LSST EPO,,,A
 LF,luminosity function,TS,Document-11977,,A
 LFA,Large File Annex,TS,,,A
+LG,Local Group,Sci,,,A
 LHC,Large Hadron Collider (at CERN),Gen,,,A
 LHN,long haul network,TS,Document-12032,,A
 LIGO,Laser Interferometer Gravitational-Wave Observatory,TS,Document-11985,,A
@@ -504,6 +515,7 @@ LOVE,LSST Operations Visualization Environment,LSST DM,,,A
 LOY,LSST Operations Year,OPS,,,A
 LPGL,Lesser Public GNU general License,Gen,,,A
 LPM,LSST Project Management (Document Handle),LSST DM,,,A
+LSB,Low Surface Brightness,Sci,,,A
 LSE,LSST Systems Engineering (Document Handle),LSST DM,,,A
 LSP,LSST Science Platform (now Rubin Science Platform),LSST DM,,,A
 LSR,LSST System Requirements; LSE-29,LSST DM,,,A
@@ -512,6 +524,7 @@ LSSTC,LSST Corporation,Adm,,,A
 LSSTPO,LSST Project Office,Adm,,,A
 LTS,LSST Telescope and Site  (Document Handle),TS,,,A
 LUT,Look-Up Table,Gen,,,A
+LV,Local Volume,Sci,,,A
 LVV,LSST Verification and Validation,Gen,,,A
 LZ,LUX-ZEPELIN (Dark Matter Mission),Sci,,,A
 M1,primary mirror,TS,Document-12017,,A
@@ -539,6 +552,7 @@ MERRA,Modern-Era Retrospective analysis for Research and Applications,NASA,,,A
 MIDAS,Munich Image Data Analysis System (ESO),Gen,,,A
 MIE,Major Item of Equipment,OPS,,,A
 MJD,Modified Julian Date (to be avoided; see also JD),Gen,,,A
+ML,Machine Learning,Sci,,,A
 MMT,Multiple Mirror Telescope,OPS,,,A
 MNRAS,Monthly Notices of the Royal Astronomical Society,TS,Document-12016,,A
 MOA,Memo Of Agreement,OPS,,,A
@@ -661,6 +675,7 @@ PDU,Power Distribution Unit,LSST DM,,,A
 PEP,Project Execution Plan,Adm,,,A
 PFS,Prime Focus Spectrograph,Gen,,,A
 PHA,potentially hazardous asteroids,TS,Document-11971,,A
+photo-z,"photometric redshift",Sci,,,A
 PI,Principle Investigator,Sci OPS,,,A
 PII,personally identifiable information,TS,Document-11976,,A
 PLL,Phase-Locked Loop,Gen,,,A
@@ -744,6 +759,7 @@ SAACC,South American Astronomy Coordination Committee,LSST ,https://www.amlight.
 SaaS,Software as a Service,Gen,,,A
 SAC,Science Advisory Committee,LSST Adm,,,A
 SACNAS,Society for Advancement of Chicanos/Hispanics and Native Americans in Science,DEI,,,A
+SAGA,Satellites Around Galactic Analogs (Survery),Sci,https://sagasurvey.org,,A
 SAL,Service Abstraction Layer,OPS TSSW,https://ts-sal.lsst.io,,A
 SAMP,Simple Application Messaging Protocol,Gen,,,A
 SAO,Smithsonian Astrophysical Observatory,Gen,,,A
@@ -776,8 +792,10 @@ SKU,Stock Keeping Unit (Google),OPS,,,A
 SLA,Service Level Agreement,Gen,,,A
 SLAC,SLAC National Accelerator Laboratory,LSST DM,,,A
 SMARTS,Small and Moderate Aperture Research Telescope System,OPS,,,A
+SMBH,Supermassive Black Hole,Sci,,,A
 SMC,Small Magellanic Cloud,Sci,,,A
 SN,SuperNovae,Sci,,,A
+SNANA,SuperNova ANAlysis (\url{https://snana.uchicago.edu/}),Sci,,,A
 SNAPS,Solar System Notification Alert Processing System,OPS,,,A
 SNR,Signal to Noise Ratio,DM,,,A
 SO,scientific operations,TS,Document-12011,,A
@@ -844,6 +862,8 @@ TCAM,Technical Control (or Cost) Account Manager,DM,,,A
 TCP,Transmission Control Protocol,IT,,,A
 TCS,Telescope Control System,TS DM,,,A
 TCT,Technical Control Team (obsolete; now DMCCB),LSST DM,,,A
+TDE,Tidal Disruption Event,Sci,,,A
+TDEs,Tidal Disruption Events,Sci,,,A
 TEA,Top End Assembly,TS,,,A
 TFLOP,Tera FLOP,Gen,,,A
 TLD,Top Level Domain,IT,,,A
@@ -851,6 +871,8 @@ TLS,Transport Layer Security,IT,,,A
 TMA,Telescope Mount Assembly,TS DM,,,A
 TMT,Thirty Meter Telescope,OPS,,,A
 TNO,trans-Neptunian object,TS,Document-11979,,A
+TOO,Target Of Opportunity,Sci,,,A
+ToO,Target of Opportunity,Sci,,,A
 TOPCAT,Tool for OPerations on Catalogues And Tables,Gen,,,A
 TOWG,Technical Operations Working Group,TS,,,A
 TPC,Total Project Cost,PMO,,,A
@@ -882,6 +904,7 @@ USNO,United States Naval Observatory,Gen,,,A
 UT,Universal Time,Gen,,,A
 UT1,Universal Time 1,Gen,,,A
 UTC,Coordinated Universal Time,Gen,,,A
+UV,Ultraviolet,Sci,,,A
 UW,University of Washington,Gen,,,A
 UWS,Universal Worker Service (IVOA standard),Gen,,,A
 UX,User Experience,Gen,,,A
@@ -944,6 +967,8 @@ afw,LSST's pipeline library code and primitives including images and tables,DM,h
 aggregate metric,"An aggregation of multiple point metrics. For example, the overall photometric repeatability for a particular tract given given the repeatability of multiple individual stars in the tract. See also: “metric”",DM QA,DMTN-085,,G
 aggregation,"The process of reducing multiple input values to a single output, e.g., a metric value, computed from a collection of input values. For example, a sum or average of a metric computed over patches to produce an aggregate metric at tract level. See also: “metric”, “aggregate metric”",DM QA,DMTN-085,,G
 airmass,"The pathlength of light from an astrophysical source through the Earth's atmosphere. It is given approximately by sec z, where z is the angular distance from the zenith (the point directly overhead, where airmass = 1.0) to the source",Sci,,,G
+AMPEL,"AMPEL (Broker) is a modular and scalable platform with explicit provenance tracking, suited for systematically processing large — possibly complex and heterogeneous — datasets either in real time or offline.\url{https://ampelproject.github.io/} ",OPS,,,G
+Automatic Learning for the Rapid Classification of Events,"The ALeRCE broker is a Chilean-led broker which is processing the alert stream from the ZTF and a Community Broker for the Vera C. Rubin Observatory and its LSST, as well as other large etendue survey telescopes. \url{http://alerce.science/}",OPS,,,G
 Alert,"A packet of information for each source detected with signal-to-noise ratio > 5 in a difference image by Alert Production, containing measurement and characterization parameters based on the past 12 months of LSST observations plus small cutouts of the single-visit, template, and difference images, distributed via the internet",DM,LSE-163,,G
 Alert Production,"Executing on the Prompt Processing system, the Alert Production payload processes and calibrates incoming images, performs Difference Image Analysis to identify DIASources and DIAObjects, and then packages the resulting alerts for distribution.",DM,LDM-151,AP,G
 Alert Production DataBase,"A dedicated, internal database system used to support LSST Alert Production.  Does not support end-user access.",DM,,,G
@@ -954,6 +979,7 @@ Apache Parquet,A columnar storage data persistence format maintained by the Apac
 aperture correction,"A correction that is applied to fluxes of sources that were measured within a finite aperture, to account for the source flux that lies outside the aperture. This correction is usually based upon a model of the PSF as derived from bright, isolated stars. From the model one can derive the magnitude of the correction with aperture size and its variation with position in the image, which asymptotically approaches 1.0 at infinite aperture. Fluxes of sources in crowded fields are often measured with small apertures to avoid contamination, and then corrected with this approach",DM,LDM-151,,G
 Archive,"The repository for documents required by the NSF to be kept. These include documents related to design and development, construction, integration, test, and operations of the LSST observatory system. The archive is maintained using the enterprise content management system DocuShare, which is accessible through a link on the project website www.project.lsst.org",Adm,,,G
 Archive Center,"Part of the LSST Data Management System, the LSST archive center is a data center at NCSA that hosts the LSST Archive, which includes released science data and metadata, observatory and engineering data, and supporting software such as the LSST Software Stack",DM,,,G
+Arizona-NOA Temporal Analysis and Response to Events System,"ANTARES is a real-time astronomy system under development at NOIRLab. \url{https://antares.noirlab.edu}",OPS,,,G
 Archiver,The IIP component responsible for transferring raw images and metadata to OODS and DBB in real time,DM,,Catch-up Archiver,G
 Association of Universities for Research in Astronomy," consortium of US institutions and international affiliates that operates world-class astronomical observatories, AURA is the legal entity responsible for managing what it calls independent operating Centers, including LSST, under respective cooperative agreements with the National Science Foundation. AURA assumes fiducial responsibility for the funds provided through those cooperative agreements. AURA also is the legal owner of the AURA Observatory properties in Chile",Adm,,,G
 Association Pipeline,"An application that matches detected Sources or DIASources or generated Objects to an existing catalog of Objects, producing a (possibly many-to-many) set of associations and a list of unassociated inputs. Association Pipelines are used in Alert Production after DIASource generation and in the final stages of Data Release processing to ensure continuity of Object identifiers",DM,LDM-151,,G
@@ -965,6 +991,7 @@ AURA Management Council for Rubin Observatory,",  group reporting to the AURA Bo
 AURA-O,AURA Observatory in Chile,Gen,,,G
 AuxTel,LSST’s 1.2-meter Auxiliary Telescope will measure atmospheric transmission and will be used to calibrate LSST images.,Gen,,,G
 background,"In an image, the background consists of contributions from the sky (e.g., clouds or scattered moonlight), and from the telescope and camera optics, which must be distinguished from the astrophysical background. The sky and instrumental backgrounds are characterized and removed by the LSST processing software using a low-order spatial function whose coefficients are recorded in the image metadata",DM,,,G
+Babamul,"Caltech’s event broker",OPS,,,G
 Base Facility,"The data center located at the Base Site in La Serena, Chile. The Base Facility is composed of the Base portion of the Prompt Enclave directly supporting Observatory operations, the Commissioning Cluster, an Archive Enclave holding data products, and the Chilean Data Access Center",DM,LDM-148,,G
 Base Year Cost,"The cost of a particular project element as of a year chosen to represent an arbitrary cost level of 100, usually the year the project plan was created or refreshed. New, up-to-date base years are periodically introduced to keep data current",Adm,,,G
 Baseline,The point at which project designs or requirements are considered to be 'frozen' and after which all changes must be traced and approved,Adm,,,G
@@ -1074,6 +1101,7 @@ eups,"ExtUPS (usually abbreviated as eups) is the software component management 
 eups-tag,A versioned tag for eups that identifies a build product with its git-source SHA-1 identifier,DM,https://developer.lsst.io/stack/eups-tutorial.html,,G
 exponential profile,The radial distribution of flux of an astronomical source that is characterized: I(r)=I0exp(.68(r/re)) The normalization 1.68 is chosen so that the model radius is a half-light radius. An 2-dimensional elliptical version of this profile is fit to every detected source,Sci,,,G
 Filter,"A filter in astronomy is an optical element used to restrict the passband of light reaching the focal plane, it transmits a selected range of wavelengths. Filters elements are often named after standard photometric passbands, such as those used in the SDSS survey: u, g, r, i, z",CAM,,,G
+Fink,"Fink is a community driven project, open to anyone, that processes time-domains alert streams and connects them with follow-up facilities and science teams. \url{https://fink-broker.org}",OPS,,,G
 Firefly,"A framework of software components written by IPAC for building web-based user interfaces to astronomical archives, through which data may be searched and retrieved, and viewed as FITS images, catalogs, and/or plots. Firefly tools will be integrated into the Science Platform",DM,https://github.com/Caltech-IPAC/firefly,,G
 Flexible Image Transport System,"an international standard in astronomy for storing images, tables, and metadata in disk files. See the IAU FITS Standard for details",DM,,,G
 flux,"Shorthand for radiative flux, it is a measure of the transport of radiant energy per unit area per unit time. In astronomy this is usually expressed in cgs units: erg/cm2/s",Sci,,,G
@@ -1111,6 +1139,7 @@ Joint Oversight Group,oversight body comprised of representatives from the NSF a
 jointcal,"The jointcal package optimizes the astrometric and photometric calibrations of a set of astronomical images that cover a sky tract and were obtained as a series of visits, which may be spread out in time. The jointcal algorithms incorporates object matching both between visits and to reference star catalogs, and produces more accurate distortion and throughput models than if the astrometry and photometry were fit independently. Jointcal is a part of the Science Pipelines",DM,"DMTN-036, LDM-151",,G
 Julian Date,"The Julian Date (JD) of any instant is the Julian day number for the preceding noon (UTC), plus the fraction of the day elapsed since that instant. The Julian day number is a running sequence of integral days, starting at noon, since the beginning of the Julian Period; JD 0.0 corresponds to noon on 1 January 4713 BCE. Various Julian Date converters are available on the Web. For example, 18h 00m 00.0s UT on 2014-July-01 (near the start of LSST construction) corresponds to JD 2456840.25",Sci,,,G
 Kubernetes,A system for automating application deployment and management using software containers (e.g. Docker); \url{https://kubernetes.io},DM,,,G
+Lasair,"a broker for astronomers studying transient and variable astrophysical sources. It is being developed as a collaboration between the University of Edinburgh and Queen's University, Belfast to build a broker service for alerts generated by the LSST at the Vera Rubin Observatory. \url{https://lasair.roe.ac.uk/}",OPS,,,G
 Level 1 Data Product,Deprecated term; see Prompt Data Product,DM,LPM-231,Prompt Data Product,G
 Level 1 Processing,Deprecated term; see Prompt Processing,DM,LPM-231,Prompt Processing,G
 Level 2 Data Product,Deprecated term; see Data Release Data Product,DM,LPM-231,Data Release Data Product,G
@@ -1131,6 +1160,9 @@ metric,"A measurable quantity which may be tracked. A metric has a name, descrip
 metric value,The result of computing a particular metric on some given data. Note that metric values are typically computed rather than measured. See also: metric,DM QA,DMTN-085,,G
 middleware,Software that acts as a bridge between other systems or software usually a database or network. Specifically in the Data Management System this refers to Butler for data access and Workflow management for distributed processing.,DM OPS,,,G
 Mini-Broker,A tool provided by the LSST Science Platform that provides a limited amount of alert filtering capabilities,DM,LDM-612,,G
+Micro-survey,"Mini-surveys whose use of observing time is up to 3\% of LSST survey time for
+regions outside of the baseline footprint. Examples include ToO follow-up to ID counterparts to GW sources, or short twilight visits for near-Sun objects incl. NEOs.",OPS,,,G
+Mini-survey,"portions of the sky that will be observed with a different cadence to the main survey, but not necessarily to a greater depth, to address science goals beyond the scope of the main survey, e.g the Galactic Plane, Ecliptic, or South Pole. They are different to DDFs in that DDFs are single pointings.",OPS,,,G
 model metric,"A metric describing a model related to the data. For example, the coefficients of a 2D polynomial fit to the background of a single CCD exposure",DM QA,DMTN-085,,G
 monitoring,"In DM QA, this refers to the process of collecting, storing, aggregating and visualizing metrics",DM QA,DMTN-085,,G
 Moving Object Processing System,Deprecated term; see Solar System Processing,DM,,MOPS,G
@@ -1155,6 +1187,7 @@ PhoSim,The Photon Simulator (PhoSim) simulate realistic astronomical images by t
 photometric redshift,"Often abbreviated to photo-z, this is an estimate of the true redshift (of a galaxy) determined from multi-band photometry. Generally determined from a fit of source colors to grid of model SEDs with redshift",Sci,,,G
 pipeline,A configured sequence of software tasks (Stages) to process data and generate data products. Example: Association Pipeline,DM,,,G
 PipelineTask,"A special kind of Task that can read its inputs and write its outputs using a Butler, in addition to being able to have them passed in and out directly as Python objects. PipelineTasks may be connected together dynamically and executed by a generic workflow system. PipelineTasks typically (but not always) delegate most of their work to nested regular Tasks",DM,"LDM-556, DMTN-055",supertask,G
+Pitt-Google," a cloud-based alert distribution service designed to provide near real-time processing of data from large-scale astronomical surveys like the LSST. \url{https://pitt-broker.readthedocs.io}",OPS,,,G
 point metric,"A metric that is associated with a single entry in a catalog. Examples include the shape of a source, the standard deviation of the flux of an object detected on a Coadd, the flux of an source detected on a difference image",DM QA,DMTN-085,,G
 point spread function,"The point-spread function (PSF) is the distribution of intensity on a sensor (or image) originating from an unresolved point-source (i.e., a star). Often the PSF is not the same Airy shape as would be expected from a finite-aperture optical system, owing primarily to atmospheric effects and imperfections in the optical system and the detector",Sci,,PSF,G
 Policy file,A structured ASCII file that contains set of attributes for input to a pipeline. Deprecated,Adm,,,G
