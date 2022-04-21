@@ -2615,6 +2615,13 @@ authors:
     initials: Stefano
     name: Russo
     orcid: null
+  rykoffe:
+    affil:
+    - SLAC-Kavli
+    altaffil: []
+    initials: Eli S.
+    name: Rykoff
+    orcid: 0000-0001-9376-3135
   sahaa:
     affil:
     - NOAO
