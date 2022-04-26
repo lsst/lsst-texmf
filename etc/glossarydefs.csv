@@ -67,6 +67,7 @@ AT,Auxiliary Telescope,TS,,,A
 ATCA,Advanced Telecommunications Architecture,TS,Document-11936,,A
 ATCS,Auxiliary Telescope Control System,TSSW,,,A
 ATLAS,A Toroidal LHC Apparatus,Gen,,,A
+ATLAS,The Asteroid Terrestrial-impact Last ,Sci,,,A
 ATM,Adaptavist Test Management,LSST DM,,,A
 AU,deprecated acronym for astronomical unit; use au instead,Gen,,,A
 au,astronomical unit,Gen,,,A
@@ -571,6 +572,7 @@ MPS/AST,NSF Mathematical and Physical Sciences directorate’s Division of Astro
 MREFC,Major Research Equipment and Facility Construction,Gen,,NSF,A
 MREN,Montenegrin Research and Education Network,Gen,,,A
 MSB,Most Significant Bit,Gen,,,A
+MSE,Maunakea Spectroscopic Explorer,Sci,,,A
 MSO,Mid-Scale Observatories,OPS OIR,,,A
 MT,Main Telescope,TS ,,,A
 MTU,Maximum Transmission Unit,IT NET,,,A
@@ -719,6 +721,7 @@ RAVE,Radial Velocity Experiment (spectroscopic survey),TS,Document-12004,,A
 RBSE,Research-Based Science Education (AURA),OPS,,,A
 RC,Release Candidate,Gen,,,A
 RCC,Raft Control Rate,CAM,,,A
+RCEC,Rubin Construction Executive Committee,Gen,,,A
 RCI,Raft Communication Interface,CAM,,,A
 RCM,Raft Communication Module,CAM,,,A
 RDBMS,Relational Database Management System ,Gen,,,A
@@ -787,6 +790,7 @@ SI,Syst\`eme International (International System of units defined by ISO),Gen,,,
 SIA,Simple Image Access,Gen,,,A
 SIT,"System Integration, Test",LSST OPS ,,,A
 SITCOM,"System Integration, Test and Commissioning",LSST OPS ,,,A
+SKA,Square Kilometer Array,Sci,,,A
 SKF,Svenska Kullagerfabriken,PMO,,,A
 SKU,Stock Keeping Unit (Google),OPS,,,A
 SLA,Service Level Agreement,Gen,,,A
@@ -865,6 +869,7 @@ TCT,Technical Control Team (obsolete; now DMCCB),LSST DM,,,A
 TDE,Tidal Disruption Event,Sci,,,A
 TDEs,Tidal Disruption Events,Sci,,,A
 TEA,Top End Assembly,TS,,,A
+TESS,"Transiting Exoplanet Survey Satellite,  a space telescope for NASA's Explorer program",Sci,,,A
 TFLOP,Tera FLOP,Gen,,,A
 TLD,Top Level Domain,IT,,,A
 TLS,Transport Layer Security,IT,,,A

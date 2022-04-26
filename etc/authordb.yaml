@@ -1678,6 +1678,13 @@ authors:
     initials: Petr
     name: Kub\'{a}nek
     orcid: null
+  kubicaj:
+    affil:
+    - CMU
+    altaffil: []
+    initials: Jeremy
+    name: Kubica
+    orcid: null
   kuczewskij:
     affil:
     - BNL
