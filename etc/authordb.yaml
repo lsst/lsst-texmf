@@ -167,6 +167,7 @@ affiliations:
   UA: University of Arizona, Tucson, AZ 85721, USA
   UA-CompSci: Department of Computer Science, The University of Arizona, 1040 E.\
     4th St., Tucson, AZ 85719, USA
+  UAM:  Universidad Aut\'onoma de Madrid, Madrid, Madrid, ES 
   UA-Physics: Department of Physics, University of Arizona, 1118 E.\ Fourth Street,
     Tucson, AZ 85721, USA
   UA-Steward: Steward Observatory, The University of Arizona, 933 N.\ Cherry Ave.,
@@ -181,7 +182,7 @@ affiliations:
     of California--Santa Cruz, 1156 High St., Santa Cruz, CA 95064, USA
   UdG: Universidad de Guanajuato, Fraccionamiento 1, Col. El Establo S/N; C.P. 36250; Guanajuato, Gto
   UNAM:  Universidad Nacional Aut\'{o}noma de M\'{e}xico
-  UNED:  Universidad Aut\'onoma de Madrid, Madrid, Madrid, ES 
+  UNED:  Dpt. of Artificial Intelligence, Universidad Nacional de Educaci\'{o}n a Distancia, Madrid, Madrid, ES
   UPenn: Department of Physics \& Astronomy, University of Pennsylvania, 209 South
     33rd Street, Philadelphia, PA 19104-6396, USA
   USNO: US Naval Observatory Flagstaff Station, 10391 Naval Observatory Road, Flagstaff,
@@ -2640,7 +2641,7 @@ authors:
     affil:
     - UNED 
     altaffil: []
-    initials: Luis
+    initials: Luis M.
     name: Sarro
     orcid: 0000-0002-5622-5191 
   assolasb:
