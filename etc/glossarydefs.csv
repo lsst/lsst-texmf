@@ -30,10 +30,12 @@ AEON,Alert Event Observatory Network,OPS Sci,,,A
 AES,Advanced Encryption Standard,OPS,,,A
 AGN,Active Galactic Nuclei,TS,Document-11927,,A
 AGU,American Geophysical Society,TS,Document-11928,,A
+AI,Artificial Intelligence,Gen,,,A
 AIP,American Institute of Physics,Gen,,,A
 AISES,American Indian Science and Engineering Society,DEI,,,A
 AIT,Assembly Integration and Test,Gen,,,A
 AIV,Assembly Integration and Verification,Gen,,,A
+AJ,The Astronomical Journal,Sci,,,A
 ALeRCE,Automatic Learning for the Rapid Classification of Events,OPS,,,A
 ALD,Associate Lab Director,OPS DOE,,,A
 ALICE,A Large Ion Collider Experiment,Gen,,,A
@@ -50,6 +52,7 @@ AOC, AURA Oversight Council,OPS,,,A
 AOS,Active Optics System,TS,,,A
 AOSS,AURA Observatory Support Services,OPS,,,A
 AP,Alert Production,LSST DM,,,A
+APL,Apache Public License,LSST DM,,,A
 APDB,Alert Production DataBase,DM,,,A
 API,Application Programming Interface,Gen,,,A
 APS,American Physical Society,TS,Document-11933,,A
@@ -84,8 +87,9 @@ BCR,Baseline Change Request,CAM,,,A
 BCWP,Budgeted Cost of Work Performed,Gen,,,A
 BCWS,Budgeted Cost of Work Scheduled,Gen,,,A
 BDC, Base Data Center, DM IT,,,A
-BGP, Border Gateway Protocol,IT,,,A
 BEE,back-end electronics,TS,Document-11970,,A
+BGP, Border Gateway Protocol,IT,,,A
+BH,Black Hole,Sci,,,A
 BJD,barycentric corrected Julian date,TS,Document-11981,,A
 BNF,Backus-Naur Form,Gen,,,A
 BNL,Brookhaven National Laboratory,Gen,,,A
@@ -172,6 +176,7 @@ CSC,Commandable SAL Component,TS,,SAL,A
 CSDC,Community Science Data Center,OPS OIR,,,A
 CSM,Circum-Stellar Material,Sci,,,A
 CSV,Comma Separated Values,Gen,,,A
+CTA,Cherenkov Telescope Array \url{https://www.cta-observatory.org/},Gen,,,A
 CTIO,Cerro Tololo Inter-American Observatory,Gen,,,A
 CUI,Controlled Unclassified Information,OPS,,,A
 CV,Curriculum Vitae,Gen,,,A
@@ -407,6 +412,7 @@ HW,HardWare,Gen,,,A
 I&T,Integration and Test,Gen,,,A
 IaC,Infrastructure as Code,IT,,,A
 IAM,Identity and Access Management,IT,,,A
+IaS,Infrastructure as a Service,IT,,,A
 IAU,International Astronomical Union,Gen,,,A
 IBM,International Business Machines,Gen,,,A
 ICBS,International Communications and Base Site,LSST DM,,,A
@@ -443,10 +449,12 @@ ISM,interstellar medium,TS,Document-12009,,A
 ISO,International Standards Organisation,Gen,,,A
 ISR,Instrument Signal Removal,LSST DM,,,A
 IT,Information Technology,Gen,,,A
+ITAR,International Traffic in Arms Regulations,Gen,,,A
 ITC,Information Technology Center,LSST DM,,,A
 ITIL,Information Technology Infrastructure Library,Gen,,,A
 ITO,IT Operations,OPS OIR,,,A
 ITSC,Information Technology Services Committee,Adm,,,A
+IUSE,Improving Undergraduate STEM Education,Sci,,,A
 IVOA,International Virtual-Observatory Alliance,Gen,,,A
 JBOD,Just a Bunch of Disks,OPS,,,A
 JEDI,Job Execution and Definition Interface,OPS,,,A
@@ -554,6 +562,7 @@ MIDAS,Munich Image Data Analysis System (ESO),Gen,,,A
 MIE,Major Item of Equipment,OPS,,,A
 MJD,Modified Julian Date (to be avoided; see also JD),Gen,,,A
 ML,Machine Learning,Sci,,,A
+MMA,Multi Messenger Astronomy,OPS,,,A
 MMT,Multiple Mirror Telescope,OPS,,,A
 MNRAS,Monthly Notices of the Royal Astronomical Society,TS,Document-12016,,A
 MOA,Memo Of Agreement,OPS,,,A
@@ -603,6 +612,7 @@ NET,Network Engineering Team,LSST DM,,,A
 NFPA,National Fire Protection Association,OPS,,,A
 NFS,Network File System,Gen,,,A
 NGSS,Next-Generation Science Standards,OPS,,,A
+NGVLA,Next Generation Very Large Array,OPS,,,A
 NIR,Near Infrared,Sci,,,A
 NIST,National Institute of Standards and Technology (USA),Gen,,,A
 NLR,National Lambda Rail,TS,Document-11941,,A
@@ -624,6 +634,7 @@ NSF,National Science Foundation,Gen,,,A
 NSF's OIR Lab,NSF's National Optical-Infrared Astronomy Research Laboratory; \url{https://nationalastro.org},Gen,,,A
 NSO,National Solar Observatory,OPS,,,A
 NSS,NOAO Support Services,OPS,,,A
+NSTA,National Science Teachers Association,OPS,,,A
 NTP,Network Time Protocol,OPS ,,,A
 NTS,NCSA Test Stand,DM CAM,,,A
 NUV,Near Ultraviolet,Sci,,,A
@@ -635,6 +646,7 @@ OC,AURA Observatory Council,OPS,,,A
 OCDD,Operations Concept Definition Document,OPS,,,A
 OCPS,OCS Controlled Pipeline System,TS DM,,,A
 OCS,Observatory Control System,LSST DM,,,A
+ODBC,Open DataBase Connectivity, a standard API for SQL databases.,LSST DM,,,A
 OGA,Other Government Agencies,OPS,,,A
 OHEP,Office of High-Energy Physics,TS,Document-12001,,A
 OI,Organization International,OPS,,,A
@@ -657,9 +669,12 @@ OSS,Observatory System Specifications; LSE-30,LSST DM,,,A
 OSX,Macintosh Operating System (obsolete; now macOS),Gen,,,A
 OTB,Over Target Baseline,Gen,,,A
 OTS,observatory telemetry system,TS,Document-12015,,A
+P5,"The Particle Physics Project Prioritization Panel is a scientific advisory panel tasked with recommending prioritization for U.S. investment in particle physics research, on the basis of various funding scenarios.",Adm,,,A
+P6,"Primavera, a comprehenvive project management tool",Adm,,,A
 PanDA, Production ANd Distributed Analysis system,OPS,,,A
 Pan-STARRS,Panoramic Survey Telescope and Rapid Response System,Gen,,,A
 Parsl,Parallel Scripting Library \url{http://parsl-project.org/},DM,,,A
+PASP,Publications of the Astronomical Society of the Pacific,Sci,,,A
 PB,PetaByte,Gen,,,A
 PBI,Predominantly Black Institution,DEI,,,A
 PCA,Principal Component Analysis,Gen,,,A
@@ -881,12 +896,14 @@ ToO,Target of Opportunity,Sci,,,A
 TOPCAT,Tool for OPerations on Catalogues And Tables,Gen,,,A
 TOWG,Technical Operations Working Group,TS,,,A
 TPC,Total Project Cost,PMO,,,A
+TPU,Tensor Processing Unit,DM,,,A
 TS,Test Specification,LSST DM,,,A
 TSIP, Telescope System Instrumentation Program,OPS,,,A
 TSS,Telescope and Site Software,LSST,,,A
 TTS,Tucson Test Stand,LSST,,,A
 TVSS,transient voltage surge suppressor,TS,Document-12034,,A
 UA,University of Arizona,TS,Document-11946,,A
+UAP,Unidentified Aerial Phenomena,Sci,,,A
 UCL,University College London (UK),Gen,,,A
 UDP,User Datagram Protocol,Gen,,,A
 UHV,Ultra-high vacuum,LSST OPS,,,A
@@ -941,6 +958,7 @@ WCAG,Web Content Accessibility Guidelines,OPS,,,A
 WCS,World Coordinate System,Gen,,,A
 WEPAN,Women in Engineering ProActive Network,DEI,,,A
 WFD,Wide Fast Deep,OPS,,,A
+WFIRST,Wide Field Infrared Survey Telescope,OPS,,,A
 WFM,WorkFlow Management,DM,,,A
 WFS,WaveFront Sensor,TS,,,A
 WG,Working Group,LSST DM,,,A
@@ -1038,6 +1056,7 @@ Channel,"An amplifier on an LSST camera CCD (see sensor). For LSST there are 16 
 Charge-Coupled Device,"a particular kind of solid-state sensor for detecting optical-band photons. It is composed of a 2-D array of pixels, and one or more read-out amplifiers",CAM Sci,,,G
 Chi-squared Coadd Image,"A Coadd Image that is the weighted sum of multiple input images, where for each input: coadd.image += image.image**2 / image.variance coadd.mask |= image.weightMap += weight For bad pixels, coadd and weightMap are not altered. Note that the inputs must be aligned to a common projection and pixel grid and corrected to the same photometric scale and zero-point",DM,,Coadd Image,G
 Chief Scientist,The principal scientific advisor  to the LSST Director; he or she acts as an interface to the science community in order to ensure that the LSST program is scientifically and technologically well founded and that the specifications are appropriate for achieving the scientific goals of the project,Adm,,,G
+cloud,"A visible mass of condensed water vapor floating in the atmosphere, typically high above the ground or in interstellar space acting as the birthplace for stars.  Also a way of computing (on other peoples computers leveraging their services and availability).",DM,,,G
 CmdLineTask,"A special kind of Task that can read its inputs and write its outputs using a Butler, and can run easily from the command-line. CmdLineTask is a specific implementation of the concept of a command-line task. CmdLineTasks are being phased out in favor of PipelineTasks. ",DM,,PipelineTask,G
 Coadd Image,"An image that is the combination of multiple input images. The inputs are aligned to a common projection and pixel grid, corrected to the same photometric scale and zero-point, with bad pixels and artifacts rejected. (Image PSFs may also be matched prior to co-addition.) Coadd Images have had non-astrophysical background removed",DM,,"Co-Add, CoAdd, co-add, coadd",G
 COBRA,The trade name for an integrated suite of project management software programs that work together to track all aspects of an ongoing construction job,Adm,,,G
@@ -1125,6 +1144,7 @@ Handle,The unique identifier assigned to a document uploaded to DocuShare,Adm,,,
 Head of Safety,See Safety Manager,Adm,,,G
 Hierarchical Triangular Mesh, is a partitioning scheme to divide the surface of the unit sphere into spherical triangles. It is a hierarchical scheme and the subdivisions have roughly equal areas. HTM is used to index the coordinates in the object databases for faster querying speeds,DM Sci,"http://www.skyserver.org/htm/,  https://www.microsoft.com/en-us/research/wp-content/uploads/2005/09/tr-2005-123.pdf",,G
 Image Decorrelation,"A method of improving the noise properties of the Difference Image in cases where the Template Image has a significant amount of noise, in order to use the same detection thresholds for defining DIASources",DM,"LDM-151, DMTN-021",,G
+Image Reduction and Analysis Facility,  a collection of software written at the National Optical Astronomy Observatory (NOAO) geared towards the reduction of astronomical images in pixel array form.,DM,,,G
 Image Simulation,"High fidelity end-to-end simulations of the sky; these simulated images are used in designing and testing algorithms for use by Data Management; evaluating the capabilities and scalability of the reduction and analysis pipelines; testing and optimizing the scientific returns of the LSST survey; and providing realistic LSST data to the science collaborations to evaluate the expected performance of LSST. Under the direction of the Systems Engineering group, the Image Simulation group's principle goal during construction is to deliver a simulator to support commissioning",Sims,,,G
 Incident,"An undesired event, which under slightly different circumstances, could have resulted in harm to people, damage to property, or loss to process",Adm,,,G
 Independent Data Access Center,"Externally supported and administered versions of the DAC to serve the full, or a limited subset of, the LSST data products and/or software to authorized users. ",DM,LPM-251,iDAC,G
@@ -1132,6 +1152,7 @@ Information Technology Services Committee,"Internal LSST Project Office committe
 Information Technology Systems Administrator,"The person responsible for maintaining the Project Office's servers, networks, and computing hardware; he or she also provides technical support to the Project Management Office and the distributed Project team",Adm,,,G
 Instance Catalog,"A catalog of astronomical sources containing source type, coordinates, brightnesses, and SEDs for use in creating simulated LSST images with PhoSim. Synonym with trim file",Sims,,,G
 Institutional Member,"An organization such as an institute, observatory, university, or company committed to making an intellectual, financial, or other significant contribution to LSST operations or to preparing the scientific community to use the LSST dataset. They are members of the LSST Corporation and pay an annual membership fee in an amount established by the LSSTC Board of Directors",Adm,,,G
+Interactive Data Language, a programming language used for data analysis. Harris Geospatial \footnote{\url{https://www.harrisgeospatial.com/Software-Technology/IDL}}, to remove artifacts of the instrument or detector electronics, such as removal of overscan pixels, bias correction, and the application of a flat-field to correct for pixel-to-pixel variations in sensitivity",DM,LDM-151,ISR,G
 Instrument Signature Removal,"Instrument Signature Removal is a pipeline that applies calibration reference data in the course of raw data processing, to remove artifacts of the instrument or detector electronics, such as removal of overscan pixels, bias correction, and the application of a flat-field to correct for pixel-to-pixel variations in sensitivity",DM,LDM-151,ISR,G
 instrumental footprint,"The size and shape of a region on the sky that is covered by the field of view of an instrument, or part of an instrument, e.g., the LSST Camera, or ComCam, or a single LSST CCD.  Often represented by a geometric region defined in field-angle space",DM,,,G
 Integrated Project Schedule,"Complete picture of the entire project life cycle. By incorporating all project phases into the same model, the IPS allows the project team to plan the critical interfaces not only among project work elements but also among the design, construction, commissioning, and operations phases",Adm,,,G
@@ -1180,12 +1201,15 @@ Non-Standard Visit,"Any single observation of a LSST field that is not comprised
 nublado,The service underpinning the Notebook Aspect of the Rubin Science Platform,DM,,,G
 Object,"In LSST nomenclature this refers to an astronomical object, such as a star, galaxy, or other physical entity. E.g., comets, asteroids are also Objects but typically called a Moving Object or a Solar System Object (SSObject). One of the DRP data products is a table of Objects detected by LSST which can be static, or change brightness or position with time",DM,"LDM-151, LSE-163",,G
 Offer,"A response to a solicitation that, if accepted, would bind the offeror to perform the work described in resultant contract. Responses to sealed bidding are offers that are often referred to as 'bids' or 'sealed bids;' responses to a request for proposals (RFP, negotiated-type procurements) are offers often referred to as 'proposals' responses to a request for quotations (RFQ) are not offers and are generally called 'quotes'",Adm,,,G
+open development,"A process for developing software that emphasizes all code contribution and decision-making be done in the open, available to as wide a group as possible (This usually means anyone with internet access).",DM,,,G
+open source software,"Open source software is a type of software in which source code is released under a license in which the copyright holder grants users the rights to study, change, and distribute the software to anyone and for any purpose. Note that this is \emph{not} necessarily the same as open to contribution (see \gls{open development}).",DM,,,G
 Operations,The 10-year period following construction and commissioning during which the LSST Observatory conducts its survey,Adm,,,G
 Operations Rehearsal,"A data management system prototype project employing the same methods, tools, personnel, and technologies as the real system in order to introduce and validate new algorithms, functionality, and infrastructure. Previously referred to as a data challenge",DM,,,G
 Operations Simulation,"OpSim uses a sophisticated model to simulate 10 years of LSST operations using realistic seeing distributions, historical weather data, scheduled engineering downtime, and the most current telescope, dome, and camera design parameters. Under the direction of the Systems Engineering group, the OpSim group also works closely with the Telescope and Site group to ensure coordination with the OCS Scheduler development",Sims,,,G
 Opportunity,"The degree of exposure to an event that might happen to the benefit of a program, project, or other activity. It is described by a combination of the probability that the opportunity event will occur and the consequence of the extent of gain from the occurrence, or impact. There are two levels of opportunities. At the macro level, a project itself is the manifestation of the pursuit of an opportunity. At the element level, tactical opportunities exist, whereby certain events, if realized, provide a cost or schedule savings to the project or increase technical performance",Adm,,,G
 Opportunity Management,"The proactive art and science of planning, assessing, and handling future events to seek favorable impacts on project, cost, schedule, or performance to the extent possible.  Opportunity management is a structured, formal, and disciplined activity focused on the necessary steps and planning actions to determine and exploit opportunities to the extent possible",Adm,,,G
 Overscan,"Refers to the portion of the channel read-out of either a) non photo-active pixels, or b) additional read-out of the serial register after all science pixels have been accumulated (sometimes called virtual overscan). The overscan is often appended to the science pixels in the assembled amplifier image as a separate region. This region is useful to science processing software for estimating the stability of the DC offset in the read-out electronics",CAM,,,G
+parquet,see \gls{Apache Parquet},Sci,,,G
 passband,"The window of wavelength or the energy range admitted by an optical system; specifically the transmission as a function of wavelength or energy. Typically the passband is limited by a filter. The width of the passband may be characterized in a variety of ways, including the width of the half-power points of the transmission curve, or by the equivalent width of a filter with 100\% transmission within the passband, and zero elsewhere",Sci,,,G
 patch,"An quadrilateral sub-region of a sky tract, with a size in pixels chosen to fit easily into memory on desktop computers",DM,LDM-151,sky patch,G
 PhoSim,The Photon Simulator (PhoSim) simulate realistic astronomical images by tracing photons through the atmosphere and a telescope and camera into pixels.,Sci,,,G
@@ -1311,6 +1335,7 @@ Task,"Tasks are the basic unit of code re-use in the LSST Stack. They perform a 
 Technical Baseline Classified Index,"An index linking to the various requirements documents, specifications documents, ICDs, design documents, budgets and allocations, and WBS dictionaries defining the current baseline of the LSST project's technical scope (LSE-90)",Adm,LSE-90,,G
 Telescope and Site,"The LSST subsystem responsible for design and construction of the telescope structure, telescope mirrors, optical wavefront measurement and control system, telescope and observatory control systems software, and the summit and base facilities. The Telescope technical team is hosted by NOAO",Adm,,,G
 Template,"A co-added, single-band image of the sky that is deep, and created in a manner to remove transient or fast moving objects from the final image. Constituent images for templates may be selected from a limited range of quality parameters, such as PSF size or airmass. Such images are used to perform Difference Image Analysis in order to detect variable, transient, and Solar System astrophysical objects",DM,"LDM-151, LSE-163",Template Image,G
+Tensor Processing Unit,"a proprietary type of processor designed by Google in 2016 for use with neural networks and in machine learning projects",DM,,,G
 test stand,"An environment used for testing the operation of the LSST Camera, or some component thereof. In the Data Management context, this generally refers to a simulated Camera readout system used to test the interface between the Camera and the DM system (see, for example, NTS)",DM CAM,,,G
 Then-Year Cost,An extrapolation from the base year cost of a project element out to the year the cost actually will be incurred that accounts for escalation rates,Adm,,,G
 tidy data,"Tidy datasets have a specific structure: each variable is a column, each observation is a row, and each type of observational unit is a table (Wickham, H., 2014, Journal of Statistical Software, Articles, 59, 1)",DM QA,DMTN-085,,G
