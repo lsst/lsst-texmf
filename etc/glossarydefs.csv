@@ -108,6 +108,7 @@ CALTECH,California Institute of Technology,Gen,,,A
 CAM,CAMera,LSST DM,,,A
 CAM,Control (or Cost) Account Manager,Gen,,,A
 CAOM,Common Archive Observation Model,DM Gen,,,A
+CARMENES,Calar Alto high-Resolution search for M dwarfs with Exoearths with Near-infrared and optical Echelle Spectrographs,DM Gen,,,A
 CAS,Central Administrative Services,Adm,,,A
 CASNET,AURA's financial reporting database,Adm,,,A
 CB,Configuration Baseline,LSST DM,,,A
@@ -207,6 +208,7 @@ DDP,Derived Data Products (e.g. Rubin/Euclid),OPS,,,A
 DDS,Data Distribution System,TSSW,,,A
 DE,dark energy,TS,Document-12028,,A
 DEC,Declination,Gen,,,A
+DECam,Dark Energy Camera,OPS,,,A
 deg,degree; unit of angle,Gen,,,A
 DEI,"Diversity, Equity, and Inclusion",DEI,,,A
 DES,Dark Energy Survey,LSST DM OPS,,,A
