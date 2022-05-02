@@ -63,7 +63,7 @@ affiliations:
     MA 02138, USA
   Haverford: Department of Astronomy, Haverford College, 370 Lancaster Avenue, Haverford,
     PA 19041, USA
-  Herts: University of Hertfordshire, Hatfield, Hertfordshire, AL10 9AB, UK 
+  Herts: University of Hertfordshire, Hatfield, Hertfordshire, AL10 9AB, UK
   IAFE: Institute for Research in Astronomy and Astrophysics, Argentina
   IPAC: IPAC, California Institute of Technology, MS 100-22, Pasadena, CA 91125, USA
   IRAM: Instituto de Radioastronom\'ia Milim\'{e}trica, Av.\ Divina Pastora 7, N\'{u}cleo
@@ -156,7 +156,7 @@ affiliations:
     94025, USA
   SLAC-Kavli: Kavli Institute for Particle Astrophysics and Cosmology, SLAC National
     Accelerator Laboratory, Stanford University, Stanford, CA 94025, USA
-  Southampton: University of Southampton, Hartley Library B12, University Rd, 
+  Southampton: University of Southampton, Hartley Library B12, University Rd,
     Highfield, Southampton SO17 1BJ, United Kingdom
   STScI: Space Telescope Science Institute, 3700 San Martin Drive, Baltimore, MD 21218,
     USA
@@ -167,7 +167,7 @@ affiliations:
   UA: University of Arizona, Tucson, AZ 85721, USA
   UA-CompSci: Department of Computer Science, The University of Arizona, 1040 E.\
     4th St., Tucson, AZ 85719, USA
-  UAM:  Universidad Aut\'onoma de Madrid, Madrid, Madrid, ES 
+  UAM:  Universidad Aut\'onoma de Madrid, Madrid, Madrid, ES
   UA-Physics: Department of Physics, University of Arizona, 1118 E.\ Fourth Street,
     Tucson, AZ 85721, USA
   UA-Steward: Steward Observatory, The University of Arizona, 933 N.\ Cherry Ave.,
@@ -587,9 +587,9 @@ authors:
     affil:
     - CCA
     altaffil: []
-    initials: Katie 
+    initials: Katie
     name: Breivik
-    orcid: 
+    orcid:
   brownme:
     affil:
     - DGPS
@@ -624,7 +624,7 @@ authors:
     altaffil: []
     initials: Colin
     name: Burke
-    orcid: 
+    orcid:
   burkedl:
     affil:
     - SLAC-Kavli
@@ -673,14 +673,14 @@ authors:
     altaffil: []
     initials: Andresa
     name: Rodrigues de Campos
-    orcid: 
+    orcid:
   cantiellom:
     affil:
     - Princeton-Astro
     altaffil: []
     initials: Matteo
     name: Cantiello
-    orcid: 
+    orcid:
   caplarn:
     affil:
     - Princeton-Astro
@@ -853,7 +853,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
-    initials: Luis 
+    initials: Luis
     name: Corral
     orcid: null
   coveykr:
@@ -985,11 +985,11 @@ authors:
   dominguezm:
     affil:
     - IAFE
-    - COINCET 
+    - COINCET
     altaffil: []
     initials: Mariano
     name: Dominguez
-    orcid: 
+    orcid:
   dinob:
     affil:
     - Washington
@@ -1059,7 +1059,7 @@ authors:
     altaffil: []
     initials: Giulio
     name: Fabbian
-    orcid: 
+    orcid:
   faustinetoa:
     affil:
     - RubinObs
@@ -1143,14 +1143,14 @@ authors:
     altaffil: []
     initials: Alexander
     name: Gagliano
-    orcid: 
+    orcid:
   garaviton:
     affil:
     - CCA
     altaffil: []
     initials: Nico
     name: Garavito Camargo
-    orcid: 
+    orcid:
   ganglere:
     affil:
     - Clermont-LPC
@@ -1245,7 +1245,7 @@ authors:
     orcid: 0000-0003-3461-8661
   gonzalesa:
     affil:
-    - UdG 
+    - UdG
     altaffil: []
     initials: Alma
     name: Gonzales
@@ -1261,7 +1261,7 @@ authors:
     affil:
     - NCSA
     altaffil: []
-    initials: Michelle 
+    initials: Michelle
     name: Gower
     orcid:
   grahamml:
@@ -1277,7 +1277,7 @@ authors:
     altaffil: []
     initials: Mathew
     name: Graham
-    orcid: 
+    orcid:
   gresslerwj:
     affil:
     - RubinObs
@@ -1824,18 +1824,18 @@ authors:
   lunagjm:
     affil:
     - IAFE
-    - COINCET 
+    - COINCET
     altaffil: []
-    initials: Gerardo Juan Manuel 
+    initials: Gerardo Juan Manuel
     name: Luna
     orcid: 0000-0002-2647-4373
   luj:
     affil:
-    - FSU 
+    - FSU
     altaffil: []
     initials: Jing
     name: Lu
-    orcid: 
+    orcid:
   luptonrh:
     affil:
     - Princeton-Astro
@@ -1901,11 +1901,11 @@ authors:
   lunag:
     affil:
     - IAFE
-    - COINCET 
+    - COINCET
     altaffil: []
-    initials: Gerardo Juan Manuel 
+    initials: Gerardo Juan Manuel
     name: Luna
-    orcid: 
+    orcid:
   luptonrh:
     affil:
     - Princeton-Astro
@@ -1954,7 +1954,7 @@ authors:
     altaffil: []
     initials: Yao-Yuan
     name: Mao
-    orcid: 
+    orcid:
   markiewicztw:
     affil:
     - SLAC
@@ -2236,7 +2236,7 @@ authors:
     altaffil: []
     initials: Charlotte
     name: Olsen
-    orcid: 
+    orcid:
   olsenk:
     affil:
     - NOAO
@@ -2317,11 +2317,11 @@ authors:
     orcid: null
   pearsons:
     affil:
-    - NYU 
+    - NYU
     altaffil: []
     initials: Sarah
     name: Pearson
-    orcid: 
+    orcid:
   peasenm:
     affil:
     - SLAC
@@ -2411,7 +2411,7 @@ authors:
     - Princeton-Astro
     altaffil: []
     initials: Andr\'es A.
-    name: Plazas Malag\'on 
+    name: Plazas Malag\'on
     orcid: 0000-0002-2598-0514
   plutchakjp:
     affil:
@@ -2639,11 +2639,11 @@ authors:
     orcid: 0000-0002-5091-0470
   sarrol:
     affil:
-    - UNED 
+    - UNED
     altaffil: []
     initials: Luis M.
     name: Sarro
-    orcid: 0000-0002-5622-5191 
+    orcid: 0000-0002-5622-5191
   assolasb:
     affil:
     - Lyon-LMA-IN2P3
@@ -2777,7 +2777,7 @@ authors:
     - Southampton
     altaffil: []
     initials: Raphael
-    name: Shirley 
+    name: Shirley
     orcid: null
   shipseyi:
     affil:
@@ -3089,7 +3089,7 @@ authors:
     affil:
     - UNAM
     altaffil: []
-    initials: Jose Antonio 
+    initials: Jose Antonio
     name: Vazquez-Mata
     orcid: null
   vetterk:
@@ -3109,7 +3109,7 @@ authors:
   villara:
     affil:
     - PSU
-    - PSUCDS 
+    - PSUCDS
     - PSUGC
     altaffil: []
     initials: Ashley
