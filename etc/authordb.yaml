@@ -23,11 +23,11 @@ affiliations:
   CTIO: Cerro Tololo Inter-American Observatory, La Serena, Chile
   CUMBRES: Las Cumbres Observatory, 6740 Cortona Dr., Suite 102, Santa Barbara, CA
     93117, USA
-  CUNY:  City University of New York
-  CUNYAMNH:  City University of New York, American Museum of Natural History
-  CUNYCT:  City University of New York, New York City College of Technology
-  CUNYBM:  City University of New York, Borough of Manhattan Community College
-  CUNYL:  City University of New York, Lehman College
+  CUNY: City University of New York
+  CUNYAMNH: City University of New York, American Museum of Natural History
+  CUNYCT: City University of New York, New York City College of Technology
+  CUNYBM: City University of New York, Borough of Manhattan Community College
+  CUNYL: City University of New York, Lehman College
   Caltech-Astro: Astronomy Department, California Institute of Technology, 1200 East
     California Blvd., Pasadena CA 91125, USA
   ChUniv: Astronomical Institute, Charles University, Praha, Czech Republic
@@ -167,7 +167,7 @@ affiliations:
   UA: University of Arizona, Tucson, AZ 85721, USA
   UA-CompSci: Department of Computer Science, The University of Arizona, 1040 E.\
     4th St., Tucson, AZ 85719, USA
-  UAM:  Universidad Aut\'onoma de Madrid, Madrid, Madrid, ES
+  UAM: Universidad Aut\'onoma de Madrid, Madrid, Madrid, ES
   UA-Physics: Department of Physics, University of Arizona, 1118 E.\ Fourth Street,
     Tucson, AZ 85721, USA
   UA-Steward: Steward Observatory, The University of Arizona, 933 N.\ Cherry Ave.,
@@ -181,8 +181,8 @@ affiliations:
   UCSC: Santa Cruz Institute for Particle Physics and Physics Department, University
     of California--Santa Cruz, 1156 High St., Santa Cruz, CA 95064, USA
   UdG: Universidad de Guanajuato, Fraccionamiento 1, Col. El Establo S/N; C.P. 36250; Guanajuato, Gto
-  UNAM:  Universidad Nacional Aut\'{o}noma de M\'{e}xico
-  UNED:  Dpt. of Artificial Intelligence, Universidad Nacional de Educaci\'{o}n a Distancia, Madrid, Madrid, ES
+  UNAM: Universidad Nacional Aut\'{o}noma de M\'{e}xico
+  UNED: Dpt. of Artificial Intelligence, Universidad Nacional de Educaci\'{o}n a Distancia, Madrid, Madrid, ES
   UPenn: Department of Physics \& Astronomy, University of Pennsylvania, 209 South
     33rd Street, Philadelphia, PA 19104-6396, USA
   USNO: US Naval Observatory Flagstaff Station, 10391 Naval Observatory Road, Flagstaff,
@@ -218,11 +218,11 @@ authors:
     - CUNYCT
     altaffil: []
     initials: Viviana
-    name:  Acquaviva
+    name: Acquaviva
     orcid: null
   ahumadat:
     affil:
-    -  Maryland
+    - Maryland
     altaffil: []
     initials: Tomas
     name: Ahumada
@@ -1388,7 +1388,7 @@ authors:
     - Vdb
     altaffil: []
     initials: Kelly
-    name:  Holley-Bockelmann
+    name: Holley-Bockelmann
     orcid: null
   holmanmj:
     affil:
@@ -1750,6 +1750,13 @@ authors:
     initials: Fran\c{c}ois
     name: Lanusse
     orcid: null
+  lazari:
+    affil:
+    - Herts
+    altaffil: []
+    initials: Ilin
+    name: Lazar
+    orcid: null
   leguilloul:
     affil:
     - Paris-UPMC
@@ -1757,13 +1764,6 @@ authors:
     altaffil: []
     initials: Laurent
     name: Le Guillou
-    orcid: null
-  lazari:
-    affil:
-    - Herts
-    altaffil: []
-    initials: Ilin
-    name: Lazar
     orcid: null
   levined:
     affil:
@@ -1836,68 +1836,6 @@ authors:
     initials: Jing
     name: Lu
     orcid:
-  luptonrh:
-    affil:
-    - Princeton-Astro
-    altaffil: []
-    initials: Robert H.
-  leguilloul:
-    affil:
-    - Paris-UPMC
-    - Paris-LPNHE
-    altaffil: []
-    initials: Laurent
-    name: Le Guillou
-    orcid: null
-  levined:
-    affil:
-    - IPAC
-    altaffil: []
-    initials: Deborah
-    name: Levine
-    orcid: null
-  liangm:
-    affil:
-    - RubinObs
-    altaffil: []
-    initials: Ming
-    name: Liang
-    orcid: null
-  limk:
-    affil:
-    - SLAC
-    altaffil: []
-    initials: Kian-Tat
-    name: Lim
-    orcid: 0000-0002-6338-6516
-  lintottcj:
-    affil:
-    - Oxford
-    altaffil: []
-    initials: Chris J.
-    name: Lintott
-    orcid: 0000-0001-5578-359X
-  longke:
-    affil:
-    - Longhorn
-    altaffil: []
-    initials: Kevin E.
-    name: Long
-    orcid: null
-  lopezm:
-    affil:
-    - SLAC
-    altaffil: []
-    initials: Margaux
-    name: Lopez
-    orcid: null
-  lotzpj:
-    affil:
-    - RubinObs
-    altaffil: []
-    initials: Paul J.
-    name: Lotz
-    orcid: null
   lunag:
     affil:
     - IAFE
@@ -2160,12 +2098,12 @@ authors:
     name: Neill
     orcid: null
   neilsene:
-   affil:
-   - Fermilab
-   altaffil: []
-   initials: Eric H.
-   name: Neilsen, Jr.
-   orcid: 0000-0002-7357-0317
+    affil:
+    - Fermilab
+    altaffil: []
+    initials: Eric H.
+    name: Neilsen, Jr.
+    orcid: 0000-0002-7357-0317
   newbrysp:
     affil:
     - SLAC
@@ -3040,7 +2978,7 @@ authors:
     - CUNY
     altaffil: []
     initials: Nathalia
-    name:  Torres
+    name: Torres
     orcid: null
   trillingde:
     affil:
