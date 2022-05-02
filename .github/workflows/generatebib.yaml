@@ -1,9 +1,10 @@
 name: generatebib
 
-on: 
+on:
   workflow_dispatch:
-  schedule: #  UTC min hour day month dayOfWeek
-           - cron: '03 6 * * *'
+  schedule:
+    #  UTC min hour day month dayOfWeek
+    - cron: '03 6 * * *'
 
 jobs:
   bib:
@@ -55,7 +56,7 @@ jobs:
           token: ${{ secrets.WOM_UPDATEBIB_PAT }}
           branch: update-bibfile
           branch-suffix: short-commit-hash
-          title: Automatic bibfile  update 
+          title: Automatic bibfile  update
           commit-message: bibfile update
           body: Update bibfile from lsst.io and etc/static_entries.bib
 
