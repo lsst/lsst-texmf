@@ -1821,6 +1821,13 @@ authors:
     initials: Paul J.
     name: Lotz
     orcid: null
+  luj:
+    affil:
+    - FSU
+    altaffil: []
+    initials: Jing
+    name: Lu
+    orcid:
   lunagjm:
     affil:
     - IAFE
@@ -1829,21 +1836,6 @@ authors:
     initials: Gerardo Juan Manuel
     name: Luna
     orcid: 0000-0002-2647-4373
-  luj:
-    affil:
-    - FSU
-    altaffil: []
-    initials: Jing
-    name: Lu
-    orcid:
-  lunag:
-    affil:
-    - IAFE
-    - COINCET
-    altaffil: []
-    initials: Gerardo Juan Manuel
-    name: Luna
-    orcid:
   luptonrh:
     affil:
     - Princeton-Astro
