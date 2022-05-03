@@ -46,7 +46,7 @@ AMD,Advanced Micro Devices,OPS,,,A
 AMPATH,Americas Pathway (Network),Gen,,,A
 AMPEL,"Alert Management, Photometry, and Evaluation of Light curves",OPS,doi:10.1051/0004-6361/201935634,,A
 ANSI,American National Standards Institute,Gen OPS,,,A
-ANTARES,Arizona-NOIRlab Temporal Analysis and Response to Events System,OPS,,,A
+ANTARES,Arizona-NOIRLab Temporal Analysis and Response to Events System,OPS,,,A
 AOB,Any Other Business,Gen,,,A
 AOC, AURA Oversight Council,OPS,,,A
 AOS,Active Optics System,TS,,,A
@@ -263,6 +263,7 @@ DQA,data quality assurance,TS,Document-11974,,A
 DR,Data Release,LSST DM,,,A
 DR1,Data Release 1,OPS,,,A
 DR2,Data Release 2,OPS,,,A
+DR3,Data Release 3,OPS,,,A
 DR10,Data Release 10,OPS,,,A
 DR11,Data Release 11,OPS,,,A
 DRB,Data Release Board,OPS,,,A
@@ -360,6 +361,7 @@ FY23,Financial Year 23,OPS,,,A
 FY24,Financial Year 24,OPS,,,A
 FY25,Financial Year 25,OPS,,,A
 GALAH,GALactic Archaeology with HERMES,DM,,,A
+GALEX,Galaxy Evolution Explorer,OPS,,,A
 GAMA,Galaxy And Mass Assembly (survey),Sci,,,A
 GAVO,German Astronomical Virtual Observatory,Gen,,,A
 GB,Gigabyte,Gen,,,A
@@ -384,6 +386,7 @@ GPFS,General Parallel File System (now IBM Spectrum Scale),Gen,,,A
 GPL,GNU Public License,Gen,,,A
 GPS,Global Positioning System,Gen,,,A
 GPU,Graphics Processing Unit,Gen,,,A
+GR,General Relativity,Gen,,,A
 GRB,Gamma-Ray Burst,Gen,,,A
 GST,Greenwich Sidereal Time,Gen,,,A
 GUI,Graphical User Interface,Gen,,,A
@@ -565,6 +568,7 @@ MIDAS,Munich Image Data Analysis System (ESO),Gen,,,A
 MIE,Major Item of Equipment,OPS,,,A
 MJD,Modified Julian Date (to be avoided; see also JD),Gen,,,A
 ML,Machine Learning,Sci,,,A
+MLP,Multi-Layer Perceptron,Sci,,,A
 MMA,Multi Messenger Astronomy,OPS,,,A
 MMT,Multiple Mirror Telescope,OPS,,,A
 MNRAS,Monthly Notices of the Royal Astronomical Society,TS,Document-12016,,A
@@ -594,6 +598,7 @@ MTM1M3,Main Telescope M1M3,TS ,,,A
 MTM2,Main Telescope Secondary Mirror,TS ,,,A
 MTOFC,Main Telescope  Optical Feedback Control ,TS ,,,A
 MTTR,Mean Time To Repair,OPS ,,,A
+MW,Milky Way,Sci,,,A
 MYDB,My Database,DM Gen, ,,A
 NACME,National Action Council for Minorities in Engineering,DEI,,,A
 NAOJ,National Astronomical Observatory of Japan,Gen,,,A
@@ -673,7 +678,7 @@ OSX,Macintosh Operating System (obsolete; now macOS),Gen,,,A
 OTB,Over Target Baseline,Gen,,,A
 OTS,observatory telemetry system,TS,Document-12015,,A
 P5,"The Particle Physics Project Prioritization Panel is a scientific advisory panel tasked with recommending prioritization for U.S. investment in particle physics research, on the basis of various funding scenarios.",Adm,,,A
-P6,"Primavera, a comprehenvive project management tool",Adm,,,A
+P6,"Primavera, a comprehensive project management tool",Adm,,,A
 PanDA, Production ANd Distributed Analysis system,OPS,,,A
 Pan-STARRS,Panoramic Survey Telescope and Rapid Response System,Gen,,,A
 Parsl,Parallel Scripting Library \url{http://parsl-project.org/},DM,,,A
@@ -731,6 +736,7 @@ QAP,Quality Assurance Plan,TS,Document-11951,,A
 QC,Quality Control,Gen,,,A
 QE,quantum efficiency,TS,Document-11994,,A
 QSERV,LSST Query Services,TS,Document-12025,,A
+QSO,Quasi-Stellar Object (Quasar) ,Sci,,,A
 RA,Right Ascension,Gen,,,A
 RAC,Resource Allocation Committee,OPS,,,A
 RAID,Redundant Array of Inexpensive Disks,Gen,,,A
@@ -905,6 +911,8 @@ TS,Test Specification,LSST DM,,,A
 TSIP, Telescope System Instrumentation Program,OPS,,,A
 TSS,Telescope and Site Software,LSST,,,A
 TTS,Tucson Test Stand,LSST,,,A
+TVS,Transients and Variable Stars Science Collaboration,OPS,,,A
+TVSSC,Transients and Variable Stars Science Collaboration,OPS,,,A
 TVSS,transient voltage surge suppressor,TS,Document-12034,,A
 UA,University of Arizona,TS,Document-11946,,A
 UAP,Unidentified Aerial Phenomena,Sci,,,A
@@ -1006,7 +1014,7 @@ Apache Parquet,A columnar storage data persistence format maintained by the Apac
 aperture correction,"A correction that is applied to fluxes of sources that were measured within a finite aperture, to account for the source flux that lies outside the aperture. This correction is usually based upon a model of the PSF as derived from bright, isolated stars. From the model one can derive the magnitude of the correction with aperture size and its variation with position in the image, which asymptotically approaches 1.0 at infinite aperture. Fluxes of sources in crowded fields are often measured with small apertures to avoid contamination, and then corrected with this approach",DM,LDM-151,,G
 Archive,"The repository for documents required by the NSF to be kept. These include documents related to design and development, construction, integration, test, and operations of the LSST observatory system. The archive is maintained using the enterprise content management system DocuShare, which is accessible through a link on the project website www.project.lsst.org",Adm,,,G
 Archive Center,"Part of the LSST Data Management System, the LSST archive center is a data center at NCSA that hosts the LSST Archive, which includes released science data and metadata, observatory and engineering data, and supporting software such as the LSST Software Stack",DM,,,G
-Arizona-NOIRlab Temporal Analysis and Response to Events System,"ANTARES is a real-time astronomy system under development at NOIRLab. \url{https://antares.noirlab.edu}",OPS,,,G
+Arizona-NOIRLab Temporal Analysis and Response to Events System,"ANTARES is a real-time astronomy system under development at NOIRLab. \url{https://antares.noirlab.edu}",OPS,,,G
 Archiver,The IIP component responsible for transferring raw images and metadata to OODS and DBB in real time,DM,,Catch-up Archiver,G
 Association of Universities for Research in Astronomy," consortium of US institutions and international affiliates that operates world-class astronomical observatories, AURA is the legal entity responsible for managing what it calls independent operating Centers, including LSST, under respective cooperative agreements with the National Science Foundation. AURA assumes fiducial responsibility for the funds provided through those cooperative agreements. AURA also is the legal owner of the AURA Observatory properties in Chile",Adm,,,G
 Association Pipeline,"An application that matches detected Sources or DIASources or generated Objects to an existing catalog of Objects, producing a (possibly many-to-many) set of associations and a list of unassociated inputs. Association Pipelines are used in Alert Production after DIASource generation and in the final stages of Data Release processing to ensure continuity of Object identifiers",DM,LDM-151,,G
@@ -1030,6 +1038,7 @@ Baseline,The point at which project designs or requirements are considered to be
 "Baseline, Technical","The 'frozen' requirements, specifications, designs, and allocations needed for completion of the project based on known resources (staff, physical assets, knowledge, etc.) that will be needed",Adm,,,G
 Basis of Estimate,"justification for arriving at a particular cost estimate, including estimating methods, approach taken, prices used, assumptions made; an analyzed and carefully calculated number",Adm,,,G
 Batch Production,"Computational processing that is executed as inputs become available, in a distributed way across multiple enclaves when needed, while tracking status and outputs. Examples of Batch Production include offline processing for Prompt Data Products, calibration products, template images, and Special Programs data products. Prioritization protocols for the various types of batch production are given in LDM-148",DM,LDM-148,,G
+BlackGEM,"is a wide-field array of optical telescopes to be located at ESO’s La Silla Observatory in Chile’s Atacama desert. ",OPS,,,G
 brighter-fatter effect,The common term used to refer to one of the photometric qualities of the LSST camera: sources with a higher flux have a broader PSF. This is accounted for during calibration,DM,"LDM-151, https://arxiv.org/pdf/1402.0725v1.pdf",,G
 Broker,"Software which receives and redistributes Alerts, and may also perform processing such as filtering for certain characteristics, cross-matching with non-LSST catalogs, and/or light-curve classification, in order to identify and prioritize targets for follow-up and/or make scientific analyses. ",DM,LDM-612,,G
 Builder,Individuals who have accumulated 2 FTE years worth of employment/contributions to the LSST Project,Adm,,,G
@@ -1182,6 +1191,7 @@ LSST Project Office,Official name of the stand-alone AURA operating center respo
 "magnitude, Petrosian",A magnitude determined from a fit to a Petrosian brightness profile: Rp(r) = stuf f Appropriate for galaxies,Sci,,,G
 "magnitude, Pogson","Usually simply magnitude, it is a logarithmic measure of integrated source brightness, usually within a standard photometric passband, such that: MM0=2.5log(F/F0) where the zero-point flux is defined by a photometric standard",Sci,,,G
 "magnitude, PSF","For isolated stars that are well described by the PSF, the optimal measure of the total flux is determined by fitting a PSF model to the object",Sci,,,G
+M31,"also known as the Andromeda galaxy, can be seen with the naked eye in the constellation of Andromeda.",Sci,,,G
 Major Research Equipment and Facility Construction,the NSF account through which large facilities construction projects such as LSST are funded,Adm,,,G
 Manifest,Various files (and file formats) which define sets of build products having some shared attribute. There are release manifests which enumerate the eups-tags of all eups build products a the validated suite,Adm,,,G
 Mapper,"A piece of software that abstracts persisting and unpersisting data; specifically, it knows how to navigate a data repository to locate data that match selection criteria that are relevant for data obtained with a particular camera. Used by the Butler",DM,,,G
