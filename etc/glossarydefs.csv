@@ -46,7 +46,7 @@ AMD,Advanced Micro Devices,OPS,,,A
 AMPATH,Americas Pathway (Network),Gen,,,A
 AMPEL,"Alert Management, Photometry, and Evaluation of Light curves",OPS,doi:10.1051/0004-6361/201935634,,A
 ANSI,American National Standards Institute,Gen OPS,,,A
-ANTARES,Arizona-NOA Temporal Analysis and Response to Events System,OPS,,,A
+ANTARES,Arizona-NOIRlab Temporal Analysis and Response to Events System,OPS,,,A
 AOB,Any Other Business,Gen,,,A
 AOC, AURA Oversight Council,OPS,,,A
 AOS,Active Optics System,TS,,,A
@@ -108,6 +108,7 @@ CALTECH,California Institute of Technology,Gen,,,A
 CAM,CAMera,LSST DM,,,A
 CAM,Control (or Cost) Account Manager,Gen,,,A
 CAOM,Common Archive Observation Model,DM Gen,,,A
+CARMENES,Calar Alto high-Resolution search for M dwarfs with Exoearths with Near-infrared and optical Echelle Spectrographs,DM Gen,,,A
 CAS,Central Administrative Services,Adm,,,A
 CASNET,AURA's financial reporting database,Adm,,,A
 CB,Configuration Baseline,LSST DM,,,A
@@ -145,6 +146,7 @@ CLO,community.lsst.org - use of this acronym is discouraged. The language that s
 CLP,Chilean Peso,OPS,,,A
 CM,Configuration Management,LSST DM,,,A
 CMB,Cosmic Microwave Background,Sci OPS,,,A
+CMB-S4,Cosmic Microwave Background Stage 4,Sci OPS,,,A
 CMDB,Configuration Management Database,LSST DM,,,A
 CMMS,Computerized Maintenance Management System,OPS,,,A
 CMOS,complementary metal-oxide semiconductor,TS,Document-11961,,A
@@ -207,6 +209,7 @@ DDP,Derived Data Products (e.g. Rubin/Euclid),OPS,,,A
 DDS,Data Distribution System,TSSW,,,A
 DE,dark energy,TS,Document-12028,,A
 DEC,Declination,Gen,,,A
+DECam,Dark Energy Camera,OPS,,,A
 deg,degree; unit of angle,Gen,,,A
 DEI,"Diversity, Equity, and Inclusion",DEI,,,A
 DES,Dark Energy Survey,LSST DM OPS,,,A
@@ -620,7 +623,7 @@ NLT,NOIRLab Leadership Team,OPS,,,A
 NMOC,NSF's OIR Lab Management Oversight Council,Gen,,,A
 NNSA,National Nuclear Security Administration,OPS,,,A
 NOAA,National Oceanic and Atmospheric Administration,Gen,,,A
-NOAO,National Optical Astronomy Observatories (USA),Gen,,,A
+NOAO,National Optical Astronomy Observatories now NOIRLab ,Gen,,,A
 NOC,Network Operations Center,NET ,,,A
 NOGLSTP,National Organization of Gay and Lesbian Scientists and Technical Professionals,DEI,,,A
 NOIR,NSF's National Optical-Infrared Astronomy Research Laboratory; \url{https://nationalastro.org},Gen,,,A
@@ -1002,7 +1005,7 @@ Apache Parquet,A columnar storage data persistence format maintained by the Apac
 aperture correction,"A correction that is applied to fluxes of sources that were measured within a finite aperture, to account for the source flux that lies outside the aperture. This correction is usually based upon a model of the PSF as derived from bright, isolated stars. From the model one can derive the magnitude of the correction with aperture size and its variation with position in the image, which asymptotically approaches 1.0 at infinite aperture. Fluxes of sources in crowded fields are often measured with small apertures to avoid contamination, and then corrected with this approach",DM,LDM-151,,G
 Archive,"The repository for documents required by the NSF to be kept. These include documents related to design and development, construction, integration, test, and operations of the LSST observatory system. The archive is maintained using the enterprise content management system DocuShare, which is accessible through a link on the project website www.project.lsst.org",Adm,,,G
 Archive Center,"Part of the LSST Data Management System, the LSST archive center is a data center at NCSA that hosts the LSST Archive, which includes released science data and metadata, observatory and engineering data, and supporting software such as the LSST Software Stack",DM,,,G
-Arizona-NOA Temporal Analysis and Response to Events System,"ANTARES is a real-time astronomy system under development at NOIRLab. \url{https://antares.noirlab.edu}",OPS,,,G
+Arizona-NOIRlab Temporal Analysis and Response to Events System,"ANTARES is a real-time astronomy system under development at NOIRLab. \url{https://antares.noirlab.edu}",OPS,,,G
 Archiver,The IIP component responsible for transferring raw images and metadata to OODS and DBB in real time,DM,,Catch-up Archiver,G
 Association of Universities for Research in Astronomy," consortium of US institutions and international affiliates that operates world-class astronomical observatories, AURA is the legal entity responsible for managing what it calls independent operating Centers, including LSST, under respective cooperative agreements with the National Science Foundation. AURA assumes fiducial responsibility for the funds provided through those cooperative agreements. AURA also is the legal owner of the AURA Observatory properties in Chile",Adm,,,G
 Association Pipeline,"An application that matches detected Sources or DIASources or generated Objects to an existing catalog of Objects, producing a (possibly many-to-many) set of associations and a list of unassociated inputs. Association Pipelines are used in Alert Production after DIASource generation and in the final stages of Data Release processing to ensure continuity of Object identifiers",DM,LDM-151,,G
@@ -1144,7 +1147,7 @@ Handle,The unique identifier assigned to a document uploaded to DocuShare,Adm,,,
 Head of Safety,See Safety Manager,Adm,,,G
 Hierarchical Triangular Mesh, is a partitioning scheme to divide the surface of the unit sphere into spherical triangles. It is a hierarchical scheme and the subdivisions have roughly equal areas. HTM is used to index the coordinates in the object databases for faster querying speeds,DM Sci,"http://www.skyserver.org/htm/,  https://www.microsoft.com/en-us/research/wp-content/uploads/2005/09/tr-2005-123.pdf",,G
 Image Decorrelation,"A method of improving the noise properties of the Difference Image in cases where the Template Image has a significant amount of noise, in order to use the same detection thresholds for defining DIASources",DM,"LDM-151, DMTN-021",,G
-Image Reduction and Analysis Facility,  a collection of software written at the National Optical Astronomy Observatory (NOAO) geared towards the reduction of astronomical images in pixel array form.,DM,,,G
+Image Reduction and Analysis Facility,  a collection of software written at the National Optical Astronomy Observatory (now NOIRLab) geared towards the reduction of astronomical images in pixel array form.,DM,,,G
 Image Simulation,"High fidelity end-to-end simulations of the sky; these simulated images are used in designing and testing algorithms for use by Data Management; evaluating the capabilities and scalability of the reduction and analysis pipelines; testing and optimizing the scientific returns of the LSST survey; and providing realistic LSST data to the science collaborations to evaluate the expected performance of LSST. Under the direction of the Systems Engineering group, the Image Simulation group's principle goal during construction is to deliver a simulator to support commissioning",Sims,,,G
 Incident,"An undesired event, which under slightly different circumstances, could have resulted in harm to people, damage to property, or loss to process",Adm,,,G
 Independent Data Access Center,"Externally supported and administered versions of the DAC to serve the full, or a limited subset of, the LSST data products and/or software to authorized users. ",DM,LPM-251,iDAC,G
@@ -1333,7 +1336,7 @@ Systems Engineering Manager,"individual responsible for the oversight and coordi
 Systems Scientist,A member of the Systems Engineering group and chief liaison to all project scientists; the Systems Scientist works closely with the Systems Engineering Manager and is responsible for the flow-down of science requirements. The Systems Scientist ensures that acceptance testing and commissioning address the science requirements,Adm,,,G
 Task,"Tasks are the basic unit of code re-use in the LSST Stack. They perform a well defined, logically contained piece of functionality. Tasks come standard with configuration, logging, processing metadata, and debugging features. For further details, see How to Write a Task in the source code documentation.  Tasks can be nested, providing a natural way to structure - and configure - high level algorithms that delegate work to lower-level algorithms",DM,http://doxygen.lsst.codes/stack/doxygen/x_mainDoxyDoc/pipe_tasks_write_task.html,"command-line task, PipelineTask",G
 Technical Baseline Classified Index,"An index linking to the various requirements documents, specifications documents, ICDs, design documents, budgets and allocations, and WBS dictionaries defining the current baseline of the LSST project's technical scope (LSE-90)",Adm,LSE-90,,G
-Telescope and Site,"The LSST subsystem responsible for design and construction of the telescope structure, telescope mirrors, optical wavefront measurement and control system, telescope and observatory control systems software, and the summit and base facilities. The Telescope technical team is hosted by NOAO",Adm,,,G
+Telescope and Site,"The LSST subsystem responsible for design and construction of the telescope structure, telescope mirrors, optical wavefront measurement and control system, telescope and observatory control systems software, and the summit and base facilities.",Adm,,,G
 Template,"A co-added, single-band image of the sky that is deep, and created in a manner to remove transient or fast moving objects from the final image. Constituent images for templates may be selected from a limited range of quality parameters, such as PSF size or airmass. Such images are used to perform Difference Image Analysis in order to detect variable, transient, and Solar System astrophysical objects",DM,"LDM-151, LSE-163",Template Image,G
 Tensor Processing Unit,"a proprietary type of processor designed by Google in 2016 for use with neural networks and in machine learning projects",DM,,,G
 test stand,"An environment used for testing the operation of the LSST Camera, or some component thereof. In the Data Management context, this generally refers to a simulated Camera readout system used to test the interface between the Camera and the DM system (see, for example, NTS)",DM CAM,,,G
