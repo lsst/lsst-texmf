@@ -1660,6 +1660,13 @@ authors:
     initials: Ivan V.
     name: Kotov
     orcid: null
+  kowalikm:
+    affil:
+    - NCSA
+    altaffil: []
+    initials: Mikolaj
+    name: Kowalik
+    orcid:
   krabbendamvl:
     affil:
     - RubinObs
