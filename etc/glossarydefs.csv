@@ -75,7 +75,8 @@ ATM,Adaptavist Test Management,LSST DM,,,A
 AU,deprecated acronym for astronomical unit; use au instead,Gen,,,A
 au,astronomical unit,Gen,,,A
 AURA,Association of Universities for Research in Astronomy,Gen,,,A
-AVS, Alert Vetting System,OPS,,,A
+Avro,is a row-oriented remote procedure call and data serialization framework developed within Apache's Hadoop project,OPS,,,A
+AVS,Alert Vetting System,OPS,,,A
 AWIS,Association for Women in Science,DEI,,,A
 AWS,Amazon Web Services,Gen,,,A
 B,Byte (8 bit),Gen,,,A
@@ -140,8 +141,9 @@ CFHT-LS,A 5-passband legacy imaging survey conducted at the Canada-France-Hawaii
 CFO,Chief Financial Officer,OPS,,,A
 CFHTLS,Canada-France-Hawaii Telescope Legacy Survey,TS,Document-11959,,A
 CFR,Code of Federal Regulations,OPS,,,A
-CI,Continuous Integration,Gen,,,A
-CI,Cyber Infrastructure,Petabytes,,,A
+CI,Continuous Integration,DM,,,A
+CI,Cyber Infrastructure,Sci,,,A
+CIGALE,Code Investigating GALaxy Emission,Sci,https://cigale.lam.fr/,,A
 CIS,Computer Infrastructure Support,TS,Document-11991,,A
 CLO,community.lsst.org - use of this acronym is discouraged. The language that should be used in official documents is "Community Forum" or "Vera C. Rubin Community Forum".,DM,,,A
 CLP,Chilean Peso,OPS,,,A
@@ -537,6 +539,7 @@ LSB,Low Surface Brightness,Sci,,,A
 LSE,LSST Systems Engineering (Document Handle),LSST DM,,,A
 LSP,LSST Science Platform (now Rubin Science Platform),LSST DM,,,A
 LSR,LSST System Requirements; LSE-29,LSST DM,,,A
+LSS,Large Scale Structure,Sci,,,A
 LSST,Legacy Survey of Space and Time (formerly Large Synoptic Survey Telescope),Gen,,,A
 LSSTC,LSST Corporation,Adm,,,A
 LSSTPO,LSST Project Office,Adm,,,A
@@ -771,6 +774,7 @@ ROE,Royal Observatory Edinburgh,OPS,,,A
 ROO,Rubin Observatory Operations,OPS,,,A
 ROOT,Object-oriented data analysis framework developed at CERN,Gen,,,A
 ROP,Rubin Operations Plan,OPS,,,A
+ROSAT,R\"{o}ntgensatellit X-ray telescope,OPS,,,A
 RPF,Rubin system PerFormance,OPS,,,A
 RPM,RPM Package Manager (originally Red Hat Package Manager; now a recursive acronym),IT,,,A
 RS232C,Standard 25-pin serial connection between computers and modems,Gen,,,A
