@@ -110,8 +110,8 @@ affiliations:
   NOIRLab: National Optical-Infrared Astronomy Research Laboratory, 950 N.\ Cherry Ave., Tucson, AZ 85719,
     USA
   NYU: New York University, New York,
-  NYU-CCPP: Center for Cosmology \& Particle Physics, New York University, New York,
-    10012, USA
+  NYU-CCPP: Center for Cosmology \& Particle Physics, New York University,
+    726 Broadway, New York, 10012, USA
   NYU-CUSP: Center for Urban Science \& Progress, New York University, Brooklyn, NY
     11021, USA
   OKC: Oskar Klein Centre, Department of Physics, Stockholm University, SE 106 91
@@ -256,13 +256,13 @@ authors:
     initials: Yusra
     name: AlSayyad
     orcid: null
-  alvesc:
+  alvecs:
     affil:
     - UCL
     altaffil: []
-    initials: Catarina
-    name: Sampaio Alves
-    orcid: null
+    initials: Catarina S.
+    name: Alves
+    orcid: 0000-0002-6164-9044
   andersonsf:
     affil:
     - Washington
@@ -674,7 +674,7 @@ authors:
     altaffil: []
     initials: Andresa
     name: Rodrigues de Campos
-    orcid:
+    orcid: 0000-0002-5124-0771
   cantiellom:
     affil:
     - Princeton-Astro
@@ -2256,11 +2256,11 @@ authors:
     orcid: null
   pearsons:
     affil:
-    - NYU
+    - NYU-CCPP
     altaffil: []
     initials: Sarah
     name: Pearson
-    orcid:
+    orcid: 0000-0001-5049-5396
   peasenm:
     affil:
     - SLAC
@@ -2377,7 +2377,7 @@ authors:
     affil:
     - CCA
     altaffil: []
-    initials: adrian
+    initials: Adrian
     name: Price-Whelan
     orcid: null
   pritchardita:
