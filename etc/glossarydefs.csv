@@ -121,6 +121,7 @@ CCD,Charge-Coupled Device,Gen,,,A
 CCOB,Camera Calibration Optical Bench,LSST DM,,,A
 CCP,Change Control Process,Adm,,,A
 CCS,Camera Control System,LSST DM,,,A
+CDF,Cumulative Distribution Function,Sci,,,A
 CDN,Content Delivery Network,DM IT,,,A
 CD-4,Critical Decision 4,DOE,,,A
 CDS,Centre de Donnes astronomiques de Strasbourg,Gen,,,A
@@ -495,6 +496,7 @@ L2,Lens 2,TS,,,A
 L3,Lens 3,TS,,,A
 L4,Lens 4,TS,,,A
 LAG,List of Acronyms and Glossary,Gen,,,A
+LAMOST,Large Sky Area Multi-Object Fibre Spectroscopic Telescope, also known as the Guo Shoujing Telescope,Sci,,,A
 LAN,Local Area Network,Gen,,,A
 LAPACK,Linear Algebra PACKage,Gen,,,A
 LASER,Light Amplification by Stimulated Emission of Radiation,Gen,,,A
@@ -694,7 +696,7 @@ PD,Program Development,OPS,,,A
 PDM,Phase Dispersion Minimization,OPS,,,A
 PDAC,Prototype Data Access Center,LSST DM,,,A
 PDF,Portable Document Format,Gen,,,A
-PDF,Probability Density Function,Gen,,,A
+PDF,Probability Density Function,Sci,,,A
 PDR,Preliminary Design Review,LSST DM,,,A
 PDR1,Public Data Release 1 (HSC),OPS,,,A
 PDR2,Public Data Release 2 (HSC),OPS,,,A
@@ -898,6 +900,7 @@ TDEs,Tidal Disruption Events,Sci,,,A
 TEA,Top End Assembly,TS,,,A
 TESS,"Transiting Exoplanet Survey Satellite,  a space telescope for NASA's Explorer program",Sci,,,A
 TFLOP,Tera FLOP,Gen,,,A
+TGAS,Tycho-Gaia Astrometric Solution,Sci,,,A
 TLD,Top Level Domain,IT,,,A
 TLS,Transport Layer Security,IT,,,A
 TMA,Telescope Mount Assembly,TS DM,,,A
