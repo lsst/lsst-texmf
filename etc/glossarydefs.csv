@@ -740,6 +740,7 @@ PSE,Project Systems Engineering,PSE,,,A
 PSF,Point Spread Function,Gen,,,A
 PST,Project Science Team,LSST DM,,,A
 PSTN,Project Science Technical Note,LSST DM,,,A
+PTF,Palomar Transient Factory,Sci,,,A
 PVI,Processed Visit Image,DM,,,A
 PWI,Predominantly White Institution,DEI,,,A
 QA,Quality Assurance,Gen,,,A
@@ -1058,7 +1059,8 @@ Baseline,The point at which project designs or requirements are considered to be
 "Baseline, Technical","The 'frozen' requirements, specifications, designs, and allocations needed for completion of the project based on known resources (staff, physical assets, knowledge, etc.) that will be needed",Adm,,,G
 Basis of Estimate,"justification for arriving at a particular cost estimate, including estimating methods, approach taken, prices used, assumptions made; an analyzed and carefully calculated number",Adm,,,G
 Batch Production,"Computational processing that is executed as inputs become available, in a distributed way across multiple enclaves when needed, while tracking status and outputs. Examples of Batch Production include offline processing for Prompt Data Products, calibration products, template images, and Special Programs data products. Prioritization protocols for the various types of batch production are given in LDM-148",DM,LDM-148,,G
-BlackGEM,"is a wide-field array of optical telescopes to be located at ESO’s La Silla Observatory in Chile’s Atacama desert. ",OPS,,,G
+BlackGEM,"is a wide-field array of optical telescopes to be located at ESO’s La Silla Observatory in Chile’s Atacama desert. ",Sci,,,G
+Blazhko,"the phenomenon of amplitude or phase modulation. Associated with some RRL",Sci,,,G
 brighter-fatter effect,The common term used to refer to one of the photometric qualities of the LSST camera: sources with a higher flux have a broader PSF. This is accounted for during calibration,DM,"LDM-151, https://arxiv.org/pdf/1402.0725v1.pdf",,G
 Broker,"Software which receives and redistributes Alerts, and may also perform processing such as filtering for certain characteristics, cross-matching with non-LSST catalogs, and/or light-curve classification, in order to identify and prioritize targets for follow-up and/or make scientific analyses. ",DM,LDM-612,,G
 Builder,Individuals who have accumulated 2 FTE years worth of employment/contributions to the LSST Project,Adm,,,G
@@ -1298,7 +1300,7 @@ Risk Management,"The art and science of planning, assessing, and handling future
 "Risk, Schedule","The possibility that the project will fail to meet scheduled milestones. Schedule risk exists if there is inadequate allowance for acquisition delays or if difficulty is experienced in achieving scheduled technical accomplishments, such as the development of software. Schedule risk can be incurred at the total project level for milestones such as deployment of the first system element. The cascading effects of element-level schedule risks can produce schedule risk for the total project",Adm,,,G
 "Risk, Technical","The possibility that a technical requirement of the system may not be achieved in the system life cycle. Technical risk exists if the system may fail to achieve performance requirements; to meet operability, producibility, testability, or integration requirements; or to meet environmental protection requirements. A potential failure to meet any requirement that can be expressed in technical terms is a source of technical risk",Adm,,,G
 RRab,"RRL subgroup of fundamental-mode pulsators, most common and display the steep rises in brightness typical of RRL",Sci,,,G
-RRc,"RRL subgroup with shorter periods and more sinusoidal variation. These are the less common population of RRL."Sci,,,G
+RRc,"RRL subgroup with shorter periods and more sinusoidal variation. These are the less common population of RRL",Sci,,,G
 RRd,"RRL subgroup of double mode pulsars and are the most rare RRL ",Sci,,,G
 "Rucio","Rucio is a project that provides services and associated libraries for allowing scientific collaborations to manage large volumes of data spread across facilities at multiple institutions and organizations. Rucio has been developed by the ATLAS experiment",OPS,,,G
 Safety,The control of accidental loss,Adm,,,G
