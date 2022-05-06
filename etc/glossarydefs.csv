@@ -18,6 +18,7 @@ ACGIH,American Conference of Governmental Industrial Hygienists,Gen,,,A
 ACM,Award Cash Management Service ,OPS,,,A
 ACWP,Actual Cost of Work Performed,Gen,,,A
 AD,Associate Director,OPS,,,A
+ADAM,"Asteroid Discovery, Analysis, and Mapping",Sci,,,A
 ADASS,Astronomical Data Analysis Software and Systems,Gen,,,A
 ADC,atmospheric dispersion corrector,TS,Document-11924,,A
 ADC,Analogue-to-Digital Converter,Gen,,,A
@@ -31,6 +32,7 @@ AES,Advanced Encryption Standard,OPS,,,A
 AGN,Active Galactic Nuclei,TS,Document-11927,,A
 AGU,American Geophysical Society,TS,Document-11928,,A
 AI,Artificial Intelligence,Gen,,,A
+AIC,Akaike Information Criterion,Gen,,,A
 AIP,American Institute of Physics,Gen,,,A
 AISES,American Indian Science and Engineering Society,DEI,,,A
 AIT,Assembly Integration and Test,Gen,,,A
@@ -142,6 +144,7 @@ CFHT-LS,A 5-passband legacy imaging survey conducted at the Canada-France-Hawaii
 CFO,Chief Financial Officer,OPS,,,A
 CFHTLS,Canada-France-Hawaii Telescope Legacy Survey,TS,Document-11959,,A
 CFR,Code of Federal Regulations,OPS,,,A
+CHIME,Canadian Hydrogen Intensity Mapping Experiment,Sci,,,A
 CI,Continuous Integration,DM,,,A
 CI,Cyber Infrastructure,Sci,,,A
 CIGALE,Code Investigating GALaxy Emission,Sci,https://cigale.lam.fr/,,A
@@ -161,6 +164,7 @@ CO,Carbon Monoxide,Sci,,,A
 ComCam,"The commissioning camera is a single-raft, 9-CCD camera that will be installed in LSST during commissioning, before the final camera is ready.",Gen,,,A
 COMPASS,Catalogues of Objects and Measured Parameters from All Sky Surveys,Gen,,,A
 CORBA,Common Object Request Broker Architecture,Gen,,,A
+CoRoT,Convection, Rotation et Transits plani\'{e}taires,Gen,,,A
 COS,Center Operations Services,OPS,,,A
 COTS,Commercial-Off-The-Shelf,Gen,,,A
 COVID,COrona VIrus Disease,Gen,,,A
@@ -176,6 +180,7 @@ CR,Cosmic Ray,Gen,,,A
 CRB,cluster reference boards,TS,Document-11956,,A
 CRIC,Computing Resource Information Catalogue,DM,,,A
 CRIO,CompactRIO National Instruments,TSSW,,,A
+CRTS,Catalina Real-Time Transient Survey,Sci,,,A
 CRTS3,Catalina Real-Time Transient Survey,TS,Document-12006,,A
 CS,citizen science,TS,Document-11955,,A
 CSA,Cooperative Support Agreement,Gen,,,A
@@ -288,6 +293,7 @@ EE,engineering estimate,TS,Document-12024,,A
 EEPROM,Electrically Erasable Programmable Read-Only Memory,Gen,,,A
 EFD,Engineering and Facility Database,LSST DM,,,A
 EIE,European Industrial Engineering - Italian engineering company (Dome),LSST DM,,,A
+ELM,Extremely Low Mass(Survey),Sci,,,A
 EM,Electro Magnetic,Sci,,,A
 EO,Electro Optical,CAM,,,A
 EOS,Engineering Operations Services,OPS,,,A
@@ -837,6 +843,7 @@ SKF,Svenska Kullagerfabriken,PMO,,,A
 SKU,Stock Keeping Unit (Google),OPS,,,A
 SLA,Service Level Agreement,Gen,,,A
 SLAC,SLAC National Accelerator Laboratory,LSST DM,,,A
+SLSN,super luminous supernova(e),Sci,,,A
 SMARTS,Small and Moderate Aperture Research Telescope System,OPS,,,A
 SMBH,Supermassive Black Hole,Sci,,,A
 SMC,Small Magellanic Cloud,Sci,,,A
@@ -937,6 +944,7 @@ TVSS,transient voltage surge suppressor,TS,Document-12034,,A
 UA,University of Arizona,TS,Document-11946,,A
 UAP,Unidentified Aerial Phenomena,Sci,,,A
 UCL,University College London (UK),Gen,,,A
+UDF,User Defined Function,Sci,,,A
 UDP,User Datagram Protocol,Gen,,,A
 UHV,Ultra-high vacuum,LSST OPS,,,A
 UI,User Interface,Gen,,,A
@@ -1008,6 +1016,8 @@ WWT,World Wide Telescope,TS,Document-11978,,A
 XHTML,eXtensible HyperText Markup Language,Gen,,,A
 XML,eXtensible Markup Language,Gen,,,A
 XMM,X-ray Multi-mirror Mission (ESA; officially known as XMM-Newton),Gen,,,A
+XMM-Newton, ESA X-ray Multi-mirror Mission,Gen,,,A
+XRISM,X-ray Imaging and Spectroscopy Mission,Sci,,,A
 XSD,XML Schema Definition,Gen,,,A
 XSEDE,Extreme Science and Engineering Discovery Environment,OPS,,,A
 XSL,eXtensible Stylesheet Language,Gen,,,A
@@ -1023,6 +1033,7 @@ afw,LSST's pipeline library code and primitives including images and tables,DM,h
 aggregate metric,"An aggregation of multiple point metrics. For example, the overall photometric repeatability for a particular tract given given the repeatability of multiple individual stars in the tract. See also: “metric”",DM QA,DMTN-085,,G
 aggregation,"The process of reducing multiple input values to a single output, e.g., a metric value, computed from a collection of input values. For example, a sum or average of a metric computed over patches to produce an aggregate metric at tract level. See also: “metric”, “aggregate metric”",DM QA,DMTN-085,,G
 airmass,"The pathlength of light from an astrophysical source through the Earth's atmosphere. It is given approximately by sec z, where z is the angular distance from the zenith (the point directly overhead, where airmass = 1.0) to the source",Sci,,,G
+Akaike Information Criterion,"an estimator of prediction error and thereby relative quality of statistical models for a given set of data",Sci,,,G
 AMPEL,"AMPEL (Broker) is a modular and scalable platform with explicit provenance tracking, suited for systematically processing large — possibly complex and heterogeneous — datasets either in real time or offline.\url{https://ampelproject.github.io/} ",OPS,,,G
 Automatic Learning for the Rapid Classification of Events,"The ALeRCE broker is a Chilean-led broker which is processing the alert stream from the ZTF and a Community Broker for the Vera C. Rubin Observatory and its LSST, as well as other large etendue survey telescopes. \url{http://alerce.science/}",OPS,,,G
 Alert,"A packet of information for each source detected with signal-to-noise ratio > 5 in a difference image by Alert Production, containing measurement and characterization parameters based on the past 12 months of LSST observations plus small cutouts of the single-visit, template, and difference images, distributed via the internet",DM,LSE-163,,G
@@ -1039,6 +1050,7 @@ Arizona-NOIRLab Temporal Analysis and Response to Events System,"ANTARES is a re
 Archiver,The IIP component responsible for transferring raw images and metadata to OODS and DBB in real time,DM,,Catch-up Archiver,G
 Association of Universities for Research in Astronomy," consortium of US institutions and international affiliates that operates world-class astronomical observatories, AURA is the legal entity responsible for managing what it calls independent operating Centers, including LSST, under respective cooperative agreements with the National Science Foundation. AURA assumes fiducial responsibility for the funds provided through those cooperative agreements. AURA also is the legal owner of the AURA Observatory properties in Chile",Adm,,,G
 Association Pipeline,"An application that matches detected Sources or DIASources or generated Objects to an existing catalog of Objects, producing a (possibly many-to-many) set of associations and a list of unassociated inputs. Association Pipelines are used in Alert Production after DIASource generation and in the final stages of Data Release processing to ensure continuity of Object identifiers",DM,LDM-151,,G
+"Asteroid Discovery, Analysis, and Mapping","a cloud-based astrodynamics platform in development by the Asteroid Institute, a program of the B612 Foundation ",Sci,,,G
 astrometry,"In astronomy, the sub-discipline of astrometry concerns precision measurement of positions (at a reference epoch), and real and apparent motions of astrophysical objects. Real motion means 3-D motions of the object with respect to an inertial reference frame; apparent motions are an artifact of the motion of the Earth. Astrometry per se is sometimes confused with the act of determining a World Coordinate System (WCS), which is a functional characterization of the mapping from pixels in an image or spectrum to world coordinate such as (RA, Dec) or wavelength",Sci,,,G
 astronomical object,"A star, galaxy, asteroid, or other physical object of astronomical interest. Beware: in non-LSST usage, these are often known as sources",Sci,,,G
 Attribute,A quantitative performance parameter in the context of the SysML based SysArch model used to generate a requirements document,SE,,,G
@@ -1091,6 +1103,7 @@ Channel,"An amplifier on an LSST camera CCD (see sensor). For LSST there are 16 
 Charge-Coupled Device,"a particular kind of solid-state sensor for detecting optical-band photons. It is composed of a 2-D array of pixels, and one or more read-out amplifiers",CAM Sci,,,G
 Chi-squared Coadd Image,"A Coadd Image that is the weighted sum of multiple input images, where for each input: coadd.image += image.image**2 / image.variance coadd.mask |= image.weightMap += weight For bad pixels, coadd and weightMap are not altered. Note that the inputs must be aligned to a common projection and pixel grid and corrected to the same photometric scale and zero-point",DM,,Coadd Image,G
 Chief Scientist,The principal scientific advisor  to the LSST Director; he or she acts as an interface to the science community in order to ensure that the LSST program is scientifically and technologically well founded and that the specifications are appropriate for achieving the scientific goals of the project,Adm,,,G
+Citizen Science,"he collection and analysis of data relating to the natural world by members of the general public, typically as part of a collaborative project with professional scientists.",Sci,,,G
 cloud,"A visible mass of condensed water vapor floating in the atmosphere, typically high above the ground or in interstellar space acting as the birthplace for stars.  Also a way of computing (on other peoples computers leveraging their services and availability).",DM,,,G
 CmdLineTask,"A special kind of Task that can read its inputs and write its outputs using a Butler, and can run easily from the command-line. CmdLineTask is a specific implementation of the concept of a command-line task. CmdLineTasks are being phased out in favor of PipelineTasks. ",DM,,PipelineTask,G
 Coadd Image,"An image that is the combination of multiple input images. The inputs are aligned to a common projection and pixel grid, corrected to the same photometric scale and zero-point, with bad pixels and artifacts rejected. (Image PSFs may also be matched prior to co-addition.) Coadd Images have had non-astrophysical background removed",DM,,"Co-Add, CoAdd, co-add, coadd",G
@@ -1104,6 +1117,7 @@ configuration,"A task-specific set of configuration parameters, also called a 'c
 Configuration Item,"Any component of the LSST system, such as requirements, specifications, designs, characteristics, and/or documents describing the aforementioned, that has reached a baseline point and is under change control",Adm,,,G
 Constraint,An external limitation imposed on a delivered item under which it must meet its requirements (e.g. the survey performance must be met under the constraint of the historical weather pattern of the chosen site).  A constraint is not a characteristic possessed by the system or subsystem itself,Adm TS CAM DM SE,,,G
 Construction,"The period during which LSST observatory facilities, components, hardware, and software are built, tested, integrated, and commissioned. Construction follows design and development and precedes operations. The LSST construction phase is funded through the NSF MREFC account",Adm,,,G
+Container,"a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries and settings.",DM,,,G
 Contingency,"The project's overall reserves in excess of the documented baselines for budget, schedule, and technical scope. Held in order to accommodate unexpected events or circumstances that represent potential risk to the project",Adm,,,G
 Contingency Management,"The formal process that provides the ability and flexibility to solve unforeseen issues that may impact the project's budget, schedule, and technical performance. The process incorporates activity-based uncertainties and high impact event-based uncertainties",Adm,,,G
 Contract,"A binding legal agreement between parties obligating the one (typically the  'seller') to furnish certain supplies or services and the other (typically, the buyer) to compensate the seller for the supplies or services with some form of consideration, (typically money). The term, 'contract' is used interchangeably with 'sub-award' 'agreement' 'memorandum of understanding and/or agreement' and 'purchase order' Each is a term used to differentiate between a purchase-order-format type document and a complex purchase in a subcontract/sub-award-format type document. These also include awards and notices of awards; job orders or task letters issued under basic ordering agreements; letter contracts; orders, such as purchase orders and subcontracts under which the order becomes effective by written acceptance or performance; and bilateral contract modifications",Adm,,,G
@@ -1199,6 +1213,7 @@ JIRA,issue tracking product (not an acronym but a truncation of Gojira the Japan
 Joint Oversight Group,oversight body comprised of representatives from the NSF and DOE; the JOG meets regularly with LSST senior management to coordinate the Project's activities,Adm,,,G
 jointcal,"The jointcal package optimizes the astrometric and photometric calibrations of a set of astronomical images that cover a sky tract and were obtained as a series of visits, which may be spread out in time. The jointcal algorithms incorporates object matching both between visits and to reference star catalogs, and produces more accurate distortion and throughput models than if the astrometry and photometry were fit independently. Jointcal is a part of the Science Pipelines",DM,"DMTN-036, LDM-151",,G
 Julian Date,"The Julian Date (JD) of any instant is the Julian day number for the preceding noon (UTC), plus the fraction of the day elapsed since that instant. The Julian day number is a running sequence of integral days, starting at noon, since the beginning of the Julian Period; JD 0.0 corresponds to noon on 1 January 4713 BCE. Various Julian Date converters are available on the Web. For example, 18h 00m 00.0s UT on 2014-July-01 (near the start of LSST construction) corresponds to JD 2456840.25",Sci,,,G
+K2, NASA mission that provides precise photometric data from numerous target fields in the ecliptic.,Sci,,,G
 Kubernetes,A system for automating application deployment and management using software containers (e.g. Docker); \url{https://kubernetes.io},DM,,,G
 Lasair,"a broker for astronomers studying transient and variable astrophysical sources. It is being developed as a collaboration between the University of Edinburgh and Queen's University, Belfast to build a broker service for alerts generated by the LSST at the Vera Rubin Observatory. \url{https://lasair.roe.ac.uk/}",OPS,,,G
 Level 1 Data Product,Deprecated term; see Prompt Data Product,DM,LPM-231,Prompt Data Product,G
