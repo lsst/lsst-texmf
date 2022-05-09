@@ -58,6 +58,7 @@ APL,Apache Public License,LSST DM,,,A
 APDB,Alert Production DataBase,DM,,,A
 API,Application Programming Interface,Gen,,,A
 APS,American Physical Society,TS,Document-11933,,A
+ARAS,Astronomical Ring for Access to Spectroscopy,Sci,,,A
 ARC,Advanced Resource Connector,DM,http://www.nordugrid.org/documents/arc6/,,A
 arcmin,arcminute minute of arc (unit of angle),Gen,,,A
 arcsec,arcsecond second of arc (unit of angle),Gen,,,A
@@ -159,6 +160,7 @@ CMMS,Computerized Maintenance Management System,OPS,,,A
 CMOS,complementary metal-oxide semiconductor,TS,Document-11961,,A
 CMS,Compact Muon Solenoid,Sci OPS,,,A
 CNN,Convolutional Neural Network,Sci,,,A
+CNP,Conditional Neural Processes,Sci,,,A
 CNRS,Centre national de la recherche scientifique,Gen,,,A
 CO,Carbon Monoxide,Sci,,,A
 ComCam,"The commissioning camera is a single-raft, 9-CCD camera that will be installed in LSST during commissioning, before the final camera is ready.",Gen,,,A
@@ -287,6 +289,7 @@ EA,enterprise architect,TS,Document-12035,,A
 EAC,Estimate At Completion,LSST DM,,,A
 EAS,Environmental Awareness System,TS,,,A
 EB,ExaByte,Gen,,,A
+EC2,Amazon Elastic Compute Cloud,DM,,,A
 EDC,EPO Data Center,OPS EPO,,,A
 EDR,early data release,TS,Document-11972,,A
 EE,engineering estimate,TS,Document-12024,,A
@@ -388,6 +391,7 @@ GFLOP,Giga FLOP,Gen,,,A
 GFLOPS,Giga FLOP per Second,Gen,,,A
 GID,Group Identifier,IT,,,A
 GIS,Global Interlock System,,,,A
+GLADE,Galaxy List for the Advanced Detector Era,Sci,https://arxiv.org/abs/1804.05709,,A
 GLAST,Gamma-Ray Large Area Space Telescope,TS,Document-11965,,A
 GLONASS,GLObal NAvigation Satellite System,Gen,,,A
 GMT,Giant Magellan Telescope,OPS,,,A
@@ -636,6 +640,7 @@ NERSC,National Energy Research Scientific Computing Center,OPS,,,A
 NET,Network Engineering Team,LSST DM,,,A
 NFPA,National Fire Protection Association,OPS,,,A
 NFS,Network File System,Gen,,,A
+NGC,New General Catalogue,Sci,,,A
 NGSS,Next-Generation Science Standards,OPS,,,A
 NGVLA,Next Generation Very Large Array,OPS,,,A
 NIR,Near Infrared,Sci,,,A
@@ -807,6 +812,7 @@ S3,(Amazon) Simple Storage Service ,IT,,,A
 SAACC,South American Astronomy Coordination Committee,LSST ,https://www.amlight.net/?page_id=24,,A
 SaaS,Software as a Service,Gen,,,A
 SAC,Science Advisory Committee,LSST Adm,,,A
+SACC,Save All Correlations and Covariances,Sci,DESC https://github.com/LSSTDESC/sacc,,A
 SACNAS,Society for Advancement of Chicanos/Hispanics and Native Americans in Science,DEI,,,A
 SAGA,Satellites Around Galactic Analogs (Survery),Sci,https://sagasurvey.org,,A
 SAL,Service Abstraction Layer,OPS TSSW,https://ts-sal.lsst.io,,A
@@ -1248,6 +1254,7 @@ monitoring,"In DM QA, this refers to the process of collecting, storing, aggrega
 Moving Object Processing System,Deprecated term; see Solar System Processing,DM,,MOPS,G
 My Database,The notion of having a local storage beside the queriable database to store either temporary tables or uploaded catalogs,DM Gen, ,,G
 National Science Foundation,"primary federal agency supporting research in all fields of fundamental science and engineering; NSF selects and funds projects through competitive, merit-based review",Adm,,,G
+New General Catalogue,"an astronomical catalogue of deep-sky objects compiled by John Louis Emil Dreyer in 1888",Adm,,,G
 NCSA Facility,"The data center at the National Center for Supercomputing Applications (NCSA) in Urbana, Illinois, USA. The NCSA Facility is composed of the NCSA portion of the Prompt Enclave, the Offline Production Enclave hosting all offline Data Release and calibration activities, an Archive Enclave holding data products, and the US Data Access Center",DM,LDM-148,,G
 Nightly Alert Processing,Deprecated term; see 'Alert Production',DM,,Alert Production,G
 Nightly Archive Processing,Deprecated term; see 'Prompt Processing',DM,,Prompt Processing,G
