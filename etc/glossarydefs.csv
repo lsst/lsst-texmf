@@ -746,6 +746,7 @@ PR,Pull Request,Gen,,,A
 PRC,Procurement Charge,OPS DOE,,,A
 PRT,Personal Research Time,OPS,,,A
 PS,Project Scientist,LSST DM,,,A
+PS1,Pan-STARRS 1 survey,LSST DM,,,A
 PSD,power spectral density,TS,Document-11996,,A
 PSE,Project Systems Engineering,PSE,,,A
 PSF,Point Spread Function,Gen,,,A
@@ -853,6 +854,7 @@ SLSN,super luminous supernova(e),Sci,,,A
 SMARTS,Small and Moderate Aperture Research Telescope System,OPS,,,A
 SMBH,Supermassive Black Hole,Sci,,,A
 SMC,Small Magellanic Cloud,Sci,,,A
+SMF,Stellar Mass Function,Sci,,,A
 SN,SuperNovae,Sci,,,A
 SNANA,SuperNova ANAlysis (\url{https://snana.uchicago.edu/}),Sci,,,A
 SNAPS,Solar System Notification Alert Processing System,OPS,,,A
