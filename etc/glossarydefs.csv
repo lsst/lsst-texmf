@@ -58,6 +58,7 @@ APL,Apache Public License,LSST DM,,,A
 APDB,Alert Production DataBase,DM,,,A
 API,Application Programming Interface,Gen,,,A
 APS,American Physical Society,TS,Document-11933,,A
+ARAS,Astronomical Ring for Access to Spectroscopy,Sci,,,A
 ARC,Advanced Resource Connector,DM,http://www.nordugrid.org/documents/arc6/,,A
 arcmin,arcminute minute of arc (unit of angle),Gen,,,A
 arcsec,arcsecond second of arc (unit of angle),Gen,,,A
@@ -81,6 +82,7 @@ Avro,is a row-oriented remote procedure call and data serialization framework de
 AVS,Alert Vetting System,OPS,,,A
 AWIS,Association for Women in Science,DEI,,,A
 AWS,Amazon Web Services,Gen,,,A
+AXS,Astronomy eXtensions for Spark,Sci,,,A
 B,Byte (8 bit),Gen,,,A
 b,bit,Gen,,,A
 BAC,Budget At Complete,Gen,,,A
@@ -93,9 +95,12 @@ BDC, Base Data Center, DM IT,,,A
 BEE,back-end electronics,TS,Document-11970,,A
 BGP, Border Gateway Protocol,IT,,,A
 BH,Black Hole,Sci,,,A
+BHB,Black Hole Binary,Sci,,,A
+BHNS,Black hole-neutron star,Sci,,,A
 BJD,barycentric corrected Julian date,TS,Document-11981,,A
 BNF,Backus-Naur Form,Gen,,,A
 BNL,Brookhaven National Laboratory,Gen,,,A
+BNS,Binary Neutron Star,Sci,,,A
 BOE,Basis of Estimate,Gen,,,A
 BOF,Birds of a Feather (Sessions at ADASS),Gen,,,A
 BOT,Bench for Optical Testing,CAM,,,A
@@ -159,6 +164,7 @@ CMMS,Computerized Maintenance Management System,OPS,,,A
 CMOS,complementary metal-oxide semiconductor,TS,Document-11961,,A
 CMS,Compact Muon Solenoid,Sci OPS,,,A
 CNN,Convolutional Neural Network,Sci,,,A
+CNP,Conditional Neural Processes,Sci,,,A
 CNRS,Centre national de la recherche scientifique,Gen,,,A
 CO,Carbon Monoxide,Sci,,,A
 ComCam,"The commissioning camera is a single-raft, 9-CCD camera that will be installed in LSST during commissioning, before the final camera is ready.",Gen,,,A
@@ -219,9 +225,13 @@ DDP,Derived Data Products (e.g. Rubin/Euclid),OPS,,,A
 DDS,Data Distribution System,TSSW,,,A
 DE,dark energy,TS,Document-12028,,A
 DEC,Declination,Gen,,,A
-DECam,Dark Energy Camera,OPS,,,A
+DECam,Dark Energy Camera,Sci,,,A
+DECAT,DECam Alliance for Transients,Sci,,,A
+DEEP,Deep Extragalactic Evolutionary Probe,Sci,,,A
 deg,degree; unit of angle,Gen,,,A
+DHO,Damped Harmonic Oscillator,Sci,,,A
 DEI,"Diversity, Equity, and Inclusion",DEI,,,A
+DELVE,DECam Local Volume Exploration Survey,Sci,,,A
 DES,Dark Energy Survey,LSST DM OPS,,,A
 DESC,Dark Energy Science Collaboration,LSST DM OPS,,,A
 DESI,Dark Energy Spectroscopic Instrument,LSST DM OPS,,,A
@@ -250,6 +260,7 @@ DMSS,DM Subsystem Scientist,LSST DM,,,A
 DMSST,DM System Science Team,LSST DM,,DM-SST,A
 DMTN,DM Technical Note,LSST DM,,,A
 DMTR,DM Test Report,LSST DM,,,A
+DNN,Deep Neural Network,Sci,,,A
 DNS,Domain Name Service,OPS ,,,A
 DOE,Department of Energy,Gen,,,A
 DoF,Degree(s) of Freedom (also known as DOF),Gen,,,A
@@ -278,6 +289,7 @@ DR10,Data Release 10,OPS,,,A
 DR11,Data Release 11,OPS,,,A
 DRB,Data Release Board,OPS,,,A
 DRP,Data Release Production,LSST DM,,,A
+DRW,Damped Random Walk,Sci,,,A
 DS9,Deep Space 9 (specific astronomical data visualisation application; SAOImage),Gen,,,A
 DTN,Data Transfer Node,LSST DM,,,A
 DUNE,Deep Underground Neutrino Experiment,Sci,,,A
@@ -287,13 +299,16 @@ EA,enterprise architect,TS,Document-12035,,A
 EAC,Estimate At Completion,LSST DM,,,A
 EAS,Environmental Awareness System,TS,,,A
 EB,ExaByte,Gen,,,A
+EC2,Amazon Elastic Compute Cloud,DM,,,A
 EDC,EPO Data Center,OPS EPO,,,A
 EDR,early data release,TS,Document-11972,,A
 EE,engineering estimate,TS,Document-12024,,A
 EEPROM,Electrically Erasable Programmable Read-Only Memory,Gen,,,A
 EFD,Engineering and Facility Database,LSST DM,,,A
 EIE,European Industrial Engineering - Italian engineering company (Dome),LSST DM,,,A
+ELG,Emission-Line Galaxies,Sci,,,A
 ELM,Extremely Low Mass(Survey),Sci,,,A
+ELT,Extremely Large Telescope,Sci,,,A
 EM,Electro Magnetic,Sci,,,A
 EO,Electro Optical,CAM,,,A
 EOS,Engineering Operations Services,OPS,,,A
@@ -388,11 +403,13 @@ GFLOP,Giga FLOP,Gen,,,A
 GFLOPS,Giga FLOP per Second,Gen,,,A
 GID,Group Identifier,IT,,,A
 GIS,Global Interlock System,,,,A
+GLADE,Galaxy List for the Advanced Detector Era,Sci,https://arxiv.org/abs/1804.05709,,A
 GLAST,Gamma-Ray Large Area Space Telescope,TS,Document-11965,,A
 GLONASS,GLObal NAvigation Satellite System,Gen,,,A
 GMT,Giant Magellan Telescope,OPS,,,A
 GMU,George Mason University,TS,Document-11944,,A
 GNU,GNU's Not Unix! An operating system and an extensive collection of free computer software,OPS DM,,,A
+GP,Gaussian Process,Sci,,,A
 GPFS,General Parallel File System (now IBM Spectrum Scale),Gen,,,A
 GPL,GNU Public License,Gen,,,A
 GPS,Global Positioning System,Gen,,,A
@@ -416,6 +433,7 @@ HEPAP,HEP Advisory Panel,TS,Document-11986,,A
 HERMES,a high-resolution fibre-fed spectrograph for the 1.2m Mercator telescope,Sci,,,A
 HI,Hydrogen iodide,Sci,,,A
 HIPS,Hierarchical Progressive Survey,Gen,,,A
+HITS,High Cadence Transient Survey,Sci,https://iopscience.iop.org/article/10.3847/0004-637X/832/2/155,,A
 HPC,High Performance Computing,DM,,,A
 HPO,Head of Program Operations ,OPS,,,A
 HQ,Head Quarters,OPS,,,A
@@ -517,6 +535,7 @@ LaTeX,(Leslie) Lamport TeX (document markup language and document preparation sy
 LATISS,LSST Atmospheric Transmission Imager and Slitless Spectrograph,TS, ,,A
 LBT,Large Binocular Telescope,TS,Document-11954,,A
 LBTO,Large Binocular Telescope Observatory,OPS,,,A
+LBV,Luminous Blue Variables,Sci,,,A
 LCA,Document handle LSST camera subsystem controlled documents,CAM,,,A
 LCLS,Linac Coherent Light Source,Gen,,,A
 LCO,Las Cumbres Observatories,Gen,,,A
@@ -546,6 +565,7 @@ LOVE,LSST Operations Visualization Environment,LSST DM,,,A
 LOY,LSST Operations Year,OPS,,,A
 LPGL,Lesser Public GNU general License,Gen,,,A
 LPM,LSST Project Management (Document Handle),LSST DM,,,A
+LRG,Luminous Red Galaxies,Sci,,,A
 LSB,Low Surface Brightness,Sci,,,A
 LSE,LSST Systems Engineering (Document Handle),LSST DM,,,A
 LSP,LSST Science Platform (now Rubin Science Platform),LSST DM,,,A
@@ -636,6 +656,7 @@ NERSC,National Energy Research Scientific Computing Center,OPS,,,A
 NET,Network Engineering Team,LSST DM,,,A
 NFPA,National Fire Protection Association,OPS,,,A
 NFS,Network File System,Gen,,,A
+NGC,New General Catalogue,Sci,,,A
 NGSS,Next-Generation Science Standards,OPS,,,A
 NGVLA,Next Generation Very Large Array,OPS,,,A
 NIR,Near Infrared,Sci,,,A
@@ -707,13 +728,14 @@ PCB,printed circuit boards,TS,Document-12030,,A
 PCI,Peripheral Component Interconnect,Gen,,,A
 PCW,Project Community Workshop,LSST DM,,,A
 PD,Program Development,OPS,,,A
-PDM,Phase Dispersion Minimization,OPS,,,A
 PDAC,Prototype Data Access Center,LSST DM,,,A
 PDF,Portable Document Format,Gen,,,A
 PDF,Probability Density Function,Sci,,,A
 PDR,Preliminary Design Review,LSST DM,,,A
 PDR1,Public Data Release 1 (HSC),OPS,,,A
 PDR2,Public Data Release 2 (HSC),OPS,,,A
+PDM,Phase Dispersion Minimization,OPS,,,A
+PDS,Planetary Data System,Sci,,,A
 PDU,Power Distribution Unit,LSST DM,,,A
 PEP,Project Execution Plan,Adm,,,A
 PFS,Prime Focus Spectrograph,Gen,,,A
@@ -721,6 +743,7 @@ PHA,potentially hazardous asteroids,TS,Document-11971,,A
 photo-z,"photometric redshift",Sci,,,A
 PI,Principle Investigator,Sci OPS,,,A
 PII,personally identifiable information,TS,Document-11976,,A
+PLATO,PLAnetary Transits and Oscillations of stars,Sci,,,A
 PLL,Phase-Locked Loop,Gen,,,A
 PM,Project Manager,LSST DM,,,A
 PMCS,Project Management Controls System,LSST DM,,,A
@@ -741,6 +764,8 @@ PR,Pull Request,Gen,,,A
 PRC,Procurement Charge,OPS DOE,,,A
 PRT,Personal Research Time,OPS,,,A
 PS,Project Scientist,LSST DM,,,A
+PS1,Pan-STARRS 1 survey,LSST DM,,,A
+PS1-MDS,PS1 Medium Deep Survey,Sci,,,A
 PSD,power spectral density,TS,Document-11996,,A
 PSE,Project Systems Engineering,PSE,,,A
 PSF,Point Spread Function,Gen,,,A
@@ -782,6 +807,8 @@ RFQ,Request For Quotations,LSST OPS,,,A
 RGB,Red Giant Branch,Sci,,,A
 RM,Release Manager,LSST DM,,,A
 RMS,Root-Mean-Square,Gen,,,A
+RNADE,Real-valued Neural Autoregressive Distribution Estimation,Sci,,,A
+RNN,Recurrent Neural Network,Sci,,,A
 RNP,Rede Nacional de Ensino e Pesquisa (National Education and Research Network Brazil),IT,,,A
 ROE,Royal Observatory Edinburgh,OPS,,,A
 ROO,Rubin Observatory Operations,OPS,,,A
@@ -807,6 +834,7 @@ S3,(Amazon) Simple Storage Service ,IT,,,A
 SAACC,South American Astronomy Coordination Committee,LSST ,https://www.amlight.net/?page_id=24,,A
 SaaS,Software as a Service,Gen,,,A
 SAC,Science Advisory Committee,LSST Adm,,,A
+SACC,Save All Correlations and Covariances,Sci,DESC https://github.com/LSSTDESC/sacc,,A
 SACNAS,Society for Advancement of Chicanos/Hispanics and Native Americans in Science,DEI,,,A
 SAGA,Satellites Around Galactic Analogs (Survery),Sci,https://sagasurvey.org,,A
 SAL,Service Abstraction Layer,OPS TSSW,https://ts-sal.lsst.io,,A
@@ -847,6 +875,7 @@ SLSN,super luminous supernova(e),Sci,,,A
 SMARTS,Small and Moderate Aperture Research Telescope System,OPS,,,A
 SMBH,Supermassive Black Hole,Sci,,,A
 SMC,Small Magellanic Cloud,Sci,,,A
+SMF,Stellar Mass Function,Sci,,,A
 SN,SuperNovae,Sci,,,A
 SNANA,SuperNova ANAlysis (\url{https://snana.uchicago.edu/}),Sci,,,A
 SNAPS,Solar System Notification Alert Processing System,OPS,,,A
@@ -886,6 +915,7 @@ SSID,Service Set Identifier,IT,,,A
 SSL,Secure Sockets Layer,IT,,,A
 SSM,Subsystem Manager,Adm,,,A
 SSO,Solar System Object,DM,,,A
+SSOIS,Solar System Object Image Search,Sci,,,A
 SSP,Solar System Processing,LSST DM,,,A
 SST,Simonyi Survey Telescope,Gen,,,A
 SST,Subsystem Science Team,LSST DM,,,A
@@ -897,6 +927,7 @@ SU,Stanford University,OPS,,,A
 SUI,Science User Interface (original name for the LSP Portal and API Aspects),LSST DM,,,A
 SUIT,"Science User Interface and Tools (LSST Data Management WBS element and team, responsible for LSP Portal Aspect)",LSST DM,,,A
 SV,Science Validation,LSST DM,,,A
+SVOM,Space Variable Objects Monitor,Sci,,,A
 SW,Software (also denoted S/W),Gen,,,A
 SWE,Society of Women Engineers,DEI,,,A
 T/CAM,Technical/Control (or Cost) Account Manager,LSST DM,,,A
@@ -956,6 +987,7 @@ UK,United Kingdom,Gen OPS,,,A
 UKDF,United Kingdom Data Facility,OPS,,,A
 UKIDSS,UKIRT Infrared Deep Sky Survey,Gen,,,A
 UKIRT,United Kingdom Infrared Telescope,Gen,,,A
+UMAP,Uniform Manifold Approximation and Projection for dimension reduction,Sci,https://arxiv.org/abs/1802.03426,,A
 UML,unified modeling language,TS,Document-12027,,A
 UNIONS,Ultraviolet Near- Infrared Optical Northern Survey,Sci,,,A
 UNSO,United States Naval Observatory,TS,Document-11938,,A
@@ -989,6 +1021,7 @@ VO,Virtual Observatory,Gen,,,A
 VOIP,Voice Over Internet Protocol,IT DM,,,A
 VOMS,VO Management Service,DM,,,A
 VPC, Virtual Private Cloud,IT,,,A
+VPHAS,VST/OmegaCAM Photometric H-Alpha Survey,SCI,,,A
 VPN,virtual private network,TS,Document-11966,,A
 VQ,vendor quote,TS,Document-12014,,A
 VRO,(not to be used)Vera C. Rubin Observatory,Gen,,,A
@@ -1248,6 +1281,7 @@ monitoring,"In DM QA, this refers to the process of collecting, storing, aggrega
 Moving Object Processing System,Deprecated term; see Solar System Processing,DM,,MOPS,G
 My Database,The notion of having a local storage beside the queriable database to store either temporary tables or uploaded catalogs,DM Gen, ,,G
 National Science Foundation,"primary federal agency supporting research in all fields of fundamental science and engineering; NSF selects and funds projects through competitive, merit-based review",Adm,,,G
+New General Catalogue,"an astronomical catalogue of deep-sky objects compiled by John Louis Emil Dreyer in 1888",Adm,,,G
 NCSA Facility,"The data center at the National Center for Supercomputing Applications (NCSA) in Urbana, Illinois, USA. The NCSA Facility is composed of the NCSA portion of the Prompt Enclave, the Offline Production Enclave hosting all offline Data Release and calibration activities, an Archive Enclave holding data products, and the US Data Access Center",DM,LDM-148,,G
 Nightly Alert Processing,Deprecated term; see 'Alert Production',DM,,Alert Production,G
 Nightly Archive Processing,Deprecated term; see 'Prompt Processing',DM,,Prompt Processing,G
@@ -1266,6 +1300,7 @@ Overscan,"Refers to the portion of the channel read-out of either a) non photo-a
 parquet,see Apache Parquet,Sci,,,G
 passband,"The window of wavelength or the energy range admitted by an optical system; specifically the transmission as a function of wavelength or energy. Typically the passband is limited by a filter. The width of the passband may be characterized in a variety of ways, including the width of the half-power points of the transmission curve, or by the equivalent width of a filter with 100\% transmission within the passband, and zero elsewhere",Sci,,,G
 patch,"An quadrilateral sub-region of a sky tract, with a size in pixels chosen to fit easily into memory on desktop computers",DM,LDM-151,sky patch,G
+PLAnetary Transits and Oscillations of stars, the third medium-class mission in ESA's Cosmic Vision programme,Sci,,,G
 PhoSim,The Photon Simulator (PhoSim) simulate realistic astronomical images by tracing photons through the atmosphere and a telescope and camera into pixels.,Sci,,,G
 photometric redshift,"Often abbreviated to photo-z, this is an estimate of the true redshift (of a galaxy) determined from multi-band photometry. Generally determined from a fit of source colors to grid of model SEDs with redshift",Sci,,,G
 pipeline,A configured sequence of software tasks (Stages) to process data and generate data products. Example: Association Pipeline,DM,,,G
