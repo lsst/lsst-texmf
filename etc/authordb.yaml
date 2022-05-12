@@ -36,6 +36,7 @@ affiliations:
     Ellis Avenue, Chicago, IL 60637, USA
   Clermont-LPC: Universit\'e Clermont Auvergne, CNRS, Laboratoire de Physique de Clermont,
     F-63000 Clermont-Ferrand, France
+  DARK: DARK, Niels Bohr Institute, University of Copenhagen, Denmark
   DGPS: Division of Geological and Planetary Sciences, California Institute of Technology,
     Pasadena, CA 91125, USA
   DIRAC: Institute for Data-intensive Research in Astrophysics and Cosmology, University of Washington, Seattle, WA
@@ -1153,6 +1154,13 @@ authors:
     initials: Nico
     name: Garavito Camargo
     orcid:
+  gallc:
+    affil:
+    - DARK
+    altaffil: [DARK, Niels Bohr Institute, University of Copenhagen, Jagtvej 128, 2200 Copenhagen, Denmark]
+    initials: Christa
+    name: Gall
+    orcid: 0000-0002-8526-3963
   ganglere:
     affil:
     - Clermont-LPC
