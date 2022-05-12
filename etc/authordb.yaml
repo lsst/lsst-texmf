@@ -1157,7 +1157,7 @@ authors:
   gallc:
     affil:
     - DARK
-    altaffil: [DARK, Niels Bohr Institute, University of Copenhagen, Jagtvej 128, 2200 Copenhagen, Denmark]
+    altaffil:
     initials: Christa
     name: Gall
     orcid: 0000-0002-8526-3963
