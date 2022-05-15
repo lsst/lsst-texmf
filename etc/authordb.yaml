@@ -112,7 +112,7 @@ affiliations:
     USA
   NYU: New York University, New York,
   NYU-CCPP: Center for Cosmology \& Particle Physics, New York University,
-    726 Broadway, New York, 10012, USA
+    726 Broadway, New York, 10003, USA
   NYU-CUSP: Center for Urban Science \& Progress, New York University, Brooklyn, NY
     11021, USA
   OKC: Oskar Klein Centre, Department of Physics, Stockholm University, SE 106 91
@@ -928,6 +928,14 @@ authors:
     initials: Greg
     name: Daues
     orcid: null
+  davenportj:
+    affil:
+    - Washington
+    - DIRAC
+    altaffil: []
+    initials: James R. A.
+    name: Davenport
+    orcid: 0000-0002-0637-835X
   dawsonw:
     affil:
     - LLNL
@@ -2835,11 +2843,11 @@ authors:
     orcid: null
   storeyfisherk:
     affil:
-    - NYU
+    - NYU-CCPP
     altaffil: []
     initials: Kate
     name: Storey-Fisher
-    orcid: null
+    orcid: 0000-0001-8764-7103
   stovere:
     affil:
     - RubinObs
