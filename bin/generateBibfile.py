@@ -32,7 +32,7 @@ def write_latex_bibentry(auth, title, year, month, handle, url, fd=sys.stdout):
 
     print("@DocuShare{{{},".format(handle), file=fd)
     print("   author = {{{}}},".format(auth), file=fd)
-    print("    title = {{{}}},".format(title), file=fd)
+    print('    title = "{{{}}}",'.format(title), file=fd)
     print("     year = {},".format(year), file=fd)
     print("    month = {},".format(month), file=fd)
     print("   handle = {{{}}},".format(handle), file=fd)
