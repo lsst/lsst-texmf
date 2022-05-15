@@ -1064,6 +1064,7 @@ ZD,zenith distance,TS,Document-12031,,A
 ZTF,Zwicky Transient Facility,Gen,,,A
 Accident,"An undesired event that results in harm to people, damage to property, or loss to process.  Accidents result from contact with a substance or source of energy above the threshold limit of the body structure",Adm,,,G
 Accruals,"Accounts on a balance sheet that represent liabilities and non-cash-based assets used in accrual-based accounting; these accounts include, among many others, accounts payable, accounts receivable, goodwill, future tax liability, and future interest expense",Adm,,,G
+active asteroid,"small Solar System bodies that have asteroid-like orbits but show comet-like visual characteristics",Sci,,,G
 adaptive moments,"The second moments of the source intensity distribution, which are used for measuring source shapes. This approach is close to optimal for measuring the shapes of faint galaxies",Sci,,,G
 afw,LSST's pipeline library code and primitives including images and tables,DM,https://github.com/lsst/afw,,G
 aggregate metric,"An aggregation of multiple point metrics. For example, the overall photometric repeatability for a particular tract given given the repeatability of multiple individual stars in the tract. See also: “metric”",DM QA,DMTN-085,,G
