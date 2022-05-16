@@ -42,6 +42,7 @@ affiliations:
   DIRAC: Institute for Data-intensive Research in Astrophysics and Cosmology, University of Washington, Seattle, WA
   Drexel: Drexel University, 3141 Chestnut St, Philadelphia, PA 19104
   Duke: Department of Physics, Duke University, Durham, NC 27708, USA
+  Edinburgh: University of Edinburgh, Old College, South Bridge, Edinburgh EH8 9YL
   EPFL: Institute of Physics, Laboratory of Astrophysics, \'{E}cole Polytechnique
     Fed\`{e}rale de Lausanne (EPFL), Observatoire de Sauverny, 1290 Versoix, Switzerland
   FacebookNE: Facebook,  14734 Friend Plaza, Springfield, NE 68059, USA
@@ -88,7 +89,7 @@ affiliations:
   LLNL: Lawrence Livermore National Laboratory, 7000 East Avenue, Livermore, CA 94550,
     USA
   LOC: Library of Congress, 101 Independence Ave.\ SE, Washington, DC 20540, USA
-  PSI: Planetary Science Institute, 1700 East Fort Lowell, Suite 106 * Tucson, AZ 85719-2395
+  PSI: Planetary Science Institute, 1700 East Fort Lowell Road, Suite 106, Tucson, AZ 85719, USA
   RubinObs: Rubin Observatory Project Office, 950 N.\ Cherry Ave., Tucson, AZ  85719, USA
   RubinObsC: Vera C. Rubin Observatory, Casilla 603 Colina El Pino, La Serena, Chile
   LUPM: Laboratoire Univers et Particules de Montpellier (LUPM), Universit\'{e} de
@@ -103,7 +104,7 @@ affiliations:
   Maryland: University of Maryland, College Park, MD 20742
   NAOChina: National Astronomical Observatories, Chinese Academy of Sciences, A20
     Datun Rd, Chaoyang District, Beijing 100012, People's Republic of China
-  NAU: Department of Physics and Astronomy, Northern Arizona University, P.O.\ Box
+  NAU: Department of Astronomy and Planetary Science, Northern Arizona University, P.O.\ Box
     6010, Flagstaff, AZ 86011, USA
   NCNRP: National Centre of Nuclear Research, Andrzeja So\l{}tana 7, 05-400 Otwock, Poland
   NCSA: NCSA, University of Illinois at Urbana-Champaign, 1205 W.\ Clark St., Urbana,
@@ -704,6 +705,13 @@ authors:
     initials: Erin L.
     name: Carlson
     orcid: null
+  chandlerc:
+    affil:
+    - NAU
+    altaffil: []
+    initials: Colin Orion
+    name: Chandler
+    orcid: 0000-0001-7335-1715
   chanj:
     affil:
     - CUNY
@@ -1428,7 +1436,7 @@ authors:
     altaffil: []
     initials: Henry
     name: Hsieh
-    orcid: null
+    orcid: 0000-0001-7225-9271
   huangd:
     affil:
     - BNL
@@ -2207,13 +2215,6 @@ authors:
     name: O'Mullane
     orcid: 0000-0003-4141-6195
     email: womullan@lsst.org
-  orionc:
-    affil:
-    - NAU
-    altaffil: []
-    initials: Colin
-    name: Orion Chandler
-    orcid: null
   ortizs:
     affil:
     - RubinObs
@@ -2564,6 +2565,13 @@ authors:
     initials: Cecille
     name: Roucelle
     orcid: null
+  rozeka:
+    affil:
+    - Edinburgh
+    altaffil: []
+    initials: Agata
+    name: Ro\.{z}ek
+    orcid: 0000-0003-2341-2238
   rumoremr:
     affil:
     - BNL
