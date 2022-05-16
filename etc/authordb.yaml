@@ -89,7 +89,7 @@ affiliations:
   LLNL: Lawrence Livermore National Laboratory, 7000 East Avenue, Livermore, CA 94550,
     USA
   LOC: Library of Congress, 101 Independence Ave.\ SE, Washington, DC 20540, USA
-  PSI: Planetary Science Institute, 1700 East Fort Lowell, Suite 106 * Tucson, AZ 85719-2395
+  PSI: Planetary Science Institute, 1700 East Fort Lowell Road, Suite 106, Tucson, AZ 85719, USA
   RubinObs: Rubin Observatory Project Office, 950 N.\ Cherry Ave., Tucson, AZ  85719, USA
   RubinObsC: Vera C. Rubin Observatory, Casilla 603 Colina El Pino, La Serena, Chile
   LUPM: Laboratoire Univers et Particules de Montpellier (LUPM), Universit\'{e} de
@@ -1436,7 +1436,7 @@ authors:
     altaffil: []
     initials: Henry
     name: Hsieh
-    orcid: 0000-0001-7225-927
+    orcid: 0000-0001-7225-9271
   huangd:
     affil:
     - BNL
