@@ -464,6 +464,7 @@ IDF,Interim Data Facility,OPS,,,A
 IDL,Interactive Data Language,Gen,,,A
 IIP,image ingest and processing,TS,Document-12029,,A
 ILC,Inner Loop Controller,PSE,,,A
+IMBH,Intermediate Mass Black Hole ,DM,,,A
 IMF,Initial Mass Function,DM,,,A
 IMS,Integrated Master Schedule,PSE,,,A
 ImSim,Image Simulation,Sims,,,A
@@ -825,6 +826,7 @@ RSE,Rucio Storage Element,OPS,,,A
 RSP,Rubin Science Platform,DM,,,A 
 RSS,square root of the sum of the squares,TS,Document-11939,,A
 RSS,Resident Set Size,DM,,,A
+RTA,Real Time Analysis,Sci,,,A
 RTA,responsible technical authority,TS,Document-12013,,A
 RTD,Resistance Temperature Detector,OPS,,,A
 RTI,rise time invariance,TS,Document-12037,,A
