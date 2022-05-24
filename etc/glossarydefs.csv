@@ -420,6 +420,7 @@ GSE,Gaia Sausage-Enceladus,Sci,,,A
 GST,Greenwich Sidereal Time,Gen,,,A
 GUI,Graphical User Interface,Gen,,,A
 GW,Gravitational Wave,Sci OPS,,,A
+GZ,Galaxy Zoo,Sci OPS,,,A
 HB,Horizontal Branch,Sci,,,A
 HBCU,Historically Black Colleges and Universities,DEI,,,A
 HBS,Hydraulic Bearing Support,TS,,,A
@@ -463,6 +464,7 @@ IDF,Interim Data Facility,OPS,,,A
 IDL,Interactive Data Language,Gen,,,A
 IIP,image ingest and processing,TS,Document-12029,,A
 ILC,Inner Loop Controller,PSE,,,A
+IMBH,Intermediate Mass Black Hole ,DM,,,A
 IMF,Initial Mass Function,DM,,,A
 IMS,Integrated Master Schedule,PSE,,,A
 ImSim,Image Simulation,Sims,,,A
@@ -817,13 +819,14 @@ ROP,Rubin Operations Plan,OPS,,,A
 ROSAT,R\"{o}ntgensatellit X-ray telescope,OPS,,,A
 RPF,Rubin system PerFormance,OPS,,,A
 RPM,RPM Package Manager (originally Red Hat Package Manager; now a recursive acronym),IT,,,A
-RRL,RR Lyrae,Sci,,,A
+RRL,RR Lyrae stars,Sci,,,A
 RS232C,Standard 25-pin serial connection between computers and modems,Gen,,,A
 RSA,Raft Sensor Array,CAM,,,A
 RSE,Rucio Storage Element,OPS,,,A
 RSP,Rubin Science Platform,DM,,,A 
 RSS,square root of the sum of the squares,TS,Document-11939,,A
 RSS,Resident Set Size,DM,,,A
+RTA,Real Time Analysis,Sci,,,A
 RTA,responsible technical authority,TS,Document-12013,,A
 RTD,Resistance Temperature Detector,OPS,,,A
 RTI,rise time invariance,TS,Document-12037,,A
@@ -951,7 +954,7 @@ TCT,Technical Control Team (obsolete; now DMCCB),LSST DM,,,A
 TDE,Tidal Disruption Event,Sci,,,A
 TDEs,Tidal Disruption Events,Sci,,,A
 TEA,Top End Assembly,TS,,,A
-TESS,"Transiting Exoplanet Survey Satellite,  a space telescope for NASA's Explorer program",Sci,,,A
+TESS,"Transiting Exoplanet Survey Satellite",Sci,,,A
 TFLOP,Tera FLOP,Gen,,,A
 TGAS,Tycho-Gaia Astrometric Solution,Sci,,,A
 TLD,Top Level Domain,IT,,,A
@@ -979,6 +982,7 @@ UAP,Unidentified Aerial Phenomena,Sci,,,A
 UCL,University College London (UK),Gen,,,A
 UDF,User Defined Function,Sci,,,A
 UDP,User Datagram Protocol,Gen,,,A
+UHECRs,Ultra-High-Energy Cosmic Rays,Sci,,,A
 UHV,Ultra-high vacuum,LSST OPS,,,A
 UI,User Interface,Gen,,,A
 UID,User Identifier,IT,,,A
@@ -1062,8 +1066,8 @@ YAML,Yet Another Markup Language,Gen,,,A
 YSO,Young Stellar Object,SCI,,,A
 ZD,zenith distance,TS,Document-12031,,A
 ZTF,Zwicky Transient Facility,Gen,,,A
-Accident,"An undesired event that results in harm to people, damage to property, or loss to process.  Accidents result from contact with a substance or source of energy above the threshold limit of the body structure",Adm,,,G
-Accruals,"Accounts on a balance sheet that represent liabilities and non-cash-based assets used in accrual-based accounting; these accounts include, among many others, accounts payable, accounts receivable, goodwill, future tax liability, and future interest expense",Adm,,,G
+accident,"An undesired event that results in harm to people, damage to property, or loss to process.  Accidents result from contact with a substance or source of energy above the threshold limit of the body structure",Adm,,,G
+accruals,"Accounts on a balance sheet that represent liabilities and non-cash-based assets used in accrual-based accounting; these accounts include, among many others, accounts payable, accounts receivable, goodwill, future tax liability, and future interest expense",Adm,,,G
 active asteroid,"small Solar System bodies that have asteroid-like orbits but show comet-like visual characteristics",Sci,,,G
 adaptive moments,"The second moments of the source intensity distribution, which are used for measuring source shapes. This approach is close to optimal for measuring the shapes of faint galaxies",Sci,,,G
 afw,LSST's pipeline library code and primitives including images and tables,DM,https://github.com/lsst/afw,,G
@@ -1220,6 +1224,7 @@ footprint,"See 'source footprint', 'instrumental footprint', or 'survey footprin
 forced photometry,"A measurement of the photometric properties of a source, or expected source, with one or more parameters held fixed. Most often this means fixing the location of the center of the brightness profile (which may be known or predicted in advance), and measuring other properties such as total brightness, shape, and orientation. Forced photometry will be done for all Objects in the Data Release Production",DM,"LDM-151, LSE-163",,G
 ForcedSource,DRP table resulting from forced photometry,DM,"LDM-151, LSE-163",,G
 Full-Time Equivalent,"A unit equivalent to one person working full time for one year with normal holidays, vacations, and sick time. No paid overtime is assumed",Adm Gen,,,G
+Gaia,"a space observatory of the European Space Agency, launched in 2013 and expected to operate until 2025. The spacecraft is designed for astrometry: measuring the positions, distances and motions of stars with unprecedented precision",Sci,,,G
 GalSim,"GalSim is open-source software for simulating images of astronomical objects (stars, galaxies) in a variety of ways.",Sci,,,G
 GEANT,pan-European data network for the research and education community,Gen,,,G
 General Parallel File System,The bulk data storage provided through a POSIX filesystem interface at the LSST Data Facility. Refers specifically to IBM’s General Parallel File System; also known as IBM Spectrum Scale,DM QA,DMTN-085,GBFS,G

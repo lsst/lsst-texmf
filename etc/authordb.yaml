@@ -36,6 +36,7 @@ affiliations:
     Ellis Avenue, Chicago, IL 60637, USA
   Clermont-LPC: Universit\'e Clermont Auvergne, CNRS, Laboratoire de Physique de Clermont,
     F-63000 Clermont-Ferrand, France
+  DACC: DACC New Mexico State University, Central Campus, Las Cruces, New Mexico, USA
   DARK: DARK, Niels Bohr Institute, University of Copenhagen, Denmark
   DGPS: Division of Geological and Planetary Sciences, California Institute of Technology,
     Pasadena, CA 91125, USA
@@ -43,6 +44,7 @@ affiliations:
   Drexel: Drexel University, 3141 Chestnut St, Philadelphia, PA 19104
   Duke: Department of Physics, Duke University, Durham, NC 27708, USA
   Edinburgh: University of Edinburgh, Old College, South Bridge, Edinburgh EH8 9YL
+  EdinburghIA: Institute for Astronomy, University of Edinburgh,  Royal Observatory, Blackford Hill, Edinburgh EH9 3HJ, UK
   EPFL: Institute of Physics, Laboratory of Astrophysics, \'{E}cole Polytechnique
     Fed\`{e}rale de Lausanne (EPFL), Observatoire de Sauverny, 1290 Versoix, Switzerland
   FacebookNE: Facebook,  14734 Friend Plaza, Springfield, NE 68059, USA
@@ -2285,6 +2287,13 @@ authors:
     initials: Nathan M.
     name: Pease
     orcid: 0000-0002-9701-5975
+  pedrazaiv:
+    affil:
+    - DACC
+    altaffil: []
+    initials: Ilhuiyolitzin
+    name: Villicana Pedraza
+    orcid: 0000-0002-9632-3132
   petersonjm:
     affil:
     - RubinObs
@@ -2567,7 +2576,7 @@ authors:
     orcid: null
   rozeka:
     affil:
-    - Edinburgh
+    - EdinburghIA
     altaffil: []
     initials: Agata
     name: Ro\.{z}ek
