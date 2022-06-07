@@ -916,6 +916,7 @@ SS,Subsystem Scientist,LSST DM,,,A
 SSC,Survey Strategy Committee,OPS,,,A
 SSD,Solid-State Disk,Gen,,,A
 SSH,Secure SHell,Gen,,,A
+SSI,Synthetic Source Injection,Sci,,,A
 SSID,Service Set Identifier,IT,,,A
 SSL,Secure Sockets Layer,IT,,,A
 SSM,Subsystem Manager,Adm,,,A
@@ -1427,6 +1428,7 @@ Summit,"The site on the Cerro Pach\'{o}n, Chile mountaintop where the LSST obser
 Summit Facility,"The main Observatory and Auxiliary Telescope buildings at the Summit Site on Cerro Pach\'{o}n, Chile",DM,LDM-148,,G
 supertask,Deprecated term; see PipelineTask,DM,,PipelineTask,G
 survey footprint,"The portion of the sky covered by data from an astronomical survey, e.g., the main wide-fast-deep LSST 10-year survey, the LSST deep drilling fields, or the Science Validation data taken during commissioning.  Sometimes represented by Boolean maps or other summary statistics in an all-sky representation, e.g., the IVOA MOC standard",DM,,,G
+Synthetic Source Injection,"injecting fake objects onto images to test the detection and measurement process",Sci DM,,,G
 System Integration and Test,"The first year of the two-year Commissioning phase of the LSST Construction Project, during which the various technical components of the three subsystems will be integrated and compliance with ICDs and system level compliance as detailed in the LSST Observatory System Specifications document (OSS, LSE-30) will be shown. Roughly 4-6 months into the System I&T phase, the telescope and camera will be fully integrated and periodically producing science grade images over the full field of view, at which point 'System First Light' will be declared",TS CAM DM SE,,,G
 Systems Engineer,A member of the Systems Engineering group who works closely with the Systems Engineering Manager and the Systems Scientist on the integrated LSST system's various technical issues spanning the full life cycle of the entire project,Adm,,,G
 Systems Engineering,"an interdisciplinary field of engineering that focuses on how to design and manage complex engineering systems over their life cycles. Issues such as requirements engineering, reliability, logistics, coordination of different teams, testing and evaluation, maintainability and many other disciplines necessary for successful system development, design, implementation, and ultimate decommission become more difficult when dealing with large or complex projects. Systems engineering deals with work-processes, optimization methods, and risk management tools in such projects. It overlaps technical and human-centered disciplines such as industrial engineering, control engineering, software engineering, organizational studies, and project management. Systems engineering ensures that all likely aspects of a project or system are considered, and integrated into a whole",SE,,,G
