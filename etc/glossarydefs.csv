@@ -170,7 +170,7 @@ CO,Carbon Monoxide,Sci,,,A
 ComCam,"The commissioning camera is a single-raft, 9-CCD camera that will be installed in LSST during commissioning, before the final camera is ready.",Gen,,,A
 COMPASS,Catalogues of Objects and Measured Parameters from All Sky Surveys,Gen,,,A
 CORBA,Common Object Request Broker Architecture,Gen,,,A
-CoRoT,"Convection, Rotation et Transits plani\'{e}taires",Gen,,,A
+CoRoT,"Convection, Rotation et Transits plan\'{e}taires",Gen,,,A
 COS,Center Operations Services,OPS,,,A
 COTS,Commercial-Off-The-Shelf,Gen,,,A
 COVID,COrona VIrus Disease,Gen,,,A
@@ -389,6 +389,7 @@ FY25,Financial Year 25,OPS,,,A
 GALAH,GALactic Archaeology with HERMES,DM,,,A
 GALEX,Galaxy Evolution Explorer,OPS,,,A
 GAMA,Galaxy And Mass Assembly (survey),Sci,,,A
+GAR,Google Archive Registry,DM,,,A
 GAVO,German Astronomical Virtual Observatory,Gen,,,A
 GB,Gigabyte,Gen,,,A
 Gb,Gigabit,Gen,,,A
