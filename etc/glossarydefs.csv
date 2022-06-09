@@ -170,7 +170,7 @@ CO,Carbon Monoxide,Sci,,,A
 ComCam,"The commissioning camera is a single-raft, 9-CCD camera that will be installed in LSST during commissioning, before the final camera is ready.",Gen,,,A
 COMPASS,Catalogues of Objects and Measured Parameters from All Sky Surveys,Gen,,,A
 CORBA,Common Object Request Broker Architecture,Gen,,,A
-CoRoT,"Convection, Rotation et Transits plani\'{e}taires",Gen,,,A
+CoRoT,"Convection, Rotation et Transits plan\'{e}taires",Gen,,,A
 COS,Center Operations Services,OPS,,,A
 COTS,Commercial-Off-The-Shelf,Gen,,,A
 COVID,COrona VIrus Disease,Gen,,,A
@@ -389,6 +389,7 @@ FY25,Financial Year 25,OPS,,,A
 GALAH,GALactic Archaeology with HERMES,DM,,,A
 GALEX,Galaxy Evolution Explorer,OPS,,,A
 GAMA,Galaxy And Mass Assembly (survey),Sci,,,A
+GAR,Google Archive Registry,DM,,,A
 GAVO,German Astronomical Virtual Observatory,Gen,,,A
 GB,Gigabyte,Gen,,,A
 Gb,Gigabit,Gen,,,A
@@ -752,6 +753,7 @@ PMCS,Project Management Controls System,LSST DM,,,A
 PMM,precision measuring machine,TS,Document-11988,,A
 PMO,Project Management Office,Adm,,,A
 PMP,(DM) Project Management Plan; LDM-294,LSST DM,,,A
+PNG,Portable Network Graphics,DM,,,A
 PO,Program Operations,OPS,,,A
 POC,Proof Of Concept,Gen,,,A
 POC,People Of Color,DEI,,,A
@@ -776,6 +778,7 @@ PSTN,Project Science Technical Note,LSST DM,,,A
 PTF,Palomar Transient Factory,Sci,,,A
 PVI,Processed Visit Image,DM,,,A
 PWI,Predominantly White Institution,DEI,,,A
+PZ,"photo-z",Sci,,,A
 QA,Quality Assurance,Gen,,,A
 QAP,Quality Assurance Plan,TS,Document-11951,,A
 QC,Quality Control,Gen,,,A
@@ -860,6 +863,7 @@ SED,Spectral Energy Distribution,Sci,,,A
 SEM,Systems Engineering Manager,Adm,,,A
 SEMP,Systems Engineering Management Plan,LSST DM,,,A
 SEWG,Survey Evaluation Working Group,OPS,,,A
+SF,Structure Function,Sci,,,A
 SFR,Star Formation Rate,Sci,,,A
 SFR,Supplemental Funding Request,Adm,,,A
 SHA-1,Secure Hash Algorithm 1,Gen,,,A
@@ -914,6 +918,7 @@ SS,Subsystem Scientist,LSST DM,,,A
 SSC,Survey Strategy Committee,OPS,,,A
 SSD,Solid-State Disk,Gen,,,A
 SSH,Secure SHell,Gen,,,A
+SSI,Synthetic Source Injection,Sci,,,A
 SSID,Service Set Identifier,IT,,,A
 SSL,Secure Sockets Layer,IT,,,A
 SSM,Subsystem Manager,Adm,,,A
@@ -1055,7 +1060,7 @@ WSDL,Web Services Description Language,Gen,,,A
 WWT,World Wide Telescope,TS,Document-11978,,A
 XHTML,eXtensible HyperText Markup Language,Gen,,,A
 XML,eXtensible Markup Language,Gen,,,A
-XMM,X-ray Multi-mirror Mission (ESA; officially known as XMM-Newton),Gen,,,A
+XMM,ESA X-ray Multi-mirror Mission,Gen,,,A
 XMM-Newton, ESA X-ray Multi-mirror Mission,Gen,,,A
 XRISM,X-ray Imaging and Spectroscopy Mission,Sci,,,A
 XSD,XML Schema Definition,Gen,,,A
@@ -1415,6 +1420,7 @@ Standard Visit,A single observation of a LSST field comprised of two 15 second '
 Stop Work Authority,"The authority of any individual to stop work if unanticipated/unsafe conditions are identified or non-compliant practices are observed at the site. Workers shall be instructed stop the work immediately and notify their supervisor(s), safety and health representative(s), and the LSST site manager of this action. Disagreements or differences of opinion about the need to terminate an activity shall occur only after the activity is stopped and people are removed from the hazard. All workers at the site have the authority to stop work. Work may not proceed until the circumstances are investigated and deficiencies corrected",Adm,,,G
 story,"A JIRA issue type describing a scheduled, self-contained task worked as part of an epic.  Typically, stories are appropriate for work worth between a fraction of a SP and 10 SP; beyond that, the work is insufficiently fine-grained to schedule as a story.  While fractional SP are fine, all stories involve work, so the SP total of an in progress or completed story should not be 0",DM,,,G
 Stripe 82,"A 2.5° wide equatorial band of sky covering roughly 300 square degrees that was observed repeatedly in 5 passbands during the course of the SDSS, In part for calibration purposes",Sci,,,G
+Structure Function,"measure of variance of observations separated in time",Sci,,,G
 Subcontract,An agreement under which another entity will perform part or all of the project's contract obligations,Adm,,,G
 Subsystem,A set of elements comprising a system within the larger LSST system that is responsible for a key technical deliverable of the project,Adm,,,G
 Subsystem Manager,"responsible manager for an LSST subsystem; he or she exercises authority, within prescribed limits and under scrutiny of the Project Manager, over the relevant subsystem's cost, schedule, and work plans",Adm,,,G
@@ -1424,6 +1430,7 @@ Summit,"The site on the Cerro Pach\'{o}n, Chile mountaintop where the LSST obser
 Summit Facility,"The main Observatory and Auxiliary Telescope buildings at the Summit Site on Cerro Pach\'{o}n, Chile",DM,LDM-148,,G
 supertask,Deprecated term; see PipelineTask,DM,,PipelineTask,G
 survey footprint,"The portion of the sky covered by data from an astronomical survey, e.g., the main wide-fast-deep LSST 10-year survey, the LSST deep drilling fields, or the Science Validation data taken during commissioning.  Sometimes represented by Boolean maps or other summary statistics in an all-sky representation, e.g., the IVOA MOC standard",DM,,,G
+Synthetic Source Injection,"injecting fake objects onto images to test the detection and measurement process",Sci DM,,,G
 System Integration and Test,"The first year of the two-year Commissioning phase of the LSST Construction Project, during which the various technical components of the three subsystems will be integrated and compliance with ICDs and system level compliance as detailed in the LSST Observatory System Specifications document (OSS, LSE-30) will be shown. Roughly 4-6 months into the System I&T phase, the telescope and camera will be fully integrated and periodically producing science grade images over the full field of view, at which point 'System First Light' will be declared",TS CAM DM SE,,,G
 Systems Engineer,A member of the Systems Engineering group who works closely with the Systems Engineering Manager and the Systems Scientist on the integrated LSST system's various technical issues spanning the full life cycle of the entire project,Adm,,,G
 Systems Engineering,"an interdisciplinary field of engineering that focuses on how to design and manage complex engineering systems over their life cycles. Issues such as requirements engineering, reliability, logistics, coordination of different teams, testing and evaluation, maintainability and many other disciplines necessary for successful system development, design, implementation, and ultimate decommission become more difficult when dealing with large or complex projects. Systems engineering deals with work-processes, optimization methods, and risk management tools in such projects. It overlaps technical and human-centered disciplines such as industrial engineering, control engineering, software engineering, organizational studies, and project management. Systems engineering ensures that all likely aspects of a project or system are considered, and integrated into a whole",SE,,,G
