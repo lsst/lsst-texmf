@@ -1637,6 +1637,13 @@ authors:
     initials: Heather
     name: Kelly
     orcid: null
+  kelvinl:
+    affil:
+    - Princeton-Astro
+    altaffil: []
+    initials: Lee S.
+    name: Kelvin
+    orcid: 0000-0001-9395-4759
   kesslerr:
     affil:
     - Chicago
@@ -1962,6 +1969,13 @@ authors:
     initials: Darren S.
     name: Marsh
     orcid: null
+  martinezm:
+    affil:
+    - WisconsinMadison
+    altaffil: []
+    initials: Michael N.
+    name: Martinez
+    orcid: 0000-0002-8397-8412
   maym:
     affil:
     - BNL
