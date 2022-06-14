@@ -3,6 +3,8 @@ affiliations:
   BNL: Brookhaven National Laboratory, Upton, NY 11973, USA
   Belgrade-AO: Astronomical Observatory, Volgina 7, P.O.\ Box 74, 11060 Belgrade,
     Serbia
+  Belgrade-Uni: University of Belgrade-Faculty of Mathematics, Department of astronomy,
+    Studentski trg 16 Belgrade, Serbia
   Belldex: Belldex IT Consulting, Tucson, AZ 85742, USA
   Berkeley-Astro: Astronomy Department,  University of California, 601 Campbell Hall,
     Berkeley, CA 94720, USA
@@ -59,6 +61,7 @@ affiliations:
     4400 University Drive, Fairfax, VA 22030, USA
   GeminiN: Gemini Observatory, Northern Operations Center, 670 North A'ohoku Place,
     Hilo, HI 96720, USA
+  Goddard: Astrophysics Science Division, NASA Goddard Space Flight Center, Mail Code 661, Greenbelt, MD 20771, US
   Google: Google Inc., 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA
   Grenoble-LPSC: Laboratoire de Physique Subatomique et de Cosmologie, Universit\'{e}
     Grenoble-Alpes, CNRS/IN2P3, 53 av.\ des Martyrs, 38026 Grenoble cedex, France
@@ -75,12 +78,14 @@ affiliations:
     Central, E-18012 Granada, Spain
   Illinois: University of Illinois, Physics and Astronomy Departments, 1110 W.\ Green
     St., Urbana, IL  61801, USA
+  Illinois-astro: University of Illinois, Department of Astronomy, 1110 W.\ Green
+    St., Urbana, IL  61801, USA
   INAF: Istituto Nazionale di Astrofisica, Viale del Parco Mellini 84, 00136 Rome, Italy
   JHU: Department of Physics and Astronomy, The John Hopkins University, 3701 San
     Martin Drive, Baltimore, MD 21218, USA
   JPL: Jet Propulsion Laboratory, California Institute of Technology, Pasadena, CA
     91109, USA
-  JSI: Joint Space-Science Institute
+  JSI: Joint Space-Science Institute, University of Maryland, College Park, MD 20742, USA
   KIPAC: Kavli Institute for Particle Astrophysics and Cosmology, SLAC
   KLOA: Key Laboratory of Optical Astronomy, National Astronomical Observatories,
     Chinese Academy of Sciences, 20A Datun Road, Chaoyang District, Beijing 100012,
@@ -104,6 +109,7 @@ affiliations:
   Lyon-LMA-IN2P3: Laboratoire des Materiaux Avances (LMA), CNRS/IN2P3, Universit\'{e}
     de Lyon, F-69622 Villeurbanne, Lyon, France
   Maryland: University of Maryland, College Park, MD 20742
+  Maryland-astro: Department of Astronomy, University of Maryland, College Park, MD 20742, USA
   NAOChina: National Astronomical Observatories, Chinese Academy of Sciences, A20
     Datun Rd, Chaoyang District, Beijing 100012, People's Republic of China
   NAU: Department of Astronomy and Planetary Science, Northern Arizona University, P.O.\ Box
@@ -173,6 +179,7 @@ affiliations:
   UA-CompSci: Department of Computer Science, The University of Arizona, 1040 E.\
     4th St., Tucson, AZ 85719, USA
   UAM: Universidad Aut\'onoma de Madrid, Madrid, Madrid, ES
+  UA-Astro: University of Arizona, Department of Astronomy and Steward Observatory, 933 N Cherry Ave, Tucson, AZ 85721, USA
   UA-Physics: Department of Physics, University of Arizona, 1118 E.\ Fourth Street,
     Tucson, AZ 85721, USA
   UA-Steward: Steward Observatory, The University of Arizona, 933 N.\ Cherry Ave.,
@@ -187,9 +194,14 @@ affiliations:
     of California--Santa Cruz, 1156 High St., Santa Cruz, CA 95064, USA
   UdG: Universidad de Guanajuato, Fraccionamiento 1, Col. El Establo S/N; C.P. 36250; Guanajuato, Gto
   UNAM: Universidad Nacional Aut\'{o}noma de M\'{e}xico
+  UNAM-physics: Departamento de F\'isica, Facultad de Ciencias, Universidad Nacional Aut\'onoma de M\'exico,
+    Ciudad Universitaria, CDMX, 04510, M\'exico
+  UNAM-astro: Instituto de Astronom\'ia sede Ensenada, Universidad Nacional Aut\'onoma de M\'exico, Km 107,
+    Carret. Tij.-Ens., Ensenada, 22060, BC, M\'exico
   UNED: Dpt. of Artificial Intelligence, Universidad Nacional de Educaci\'{o}n a Distancia, Madrid, Madrid, ES
   UPenn: Department of Physics \& Astronomy, University of Pennsylvania, 209 South
     33rd Street, Philadelphia, PA 19104-6396, USA
+  Utah: Department of Physics and Astronomy, University of Utah, Salt Lake City, UT 84112, USA
   USNO: US Naval Observatory Flagstaff Station, 10391 Naval Observatory Road, Flagstaff,
     AZ 86001, USA
   UVa: Department of Astronomy, University of Virginia, Charlottesville, VA 22904,
@@ -284,10 +296,12 @@ authors:
   andreonii:
     affil:
     - JSI
+    - Maryland-astro
+    - Goddard
     altaffil: []
     initials: Igor
     name: Andreoni
-    orcid: null
+    orcid: 0000-0002-8977-1498
   angeligz:
     affil:
     - GMTO
@@ -625,9 +639,9 @@ authors:
     orcid: null
   burkec:
     affil:
-    - Illinois
+    - Illinois-astro
     altaffil: []
-    initials: Colin
+    initials: Colin J.
     name: Burke
     orcid:
   burkedl:
@@ -1436,7 +1450,7 @@ authors:
     affil:
     - PSI
     altaffil: []
-    initials: Henry
+    initials: Henry H.
     name: Hsieh
     orcid: 0000-0001-7225-9271
   huangd:
@@ -1693,6 +1707,13 @@ authors:
     initials: Ivan V.
     name: Kotov
     orcid: null
+  kovacevic:
+    affil:
+    - Belgrade-Uni
+    altaffil: []
+    initials: Andjelka B.
+    name: Kova{\v c}evi{\'c}
+    orcid: 0000-0001-5139-1978
   kowalikm:
     affil:
     - NCSA
@@ -1923,10 +1944,11 @@ authors:
   maoy:
     affil:
     - Rutgers
+    - Utah
     altaffil: []
     initials: Yao-Yuan
     name: Mao
-    orcid:
+    orcid: 0000-0002-1200-0820
   markiewicztw:
     affil:
     - SLAC
@@ -3086,11 +3108,12 @@ authors:
     orcid: null
   vazquezm:
     affil:
-    - UNAM
+    - UNAM-physics
+    - UNAM-astro
     altaffil: []
-    initials: Jose Antonio
-    name: Vazquez-Mata
-    orcid: null
+    initials: Jos\'e Antonio
+    name: V\'azquez-Mata
+    orcid: 0000-0001-8694-1204
   vetterk:
     affil:
     - BNL
@@ -3264,6 +3287,13 @@ authors:
     initials: Weixiang
     name: Yu
     orcid: null
+  zabludoffa:
+    affil:
+    - UA-Astro
+    altaffil: []
+    initials: Ann
+    name: Zabludoff
+    orcid: 0000-0001-6047-8469
   zhanh:
     affil:
     - KLOA
