@@ -2698,6 +2698,7 @@ authors:
     initials: Luis M.
     name: Sarro
     orcid: 0000-0002-5622-5191
+  # Note: the savicd entry requires \usepackage[T1]{fontenc} to include Serbian accents.
   savicd:
     affil:
     - Liege
