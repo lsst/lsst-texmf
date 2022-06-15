@@ -3,7 +3,7 @@ affiliations:
   BNL: Brookhaven National Laboratory, Upton, NY 11973, USA
   Belgrade-AO: Astronomical Observatory, Volgina 7, P.O.\ Box 74, 11060 Belgrade,
     Serbia
-  Belgrade-Uni: University of Belgrade-Faculty of Mathematics, Department of astronomy,
+  Belgrade-Uni: Faculty of Mathematics, Department of Astronomy, University of Belgrade,
     Studentski trg 16 Belgrade, Serbia
   Belldex: Belldex IT Consulting, Tucson, AZ 85742, USA
   Berkeley-Astro: Astronomy Department,  University of California, 601 Campbell Hall,
@@ -19,12 +19,14 @@ affiliations:
     Pittsburgh, PA 15213, USA
   CNRS: Centre national de la recherche scientifique, 3 Rue Michel Ange, 75016 Paris, France
   Cochin: The Cochin College, Kerala, India 682002
+  CNCT: Consejo Nacional de Ciencia y Tecnolog\'ia, Av. Insurgentes Sur 1582.
+    Colonia Cr\'edito Constructor, Del. Benito   Ju\'arez C.P. 03940, M\'exico D.F. M\'exico
   COOK: Cook Astronomical Consulting, 220 Duxbury Ct., San Ramon, CA 94583, USA
   COINCET: Consejo Nacional de Investigaciones Cient\'{i}ficas y T\'{e}cnicas, Argentina
   Columbia: Columbia University, 533 W. 218th St. New York, NY 10034
   CPPM: Aix Marseille Univ, CNRS/IN2P3, CPPM, Marseille, France
   CTIO: Cerro Tololo Inter-American Observatory, La Serena, Chile
-  CUMBRES: Las Cumbres Observatory, 6740 Cortona Dr., Suite 102, Santa Barbara, CA
+  CUMBRES: Las Cumbres Observatory, 6740 Cortona Dr., Suite 102, Goleta, CA
     93117, USA
   CUNY: City University of New York
   CUNYAMNH: City University of New York, American Museum of Natural History
@@ -71,6 +73,8 @@ affiliations:
     MA 02138, USA
   Haverford: Department of Astronomy, Haverford College, 370 Lancaster Avenue, Haverford,
     PA 19041, USA
+  Heidelberg: Zentrum f{\"u}r Astronomie der Universit{\"a}t Heidelberg, Astronomisches Rechen-Institut,
+    M{\"o}nchhofstr. 12-14, 69120 Heidelberg, Germany
   Herts: Centre for Astrophysics Research, University of Hertfordshire, Hatfield, Hertfordshire, AL10 9AB, UK
   IAFE: Institute for Research in Astronomy and Astrophysics, Argentina
   IPAC: IPAC, California Institute of Technology, MS 100-22, Pasadena, CA 91125, USA
@@ -80,7 +84,9 @@ affiliations:
     St., Urbana, IL  61801, USA
   Illinois-astro: University of Illinois, Department of Astronomy, 1110 W.\ Green
     St., Urbana, IL  61801, USA
-  INAF: Istituto Nazionale di Astrofisica, Viale del Parco Mellini 84, 00136 Rome, Italy
+  INAF-Rome: Istituto Nazionale di Astrofisica, Viale del Parco Mellini 84, 00136 Rome, Italy
+  INAF-Palermo: INAF - Osservatorio Astronomico di Palermo, Piazza del Parlamento 1 90134,
+    Palermo, Italy
   JHU: Department of Physics and Astronomy, The John Hopkins University, 3701 San
     Martin Drive, Baltimore, MD 21218, USA
   JPL: Jet Propulsion Laboratory, California Institute of Technology, Pasadena, CA
@@ -93,6 +99,8 @@ affiliations:
   LAPP: Universit\'{e} Grenoble-Alpes, Universit\'{e} Savoie Mont Blanc, CNRS/IN2P3
     Laboratoire d'Annecy-le-Vieux de Physique des Particules, 9 Chemin de Bellevue
     -- BP 110, F-74940 Annecy-le-Vieux Cedex, France
+  Liege: Institut d'Astrophysique et de G\'{e}ophysique, Universit\'{e} de Li\`{e}ge,
+    All\'{e}e du 6 Ao\^{u}t 19c, 4000 Li\`{e}ge, Belgium
   LLNL: Lawrence Livermore National Laboratory, 7000 East Avenue, Livermore, CA 94550,
     USA
   LOC: Library of Congress, 101 Independence Ave.\ SE, Washington, DC 20540, USA
@@ -163,6 +171,7 @@ affiliations:
   Rutgers: Department of Physics and Astronomy, Rutgers University, 136 Frelinghuysen
     Rd., Piscataway, NJ 08854, USA
   SAO: Smithsonian Astrophysical Observatory, 60 Garden St., Cambridge MA 02138, USA
+  SETI: SETI Institute, 339 Bernardo Avenue, Suite 200, Mountain View, CA 94043, USA
   SLAC: SLAC National Accelerator Laboratory,  2575 Sand Hill Rd., Menlo Park, CA
     94025, USA
   SLAC-Kavli: Kavli Institute for Particle Astrophysics and Cosmology, SLAC National
@@ -192,7 +201,7 @@ affiliations:
   UCL: University College London, Gower St, London WC1E 6BT, United Kingdom
   UCSC: Santa Cruz Institute for Particle Physics and Physics Department, University
     of California--Santa Cruz, 1156 High St., Santa Cruz, CA 95064, USA
-  UdG: Universidad de Guanajuato, Fraccionamiento 1, Col. El Establo S/N; C.P. 36250; Guanajuato, Gto
+  UdG: Departamento de F\'isica, DCI, Campus Le\'on, Universidad de Guanajuato, 37150, Le\'on, Guanajuato, M\'exico
   UNAM: Universidad Nacional Aut\'{o}noma de M\'{e}xico
   UNAM-physics: Departamento de F\'isica, Facultad de Ciencias, Universidad Nacional Aut\'onoma de M\'exico,
     Ciudad Universitaria, CDMX, 04510, M\'exico
@@ -545,6 +554,13 @@ authors:
     initials: Tim W.
     name: Bond
     orcid: null
+  bonitor:
+    affil:
+    - INAF-Palermo
+    altaffil: []
+    initials: Rosaria
+    name: Bonito
+    orcid: 0000-0001-9297-7748
   boothmt:
     affil:
     - RubinObs
@@ -1094,7 +1110,7 @@ authors:
     altaffil: []
     initials: Giulio
     name: Fabbian
-    orcid:
+    orcid: 0000-0002-3255-4695
   faustinetoa:
     affil:
     - RubinObs
@@ -1287,11 +1303,12 @@ authors:
     orcid: 0000-0003-3461-8661
   gonzalesa:
     affil:
+    - CNCT
     - UdG
     altaffil: []
-    initials: Alma
-    name: Gonzales
-    orcid: null
+    initials: Alma X.
+    name: Gonzalez-Morales
+    orcid: 0000-0003-4089-6924
   goodenowi:
     affil:
     - RubinObs
@@ -1475,6 +1492,13 @@ authors:
     initials: Michael E.
     name: Huffer
     orcid: null
+  hundertmarkm:
+    affil:
+    - Heidelberg
+    altaffil: []
+    initials: Markus
+    name: Hundertmark
+    orcid: 0000-0003-0961-5231
   ingrahamp:
     affil:
     - RubinObs
@@ -2428,6 +2452,14 @@ authors:
     initials: Mark
     name: Popinchalk
     orcid: null
+  popovicl:
+    affil:
+    - Belgrade-AO
+    - Belgrade-Uni
+    altaffil: []
+    initials: Luka {\v C}.
+    name: Popovi\'c
+    orcid: null
   pricepa:
     affil:
     - Princeton-Astro
@@ -2465,7 +2497,7 @@ authors:
     orcid: null
   ragostaf:
     affil:
-    - INAF
+    - INAF-Rome
     altaffil: []
     initials: Fabio
     name: Ragosta
@@ -2666,6 +2698,15 @@ authors:
     initials: Luis M.
     name: Sarro
     orcid: 0000-0002-5622-5191
+  # Note: the savicd entry requires \usepackage[T1]{fontenc} to include Serbian accents.
+  savicd:
+    affil:
+    - Liege
+    - Belgrade-AO
+    altaffil: []
+    initials: \DJ{}or\dj{}e V.
+    name: Savi\'c
+    orcid: 0000-0003-0880-8963
   assolasb:
     affil:
     - Lyon-LMA-IN2P3
@@ -2679,7 +2720,7 @@ authors:
     altaffil: []
     initials: Clare
     name: Saunders
-    orcid: null
+    orcid: 0000-0002-4094-2102
   schalktl:
     affil:
     - UCSC
@@ -3070,6 +3111,13 @@ authors:
     initials: Te-Wei
     name: Tsai
     orcid: null
+  tsaprasy:
+    affil:
+    - Heidelberg
+    altaffil: []
+    initials: Yiannis
+    name: Tsapras
+    orcid: 0000-0001-8411-351X
   turrim:
     affil:
     - SLAC
@@ -3114,6 +3162,13 @@ authors:
     initials: Jos\'e Antonio
     name: V\'azquez-Mata
     orcid: 0000-0001-8694-1204
+  venutil:
+    affil:
+    - SETI
+    altaffil: []
+    initials: Laura
+    name: Venuti
+    orcid: 0000-0002-4115-0318
   vetterk:
     affil:
     - BNL
