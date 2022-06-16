@@ -132,6 +132,7 @@ CCOB,Camera Calibration Optical Bench,LSST DM,,,A
 CCP,Change Control Process,Adm,,,A
 CCS,Camera Control System,LSST DM,,,A
 CDF,Cumulative Distribution Function,Sci,,,A
+CDMX,Ciudad de Mexico,Gen,,,A
 CDN,Content Delivery Network,DM IT,,,A
 CD-4,Critical Decision 4,DOE,,,A
 CDS,Centre de Donnes astronomiques de Strasbourg,Gen,,,A
@@ -471,6 +472,7 @@ IMBH,Intermediate Mass Black Hole ,DM,,,A
 IMF,Initial Mass Function,DM,,,A
 IMS,Integrated Master Schedule,PSE,,,A
 ImSim,Image Simulation,Sims,,,A
+INAF,Istituto Nazionale di Astrofisica,Gen,,,A
 IN2P3,Institut National de Physique Nucléaire et de Physique des Particules,Gen,,,A
 IoA,Institute of Astronomy (Cambridge; also denoted IOA),Gen,,,A
 IP,Internet Protocol,DM,,,A
