@@ -1736,7 +1736,7 @@ authors:
     - Belgrade-Uni
     altaffil: []
     initials: Andjelka B.
-    name: Kova{\v c}evi{\'c}
+    name: Kova{\v{c}}evi{\'c}
     orcid: 0000-0001-5139-1978
   kowalikm:
     affil:
@@ -2457,7 +2457,7 @@ authors:
     - Belgrade-AO
     - Belgrade-Uni
     altaffil: []
-    initials: Luka {\v C}.
+    initials: Luka {\v{C}}.
     name: Popovi\'c
     orcid: null
   pricepa:
