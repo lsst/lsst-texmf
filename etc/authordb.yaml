@@ -25,7 +25,7 @@ affiliations:
   CNCT: Consejo Nacional de Ciencia y Tecnolog\'ia, Av. Insurgentes Sur 1582.
     Colonia Cr\'edito Constructor, Del. Benito   Ju\'arez C.P. 03940, M\'exico D.F. M\'exico
   COOK: Cook Astronomical Consulting, 220 Duxbury Ct., San Ramon, CA 94583, USA
-  COINCET: Consejo Nacional de Investigaciones Cient\'{i}ficas y T\'{e}cnicas, Argentina
+  CONICET: Consejo Nacional de Investigaciones Cient\'{i}ficas y T\'{e}cnicas, Argentina
   Columbia: Columbia University, 533 W. 218th St. New York, NY 10034
   CPPM: Aix Marseille Univ, CNRS/IN2P3, CPPM, Marseille, France
   CTIO: Cerro Tololo Inter-American Observatory, La Serena, Chile
@@ -88,7 +88,7 @@ affiliations:
   Heidelberg: Zentrum f{\"u}r Astronomie der Universit{\"a}t Heidelberg, Astronomisches Rechen-Institut,
     M{\"o}nchhofstr. 12-14, 69120 Heidelberg, Germany
   Herts: Centre for Astrophysics Research, University of Hertfordshire, Hatfield, Hertfordshire, AL10 9AB, UK
-  IAFE: Institute for Research in Astronomy and Astrophysics, Argentina
+  IAFE: Instituto de Astronom\’ia y F\’isica del Espacio (IAFE), Av. Inte. G\“uiraldes 2620, C1428ZAA, Buenos Aires, Argentina
   IPAC: IPAC, California Institute of Technology, MS 100-22, Pasadena, CA 91125, USA
   IRAM: Instituto de Radioastronom\'ia Milim\'{e}trica, Av.\ Divina Pastora 7, N\'{u}cleo
     Central, E-18012 Granada, Spain
@@ -1048,7 +1048,7 @@ authors:
   dominguezm:
     affil:
     - IAFE
-    - COINCET
+    - CONICET
     altaffil: []
     initials: Mariano
     name: Dominguez
@@ -1946,7 +1946,7 @@ authors:
   lunagjm:
     affil:
     - IAFE
-    - COINCET
+    - CONICET
     altaffil: []
     initials: Gerardo Juan Manuel
     name: Luna
