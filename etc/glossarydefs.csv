@@ -104,6 +104,7 @@ BNL,Brookhaven National Laboratory,Gen,,,A
 BNS,Binary Neutron Star,Sci,,,A
 BOE,Basis of Estimate,Gen,,,A
 BOF,Birds of a Feather (Sessions at ADASS),Gen,,,A
+BOSS,Baryon Oscillation Spectroscopic Survey,Sci,,,A
 BOT,Bench for Optical Testing,CAM,,,A
 BPS,Batch Production Service,DF LDF DM,,,A
 Bps,Bytes per second,Gen,,,A
@@ -229,9 +230,11 @@ DDS,Data Distribution System,TSSW,,,A
 DE,dark energy,TS,Document-12028,,A
 DEC,Declination,Gen,,,A
 DECam,Dark Energy Camera,Sci,,,A
+DECaLS,The Dark Energy Camera Legacy Survey,Sci,,,A
 DECAT,DECam Alliance for Transients,Sci,,,A
 DEEP,Deep Extragalactic Evolutionary Probe,Sci,,,A
 deg,degree; unit of angle,Gen,,,A
+DELVE,DECam Local Volume Exploration Survey,Sci,,,A
 DHO,Damped Harmonic Oscillator,Sci,,,A
 DEI,"Diversity, Equity, and Inclusion",DEI,,,A
 DELVE,DECam Local Volume Exploration Survey,Sci,,,A
@@ -309,6 +312,7 @@ EE,engineering estimate,TS,Document-12024,,A
 EEPROM,Electrically Erasable Programmable Read-Only Memory,Gen,,,A
 EFD,Engineering and Facility Database,LSST DM,,,A
 EIE,European Industrial Engineering - Italian engineering company (Dome),LSST DM,,,A
+ELAsTiCC,Extended LSST Astronomical Time Series Classification Challenge,Sci,,,A
 ELG,Emission-Line Galaxies,Sci,,,A
 ELM,Extremely Low Mass(Survey),Sci,,,A
 ELT,Extremely Large Telescope,Sci,,,A
@@ -468,7 +472,7 @@ IDF,Interim Data Facility,OPS,,,A
 IDL,Interactive Data Language,Gen,,,A
 IIP,image ingest and processing,TS,Document-12029,,A
 ILC,Inner Loop Controller,PSE,,,A
-IMBH,Intermediate Mass Black Hole ,DM,,,A
+IMBH,Intermediate Mass Black Hole,Sci,,,A
 IMF,Initial Mass Function,DM,,,A
 IMS,Integrated Master Schedule,PSE,,,A
 ImSim,Image Simulation,Sims,,,A
@@ -544,6 +548,7 @@ LBT,Large Binocular Telescope,TS,Document-11954,,A
 LBTO,Large Binocular Telescope Observatory,OPS,,,A
 LBV,Luminous Blue Variables,Sci,,,A
 LCA,Document handle LSST camera subsystem controlled documents,CAM,,,A
+LCDM, $\Lambda$ Cold Dark Matter; cosmological model,Sci,,,A
 LCLS,Linac Coherent Light Source,Gen,,,A
 LCO,Las Cumbres Observatories,Gen,,,A
 LCR,LSST Change Request,LSST DM,,,A
@@ -677,6 +682,7 @@ NOAO,National Optical Astronomy Observatories now NOIRLab ,Gen,,,A
 NOC,Network Operations Center,NET ,,,A
 NOGLSTP,National Organization of Gay and Lesbian Scientists and Technical Professionals,DEI,,,A
 NOIR,NSF's National Optical-Infrared Astronomy Research Laboratory; \url{https://nationalastro.org},Gen,,,A
+NOIRLab,NSF's National Optical-Infrared Astronomy Research Laboratory; \url{https://nationalastro.org},Gen,,,A
 NOS,NSF's OIR Lab Operations Services ,OPS OIR,,,A
 NPCF,National Petascale Computing Facility,OPS OIR,,,A
 NRAO,National Radio Astronomy Observatory,Gen,,,A
@@ -1028,13 +1034,14 @@ VLBA,Very Long Baseline Array,Gen,,,A
 VLBI,Very Long Baseline Interferometry,Gen,,,A
 VLT,Very Large Telescope (ESO),Gen,,,A
 VLTI,Very Large Telescope Interferometer (ESO),Gen,,,A
-VM,Virtual Machine,Gen,,,A
+VM,Virtual Machine,IT,,,A
+VME,Virtual Machine Environment,IT,,,A
 VNOC,Virtual Network Operations Center,NET ,,,A
 VO,Virtual Observatory,Gen,,,A
 VOIP,Voice Over Internet Protocol,IT DM,,,A
 VOMS,VO Management Service,DM,,,A
 VPC, Virtual Private Cloud,IT,,,A
-VPHAS,VST/OmegaCAM Photometric H-Alpha Survey,SCI,,,A
+VPHAS,VST/OmegaCAM Photometric H-Alpha Survey,Sci,,,A
 VPN,virtual private network,TS,Document-11966,,A
 VQ,vendor quote,TS,Document-12014,,A
 VRO,(not to be used)Vera C. Rubin Observatory,Gen,,,A
@@ -1072,7 +1079,7 @@ XSEDE,Extreme Science and Engineering Discovery Environment,OPS,,,A
 XSL,eXtensible Stylesheet Language,Gen,,,A
 XSLT,eXtensible Stylesheet Language Transformation,Gen,,,A
 YAML,Yet Another Markup Language,Gen,,,A
-YSO,Young Stellar Object,SCI,,,A
+YSO,Young Stellar Object,Sci,,,A
 ZD,zenith distance,TS,Document-12031,,A
 ZTF,Zwicky Transient Facility,Gen,,,A
 accident,"An undesired event that results in harm to people, damage to property, or loss to process.  Accidents result from contact with a substance or source of energy above the threshold limit of the body structure",Adm,,,G
@@ -1085,6 +1092,8 @@ aggregation,"The process of reducing multiple input values to a single output, e
 airmass,"The pathlength of light from an astrophysical source through the Earth's atmosphere. It is given approximately by sec z, where z is the angular distance from the zenith (the point directly overhead, where airmass = 1.0) to the source",Sci,,,G
 Akaike Information Criterion,"an estimator of prediction error and thereby relative quality of statistical models for a given set of data",Sci,,,G
 AMPEL,"AMPEL (Broker) is a modular and scalable platform with explicit provenance tracking, suited for systematically processing large — possibly complex and heterogeneous — datasets either in real time or offline.\url{https://ampelproject.github.io/} ",OPS,,,G
+Authentication,"The action of demonstrating who you are and an person, mission, or other entity. Usually by use of a password or security token",DM,,,G
+Authorization,"The action of allowing an authorized or anonymous entity access to data or services.",DM,,,G
 Automatic Learning for the Rapid Classification of Events,"The ALeRCE broker is a Chilean-led broker which is processing the alert stream from the ZTF and a Community Broker for the Vera C. Rubin Observatory and its LSST, as well as other large etendue survey telescopes. \url{http://alerce.science/}",OPS,,,G
 Alert,"A packet of information for each source detected with signal-to-noise ratio > 5 in a difference image by Alert Production, containing measurement and characterization parameters based on the past 12 months of LSST observations plus small cutouts of the single-visit, template, and difference images, distributed via the internet",DM,LSE-163,,G
 Alert Production,"Executing on the Prompt Processing system, the Alert Production payload processes and calibrates incoming images, performs Difference Image Analysis to identify DIASources and DIAObjects, and then packages the resulting alerts for distribution.",DM,LDM-151,AP,G
@@ -1121,6 +1130,8 @@ Baseline,The point at which project designs or requirements are considered to be
 "Baseline, Technical","The 'frozen' requirements, specifications, designs, and allocations needed for completion of the project based on known resources (staff, physical assets, knowledge, etc.) that will be needed",Adm,,,G
 Basis of Estimate,"justification for arriving at a particular cost estimate, including estimating methods, approach taken, prices used, assumptions made; an analyzed and carefully calculated number",Adm,,,G
 Batch Production,"Computational processing that is executed as inputs become available, in a distributed way across multiple enclaves when needed, while tracking status and outputs. Examples of Batch Production include offline processing for Prompt Data Products, calibration products, template images, and Special Programs data products. Prioritization protocols for the various types of batch production are given in LDM-148",DM,LDM-148,,G
+BEAMS,"Bayesian Estimation Applied to Multiple Species (software for classification of light curves based on photometry)
+",Sci,,,G
 BlackGEM,"is a wide-field array of optical telescopes to be located at ESO’s La Silla Observatory in Chile’s Atacama desert. ",Sci,,,G
 Blazhko,"the phenomenon of amplitude or phase modulation. Associated with some RRL",Sci,,,G
 brighter-fatter effect,The common term used to refer to one of the photometric qualities of the LSST camera: sources with a higher flux have a broader PSF. This is accounted for during calibration,DM,"LDM-151, https://arxiv.org/pdf/1402.0725v1.pdf",,G
@@ -1130,7 +1141,7 @@ Business Manager,"The person responsible for all business activities of the LSST
 Butler,"A middleware component for persisting and retrieving image datasets (raw or processed), calibration reference data, and catalogs",DM,"LDM-152, https://ldm-463.lsst.io/v/draft/index.html#id1",,G
 Buyer,"Includes the terms 'Buyer' 'subcontract administrator or officer' 'contracts administrator or officer' sub-award administrator, or any other LSSTC authorized procurement official as used herein are inter-changeable",Adm,,,G
 CA-FACTS,NSF Cooperative Agreement Financial & Administrative Terms and Conditions,Gen,,,G
-Cadence,"The sequence of pointings, visit exposures, and exposure durations performed over the course of a survey",Sims Sci,,,G
+cadence,"The sequence of pointings, visit exposures, and exposure durations performed over the course of a survey",Sims Sci,,,G
 CalExp,"A particular type of Butler dataset that consists of an image corresponding to a single CCD, which has been characterized and calibrated. (A Butler term.)",DM,LDM-151,Calexp,G
 Calibrated Science Image,Deprecated term; see Processed Visit Image,DM,,"CSI, Processed Visit Image, PVI",G
 calibration,"The process of translating signals produced by a measuring instrument such as a telescope and camera into physical units such as flux, which are used for scientific analysis. Calibration removes most of the contributions to the signal from environmental and instrumental factors, such that only the astronomical component remains",DM,LDM-151,,G
@@ -1174,6 +1185,7 @@ Contingency Management,"The formal process that provides the ability and flexibi
 Contract,"A binding legal agreement between parties obligating the one (typically the  'seller') to furnish certain supplies or services and the other (typically, the buyer) to compensate the seller for the supplies or services with some form of consideration, (typically money). The term, 'contract' is used interchangeably with 'sub-award' 'agreement' 'memorandum of understanding and/or agreement' and 'purchase order' Each is a term used to differentiate between a purchase-order-format type document and a complex purchase in a subcontract/sub-award-format type document. These also include awards and notices of awards; job orders or task letters issued under basic ordering agreements; letter contracts; orders, such as purchase orders and subcontracts under which the order becomes effective by written acceptance or performance; and bilateral contract modifications",Adm,,,G
 Cost Estimate,"An approximation of total costs required for completion of the project based on known resources (staff, physical assets, knowledge, etc.) that will be needed",Adm,,,G
 Critical Decision 4,"Approve Start of Operations or Project Completion. CD-4 approval marks the achievement of the completion criteria (i.e., KPPs) defined in the PEP (or in the PRD, for NNSA projects), and if applicable, subsequent approval of transition to operations. ",DOE,,,G
+Cyber Infrastructure,"Sometimes denoted CI, A term first used by the US NSF, and it typically is used to refer to information technology systems that provide particularly powerful and advanced capabilities.",DM,,,G
 cycle,"The time period over which detailed, short-term plans are defined and executed. Normally, cycles run for six months, and culminate in a new release of the LSST Software Stack, however this need not always be the case",DM,,planning,G
 dashboard,"A visual display of the most important information needed to achieve one or more objectives, consolidated and arranged on a single screen so that the information can be monitored at a glance (as in Few, S., 2013, Information Dashboard Design, Analytics Press, 2 edn.)",DM QA,DMTN-085,,G
 Data Access Center,"Part of the LSST Data Management System, the US and Chilean DACs will provide authorized access to the released LSST data products, software such as the Science Platform, and computational resources for data analysis. The US DAC also includes a service for distributing bulk data on daily and annual (Data Release) timescales to partner institutions, collaborations, and LSST Education and Public Outreach (EPO). ",DM,LDM-148,DAC,G
@@ -1231,6 +1243,8 @@ Flexible Image Transport System,"an international standard in astronomy for stor
 flux,"Shorthand for radiative flux, it is a measure of the transport of radiant energy per unit area per unit time. In astronomy this is usually expressed in cgs units: erg/cm2/s",Sci,,,G
 Focal plane array,"A focal plane array (FPA) is the arrangement of multiple sensors in the focal plane of a camera. For LSST, the FPA is divided into an array of contiguous rafts, upon which 9 science sensors are mounted 3x3. Additional engineering sensors are mounted on rafts near the periphery to support wavefront sensing and telescope guiding",CAM,,,G
 footprint,"See 'source footprint', 'instrumental footprint', or 'survey footprint', `Footprint` is a Python class representing a source footprint",DM,LDM-151,,G
+FORCE11," a community of scholars, librarians, archivists, publishers and research funders interested in the Future of Research Communications and e-Scholarship
+",Sci,,,G
 forced photometry,"A measurement of the photometric properties of a source, or expected source, with one or more parameters held fixed. Most often this means fixing the location of the center of the brightness profile (which may be known or predicted in advance), and measuring other properties such as total brightness, shape, and orientation. Forced photometry will be done for all Objects in the Data Release Production",DM,"LDM-151, LSE-163",,G
 ForcedSource,DRP table resulting from forced photometry,DM,"LDM-151, LSE-163",,G
 Full-Time Equivalent,"A unit equivalent to one person working full time for one year with normal holidays, vacations, and sick time. No paid overtime is assumed",Adm Gen,,,G
@@ -1252,6 +1266,7 @@ Independent Data Access Center,"Externally supported and administered versions o
 Information Technology Services Committee,"Internal LSST Project Office committee charged with managing project IT services, including advising management on which services LSST should use. The ITSC's goals are 1) to ensure interoperability exists among products, 2) to combine, reuse and/or, recycle existing services when possible, 3) to prevent applications from becoming stagnant or security hazards, 4) to make recommendations on whether a particular tool remains 5) to keep the project informed of what is going on at all spectrums, and 6) to make recommendations for how the Project Office will transition into commissioning and operations",Adm,,,G
 Information Technology Systems Administrator,"The person responsible for maintaining the Project Office's servers, networks, and computing hardware; he or she also provides technical support to the Project Management Office and the distributed Project team",Adm,,,G
 Instance Catalog,"A catalog of astronomical sources containing source type, coordinates, brightnesses, and SEDs for use in creating simulated LSST images with PhoSim. Synonym with trim file",Sims,,,G
+interoperability,"the ability of systems or \gls{software} to exchange and make use of information between them.",DM,,,G
 Institutional Member,"An organization such as an institute, observatory, university, or company committed to making an intellectual, financial, or other significant contribution to LSST operations or to preparing the scientific community to use the LSST dataset. They are members of the LSST Corporation and pay an annual membership fee in an amount established by the LSSTC Board of Directors",Adm,,,G
 Interactive Data Language,"a programming language used for data analysis. Harris Geospatial \url{https://www.harrisgeospatial.com/Software-Technology/IDL}",DM,,IDL,G
 Instrument Signature Removal,"Instrument Signature Removal is a pipeline that applies calibration reference data in the course of raw data processing, to remove artifacts of the instrument or detector electronics, such as removal of overscan pixels, bias correction, and the application of a flat-field to correct for pixel-to-pixel variations in sensitivity",DM,LDM-151,ISR,G
@@ -1306,6 +1321,7 @@ nublado,The service underpinning the Notebook Aspect of the Rubin Science Platfo
 Object,"In LSST nomenclature this refers to an astronomical object, such as a star, galaxy, or other physical entity. E.g., comets, asteroids are also Objects but typically called a Moving Object or a Solar System Object (SSObject). One of the DRP data products is a table of Objects detected by LSST which can be static, or change brightness or position with time",DM,"LDM-151, LSE-163",,G
 Offer,"A response to a solicitation that, if accepted, would bind the offeror to perform the work described in resultant contract. Responses to sealed bidding are offers that are often referred to as 'bids' or 'sealed bids;' responses to a request for proposals (RFP, negotiated-type procurements) are offers often referred to as 'proposals' responses to a request for quotations (RFQ) are not offers and are generally called 'quotes'",Adm,,,G
 open development,"A process for developing software that emphasizes all code contribution and decision-making be done in the open, available to as wide a group as possible (This usually means anyone with internet access).",DM,,,G
+OpenEXR,"a high dynamic range raster file format, released as an open standard along with a set of software tools created by Industrial Light & Magic (ILM) \url{http://www.openexr.com/index.html}",Sci,,,G
 open source software,"Open source software is a type of software in which source code is released under a license in which the copyright holder grants users the rights to study, change, and distribute the software to anyone and for any purpose. Note that this is \emph{not} necessarily the same as open to contribution (see open development).",DM,,,G
 Operations,The 10-year period following construction and commissioning during which the LSST Observatory conducts its survey,Adm,,,G
 Operations Rehearsal,"A data management system prototype project employing the same methods, tools, personnel, and technologies as the real system in order to introduce and validate new algorithms, functionality, and infrastructure. Previously referred to as a data challenge",DM,,,G
@@ -1377,6 +1393,7 @@ Safety Council,A consulting body providing policy advice and evaluation of safet
 Safety Manager,"The person who manages, executes, and verifies compliance with the LSST Safety Policy (LPM-18); the Safety Manager is also chair of the Safety Council",Adm,,,G
 SAL script,"A program which communicates via SAL messages and adheres to a specific API, performing coordinated telescope and instrument control operations, such as 'slew to a target and take an image', or 'take a series of flats'",TS,,script queue,G
 Satellite Facility,"The data center at CC-IN2P3 in Lyon, France",DM,LDM-148,,G
+schema,"The definition of the metadata and linkages between datasets and metadata entities in a collection of data or archive.",DM,,,G
 Science Advisory Committee,"An advisory body which provides a formal and two-way connection to the external science community served by LSST; comprised of scientists familiar with but external to the LSST Project, the SAC advises the LSST Director on both policy questions and technical topics of interest to the Project and the science community",LSST Adm,,,G
 Science Collaboration,"An autonomous body of scientists interested in a particular area of science enabled by the LSST dataset, which through precursor studies, simulations, and algorithm development lays the groundwork for the large-scale science projects the LSST will enable.  In addition to preparing their members to take full advantage of LSST early in its operations phase, the science collaborations have helped to define the system's science requirements, refine and promote the science case, and quality check design and development work",Adm,,,G
 Science Collaboration Chair,The leader of and spokesperson for a Science Collaboration,Adm,,,G
@@ -1466,3 +1483,4 @@ Wide-Fast-Deep,The main survey of the LSST to cover at least 18000 square degree
 Work Breakdown Structure,a tool that defines and organizes the LSST project's total work scope through the enumeration and grouping of the project's discrete work elements,Adm,,,G
 Work Elements,The critical tasks of the LSST Project as represented in the WBS,Adm,,,G
 World Coordinate System,"a mapping from image pixel coordinates to physical coordinates; in the case of images the mapping is to sky coordinates, generally in an equatorial (RA, Dec) system. The WCS is expressed in FITS file extensions as a collection of header keyword=value pairs (basically, the values of parameters for a selected functional representation of the mapping) that are specified in the FITS Standard",Sci,,,G
+zBEAMS,"Extension of BEAMS light curve classification method to include redshift ($z$) information",Sci,,,G
