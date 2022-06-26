@@ -48,10 +48,18 @@ affiliations:
   ChUniv: Astronomical Institute, Charles University, Praha, Czech Republic
   Chicago: Department of Astronomy and Astrophysics, University of Chicago, 5640 South
     Ellis Avenue, Chicago, IL 60637, USA
+  CIERA: Center for Interdisciplinary Exploration and Research in Astrophysics (CIERA) and
+    Department of Physics and Astronomy, Northwestern University, 1800 Sherman Road,
+    Evanston, IL 60201, USA
   Clermont-LPC: Universit\'e Clermont Auvergne, CNRS, Laboratoire de Physique de Clermont,
     F-63000 Clermont-Ferrand, France
   DACC: DACC New Mexico State University, Central Campus, Las Cruces, New Mexico, USA
   DARK: DARK, Niels Bohr Institute, University of Copenhagen, Denmark
+  Delaware-PhyAst: Department of Physics and Astronomy, University of Delaware, Newark,
+    DE 19716-2570, USA
+  Delaware-Policy: Joseph R.\ Biden, Jr.,  School of Public Policy and Administration,
+    University of Delaware, Newark, DE 19717 USA
+  Delaware-DataSci: Data Science Institute, University of Delaware, Newark, DE 19717 USA
   DGPS: Division of Geological and Planetary Sciences, California Institute of Technology,
     Pasadena, CA 91125, USA
   DIRAC: Institute for Data-intensive Research in Astrophysics and Cosmology, University of Washington, Seattle, WA
@@ -511,8 +519,9 @@ authors:
     orcid: 0000-0001-8018-5348
   biancofb:
     affil:
-    - NYU-CUSP
-    - NYU-CCPP
+    - Delaware-PhyAst
+    - Delaware-Policy
+    - Delaware-DataSci
     altaffil: []
     initials: Federica B.
     name: Bianco
@@ -1354,9 +1363,9 @@ authors:
     affil:
     - Caltech-Astro
     altaffil: []
-    initials: Mathew
+    initials: Matthew J.
     name: Graham
-    orcid:
+    orcid: 0000-0002-3168-0139
   gresslerwj:
     affil:
     - RubinObs
@@ -2101,6 +2110,13 @@ authors:
     initials: Myriam
     name: Migliore
     orcid: null
+  millera:
+    affil:
+    - CIERA
+    altaffil: []
+    initials: Adam A.
+    name: Miller
+    orcid: 0000-0001-9515-478X
   millerm:
     affil:
     - NOIRLab
