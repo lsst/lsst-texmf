@@ -48,10 +48,18 @@ affiliations:
   ChUniv: Astronomical Institute, Charles University, Praha, Czech Republic
   Chicago: Department of Astronomy and Astrophysics, University of Chicago, 5640 South
     Ellis Avenue, Chicago, IL 60637, USA
+  CIERA: Center for Interdisciplinary Exploration and Research in Astrophysics (CIERA) and
+    Department of Physics and Astronomy, Northwestern University, 1800 Sherman Road,
+    Evanston, IL 60201, USA
   Clermont-LPC: Universit\'e Clermont Auvergne, CNRS, Laboratoire de Physique de Clermont,
     F-63000 Clermont-Ferrand, France
   DACC: DACC New Mexico State University, Central Campus, Las Cruces, New Mexico, USA
   DARK: DARK, Niels Bohr Institute, University of Copenhagen, Denmark
+  Delaware-PhyAst: Department of Physics and Astronomy, University of Delaware, Newark,
+    DE 19716-2570, USA
+  Delaware-Policy: Joseph R.\ Biden, Jr.,  School of Public Policy and Administration,
+    University of Delaware, Newark, DE 19717 USA
+  Delaware-DataSci: Data Science Institute, University of Delaware, Newark, DE 19717 USA
   DGPS: Division of Geological and Planetary Sciences, California Institute of Technology,
     Pasadena, CA 91125, USA
   DIRAC: Institute for Data-intensive Research in Astrophysics and Cosmology, University of Washington, Seattle, WA
@@ -139,6 +147,8 @@ affiliations:
     IL 61801, USA
   NOIRLab: National Optical-Infrared Astronomy Research Laboratory, 950 N.\ Cherry Ave., Tucson, AZ 85719,
     USA
+  NovaGorica: Center for Astrophysics and Cosmology, University of Nova Gorica, Vipavska 13
+    5000 Nova Gorica, Slovenia
   NYU: New York University, New York,
   NYU-CCPP: Center for Cosmology \& Particle Physics, New York University,
     726 Broadway, New York, 10003, USA
@@ -194,8 +204,10 @@ affiliations:
     USA
   SVC: Saint Vincent College, Department of Physics, 300 Fraser Purchase Road, Latrobe,
     PA 15650, USA
-  TAMU: Texas A\&M University, College Station, TX
-  TTU: Texas Tech University System 1508 Knoxville Avenue, Lubbock, TX 79409
+  TAMU-inst: George P.~and Cynthia Woods Mitchell Institute for Fundamental Physics and Astronomy,
+    Texas A\&M University, College Station, TX 77843, USA
+  TAMU: Department of Physics and Astronomy, Texas A\&M University, College Station, TX 77843, USA
+  TTU: Department of Physics and Astronomy, Texas Tech University, Lubbock, TX 79409, USA
   UA: University of Arizona, Tucson, AZ 85721, USA
   UA-CompSci: Department of Computer Science, The University of Arizona, 1040 E.\
     4th St., Tucson, AZ 85719, USA
@@ -511,8 +523,9 @@ authors:
     orcid: 0000-0001-8018-5348
   biancofb:
     affil:
-    - NYU-CUSP
-    - NYU-CCPP
+    - Delaware-PhyAst
+    - Delaware-Policy
+    - Delaware-DataSci
     altaffil: []
     initials: Federica B.
     name: Bianco
@@ -1210,11 +1223,11 @@ authors:
     orcid: null
   gaglianoa:
     affil:
-    - Illinois
+    - Illinois-astro
     altaffil: []
     initials: Alexander
     name: Gagliano
-    orcid:
+    orcid: 0000-0003-4906-8447
   garaviton:
     affil:
     - CCA
@@ -1321,6 +1334,13 @@ authors:
     initials: Daniel A.
     name: Goldstein
     orcid: 0000-0003-3461-8661
+  gomboca:
+    affil:
+    - NovaGorica
+    altaffil: []
+    initials: Andreja
+    name: Gomboc
+    orcid: null
   gonzalesa:
     affil:
     - CNCT
@@ -1354,9 +1374,9 @@ authors:
     affil:
     - Caltech-Astro
     altaffil: []
-    initials: Mathew
+    initials: Matthew J.
     name: Graham
-    orcid:
+    orcid: 0000-0002-3168-0139
   gresslerwj:
     affil:
     - RubinObs
@@ -1751,7 +1771,7 @@ authors:
     altaffil: []
     initials: Alekzander
     name: Kosakowski
-    orcid: null
+    orcid: 0000-0002-9878-1647
   kotoviv:
     affil:
     - BNL
@@ -1908,6 +1928,13 @@ authors:
     initials: Kian-Tat
     name: Lim
     orcid: 0000-0002-6338-6516
+  lix:
+    affil:
+    - Delaware-PhyAst
+    altaffil: []
+    initials: Xiaolong
+    name: Li
+    orcid: 0000-0002-0514-5650
   lintottcj:
     affil:
     - Oxford
@@ -2101,6 +2128,13 @@ authors:
     initials: Myriam
     name: Migliore
     orcid: null
+  millera:
+    affil:
+    - CIERA
+    altaffil: []
+    initials: Adam A.
+    name: Miller
+    orcid: 0000-0001-9515-478X
   millerm:
     affil:
     - NOIRLab
@@ -2549,11 +2583,12 @@ authors:
     orcid: null
   rileya:
     affil:
+    - TAMU-inst
     - TAMU
     altaffil: []
-    initials: Alex
+    initials: Alexander H.
     name: Riley
-    orcid: null
+    orcid: 0000-0001-5805-5766
   riveram:
     affil:
     - RubinObsC
@@ -3163,6 +3198,13 @@ authors:
     initials: J. Anthony
     name: Tyson
     orcid: 0000-0002-9242-8797
+  ustamujics:
+    affil:
+    - INAF-Palermo
+    altaffil: []
+    initials: Sabina
+    name: Ustamujic
+    orcid: 0000-0003-4596-2628
   vanbergr:
     affil:
     - SLAC
