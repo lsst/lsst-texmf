@@ -521,6 +521,13 @@ authors:
     initials: Eric C.
     name: Bellm
     orcid: 0000-0001-8018-5348
+  besth:
+    affil:
+    - CUNY-Grad
+    altaffil: []
+    initials: Henry J.
+    name: Best
+    orcid: null
   biancofb:
     affil:
     - Delaware-PhyAst
@@ -738,6 +745,7 @@ authors:
     orcid: 0000-0002-5124-0771
   cantiellom:
     affil:
+    - CCA
     - Princeton-Astro
     altaffil: []
     initials: Matteo
@@ -966,7 +974,7 @@ authors:
     altaffil: []
     initials: Shany
     name: Danieli
-    orcid: null
+    orcid: 0000-0002-1841-2252
   danielsf:
     affil:
     - Washington
@@ -2968,7 +2976,7 @@ authors:
     - LSSTC
     - Columbia
     altaffil: []
-    initials: Jeno
+    initials: J. L.
     name: Sokoloski
     orcid: null
   soldahlc:
