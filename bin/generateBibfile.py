@@ -11,6 +11,8 @@ from algoliasearch.search_client import SearchClient
 from datetime import datetime
 import sys
 import calendar
+import latexcodec  # noqa provides the latex+latin codec
+
 
 MAXREC = 2000
 
