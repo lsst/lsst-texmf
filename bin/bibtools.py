@@ -25,7 +25,7 @@ class BibEntry:
     # not all entries have all fields
     """
 
-    def __init__(self, author, title, month, handle, year, note="", url=""):
+    def __init__(self, author=None, title=None, month=None, handle=None, year=None, note="", url=""):
         self.author = author
         self.title = title
         self.month = month
@@ -34,7 +34,7 @@ class BibEntry:
         self.url = url
         self.year = year
         self.type = "@DocuShare"
-        if "" == note:
+        if "" == note and handle:
             prefix, _ = self.handle.split("-", 1)
             series = TN_SERIES.get(prefix, "")
             self.note = f"{{Vera C. Rubin Observatory {series}}}"
