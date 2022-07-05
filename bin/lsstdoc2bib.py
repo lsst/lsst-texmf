@@ -6,7 +6,6 @@ produce a bib entry suitable to be put in lsst.bib in texmf.
 
 """
 
-import sys
 import re
 import argparse
 from datetime import datetime
@@ -71,8 +70,8 @@ def find_meta(filename):
             be.handle = f"{doctypes}-{docnums}"
         yearmm = yearm2.findall(text)
         if (yearmm):
-            year = yearmm[0][0]
-            month = yearmm[0][1]
+            be.year = yearmm[0][0]
+            be.month = yearmm[0][1]
     else:
         rset = auth.findall(text)
         if (rset):
