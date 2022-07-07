@@ -1,7 +1,7 @@
 affiliations:
   Adler: The Adler Planetarium, 1300 South Lakeshore Ave., Chicago, IL 60605, USA
   AMNH: Department of Astrophysics, American Museum of Natural History, New York,
-    NY 10024, USA
+    NY 10028, USA
   BNL: Brookhaven National Laboratory, Upton, NY 11973, USA
   Belgrade-AO: Astronomical Observatory, Volgina 7, P.O.\ Box 74, 11060 Belgrade,
     Serbia
@@ -34,7 +34,8 @@ affiliations:
   CUNY: City University of New York
   CUNYAMNH: City University of New York, American Museum of Natural History
   CUNYCT: City University of New York, New York City College of Technology
-  CUNYBM: City University of New York, Borough of Manhattan Community College
+  CUNYBM: Department of Science, CUNY Borough of Manhattan Community College, 199 Chambers
+    Street, New York, NY 10007, USA
   CUNYL: Department of Physics and Astronomy, Lehman College, City University of New York,
     NY 10468, USA
   CUNY-Grad: The Graduate Center of the City University of New York, 365 Fifth Avenue,
@@ -51,7 +52,7 @@ affiliations:
   CIERA: Center for Interdisciplinary Exploration and Research in Astrophysics (CIERA) and
     Department of Physics and Astronomy, Northwestern University, 1800 Sherman Road,
     Evanston, IL 60201, USA
-  Clermont-LPC: Universit\'e Clermont Auvergne, CNRS, Laboratoire de Physique de Clermont,
+  Clermont-LPC: Universit\'e Clermont Auvergne, CNRS$/$IN2P3, Laboratoire de Physique de Clermont,
     F-63000 Clermont-Ferrand, France
   DACC: DACC New Mexico State University, Central Campus, Las Cruces, New Mexico, USA
   DARK: DARK, Niels Bohr Institute, University of Copenhagen, Denmark
@@ -89,6 +90,7 @@ affiliations:
     21029 Hamburg, Germany
   Harvard-Astro: Department of Astronomy, Center for Astrophysics, Harvard University,
     60 Garden St., Cambridge, MA 02138, USA
+  Harvard-CfA: Center for Astrophysics, Harvard \& Smithsonian, 60 Garden Street, Cambridge, MA 02138
   Harvard-Physics: Department of Physics, Harvard University, 17 Oxford St., Cambridge
     MA 02138, USA
   Haverford: Department of Astronomy, Haverford College, 370 Lancaster Avenue, Haverford,
@@ -119,8 +121,11 @@ affiliations:
   LAPP: Universit\'{e} Grenoble-Alpes, Universit\'{e} Savoie Mont Blanc, CNRS/IN2P3
     Laboratoire d'Annecy-le-Vieux de Physique des Particules, 9 Chemin de Bellevue
     -- BP 110, F-74940 Annecy-le-Vieux Cedex, France
+  Lieden: Leiden Observatory, Leiden University, Postbus 9513, 2300 RA, Leiden, The Netherlands
   Liege: Institut d'Astrophysique et de G\'{e}ophysique, Universit\'{e} de Li\`{e}ge,
     All\'{e}e du 6 Ao\^{u}t 19c, 4000 Li\`{e}ge, Belgium
+  LINEA: Laborat\'{o}rio Interinstitucional de e-Astronomia, Rua General Jos\'e Cristino, 77,
+    Rio de Janeiro, RJ, 20921-400, Brazil
   LLNL: Lawrence Livermore National Laboratory, 7000 East Avenue, Livermore, CA 94550,
     USA
   LOC: Library of Congress, 101 Independence Ave.\ SE, Washington, DC 20540, USA
@@ -192,6 +197,10 @@ affiliations:
     NJ 08648, USA
   Rutgers: Department of Physics and Astronomy, Rutgers University, 136 Frelinghuysen
     Rd., Piscataway, NJ 08854, USA
+  Santiago-dept: Departamento de Ciencias Fisicas, Universidad Andres Bello Fernandez
+    Concha 700, Las Condes, Santiago, Chile
+  Santiago-Millenium: Millennium Institute of Astrophysics, Nuncio Monse{\~{n}}or S{\'{o}}tero
+    Sanz 100, Of 104, Providencia, Santiago, Chile
   SAO: Smithsonian Astrophysical Observatory, 60 Garden St., Cambridge MA 02138, USA
   SETI: SETI Institute, 339 Bernardo Avenue, Suite 200, Mountain View, CA 94043, USA
   SLAC: SLAC National Accelerator Laboratory,  2575 Sand Hill Rd., Menlo Park, CA
@@ -234,6 +243,7 @@ affiliations:
   UNED: Dpt. of Artificial Intelligence, Universidad Nacional de Educaci\'{o}n a Distancia, Madrid, Madrid, ES
   UPenn: Department of Physics \& Astronomy, University of Pennsylvania, 209 South
     33rd Street, Philadelphia, PA 19104-6396, USA
+  URijeka: Faculty of Physics, University of Rijeka, Radmile Matej\v{c}i\'{c} 2, Rijeka, Croatia
   Utah: Department of Physics and Astronomy, University of Utah, Salt Lake City, UT 84112, USA
   USNO: US Naval Observatory Flagstaff Station, 10391 Naval Observatory Road, Flagstaff,
     AZ 86001, USA
@@ -351,6 +361,14 @@ authors:
     initials: James Roger P.
     name: Angel
     orcid: null
+  anguitat:
+    affil:
+    - Santiago-dept
+    - Santiago-Millenium
+    altaffil: []
+    initials: Timo
+    name: Anguita
+    orcid: 0000-0003-0930-5815
   ansarir:
     affil:
     - Paris-LAL
@@ -1204,10 +1222,13 @@ authors:
   fords:
     affil:
     - CUNYBM
+    - AMNH
+    - CUNY-Grad
+    - CCA
     altaffil: []
-    initials: Saavik
+    initials: K. E. Saavik
     name: Ford
-    orcid: null
+    orcid: 0000-0002-5956-851X
   fossmd:
     affil:
     - SLAC
@@ -1240,9 +1261,9 @@ authors:
     affil:
     - CCA
     altaffil: []
-    initials: Nico
+    initials: Nicol\'{a}s
     name: Garavito Camargo
-    orcid:
+    orcid: null
   gallc:
     affil:
     - DARK
@@ -1399,6 +1420,13 @@ authors:
     initials: Philippe
     name: Gris
     orcid: null
+  gschwendj:
+    affil:
+    - LINEA
+    altaffil: []
+    initials: Julia
+    name: Gschwend
+    orcid: 0000-0003-3023-8362
   guylp:
     affil:
     - RubinObs
@@ -1499,9 +1527,9 @@ authors:
     orcid: null
   holmanmj:
     affil:
-    - Harvard-Astro
+    - Harvard-CfA
     altaffil: []
-    initials: Matthew J
+    initials: Matthew J.
     name: Holman
     orcid: null
   howardjd:
@@ -1568,6 +1596,13 @@ authors:
     altaffil: []
     initials: Walter R.
     name: Innes
+    orcid: null
+  ishidaeo:
+    affil:
+    - Clermont-LPC
+    altaffil: []
+    initials: Emille E. O.
+    name: Ishida
     orcid: null
   ivezicv:
     affil:
@@ -1667,6 +1702,13 @@ authors:
     initials: Mario
     name: Juri\'{c}
     orcid: 0000-0003-1996-9252
+  jurkict:
+    affil:
+    - URijeka
+    altaffil: []
+    initials: Tomislav
+    name: Jurki\'{c}
+    orcid: null
   kahnsm:
     affil:
     - RubinObs
@@ -2277,6 +2319,13 @@ authors:
     initials: Jean-Yves
     name: Nief
     orcid: null
+  nikolicm:
+    affil:
+    - Belgrade-Uni
+    altaffil: []
+    initials: Mladen
+    name: Nicoli\'{c}
+    orcid: null
   nima:
     affil:
     - Washington
@@ -2297,6 +2346,13 @@ authors:
     altaffil: []
     initials: Martin
     name: Nordby
+    orcid: null
+  normand:
+    affil:
+    - NOIRLab
+    altaffil: []
+    initials: Dara
+    name: Norman
     orcid: null
   oconnorp:
     affil:
@@ -2561,6 +2617,13 @@ authors:
     initials: Michael
     name: Prouza
     orcid: null
+  quintb:
+    affil:
+    - RubinObs
+    altaffil: []
+    initials: Bruno C.
+    name: Quint
+    orcid: 0000-0002-1557-3560
   radekav:
     affil:
     - BNL
@@ -2859,6 +2922,13 @@ authors:
     initials: Megan E.
     name: Schwamb
     orcid: 0000-0003-4365-1455
+  scotta:
+    affil:
+    - NOIRLab
+    altaffil: []
+    initials: Adam
+    name: Scott
+    orcid: null
   sebagj:
     affil:
     - RubinObsC
@@ -2964,6 +3034,13 @@ authors:
     initials: R. Chris
     name: Smith
     orcid: null
+  smothermanh:
+    affil:
+    - Washington-Dirac
+    altaffil: []
+    initials: Hayden R.
+    name: Smotherman
+    orcid: 0000-0002-7895-4344
   sobhanis:
     affil:
     - Belldex
@@ -3234,6 +3311,13 @@ authors:
     altaffil: []
     initials: Brian
     name: Van Klaveren
+    orcid: null
+  vanvelzens:
+    affil:
+    - Lieden
+    altaffil: []
+    initials: Sjoert
+    name: van Velzen
     orcid: null
   vazquezm:
     affil:
