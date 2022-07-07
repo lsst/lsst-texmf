@@ -2347,6 +2347,13 @@ authors:
     initials: Martin
     name: Nordby
     orcid: null
+  normand:
+    affil:
+    - NOIRLab
+    altaffil: []
+    initials: Dara
+    name: Norman
+    orcid: null
   oconnorp:
     affil:
     - BNL
