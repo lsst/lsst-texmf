@@ -52,3 +52,32 @@ class BibEntry:
         print("   handle = {{{}}},".format(self.handle), file=fd)
         print("     note = {{{}}},".format(self.note), file=fd)
         print("      url = {{{}}} }}".format(self.url), file=fd)
+
+    def __eq__(self, other):
+        ret = True
+        ret = ret and self.handle == other.handle
+        ret = ret and (self.author.strip() == other.author.strip())
+        ret = ret and (self.title.strip() == other.title.strip())
+        ret = ret and self.month == other.month
+        ret = ret and (self.note.strip() == other.note.strip())
+        # this fails no idea why ret = ret and (self.url == other.url)
+        ret = ret and (self.year == other.year)
+        ret = ret and (self.type.strip() == other.type.strip())
+
+        return ret
+
+    def __ne__(self, other):
+        return not self.__eq__(other)
+
+    def __lt__(self, other):
+        # sorting on handles only
+        return self.handle < other.handle
+
+    def __le__(self, other):
+        return self.handle <= other.handle
+
+    def __gt__(self, other):
+        return self.handle > other.handle
+
+    def __ge__(self, other):
+        return self.handle >= other.handle
