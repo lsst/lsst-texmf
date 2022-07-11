@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 """This class represents a bibtex bibentry.
 it can construct from a string and output to the bib file as needed.
 it is comparable hence sortable.
@@ -22,7 +20,7 @@ TN_SERIES = {
 
 class BibEntry:
     """A class to represent a BibEntry
-    # not all entries have all fields
+    not all entries have all fields
     """
 
     def __init__(self, author=None, title=None, month=None, handle=None, year=None, note="", url=""):
@@ -41,7 +39,6 @@ class BibEntry:
 
     def write_latex_bibentry(self, fd=sys.stdout):
         """ Write a bibentry for document info passed.
-        This assumes its an lsst.io entry and constructs the url accordingly.
         Parameters
         ----------
         fd : default stdout : file to write to
