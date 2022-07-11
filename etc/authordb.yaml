@@ -197,6 +197,7 @@ affiliations:
     NJ 08648, USA
   Rutgers: Department of Physics and Astronomy, Rutgers University, 136 Frelinghuysen
     Rd., Piscataway, NJ 08854, USA
+  Saclay: Universit\'e Paris-Saclay, Universit\'e Paris Cit\'e, CEA, CNRS, AIM, 91191, Gif-sur-Yvette, France
   Santiago-dept: Departamento de Ciencias Fisicas, Universidad Andres Bello Fernandez
     Concha 700, Las Condes, Santiago, Chile
   Santiago-Millenium: Millennium Institute of Astrophysics, Nuncio Monse{\~{n}}or S{\'{o}}tero
@@ -1930,7 +1931,7 @@ authors:
     orcid: null
   lanussef:
     affil:
-    - CNRS
+    - Saclay
     altaffil: []
     initials: Fran\c{c}ois
     name: Lanusse
@@ -2329,7 +2330,7 @@ authors:
   nikuttar:
     affil:
     - NOIRLab
-    altaffil:
+    altaffil: []
     initials: Robert
     name: Nikutta
     orcid: 0000-0002-7052-6900

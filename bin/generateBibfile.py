@@ -9,50 +9,13 @@ data is supplied by Ook, https://github.com/lsst-sqre/ook.
 import argparse
 from algoliasearch.search_client import SearchClient
 from datetime import datetime
+from bibtools import BibEntry
 import sys
 import calendar
+import latexcodec  # noqa provides the latex+latin codec
+
 
 MAXREC = 2000
-
-
-def write_latex_bibentry(auth, title, year, month, handle, url, fd=sys.stdout):
-
-    """ Write a bibentry for document info passed.
-    This assumes its an lsst.io entry and constructs the url accordingly.
-    Parameters
-    ----------
-    auth : `str``
-        Author list ready for tex
-    title : `str`
-    year  : `str`
-    month  : `str`
-    handle  : `str`
-
-    """
-
-    all_series = {
-        "DMTN": "Data Management Technical Note",
-        "RTN": "Technical Note",
-        "PSTN": "Project Science Technical Note",
-        "SCTR": "Commissioning Technical Report",
-        "SITCOMTN": "Commissioning Technical Note",
-        "SMTN": "Simulations Team Technical Note",
-        "SQR": "SQuaRE Technical Note",
-        "DMTR": "Data Management Test Report",
-        "LDM": "Data Management Controlled Document",
-    }
-    prefix, _ = handle.split("-", 1)
-    series = all_series.get(prefix, "")
-
-    print("@DocuShare{{{},".format(handle), file=fd)
-    print("   author = {{{}}},".format(auth), file=fd)
-    print('    title = "{{{}}}",'.format(title), file=fd)
-    print("     year = {},".format(year), file=fd)
-    print("    month = {},".format(month), file=fd)
-    print("   handle = {{{}}},".format(handle), file=fd)
-    print("     note = {{Vera C. Rubin Observatory {}}},".format(series),
-          file=fd)
-    print("      url = {{{}}} }}".format(url), file=fd)
 
 
 def generate_bibfile(outfile, query=""):
@@ -98,8 +61,9 @@ def generate_bibfile(outfile, query=""):
         dt = d['sourceUpdateTimestamp']
         date = datetime.fromtimestamp(dt)
         month = calendar.month_abbr[date.month].lower()
-        write_latex_bibentry(checkFixAuthAndComma(fixTexSS(authors)), fixTex(d['h1']),
-                             date.year, month, d['handle'], d['baseUrl'], outfile)
+        be = BibEntry(checkFixAuthAndComma(fixTexSS(authors)), fixTex(d['h1']),
+                      month, d['handle'], date.year, url=d['baseUrl'])
+        be.write_latex_bibentry(outfile)
         print(file=outfile)
 
     print(f"Got {count} records max:{MAXREC} produced {bcount} bibentries to {outfile}")

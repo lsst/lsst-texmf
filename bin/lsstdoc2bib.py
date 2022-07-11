@@ -6,10 +6,10 @@ produce a bib entry suitable to be put in lsst.bib in texmf.
 
 """
 
-import sys
 import re
 import argparse
 from datetime import datetime
+from bibtools import BibEntry
 
 
 def find_meta(filename):
@@ -38,11 +38,9 @@ def find_meta(filename):
 
     # Read the content of the file into a single string
     lines = []
-    year = datetime.now().year
-    month = datetime.now().strftime('%h')
-    auths = ""
-    titles = ""
-    handles = ""
+    be = BibEntry()
+    be.year = datetime.now().year
+    be.month = datetime.now().strftime('%h')
     doctypes = ""
     docnums = ""
     meta = filename == "meta.tex"
@@ -68,56 +66,34 @@ def find_meta(filename):
         rset = docnum.findall(text)
         if (rset):
             docnums = rset[0]
-        if not handles:
-            handles = f"{doctypes}-{docnums}"
+        if not be.handle:
+            be.handle = f"{doctypes}-{docnums}"
         yearmm = yearm2.findall(text)
         if (yearmm):
-            year = yearmm[0][0]
-            month = yearmm[0][1]
+            be.year = yearmm[0][0]
+            be.month = yearmm[0][1]
     else:
         rset = auth.findall(text)
         if (rset):
-            auths = rset[0]
+            be.author = rset[0]
         rset = title.findall(text)
         if (rset):
-            titles = rset[0]
+            be.title = rset[0]
         else:
             rset = title2.findall(text)
             if (rset):
-                titles = rset[0]
+                be.title = rset[0]
         rset = handle.findall(text)
         if (rset):
-            handles = rset[0]
+            be.handle = rset[0]
         else:
-            handles = f"{doctypes}-{docnums}"
+            be.handle = f"{doctypes}-{docnums}"
         yearmm = yearm.findall(text)
         if (yearmm):
-            year = yearmm[0][0]
-            month = yearmm[0][1]
+            be.year = yearmm[0][0]
+            be.month = yearmm[0][1]
 
-    return auths, titles, year, month, handles
-
-
-def write_latex_bibentry(auth, title, year, month, handle, fd=sys.stdout):
-    """ Write a bibentry based inthe current document
-    Parameters
-    ----------
-    auth : `str``
-        Author
-    title : `str`
-    year  : `str`
-    month  : `str`
-    handle  : `str`
-
-    """
-
-    print("@DocuShare{{{},".format(handle), file=fd)
-    print("   author = {{{}}},".format(auth), file=fd)
-    print("    title = {{{}}},".format(title), file=fd)
-    print("     year = {},".format(year), file=fd)
-    print("    month = {},".format(month), file=fd)
-    print("   handle = {{{}}},".format(handle), file=fd)
-    print("      url = {{http://{}.lsst.io }} }}".format(handle), file=fd)
+    return be
 
 
 def main(texfiles):
@@ -125,24 +101,20 @@ def main(texfiles):
 
     if not texfiles:
         raise RuntimeError("No files supplied.")
-    auth = ""
-    title = ""
-    year = ""
-    month = ""
-    handle = ""
+    be = BibEntry()
     for f in texfiles:
-        rauth, rtitle, ryear, rmonth, rhandle = find_meta(f)
-        if (rauth and not auth):
-            auth = rauth
-        if (rtitle and not title):
-            title = rtitle
-        if (rmonth and not month):
-            month = rmonth
-        if (ryear and not year):
-            year = ryear
-        if (rhandle and not handle):
-            handle = rhandle
-    write_latex_bibentry(auth, title, year, month, handle)
+        rbe = find_meta(f)
+        if rbe.author and not be.author:
+            be.author = rbe.author
+        if rbe.title and not be.title:
+            be.title = rbe.title
+        if rbe.month and not be.month:
+            be.month = rbe.month
+        if rbe.year and not be.year:
+            be.year = rbe.year
+        if rbe.handle and not be.handle:
+            be.handle = rbe.handle
+    be.write_latex_bibentry()
 
 
 if __name__ == "__main__":
