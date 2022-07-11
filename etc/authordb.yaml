@@ -2326,6 +2326,13 @@ authors:
     initials: Mladen
     name: Nicoli\'{c}
     orcid: null
+  nikuttar:
+    affil:
+    - NOIRLab
+    altaffil:
+    initials: Robert
+    name: Nikutta
+    orcid: 0000-0002-7052-6900
   nima:
     affil:
     - Washington
@@ -2353,7 +2360,7 @@ authors:
     altaffil: []
     initials: Dara
     name: Norman
-    orcid: null
+    orcid: 0000-0001-8452-9574
   oconnorp:
     affil:
     - BNL
@@ -2630,6 +2637,13 @@ authors:
     altaffil: []
     initials: Veljko
     name: Radeka
+    orcid: null
+  radovicv:
+    affil:
+    - Belgrade-Uni
+    altaffil: []
+    initials: Viktor
+    name: Radovi\'{c}
     orcid: null
   ragostaf:
     affil:
