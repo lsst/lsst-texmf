@@ -165,7 +165,8 @@ CMB-S4,Cosmic Microwave Background Stage 4,Sci OPS,,,A
 CMDB,Configuration Management Database,LSST DM,,,A
 CMMS,Computerized Maintenance Management System,OPS,,,A
 CMOS,complementary metal-oxide semiconductor,TS,Document-11961,,A
-CMS,Compact Muon Solenoid,Sci OPS,,,A
+CMS,Compact Muon Solenoid,Sci,,,A
+CMS,Centralized Monitoring System),IT DM,,,A
 CNN,Convolutional Neural Network,Sci,,,A
 CNP,Conditional Neural Processes,Sci,,,A
 CNRS,Centre national de la recherche scientifique,Gen,,,A
