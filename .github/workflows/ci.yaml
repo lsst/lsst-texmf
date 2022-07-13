@@ -14,7 +14,7 @@ jobs:
         with:
           python-version: 3.7
 
-      - name: Install linters
+      - name: Install dependancies and linters
         run: |
           python -m pip install --upgrade pip
           python -m pip install flake8 pybtex
@@ -30,6 +30,11 @@ jobs:
         env:
           PYTHONPATH: bin
         run: pytest
+
+      - name: Run as test generateBibfile.py
+        run: |
+          bin/generateBibfile.py generated.bib
+          wc -l generated.bib
 
   build:
     runs-on: ubuntu-latest
