@@ -1154,7 +1154,7 @@ Camcol,"In the SDSS survey, a camera column is the range (in declination) covere
 Camera,"The LSST subsystem responsible for the 3.2-gigapixel LSST camera, which will take more than 800 panoramic images of the sky every night. SLAC leads a consortium of Department of Energy laboratories to design and build the camera sensors, optics, electronics, cryostat, filters and filter exchange mechanism, and camera control system",CAM,,,G
 camera,"An imaging device mounted at a telescope focal plane, composed of optics, a shutter, a set of filters, and one or more sensors arranged in a focal plane array",Sci,,,G
 Camera Crosstalk-Corrected Image,An image from the Camera system that has had crosstalk removed but has not been processed by the Instrument Signature Removal pipeline,DM,,"C3 Image, Raw Image",G
-CARMA,Continuous time autoregressive moving average process, standard way to describe optical AGN variability,Sci,,,G
+CARMA,"Continuous time autoregressive moving average process, standard way to describe optical AGN variability",Sci,,,G
 Catch-up Archiver,The Archiver for any images missed by the real time archiver,DM,,Archiver,G
 CatSim,"The catalog simulator simulates the properties and distributions of stars, galaxies, and asteroids that LSST expects to observe.",Sci,,,G
 Center,An entity managed by AURA that is responsible for execution of a federally funded project,Adm,,,G
