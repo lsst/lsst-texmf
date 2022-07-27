@@ -55,7 +55,6 @@ AOC, AURA Oversight Council,OPS,,,A
 AOS,Active Optics System,TS,,,A
 AOSS,AURA Observatory Support Services,OPS,,,A
 AP,Alert Production,LSST DM,,,A
-APC,activities, projects, or state of the profession considerations (decadal),Sci,,,A
 APL,Apache Public License,LSST DM,,,A
 APDB,Alert Production DataBase,DM,,,A
 API,Application Programming Interface,Gen,,,A
@@ -1095,6 +1094,7 @@ aggregation,"The process of reducing multiple input values to a single output, e
 airmass,"The pathlength of light from an astrophysical source through the Earth's atmosphere. It is given approximately by sec z, where z is the angular distance from the zenith (the point directly overhead, where airmass = 1.0) to the source",Sci,,,G
 Akaike Information Criterion,"an estimator of prediction error and thereby relative quality of statistical models for a given set of data",Sci,,,G
 AMPEL,"AMPEL (Broker) is a modular and scalable platform with explicit provenance tracking, suited for systematically processing large — possibly complex and heterogeneous — datasets either in real time or offline.\url{https://ampelproject.github.io/} ",OPS,,,G
+APC,"activities, projects, or state of the profession considerations (decadal)",Sci,,,G
 Authentication,"The action of demonstrating who you are and an person, mission, or other entity. Usually by use of a password or security token",DM,,,G
 Authorization,"The action of allowing an authorized or anonymous entity access to data or services.",DM,,,G
 Automatic Learning for the Rapid Classification of Events,"The ALeRCE broker is a Chilean-led broker which is processing the alert stream from the ZTF and a Community Broker for the Vera C. Rubin Observatory and its LSST, as well as other large etendue survey telescopes. \url{http://alerce.science/}",OPS,,,G
