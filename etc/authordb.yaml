@@ -70,6 +70,7 @@ affiliations:
   EdinburghIA: Institute for Astronomy, University of Edinburgh,  Royal Observatory, Blackford Hill, Edinburgh EH9 3HJ, UK
   EPFL: Institute of Physics, Laboratory of Astrophysics, \'{E}cole Polytechnique
     Fed\`{e}rale de Lausanne (EPFL), Observatoire de Sauverny, 1290 Versoix, Switzerland
+  ESO: European Southern Observatory, Karl-Schwarzschild-Strasse 2, 85748 Garching bei München, Germany
   FacebookNE: Facebook,  14734 Friend Plaza, Springfield, NE 68059, USA
   Fermilab: Fermi National Accelerator Laboratory, P. O. Box 500, Batavia, IL 60510, USA
   FSU: Florida State University, Tallahassee, FL 32306
@@ -980,6 +981,13 @@ authors:
     initials: Roc
     name: Cutri
     orcid: 0000-0002-0077-2305
+  dacostal:
+    affil:
+    - LINEA
+    altaffil: []
+    initials: Luiz Nicolaci 
+    name: da Costa
+    orcid: null
   dalypn:
     affil:
     - UA
@@ -2843,6 +2851,13 @@ authors:
     initials: Andrei
     name: Salnikov
     orcid: null
+  sanchezsaezp:
+    affil:
+    - ESO
+    altaffil: []
+    initials: Paula
+    name: S\'anchez-S\'aez
+    orcid: 0000-0003-0820-4692
   sarrol:
     affil:
     - UNED
