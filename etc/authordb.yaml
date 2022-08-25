@@ -7,6 +7,8 @@ affiliations:
     Serbia
   Belgrade-Uni: Faculty of Mathematics, Department of Astronomy, University of Belgrade,
     Studentski trg 16 Belgrade, Serbia
+  Belgrade-CS: Department of Informatics and Computer Science, Faculty of Mathematics,
+    University of Belgrade, Studentski trg 16, 11000 Belgrade, Serbia
   Belldex: Belldex IT Consulting, Tucson, AZ 85742, USA
   Berkeley-Astro: Astronomy Department,  University of California, 601 Campbell Hall,
     Berkeley, CA 94720, USA
@@ -349,6 +351,13 @@ authors:
     initials: Igor
     name: Andreoni
     orcid: 0000-0002-8977-1498
+  andricmitrovicn:
+    affil:
+    - Belgrade-CS
+    altaffil: []
+    initials: Nikola
+    name: Andri{\c} Mitrovi{\c}
+    orcid: null
   angeligz:
     affil:
     - GMTO
