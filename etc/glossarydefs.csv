@@ -574,7 +574,7 @@ LLNL,Lawrence Livermore National Laboratory,Gen,,,A
 LOE,Level of Effort,Gen,,,A
 LOP,LSST Operations Plan,TS,Document-11950,,A
 LOTO,Lock Out Tag Out,TS,Safety LPM-212,,A
-LOVE,LSST Operations Visualization Environment,LSST DM,,,A
+LOVE,LSST Operators Visualization Environment,LSST DM,,,A
 LOY,LSST Operations Year,OPS,,,A
 LPGL,Lesser Public GNU general License,Gen,,,A
 LPM,LSST Project Management (Document Handle),LSST DM,,,A
