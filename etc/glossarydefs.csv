@@ -3,6 +3,7 @@ Term,Description,Subsystem Tags,Documentation Tags,Associated Acronyms and Alter
 2D,Two-dimensional,Gen,,,A
 2MASS,Two-Micron All Sky Survey,Gen,,,A
 3D,Three-dimensional,Gen,,,A
+A2,Anastasia Alexov,Gen,,,A
 A/D,Analogue-to-Digital (converter),Gen,,,A
 AA,Authentication and Authorization,TS,Document-11921,,A
 AAAC,Astronomy and Astrophysics Advisory Committee,TS,Document-11921,,A
@@ -394,6 +395,7 @@ FY22,Financial Year 22,OPS,,,A
 FY23,Financial Year 23,OPS,,,A
 FY24,Financial Year 24,OPS,,,A
 FY25,Financial Year 25,OPS,,,A
+G6,Group/Gang of 6 SIT-Com leads,LSST,,,A
 GALAH,GALactic Archaeology with HERMES,DM,,,A
 GALEX,Galaxy Evolution Explorer,OPS,,,A
 GAMA,Galaxy And Mass Assembly (survey),Sci,,,A
