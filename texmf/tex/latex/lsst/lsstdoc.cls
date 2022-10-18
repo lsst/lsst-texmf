@@ -1226,8 +1226,11 @@ No actions have been identified.}
 \newcommand{\Sources}{\code{Sources}\xspace}
 \newcommand{\ForcedSource}{\code{Forced\-Source}\xspace}
 \newcommand{\ForcedSources}{\code{Forced\-Sources}\xspace}
-\newcommand{\CoaddSource}{\code{Coadd\-Source}\xspace}
-\newcommand{\CoaddSources}{\code{Coadd\-Sources}\xspace}
+\newcommand{\CoaddSource}{\code{Coadd}\xspace}
+\newcommand{\Coadd}{\code{Coadd}\xspace}
+\newcommand{\CoaddSources}{\code{Coadds}\xspace}
+\newcommand{\Coadds}{\code{Coadds}\xspace}
+% LCR-3293 removes coaddsources
 \newcommand{\SSObject}{\code{SS\-Object}\xspace}
 \newcommand{\SSObjects}{\code{SS\-Objects}\xspace}
 \newcommand{\VOEvent}{\code{VO\-Event}\xspace}
