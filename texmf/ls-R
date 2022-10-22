@@ -22,6 +22,7 @@ refs_ads.bib
 
 ./bibtex/bst:
 aa.bst
+asp2014.bst
 gaia_aa.bst
 lsst_aa.bst
 
@@ -393,8 +394,12 @@ LSSTmain.pdf
 LSSToptions.tex
 
 ./tex/latex:
+conf
 lsst
 tocstyle
+
+./tex/latex/conf:
+asp2014.sty
 
 ./tex/latex/lsst:
 LSST-beamer.sty
