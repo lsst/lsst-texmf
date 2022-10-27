@@ -47,7 +47,8 @@ apt-get -y install --no-install-recommends \
     texlive-fonts-recommended \
     texlive-fonts-extra \
     lmodern \
-    fonts-inconsolata
+    fonts-inconsolata \
+    python3-pygments
 
 # Delete cached files we don't need anymore:
 apt-get clean
