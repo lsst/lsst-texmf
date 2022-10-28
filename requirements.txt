@@ -6,3 +6,4 @@ google-auth-oauthlib
 oauth2client
 algoliasearch
 latexcodec
+pygments
