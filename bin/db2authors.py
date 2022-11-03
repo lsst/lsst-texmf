@@ -120,6 +120,19 @@ pAuthorOutput = list()
 indexOutput = list()
 
 anum = 0
+
+
+def get_initials(initials):
+    """Authors db has full name not initials -
+       sometimes we just want intials"""
+    names = re.split(r'[ -\.\~]', initials)
+    realInitials = []
+    for name in names:
+        if len(name) > 0:
+            realInitials.append(name[0])
+    return "~"+".~".join(realInitials)+"."
+
+
 for anum, authorid in enumerate(authors):
     orcid = ""
 
@@ -165,7 +178,7 @@ for anum, authorid in enumerate(authors):
     initials = re.sub(r"\s+", "~", initials)
 
     # adass has index and paper authors ..
-    addr = affil[affilset[0]].split(',')
+    addr = affil[theAffil].split(',')
     tute = addr[0]
     ind = len(addr) - 1
     if ind > 0:
@@ -187,7 +200,8 @@ for anum, authorid in enumerate(authors):
         format(initials, surname, email, orc, tute, city, state, pcode,
                country))
 
-    indexOutput.append(r"%\aindex{{{},{}}}".format(surname, initials))
+    justInitials = get_initials(initials)
+    indexOutput.append(r"%\aindex{{{},{}}}".format(surname, justInitials))
 
     if buffer_authors:
         authOutput.append(r"{}~{}{}".format(initials, surname, affilAuth))
@@ -212,7 +226,7 @@ if buffer_authors:
     for auth in authOutput:
         print(auth, end='')
         anum = anum + 1
-        if (anum == len(authOutput) - 1):
+        if anum == len(authOutput) - 1:
             print(" and ", end='')
         else:
             print(" ", end='')
