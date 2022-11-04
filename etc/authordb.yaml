@@ -1296,6 +1296,20 @@ authors:
     initials: Emmanuel
     name: Gangler
     orcid: 0000-0001-6728-1423
+  gaponenkoi:
+    affil:
+    - SLAC
+    altaffil: []
+    initials: Igor
+    name: Gaponenko
+    orcid: null
+  gatesj:
+    affil:
+    - SLAC
+    altaffil: []
+    initials: John
+    name: Gates
+    orcid: null
   gawisere:
     affil:
     - Rutgers
@@ -1465,6 +1479,13 @@ authors:
     altaffil: []
     initials: Gunther
     name: Haller
+    orcid: null
+  hanushevskya:
+    affil:
+    - SLAC
+    altaffil: []
+    initials: Andrew
+    name: Hanushevsky
     orcid: null
   harrisr:
     affil:
@@ -2287,7 +2308,7 @@ authors:
     altaffil: []
     initials: Fritz
     name: Mueller
-    orcid: null
+    orcid: 0000-0002-7061-4644
   mullergp:
     affil:
     - RubinObs
