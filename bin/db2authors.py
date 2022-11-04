@@ -35,7 +35,7 @@ authorfile = os.path.join("authors.yaml")
 
 # this should probably be a dict with the value of affil_cmd
 # the keys could then be passed to the arg parser.
-OUTPUT_MODES = ["aas", "spie", "adass"]
+OUTPUT_MODES = ["aas", "spie", "adass", "arxiv"]
 
 description = __doc__
 formatter = argparse.RawDescriptionHelpFormatter
@@ -52,10 +52,16 @@ buffer_authors = False  # out put authors in one \author command (adass)
 affil_cmd = "affiliation"
 affil_form = r"\{}[{}]{{{}}}"
 auth_afil_form = "{}{}{}"
-author_form = r"\author{}{{{}~{}}}"
+author_form = r"{}~{}{}"
 author_super = False  # Author affiliation as super script
 
 # The default is AAS and if no mode is specified you get that
+if args.mode == "arxiv":
+    author_form = r"{} {}"
+    affil_cmd = ""
+    buffer_affil = True
+    buffer_authors = True
+
 if args.mode == "spie":
     affil_cmd = "affil"
     buffer_affil = True
@@ -64,7 +70,7 @@ if args.mode == "adass":
     affil_cmd = "affil"
     affil_form = r"\{}{{$^{}${}}}"
     auth_afil_form = "{}{}$^{}$"
-    author_form = r"\author{}{{{}~{}}}"
+    author_form = r"{}{{{}~{}}}"
     buffer_affil = True
     buffer_authors = True
     author_super = True
@@ -204,10 +210,10 @@ for anum, authorid in enumerate(authors):
     indexOutput.append(r"%\aindex{{{},{}}}".format(surname, justInitials))
 
     if buffer_authors:
-        authOutput.append(r"{}~{}{}".format(initials, surname, affilAuth))
+        authOutput.append(author_form.format(initials, surname, affilAuth))
         allAffil = allAffil + affilOutput
     else:
-        print(r"\author{}{{{}~{}}}".format(orcid, initials, surname))
+        print(author_form.format(orcid, initials, surname))
         if buffer_affil:
             print(*affilOutput, sep="\n")
         else:
@@ -221,17 +227,22 @@ for anum, authorid in enumerate(authors):
         print()
 
 if buffer_authors:
-    print(r"\author{", end='')
+    if args.mode != "arxiv":
+        print(r"\author{", end='')
     anum = 0
+    numAuths = len(authOutput) - 1
     for auth in authOutput:
         print(auth, end='')
         anum = anum + 1
-        if anum == len(authOutput) - 1:
+        if anum == numAuths or \
+                (args.mode == "arxiv" and anum < numAuths):
             print(" and ", end='')
         else:
-            print(" ", end='')
-    print("}")
-    print(*allAffil, sep="\n")
-    print(*pAuthorOutput, sep="\n")
-    print("% Yes they said to have these index commands commented out.")
-    print(*indexOutput, sep="\n")
+            if anum < numAuths:
+                print(", ", end='')
+    if args.mode != "arxiv":
+        print("}")
+        print(*allAffil, sep="\n")
+        print(*pAuthorOutput, sep="\n")
+        print("% Yes they said to have these index commands commented out.")
+        print(*indexOutput, sep="\n")
