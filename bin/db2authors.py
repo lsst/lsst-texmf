@@ -52,7 +52,7 @@ buffer_authors = False  # out put authors in one \author command (adass)
 affil_cmd = "affiliation"  # command for latex affiliation
 affil_form = r"\{}[{}]{{{}}}"  # format of the affiliation
 auth_afil_form = "{}{}{}"  # format of author with affiliation
-author_form = r"{}~{}{}" # fomrmat of the author
+author_form = r"{}~{}{}"  # fomrmat of the author
 author_super = False  # Author affiliation as super script
 
 # The default is AAS and if no mode is specified you get that
@@ -210,7 +210,7 @@ for anum, authorid in enumerate(authors):
                country))
 
     if args.mode == "arxiv":
-        affilOutput = list() # reset this
+        affilOutput = list()  # reset this
         affilOutput.append(affil_form.format(affil_cmd, len(affilset), tute))
 
     justInitials = get_initials(initials)
@@ -250,7 +250,7 @@ if buffer_authors:
             if anum < numAuths:
                 print(" ", end='')
     if args.mode == "arxiv":
-        print("\n(",end="")
+        print("\n(", end="")
     else:
         print("}")
     print(*allAffil, sep=affil_out_sep, end="")
