@@ -261,6 +261,7 @@ if buffer_authors:
     if args.mode == "arxiv":
         print(")\n")
     if args.mode != "arxiv":
+        print("")
         print(*pAuthorOutput, sep="\n")
         print("% Yes they said to have these index commands commented out.")
         print(*indexOutput, sep="\n")
