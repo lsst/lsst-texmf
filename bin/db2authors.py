@@ -74,7 +74,7 @@ if args.mode == "adass":
     affil_out_sep = "\n"
     affil_form = r"\{}{{$^{}${}}}"
     auth_afil_form = "{}{}$^{}$"
-    author_form = r"{}{{{}~{}}}"
+    author_form = r"{}~{}{}"  # initial, surname, affil
     buffer_affil = True
     buffer_authors = True
     author_super = True
@@ -191,7 +191,7 @@ for anum, authorid in enumerate(authors):
     initials = re.sub(r"\s+", "~", initials)
 
     # adass has index and paper authors ..
-    addr = affil[theAffil].split(',')
+    addr = [a.strip() for a in affil[theAffil].split(',')]
     tute = addr[0]
     ind = len(addr) - 1
     if ind > 0:
