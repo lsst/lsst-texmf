@@ -176,7 +176,11 @@ for anum, authorid in enumerate(authors):
             orcid = "[{}]".format(auth["orcid"])
 
     orc = auth.get("orcid", "")
+    if orc is None:
+        orc = ""
     email = auth.get("email", "")
+    if email is None:
+        email = ""
     # For spaces in surnames use a ~
     surname = re.sub(r"\s+", "~", auth["name"])
 
