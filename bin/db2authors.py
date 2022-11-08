@@ -176,7 +176,11 @@ for anum, authorid in enumerate(authors):
             orcid = "[{}]".format(auth["orcid"])
 
     orc = auth.get("orcid", "")
+    if orc is None:
+        orc = ""
     email = auth.get("email", "")
+    if email is None:
+        email = ""
     # For spaces in surnames use a ~
     surname = re.sub(r"\s+", "~", auth["name"])
 
@@ -257,6 +261,7 @@ if buffer_authors:
     if args.mode == "arxiv":
         print(")\n")
     if args.mode != "arxiv":
+        print("")
         print(*pAuthorOutput, sep="\n")
         print("% Yes they said to have these index commands commented out.")
         print(*indexOutput, sep="\n")
