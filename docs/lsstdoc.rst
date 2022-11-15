@@ -88,6 +88,13 @@ LSST change-controlled documents do not require this information, but sometimes 
 
    \setDocCurator{A Person}
 
+Optionally, the document citation information can be defined here.
+LSST change-controlled documents do not require this information, but sometimes it is beneficial to include the citation information explicitly.
+
+.. code-block:: latex
+
+   \setDocCitationInformation{A Citation}
+
 The abstract can be defined with this command and will be inserted in the correct place in the document preamble.
 
 .. code-block:: latex

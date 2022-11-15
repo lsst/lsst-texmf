@@ -341,6 +341,9 @@
 \newcommand{\setDocCurator}[1]{\def\@docCurator{#1}}
 \setDocCurator{}
 
+\newcommand{\setDocCitationInformation}[1]{\def\@docCitationInformation{#1}}
+\setDocCitationInformation{}
+
 \newcommand{\setDocUpstreamLocation}[1]{\def\@docUpstreamLocation{#1}}
 \setDocUpstreamLocation{}
 
@@ -622,6 +625,12 @@
     \relax
 \else
     \emph{Version from source repository:} \@docUpstreamVersion\\
+\fi
+\ifx \@docCitationInformation \@empty
+    \relax
+\else
+    \vspace*{0.2cm}\\
+    \emph{Cite as:} \@docCitationInformation\\
 \fi
 
 \clearpage
