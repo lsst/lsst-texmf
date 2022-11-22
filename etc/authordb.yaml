@@ -2,6 +2,7 @@ affiliations:
   Adler: The Adler Planetarium, 1300 South Lakeshore Ave., Chicago, IL 60605, USA
   AMNH: Department of Astrophysics, American Museum of Natural History, New York,
     NY 10028, USA
+  ASTRON: ASTRON, Oude Hoogeveensedijk 4, 7991\,PD, Dwingeloo, The Netherlands
   BNL: Brookhaven National Laboratory, Upton, NY 11973, USA
   Belgrade-AO: Astronomical Observatory, Volgina 7, P.O.\ Box 74, 11060 Belgrade,
     Serbia
@@ -3211,7 +3212,7 @@ authors:
     orcid: null
   swinbankjd:
     affil:
-    - Washington
+    - ASTRON
     - Princeton-Astro
     altaffil: []
     initials: John D.
