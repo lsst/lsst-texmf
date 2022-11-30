@@ -247,7 +247,7 @@ if buffer_authors:
     for auth in authOutput:
         print(auth, end='')
         anum = anum + 1
-        if (anum == numAuths and numAuths > 1)  or \
+        if (anum == numAuths and numAuths > 1) or \
                 (args.mode == "arxiv" and anum < numAuths):
             print(" and ", end='')
         else:
