@@ -1207,7 +1207,7 @@ authors:
     affil:
     - WisconsinMadison
     altaffil: []
-    initials: Peter S.
+    initials: Peter S. 
     name: Ferguson
     orcid: 0000-0001-6957-1627
   figueroae:
@@ -1464,7 +1464,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
-    initials: Leanne P.
+    initials: Leanne P. 
     name: Guy
     orcid: 0000-0003-0800-8755
   guyonneta:
@@ -3482,6 +3482,13 @@ authors:
     initials: Michael
     name: Warner
     orcid: null
+  watersc:
+    affil:
+    - Princeton-Astro
+    altaffil: []
+    initials: Christopher Z.
+    name: Waters
+    orcid: 0000-0003-1989-4879
   wiechao:
     affil:
     - RubinObs
