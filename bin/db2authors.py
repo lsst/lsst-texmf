@@ -52,7 +52,7 @@ buffer_authors = False  # out put authors in one \author command (adass)
 affil_cmd = "affiliation"  # command for latex affiliation
 affil_form = r"\{}[{}]{{{}}}"  # format of the affiliation
 auth_afil_form = "{}{}{}"  # format of author with affiliation
-author_form = r"{}~{}{}"  # fomrmat of the author
+author_form = r"\author{}{{~{}{}}}"  # fomrmat of the author
 author_super = False  # Author affiliation as super script
 
 # The default is AAS and if no mode is specified you get that
@@ -247,7 +247,7 @@ if buffer_authors:
     for auth in authOutput:
         print(auth, end='')
         anum = anum + 1
-        if anum == numAuths or \
+        if (anum == numAuths and numAuths > 1) or \
                 (args.mode == "arxiv" and anum < numAuths):
             print(" and ", end='')
         else:
