@@ -1210,6 +1210,13 @@ authors:
     initials: Peter S. 
     name: Ferguson
     orcid: 0000-0001-6957-1627
+  fertea:
+    affil:
+    - SLAC
+    altaffil: []
+    initials: Agn\`{e}s
+    name: Fert\'{e}'
+    orcid: null
   figueroae:
     affil:
     - RubinObs
