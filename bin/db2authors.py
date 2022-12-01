@@ -149,7 +149,7 @@ for anum, authorid in enumerate(authors):
         auth = authorinfo[authorid]
     except KeyError as e:
         raise RuntimeError(
-            f"Author ID {authorid} now defined in author database.") from e
+            f"Author ID {authorid} not defined in author database.") from e
 
     affilOutput = list()
     affilAuth = ""
