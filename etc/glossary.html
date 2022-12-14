@@ -20,7 +20,7 @@
 <script type="text/javascript"charset="utf-8">
         var gls;
 	var acrCol;
-	d3.text("glossarydefs.csv", function(error, data) {
+	d3.text("htmlglossary.csv", function(error, data) {
 	    if (error) console.log("Failed: ", error);
 		    gls = d3.csv.parseRows(data, function(d, i) {
 		          return d.slice(0,3)

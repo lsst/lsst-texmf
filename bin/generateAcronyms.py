@@ -687,15 +687,41 @@ def update(texfiles):
         updateFile(f, GLSlist)
 
 
+def load_translation(locale, filename):
+    """ load a trandaltion file for given locale
+    simplistic for now - append local to file name
+    load in a dict assume acronyn, definition"""
+
+    transfile = filename.replace(".csv", f"_{locale}.csv")
+    translation = {}
+    with open(transfile, "r") as fd:
+        reader = csv.reader(fd, delimiter=',', quotechar='"')
+        for lc, row in enumerate(reader):
+            try:
+                ind = 0
+                acr = escape_for_tex(row[ind])
+                defn = escape_for_tex(row[ind + 1])
+                translation[acr] = defn
+            except BaseException as ex:
+                print("Error reading {} on line {} - {}".format(transfile, lc,
+                                                                row))
+                raise ex
+    return translation
+
+
 def dump_gls(filename, out_file):
-    """Read the definition file and just output a latex table"""
+    """Read the definition file and just output a latex table,
+    include spanish where available and also do that for a csv to
+    be used on the glossary page."""
 
     sep = " & "
     end = r" \\"
     lc = 0
+    translate = load_translation("es", filename)
+    gfile = "htmlglossary.csv"
     with open(filename, "r") as fd:
         reader = csv.reader(fd, delimiter=',', quotechar='"')
-        with open(out_file, "w") as ofd:
+        with open(out_file, "w") as ofd, open(gfile, "w") as ogfile:
             print(r"""\addtocounter{table}{-1}
             \begin{longtable}{p{0.15\textwidth}p{0.7\textwidth}p{0.15\textwidth}}\hline
             \textbf{Entry} & \textbf{Description} & \textbf{Tags}  \\\hline
@@ -711,9 +737,17 @@ def dump_gls(filename, out_file):
                         continue  # There is a header line
                     ind = 0
                     acr = escape_for_tex(row[ind])
+                    trans = None
+                    if row[ind] in translate:
+                        trans = translate[row[ind]]
                     defn = escape_for_tex(row[ind + 1])
                     tags = row[ind + 2]
-                    print(sep.join([acr, defn, tags])+end, file=ofd)
+                    print(",".join([acr, f"\"{defn}\"", tags]), file=ogfile)
+                    if trans:
+                        trans = escape_for_tex(trans)
+                        print(",".join([acr, f"\"{trans}\"", ""]), file=ogfile)
+                        defn = defn + "\n\n" + escape_for_tex(trans)
+                    print(sep.join([acr, defn, tags]) + end, file=ofd)
                 except BaseException as ex:
                     print("Error reading {} on line {} - {}".format(filename, lc,
                                                                     row))
@@ -774,7 +808,7 @@ if __name__ == "__main__":
     if doCheck:
         # For now load the glossary .. see if we get an excpetion
         # return appropriate exit code to make ci pass or fail
-        # also dump all entries ot file so we can make a pdf outside
+        # also dump all entries to file so we can make a pdf outside
         status = 0
         try:
             dump_gls(setup_paths()[0], texfiles[0])

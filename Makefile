@@ -51,12 +51,12 @@ test-pybtex:
 	@echo
 	bin/validate_bib.py $(BIBFILES)
 
-.PHONY: docs
-docs: $(PDF) $(TESTS)
+.PHONY: docs 
+docs: $(PDF) $(TESTS) glstab.tex
 	mkdir -p docs/_static/examples
 	cp *.pdf docs/_static/examples/
 	cp etc/glossary.html docs
-	cp etc/glossarydefs.csv docs
+	cp htmlglossary.csv docs
 	make -C docs html
 
 lsst.bib: 
