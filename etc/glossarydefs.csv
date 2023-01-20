@@ -327,6 +327,7 @@ EPA,Environmental Protection Agency,Gen,,,A
 EPLS,Excludable Parties List,TS,Document-12007,,A
 EPO,Education and Public Outreach,LSST DM,,,A
 EPOC,Education and Public Outreach Center,OPS,,,A
+ES,Early Science,OPS,,,A
 ESA,European Space Agency,Gen,,,A
 ESAC,European Space Astronomy Centre,Gen,,,A
 ESD,electrostatic discharge,TS,Document-12002,,A
@@ -383,6 +384,7 @@ FPRD,functional performance requirements document,TS,Document-11947,,A
 FPSL,Forced-Photometry Sensitivity Limit,TS,,,A
 FRACAS,Failure Reporting Analysis and Corrective Action System,PSE,,,A
 FrDF,French Data Facility,OPS,,,A
+FRDF,French Data Facility,OPS,,,A
 FS,File System,Gen,,,A
 FSAAS,Filesystem as a Service, IT,,,A
 FTE,Full-Time Equivalent,Adm Gen,,,A
