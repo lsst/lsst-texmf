@@ -371,6 +371,7 @@ FLOPS,FLoating point Operation per Second,IT,,,A
 FMEA,failure modes and effect analysis,TS,Document-11942,,A
 FMECA,"Failure Modes, Effects, and Causality Analysis",OPS OIR,,,A
 FNAL,Fermi National Accelerator Lab,OPS,,,A
+FOA,Funding Opportunity Announcement,Sci,,,A
 FOA,Facilities Operations in Arizona,OPS,,,A
 FOC,Facilities Operations in Chile,OPS,,,A
 FOH,Facilities Operations in Hawai‘i,OPS,,,A
@@ -424,6 +425,7 @@ GLONASS,GLObal NAvigation Satellite System,Gen,,,A
 GMT,Giant Magellan Telescope,OPS,,,A
 GMU,George Mason University,TS,Document-11944,,A
 GNU,GNU's Not Unix! An operating system and an extensive collection of free computer software,OPS DM,,,A
+GOA,Government Office of Accounting,Gen,,,A
 GP,Gaussian Process,Sci,,,A
 GPFS,General Parallel File System (now IBM Spectrum Scale),Gen,,,A
 GPL,GNU Public License,Gen,,,A
