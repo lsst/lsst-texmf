@@ -327,6 +327,7 @@ EPA,Environmental Protection Agency,Gen,,,A
 EPLS,Excludable Parties List,TS,Document-12007,,A
 EPO,Education and Public Outreach,LSST DM,,,A
 EPOC,Education and Public Outreach Center,OPS,,,A
+ES,Early Science,OPS,,,A
 ESA,European Space Agency,Gen,,,A
 ESAC,European Space Astronomy Centre,Gen,,,A
 ESD,electrostatic discharge,TS,Document-12002,,A
@@ -370,6 +371,7 @@ FLOPS,FLoating point Operation per Second,IT,,,A
 FMEA,failure modes and effect analysis,TS,Document-11942,,A
 FMECA,"Failure Modes, Effects, and Causality Analysis",OPS OIR,,,A
 FNAL,Fermi National Accelerator Lab,OPS,,,A
+FOA,Funding Opportunity Announcement,Sci,,,A
 FOA,Facilities Operations in Arizona,OPS,,,A
 FOC,Facilities Operations in Chile,OPS,,,A
 FOH,Facilities Operations in Hawai‘i,OPS,,,A
@@ -383,6 +385,7 @@ FPRD,functional performance requirements document,TS,Document-11947,,A
 FPSL,Forced-Photometry Sensitivity Limit,TS,,,A
 FRACAS,Failure Reporting Analysis and Corrective Action System,PSE,,,A
 FrDF,French Data Facility,OPS,,,A
+FRDF,French Data Facility,OPS,,,A
 FS,File System,Gen,,,A
 FSAAS,Filesystem as a Service, IT,,,A
 FTE,Full-Time Equivalent,Adm Gen,,,A
@@ -422,6 +425,7 @@ GLONASS,GLObal NAvigation Satellite System,Gen,,,A
 GMT,Giant Magellan Telescope,OPS,,,A
 GMU,George Mason University,TS,Document-11944,,A
 GNU,GNU's Not Unix! An operating system and an extensive collection of free computer software,OPS DM,,,A
+GOA,Government Office of Accounting,Gen,,,A
 GP,Gaussian Process,Sci,,,A
 GPFS,General Parallel File System (now IBM Spectrum Scale),Gen,,,A
 GPL,GNU Public License,Gen,,,A
@@ -813,6 +817,7 @@ RCC,Raft Control Rate,CAM,,,A
 RCEC,Rubin Construction Executive Committee,Gen,,,A
 RCI,Raft Communication Interface,CAM,,,A
 RCM,Raft Communication Module,CAM,,,A
+RCOC,Rubin Celebratory Organizing Committee,LSST,,,A
 RDBMS,Relational Database Management System ,Gen,,,A
 RDO,Rubin Directors Office,OPS,,,A
 RDP,Rubin Data Production,OPS,,,A
