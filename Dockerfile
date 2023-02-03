@@ -36,6 +36,10 @@ FROM base AS runtime
 # Create a directory for the lsst-texmf installation
 RUN mkdir lsst-texmf
 
+# Disable git safe directory checks, particularly for the /workspace
+# working directory that documents are mounted into.
+RUN git config --global --add safe.directory '*'
+
 # Point $TEXMFHOME to the container's lsst-texmf. This environment variable
 # exists for container runs by a user.
 ENV TEXMFHOME "/lsst-texmf/texmf"
