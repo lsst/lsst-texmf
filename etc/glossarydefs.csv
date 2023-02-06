@@ -820,7 +820,8 @@ RCM,Raft Communication Module,CAM,,,A
 RCOC,Rubin Celebratory Organizing Committee,LSST,,,A
 RDBMS,Relational Database Management System ,Gen,,,A
 RDO,Rubin Directors Office,OPS,,,A
-RDP,Rubin Data Production,OPS,,,A
+RDM,Rubin Data Management,OPS,,,A
+RDP,Rubin Data Production(Obsolete use RDM),OPS,,,A
 REB,Readout Electronics Board,LSST DM,,,A
 REN,Research and Education Network,OPS,,,A
 RENATER,Réseau National de télécommunications pour la Technologie l’Enseignement et la Recherche,OPS,,,A
