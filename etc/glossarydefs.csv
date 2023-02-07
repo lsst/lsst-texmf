@@ -734,7 +734,8 @@ OS,Operating System,Gen,,,A
 OSHA,Occupational Safety and Health Administration,OPS,,,A
 OSI,open systems interconnect,TS,Document-12012,,A
 OSPL,OpenSplice DDS - the underlying messaging system for SAL,TS,,,A
-OSS,Observatory System Specifications; LSE-30,LSST DM,,,A
+OSS,Observatory System Specifications; LSE-30,DM,,,A
+OSS,Oil Supply System,TS,,,A
 OSX,Macintosh Operating System (obsolete; now macOS),Gen,,,A
 OTB,Over Target Baseline,Gen,,,A
 OTS,observatory telemetry system,TS,Document-12015,,A
@@ -1050,6 +1051,7 @@ VLT,Very Large Telescope (ESO),Gen,,,A
 VLTI,Very Large Telescope Interferometer (ESO),Gen,,,A
 VM,Virtual Machine,IT,,,A
 VME,Virtual Machine Environment,IT,,,A
+VMS,Vibration Monitoring System,TS,,,A
 VNOC,Virtual Network Operations Center,NET ,,,A
 VO,Virtual Observatory,Gen,,,A
 VOIP,Voice Over Internet Protocol,IT DM,,,A
