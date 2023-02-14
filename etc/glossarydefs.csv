@@ -288,6 +288,7 @@ DPC,Data Policy Committee,OPS,,,A
 DPDD,Data Product Definition Document,LSST DM,,,A
 DPLT,DP Leadership Team,OPS,,,A
 DPP,Data Products Processing,TS,Document-11940,,A
+DPRPT,Data Preview and Release Planning Tool,OPS,RTN-005,,A
 DQ,data quality,TS,Document-12020,,A
 DQA,data quality assurance,TS,Document-11974,,A
 DR,Data Release,LSST DM,,,A
@@ -523,6 +524,7 @@ JDR,Joint Directors Review,LSST,,,A
 JHU,Johns Hopkins University,Gen,,,A
 JIT,Just In Time,Gen,,,A
 JOG,Joint Oversight Group,Adm,,,A
+JOR,Joint Operations status Review,OPS,,,A
 JPL,Jet Propulsion Laboratory (DE ephemerides),Gen,,,A
 JRE,Java Runtime Environment,Gen,,,A
 JSON,JavaScript Object Notation,Gen,,,A
@@ -800,6 +802,10 @@ PTF,Palomar Transient Factory,Sci,,,A
 PVI,Processed Visit Image,DM,,,A
 PWI,Predominantly White Institution,DEI,,,A
 PZ,"photo-z",Sci,,,A
+Q1,Quarter one,Gen,,,A
+Q2,Quarter two,Gen,,,A
+Q3,Quarter three,Gen,,,A
+Q4,Quarter four,Gen,,,A
 QA,Quality Assurance,Gen,,,A
 QAP,Quality Assurance Plan,TS,Document-11951,,A
 QC,Quality Control,Gen,,,A
@@ -813,6 +819,7 @@ RAL,Rutherford Appleton Laboratory (UK),Gen,,,A
 RAM,Random Access Memory,Gen,,,A
 RAVE,Radial Velocity Experiment (spectroscopic survey),TS,Document-12004,,A
 RBSE,Research-Based Science Education (AURA),OPS,,,A
+RBT,Requests Beyond Target,OPS,,,A
 RC,Release Candidate,Gen,,,A
 RCC,Raft Control Rate,CAM,,,A
 RCEC,Rubin Construction Executive Committee,Gen,,,A
