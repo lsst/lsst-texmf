@@ -288,6 +288,7 @@ DPC,Data Policy Committee,OPS,,,A
 DPDD,Data Product Definition Document,LSST DM,,,A
 DPLT,DP Leadership Team,OPS,,,A
 DPP,Data Products Processing,TS,Document-11940,,A
+DPRPT,Data Preview and Release Planning Tool,OPS,RTN-005,,A
 DQ,data quality,TS,Document-12020,,A
 DQA,data quality assurance,TS,Document-11974,,A
 DR,Data Release,LSST DM,,,A
@@ -523,6 +524,7 @@ JDR,Joint Directors Review,LSST,,,A
 JHU,Johns Hopkins University,Gen,,,A
 JIT,Just In Time,Gen,,,A
 JOG,Joint Oversight Group,Adm,,,A
+JOR,Joint Operations status Review,OPS,,,A
 JPL,Jet Propulsion Laboratory (DE ephemerides),Gen,,,A
 JRE,Java Runtime Environment,Gen,,,A
 JSON,JavaScript Object Notation,Gen,,,A
@@ -682,6 +684,7 @@ NGC,New General Catalogue,Sci,,,A
 NGSS,Next-Generation Science Standards,OPS,,,A
 NGVLA,Next Generation Very Large Array,OPS,,,A
 NIR,Near Infrared,Sci,,,A
+NICRA,(federally) Negotiated Indirect Cost Rate Agreement,Adm,,,A
 NIST,National Institute of Standards and Technology (USA),Gen,,,A
 NLR,National Lambda Rail,TS,Document-11941,,A
 NLT,NOIRLab Leadership Team,OPS,,,A
@@ -800,6 +803,10 @@ PTF,Palomar Transient Factory,Sci,,,A
 PVI,Processed Visit Image,DM,,,A
 PWI,Predominantly White Institution,DEI,,,A
 PZ,"photo-z",Sci,,,A
+Q1,Quarter one,Gen,,,A
+Q2,Quarter two,Gen,,,A
+Q3,Quarter three,Gen,,,A
+Q4,Quarter four,Gen,,,A
 QA,Quality Assurance,Gen,,,A
 QAP,Quality Assurance Plan,TS,Document-11951,,A
 QC,Quality Control,Gen,,,A
@@ -811,8 +818,10 @@ RAC,Resource Allocation Committee,OPS,,,A
 RAID,Redundant Array of Inexpensive Disks,Gen,,,A
 RAL,Rutherford Appleton Laboratory (UK),Gen,,,A
 RAM,Random Access Memory,Gen,,,A
+RAS,Resource Allocation Sheet,Adm,,,A
 RAVE,Radial Velocity Experiment (spectroscopic survey),TS,Document-12004,,A
 RBSE,Research-Based Science Education (AURA),OPS,,,A
+RBT,Requests Beyond Target,OPS,,,A
 RC,Release Candidate,Gen,,,A
 RCC,Raft Control Rate,CAM,,,A
 RCEC,Rubin Construction Executive Committee,Gen,,,A
@@ -1393,6 +1402,7 @@ releasable product,A software package or other component of the DM system which 
 Release,"Publication of a new version of a document, software, or data product. Depending on context, releases may require approval from Project- or DM-level change control boards, and then form part of the formal project baseline",DM Adm,,,G
 release-tag,Refers to a tag which groups an entire stack of packages that are verified as unit and package-integration tested; this is also an eups-tag,DM,https://developer.lsst.io/stack/eups-tutorial.html,eups-tag,G
 Requirement,"A declaration of a specified function or quantitative performance that the delivered system or subsystem must meet.  It is a statement that identifies a necessary attribute, capability, characteristic, or quality of a system in order for the delivered system or subsystem to meet a derived or higher requirement, constraint, or function",Adm,,,G
+Resource Allocation Sheet,"Shows the detailed FTE loading to produce NOIRLab budgets",Adm,,,G
 Retarget,"In the context of task construction, a task may substitute a class sub-task to change the behavior of a particular step in the processing",Adm,,,G
 Review,"Programmatic and/or technical audits of a given component of the project, where a preferably independent committee advises further project decisions, based on the current status and their evaluation of it. The reviews assess technical performance and maturity, as well as the compliance of the design and end product with the stated requirements and interfaces",Adm,,,G
 Review Committee,"A panel of independent reviewers performing a programmatic and/or technical audit of a given component of the project; committees consist of subject matter experts external to the reviewed team and preferably external to the LSST project. The committee submits a post-review report including findings (observations), comments (concerns), and recommendations (requests for action)",Adm,,,G
