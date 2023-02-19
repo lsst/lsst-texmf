@@ -71,7 +71,7 @@ affiliations:
     Pasadena, CA 91125, USA
   DIRAC: Institute for Data-intensive Research in Astrophysics and Cosmology, University of Washington,
     Seattle, WA
-  DOE:  Office of Science, U.S. Department of Energy, 1000 Independence Ave.,
+  DOE: Office of Science, U.S. Department of Energy, 1000 Independence Ave.,
     SW Washington, DC 20585, USA
   Drexel: Drexel University, 3141 Chestnut St, Philadelphia, PA 19104
   Duke: Department of Physics, Duke University, Durham, NC 27708, USA
@@ -1708,6 +1708,13 @@ authors:
     initials: Suzanne H.
     name: Jacoby
     orcid: null
+  jaffet:
+    affil:
+    - NASA
+    altaffil: []
+    initials: Tess
+    name: Jaffe
+    orcid: null
   jainb:
     affil:
     - UPenn
@@ -2219,6 +2226,13 @@ authors:
     initials: Michael N.
     name: Martinez
     orcid: 0000-0002-8397-8412
+  martinezr:
+    affil:
+    - Harvard-Astro
+    altaffil: []
+    initials: Rafael
+    name: Martínez-Galarza
+    orcid: null
   maym:
     affil:
     - BNL
