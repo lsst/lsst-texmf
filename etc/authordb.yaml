@@ -1,4 +1,5 @@
 affiliations:
+  AAS: American Astronomical Society
   Adler: The Adler Planetarium, 1300 South Lakeshore Ave., Chicago, IL 60605, USA
   AMNH: Department of Astrophysics, American Museum of Natural History, New York,
     NY 10028, USA
@@ -68,7 +69,10 @@ affiliations:
   Delaware-DataSci: Data Science Institute, University of Delaware, Newark, DE 19717 USA
   DGPS: Division of Geological and Planetary Sciences, California Institute of Technology,
     Pasadena, CA 91125, USA
-  DIRAC: Institute for Data-intensive Research in Astrophysics and Cosmology, University of Washington, Seattle, WA
+  DIRAC: Institute for Data-intensive Research in Astrophysics and Cosmology, University of Washington,
+    Seattle, WA
+  DOE:  Office of Science, U.S. Department of Energy, 1000 Independence Ave.,
+    SW Washington, DC 20585, USA
   Drexel: Drexel University, 3141 Chestnut St, Philadelphia, PA 19104
   Duke: Department of Physics, Duke University, Durham, NC 27708, USA
   Edinburgh: University of Edinburgh, Old College, South Bridge, Edinburgh EH8 9YL
@@ -594,6 +598,13 @@ authors:
     initials: Roger D.
     name: Blandford
     orcid: null
+  blantonm:
+    affil:
+    - NYU-CCPP
+    altaffil: []
+    initials: Michael
+    name: Blanton
+    orcid: null
   blazekj:
     affil:
     - OSU
@@ -616,6 +627,12 @@ authors:
     initials: Joanne
     name: Bogart
     orcid: null
+  boltona:
+    affil:
+    - NOIRLab
+    altaffil: []
+    initials: Adam
+    name: Bolton
   bondtw:
     affil:
     - SLAC
@@ -1003,6 +1020,13 @@ authors:
     initials: Roc
     name: Cutri
     orcid: 0000-0002-0077-2305
+  accomazzia:
+    affil:
+    - Harvard-CfA
+    altaffil: []
+    initials: Alberto
+    name: Accomazzi
+    orcid: null
   dacostal:
     affil:
     - LINEA
@@ -1229,6 +1253,13 @@ authors:
     initials: Agn\`{e}s F.
     name: Fert\'{e}
     orcid: 0000-0003-3065-9941
+  fieldb:
+    affil:
+    - DOE
+    altaffil: []
+    initials: Bryan
+    name: Field
+    orcid: null
   figueroae:
     affil:
     - RubinObs
@@ -2244,6 +2275,13 @@ authors:
     initials: Adam A.
     name: Miller
     orcid: 0000-0001-9515-478X
+  millerb:
+    affil:
+    - NOIRLab
+    altaffil: []
+    initials: Bryan
+    name: Miller
+    orcid: null
   millerm:
     affil:
     - NOIRLab
@@ -2336,6 +2374,13 @@ authors:
     initials: Gary P.
     name: Muller
     orcid: null
+  muencha:
+    affil:
+    - AAS
+    altaffil: []
+    initials: August
+    name: Muench
+    orcid: null
   munozarancibiaf:
     affil:
     - RubinObs
@@ -2349,6 +2394,13 @@ authors:
     altaffil: []
     initials: Sathya
     name: Narayanan K
+    orcid: null
+  narayang:
+    affil:
+    - Illinois
+    altaffil: []
+    initials: Gautham
+    name: Narayan
     orcid: null
   neilldr:
     affil:
@@ -2887,6 +2939,13 @@ authors:
     initials: Matthew R.
     name: Rumore
     orcid: null
+  rusholmeb:
+    affil:
+    - IPAC
+    altaffil: []
+    initials: Ben
+    name: Rusholme
+    orcid: null
   russos:
     affil:
     - SLAC
@@ -3185,6 +3244,13 @@ authors:
     altaffil: []
     initials: Steven
     name: Stetzler
+    orcid: null
+  stillm:
+    affil:
+    - NSF
+    altaffil: []
+    initials: Martin
+    name: Still
     orcid: null
   storrielombardil:
     affil:
