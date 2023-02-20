@@ -1,6 +1,7 @@
 affiliations:
   AAS: American Astronomical Society
   Adler: The Adler Planetarium, 1300 South Lakeshore Ave., Chicago, IL 60605, USA
+  ALMA: Atacama Large Millimeter/submillimeter Array, San Pedro de Atacama, Antofagasta, Chile
   AMNH: Department of Astrophysics, American Museum of Natural History, New York,
     NY 10028, USA
   ASTRON: ASTRON, Oude Hoogeveensedijk 4, 7991\,PD, Dwingeloo, The Netherlands
@@ -230,6 +231,7 @@ affiliations:
   TAMU-inst: George P.~and Cynthia Woods Mitchell Institute for Fundamental Physics and Astronomy,
     Texas A\&M University, College Station, TX 77843, USA
   TAMU: Department of Physics and Astronomy, Texas A\&M University, College Station, TX 77843, USA
+  TMT:  TMT International Observatory
   TTU: Department of Physics and Astronomy, Texas Tech University, Lubbock, TX 79409, USA
   UA: University of Arizona, Tucson, AZ 85721, USA
   UA-CompSci: Department of Computer Science, The University of Arizona, 1040 E.\
@@ -280,6 +282,13 @@ authors:
     altaffil: []
     initials: Bob
     name: Abel
+    orcid: null
+  accomazzia:
+    affil:
+    - Harvard-CfA
+    altaffil: []
+    initials: Alberto
+    name: Accomazzi
     orcid: null
   acostae:
     affil:
@@ -459,6 +468,13 @@ authors:
     altaffil: []
     initials: Christine
     name: Banek
+    orcid: null
+  baileys:
+    affil:
+    - Berkeley-LBNL
+    altaffil: []
+    initials: Stephen
+    name: Bailey
     orcid: null
   barddj:
     affil:
@@ -653,6 +669,13 @@ authors:
     altaffil: []
     initials: Michael T.
     name: Booth
+    orcid: null
+  borrillj:
+    affil:
+    - Berkeley-LBNL
+    altaffil: []
+    initials: Julian
+    name: Borrill
     orcid: null
   borglandaw:
     affil:
@@ -1020,13 +1043,6 @@ authors:
     initials: Roc
     name: Cutri
     orcid: 0000-0002-0077-2305
-  accomazzia:
-    affil:
-    - Harvard-CfA
-    altaffil: []
-    initials: Alberto
-    name: Accomazzi
-    orcid: null
   dacostal:
     affil:
     - LINEA
@@ -1117,6 +1133,13 @@ authors:
     altaffil: []
     initials: Robert
     name: de Peyster
+    orcid: null
+  desaiv:
+    affil:
+    - IPAC
+    altaffil: []
+    initials: Vandana
+    name: Desai
     orcid: null
   devalborrom:
     affil:
@@ -1298,6 +1321,13 @@ authors:
     initials: K. E. Saavik
     name: Ford
     orcid: 0000-0002-5956-851X
+  foremand:
+    affil:
+    - CCA
+    altaffil: []
+    initials: Dan
+    name: Foreman-Mackey
+    orcid: null
   fossmd:
     affil:
     - SLAC
@@ -1409,6 +1439,13 @@ authors:
     altaffil: []
     initials: Robert R.
     name: Gibson
+    orcid: null
+  gilliesk:
+    affil:
+    - TMT
+    altaffil: []
+    initials: Kim
+    name: Gillies
     orcid: null
   gilmoredk:
     affil:
@@ -1863,6 +1900,13 @@ authors:
     initials: Mansi M.
     name: Kasliwal
     orcid: 0000-0002-5619-4938
+  keek:
+    affil:
+    - TTU
+    altaffil: []
+    initials: Kerk
+    name: Kee
+    orcid: null
   kellyh:
     affil:
     - SLAC
@@ -1995,6 +2039,13 @@ authors:
     altaffil: []
     initials: Nadine R.
     name: Kurita
+    orcid: null
+  labriek:
+    affil:
+    - NOIRLab
+    altaffil: []
+    initials: Kathleen
+    name: Labrie
     orcid: null
   lagecs:
     affil:
@@ -2240,6 +2291,20 @@ authors:
     initials: Morgan
     name: May
     orcid: null
+  mccullyc:
+    affil:
+    - CUMBRES
+    altaffil: []
+    initials: Curtis
+    name: McCully
+    orcid: null
+  mceneryj:
+    affil:
+    - NASA
+    altaffil: []
+    initials: Julie
+    name: McEnery
+    orcid: null
   mckercherr:
     affil:
     - RubinObs
@@ -2388,6 +2453,13 @@ authors:
     initials: Gary P.
     name: Muller
     orcid: null
+  munad:
+    affil:
+    - NASA
+    altaffil: []
+    initials: Demitri
+    name: Muna
+    orcid: null
   muencha:
     affil:
     - AAS
@@ -2421,6 +2493,13 @@ authors:
     - RubinObs
     altaffil: []
     initials: Douglas R.
+    name: Neill
+    orcid: null
+  neilljd:
+    affil:
+    - Caltech
+    altaffil: []
+    initials: James D.
     name: Neill
     orcid: null
   neilsene:
@@ -3266,6 +3345,13 @@ authors:
     initials: Martin
     name: Still
     orcid: null
+  stoehrf:
+    affil:
+    - ESO
+    altaffil: []
+    initials: Felix
+    name: Stoehr
+    orcid: null
   storrielombardil:
     affil:
     - IPAC
@@ -3422,6 +3508,20 @@ authors:
     initials: Roberto
     name: Tighe
     orcid: null
+  toledoi:
+    affil:
+    - ALMA
+    altaffil: []
+    initials: Ignacio
+    name: Toledo
+    orcid: null
+  tollerude :
+    affil:
+    - STScI
+    altaffil: []
+    initials: Erik
+    name: Tollerud
+    orcid: null
   torresn:
     affil:
     - CUNY
@@ -3450,6 +3550,13 @@ authors:
     initials: Yiannis
     name: Tsapras
     orcid: 0000-0001-8411-351X
+  turkm:
+    affil:
+    - Illinois
+    altaffil: []
+    initials: Matthewd
+    name: Turk
+    orcid: null
   turrim:
     affil:
     - SLAC
@@ -3478,6 +3585,13 @@ authors:
     altaffil: []
     initials: Richard
     name: Van Berg
+    orcid: null
+  vaccaw:
+    affil:
+    - NOIRLab
+    altaffil: []
+    initials: William
+    name: Vacca
     orcid: null
   vandenberkd:
     affil:
@@ -3707,4 +3821,11 @@ authors:
     altaffil: []
     initials: Hu
     name: Zhan
+    orcid: null
+  zhaol:
+    affil:
+    - CCA
+    altaffil: []
+    initials: Lily
+    name: Zhao
     orcid: null
