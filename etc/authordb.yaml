@@ -231,7 +231,7 @@ affiliations:
   TAMU-inst: George P.~and Cynthia Woods Mitchell Institute for Fundamental Physics and Astronomy,
     Texas A\&M University, College Station, TX 77843, USA
   TAMU: Department of Physics and Astronomy, Texas A\&M University, College Station, TX 77843, USA
-  TMT:  TMT International Observatory
+  TMT: TMT International Observatory
   TTU: Department of Physics and Astronomy, Texas Tech University, Lubbock, TX 79409, USA
   UA: University of Arizona, Tucson, AZ 85721, USA
   UA-CompSci: Department of Computer Science, The University of Arizona, 1040 E.\
@@ -3515,7 +3515,7 @@ authors:
     initials: Ignacio
     name: Toledo
     orcid: null
-  tollerude :
+  tollerude:
     affil:
     - STScI
     altaffil: []
