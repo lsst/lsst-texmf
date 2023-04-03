@@ -753,6 +753,7 @@ PBI,Predominantly Black Institution,DEI,,,A
 PCA,Principal Component Analysis,Gen,,,A
 PCB,printed circuit boards,TS,Document-12030,,A
 PCI,Peripheral Component Interconnect,Gen,,,A
+PCS,Pumped Coolant System,CAM,,,A
 PCW,Project Community Workshop,LSST DM,,,A
 PD,Program Development,OPS,,,A
 PDAC,Prototype Data Access Center,LSST DM,,,A
@@ -1052,7 +1053,7 @@ UX,User Experience,Gen,,,A
 VCD,Verification Control Document,LSST DM,,,A
 VE,vendor estimate,TS,Document-11968,,A
 VF2F,Virtual Face 2 Face (meeting),DM,,,A
-VIP,Vacuum Insulated Pipe,Cam,,,A
+VIP,Vacuum Insulated Pipe,CAM,,,A
 VISTA,Visible and Infrared Survey Telescope for Astronomy,Gen,,,A
 VLA,Very Large Array (NRAO),Gen,,,A
 VLAN, Virtual Local Area Network,IT,,,A
