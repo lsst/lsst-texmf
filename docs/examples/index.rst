@@ -14,6 +14,7 @@ Documents
 
    LDM-nnn
    DMTN-nnn
+   MEMO-nnn
    glossary-table
 
 Presentations
