@@ -402,24 +402,26 @@
 \def\@controlFootText{}
 
 \newcommand{\mkmemotitle}{
-        \pagestyle{empty}
-        \vspace*{-30pt}
+   \pagestyle{empty}
+   \newgeometry{top= 1cm,left=2cm,bottom=1cm, right=2cm} 
+   \vspace*{-30pt}
 
-        \includegraphics[width=2.5cm]{rubin_logo}
-        \hfill
-        \begin{minipage}{0.2\textwidth}
+   \includegraphics[width=2.5cm]{rubin_logo}
+   \hfill
+   \begin{minipage}{0.2\textwidth}
         \large 
         \color{lssttitle}
         950 Cherry Ave.,
         85719 Tucson.
         \color{black}
 	\docDate 
-        \end{minipage}
+   \end{minipage}
       
-       \vspace{10pt}
-       \textbf {To: \memoto}\\
-       \textbf {From: \@author}\\
-        \textbf {Subject: \@title }\\
+   \vspace{10pt}
+   \textbf {To: \memoto}\\
+   \textbf {From: \@author}\\
+   \textbf {Subject: \@title }\\
+   \restoregeometry
 }
 
 \newcommand{\mkshorttitle}{
