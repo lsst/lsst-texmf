@@ -208,6 +208,7 @@ CV,Curriculum Vitae,Gen,,,A
 CVE,Common Vulnerabilities and Exposures,IT,,,A
 CVFMS,CernVM File System,DM,,,A
 CVSS,Common Vulnerability Scoring System,IT,,,A
+DAA,Dual Axis Actuator,TS,,,A
 DAC,Data Access Center,LSST DM,,,A
 DAF,data access framework,TS,Document-11936,,A
 DAQ,Data Acquisition System,LSST DM,,,A
@@ -870,6 +871,7 @@ RTM,Raft Tower Module,CAM,,,A
 RTN,Rubin Technical Note,LSST DM,,,A
 RTV,raster to vector,TS,Document-11984,,A
 S3,(Amazon) Simple Storage Service ,IT,,,A
+SAA,Single Axis Actuator,TS,,,A
 SAACC,South American Astronomy Coordination Committee,LSST ,https://www.amlight.net/?page_id=24,,A
 SaaS,Software as a Service,Gen,,,A
 SAC,Science Advisory Committee,LSST Adm,,,A
