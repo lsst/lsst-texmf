@@ -4,6 +4,7 @@ presentation.tex \
 beamer-desc.tex \
 beamer-LSST2016.tex \
 DMTN-nnn.tex \
+MEMO-nnn.tex \
 test-report.tex \
 test-specification.tex \
 LDM-nnn.tex
