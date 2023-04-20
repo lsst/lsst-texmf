@@ -403,6 +403,7 @@ FY23,Financial Year 23,OPS,,,A
 FY24,Financial Year 24,OPS,,,A
 FY25,Financial Year 25,OPS,,,A
 G6,Group/Gang of 6 SIT-Com leads,LSST,,,A
+GAaP,Gaussian Aperture and PSF,DM,,,A
 GALAH,GALactic Archaeology with HERMES,DM,,,A
 GALEX,Galaxy Evolution Explorer,OPS,,,A
 GAMA,Galaxy And Mass Assembly (survey),Sci,,,A
@@ -1285,6 +1286,7 @@ ForcedSource,DRP table resulting from forced photometry,DM,"LDM-151, LSE-163",,G
 Full-Time Equivalent,"A unit equivalent to one person working full time for one year with normal holidays, vacations, and sick time. No paid overtime is assumed",Adm Gen,,,G
 Gaia,"a space observatory of the European Space Agency, launched in 2013 and expected to operate until 2025. The spacecraft is designed for astrometry: measuring the positions, distances and motions of stars with unprecedented precision",Sci,,,G
 GalSim,"GalSim is open-source software for simulating images of astronomical objects (stars, galaxies) in a variety of ways.",Sci,,,G
+Gaussian Aperture and PSF," involves Gaussianizing the PSFs and then using a Gaussian aperture (instead of top-hat) for measuring photometry. The aperture+PSF is designed to be the same across all bands, so that you measure consistent colors.",DM,,,G
 GEANT,pan-European data network for the research and education community,Gen,,,G
 General Parallel File System,The bulk data storage provided through a POSIX filesystem interface at the LSST Data Facility. Refers specifically to IBM’s General Parallel File System; also known as IBM Spectrum Scale,DM QA,DMTN-085,GBFS,G
 git,"A distributed revision control system, often used for software source code. See the Git User Manual for details. Not developed by LSST DM",DM,https://git-scm.com/,,G
