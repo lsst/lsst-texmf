@@ -411,6 +411,7 @@ GAR,Google Archive Registry,DM,,,A
 GAVO,German Astronomical Virtual Observatory,Gen,,,A
 GB,Gigabyte,Gen,,,A
 Gb,Gigabit,Gen,,,A
+GBDES,Gary Bernstein Dark Energy Survey,Sci,,,A
 GC,NSF Grant Conditions,TS,Document-12021,,A
 gcc,The GNU Compiler Collection; a C and C++ compiler,Gen,,,A
 GCE,Google Compute Engine,IT,,,A
