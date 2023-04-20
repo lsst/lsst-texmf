@@ -402,7 +402,7 @@
 \def\@controlFootText{}
 
 \newcommand{\mkmemotitle}{
-   \pagestyle{empty}
+   \thispagestyle{empty}
    \newgeometry{top= 1cm,left=2cm,bottom=1cm, right=2cm} 
    \vspace*{-30pt}
 
@@ -421,7 +421,6 @@
    \textbf {To: \memoto}\\
    \textbf {From: \@author}\\
    \textbf {Subject: \@title }\\
-   \restoregeometry
 }
 
 \newcommand{\mkshorttitle}{
