@@ -206,7 +206,7 @@ CTIO,Cerro Tololo Inter-American Observatory,Gen,,,A
 CUI,Controlled Unclassified Information,OPS,,,A
 CV,Curriculum Vitae,Gen,,,A
 CVE,Common Vulnerabilities and Exposures,IT,,,A
-CVFMS,CernVM File System,DM,,,A
+CVMFS,CernVM File System,DM,,,A
 CVSS,Common Vulnerability Scoring System,IT,,,A
 DAA,Dual Axis Actuator,TS,,,A
 DAC,Data Access Center,LSST DM,,,A
