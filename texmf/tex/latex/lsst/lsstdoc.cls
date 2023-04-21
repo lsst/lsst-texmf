@@ -306,6 +306,8 @@
 }
 \title{Set the document title with $\backslash$title}
 \author{Set the document author with $\backslash$author}
+\newcommand{\memoto}{set the TO with {$\backslash$}setMemoto}
+\newcommand{\setMemoto}[1]{\renewcommand{\memoto}{#1}}
 
 \newcommand{\docSubtitle}{No Subtitle}
 \newcommand{\setDocSubtitle}[1]{\def\@docSubtitle{#1}
@@ -337,6 +339,7 @@
 
 \newcommand{\docAuthor}{set the Author with {$\backslash$}setDocAuthor}
 \newcommand{\setDocAuthor}[1]{\renewcommand{\docAuthor}{#1}}
+
 
 \newcommand{\setDocCurator}[1]{\def\@docCurator{#1}}
 \setDocCurator{}
@@ -398,6 +401,31 @@
 \def\@controlText{}
 \def\@controlFootText{}
 
+\newcommand{\mkmemotitle}{
+   \thispagestyle{empty}
+   \newgeometry{top= 1cm,left=2cm,bottom=1cm, right=2cm} 
+   \vspace*{-30pt}
+
+   \includegraphics[width=4cm]{rubin_logo}
+   \hfill
+   \begin{minipage}{0.3\textwidth}
+        \begin{flushright}
+        \vspace*{-50pt}
+        \large 
+        950 North Cherry Avenue,
+        Tucson, AZ, 85719.
+        \vspace{3mm}
+	\textbf{\docDate} 
+	\end{flushright}
+   \end{minipage}
+      
+   \vspace{10pt}
+   \textbf {To: \memoto}\\
+   \textbf {From: \@author}\\
+
+   \textbf {Subject: \@title }\\
+}
+
 \newcommand{\mkshorttitle}{
      \begin{center}
         \color{lssttitle}
@@ -406,7 +434,6 @@
         \normalsize {\textbf \@author}\\
 	      \docDate\\
      \end{center}
-
 }
 
 \renewcommand{\maketitle}{
