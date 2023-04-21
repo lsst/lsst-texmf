@@ -409,6 +409,8 @@
    \includegraphics[width=2.5cm]{rubin_logo}
    \hfill
    \begin{minipage}{0.2\textwidth}
+        \begin{flushright}
+        \vspace*{-50pt}
         \large 
         \color{lssttitle}
         950 Cherry Ave.,
