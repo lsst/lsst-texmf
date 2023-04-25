@@ -72,6 +72,7 @@ ASDC,ASI Science Data Center (Italy),OPS,,,A
 ASI,Agenzia Spaziale Italiana,OPS,,,A
 ASP,Astronomical Society of the Pacific,TS,Document-11934,,A
 AST,NSF Division of Astronomical Sciences,TS,Document-11935,,A
+ASTRON,Netherlands Institute for Radio Astronomy,Gen,,,A
 AT,Auxiliary Telescope,TS,,,A
 ATCA,Advanced Telecommunications Architecture,TS,Document-11936,,A
 ATCS,Auxiliary Telescope Control System,TSSW,,,A
@@ -119,8 +120,10 @@ CADC,Canadian Astronomy Data Centre,Gen,,,A
 CALTECH,California Institute of Technology,Gen,,,A
 CAM,CAMera,LSST DM,,,A
 CAM,Control (or Cost) Account Manager,Gen,,,A
+CANFAR,Canadian Advanced Network for Astronomical Research,Gen,,,A
 CAOM,Common Archive Observation Model,DM Gen,,,A
 CARMENES,Calar Alto high-Resolution search for M dwarfs with Exoearths with Near-infrared and optical Echelle Spectrographs,DM Gen,,,A
+CARTA,Cube Analysis and Rendering Tool for Astronomy,Sci,,,A
 CAS,Central Administrative Services,Adm,,,A
 CASA,Common Astronomy Software Applications (for ALMA),Sci,,,A
 CASNET,AURA's financial reporting database,Adm,,,A
@@ -332,7 +335,10 @@ EPOC,Education and Public Outreach Center,OPS,,,A
 ES,Early Science,OPS,,,A
 ESA,European Space Agency,Gen,,,A
 ESAC,European Space Astronomy Centre,Gen,,,A
+ESAP,ESFRI Science Analysis Platform,Gen,,,A
+ESCAPE,European Science Cluster of Astronomy \& Particle physics ESFRI research infrastructures,Gen,,,A
 ESD,electrostatic discharge,TS,Document-12002,,A
+ESFRI,European Strategy Forum on Research Infrastructures,Gen,,,A
 ESNet,Energy Sciences Network,Gen,,,A
 ESO,European Southern Observatory,OPS ,,,A
 ESP,Early Science Program,OPS,,,A
@@ -810,6 +816,7 @@ PZ,"photo-z",Sci,,,A
 Q1,Quarter one,Gen,,,A
 Q2,Quarter two,Gen,,,A
 Q3,Quarter three,Gen,,,A
+Q3C,Quad Tree Cube,Gen,,,A
 Q4,Quarter four,Gen,,,A
 QA,Quality Assurance,Gen,,,A
 QAP,Quality Assurance Plan,TS,Document-11951,,A
