@@ -58,6 +58,7 @@ AOS,Active Optics System,TS,,,A
 AOSS,AURA Observatory Support Services,OPS,,,A
 AP,Alert Production,LSST DM,,,A
 APL,Apache Public License,LSST DM,,,A
+APT,Astronomer's Proposal Tool,Sci,,,A
 APDB,Alert Production DataBase,DM,,,A
 API,Application Programming Interface,Gen,,,A
 APS,American Physical Society,TS,Document-11933,,A
@@ -301,6 +302,7 @@ DR2,Data Release 2,OPS,,,A
 DR3,Data Release 3,OPS,,,A
 DR10,Data Release 10,OPS,,,A
 DR11,Data Release 11,OPS,,,A
+DRAGONS,Data Reduction for Astronomy from Gemini Observatory North and South,Sci,,,A
 DRB,Data Release Board,OPS,,,A
 DREAM,Dutch Rubin Enhanced Atmospheric Monitor,OPS,,,A
 DRP,Data Release Production,LSST DM,,,A
@@ -325,10 +327,12 @@ ELAsTiCC,Extended LSST Astronomical Time Series Classification Challenge,Sci,,,A
 ELG,Emission-Line Galaxies,Sci,,,A
 ELM,Extremely Low Mass(Survey),Sci,,,A
 ELT,Extremely Large Telescope,Sci,,,A
+ELTP,Extremely Large Telescope Program,Sci,,,A
 EM,Electro Magnetic,Sci,,,A
 EO,Electro Optical,CAM,,,A
 EOS,Engineering Operations Services,OPS,,,A
 EPA,Environmental Protection Agency,Gen,,,A
+EPICS,Experimental Physics and Industrial Control System,TS,,,A
 EPLS,Excludable Parties List,TS,Document-12007,,A
 EPO,Education and Public Outreach,LSST DM,,,A
 EPOC,Education and Public Outreach Center,OPS,,,A
@@ -439,6 +443,7 @@ GOA,Government Office of Accounting,Gen,,,A
 GP,Gaussian Process,Sci,,,A
 GPFS,General Parallel File System (now IBM Spectrum Scale),Gen,,,A
 GPL,GNU Public License,Gen,,,A
+GPP,Gemini Program Platform,Sci,,,A
 GPS,Global Positioning System,Gen,,,A
 GPU,Graphics Processing Unit,Gen,,,A
 GR,General Relativity,Gen,,,A
@@ -1003,6 +1008,7 @@ TCAM,Technical Control (or Cost) Account Manager,DM,,,A
 TCP,Transmission Control Protocol,IT,,,A
 TCS,Telescope Control System,TS DM,,,A
 TCT,Technical Control Team (obsolete; now DMCCB),LSST DM,,,A
+TDA,Time Domain Astronomy,Sci,,,A
 TDE,Tidal Disruption Event,Sci,,,A
 TDEs,Tidal Disruption Events,Sci,,,A
 TEA,Top End Assembly,TS,,,A
@@ -1032,6 +1038,7 @@ TVSS,transient voltage surge suppressor,TS,Document-12034,,A
 UA,University of Arizona,TS,Document-11946,,A
 UAP,Unidentified Aerial Phenomena,Sci,,,A
 UCL,University College London (UK),Gen,,,A
+UCSC,University College Santa Cruz,Gen,,,A
 UDF,User Defined Function,Sci,,,A
 UDP,User Datagram Protocol,Gen,,,A
 UHECRs,Ultra-High-Energy Cosmic Rays,Sci,,,A
