@@ -16,6 +16,7 @@ ABOD,AURA Board of Directors,Gen,,,A
 AC,Alternating Current,Gen,,,A
 ACCS,Auxiliary Camera Control System,LSST DM,,,A
 ACGIH,American Conference of Governmental Industrial Hygienists,Gen,,,A
+ACI,Application Centric Infrastructure,IT,,,A
 ACID,"Atomicity, Consistency, Isolation, and Durability",DM,,,A
 ACM,Award Cash Management Service ,OPS,,,A
 ACWP,Actual Cost of Work Performed,Gen,,,A
@@ -163,6 +164,7 @@ CI,Continuous Integration,DM,,,A
 CI,Cyber Infrastructure,Sci,,,A
 CIGALE,Code Investigating GALaxy Emission,Sci,https://cigale.lam.fr/,,A
 CIS,Computer Infrastructure Support,TS,Document-11991,,A
+CLI,Command Line Interface,IT,,,A
 CLO,community.lsst.org - use of this acronym is discouraged. The language that should be used in official documents is "Community Forum" or "Vera C. Rubin Community Forum".,DM,,,A
 CLP,Chilean Peso,OPS,,,A
 CM,Configuration Management,LSST DM,,,A
@@ -330,6 +332,7 @@ ELT,Extremely Large Telescope,Sci,,,A
 ELTP,Extremely Large Telescope Program,Sci,,,A
 EM,Electro Magnetic,Sci,,,A
 EO,Electro Optical,CAM,,,A
+EOL,End of Life,IT,,,A
 EOS,Engineering Operations Services,OPS,,,A
 EPA,Environmental Protection Agency,Gen,,,A
 EPICS,Experimental Physics and Industrial Control System,TS,,,A
@@ -448,6 +451,7 @@ GPS,Global Positioning System,Gen,,,A
 GPU,Graphics Processing Unit,Gen,,,A
 GR,General Relativity,Gen,,,A
 GRB,Gamma-Ray Burst,Gen,,,A
+GRE,Generic Routing Encapsulation,IT,,,A
 GSE,Gaia Sausage-Enceladus,Sci,,,A
 GST,Greenwich Sidereal Time,Gen,,,A
 GUI,Graphical User Interface,Gen,,,A
@@ -528,6 +532,7 @@ ITC,Information Technology Center,LSST DM,,,A
 ITIL,Information Technology Infrastructure Library,Gen,,,A
 ITO,IT Operations,OPS OIR,,,A
 ITSC,Information Technology Services Committee,Adm,,,A
+ITTN,IT Technote,IT,,,A
 IUSE,Improving Undergraduate STEM Education,Sci,,,A
 IVOA,International Virtual-Observatory Alliance,Gen,,,A
 JBOD,Just a Bunch of Disks,OPS,,,A
@@ -631,6 +636,7 @@ Mb,Megabit (1000000 bit),Gen,,,A
 MBA,main belt asteroid,TS,Document-11975,,A
 MBE,model-based engineering,TS,Document-11948,,A
 MBps,Megabits per second,Gen,,,A
+MBR,Master Boot Record,IT,,,A
 MBSE,model-based systems engineering,TS,Document-11998,,A
 MBTU,Mega British Thermal Unit,OPS,,,A
 MC,Monte-Carlo (simulation/process),Gen,,,A
@@ -642,6 +648,7 @@ MIDAS,Munich Image Data Analysis System (ESO),Gen,,,A
 MIE,Major Item of Equipment,OPS,,,A
 MJD,Modified Julian Date (to be avoided; see also JD),Gen,,,A
 ML,Machine Learning,Sci,,,A
+MLAG,Multi-chassis Link Aggregation,IT,,,A
 MLP,Multi-Layer Perceptron,Sci,,,A
 MMA,Multi Messenger Astronomy,OPS,,,A
 MMT,Multiple Mirror Telescope,OPS,,,A
@@ -675,6 +682,7 @@ MTOFC,Main Telescope  Optical Feedback Control ,TS ,,,A
 MTTR,Mean Time To Repair,OPS ,,,A
 MW,Milky Way,Sci,,,A
 MYDB,My Database,DM Gen, ,,A
+N9K,Cisco Nexus 9000 Series,IT,,,A
 NACME,National Action Council for Minorities in Engineering,DEI,,,A
 NAOJ,National Astronomical Observatory of Japan,Gen,,,A
 NAS,National Academy of Science,Sci,,,A
@@ -682,6 +690,7 @@ NAS,Network Attached Storage,DM,,,A
 NASA,National Aeronautics and Space Administration,Gen,,,A
 NAT,Network Address Translation,IT,,,A
 NAT,nodal aberration theory,TS,Document-11993,,A
+NBD,Next Business Day,IT,,,A
 NCOA,National Center for Optical-Infrared Astronomy,Gen,,,A
 NCOIRA,(Obsolete now NOIRLab) National Center for Optical and Infrared Astronomy,TS,Document-11999,,A
 NCR,Non Conformance Report,PMO,,,A
@@ -723,8 +732,10 @@ NSS,NOAO Support Services,OPS,,,A
 NSTA,National Science Teachers Association,OPS,,,A
 NTP,Network Time Protocol,OPS ,,,A
 NTS,NCSA Test Stand,DM CAM,,,A
+NTT,NTT Corporation,IT,,,A
 NUV,Near Ultraviolet,Sci,,,A
 NVMe,Non Volatile Memory Express,DM IT,,,A
+NXOS,Nexus OS,IT,,,A
 NYT,New York Times,Gen,,,A
 OAB,Outreach Advisory Board,EPO,,,A
 OBS,Organisation Breakdown Structure,Gen,,,A
@@ -750,6 +761,7 @@ ORR,Operations Readiness Review,OPS,,,A
 OS,Operating System,Gen,,,A
 OSHA,Occupational Safety and Health Administration,OPS,,,A
 OSI,open systems interconnect,TS,Document-12012,,A
+OSPF,Open Short Path First,IT,,,A
 OSPL,OpenSplice DDS - the underlying messaging system for SAL,TS,,,A
 OSS,Observatory System Specifications; LSE-30,DM,,,A
 OSS,Oil Supply System,TS,,,A
@@ -785,6 +797,7 @@ PHA,potentially hazardous asteroids,TS,Document-11971,,A
 photo-z,"photometric redshift",Sci,,,A
 PI,Principle Investigator,Sci OPS,,,A
 PII,personally identifiable information,TS,Document-11976,,A
+PIM,Protocol Independent Multicast,IT,,,A
 PLATO,PLAnetary Transits and Oscillations of stars,Sci,,,A
 PLL,Phase-Locked Loop,Gen,,,A
 PM,Project Manager,LSST DM,,,A
@@ -827,7 +840,9 @@ QA,Quality Assurance,Gen,,,A
 QAP,Quality Assurance Plan,TS,Document-11951,,A
 QC,Quality Control,Gen,,,A
 QE,quantum efficiency,TS,Document-11994,,A
+QOS,Quality of Service,IT,,,A
 QSERV,LSST Query Services,TS,Document-12025,,A
+QSFP,Quad Small Form Factor Pluggable,IT,,,A
 QSO,Quasi-Stellar Object (Quasar) ,Sci,,,A
 RA,Right Ascension,Gen,,,A
 RAC,Resource Allocation Committee,OPS,,,A
@@ -859,6 +874,7 @@ RFP,Request For Proposals,PMO,,,A
 RFQ,Request For Quotations,LSST OPS,,,A
 RGB,Red Giant Branch,Sci,,,A
 RM,Release Manager,LSST DM,,,A
+RMA,Return Merchandise Authorization,IT,,,A
 RMS,Root-Mean-Square,Gen,,,A
 RNADE,Real-valued Neural Autoregressive Distribution Estimation,Sci,,,A
 RNN,Recurrent Neural Network,Sci,,,A
@@ -868,6 +884,7 @@ ROO,Rubin Observatory Operations,OPS,,,A
 ROOT,Object-oriented data analysis framework developed at CERN,Gen,,,A
 ROP,Rubin Operations Plan,OPS,,,A
 ROSAT,R\"{o}ntgensatellit X-ray telescope,OPS,,,A
+RP,Rendezvous Point,IT,,,A
 RPF,Rubin system PerFormance,OPS,,,A
 RPM,RPM Package Manager (originally Red Hat Package Manager; now a recursive acronym),IT,,,A
 RRL,RR Lyrae stars,Sci,,,A
@@ -884,6 +901,7 @@ RTI,rise time invariance,TS,Document-12037,,A
 RTM,Raft Tower Module,CAM,,,A
 RTN,Rubin Technical Note,LSST DM,,,A
 RTV,raster to vector,TS,Document-11984,,A
+RU,Rack Unit,IT,,,A
 S3,(Amazon) Simple Storage Service ,IT,,,A
 SAA,Single Axis Actuator,TS,,,A
 SAACC,South American Astronomy Coordination Committee,LSST ,https://www.amlight.net/?page_id=24,,A
@@ -939,6 +957,7 @@ SN,SuperNovae,Sci,,,A
 SNANA,SuperNova ANAlysis (\url{https://snana.uchicago.edu/}),Sci,,,A
 SNAPS,Solar System Notification Alert Processing System,OPS,,,A
 SNR,Signal to Noise Ratio,DM,,,A
+SNTC,Smart Net Total Care,IT,,,A
 SO,Simons Observatory,Sci,,,A
 SO,scientific operations,TS,Document-12011,,A
 SOAP,Simple Object Access Protocol,Gen,,,A
@@ -960,6 +979,7 @@ SPIE,The international society for optics and photonics,Gen,,,A
 SPL,Science PipeLines,DM,,,A
 SQL,Structured Query Language,Gen,,,A
 SQR,SQuARE document handle,LSST DM,,,A
+SM,Sparse Mode,IT,,,A
 SPT,South Pole Telescope,Sci,,,A
 SQuaRE,Science Quality and Reliability Engineering,LSST DM,LDM-204,,A
 SQuaSH,Science Quality Analysis Harness,DM,https://squash.lsst.codes/,,A
@@ -987,6 +1007,7 @@ SU,Stanford University,OPS,,,A
 SUI,Science User Interface (original name for the LSP Portal and API Aspects),LSST DM,,,A
 SUIT,"Science User Interface and Tools (LSST Data Management WBS element and team, responsible for LSP Portal Aspect)",LSST DM,,,A
 SV,Science Validation,LSST DM,,,A
+SVI,Switch Virtual Interface,IT,,,A
 SVOM,Space Variable Objects Monitor,Sci,,,A
 SW,Software (also denoted S/W),Gen,,,A
 SWE,Society of Women Engineers,DEI,,,A
@@ -1094,6 +1115,7 @@ VPN,virtual private network,TS,Document-11966,,A
 VQ,vendor quote,TS,Document-12014,,A
 VRO,(not to be used)Vera C. Rubin Observatory,Gen,,,A
 VST,VLT Survey Telescope,Gen,,,A
+VXLAN,Virtual Extensible LAN,IT,,,A
 W3C,World Wide Web Consortium,Gen,,,A
 WAN,Wide Area Network,Gen,,,A
 WBS,Work Breakdown Structure,Gen,,,A
