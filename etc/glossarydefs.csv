@@ -390,6 +390,7 @@ FOA,Funding Opportunity Announcement,Sci,,,A
 FOA,Facilities Operations in Arizona,OPS,,,A
 FOC,Facilities Operations in Chile,OPS,,,A
 FOH,Facilities Operations in Hawai‘i,OPS,,,A
+FOIA,Freedom Of Information Act,OPS,,,A
 FoM,Figure of Merit,Gen,,,A
 FoV,Field of View (also denoted FOV),Gen,,,A
 FOV,field of view,TS,Document-11964,,A
@@ -432,6 +433,7 @@ GCN,GRB Coordinates Network,Gen,,,A
 GCP,Google Cloud Platform,IT,,,A
 GCS,Generic Control System,TSSW,,,A
 GDS,Guider Data System,TS,,,A
+GEO,Geosynchronous Earth Orbit ,Gen,,,A
 GFLOP,Giga FLOP,Gen,,,A
 GFLOPS,Giga FLOP per Second,Gen,,,A
 GID,Group Identifier,IT,,,A
@@ -842,7 +844,7 @@ QC,Quality Control,Gen,,,A
 QE,quantum efficiency,TS,Document-11994,,A
 QOS,Quality of Service,IT,,,A
 QSERV,LSST Query Services,TS,Document-12025,,A
-QSFP,Quad Small Form Factor Pluggable,IT,,,A
+QSFP,Quad Small Form Factor Plugable,IT,,,A
 QSO,Quasi-Stellar Object (Quasar) ,Sci,,,A
 RA,Right Ascension,Gen,,,A
 RAC,Resource Allocation Committee,OPS,,,A
