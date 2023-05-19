@@ -9,9 +9,11 @@ import subprocess
 
 def make_all(authordb):
     """Go through all authors and put in one big file so we can test"""
+    allauthors = []
+    for a in authordb["authors"]:
+        allauthors.append(a)
     with open("authors.yaml", "w") as file:
-        for a in authordb["authors"]:
-            print(f" - {a}", file=file)
+        yaml.dump(allauthors, file)
 
 
 def main():
