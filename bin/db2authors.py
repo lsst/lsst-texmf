@@ -228,7 +228,7 @@ for anum, authorid in enumerate(authors):
         if buffer_affil:
             print(*affilOutput, sep="\n")
         else:
-            if "altaffil" in auth:
+            if auth.get("altaffil"):
                 for af in auth["altaffil"]:
                     print(r"\altaffiliation{{{}}}".format(af))
 
