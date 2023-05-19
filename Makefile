@@ -52,6 +52,12 @@ test-pybtex:
 	@echo
 	bin/validate_bib.py $(BIBFILES)
 
+.PHONY: test-authors
+test-authors:
+	@echo "Testing authorsdb"
+	@echo
+	bin/validate_authors.py 
+
 .PHONY: docs 
 docs: $(PDF) $(TESTS) glstab.tex
 	mkdir -p docs/_static/examples

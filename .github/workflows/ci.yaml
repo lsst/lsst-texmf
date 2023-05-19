@@ -26,6 +26,9 @@ jobs:
       - name: Run pybtex
         run: make test-pybtex
 
+      - name: Run author check
+        run: make test-authors
+
       - name: Run pytest
         env:
           PYTHONPATH: bin
