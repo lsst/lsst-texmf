@@ -693,6 +693,7 @@ NAS,Network Attached Storage,DM,,,A
 NASA,National Aeronautics and Space Administration,Gen,,,A
 NAT,Network Address Translation,IT,,,A
 NAT,nodal aberration theory,TS,Document-11993,,A
+NAVO,NASA Astronomical Virtual Observatories,Gen,,,A
 NBD,Next Business Day,IT,,,A
 NCOA,National Center for Optical-Infrared Astronomy,Gen,,,A
 NCOIRA,(Obsolete now NOIRLab) National Center for Optical and Infrared Astronomy,TS,Document-11999,,A
@@ -943,6 +944,7 @@ SHE,"Safety, Health, and Environmental",,,,A
 SHPE,Society of Hispanic Professional Engineers,DEI,,,A
 SI,Syst\`eme International (International System of units defined by ISO),Gen,,,A
 SIA,Simple Image Access,Gen,,,A
+SIAP,Simple Image Access Protocol,Gen,,,A
 SIT,"System Integration, Test",LSST OPS ,,,A
 SITCOM,"System Integration, Test and Commissioning",LSST OPS ,,,A
 SKA,Square Kilometer Array,Sci,,,A
