@@ -245,7 +245,6 @@ DECam,Dark Energy Camera,Sci,,,A
 DECaLS,The Dark Energy Camera Legacy Survey,Sci,,,A
 DECAT,DECam Alliance for Transients,Sci,,,A
 DEEP,Deep Extragalactic Evolutionary Probe,Sci,,,A
-deg,degree; unit of angle,Gen,,,A
 DELVE,DECam Local Volume Exploration Survey,Sci,,,A
 DHO,Damped Harmonic Oscillator,Sci,,,A
 DEI,"Diversity, Equity, and Inclusion",DEI,,,A
@@ -1289,6 +1288,7 @@ deblend,"Deblending is the act of inferring the intensity profiles of two or mor
 declination,"Often abbreviated Dec, it is a part of an equatorial coordinate pair that expresses the angular distance (usually expressed in degrees) from the Celestial Equator, measured along great circles that intersect the Equatorial poles. Positions south of the equator are given negative sign",Sci,,,G
 deepCoadd,A Coadd Image designed to produce detections as maximum depth. Produced by AssembleCoaddTask,DM,,Coadd,G
 deepDiff,A Difference Image that results from subtracting a template from a CalExp,DM,,DiffIm,G
+deg,degree; unit of angle,Gen,,,G
 Department of Energy,cabinet department of the United States federal government; the DOE has assumed technical and financial responsibility for providing the LSST camera. The DOE's responsibilities are executed by a collaboration led by SLAC National Accelerator Laboratory,Adm,,DOE,G
 Deputy Director,"The person who supports the Director in the execution of the overall LSST project and assumes his or her duties and authority during any short term or extended absence, planned or unplanned",Adm,,,G
 Descope,A strategic downward revision to project objectives,Adm,,,G
