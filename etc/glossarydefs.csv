@@ -65,8 +65,6 @@ API,Application Programming Interface,Gen,,,A
 APS,American Physical Society,TS,Document-11933,,A
 ARAS,Astronomical Ring for Access to Spectroscopy,Sci,,,A
 ARC,Advanced Resource Connector,DM,http://www.nordugrid.org/documents/arc6/,,A
-arcmin,arcminute minute of arc (unit of angle),Gen,,,A
-arcsec,arcsecond second of arc (unit of angle),Gen,,,A
 ASAP,As Soon As Possible,Gen,,,A
 ASAS-SN,All-Sky Automated Survey for Supernovae,Sci,,,A
 ASCII,American Standard Code for Information Interchange,Gen,,,A
@@ -245,7 +243,6 @@ DECam,Dark Energy Camera,Sci,,,A
 DECaLS,The Dark Energy Camera Legacy Survey,Sci,,,A
 DECAT,DECam Alliance for Transients,Sci,,,A
 DEEP,Deep Extragalactic Evolutionary Probe,Sci,,,A
-deg,degree; unit of angle,Gen,,,A
 DELVE,DECam Local Volume Exploration Survey,Sci,,,A
 DHO,Damped Harmonic Oscillator,Sci,,,A
 DEI,"Diversity, Equity, and Inclusion",DEI,,,A
@@ -1172,6 +1169,8 @@ airmass,"The pathlength of light from an astrophysical source through the Earth'
 Akaike Information Criterion,"an estimator of prediction error and thereby relative quality of statistical models for a given set of data",Sci,,,G
 AMPEL,"AMPEL (Broker) is a modular and scalable platform with explicit provenance tracking, suited for systematically processing large — possibly complex and heterogeneous — datasets either in real time or offline.\url{https://ampelproject.github.io/} ",OPS,,,G
 APC,"activities, projects, or state of the profession considerations (decadal)",Sci,,,G
+arcmin,arcminute minute of arc (unit of angle),Gen,,,G
+arcsec,arcsecond second of arc (unit of angle),Gen,,,G
 Authentication,"The action of demonstrating who you are and an person, mission, or other entity. Usually by use of a password or security token",DM,,,G
 Authorization,"The action of allowing an authorized or anonymous entity access to data or services.",DM,,,G
 Automatic Learning for the Rapid Classification of Events,"The ALeRCE broker is a Chilean-led broker which is processing the alert stream from the ZTF and a Community Broker for the Vera C. Rubin Observatory and its LSST, as well as other large etendue survey telescopes. \url{http://alerce.science/}",OPS,,,G
@@ -1289,6 +1288,7 @@ deblend,"Deblending is the act of inferring the intensity profiles of two or mor
 declination,"Often abbreviated Dec, it is a part of an equatorial coordinate pair that expresses the angular distance (usually expressed in degrees) from the Celestial Equator, measured along great circles that intersect the Equatorial poles. Positions south of the equator are given negative sign",Sci,,,G
 deepCoadd,A Coadd Image designed to produce detections as maximum depth. Produced by AssembleCoaddTask,DM,,Coadd,G
 deepDiff,A Difference Image that results from subtracting a template from a CalExp,DM,,DiffIm,G
+deg,degree; unit of angle,Gen,,,G
 Department of Energy,cabinet department of the United States federal government; the DOE has assumed technical and financial responsibility for providing the LSST camera. The DOE's responsibilities are executed by a collaboration led by SLAC National Accelerator Laboratory,Adm,,DOE,G
 Deputy Director,"The person who supports the Director in the execution of the overall LSST project and assumes his or her duties and authority during any short term or extended absence, planned or unplanned",Adm,,,G
 Descope,A strategic downward revision to project objectives,Adm,,,G
