@@ -1167,11 +1167,11 @@ No actions have been identified.}
 \providecommand{\muasonly}{\ensuremath{\mu\mbox{as}}}
 \providecommand{\inp}[1]{{\tt #1}}
 \providecommand{\prog}[1]{{\it #1}}
-\providecommand{\secref}[1]{Section~\ref{#1}}
-\providecommand{\appref}[1]{Appendix~\ref{#1}}
+\providecommand{\secref}[1]{\autoref{#1}}
+\providecommand{\appref}[1]{\autoref{#1}}
 \providecommand{\partref}[1]{Part~\ref{#1}}
-\providecommand{\tabref}[1]{Table~\ref{#1}}
-\providecommand{\figref}[1]{Figure~\ref{#1}}
+\providecommand{\tabref}[1]{\autoref{#1}}
+\providecommand{\figref}[1]{\autoref{#1}}
 \providecommand{\eqnref}[1]{Eq.~\ref{#1}}
 \providecommand{\reqref}[1]{Req.~\ref{#1}}
 \providecommand{\actref}[1]{AI~\ref{#1}}
