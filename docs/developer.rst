@@ -55,6 +55,7 @@ Bibliography file organization
   This file should be used for arXiv entries obtained from ADS.
 * :file:`refs.bib` should be used for non-LSST references that can not be located on ADS.
 * :file:`books.bib` should be used for books that are not indexed by ADS.
+* :file:`ivoa.bib` should be used for IVOA specs indexed ADS.
 
 %-escaping for Sphinx
 ---------------------
