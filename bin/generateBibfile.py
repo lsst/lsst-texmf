@@ -14,7 +14,6 @@ import sys
 import calendar
 import latexcodec  # noqa provides the latex+latin codec
 
-
 MAXREC = 2000
 
 
@@ -31,9 +30,10 @@ def isCommitee(author):
     if 'roup' in author:
         return True
     words = author.split()
-    #if there are 5 words its probalby not a person
-    # an alternative wll belist explicit groups here.
-    return (len(words) > 5)
+    # if there are 5 words its probably not a person
+    # an alternative wll be to list explicit groups here.
+    return len(words) > 5
+
 
 def generate_bibfile(outfile, query=""):
     """
