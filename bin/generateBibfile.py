@@ -18,6 +18,23 @@ import latexcodec  # noqa provides the latex+latin codec
 MAXREC = 2000
 
 
+def isCommitee(author):
+    #  for DM-39724 decide if we have a non regular author
+    # for Comittee and Working group papers we need to {} them
+    # This is a way to decide if we have a committee
+
+    if ',' in author:
+        # assume if there is Author, A.N  it is regular
+        return False
+    if 'ommittee' in author:
+        return True
+    if 'roup' in author:
+        return True
+    words = author.split()
+    #if there are 5 words its probalby not a person
+    # an alternative wll belist explicit groups here.
+    return (len(words) > 5)
+
 def generate_bibfile(outfile, query=""):
     """
     Query ook for the list of entries.
@@ -57,7 +74,10 @@ def generate_bibfile(outfile, query=""):
         if 'series' in d.keys() and d['series'] == "TESTN":
             continue
         bcount = bcount + 1
-        authors = " and ".join(d['authorNames'])
+        if len(d['authorNames']) == 1 and isCommitee(d['authorNames'][0]):
+            authors = f"{{{d['authorNames'][0]}}}"
+        else:
+            authors = " and ".join(d['authorNames'])
         dt = d['sourceUpdateTimestamp']
         date = datetime.fromtimestamp(dt)
         month = calendar.month_abbr[date.month].lower()
@@ -84,7 +104,7 @@ def fixTex(text):
 def checkFixAuthAndComma(authors):
     """
     Soem people used comm seperated author lists - bibtex does not like that.
-    Here we replave tghe comm with and.
+    Here we replave the comma with and.
     :param authors:
     :return: authors in and format
     """
