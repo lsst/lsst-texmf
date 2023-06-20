@@ -25,9 +25,10 @@ def isCommitee(author):
     if ',' in author:
         # assume if there is Author, A.N  it is regular
         return False
-    if 'ommittee' in author:
+    authorl = author.lower()
+    if 'committee' in authorl:
         return True
-    if 'roup' in author:
+    if 'group' in authorl:
         return True
     words = author.split()
     # if there are 5 words its probably not a person
