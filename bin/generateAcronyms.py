@@ -742,7 +742,11 @@ def dump_gls(filename, out_file):
                         trans = translate[row[ind]]
                     defn = escape_for_tex(row[ind + 1])
                     tags = row[ind + 2]
-                    print(",".join([acr, f"\"{defn}\"", tags]), file=ogfile)
+                    if "," in acr:
+                        csv_acr = f"\"{acr}\""
+                    else:
+                        csv_acr = acr
+                    print(",".join([csv_acr, f"\"{defn}\"", tags]), file=ogfile)
                     if trans:
                         trans = escape_for_tex(trans)
                         print(",".join([acr, f"\"{trans}\"", ""]), file=ogfile)

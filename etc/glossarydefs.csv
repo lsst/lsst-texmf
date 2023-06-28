@@ -167,7 +167,7 @@ CIGALE,Code Investigating GALaxy Emission,Sci,https://cigale.lam.fr/,,A
 CIS,Computer Infrastructure Support,TS,Document-11991,,A
 CL,Command Language,Sci,IRAF,,A
 CLI,Command Line Interface,IT,,,A
-CLO,community.lsst.org - use of this acronym is discouraged. The language that should be used in official documents is "Community Forum" or "Vera C. Rubin Community Forum".,DM,,,A
+CLO,"community.lsst.org - use of this acronym is discouraged. The language that should be used in official documents is 'Community Forum' or 'Vera C. Rubin Community Forum'".,DM,,,A
 CLP,Chilean Peso,OPS,,,A
 CM,Configuration Management,LSST DM,,,A
 CMB,Cosmic Microwave Background,Sci OPS,,,A
@@ -1212,8 +1212,7 @@ Baseline,The point at which project designs or requirements are considered to be
 "Baseline, Technical","The 'frozen' requirements, specifications, designs, and allocations needed for completion of the project based on known resources (staff, physical assets, knowledge, etc.) that will be needed",Adm,,,G
 Basis of Estimate,"justification for arriving at a particular cost estimate, including estimating methods, approach taken, prices used, assumptions made; an analyzed and carefully calculated number",Adm,,,G
 Batch Production,"Computational processing that is executed as inputs become available, in a distributed way across multiple enclaves when needed, while tracking status and outputs. Examples of Batch Production include offline processing for Prompt Data Products, calibration products, template images, and Special Programs data products. Prioritization protocols for the various types of batch production are given in LDM-148",DM,LDM-148,,G
-BEAMS,"Bayesian Estimation Applied to Multiple Species (software for classification of light curves based on photometry)
-",Sci,,,G
+BEAMS,"Bayesian Estimation Applied to Multiple Species (software for classification of light curves based on photometry)",Sci,,,G
 BlackGEM,"is a wide-field array of optical telescopes to be located at ESO’s La Silla Observatory in Chile’s Atacama desert. ",Sci,,,G
 Blazhko,"the phenomenon of amplitude or phase modulation. Associated with some RRL",Sci,,,G
 brighter-fatter effect,The common term used to refer to one of the photometric qualities of the LSST camera: sources with a higher flux have a broader PSF. This is accounted for during calibration,DM,"LDM-151, https://arxiv.org/pdf/1402.0725v1.pdf",,G
@@ -1329,8 +1328,7 @@ Flexible Image Transport System,"an international standard in astronomy for stor
 flux,"Shorthand for radiative flux, it is a measure of the transport of radiant energy per unit area per unit time. In astronomy this is usually expressed in cgs units: erg/cm2/s",Sci,,,G
 Focal plane array,"A focal plane array (FPA) is the arrangement of multiple sensors in the focal plane of a camera. For LSST, the FPA is divided into an array of contiguous rafts, upon which 9 science sensors are mounted 3x3. Additional engineering sensors are mounted on rafts near the periphery to support wavefront sensing and telescope guiding",CAM,,,G
 footprint,"See 'source footprint', 'instrumental footprint', or 'survey footprint', `Footprint` is a Python class representing a source footprint",DM,LDM-151,,G
-FORCE11," a community of scholars, librarians, archivists, publishers and research funders interested in the Future of Research Communications and e-Scholarship
-",Sci,,,G
+FORCE11," a community of scholars, librarians, archivists, publishers and research funders interested in the Future of Research Communications and e-Scholarship",Sci,,,G
 forced photometry,"A measurement of the photometric properties of a source, or expected source, with one or more parameters held fixed. Most often this means fixing the location of the center of the brightness profile (which may be known or predicted in advance), and measuring other properties such as total brightness, shape, and orientation. Forced photometry will be done for all Objects in the Data Release Production",DM,"LDM-151, LSE-163",,G
 ForcedSource,DRP table resulting from forced photometry,DM,"LDM-151, LSE-163",,G
 Full-Time Equivalent,"A unit equivalent to one person working full time for one year with normal holidays, vacations, and sick time. No paid overtime is assumed",Adm Gen,,,G
