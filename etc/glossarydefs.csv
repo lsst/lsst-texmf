@@ -498,6 +498,7 @@ IaS,Infrastructure as a Service,IT,,,A
 IAU,International Astronomical Union,Gen,,,A
 IBM,International Business Machines,Gen,,,A
 ICBS,International Communications and Base Site,LSST DM,,,A
+ICRS,International Celestial Reference Frame,LSST DM,,,A
 ICD,Interface Control Document,Adm,,,A
 ICoD,Interface Compliance Document,Adm,,,A
 IDA,Interface Design Artifact,TS,,,A
@@ -1067,6 +1068,7 @@ TVSSC,Transients and Variable Stars Science Collaboration,OPS,,,A
 TVSS,transient voltage surge suppressor,TS,Document-12034,,A
 UA,University of Arizona,TS,Document-11946,,A
 UAP,Unidentified Aerial Phenomena,Sci,,,A
+UCD,Unified Content Descriptor,DM,,,A
 UCL,University College London (UK),Gen,,,A
 UCSC,University College Santa Cruz,Gen,,,A
 UDF,User Defined Function,Sci,,,A
