@@ -165,7 +165,9 @@ affiliations:
     USA
   NovaGorica: Center for Astrophysics and Cosmology, University of Nova Gorica, Vipavska 13
     5000 Nova Gorica, Slovenia
+  CADC: Canadian Astronomy Data Centre, 5071 West Saanich Road, Victoria, British Columbia V9E 2E7, Canada
   NSF: National Science Foundation, 2415 Eisenhower Avenue, Alexandria, Virginia 22314, USA
+  NSO: National Solar Observatory, 3665 Discovery Drive, Boulder, CO 80303, USA
   NYU: New York University, New York,
   NYU-CCPP: Center for Cosmology \& Particle Physics, New York University,
     726 Broadway, New York, 10003, USA
@@ -1688,6 +1690,13 @@ authors:
     name: Huang
     email: huangflora@google.com
     orcid: null
+  hughesa:
+    affil:
+    - NSO
+    altaffil: []
+    initials: Anna L.H.
+    name: Hughes
+    orcid: null
   hufferme:
     affil:
     - SLAC-Kavli
@@ -1900,6 +1909,13 @@ authors:
     initials: Mansi M.
     name: Kasliwal
     orcid: 0000-0002-5619-4938
+  kavelaarsjj:
+    affil:
+    - CADC
+    altaffil: []
+    initials: JJ
+    name: Kavelaars
+    orcid: null
   keek:
     affil:
     - TTU
@@ -2082,6 +2098,13 @@ authors:
     altaffil: []
     initials: Fran\c{c}ois
     name: Lanusse
+    orcid: null
+  lawc:
+    affil:
+    - Caltech-Astro
+    altaffil: []
+    initials: Casey
+    name: Law
     orcid: null
   lazari:
     affil:
@@ -2432,6 +2455,13 @@ authors:
     initials: Fred E.
     name: Moolekamp
     orcid: 0000-0003-0093-4279
+  moriartyc:
+    affil:
+    - Harvard-CfA
+    altaffil: []
+    initials: Christopher
+    name: Moriarty
+    orcid: null
   morrisoncb:
     affil:
     - Washington
@@ -3452,6 +3482,13 @@ authors:
     initials: Stephen A.
     name: Tether
     orcid: null
+  teubenp:
+    affil:
+    - Maryland
+    altaffil: []
+    initials: Peter
+    name: Teuben
+    orcid: null
   thalerjj:
     affil:
     - Illinois
@@ -3723,6 +3760,13 @@ authors:
     initials: Christopher Z.
     name: Waters
     orcid: 0000-0003-1989-4879
+  weaverb:
+    affil:
+    - NOIRLab
+    altaffil: []
+    initials: Benjamin
+    name: Weaver
+    orcid: null
   wiechao:
     affil:
     - RubinObs
