@@ -20,6 +20,7 @@ affiliations:
   Berkeley-Space: Space Sciences Lab, University of California, 7 Gauss Way, Berkeley,
     CA 94720-7450, USA
   Burwood: Burwood Group, 125 South Wacker Drive Suite 2950, Chicago, IL 60606, USA
+  CADC: Canadian Astronomy Data Centre, 5071 West Saanich Road, Victoria, British Columbia V9E 2E7, Canada
   Cardiff: School of Physics and Astronomy, Cardiff University, The Parade, Cardiff, CF24 3AA, UK
   CCA: Center for Computational Astrophysics, Flatiron Institute, 162 Fifth Ave, New York, NY,
     10010, USA
@@ -165,7 +166,7 @@ affiliations:
     USA
   NovaGorica: Center for Astrophysics and Cosmology, University of Nova Gorica, Vipavska 13
     5000 Nova Gorica, Slovenia
-  CADC: Canadian Astronomy Data Centre, 5071 West Saanich Road, Victoria, British Columbia V9E 2E7, Canada
+  NRAO: National Radio Astronomy Observstory, 520 Edgemont Road, Charlottesville, VA 22903, USA
   NSF: National Science Foundation, 2415 Eisenhower Avenue, Alexandria, Virginia 22314, USA
   NSO: National Solar Observatory, 3665 Discovery Drive, Boulder, CO 80303, USA
   NYU: New York University, New York,
@@ -250,6 +251,7 @@ affiliations:
     Frederick Reines Hall, Irvine, CA 92697, USA
   UCIrvine-CC: Center for Cosmology, University of California, Irvine, CA 92697, USA
   UCL: University College London, Gower St, London WC1E 6BT, United Kingdom
+  UCSB: University of California, Santa Barbara, CA 93106-9530, USA
   UCSC: Santa Cruz Institute for Particle Physics and Physics Department, University
     of California--Santa Cruz, 1156 High St., Santa Cruz, CA 95064, USA
   UdG: Departamento de F\'isica, DCI, Campus Le\'on, Universidad de Guanajuato, 37150, Le\'on, Guanajuato, M\'exico
@@ -1235,6 +1237,13 @@ authors:
     initials: Michael
     name: Eracleous
     orcid: 0000-0002-3719-940X
+  evansj:
+    affil:
+    - Harvard-Cfa
+    altaffil: []
+    initials: Evans
+    name: Janet
+    orcid: null
   fabbiang:
     affil:
     - CCA
@@ -1598,6 +1607,13 @@ authors:
     initials: Justine
     name: Haupt
     orcid: null
+  hennawij:
+    affil:
+    - UCSB
+    altaffil: []
+    initials: Joseph
+    name: Hennawi
+    orcid:
   herrolda:
     affil:
     - RubinObs
@@ -1937,6 +1953,13 @@ authors:
     initials: Lee S.
     name: Kelvin
     orcid: 0000-0001-9395-4759
+  kernj:
+    affil:
+    - NRAO
+    altaffil: []
+    initials: Jeff
+    name: Kern
+    orcid: 0000-0003-3221-0419
   kesslerr:
     affil:
     - Chicago
@@ -2062,6 +2085,13 @@ authors:
     altaffil: []
     initials: Kathleen
     name: Labrie
+    orcid: null
+  lacym:
+    affil:
+    - NRAO
+    altaffil: []
+    initials: Mark
+    name: Lacy
     orcid: null
   lagecs:
     affil:
@@ -3212,6 +3242,13 @@ authors:
     initials: Adam
     name: Scott
     orcid: null
+  seamanr:
+    affil:
+    - UA
+    altaffil: []
+    initials: Robert
+    name: Seaman
+    orcid: null
   sebagj:
     affil:
     - RubinObsC
@@ -3587,6 +3624,13 @@ authors:
     initials: Yiannis
     name: Tsapras
     orcid: 0000-0001-8411-351X
+  turnerj:
+    affil:
+    - NOIRLab
+    altaffil: []
+    initials: James
+    name: Turner
+    orcid: null
   turkm:
     affil:
     - Illinois
