@@ -154,6 +154,7 @@ affiliations:
     de Lyon, F-69622 Villeurbanne, Lyon, France
   Maryland: University of Maryland, College Park, MD 20742
   Maryland-astro: Department of Astronomy, University of Maryland, College Park, MD 20742, USA
+  MMTO: MMT Observatory, 1540 E. Second Street, University of Arizona, Tucson, AZ 85721-0064, USA
   NAOChina: National Astronomical Observatories, Chinese Academy of Sciences, A20
     Datun Rd, Chaoyang District, Beijing 100012, People's Republic of China
   NASA: National Aeronautics and Space Administration, Goddard Space Flight Center, Greenbelt, Maryland, USA
@@ -251,10 +252,12 @@ affiliations:
     Frederick Reines Hall, Irvine, CA 92697, USA
   UCIrvine-CC: Center for Cosmology, University of California, Irvine, CA 92697, USA
   UCL: University College London, Gower St, London WC1E 6BT, United Kingdom
+  UCO: UC Observatories, UC Santa Cruz, 1156 High Street, Santa Cruz, CA 95064
   UCSB: University of California, Santa Barbara, CA 93106-9530, USA
   UCSC: Santa Cruz Institute for Particle Physics and Physics Department, University
     of California--Santa Cruz, 1156 High St., Santa Cruz, CA 95064, USA
   UdG: Departamento de F\'isica, DCI, Campus Le\'on, Universidad de Guanajuato, 37150, Le\'on, Guanajuato, M\'exico
+  UniAndes: Universidad de los Andes, Cra 1 Num. 18A - 12 Bogot\'{a} - Colombia
   UNAM: Universidad Nacional Aut\'{o}noma de M\'{e}xico
   UNAM-physics: Departamento de F\'isica, Facultad de Ciencias, Universidad Nacional Aut\'onoma de M\'exico,
     Ciudad Universitaria, CDMX, 04510, M\'exico
@@ -1338,6 +1341,13 @@ authors:
     altaffil: []
     initials: Dan
     name: Foreman-Mackey
+    orcid: null
+  foreroj:
+    affil:
+    - UniAndes
+    altaffil: []
+    initials: Jaime
+    name: Forero-Romero
     orcid: null
   fossmd:
     affil:
@@ -3811,12 +3821,26 @@ authors:
     initials: Benjamin
     name: Weaver
     orcid: null
+  westfallk:
+    affil:
+    - UCO
+    altaffil: []
+    initials: Kyle
+    name: Westfall
+    orcid: null
   wiechao:
     affil:
     - RubinObs
     altaffil: []
     initials: Oliver
     name: Wiecha
+    orcid: null
+  weinerb:
+    affil:
+    - MMTO
+    altaffil: []
+    initials: Benjamin
+    name: Weiner
     orcid: null
   willmanb:
     affil:
