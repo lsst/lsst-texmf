@@ -911,8 +911,9 @@ RTN,Rubin Technical Note,LSST DM,,,A
 RTV,raster to vector,TS,Document-11984,,A
 RU,Rack Unit,IT,,,A
 S3,(Amazon) Simple Storage Service ,IT,,,A
+SA3CC,South American-African  Astronomy Coordination Committee,LSST ,https://www.amlight.net/?page_id=24,,A
 SAA,Single Axis Actuator,TS,,,A
-SAACC,South American Astronomy Coordination Committee,LSST ,https://www.amlight.net/?page_id=24,,A
+SAACC,South American Astronomy Coordination Committee (now SA3CC),LSST ,https://www.amlight.net/?page_id=24,,A
 SaaS,Software as a Service,Gen,,,A
 SAC,Science Advisory Committee,LSST Adm,,,A
 SACC,Save All Correlations and Covariances,Sci,DESC https://github.com/LSSTDESC/sacc,,A
