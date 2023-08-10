@@ -20,6 +20,7 @@ affiliations:
   Berkeley-Space: Space Sciences Lab, University of California, 7 Gauss Way, Berkeley,
     CA 94720-7450, USA
   Burwood: Burwood Group, 125 South Wacker Drive Suite 2950, Chicago, IL 60606, USA
+  CADC: Canadian Astronomy Data Centre, 5071 West Saanich Road, Victoria, British Columbia V9E 2E7, Canada
   Cardiff: School of Physics and Astronomy, Cardiff University, The Parade, Cardiff, CF24 3AA, UK
   CCA: Center for Computational Astrophysics, Flatiron Institute, 162 Fifth Ave, New York, NY,
     10010, USA
@@ -58,7 +59,7 @@ affiliations:
     Ellis Avenue, Chicago, IL 60637, USA
   CIERA: Center for Interdisciplinary Exploration and Research in Astrophysics (CIERA) and
     Department of Physics and Astronomy, Northwestern University, 1800 Sherman Road,
-    Evanston, IL 60201, USA
+    EvAnston, IL 60201, USA
   Clermont-LPC: Universit\'e Clermont Auvergne, CNRS$/$IN2P3, Laboratoire de Physique de Clermont,
     F-63000 Clermont-Ferrand, France
   DACC: DACC New Mexico State University, Central Campus, Las Cruces, New Mexico, USA
@@ -120,6 +121,7 @@ affiliations:
   INAF-Rome: Istituto Nazionale di Astrofisica, Viale del Parco Mellini 84, 00136 Rome, Italy
   INAF-Palermo: INAF - Osservatorio Astronomico di Palermo, Piazza del Parlamento 1 90134,
     Palermo, Italy
+  IUPUI: IUPUI, 535 W. Michigan Street, IT 400, Indianapolis, IN, USA
   JHU: Department of Physics and Astronomy, The John Hopkins University, 3701 San
     Martin Drive, Baltimore, MD 21218, USA
   JPL: Jet Propulsion Laboratory, California Institute of Technology, Pasadena, CA
@@ -153,6 +155,7 @@ affiliations:
     de Lyon, F-69622 Villeurbanne, Lyon, France
   Maryland: University of Maryland, College Park, MD 20742
   Maryland-astro: Department of Astronomy, University of Maryland, College Park, MD 20742, USA
+  MMTO: MMT Observatory, 1540 E. Second Street, University of Arizona, Tucson, AZ 85721-0064, USA
   NAOChina: National Astronomical Observatories, Chinese Academy of Sciences, A20
     Datun Rd, Chaoyang District, Beijing 100012, People's Republic of China
   NASA: National Aeronautics and Space Administration, Goddard Space Flight Center, Greenbelt, Maryland, USA
@@ -165,7 +168,10 @@ affiliations:
     USA
   NovaGorica: Center for Astrophysics and Cosmology, University of Nova Gorica, Vipavska 13
     5000 Nova Gorica, Slovenia
+  NRAO: National Radio Astronomy Observstory, 520 Edgemont Road, Charlottesville, VA 22903, USA
+  NRC: National Research Council Canada, 5071 West Saanich Road, Victoria, Canada
   NSF: National Science Foundation, 2415 Eisenhower Avenue, Alexandria, Virginia 22314, USA
+  NSO: National Solar Observatory, 3665 Discovery Drive, Boulder, CO 80303, USA
   NYU: New York University, New York,
   NYU-CCPP: Center for Cosmology \& Particle Physics, New York University,
     726 Broadway, New York, 10003, USA
@@ -228,6 +234,7 @@ affiliations:
     USA
   SVC: Saint Vincent College, Department of Physics, 300 Fraser Purchase Road, Latrobe,
     PA 15650, USA
+  TACC: Texas Advanced Computing Center, The University of Texas at Austin, USA.
   TAMU-inst: George P.~and Cynthia Woods Mitchell Institute for Fundamental Physics and Astronomy,
     Texas A\&M University, College Station, TX 77843, USA
   TAMU: Department of Physics and Astronomy, Texas A\&M University, College Station, TX 77843, USA
@@ -248,9 +255,12 @@ affiliations:
     Frederick Reines Hall, Irvine, CA 92697, USA
   UCIrvine-CC: Center for Cosmology, University of California, Irvine, CA 92697, USA
   UCL: University College London, Gower St, London WC1E 6BT, United Kingdom
+  UCO: UC Observatories, UC Santa Cruz, 1156 High Street, Santa Cruz, CA 95064
+  UCSB: University of California, Santa Barbara, CA 93106-9530, USA
   UCSC: Santa Cruz Institute for Particle Physics and Physics Department, University
     of California--Santa Cruz, 1156 High St., Santa Cruz, CA 95064, USA
   UdG: Departamento de F\'isica, DCI, Campus Le\'on, Universidad de Guanajuato, 37150, Le\'on, Guanajuato, M\'exico
+  UniAndes: Universidad de los Andes, Cra 1 Num. 18A - 12 Bogot\'{a} - Colombia
   UNAM: Universidad Nacional Aut\'{o}noma de M\'{e}xico
   UNAM-physics: Departamento de F\'isica, Facultad de Ciencias, Universidad Nacional Aut\'onoma de M\'exico,
     Ciudad Universitaria, CDMX, 04510, M\'exico
@@ -261,6 +271,7 @@ affiliations:
     33rd Street, Philadelphia, PA 19104-6396, USA
   URijeka: Faculty of Physics, University of Rijeka, Radmile Matej\v{c}i\'{c} 2, Rijeka, Croatia
   Utah: Department of Physics and Astronomy, University of Utah, Salt Lake City, UT 84112, USA
+  UToronto: University of Toronto, 27 King's College Circle, Toronto, Ontario M5S 1A1 Canada
   USNO: US Naval Observatory Flagstaff Station, 10391 Naval Observatory Road, Flagstaff,
     AZ 86001, USA
   UVa: Department of Astronomy, University of Virginia, Charlottesville, VA 22904,
@@ -405,6 +416,13 @@ authors:
     altaffil: []
     initials: Reza
     name: Ansari
+    orcid: null
+  ansdellm:
+    affil:
+    - NASA
+    altaffil: []
+    initials: Megan
+    name: Ansdell
     orcid: null
   antilogusp:
     affil:
@@ -576,6 +594,13 @@ authors:
     initials: Eric C.
     name: Bellm
     orcid: 0000-0001-8018-5348
+  berukoffs:
+    affil:
+    - NOIRLab
+    altaffil: []
+    initials: Steven
+    name: Berukoff
+    orcid: null
   besth:
     affil:
     - CUNY-Grad
@@ -1233,6 +1258,13 @@ authors:
     initials: Michael
     name: Eracleous
     orcid: 0000-0002-3719-940X
+  evansj:
+    affil:
+    - Harvard-CfA
+    altaffil: []
+    initials: Janet D.
+    name: Evans
+    orcid: null
   fabbiang:
     affil:
     - CCA
@@ -1328,6 +1360,13 @@ authors:
     initials: Dan
     name: Foreman-Mackey
     orcid: null
+  foreroj:
+    affil:
+    - UniAndes
+    altaffil: []
+    initials: Jaime
+    name: Forero-Romero
+    orcid: null
   fossmd:
     affil:
     - SLAC
@@ -1348,6 +1387,13 @@ authors:
     altaffil: []
     initials: Michael D.
     name: Freemon
+    orcid: null
+  gaffneyn:
+    affil:
+    - TACC
+    altaffil: []
+    initials: Niall
+    name: Gaffney
     orcid: null
   gaglianoa:
     affil:
@@ -1561,6 +1607,13 @@ authors:
     initials: Augustin
     name: Guyonnet
     orcid: null
+  gwyns:
+    affil:
+    - NRC
+    altaffil: []
+    initials: Steven
+    name: Gwyn
+    orcid: null
   hallerg:
     affil:
     - SLAC
@@ -1596,6 +1649,13 @@ authors:
     initials: Justine
     name: Haupt
     orcid: null
+  hennawij:
+    affil:
+    - UCSB
+    altaffil: []
+    initials: Joseph
+    name: Hennawi
+    orcid:
   herrolda:
     affil:
     - RubinObs
@@ -1688,6 +1748,13 @@ authors:
     name: Huang
     email: huangflora@google.com
     orcid: null
+  hughesa:
+    affil:
+    - NSO
+    altaffil: []
+    initials: Anna L.H.
+    name: Hughes
+    orcid: null
   hufferme:
     affil:
     - SLAC-Kavli
@@ -1751,6 +1818,13 @@ authors:
     altaffil: []
     initials: Tess
     name: Jaffe
+    orcid: null
+  jagannathanp:
+    affil:
+    - NRAO
+    altaffil: []
+    initials: Preshanth
+    name: Jagannathan
     orcid: null
   jainb:
     affil:
@@ -1900,6 +1974,13 @@ authors:
     initials: Mansi M.
     name: Kasliwal
     orcid: 0000-0002-5619-4938
+  kavelaarsjj:
+    affil:
+    - CADC
+    altaffil: []
+    initials: JJ
+    name: Kavelaars
+    orcid: null
   keek:
     affil:
     - TTU
@@ -1921,6 +2002,13 @@ authors:
     initials: Lee S.
     name: Kelvin
     orcid: 0000-0001-9395-4759
+  kernj:
+    affil:
+    - NRAO
+    altaffil: []
+    initials: Jeff
+    name: Kern
+    orcid: 0000-0003-3221-0419
   kesslerr:
     affil:
     - Chicago
@@ -2047,6 +2135,13 @@ authors:
     initials: Kathleen
     name: Labrie
     orcid: null
+  lacym:
+    affil:
+    - NRAO
+    altaffil: []
+    initials: Mark
+    name: Lacy
+    orcid: null
   lagecs:
     affil:
     - UCDavis
@@ -2082,6 +2177,13 @@ authors:
     altaffil: []
     initials: Fran\c{c}ois
     name: Lanusse
+    orcid: null
+  lawc:
+    affil:
+    - Caltech-Astro
+    altaffil: []
+    initials: Casey
+    name: Law
     orcid: null
   lazari:
     affil:
@@ -2432,6 +2534,13 @@ authors:
     initials: Fred E.
     name: Moolekamp
     orcid: 0000-0003-0093-4279
+  moriartyc:
+    affil:
+    - Harvard-CfA
+    altaffil: []
+    initials: Christopher
+    name: Moriarty
+    orcid: null
   morrisoncb:
     affil:
     - Washington
@@ -2446,6 +2555,13 @@ authors:
     initials: Fritz
     name: Mueller
     orcid: 0000-0002-7061-4644
+  muencha:
+    affil:
+    - AAS
+    altaffil: []
+    initials: August
+    name: Muench
+    orcid: null
   mullergp:
     affil:
     - RubinObs
@@ -2460,19 +2576,19 @@ authors:
     initials: Demitri
     name: Muna
     orcid: null
-  muencha:
-    affil:
-    - AAS
-    altaffil: []
-    initials: August
-    name: Muench
-    orcid: null
   munozarancibiaf:
     affil:
     - RubinObs
     altaffil: []
     initials: Freddy
     name: Mu\~noz Arancibia
+    orcid: null
+  murilloa:
+    affil:
+    - IUPUI
+    altaffil: []
+    initials: Angela
+    name: Murillo
     orcid: null
   narayananks:
     affil:
@@ -3182,6 +3298,13 @@ authors:
     initials: Adam
     name: Scott
     orcid: null
+  seamanr:
+    affil:
+    - UA
+    altaffil: []
+    initials: Robert
+    name: Seaman
+    orcid: null
   sebagj:
     affil:
     - RubinObsC
@@ -3331,6 +3454,13 @@ authors:
     initials: Brian
     name: Stalder
     orcid: null
+  starkmann:
+    affil:
+    - UToronto
+    altaffil: []
+    initials: Nathaniel
+    name: Starkman
+    orcid: null
   stetzlers:
     affil:
     - Washington-Dirac
@@ -3452,6 +3582,13 @@ authors:
     initials: Stephen A.
     name: Tether
     orcid: null
+  teubenp:
+    affil:
+    - Maryland
+    altaffil: []
+    initials: Peter
+    name: Teuben
+    orcid: null
   thalerjj:
     affil:
     - Illinois
@@ -3550,6 +3687,13 @@ authors:
     initials: Yiannis
     name: Tsapras
     orcid: 0000-0001-8411-351X
+  turnerj:
+    affil:
+    - NOIRLab
+    altaffil: []
+    initials: James
+    name: Turner
+    orcid: null
   turkm:
     affil:
     - Illinois
@@ -3635,6 +3779,13 @@ authors:
     altaffil: []
     initials: Kurt
     name: Vetter
+    orcid: null
+  vieiraj:
+    affil:
+    - Illinois-astro
+    altaffil: []
+    initials: Joaquin
+    name: Vieira
     orcid: null
   villalobosa:
     affil:
@@ -3723,12 +3874,40 @@ authors:
     initials: Christopher Z.
     name: Waters
     orcid: 0000-0003-1989-4879
+  weaverb:
+    affil:
+    - NOIRLab
+    altaffil: []
+    initials: Benjamin
+    name: Weaver
+    orcid: null
+  westfallk:
+    affil:
+    - UCO
+    altaffil: []
+    initials: Kyle
+    name: Westfall
+    orcid: null
   wiechao:
     affil:
     - RubinObs
     altaffil: []
     initials: Oliver
     name: Wiecha
+    orcid: null
+  weinerb:
+    affil:
+    - MMTO
+    altaffil: []
+    initials: Benjamin
+    name: Weiner
+    orcid: null
+  weissj:
+    affil:
+    - TMT
+    altaffil: []
+    initials: Jason
+    name: Weiss
     orcid: null
   willmanb:
     affil:
