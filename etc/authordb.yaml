@@ -515,6 +515,12 @@ authors:
     initials: Jeff D.
     name: Barr
     orcid: null
+  barrettp:
+    affil:
+    - USNO
+    altaffil: []
+    initials: Paul
+    name: Barrett
   bartlettjg:
     affil:
     - Paris-APC
