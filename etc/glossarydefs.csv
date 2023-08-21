@@ -19,7 +19,7 @@ ACCS,Auxiliary Camera Control System,LSST DM,,,A
 ACGIH,American Conference of Governmental Industrial Hygienists,Gen,,,A
 ACI,Application Centric Infrastructure,IT,,,A
 ACID,"Atomicity, Consistency, Isolation, and Durability",DM,,,A
-ACM,Award Cash Management Service ,OPS,,,A
+ACM,Award Cash Management Service,OPS,,,A
 ACWP,Actual Cost of Work Performed,Gen,,,A
 AD,Associate Director,OPS,,,A
 ADAM,"Asteroid Discovery, Analysis, and Mapping",Sci,,,A
@@ -27,7 +27,7 @@ ADASS,Astronomical Data Analysis Software and Systems,Gen,,,A
 ADC,atmospheric dispersion corrector,TS,Document-11924,,A
 ADC,Analogue-to-Digital Converter,Gen,,,A
 ADCO,Associate Director for Chilean Operations,TS Gen,Document-11925,,A
-ADQL,Astronomical Data Query Language,Gen,,,A
+ADQL,Astronomical Data Query Language (IVOA standard),VO,,,A
 ADS,Astrophysics Data System,OPS Gen,,,A
 ADU,Analogue-to-Digital Unit,Gen,,,A
 AED,Automated External Defibrillator,OPS,,,A
@@ -78,7 +78,7 @@ AT,Auxiliary Telescope,TS,,,A
 ATCA,Advanced Telecommunications Architecture,TS,Document-11936,,A
 ATCS,Auxiliary Telescope Control System,TSSW,,,A
 ATLAS,A Toroidal LHC Apparatus,Gen,,,A
-ATLAS,The Asteroid Terrestrial-impact Last ,Sci,,,A
+ATLAS,Asteroid Terrestrial-impact Last Alert System,Sci,,,A
 ATM,Adaptavist Test Management,LSST DM,,,A
 AU,deprecated acronym for astronomical unit; use au instead,Gen,,,A
 au,astronomical unit,Gen,,,A
@@ -130,7 +130,7 @@ CAS,Central Administrative Services,Adm,,,A
 CASA,Common Astronomy Software Applications (for ALMA),Sci,,,A
 CASNET,AURA's financial reporting database,Adm,,,A
 CB,Configuration Baseline,LSST DM,,,A
-CBP,Collimated Beam Projector,DM LSST OPS ,,,A
+CBP,Collimated Beam Projector,DM LSST OPS,,,A
 CC,Change Control,Gen,,,A
 CCW,Camera Cable Wrap,CAM,,,A
 CC-IN2P3,Centre de Calcul de l'IN2P3,Gen,,,A
@@ -167,7 +167,7 @@ CIGALE,Code Investigating GALaxy Emission,Sci,https://cigale.lam.fr/,,A
 CIS,Computer Infrastructure Support,TS,Document-11991,,A
 CL,Command Language,Sci,IRAF,,A
 CLI,Command Line Interface,IT,,,A
-CLO,"community.lsst.org - use of this acronym is discouraged. The language that should be used in official documents is 'Community Forum' or 'Vera C. Rubin Community Forum'".,DM,,,A
+CLO,"community.lsst.org - use of this acronym is discouraged. The language that should be used in official documents is 'Community Forum' or 'Vera C. Rubin Community Forum'.",DM,,,A
 CLP,Chilean Peso,OPS,,,A
 CM,Configuration Management,LSST DM,,,A
 CMB,Cosmic Microwave Background,Sci OPS,,,A
@@ -219,6 +219,7 @@ CVSS,Common Vulnerability Scoring System,IT,,,A
 DAA,Dual Axis Actuator,TS,,,A
 DAC,Data Access Center,LSST DM,,,A
 DAF,data access framework,TS,Document-11936,,A
+DALI,Data Access Layer Interface (IVOA standard),VO,,,A
 DAQ,Data Acquisition System,LSST DM,,,A
 DAX,Data Access Services,LSST DM,,,A
 DB,DataBase,Gen,,,A
@@ -245,8 +246,6 @@ DECam,Dark Energy Camera,Sci,,,A
 DECaLS,The Dark Energy Camera Legacy Survey,Sci,,,A
 DECAT,DECam Alliance for Transients,Sci,,,A
 DEEP,Deep Extragalactic Evolutionary Probe,Sci,,,A
-DELVE,DECam Local Volume Exploration Survey,Sci,,,A
-DHO,Damped Harmonic Oscillator,Sci,,,A
 DEI,"Diversity, Equity, and Inclusion",DEI,,,A
 DELVE,DECam Local Volume Exploration Survey,Sci,,,A
 DES,Dark Energy Survey,LSST DM OPS,,,A
@@ -254,9 +253,10 @@ DESC,Dark Energy Science Collaboration,LSST DM OPS,,,A
 DESI,Dark Energy Spectroscopic Instrument,LSST DM OPS,,,A
 DETF,Dark Energy Task Force (AAAC/HEPAP joint advisory sub-committee),TS,Document-12018,,A
 DF,Data Facility,OPS DF DM,,,A
+DHO,Damped Harmonic Oscillator,Sci,,,A
 DIA,Difference Image Analysis,DM,,,A
 DIMM,Differential Image Motion Monitor,Gen,,,A
-DKIST,Daniel K. Inouye Solar Telescope ,OPS,,,A
+DKIST,Daniel K. Inouye Solar Telescope,OPS,,,A
 DLS,Deep Lens Survey,TS,Document-11937,,A
 DM,Data Management,LSST DM,,,A
 DM-SST,DM System Science Team,LSST DM,,DMSST,A
@@ -278,14 +278,14 @@ DMSST,DM System Science Team,LSST DM,,DM-SST,A
 DMTN,DM Technical Note,LSST DM,,,A
 DMTR,DM Test Report,LSST DM,,,A
 DNN,Deep Neural Network,Sci,,,A
-DNS,Domain Name Service,OPS ,,,A
+DNS,Domain Name Service,OPS,,,A
 DOE,Department of Energy,Gen,,,A
 DoF,Degree(s) of Freedom (also known as DOF),Gen,,,A
 DOI,Digital Object Identifier,DM OPS,,,A
 DOM,Document Object Model,Gen,,,A
 DoNM,Date of Next Meeting,Gen,,,A
 DOS,Data Operations Services,OPS OIR,,,A
-DOT,U.S. Department of Transportation,OPS ,,,A
+DOT,U.S. Department of Transportation,OPS,,,A
 DP,Data Production,OPS,,,A
 DP0,Data Preview 0,OPS,,,A
 DP1,Data Preview 1,OPS,,,A
@@ -349,7 +349,7 @@ ESCAPE,European Science Cluster of Astronomy \& Particle physics ESFRI research 
 ESD,electrostatic discharge,TS,Document-12002,,A
 ESFRI,European Strategy Forum on Research Infrastructures,Gen,,,A
 ESNet,Energy Sciences Network,Gen,,,A
-ESO,European Southern Observatory,OPS ,,,A
+ESO,European Southern Observatory,OPS,,,A
 ESP,Early Science Program,OPS,,,A
 ET,exposure time,TS,Document-12010,,A
 ETC,Estimate To Complete,Gen LSST DM,,,A
@@ -436,7 +436,7 @@ GCN,GRB Coordinates Network,Gen,,,A
 GCP,Google Cloud Platform,IT,,,A
 GCS,Generic Control System,TSSW,,,A
 GDS,Guider Data System,TS,,,A
-GEO,Geosynchronous Earth Orbit ,Gen,,,A
+GEO,Geosynchronous Earth Orbit,Gen,,,A
 GFLOP,Giga FLOP,Gen,,,A
 GFLOPS,Giga FLOP per Second,Gen,,,A
 GID,Group Identifier,IT,,,A
@@ -475,10 +475,10 @@ HEP, High Energy Physics,Gen,,,A
 HEPAP,HEP Advisory Panel,TS,Document-11986,,A
 HERMES,a high-resolution fibre-fed spectrograph for the 1.2m Mercator telescope,Sci,,,A
 HI,Hydrogen iodide,Sci,,,A
-HIPS,Hierarchical Progressive Survey,Gen,,,A
+HIPS,Hierarchical Progressive Survey (IVOA standard),VO,,,A
 HITS,High Cadence Transient Survey,Sci,https://iopscience.iop.org/article/10.3847/0004-637X/832/2/155,,A
 HPC,High Performance Computing,DM,,,A
-HPO,Head of Program Operations ,OPS,,,A
+HPO,Head of Program Operations,OPS,,,A
 HQ,Head Quarters,OPS,,,A
 HR,Human Resources,Gen,,,A
 HSC,Hyper Suprime-Cam,Gen,,,A
@@ -526,7 +526,7 @@ IR,infrared,TS,Document-11949,,A
 IRAF,Image Reduction and Analysis Facility,Hist,,,A
 IRIS,e-Infrastructure for Research and Innovation for STFC,OPS,,,A
 IRNC,International Research Network Connections,TS,Document-11973,,A
-IRSA,Infrared Science Archive,Gen,,,A
+IRSA,Infrared Science Archive (NASA),Gen,,,A
 IRU,indefinable right to use,TS,Document-11969,,A
 IS,Interface Scientist,LSST DM,,,A
 ISD,Interface Support Document,,,,A
@@ -580,12 +580,12 @@ LAN,Local Area Network,Gen,,,A
 LAPACK,Linear Algebra PACKage,Gen,,,A
 LASER,Light Amplification by Stimulated Emission of Radiation,Gen,,,A
 LaTeX,(Leslie) Lamport TeX (document markup language and document preparation system),Gen,,,A
-LATISS,LSST Atmospheric Transmission Imager and Slitless Spectrograph,TS, ,,A
+LATISS,LSST Atmospheric Transmission Imager and Slitless Spectrograph,TS,,,A
 LBT,Large Binocular Telescope,TS,Document-11954,,A
 LBTO,Large Binocular Telescope Observatory,OPS,,,A
 LBV,Luminous Blue Variables,Sci,,,A
 LCA,Document handle LSST camera subsystem controlled documents,CAM,,,A
-LCDM, $\Lambda$ Cold Dark Matter; cosmological model,Sci,,,A
+LCDM,$\Lambda$ Cold Dark Matter; cosmological model,Sci,,,A
 LCLS,Linac Coherent Light Source,Gen,,,A
 LCO,Las Cumbres Observatories,Gen,,,A
 LCR,LSST Change Request,LSST DM,,,A
@@ -623,7 +623,7 @@ LSS,Large Scale Structure,Sci,,,A
 LSST,Legacy Survey of Space and Time (formerly Large Synoptic Survey Telescope),Gen,,,A
 LSSTC,LSST Corporation,Adm,,,A
 LSSTPO,LSST Project Office,Adm,,,A
-LTS,LSST Telescope and Site  (Document Handle),TS,,,A
+LTS,LSST Telescope and Site (Document Handle),TS,,,A
 LUT,Look-Up Table,Gen,,,A
 LV,Local Volume,Sci,,,A
 LVV,LSST Verification and Validation,Gen,,,A
@@ -661,7 +661,7 @@ MMA,Multi Messenger Astronomy,OPS,,,A
 MMT,Multiple Mirror Telescope,OPS,,,A
 MNRAS,Monthly Notices of the Royal Astronomical Society,TS,Document-12016,,A
 MOA,Memo Of Agreement,OPS,,,A
-MOC,Multi Ordered Catalogue,VO DM,,,A
+MOC,Multi-Order Coverage (IVOA standard),VO,,,A
 MODTRAN,MODerate resolution TRANsmission model,TS,,,A
 MOF,Multi-Object Multi-Band Fitting,OPS,,,A
 MOOC,Massively Online Open Courses,Gen,,,A
@@ -671,7 +671,7 @@ MOU,Memo Of Understanding,OPS,,,A
 MPA,Max Planck Institute for Astrophysics,Gen,,,A
 MPC,Minor Planet Center,Gen,,,A
 MPO,Memorandum Purchase Order,OPS DOE,,,A
-MPP,Massively Parallel Process,DM, ,,A
+MPP,Massively Parallel Process,DM,,,A
 MPS,NSF Mathematical and Physical Sciences directorate,OPS,,,A
 MPS/AST,NSF Mathematical and Physical Sciences directorate’s Division of Astronomical Sciences,OPS,,,A
 MREFC,Major Research Equipment and Facility Construction,Gen,,NSF,A
@@ -679,16 +679,16 @@ MREN,Montenegrin Research and Education Network,Gen,,,A
 MSB,Most Significant Bit,Gen,,,A
 MSE,Maunakea Spectroscopic Explorer,Sci,,,A
 MSO,Mid-Scale Observatories,OPS OIR,,,A
-MT,Main Telescope,TS ,,,A
+MT,Main Telescope,TS,,,A
 MTU,Maximum Transmission Unit,IT NET,,,A
-MTBF,Mean Time Between Failures,OPS ,,,A
+MTBF,Mean Time Between Failures,OPS,,,A
 MTDC,Modified Total Direct Costs,OPS,,,A
-MTM1M3,Main Telescope M1M3,TS ,,,A
-MTM2,Main Telescope Secondary Mirror,TS ,,,A
-MTOFC,Main Telescope  Optical Feedback Control ,TS ,,,A
-MTTR,Mean Time To Repair,OPS ,,,A
+MTM1M3,Main Telescope M1M3,TS,,,A
+MTM2,Main Telescope Secondary Mirror,TS,,,A
+MTOFC,Main Telescope Optical Feedback Control,TS,,,A
+MTTR,Mean Time To Repair,OPS,,,A
 MW,Milky Way,Sci,,,A
-MYDB,My Database,DM Gen, ,,A
+MYDB,My Database,DM Gen,,,A
 N9K,Cisco Nexus 9000 Series,IT,,,A
 NACME,National Action Council for Minorities in Engineering,DEI,,,A
 NAOJ,National Astronomical Observatory of Japan,Gen,,,A
@@ -699,8 +699,8 @@ NAT,Network Address Translation,IT,,,A
 NAT,nodal aberration theory,TS,Document-11993,,A
 NAVO,NASA Astronomical Virtual Observatories,Gen,,,A
 NBD,Next Business Day,IT,,,A
-NCOA,National Center for Optical-Infrared Astronomy,Gen,,,A
-NCOIRA,(Obsolete now NOIRLab) National Center for Optical and Infrared Astronomy,TS,Document-11999,,A
+NCOA,"(Obsolete, now NOIRLab) National Center for Optical-Infrared Astronomy",Gen,,,A
+NCOIRA,"(Obsolete, now NOIRLab) National Center for Optical and Infrared Astronomy",TS,Document-11999,,A
 NCR,Non Conformance Report,PMO,,,A
 NCSA,National Center for Supercomputing Applications,Gen,,,A
 NCW,Non Conformance Waiver,PMO,,,A
@@ -722,12 +722,12 @@ NLT,NOIRLab Leadership Team,OPS,,,A
 NMOC,NSF's OIR Lab Management Oversight Council,Gen,,,A
 NNSA,National Nuclear Security Administration,OPS,,,A
 NOAA,National Oceanic and Atmospheric Administration,Gen,,,A
-NOAO,National Optical Astronomy Observatories now NOIRLab ,Gen,,,A
-NOC,Network Operations Center,NET ,,,A
+NOAO,National Optical Astronomy Observatories now NOIRLab,Gen,,,A
+NOC,Network Operations Center,NET,,,A
 NOGLSTP,National Organization of Gay and Lesbian Scientists and Technical Professionals,DEI,,,A
 NOIR,NSF's National Optical-Infrared Astronomy Research Laboratory; \url{https://nationalastro.org},Gen,,,A
 NOIRLab,NSF's National Optical-Infrared Astronomy Research Laboratory; \url{https://nationalastro.org},Gen,,,A
-NOS,NSF's OIR Lab Operations Services ,OPS OIR,,,A
+NOS,NSF's OIR Lab Operations Services,OPS OIR,,,A
 NPCF,National Petascale Computing Facility,OPS OIR,,,A
 NRAO,National Radio Astronomy Observatory,Gen,,,A
 NRC,National Research Council,OPS,,,A
@@ -738,7 +738,7 @@ NSF's OIR Lab,NSF's National Optical-Infrared Astronomy Research Laboratory; \ur
 NSO,National Solar Observatory,OPS,,,A
 NSS,NOAO Support Services,OPS,,,A
 NSTA,National Science Teachers Association,OPS,,,A
-NTP,Network Time Protocol,OPS ,,,A
+NTP,Network Time Protocol,OPS,,,A
 NTS,NCSA Test Stand,DM CAM,,,A
 NTT,Nippon Telegraph and Telephone Corporation,IT,,,A
 NUV,Near Ultraviolet,Sci,,,A
@@ -747,6 +747,9 @@ NXOS,Nexus OS,IT,,,A
 NYT,New York Times,Gen,,,A
 OAB,Outreach Advisory Board,EPO,,,A
 OBS,Organisation Breakdown Structure,Gen,,,A
+ObsCore,Observation Data Model Core Components (IVOA standard),VO,,,A
+ObsLocTAP,Observation Locator Table Access Protocol (IVOA standard),VO,,,A
+ObsTAP,Observation (metadata) Table Access Protocol (part of IVOA ObsCore standard),VO,,,A
 OC,AURA Observatory Council,OPS,,,A
 OCDD,Operations Concept Definition Document,OPS,,,A
 OCPS,OCS Controlled Pipeline System,TS DM,,,A
@@ -760,7 +763,7 @@ OLE,Observatory Logging Environment,TS,,,A
 OMB,Office of Management and Budget,OPS,,,A
 OOB,Out Of Bound (Alternative network access),IT,,,A
 OODS,Observatory Operations Data Service,DM,,,A
-OPCC,Oficina de Protección de la Calidad del Cielo,OPS ,,,A
+OPCC,Oficina de Protección de la Calidad del Cielo,OPS,,,A
 OPD,optical path difference,TS,Document-12036,,A
 OPS,Operations,LSST DM,,,A
 OpSim,Operations Simulation,Sims,,,A
@@ -851,7 +854,7 @@ QE,quantum efficiency,TS,Document-11994,,A
 QOS,Quality of Service,IT,,,A
 QSERV,LSST Query Services,TS,Document-12025,,A
 QSFP,Quad Small Form Factor Plugable,IT,,,A
-QSO,Quasi-Stellar Object (Quasar) ,Sci,,,A
+QSO,Quasi-Stellar Object (Quasar),Sci,,,A
 RA,Right Ascension,Gen,,,A
 RAC,Resource Allocation Committee,OPS,,,A
 RAID,Redundant Array of Inexpensive Disks,Gen,,,A
@@ -867,10 +870,10 @@ RCEC,Rubin Construction Executive Committee,Gen,,,A
 RCI,Raft Communication Interface,CAM,,,A
 RCM,Raft Communication Module,CAM,,,A
 RCOC,Rubin Celebratory Organizing Committee,LSST,,,A
-RDBMS,Relational Database Management System ,Gen,,,A
+RDBMS,Relational Database Management System,Gen,,,A
 RDO,Rubin Directors Office,OPS,,,A
 RDM,Rubin Data Management,OPS,,,A
-RDP,Rubin Data Production(Obsolete use RDM),OPS,,,A
+RDP,Rubin Data Production (Obsolete use RDM),OPS,,,A
 REB,Readout Electronics Board,LSST DM,,,A
 REN,Research and Education Network,OPS,,,A
 RENATER,Réseau National de télécommunications pour la Technologie l’Enseignement et la Recherche,OPS,,,A
@@ -891,7 +894,7 @@ ROE,Royal Observatory Edinburgh,OPS,,,A
 ROO,Rubin Observatory Operations,OPS,,,A
 ROOT,Object-oriented data analysis framework developed at CERN,Gen,,,A
 ROP,Rubin Operations Plan,OPS,,,A
-ROSAT,R\"{o}ntgensatellit X-ray telescope,OPS,,,A
+ROSAT,Röntgensatellit X-ray telescope,OPS,,,A
 RP,Rendezvous Point,IT,,,A
 RPF,Rubin system PerFormance,OPS,,,A
 RPM,RPM Package Manager (originally Red Hat Package Manager; now a recursive acronym),IT,,,A
@@ -910,10 +913,10 @@ RTM,Raft Tower Module,CAM,,,A
 RTN,Rubin Technical Note,LSST DM,,,A
 RTV,raster to vector,TS,Document-11984,,A
 RU,Rack Unit,IT,,,A
-S3,(Amazon) Simple Storage Service ,IT,,,A
-SA3CC,South American-African  Astronomy Coordination Committee,LSST ,https://www.amlight.net/?page_id=24,,A
+S3,(Amazon) Simple Storage Service,IT,,,A
+SA3CC,South American-African Astronomy Coordination Committee,LSST,https://www.amlight.net/?page_id=24,,A
 SAA,Single Axis Actuator,TS,,,A
-SAACC,South American Astronomy Coordination Committee (now SA3CC),LSST ,https://www.amlight.net/?page_id=24,,A
+SAACC,South American Astronomy Coordination Committee (now SA3CC),LSST,https://www.amlight.net/?page_id=24,,A
 SaaS,Software as a Service,Gen,,,A
 SAC,Science Advisory Committee,LSST Adm,,,A
 SACC,Save All Correlations and Covariances,Sci,DESC https://github.com/LSSTDESC/sacc,,A
@@ -930,8 +933,9 @@ SC,System Commissioning,PMO,,,A
 SC,Science Collaboration,DM,,,A
 SCADA,Supervisory Control And Data Acquisition,TS,,,A
 SCIDAR,Scintillation Detection And Ranging,TS,,,A
-SCOC,Survey Cadence Optimization Committee,OPS ,,,A
-SCOSC,Survey Cadence Optimization Strategy Committee,OPS ,,,A
+SCOC,Survey Cadence Optimization Committee,OPS,,,A
+SCOSC,Survey Cadence Optimization Strategy Committee,OPS,,,A
+SCS,Simple Cone Search (IVOA standard),VO,,,A
 SDQA,Science Data Quality Assessment,DM LSST,,,A
 SDS,Science array Data acquisition Subsystem,TS,,,A
 SDSS,Sloan Digital Sky Survey,Gen,,,A
@@ -948,10 +952,10 @@ SHA-1,Secure Hash Algorithm 1,Gen,,,A
 SHE,"Safety, Health, and Environmental",,,,A
 SHPE,Society of Hispanic Professional Engineers,DEI,,,A
 SI,Syst\`eme International (International System of units defined by ISO),Gen,,,A
-SIA,Simple Image Access,Gen,,,A
-SIAP,Simple Image Access Protocol,Gen,,,A
-SIT,"System Integration, Test",LSST OPS ,,,A
-SITCOM,"System Integration, Test and Commissioning",LSST OPS ,,,A
+SIA,Simple Image Access (IVOA standard),VO,,,A
+SIAP,Simple Image Access Protocol (IVOA standard),VO,,,A
+SIT,"System Integration, Test",LSST OPS,,,A
+SITCOM,"System Integration, Test and Commissioning",LSST OPS,,,A
 SKA,Square Kilometer Array,Sci,,,A
 SKF,Svenska Kullagerfabriken,PMO,,,A
 SKU,Stock Keeping Unit (Google),OPS,,,A
@@ -974,7 +978,7 @@ SOAP,Simple Object Access Protocol,Gen,,,A
 SOAR,Southern Astrophysical Research Telescope,Gen,,,A
 SOC,Security Operations Centre,OPS IT,,,A
 SOC,Science Operations Centre,Gaia,,,A
-SODA,Server-side Operations for Data Access,Gen,,,A
+SODA,Server-side Operations for Data Access (IVOA standard),VO,,,A
 SODAR,sonic detection and ranging,TS,Document-11997,,A
 SOF,Single-Object Fitting,OPS,,,A
 SOG,science operations group,TS,Document-11987,,A
@@ -1029,7 +1033,7 @@ TACABS,absolute time-recording accuracy (millisecond),TS,,,A
 TACC,Texas Advanced Computing Center,Gen,,,A
 TACREL,internal (relative) time-recording accuracy (millisecond),TS,,,A
 TAI,International Atomic Time,Gen,,,A
-TAP,Table Access Protocol,Gen,,,A
+TAP,Table Access Protocol (IVOA standard),VO,,,A
 TB,TeraByte,Gen,,,A
 TBA,To Be Announced,Gen,,,A
 TBC,To Be Confirmed,Gen,,,A
@@ -1061,7 +1065,7 @@ TOWG,Technical Operations Working Group,TS,,,A
 TPC,Total Project Cost,PMO,,,A
 TPU,Tensor Processing Unit,DM,,,A
 TS,Test Specification,LSST DM,,,A
-TSIP, Telescope System Instrumentation Program,OPS,,,A
+TSIP,Telescope System Instrumentation Program,OPS,,,A
 TSS,Telescope and Site Software,LSST,,,A
 TTS,Tucson Test Stand,LSST,,,A
 TVS,Transients and Variable Stars Science Collaboration,OPS,,,A
@@ -1069,7 +1073,7 @@ TVSSC,Transients and Variable Stars Science Collaboration,OPS,,,A
 TVSS,transient voltage surge suppressor,TS,Document-12034,,A
 UA,University of Arizona,TS,Document-11946,,A
 UAP,Unidentified Aerial Phenomena,Sci,,,A
-UCD,Unified Content Descriptor,DM,,,A
+UCD,Unified Content Descriptor (IVOA standard),VO,,,A
 UCL,University College London (UK),Gen,,,A
 UCSC,University College Santa Cruz,Gen,,,A
 UDF,User Defined Function,Sci,,,A
@@ -1100,7 +1104,7 @@ UT1,Universal Time 1,Gen,,,A
 UTC,Coordinated Universal Time,Gen,,,A
 UV,Ultraviolet,Sci,,,A
 UW,University of Washington,Gen,,,A
-UWS,Universal Worker Service (IVOA standard),Gen,,,A
+UWS,Universal Worker Service (IVOA standard),VO,,,A
 UX,User Experience,Gen,,,A
 VCD,Verification Control Document,LSST DM,,,A
 VE,vendor estimate,TS,Document-11968,,A
@@ -1116,11 +1120,11 @@ VLTI,Very Large Telescope Interferometer (ESO),Gen,,,A
 VM,Virtual Machine,IT,,,A
 VME,Virtual Machine Environment,IT,,,A
 VMS,Vibration Monitoring System,TS,,,A
-VNOC,Virtual Network Operations Center,NET ,,,A
+VNOC,Virtual Network Operations Center,NET,,,A
 VO,Virtual Observatory,Gen,,,A
 VOIP,Voice Over Internet Protocol,IT DM,,,A
 VOMS,VO Management Service,DM,,,A
-VPC, Virtual Private Cloud,IT,,,A
+VPC,Virtual Private Cloud,IT,,,A
 VPHAS,VST/OmegaCAM Photometric H-Alpha Survey,Sci,,,A
 VPN,virtual private network,TS,Document-11966,,A
 VQ,vendor quote,TS,Document-12014,,A
@@ -1401,7 +1405,7 @@ Mini-survey,"portions of the sky that will be observed with a different cadence 
 model metric,"A metric describing a model related to the data. For example, the coefficients of a 2D polynomial fit to the background of a single CCD exposure",DM QA,DMTN-085,,G
 monitoring,"In DM QA, this refers to the process of collecting, storing, aggregating and visualizing metrics",DM QA,DMTN-085,,G
 Moving Object Processing System,Deprecated term; see Solar System Processing,DM,,MOPS,G
-My Database,The notion of having a local storage beside the queriable database to store either temporary tables or uploaded catalogs,DM Gen, ,,G
+My Database,The notion of having a local storage beside the queriable database to store either temporary tables or uploaded catalogs,DM Gen,,,G
 National Science Foundation,"primary federal agency supporting research in all fields of fundamental science and engineering; NSF selects and funds projects through competitive, merit-based review",Adm,,,G
 New General Catalogue,"an astronomical catalogue of deep-sky objects compiled by John Louis Emil Dreyer in 1888",Adm,,,G
 NCSA Facility,"The data center at the National Center for Supercomputing Applications (NCSA) in Urbana, Illinois, USA. The NCSA Facility is composed of the NCSA portion of the Prompt Enclave, the Offline Production Enclave hosting all offline Data Release and calibration activities, an Archive Enclave holding data products, and the US Data Access Center",DM,LDM-148,,G
@@ -1514,7 +1518,7 @@ Single Visit Image,See CalExp,DM,,"SVI, CalExp",G
 Singularity,A software containerization system; an alternative to Docker; \url{https://sylabs.io},DM,,,G
 Site Manager,"The LSST-delegated representative at the Cerro Pach\'{o}n, Chile Summit site who is authorized to approve and accept work, provide technical liaison, monitor safety, and interpret LSST plans and specifications on behalf of AURA/LSST",Adm,,,G
 sky map,"A sky tessellation for LSST. The Stack includes software to define a geometric mapping from the representation of World Coordinates in input images to the LSST sky map. This tessellation is comprised of individual tracts which are, in turn, comprised of patches",DM,LDM-151,,G
-SLAC National Accelerator Laboratory," A national laboratory funded by the US Department of Energy (DOE); SLAC leads a consortium of DOE laboratories that has assumed responsibility for providing the LSST camera. Although the Camera project manages its own schedule and budget, including contingency, the Camera team’s schedule and requirements are integrated with the larger Project.  The camera effort is accountable to the LSSTPO.",TS,, ,G
+SLAC National Accelerator Laboratory,"A national laboratory funded by the US Department of Energy (DOE); SLAC leads a consortium of DOE laboratories that has assumed responsibility for providing the LSST camera. Although the Camera project manages its own schedule and budget, including contingency, the Camera team’s schedule and requirements are integrated with the larger Project.  The camera effort is accountable to the LSSTPO.",TS,,,G
 Sloan Digital Sky Survey,"is a digital survey of roughly 10,000 square degrees of sky around the north Galactic pole, plus a ~300 square degree stripe along the celestial equator",Sci,,,G
 Snap,One 15 second exposure within a Standard Visit in the LSST cadence,DM,,,G
 software,"The programs and other operating information used by a computer.",DM,,,G
@@ -1572,6 +1576,7 @@ User Generated Processing,"Any (re)processing of LSST data performed by a user, 
 Validation,"A process of confirming that the delivered system will provide its desired functionality; overall, a validation process includes the evaluation, integration, and test activities carried out at the system level to ensure that the final developed system satisfies the intent and performance of that system in operations",Adm,,,G
 Verification,"The process of evaluating the design, including hardware and software - to ensure the requirements have been met;  verification (of requirements) is performed by test, analysis, inspection, and/or demonstration",Adm,,,G
 Visit,"A sequence of one or more consecutive exposures at a given position, orientation, and filter within the LSST cadence. See Standard Visit, Alternate Standard Visit, and Non-Standard Visit",DM TS Sims,,,G
+VOTable,"IVOA standard for an interoperable data format for tabular data",VO,,,G
 warp,"(noun) The pixels from a single CCD Exposure that overlap a given coadd patch, trimmed and resampled into the patch's coordinate system; in other words, an image that has been astrometrically registered to the common coordinate system of a tract",DM,LDM-151,,G
 Wide-Fast-Deep,The main survey of the LSST to cover at least 18000 square degrees of the southern sky,DM TS,,WFD,G
 Work Breakdown Structure,a tool that defines and organizes the LSST project's total work scope through the enumeration and grouping of the project's discrete work elements,Adm,,,G
