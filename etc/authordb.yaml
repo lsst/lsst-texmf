@@ -126,6 +126,7 @@ affiliations:
     Martin Drive, Baltimore, MD 21218, USA
   JPL: Jet Propulsion Laboratory, California Institute of Technology, Pasadena, CA
     91109, USA
+  JPMORGAN: J.P. Morgan, New York, NY, USA
   JSI: Joint Space-Science Institute, University of Maryland, College Park, MD 20742, USA
   KECK: W. M. Keck Observatory, 65-1120 Mamalahoa Hwy.  Kamuela, HI 96743, USA
   KIPAC: Kavli Institute for Particle Astrophysics and Cosmology, SLAC
@@ -1535,6 +1536,13 @@ authors:
     initials: Daniel A.
     name: Goldstein
     orcid: 0000-0003-3461-8661
+  golkhouvz:
+    affil:
+    - JPMORGAN
+    altaffil: []
+    initials: V. Zach
+    name: Golkhou
+    orcid: null
   gomboca:
     affil:
     - NovaGorica
