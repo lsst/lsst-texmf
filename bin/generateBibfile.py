@@ -82,8 +82,13 @@ def generate_bibfile(outfile, query=""):
         dt = d['sourceUpdateTimestamp']
         date = datetime.fromtimestamp(dt)
         month = calendar.month_abbr[date.month].lower()
+        url = f"https://lsst.io/{d['handle']}"
+        if 'baseUrl' in d:
+            url = d['baseUrl']
+        else:
+            print(f"{url} did not have baseUrl set")
         be = BibEntry(checkFixAuthAndComma(fixTexSS(authors)), fixTex(d['h1']),
-                      month, d['handle'], date.year, url=d['baseUrl'])
+                      month, d['handle'], date.year, url=url)
         be.write_latex_bibentry(outfile)
         print(file=outfile)
 
