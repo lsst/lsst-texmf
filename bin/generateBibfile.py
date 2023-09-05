@@ -82,7 +82,7 @@ def generate_bibfile(outfile, query=""):
         dt = d['sourceUpdateTimestamp']
         date = datetime.fromtimestamp(dt)
         month = calendar.month_abbr[date.month].lower()
-        url = f"https://lsst.io/{d['handle']}"
+        url = f"https://{d['handle']}/lsst.io/"
         if 'baseUrl' in d:
             url = d['baseUrl']
         else:
