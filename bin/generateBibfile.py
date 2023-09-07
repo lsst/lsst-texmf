@@ -111,12 +111,16 @@ def checkFixAuthAndComma(authors):
     """
     Soem people used comm seperated author lists - bibtex does not like that.
     Here we replave the comma with and.
+    And someone put an & in the author list - that is not allowed either.
+
     :param authors:
     :return: authors in and format
     """
     if "," in authors:
         # a bit heavy handed but
         authors = authors.replace(",", " and")
+    if "&" in authors:
+        authors = authors.replace("&", " and")
     return authors
 
 
