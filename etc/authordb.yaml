@@ -240,6 +240,7 @@ affiliations:
   TAMU: Department of Physics and Astronomy, Texas A\&M University, College Station, TX 77843, USA
   TMT: TMT International Observatory
   TTU: Department of Physics and Astronomy, Texas Tech University, Lubbock, TX 79409, USA
+  TTU-media: College of Media and Communication, Texas Tech University, Lubbock, TX 79409, USA
   UA: University of Arizona, Tucson, AZ 85721, USA
   UA-CompSci: Department of Computer Science, The University of Arizona, 1040 E.\
     4th St., Tucson, AZ 85719, USA
@@ -1996,7 +1997,7 @@ authors:
     orcid: null
   keek:
     affil:
-    - TTU
+    - TTU-media
     altaffil: []
     initials: Kerk
     name: Kee
@@ -2091,6 +2092,13 @@ authors:
     altaffil: []
     initials: Victor L.
     name: Krabbendam
+    orcid: null
+  kremina:
+    affil:
+    - Berkeley-LBNL
+    altaffil: []
+    initials: Anthony
+    name: Kremin
     orcid: null
   krughoffks:
     affil:
