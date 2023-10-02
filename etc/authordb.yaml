@@ -2342,6 +2342,13 @@ authors:
     initials: Lauren A.
     name: MacArthur
     orcid: null
+ madejski:
+    affil:
+    - SLAC-Kavli
+    altaffil: []
+    initials: Greg M. 
+    name: Madejski
+    orcid: null
   mahabala:
     affil:
     - Caltech
