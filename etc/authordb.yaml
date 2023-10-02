@@ -2200,6 +2200,13 @@ authors:
     initials: Fran\c{c}ois
     name: Lanusse
     orcid: null
+  laur:
+    affil:
+    - NOIRLab
+    altaffil: []
+    initials: Ryan M.
+    name: Lau
+    orcid: 0000-0003-0778-0321
   lawc:
     affil:
     - Caltech-Astro
