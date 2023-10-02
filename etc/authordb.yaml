@@ -2457,6 +2457,13 @@ authors:
     initials: Ilija
     name: Medan
     orcid: null
+  meisnera:
+    affil:
+    - NOIRLab
+    altaffil: []
+    initials: Aaron M.
+    name: Meisner
+    orcid: 0000-0002-1125-7384
   menanteauf:
     affil:
     - NCSA
