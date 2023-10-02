@@ -3953,6 +3953,13 @@ authors:
     initials: Jason
     name: Weiss
     orcid: null
+  williamscc:
+    affil:
+    - NOIRLab
+    altaffil: []
+    initials: Christina C.
+    name: Williams
+    orcid: 0000-0003-2919-7495
   willmanb:
     affil:
     - RubinObs
