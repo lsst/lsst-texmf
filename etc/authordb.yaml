@@ -668,6 +668,13 @@ authors:
     initials: Josh S.
     name: Bloom
     orcid: null
+  blumrd:
+    affil:
+    - RubinObs-NOIRLab 
+    altaffil: []
+    initials: Robert D.
+    name: Blum
+    orcid: 0000-0002-8622-4237
   bogartj:
     affil:
     - SLAC-Kavli
