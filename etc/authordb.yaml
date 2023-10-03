@@ -3745,6 +3745,13 @@ authors:
     initials: Yiannis
     name: Tsapras
     orcid: 0000-0001-8411-351X
+  tuckerdl:
+    affil:
+    - Fermilab
+    altaffil: []
+    initials: Douglas L.
+    name: Tucker
+    orcid: 0000-0001-7211-5729  
   turnerj:
     affil:
     - NOIRLab
