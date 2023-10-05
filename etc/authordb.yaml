@@ -956,6 +956,13 @@ authors:
     initials: Carol
     name: Chirino
     orcid: null
+  choiy:
+    affil:
+    - NOIRLab
+    altaffil: []
+    initials: Yumi
+    name: Choi
+    orcid: 0000-0003-1680-1884
   chowd:
     affil:
     - SLAC
