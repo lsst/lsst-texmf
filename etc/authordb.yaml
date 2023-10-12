@@ -1615,6 +1615,13 @@ authors:
     initials: Matthew J.
     name: Graham
     orcid: 0000-0002-3168-0139
+  greenstreets:
+    affil:
+    - NOIRLab
+    altaffil: []
+    initials: Sarah
+    name: Greenstreet
+    orcid: 0000-0002-4439-1539
   gresslerwj:
     affil:
     - RubinObs
@@ -2738,7 +2745,7 @@ authors:
     initials: Andrei
     name: Nomerotski
     orcid: null
-  nordbym:
+  nordb:
     affil:
     - Fermi
     - Chicago
