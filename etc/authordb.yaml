@@ -677,7 +677,8 @@ authors:
     orcid: null
   blumrd:
     affil:
-    - RubinObs-NOIRLab 
+    - RubinObs
+    - NOIRLab
     altaffil: []
     initials: Robert D.
     name: Blum
@@ -2363,11 +2364,11 @@ authors:
     initials: Lauren A.
     name: MacArthur
     orcid: null
- madejski:
+  madejskig:
     affil:
     - SLAC-Kavli
     altaffil: []
-    initials: Greg M. 
+    initials: Greg M.
     name: Madejski
     orcid: null
   mahabala:
@@ -2752,7 +2753,7 @@ authors:
     altaffil: []
     initials: Brian
     name: Nord
-    orcid: 0000-0001-6706-8972 
+    orcid: 0000-0001-6706-8972
   nordbym:
     affil:
     - SLAC
@@ -3780,7 +3781,7 @@ authors:
     altaffil: []
     initials: Douglas L.
     name: Tucker
-    orcid: 0000-0001-7211-5729  
+    orcid: 0000-0001-7211-5729
   turnerj:
     affil:
     - NOIRLab
