@@ -347,6 +347,7 @@ def find_matches_combo(filename, acronyms, ignore_str=" %"):
                     continue
                 line = line.replace(r"\&", "&")
                 line = line.replace(r"\_", "_")
+                line = line.replace(r"\%", "%")
                 lines.append(line)
 
             text = " ".join(lines)
@@ -410,6 +411,7 @@ def escape_for_tex(str):
     """ Escape tex nasties and return new string"""
     nstr = str.replace("&", r"\&")
     nstr = nstr.replace("_", r"\_")
+    nstr = nstr.replace("%", r"\%")
     return nstr
 
 
