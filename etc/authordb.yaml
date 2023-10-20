@@ -78,7 +78,7 @@ affiliations:
   Drexel: Drexel University, 3141 Chestnut St, Philadelphia, PA 19104
   Duke: Department of Physics, Duke University, Durham, NC 27708, USA
   Edinburgh: University of Edinburgh, Old College, South Bridge, Edinburgh EH8 9YL
-  EdinburghIA: Institute for Astronomy, University of Edinburgh,  Royal Observatory, Blackford Hill, Edinburgh EH9 3HJ, UK
+  EdinburghIA: Institute for Astronomy, University of Edinburgh,  Royal Observatory, Blackford Hill, Edinburgh EH9 3HJ, UK
   EPFL: Institute of Physics, Laboratory of Astrophysics, \'{E}cole Polytechnique
     Fed\`{e}rale de Lausanne (EPFL), Observatoire de Sauverny, 1290 Versoix, Switzerland
   ESO: European Southern Observatory, Karl-Schwarzschild-Strasse 2, 85748 Garching bei München, Germany
@@ -316,6 +316,13 @@ authors:
     altaffil: []
     initials: Viviana
     name: Acquaviva
+    orcid: null
+  adaircl:
+    affil:
+    - SLAC
+    altaffil: []
+    initials: Christina L.
+    name: Adair
     orcid: null
   ahumadat:
     affil:
@@ -668,6 +675,14 @@ authors:
     initials: Josh S.
     name: Bloom
     orcid: null
+  blumrd:
+    affil:
+    - RubinObs
+    - NOIRLab
+    altaffil: []
+    initials: Robert D.
+    name: Blum
+    orcid: 0000-0002-8622-4237
   bogartj:
     affil:
     - SLAC-Kavli
@@ -942,6 +957,13 @@ authors:
     initials: Carol
     name: Chirino
     orcid: null
+  choiy:
+    affil:
+    - NOIRLab
+    altaffil: []
+    initials: Yumi
+    name: Choi
+    orcid: 0000-0003-1680-1884
   chowd:
     affil:
     - SLAC
@@ -1350,6 +1372,13 @@ authors:
     initials: Warren
     name: Focke
     orcid: null
+  fonsecaalvarezg:
+    affil:
+    - NOIRLab
+    altaffil: []
+    initials: Gloria
+    name: Fonseca Alvarez
+    orcid: 0000-0003-0042-6936
   fords:
     affil:
     - CUNYBM
@@ -1575,6 +1604,7 @@ authors:
   grahamml:
     affil:
     - Washington
+    - DIRAC
     altaffil: []
     initials: Melissa L.
     name: Graham
@@ -1586,6 +1616,13 @@ authors:
     initials: Matthew J.
     name: Graham
     orcid: 0000-0002-3168-0139
+  greenstreets:
+    affil:
+    - NOIRLab
+    altaffil: []
+    initials: Sarah
+    name: Greenstreet
+    orcid: 0000-0002-4439-1539
   gresslerwj:
     affil:
     - RubinObs
@@ -2199,6 +2236,13 @@ authors:
     initials: Fran\c{c}ois
     name: Lanusse
     orcid: null
+  laur:
+    affil:
+    - NOIRLab
+    altaffil: []
+    initials: Ryan M.
+    name: Lau
+    orcid: 0000-0003-0778-0321
   lawc:
     affil:
     - Caltech-Astro
@@ -2319,6 +2363,13 @@ authors:
     altaffil: []
     initials: Lauren A.
     name: MacArthur
+    orcid: null
+  madejskig:
+    affil:
+    - SLAC-Kavli
+    altaffil: []
+    initials: Greg M.
+    name: Madejski
     orcid: null
   mahabala:
     affil:
@@ -2449,6 +2500,13 @@ authors:
     initials: Ilija
     name: Medan
     orcid: null
+  meisnera:
+    affil:
+    - NOIRLab
+    altaffil: []
+    initials: Aaron M.
+    name: Meisner
+    orcid: 0000-0002-1125-7384
   menanteauf:
     affil:
     - NCSA
@@ -2688,6 +2746,14 @@ authors:
     initials: Andrei
     name: Nomerotski
     orcid: null
+  nordb:
+    affil:
+    - Fermi
+    - Chicago
+    altaffil: []
+    initials: Brian
+    name: Nord
+    orcid: 0000-0001-6706-8972
   nordbym:
     affil:
     - SLAC
@@ -2924,7 +2990,8 @@ authors:
     orcid: null
   plazasa:
     affil:
-    - Princeton-Astro
+    - SLAC
+    - SLAC-Kavli
     altaffil: []
     initials: Andr\'es A.
     name: Plazas Malag\'on
@@ -3708,6 +3775,13 @@ authors:
     initials: Yiannis
     name: Tsapras
     orcid: 0000-0001-8411-351X
+  tuckerdl:
+    affil:
+    - Fermilab
+    altaffil: []
+    initials: Douglas L.
+    name: Tucker
+    orcid: 0000-0001-7211-5729
   turnerj:
     affil:
     - NOIRLab
@@ -3930,6 +4004,13 @@ authors:
     initials: Jason
     name: Weiss
     orcid: null
+  williamscc:
+    affil:
+    - NOIRLab
+    altaffil: []
+    initials: Christina C.
+    name: Williams
+    orcid: 0000-0003-2919-7495
   willmanb:
     affil:
     - RubinObs
