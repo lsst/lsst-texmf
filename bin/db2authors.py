@@ -45,6 +45,8 @@ parser = argparse.ArgumentParser(description=description,
 parser.add_argument("-m", "--mode", default="aas", choices=OUTPUT_MODES,
                     help="""Display mode for translated parameters.
                          'verbose' displays all the information...""")
+parser.add_argument("-n", "--noafil", action='store_true',
+                    help="""Do not add affil at all for arxiv.""")
 args = parser.parse_args()
 
 buffer_affil = False  # hold affiliation until after author output
@@ -165,7 +167,10 @@ for anum, authorid in enumerate(authors):
                 affil_form.format(affil_cmd, len(affilset), affil[theAffil]))
 
         affilInd = affilset.index(theAffil) + 1
-        affilAuth = auth_afil_form.format(affilAuth, affilSep, str(affilInd))
+        if args.noafil:
+            affilAuth = affilAuth
+        else:
+            affilAuth = auth_afil_form.format(affilAuth, affilSep, str(affilInd))
 
         affilSep = " "
 
@@ -257,7 +262,8 @@ if buffer_authors:
         print("\n(", end="")
     else:
         print("}")
-    print(*allAffil, sep=affil_out_sep, end="")
+    if not args.noafil:
+        print(*allAffil, sep=affil_out_sep, end="")
     if args.mode == "arxiv":
         print(")\n")
     if args.mode != "arxiv":
