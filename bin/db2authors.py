@@ -56,6 +56,7 @@ affil_form = r"\{}[{}]{{{}}}"  # format of the affiliation
 auth_afil_form = "{}{}{}"  # format of author with affiliation
 author_form = r"\author{}{{~{}~{}}}"  # fomrmat of the author
 author_super = False  # Author affiliation as super script
+author_sep = " and "
 
 # The default is AAS and if no mode is specified you get that
 if args.mode == "arxiv":
@@ -66,6 +67,7 @@ if args.mode == "arxiv":
     auth_afil_form = "{}{}({})"
     buffer_affil = True
     buffer_authors = True
+    author_sep = ", "
 
 if args.mode == "spie":
     affil_cmd = "affil"
@@ -254,7 +256,7 @@ if buffer_authors:
         anum = anum + 1
         if (anum == numAuths and numAuths > 1) or \
                 (args.mode == "arxiv" and anum < numAuths):
-            print(" and ", end='')
+            print(author_sep , end='')
         else:
             if anum < numAuths:
                 print(" ", end='')
