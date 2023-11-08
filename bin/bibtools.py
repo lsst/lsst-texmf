@@ -23,7 +23,16 @@ class BibEntry:
     not all entries have all fields
     """
 
-    def __init__(self, author=None, title=None, month=None, handle=None, year=None, note="", url=""):
+    def __init__(
+        self,
+        author=None,
+        title=None,
+        month=None,
+        handle=None,
+        year=None,
+        note="",
+        url="",
+    ):
         self.author = author
         self.title = title
         self.month = month
@@ -38,7 +47,7 @@ class BibEntry:
             self.note = f"{{Vera C. Rubin Observatory {series}}}"
 
     def write_latex_bibentry(self, fd=sys.stdout):
-        """ Write a bibentry for document info passed.
+        """Write a bibentry for document info passed.
         Parameters
         ----------
         fd : default stdout : file to write to

@@ -3,8 +3,9 @@
 """
 
 import os
-import yaml
 import subprocess
+
+import yaml
 
 
 def make_all(authordb):
@@ -26,5 +27,5 @@ def main():
     subprocess.call("bin/db2authors.py", shell=True)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

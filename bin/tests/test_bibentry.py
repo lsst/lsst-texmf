@@ -1,7 +1,8 @@
-import unittest
-from bibtools import BibEntry
-from io import StringIO
 import re
+import unittest
+from io import StringIO
+
+from bibtools import BibEntry
 
 TESTENTRY = """@DocuShare{DMTN-005,
    author = {Testy McTest},
@@ -18,8 +19,15 @@ def make_comparable(instr):
 
 
 class TestBib(unittest.TestCase):
-    be = BibEntry("Testy McTest", "A great title", "nov", "DMTN-005",
-                  2001, "NO note", "http://nolplace.com")
+    be = BibEntry(
+        "Testy McTest",
+        "A great title",
+        "nov",
+        "DMTN-005",
+        2001,
+        "NO note",
+        "http://nolplace.com",
+    )
 
     def testConstructPrint(self):
         bestr = ""
@@ -30,18 +38,39 @@ class TestBib(unittest.TestCase):
         self.assertEqual(bestr, ctest)
 
     def testCompare(self):
-        bel = BibEntry("Testy McTest", "A great title", "nov", "DMTN-003",
-                       2001, "NO note", "http://nolplace.com")
-        beg = BibEntry("Testy McTest", "A great title", "nov", "DMTN-006",
-                       2001, "NO note", "http://nolplace.com")
+        bel = BibEntry(
+            "Testy McTest",
+            "A great title",
+            "nov",
+            "DMTN-003",
+            2001,
+            "NO note",
+            "http://nolplace.com",
+        )
+        beg = BibEntry(
+            "Testy McTest",
+            "A great title",
+            "nov",
+            "DMTN-006",
+            2001,
+            "NO note",
+            "http://nolplace.com",
+        )
 
         #  why does this fail self.assertGreater(beg,TestBib.be)
         self.assertTrue(beg.handle > TestBib.be.handle)
         self.assertTrue(bel.handle < TestBib.be.handle)
         self.assertEqual(bel, bel)
         # same entry bunch of spaces..
-        bels = BibEntry(" Testy McTest ", "   A great title", "nov", "DMTN-003",
-                        2001, "NO note", "http:://nolplace.com")
+        bels = BibEntry(
+            " Testy McTest ",
+            "   A great title",
+            "nov",
+            "DMTN-003",
+            2001,
+            "NO note",
+            "http:://nolplace.com",
+        )
         self.assertEqual(bels, bel)
         self.assertFalse(bel == beg)
 

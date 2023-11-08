@@ -4,6 +4,7 @@ import glob
 import os
 import sys
 
+
 def makeThemesDocument(xetex, aspectratio):
     themeDir = None
     for envvar in ["TEXMFHOME", "TEXINPUTS"]:
@@ -18,9 +19,10 @@ def makeThemesDocument(xetex, aspectratio):
         print("Unable to find LSST-themes on your TeX search path")
         sys.exit(1)
 
-    #-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+    # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
-    print(r"""
+    print(
+        r"""
     \documentclass[12pt, t, aspectratio=%(aspectratio)s, %(xetex)s]{beamer}
     \tolerance=1000
     \usepackage[
@@ -65,15 +67,17 @@ def makeThemesDocument(xetex, aspectratio):
 
     %%------------------------------------------------------------------------------
 
-    """ % dict(xetex=("xetex, " if xetex else ""),
-               aspectratio=aspectratio))
+    """
+        % dict(xetex=("xetex, " if xetex else ""), aspectratio=aspectratio)
+    )
 
     for d in glob.glob(os.path.join(themeDir, "*")):
         d = os.path.split(d)[1]
 
         print(r"   \showStyle{%s}" % d)
 
-    print(r"""
+    print(
+        r"""
 
     %------------------------------------------------------------------------------
 
@@ -81,18 +85,28 @@ def makeThemesDocument(xetex, aspectratio):
     """
     )
 
+
 if __name__ == "__main__":
     import argparse
-    parser = argparse.ArgumentParser(description="""
+
+    parser = argparse.ArgumentParser(
+        description="""
 Write a beamer file to illustrate all the available themes:
     showBeamerThemes > themes.tex && xelatex themes.tex""",
-                                     formatter_class=argparse.RawTextHelpFormatter)
-    
-    parser.add_argument('ARG', type=str, nargs="?", help="XXX")
-    parser.add_argument('--aspectratio', type=int, help="Aspect ratio (e.g. 169)", default=43)
-    parser.add_argument('--xetex', help="Use xelatex?", action="store_true", default=False)
-    parser.add_argument('--verbose', action="store_true", help="How chatty should I be?", default=False)
-    
+        formatter_class=argparse.RawTextHelpFormatter,
+    )
+
+    parser.add_argument("ARG", type=str, nargs="?", help="XXX")
+    parser.add_argument(
+        "--aspectratio", type=int, help="Aspect ratio (e.g. 169)", default=43
+    )
+    parser.add_argument(
+        "--xetex", help="Use xelatex?", action="store_true", default=False
+    )
+    parser.add_argument(
+        "--verbose", action="store_true", help="How chatty should I be?", default=False
+    )
+
     args = parser.parse_args()
 
     makeThemesDocument(xetex=args.xetex, aspectratio=args.aspectratio)
