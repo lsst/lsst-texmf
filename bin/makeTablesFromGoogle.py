@@ -32,6 +32,7 @@ from this machine.
 """
 
 
+import argparse
 import os
 import os.path
 import pickle
@@ -41,13 +42,11 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 from oauth2client.client import Credentials
 
-import argparse
-
 # If modifying these scopes, delete your previously saved credentials
 # at ~/.credentials/sheets.googleapis.com-python-quickstart.json
-SCOPES = ['https://www.googleapis.com/auth/spreadsheets.readonly']
-CLIENT_SECRET_FILE = 'client_secret.json'
-APPLICATION_NAME = 'LSST Tables from Google Sheet'
+SCOPES = ["https://www.googleapis.com/auth/spreadsheets.readonly"]
+CLIENT_SECRET_FILE = "client_secret.json"
+APPLICATION_NAME = "LSST Tables from Google Sheet"
 
 
 def get_credentials() -> Credentials:
@@ -64,19 +63,18 @@ def get_credentials() -> Credentials:
     # created automatically when the authorization flow completes for the first
     # time.
     creds = None
-    if os.path.exists('token.pickle'):
-        with open('token.pickle', 'rb') as token:
+    if os.path.exists("token.pickle"):
+        with open("token.pickle", "rb") as token:
             creds = pickle.load(token)
     # If there are no (valid) credentials available, let the user log in.
     if not creds or not creds.valid:
         if creds and creds.expired and creds.refresh_token:
             creds.refresh(Request())
         else:
-            flow = InstalledAppFlow.from_client_secrets_file(
-                CLIENT_SECRET_FILE, SCOPES)
+            flow = InstalledAppFlow.from_client_secrets_file(CLIENT_SECRET_FILE, SCOPES)
             creds = flow.run_local_server(port=0)
         # Save the credentials for the next run
-        with open('token.pickle', 'wb') as token:
+        with open("token.pickle", "wb") as token:
             pickle.dump(creds, token)
     return creds
 
@@ -87,20 +85,22 @@ def complete_and_close_table(tout):
         tout.close()
         return
     else:
-        raise Exception('Expected and open file to end table in')
+        raise Exception("Expected and open file to end table in")
 
 
 def outhead(ncols, tout, name, cap, form=None, font=r"\tiny"):
-
-    print(r"%s \begin{longtable} {" % font, file=tout, end='')
+    print(r"%s \begin{longtable} {" % font, file=tout, end="")
     c = 1
-    if (form is None):
-        print(" |p{0.22\\textwidth} ", file=tout, end='')
+    if form is None:
+        print(" |p{0.22\\textwidth} ", file=tout, end="")
         for c in range(1, ncols + 1):
-            print(" |r ", file=tout, end='')
-        print("|} ", file=tout, )
+            print(" |r ", file=tout, end="")
+        print(
+            "|} ",
+            file=tout,
+        )
     else:
-        print(form + "} ", file=tout, end='')
+        print(form + "} ", file=tout, end="")
 
     print(r"\caption{%s \label{tab:%s}}\\ " % (cap, name), file=tout)
     print(r"\hline ", file=tout)
@@ -110,15 +110,15 @@ def outhead(ncols, tout, name, cap, form=None, font=r"\tiny"):
 def outputrow(tout, pre, row, cols, skip):
     skipped = 0
     for i in range(cols):
-        if (i > 0 and skipped < skip):
+        if i > 0 and skipped < skip:
             skipped = skipped + 1
         else:
             try:
-                print("%s{%s}" % (pre, fixTex(row[i])), end='', file=tout)
+                print("%s{%s}" % (pre, fixTex(row[i])), end="", file=tout)
             except IndexError:
                 pass
-            if i < cols-1:
-                print("&", end='', file=tout)
+            if i < cols - 1:
+                print("&", end="", file=tout)
     print(r" \\ \hline", file=tout)
 
 
@@ -143,23 +143,23 @@ def genTables(values):
     assumed to contain the header.
     """
 
-    name = ''
+    name = ""
     tout = None
 
     if not values:
-        print('No data found.')
+        print("No data found.")
     else:
         cols = 0
         skip = 0
         bold_next = False
         for row in values:
-            if (row and 'Table' in row[0]):  # got a new table
+            if row and "Table" in row[0]:  # got a new table
                 if name:
                     complete_and_close_table(tout)
-                vals = row[0].split(' ')
+                vals = row[0].split(" ")
                 name = vals[1]
                 print("Create new table %s %i " % (name, len(row)))
-                tout = open(name + '.tex', 'w')
+                tout = open(name + ".tex", "w")
 
                 col = 1
                 cap = row[col]
@@ -170,21 +170,23 @@ def genTables(values):
                 form = None
                 font = r"\tiny"
                 col = col + 1
-                if (len(row) > col):
+                if len(row) > col:
                     if row[col].strip():
                         form = row[col]
                 col = col + 1
-                if (len(row) > col):
+                if len(row) > col:
                     if row[col].strip():
                         font = row[col]
 
-                outhead(cols-skip, tout, name, cap, form, font)
+                outhead(cols - skip, tout, name, cap, form, font)
                 bold_next = True
             else:
                 if name and row:
-                    if (row[0].startswith('Year') or
-                            row[0].startswith('Total') or
-                            bold_next):
+                    if (
+                        row[0].startswith("Year")
+                        or row[0].startswith("Total")
+                        or bold_next
+                    ):
                         # print header/total in bold
                         outputrow(tout, "\\textbf", row, cols, skip)
                         bold_next = False
@@ -203,10 +205,9 @@ def get_sheet(sheet_id, range):
 
     """
     creds = get_credentials()
-    service = build('sheets', 'v4', credentials=creds)
+    service = build("sheets", "v4", credentials=creds)
     sheet = service.spreadsheets()
-    result = sheet.values().get(spreadsheetId=sheet_id,
-                                range=range).execute()
+    result = sheet.values().get(spreadsheetId=sheet_id, range=range).execute()
     return result
 
 
@@ -218,21 +219,26 @@ def main(sheetId, sheets):
     for r in sheets:
         print("Google %s , Sheet %s" % (sheetId, r))
         result = get_sheet(sheetId, r)
-        values = result.get('values', [])
+        values = result.get("values", [])
         genTables(values)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     description = __doc__
     formatter = argparse.RawDescriptionHelpFormatter
-    parser = argparse.ArgumentParser(description=description,
-                                     formatter_class=formatter)
+    parser = argparse.ArgumentParser(description=description, formatter_class=formatter)
 
-    parser.add_argument('id', help="""ID of the google sheet like
-                                18wu9f4ov79YDMR1CTEciqAhCawJ7n47C8L9pTAxe""")
-    parser.add_argument('sheet', nargs='+',
-                        help="""Sheet names  and ranges to process
-                             within the google sheet e.g. Model!A1:H""")
+    parser.add_argument(
+        "id",
+        help="""ID of the google sheet like
+                                18wu9f4ov79YDMR1CTEciqAhCawJ7n47C8L9pTAxe""",
+    )
+    parser.add_argument(
+        "sheet",
+        nargs="+",
+        help="""Sheet names  and ranges to process
+                             within the google sheet e.g. Model!A1:H""",
+    )
     args = parser.parse_args()
     sheetId = args.id
     sheets = args.sheet

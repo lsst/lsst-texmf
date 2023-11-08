@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<!-- Not great Javascript page to load the glossarydef and make it real time searhable 
+<!-- Not great Javascript page to load the glossarydef and make it real time searhable
     this could replace the static glossary page on lsst.org
     -->
 <html lang="en">
@@ -26,7 +26,7 @@
 		          return d.slice(0,3)
 	        });
 	});
- 
+
         function setupTable() {
 	     if (gls) {
 		  $('#gls').DataTable( {
@@ -36,7 +36,7 @@
 				 { title: "Term" },
 				 { title: "Definition" },
 				 { title: "Tags" }
-		                 ]	
+		                 ]
 		  });
 	          setupCol();
               } else {
@@ -49,7 +49,7 @@
 
         function setupCol() {
 		var table = $('#gls').DataTable();
-		 
+
 		table.columns().flatten().each( function ( colIdx ) {
 			// Create the select list and/or search box add  operation
 			var search = $('<input type="text" placeholder="Search" />')
@@ -72,7 +72,7 @@
 			    for (var v = 0 ; v < svals.length; v = v + 1) {
 				var d = svals[v]
 			        search.append( $('<option value="'+d+'">'+d+'</option>') );
-			    } 
+			    }
 		       }
 			search.appendTo(
 			     table.column(colIdx).footer()
@@ -91,7 +91,7 @@
             queryString = window.location.search
             urlParams = new URLSearchParams(queryString)
             if (urlParams.has("acr")) {
-                var acr = urlParams.get("acr")   
+                var acr = urlParams.get("acr")
                 acrCol.search(acr).draw()
             }
         });

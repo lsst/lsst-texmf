@@ -7,3 +7,4 @@ oauth2client
 algoliasearch
 latexcodec
 pygments
+pre-commit

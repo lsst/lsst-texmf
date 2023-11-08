@@ -22,12 +22,13 @@ potential glossary entries and will mark them with ``\gls``.
 Use ``-m`` or ``--mode`` with ["txt", "rst","tex"] to choose output formats
 """
 
-import warnings
-import os.path
-import sys
-import re
 import argparse
 import csv
+import os.path
+import re
+import sys
+import warnings
+
 glsFile = "aglossary.tex"
 OUTPUT_MODES = ["txt", "rst", "tex"]
 
@@ -113,7 +114,7 @@ def read_glossarydef(filename, utags, init=None):
 
     lc = 0
     with open(filename, "r") as fd:
-        reader = csv.reader(fd, delimiter=',', quotechar='"')
+        reader = csv.reader(fd, delimiter=",", quotechar='"')
         for row in reader:
             if len(row) < 2:  # blank line
                 continue
@@ -160,8 +161,9 @@ def read_glossarydef(filename, utags, init=None):
     return definitions
 
 
-def read_myacronyms(filename="myacronyms.txt", allow_duplicates=False,
-                    defaults=None, utags=None):
+def read_myacronyms(
+    filename="myacronyms.txt", allow_duplicates=False, defaults=None, utags=None
+):
     """Read the supplied file and extract acronyms or glossary entries.
 
     File must contain lines in format if it is myacronyms.txt :
@@ -209,13 +211,18 @@ def read_myacronyms(filename="myacronyms.txt", allow_duplicates=False,
                 if acr in definitions:
                     if defn != definitions[acr]:
                         raise RuntimeError(
-                            "Duplicate definitions of {} differ in {}".
-                            format(acr, filename))
+                            "Duplicate definitions of {} differ in {}".format(
+                                acr, filename
+                            )
+                        )
                     else:
-                        warnings.warn(UserWarning("Entry {} exists multiple times"
-                                                  " with same definition in {}, you may"
-                                                  " want to try using a tag (-t)".
-                                                  format(acr, filename)))
+                        warnings.warn(
+                            UserWarning(
+                                "Entry {} exists multiple times"
+                                " with same definition in {}, you may"
+                                " want to try using a tag (-t)".format(acr, filename)
+                            )
+                        )
                 # myacronyms will contains by definition only acronyms
                 definitions[acr] = (defn, "A")
 
@@ -340,10 +347,12 @@ def find_matches_combo(filename, acronyms, ignore_str=" %"):
                 line = line.strip()
 
                 # Latex specific ignore
-                if (line.startswith(r"\def") or
-                        line.startswith(r"\newcommand") or
-                        line.startswith(r"\renewcommand") or
-                        line.startswith("%")):
+                if (
+                    line.startswith(r"\def")
+                    or line.startswith(r"\newcommand")
+                    or line.startswith(r"\renewcommand")
+                    or line.startswith("%")
+                ):
                     continue
                 line = line.replace(r"\&", "&")
                 line = line.replace(r"\_", "_")
@@ -357,8 +366,9 @@ def find_matches_combo(filename, acronyms, ignore_str=" %"):
     # These do not look like "normal" acronyms so special case them.
     # Also single character acronyms (which should probably be banned)
     # CAP_ACRONYM cannot be used here since it search for substrings
-    nonstandard = {a for a in acronyms if not a.isupper() or not
-                   a.isalpha() or len(a) == 1}
+    nonstandard = {
+        a for a in acronyms if not a.isupper() or not a.isalpha() or len(a) == 1
+    }
 
     # findall matches non-overlapping left to right in the order that
     # we give alternate strings. Therefore when we build the regex
@@ -369,8 +379,7 @@ def find_matches_combo(filename, acronyms, ignore_str=" %"):
 
     # This pattern matches all defined acronyms, even those with lower
     # case characters and things like "&"
-    pattern = r"\b(" + "|".join(re.escape(w)
-                                for w in sorted_nonstandard) + r")\b"
+    pattern = r"\b(" + "|".join(re.escape(w) for w in sorted_nonstandard) + r")\b"
     regex = re.compile(pattern)
 
     matches = set(regex.findall(text))
@@ -408,7 +417,7 @@ find_matches = find_matches_combo
 
 
 def escape_for_tex(str):
-    """ Escape tex nasties and return new string"""
+    """Escape tex nasties and return new string"""
     nstr = str.replace("&", r"\&")
     nstr = nstr.replace("_", r"\_")
     nstr = nstr.replace("%", r"\%")
@@ -416,7 +425,7 @@ def escape_for_tex(str):
 
 
 def write_latex_glossary(acronyms, fd=sys.stdout):
-    """ Write a glossary file with newglossaryitem per definition  -
+    """Write a glossary file with newglossaryitem per definition  -
     or new acronym if it is type A for acronym.
 
     Parameters
@@ -426,20 +435,27 @@ def write_latex_glossary(acronyms, fd=sys.stdout):
     fd : `file`, optional
     """
 
-    print("% DO NOT EDIT - generated by " +
-          sys.argv[0] + " from https://lsst-texmf.lsst.io/.", file=fd)
+    print(
+        f"% DO NOT EDIT - generated by {sys.argv[0]} from "
+        "https://lsst-texmf.lsst.io/.",
+        file=fd,
+    )
     for acr, defn in acronyms:
         definition = escape_for_tex(defn[0])
         # entry has a lookup and a display version
         # the display one needs escaping
         acr2 = escape_for_tex(acr)
         if defn[1] == "A":
-            print("\\newacronym{{{}}} {{{}}} {{{}}}".format(
-                acr, acr2, definition), file=fd)
+            print(
+                "\\newacronym{{{}}} {{{}}} {{{}}}".format(acr, acr2, definition),
+                file=fd,
+            )
         else:
-            print("\\newglossaryentry{{{}}} {{name={{{}}},"
-                  " description={{{}}}}}".format(
-                      acr, acr2, definition), file=fd)
+            print(
+                "\\newglossaryentry{{{}}} {{name={{{}}},"
+                " description={{{}}}}}".format(acr, acr2, definition),
+                file=fd,
+            )
 
 
 def write_latex_table(acronyms, dotex=True, dorst=False, fd=sys.stdout):
@@ -458,10 +474,13 @@ def write_latex_table(acronyms, dotex=True, dorst=False, fd=sys.stdout):
         print(r"""======= ===========""", file=fd)
 
     if dotex:
-        print(r"""\addtocounter{table}{-1}
+        print(
+            r"""\addtocounter{table}{-1}
 \begin{longtable}{p{0.145\textwidth}p{0.8\textwidth}}\hline
 \textbf{Acronym} & \textbf{Description}  \\\hline
-""", file=fd)
+""",
+            file=fd,
+        )
     else:
         print("Acronym\tDescription", file=fd)
         if dorst:
@@ -486,14 +505,13 @@ def forceConverge(prevCount, utags, noadorn):
     while True:
         count = main({glsFile}, True, utags, True, False, "tex", noadorn)
         # If no glossary items are added we are done
-        if (count == prevCount):
+        if count == prevCount:
             break
         prevCount = count
 
 
 def setup_paths():
-    defaults_dir = os.path.join(
-        os.path.dirname(__file__), os.path.pardir, "etc")
+    defaults_dir = os.path.join(os.path.dirname(__file__), os.path.pardir, "etc")
     lsst_glossary_path = os.path.join(defaults_dir, "glossarydefs.csv")
     global_skip_path = os.path.join(defaults_dir, "skipacronyms.txt")
     return (lsst_glossary_path, global_skip_path)
@@ -515,7 +533,9 @@ def main(texfiles, doGlossary, utags, dotex, dorst, mode, noadorn):
         local_definitions = read_myacronyms()
     except FileNotFoundError:
         try:
-            local_definitions = read_myacronyms(filename="myglossarydefs.csv", utags=utags)
+            local_definitions = read_myacronyms(
+                filename="myglossarydefs.csv", utags=utags
+            )
         except FileNotFoundError:
             local_definitions = {}
 
@@ -554,9 +574,11 @@ def main(texfiles, doGlossary, utags, dotex, dorst, mode, noadorn):
     missing = missing - skip
 
     if len(missing):
-        print("List of potential acronyms found in your text "
-              "that you may be missing. Please ignore if not relevant "
-              "(note that the list may not be complete).")
+        print(
+            "List of potential acronyms found in your text "
+            "that you may be missing. Please ignore if not relevant "
+            "(note that the list may not be complete)."
+        )
         for m in missing:
             print("Missing definition: {}".format(m), file=sys.stderr)
 
@@ -568,9 +590,11 @@ def main(texfiles, doGlossary, utags, dotex, dorst, mode, noadorn):
         elif acr in lsst_definitions:
             options = lsst_definitions[acr]
             if len(options) > 1:
-                print("Entry {} exists multiple ({}) times. "
-                      "Including all definitions.".format(acr, len(options)),
-                      file=sys.stderr)
+                print(
+                    "Entry {} exists multiple ({}) times. "
+                    "Including all definitions.".format(acr, len(options)),
+                    file=sys.stderr,
+                )
             for a in options:
                 results.append((acr, a))
         else:
@@ -589,7 +613,7 @@ def main(texfiles, doGlossary, utags, dotex, dorst, mode, noadorn):
 
 
 def update_gls_entries(results, GLSlist):
-    r""" Scan through the acronym and gls definitions and add \gls where
+    r"""Scan through the acronym and gls definitions and add \gls where
     appropriate (similar to -u for the files)"""
 
     new_result = []
@@ -599,9 +623,9 @@ def update_gls_entries(results, GLSlist):
         defn = entry[1][0]
         type = entry[1][1]
         acr = entry[0]
-        if type == 'A':  # just see if we have a glossary match
+        if type == "A":  # just see if we have a glossary match
             if defn in GLSlist:  # ok we gls the entire thing
-                defn = r"\gls{"+defn+"}"
+                defn = r"\gls{" + defn + "}"
             else:
                 defn = sub_line(entry[1][0], regexmap, GLSlist)
         new_result.append((acr, (defn, type)))
@@ -610,13 +634,13 @@ def update_gls_entries(results, GLSlist):
 
 
 def loadGLSlist():
-    """ Load all the glossary items from the generated glossary file.
+    """Load all the glossary items from the generated glossary file.
     we can then use those entries to go back and search for them in the
-    tex files to see of they have \\gls """
+    tex files to see of they have \\gls"""
 
-    with open(glsFile, 'r') as fin:
+    with open(glsFile, "r") as fin:
         # match gls entry but only take the first group
-        regex = re.compile(r'\\new.+\s*{(.+)}\s*{.+}\s*')
+        regex = re.compile(r"\\new.+\s*{(.+)}\s*{.+}\s*")
         text = fin.read()
         GLSlist = set(regex.findall(text))
     return GLSlist
@@ -624,19 +648,19 @@ def loadGLSlist():
 
 def glsfn(s):
     """put \\gls{} -- used in the regexp substitution"""
-    return s.group(1)+"\\gls{"+s.group(2)+"}"+s.group(3)
+    return s.group(1) + "\\gls{" + s.group(2) + "}" + s.group(3)
 
 
 def make_regexmap(GLSlist):
-    """ Make a re map of regexps for substitution"""
+    """Make a re map of regexps for substitution"""
     regexmap = {}
     for g in GLSlist:
-        regexmap[g] = re.compile(r"([,\s(](?<!={))("+g+r")(\b)")
+        regexmap[g] = re.compile(r"([,\s(](?<!={))(" + g + r")(\b)")
     return regexmap
 
 
 def sub_line(line, regexmap, GLSlist):
-    r""" for given line put \gls around gls items not already adorned.
+    r"""for given line put \gls around gls items not already adorned.
     :return: modified line
     """
     nline = line
@@ -661,10 +685,15 @@ def updateFile(inFile, GLSlist):
     os.rename(newf, oldf)
     regexmap = make_regexmap(GLSlist)
     try:
-        with open(oldf, 'r') as fin, open(newf, 'w') as fout:
+        with open(oldf, "r") as fin, open(newf, "w") as fout:
             for line in fin:
-                if not (line.startswith('%') or 'entry' in line or 'seciton' in line or
-                        'title' in line or 'author' in line):  # it is a comment ignore
+                if not (
+                    line.startswith("%")
+                    or "entry" in line
+                    or "seciton" in line
+                    or "title" in line
+                    or "author" in line
+                ):  # it is a comment ignore
                     line = sub_line(line, regexmap, GLSlist)
                 fout.write(line)
     except BaseException:
@@ -675,14 +704,16 @@ def updateFile(inFile, GLSlist):
 
 def update(texfiles):
     """Update the passed tex files by looking for acronyms and glossary items
-       loaded from aglossary.tex."""
+    loaded from aglossary.tex."""
 
     if not texfiles:
         raise RuntimeError("No files supplied.")
 
     print("Updating texfiles the original files will be .old ")
-    print("""If glossary items contain \\gls refs you may need to run this
-              again to catch the entries in aglossary.tex """)
+    print(
+        """If glossary items contain \\gls refs you may need to run this
+              again to catch the entries in aglossary.tex """
+    )
     GLSlist = loadGLSlist()  # Grab all the found glossary and acronyms
     for f in texfiles:
         # in each file look for each glossary item and replace wit \gls{item}
@@ -690,14 +721,14 @@ def update(texfiles):
 
 
 def load_translation(locale, filename):
-    """ load a trandaltion file for given locale
+    """load a trandaltion file for given locale
     simplistic for now - append local to file name
     load in a dict assume acronyn, definition"""
 
     transfile = filename.replace(".csv", f"_{locale}.csv")
     translation = {}
     with open(transfile, "r") as fd:
-        reader = csv.reader(fd, delimiter=',', quotechar='"')
+        reader = csv.reader(fd, delimiter=",", quotechar='"')
         for lc, row in enumerate(reader):
             try:
                 ind = 0
@@ -705,8 +736,7 @@ def load_translation(locale, filename):
                 defn = escape_for_tex(row[ind + 1])
                 translation[acr] = defn
             except BaseException as ex:
-                print("Error reading {} on line {} - {}".format(transfile, lc,
-                                                                row))
+                print("Error reading {} on line {} - {}".format(transfile, lc, row))
                 raise ex
     return translation
 
@@ -722,12 +752,15 @@ def dump_gls(filename, out_file):
     translate = load_translation("es", filename)
     gfile = "htmlglossary.csv"
     with open(filename, "r") as fd:
-        reader = csv.reader(fd, delimiter=',', quotechar='"')
+        reader = csv.reader(fd, delimiter=",", quotechar='"')
         with open(out_file, "w") as ofd, open(gfile, "w") as ogfile:
-            print(r"""\addtocounter{table}{-1}
+            print(
+                r"""\addtocounter{table}{-1}
             \begin{longtable}{p{0.15\textwidth}p{0.7\textwidth}p{0.15\textwidth}}\hline
             \textbf{Entry} & \textbf{Description} & \textbf{Tags}  \\\hline
-            """, file=ofd)
+            """,
+                file=ofd,
+            )
             for row in reader:
                 try:
                     lc = lc + 1
@@ -745,18 +778,17 @@ def dump_gls(filename, out_file):
                     defn = escape_for_tex(row[ind + 1])
                     tags = row[ind + 2]
                     if "," in acr:
-                        csv_acr = f"\"{acr}\""
+                        csv_acr = f'"{acr}"'
                     else:
                         csv_acr = acr
-                    print(",".join([csv_acr, f"\"{defn}\"", tags]), file=ogfile)
+                    print(",".join([csv_acr, f'"{defn}"', tags]), file=ogfile)
                     if trans:
                         trans = escape_for_tex(trans)
-                        print(",".join([acr, f"\"{trans}\"", ""]), file=ogfile)
+                        print(",".join([acr, f'"{trans}"', ""]), file=ogfile)
                         defn = defn + "\n\n" + escape_for_tex(trans)
                     print(sep.join([acr, defn, tags]) + end, file=ofd)
                 except BaseException as ex:
-                    print("Error reading {} on line {} - {}".format(filename, lc,
-                                                                    row))
+                    print("Error reading {} on line {} - {}".format(filename, lc, row))
                     raise ex
             print(r"\end{longtable}", file=ofd)
     return lc
@@ -765,32 +797,58 @@ def dump_gls(filename, out_file):
 if __name__ == "__main__":
     description = __doc__
     formatter = argparse.RawDescriptionHelpFormatter
-    parser = argparse.ArgumentParser(description=description,
-                                     formatter_class=formatter)
+    parser = argparse.ArgumentParser(description=description, formatter_class=formatter)
 
-    parser.add_argument('files', metavar='FN', nargs='+',
-                        help='FILE to process')
-    parser.add_argument('-g', '--glossary', action='store_true',
-                        help=""" Generate aglossary.tex a glossary file for
-                                 acronyms and glossary entries.""")
-    parser.add_argument('-u', '--update', action='store_true',
-                        help="""Update files to put \\gls on acronyms and
-                                glossary entries .""")
-    parser.add_argument("-m", "--mode", default="tex", choices=OUTPUT_MODES,
-                        help="""Output mode for table.
-                                verbose' displays all the information...""")
-    parser.add_argument('-t', '--tags',
-                        help="""Space separated list of tags between quotes
-                                to use in selecting definitions.""")
-    parser.add_argument('-c', '--check', action='store_true',
-                        help="""Check the glossary file loads correctly
-                                 to run on push. Pass dummy filename""")
-    parser.add_argument('-n', '--noadorn', action='store_true',
-                        help=r"""Do not adorn the glossary/acronym entries
-                                 with \gls (only done for glossary mode)""")
-    parser.add_argument('-d', '--dump', action='store_true',
-                        help=""" Generate glossary dump file using passed
-                                 filename containing  all entries.""")
+    parser.add_argument("files", metavar="FN", nargs="+", help="FILE to process")
+    parser.add_argument(
+        "-g",
+        "--glossary",
+        action="store_true",
+        help=""" Generate aglossary.tex a glossary file for
+                                 acronyms and glossary entries.""",
+    )
+    parser.add_argument(
+        "-u",
+        "--update",
+        action="store_true",
+        help="""Update files to put \\gls on acronyms and
+                                glossary entries .""",
+    )
+    parser.add_argument(
+        "-m",
+        "--mode",
+        default="tex",
+        choices=OUTPUT_MODES,
+        help="""Output mode for table.
+                                verbose' displays all the information...""",
+    )
+    parser.add_argument(
+        "-t",
+        "--tags",
+        help="""Space separated list of tags between quotes
+                                to use in selecting definitions.""",
+    )
+    parser.add_argument(
+        "-c",
+        "--check",
+        action="store_true",
+        help="""Check the glossary file loads correctly
+                                 to run on push. Pass dummy filename""",
+    )
+    parser.add_argument(
+        "-n",
+        "--noadorn",
+        action="store_true",
+        help=r"""Do not adorn the glossary/acronym entries
+                                 with \gls (only done for glossary mode)""",
+    )
+    parser.add_argument(
+        "-d",
+        "--dump",
+        action="store_true",
+        help=""" Generate glossary dump file using passed
+                                 filename containing  all entries.""",
+    )
     args = parser.parse_args()
     doGlossary = args.glossary
     doCheck = args.check
@@ -823,13 +881,12 @@ if __name__ == "__main__":
             print(ex)
         exit(status)
 
-    if (doGlossary or (not args.update)):
+    if doGlossary or (not args.update):
         # Allow update to really just update/rewrite files not regenerate
         # glossary
-        count = main(texfiles, doGlossary, utags, dotex, dorst, args.mode,
-                     noadorn)
+        count = main(texfiles, doGlossary, utags, dotex, dorst, args.mode, noadorn)
         if doGlossary and dotex:
             forceConverge(count, utags, noadorn)
     # Go through files on second pass  or on demand and \gls  or not (-u)
-    if (args.update):
+    if args.update:
         update(texfiles)

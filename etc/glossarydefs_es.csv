@@ -18,7 +18,7 @@ ACCS,Sistema auxiliar de control de cámaras
 ACGIH,Conferencia Estadounidense de Higienistas Industriales Gubernamentales
 ACI,Infraestructura céntrica de aplicaciones
 ACID,"Atomicidad, Consistencia, Aislamiento y Durabilidad"
-ACM$,Servicio de gestión de fondos de subsidios 
+ACM$,Servicio de gestión de fondos de subsidios
 ACWP,Costo real de trabajo realizado
 AD,Director asociado
 ADAM,"Descubrimiento, análisis y mapeo de asteroides"
@@ -77,7 +77,7 @@ AT,Telescopio auxiliar
 ATCA,Arquitectura avanzada de telecomunicaciones
 ATCS,Sistema auxiliar de control de telescopios
 ATLAS,Aparato toroidal del gran colisionador de hadrones
-ATLAS,Sistema de Última Alerta de Impacto Terrestre de Asteroides 
+ATLAS,Sistema de Última Alerta de Impacto Terrestre de Asteroides
 ATM,Gestión de pruebas Adaptavist [Adaptavist Test Management: Aplicación de control de calidad y gestión de pruebas para Jira]
 AU,Acrónimo obsoleto para «unidad astronómica»; en su reemplazo usar «au»
 au,unidad astronómica
@@ -198,7 +198,7 @@ CR,Solicitud de cambio
 CR,Radiación cósmica
 CRB,►cluster reference boards◄
 CRIC,Catálogo de información de recursos de computación
-CRIO,CompactRIO National Instruments [Controlador] 
+CRIO,CompactRIO National Instruments [Controlador]
 CRTS,Catalina Real-Time Transient Survey [Investigación de la Estación Catalina del Observatorio Steward sobre Transitorios en Tiempo Real]
 CRTS3,Catalina Real-Time Transient Survey [Investigación de la Estación Catalina del Observatorio Steward sobre Transitorios en Tiempo Real ]
 CS,ciencia ciudadana
@@ -242,7 +242,7 @@ DEC,Declinación
 DECam,Cámara de energía oscura
 DECaLS,Dark Energy Camera Legacy Survey [Estudio histórico con cámara de energía oscura]
 DECAT,Alianza DECam para transitorios
-DEEP,Deep Extragalactic Evolutionary Probe [proyecto de exploración de galaxias distantes] 
+DEEP,Deep Extragalactic Evolutionary Probe [proyecto de exploración de galaxias distantes]
 DELVE,DECam Local Volume Exploration Survey [Exploración de volumen local con DECam]
 DHO,Oscilador armónico amortiguado
 DEI,"Diversidad, equidad e inclusión"
@@ -253,8 +253,8 @@ DESI,Instrumento espectroscópico de energía oscura
 DETF,Fuerza de Tareas en Energía Oscura (Subcomité asesor conjunto AAAC/HEPAP)
 DF,Centro de datos
 DIA,Análisis de imágenes diferenciales
-DIMM,Monitor de movimiento de imágenes diferenciales 
-DKIST,Telescopio solar Daniel K. Inouye 
+DIMM,Monitor de movimiento de imágenes diferenciales
+DKIST,Telescopio solar Daniel K. Inouye
 DLS,Estudio de lentes gravitacionales profundas
 DM,Gestión de datos
 DM-SST,Equipo Científico del Sistema de DM
@@ -313,7 +313,7 @@ DSFP,Programa de Becas en Ciencia de Datos de la LSSTC
 DTN,Nodo de transferencia de datos
 DUNE,Experimento de neutrinos subterráneos profundos
 Duo,Sistema de autenticación de 2 factores
-DWDM,Multiplexación por división en longitudes de onda densas 
+DWDM,Multiplexación por división en longitudes de onda densas
 EA,"Arquitecto de Empresa [Enterprise Architect, lenguaje de programación]"
 EAC,Estimado hasta la conclusión
 EAS,Sistema de conciencia ambiental
@@ -343,8 +343,8 @@ ES,Ciencia temprana
 ESA,Agencia Espacial Europea
 ESAC,Centro Europeo de Astronomía Espacial
 ESAP,Plataforma de análisis científico de ESFRI
-ESCAPE,Infraestructuras de Investigación del Clúster Científico Europeo de Astronomía y Física de Partículas ESFRI 
-ESD,descarga electrostática 
+ESCAPE,Infraestructuras de Investigación del Clúster Científico Europeo de Astronomía y Física de Partículas ESFRI
+ESD,descarga electrostática
 ESFRI,Foro Estratégico Europeo sobre Infraestructuras de Investigación
 ESNet,Red de Ciencias de la Energía
 ESO,Observatorio Europeo Austral
@@ -361,7 +361,7 @@ EVM,Gestión del valor ganado
 EVMS,Sistema de gestión del valor ganado
 EXIST,Energetic X-ray Imaging Survey Telescope [Telescopio para obtención de imágenes por rayos X energéticos]
 F2F,"""Cara a cara"" (reunión)"
-FAFF,Funcionalidad de análisis y retroalimentación en primera observación 
+FAFF,Funcionalidad de análisis y retroalimentación en primera observación
 FAIR,"Encontrable, accesible, interoperable y reutilizable"
 FAQ,Pregunta frecuente
 FAR,Regulación Federal de Adquisiciones
@@ -376,7 +376,7 @@ FELTs,Transitorios luminosos de evolución rápida
 FFRDC,Centro de Investigación y Desarrollo Financiado con Fondos Federales
 FFT,Transformada rápida de Fourier
 FGCM,Modelo global directo de calibración
-FGST,Telescopio espacial de rayos gamma Fermi 
+FGST,Telescopio espacial de rayos gamma Fermi
 FIFO,"Primero en entrar, primero en salir"
 FIPS,Normas Federales de Procesamiento de Información
 FITS,Flexible Image Transport System [formato de archivo]
@@ -434,11 +434,11 @@ GCN,Red de coordenadas de GRB
 BPC,Google Cloud Platform [plataforma de desarrollo web de Google]
 GCS,Sistema de controles genéricos
 GDS,Sistema de datos guía
-GEO,Órbita geosincrónica 
+GEO,Órbita geosincrónica
 GFLOP,Gigaflop
 GFLOPS,Gigaflops por segundo
 GID,Identificador de grupo
-GIS,Sistema de interbloqueo global 
+GIS,Sistema de interbloqueo global
 GLADE,Lista de galaxias para la era de detectores avanzados
 GLAST,Telescopio espacial de gran área de rayos gamma
 GLONASS,Sistema satelital de navegación global
@@ -476,7 +476,7 @@ HI,Yoduro de hidrógeno
 HiPS,Hierarchical Progressive Survey [método de visualización de imágenes astronómicas]
 HiTS,Sondeo de transitorios de alta cadencia
 HPC,Computación de alto rendimiento
-HPO,Director de Operaciones de Programa 
+HPO,Director de Operaciones de Programa
 HQ,Sede central
 HR,Recursos Humanos
 HSC,Hyper Suprime-Cam [cámara del telescopio Subaru]
@@ -516,7 +516,7 @@ IPA,FreeIPA es una solución integrada de gestión de información de seguridad
 IPC,Coordinador Internacional de Programa
 IPC,Coordinador Internacional de Programa
 IPAC,Ya no es un acrónimo; centro de ciencia y datos en Caltech
-IPEDS,Sistema Integrado de Datos de Educación Postsecundaria 
+IPEDS,Sistema Integrado de Datos de Educación Postsecundaria
 IPS,Cronograma integrado del proyecto
 IPsec,Internet Protocol Security [conjunto de protocolos para asegurar comunicaciones de IP]
 IR,infrarrojo
@@ -649,7 +649,7 @@ MCMC,Métodos de Montecarlo basados en cadenas de Markov
 MEMS,sistemas microelectromecánicos
 MERRA,Análisis Retrospectivo de la Era Moderna para Investigación y Aplicaciones
 MIDAS,Sistema de Análisis de Datos de Imágenes de Munich (ESO)
-MIE,Elemento importante de equipamiento 
+MIE,Elemento importante de equipamiento
 MJD,Fecha juliana modificada (debe evitarse; ver también JD)
 ML,Aprendizaje automático
 MLAG,Grupo de agregación de enlaces de múltiples chasis
@@ -663,11 +663,11 @@ MODTRAN,Modelo de transmisión de resolución moderada
 MOF,Ajuste multiobjeto y multibanda
 MOOC,Cursos en línea masivos y abiertos
 MOPS,Sistema de procesamiento de objetos en movimiento (obsoleto; ver SSP)
-MOSFET,Transistor de efecto de campo metal-óxido-semiconductor 
+MOSFET,Transistor de efecto de campo metal-óxido-semiconductor
 MOU,Memorándum de entendimiento
-MPA,Instituto Max Planck de Astrofísica 
+MPA,Instituto Max Planck de Astrofísica
 MPC,Centro de Planetas Menores
-MPO,Memorándum de orden de compra 
+MPO,Memorándum de orden de compra
 MPP,Procesamiento masivamente paralelo
 MPS,Directorio de Ciencias Matemáticas y Físicas de la NSF
 MPS/AST,División de Ciencias Astronómicas del Directorio de Ciencias Matemáticas y Físicas de la NSF
@@ -680,9 +680,9 @@ MT,Telescopio principal
 MTU,Unidad máxima de transmisión
 MTBF,Tiempo medio entre fallos
 MTDC,Costos directos totales modificados
-MTM1M3,M1M3 del telescopio principal 
+MTM1M3,M1M3 del telescopio principal
 MTM2,Espejo secundario del telescopio principal
-MTOFC,Control con retroalimentación del sistema óptico del telescopio principal  
+MTOFC,Control con retroalimentación del sistema óptico del telescopio principal
 MTTR,Tiempo medio de reparación
 MW,Vía Láctea
 MYDB,Mi base de datos
@@ -724,7 +724,7 @@ NOC,Centro de Operaciones de Red
 NOGLSTP,Organización Nacional de Científicos y Profesionales Técnicos Gays y Lesbianas
 NOIR,Laboratorio Nacional de Estados Unidos de Investigación en Astronomía Óptica e Infrarroja de la NSF
 NOIRLab,Laboratorio Nacional  de Estados Unidos de Investigación en Astronomía Óptica e Infrarroja de la NSF
-NOS,Servicios de Operaciones del OIR Lab de la NSF 
+NOS,Servicios de Operaciones del OIR Lab de la NSF
 NPCF,Centro Nacional de Estados Unidos de Computación de Petaescala
 NRAO,Observatorio Nacional de Estados Unidos de Radioastronomía
 NRC,Consejo Nacional de Estados Unidos de Investigación
@@ -746,7 +746,7 @@ OAB,Comité Asesor de Extensión
 OBS,Estructura de desglose de la organización
 OC,Consejo del Observatorio AURA
 OCDD,Documento de definiciones de conceptos de las operaciones
-OCPS,Sistema de pipelines controladas del OCS 
+OCPS,Sistema de pipelines controladas del OCS
 OCS,Sistema de control del observatorio
 ODBC,"Open DataBase Connectivity, una API estándar para bases de datos SQL."
 OGA,Otras agencias gubernamentales
@@ -784,7 +784,7 @@ PBI,Institución predominantemente negra
 PCA,Análisis de componentes principales
 PCB,placas de circuitos impresos
 PCI,Interconexión de componentes periféricos
-PCS,Sistema refrigerante por bombeo 
+PCS,Sistema refrigerante por bombeo
 PCW,Taller comunitario del proyecto
 PD,Desarrollo de programas
 PDAC,Centro de acceso a datos de prototipos
@@ -848,7 +848,7 @@ QE,eficiencia cuántica
 QOS,Calidad de servicio
 QSERV,Servicios de consulta de LSST
 QSFP,Quad Small Form Factor Pluggable [transceptor]
-QSO,Objeto cuasi estelar (cuásar) 
+QSO,Objeto cuasi estelar (cuásar)
 RA,Ascensión recta
 RAC,Comité de Asignación de Recursos
 RAID,Matriz redundante de discos independientes
@@ -864,7 +864,7 @@ RCEC,Comité Ejecutivo de Construcción de Rubin
 RCI,Interfaz de comunicación de raft
 RCM,Módulo de comunicación de raft
 RCOC,Comité de Organización de Celebración de Rubin
-RDBMS,Sistema de gestión de bases de datos relacionales 
+RDBMS,Sistema de gestión de bases de datos relacionales
 RDO,Oficina de Directores de Rubin
 RDM,Gestión de datos de Rubin
 RDP,Producción de datos de Rubin (obsoleto; usar RDM)
@@ -907,7 +907,7 @@ RTM,Módulo torre de raft
 RTN,Nota técnica de Rubin
 RTV,ráster a vector
 RU,Unidad rack
-S3,Servicio de almacenamiento simple (servicio de Amazon Web Services)  
+S3,Servicio de almacenamiento simple (servicio de Amazon Web Services)
 SAA,Actuador monoaxial
 SAACC,Comité SudEstadounidense de Coordinación de Astronomía
 SaaS,Software como servicio
@@ -926,7 +926,7 @@ SC,Puesta a punto del sistema
 SC,Colaboración científica
 SCADA,"Supervisión , control y adquisición de datos [Sistema] "
 SCIDAR,Detección y medición de centelleo
-SCOC,Comité de Optimización de la Cadencia de la Investigación 
+SCOC,Comité de Optimización de la Cadencia de la Investigación
 SCOSC,Comité de Estrategias de Optimización de la Cadencia de la Investigación
 SDQA,Evaluación de la calidad de datos científicos
 SDS,Subsistema de adquisición de datos científicos
@@ -1121,7 +1121,7 @@ VPN,red privada virtual
 VQ,cotización de proveedor
 VRO,(no usar) Observatorio Vera C. Rubin
 VST,Telescopio de rastreo VLT
-VXLAN,Red de área local virtual extensible 
+VXLAN,Red de área local virtual extensible
 W3C,Consorcio World Wide Web
 WAN,Red de área amplia
 WBS,Estructura de desglose del trabajo
@@ -1130,7 +1130,7 @@ WCAG,Directrices de Accesibilidad para el Contenido en Web
 WCS,Sistema de coordenadas mundiales
 WEPAN,Red proactiva de mujeres en ingeniería
 WFD,"Ancho, rápido, profundo"
-WFIRST,Telescopio de sondeo infrarrojo de campo ancho 
+WFIRST,Telescopio de sondeo infrarrojo de campo ancho
 WFM,Gestión del flujo de trabajo
 WFS,Sensor de frente de onda
 WG,Grupo de trabajo
@@ -1149,7 +1149,7 @@ XHTML,eXtensible HyperText Markup Language [lenguaje de marcado para páginas we
 XML,eXtensible Markup Language [lenguaje extensible de marcado]
 XMM,Misión de espejos múltiples para detección de rayos X de la ESA
 XMM-Newton, Misión de espejos múltiples para detección de rayos X  de la ESA
-XRAC,Comité de Asignación de Recursos de XSEDE 
+XRAC,Comité de Asignación de Recursos de XSEDE
 XRISM,Misión de espectroscopia e imágenes de rayos X [satélite de la Agencia Japonesa de Exploración Aeroespacial]
 XSD,XML Schema Definition [lenguaje de esquema para documentos XML]
 XSEDE,Entorno Extremo de Descubrimientos en Ciencia e Ingeniería
@@ -1157,8 +1157,8 @@ XSL,eXtensible Stylesheet Language [lenguaje de programación para páginas web]
 XSLT,eXtensible Stylesheet Language Transformation [estándar para transformación de documentos XML]
 YAML,Otro lenguaje de marcado más [formato de serialización de datos]
 YSO,Objeto estelar joven
-ZD,distancia cenital 
-ZTF,Instalación de [búsqueda de objetos] transitorios de Zwicky 
+ZD,distancia cenital
+ZTF,Instalación de [búsqueda de objetos] transitorios de Zwicky
 accident,"[accidente] Evento no deseado que produce un daño a personas o bienes, o una pérdida en procesos.  Los accidentes se producen a partir del contacto con una sustancia o fuente de energía por encima del umbral límite de la estructura del cuerpo."
 accruals,"[devengamientos] Cuentas de un balance que representan los pasivos y activos no monetarios utilizados en la contabilidad basada en lo devengado; estas cuentas incluyen, entre muchas otras, las cuentas por pagar, cuentas por cobrar, fondo de comercio, obligaciones impositivas futuras y gastos por intereses futuros."
 active asteroid,[asteroide activo ] cuerpos pequeños del sistema solar que tienen órbitas similares a las de los asteroides pero muestran características visuales similares a las de los cometas.
@@ -1415,7 +1415,7 @@ Operations Simulation,"[Simulación de operaciones] OpSim usa un modelo sofistic
 Opportunity,"[Oportunidad] El grado de exposición a un evento que podría ocurrir en beneficio de un programa, proyecto u otra actividad. Se lo describe por una combinación de la probabilidad de que el evento ocurra y la consecuencia de la extensión de la ganancia por esa ocurrencia, o su impacto.  Hay dos niveles de oportunidades. Al nivel macro, un proyecto en sí es la manifestación de la búsqueda de una oportunidad. Al nivel de elementos, existen oportunidades tácticas por las cuales ciertos eventos, si se concretan, proporcionan ahorros de costos o de cronograma al programa, o aumentan el rendimiento técnico."
 Opportunity Management,"[Gestión de Oportunidades] El arte y la ciencia proactivos de planificar, evaluar y manejar eventos futuros para procurar impactos favorables sobre el proyecto, costo, cronograma o desempeño en la mayor medida posible.  La gestión de oportunidades es una actividad estructurada, formal y disciplinada que se enfoca en los pasos y acciones de planificación necesarios para determinar y aprovechar las oportunidades al máximo posible."
 Overscan,"[Overscan] Refiere a la parte de la lectura del canal de a) píxeles no fotoactivos, o bien b) la lectura adicional del registro serial después de que se han acumulado todos los píxeles científicos (a veces llamado overscan virtual). El overscan se suele adjuntar a los píxeles científicos en la imagen ensamblada del amplificador como una región separada. Esta región es útil para el software de procesamiento científico para estimar la estabilidad del DC offset en la electrónica de lectura."
-Pan-STARRS1,[Pan-STARRS1] El primer telescopio del Telescopio de Exploración Panorámica y Sistema de Respuesta Rápida 
+Pan-STARRS1,[Pan-STARRS1] El primer telescopio del Telescopio de Exploración Panorámica y Sistema de Respuesta Rápida
 parquet,[Parquet] Ver Apache Parquet
 passband,"[banda de paso] La ventana de longitud de onda o el rango de energía que admite un sistema óptico; específicamente, la transmisión como una función de la longitud de onda o la energía. Típicamente, la banda de paso es limitada por un filtro. El ancho de la banda de paso puede caracterizarse en diversas formas, que incluyen el ancho de los puntos de potencia media de la curva de transmisión, o mediante el ancho equivalente de un filtro con 100% de transmisión dentro de la banda de paso, y cero en los demás lugares."
 patch,"[parcela] Una subregión cuadrilátera de una región de cielo, cuyo tamaño en píxeles es elegido para caber con facilidad en la memoria de las computadoras de escritorio."
