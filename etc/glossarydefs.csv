@@ -223,7 +223,6 @@ DAC,Data Access Center,LSST DM,,,A
 DAF,data access framework,TS,Document-11936,,A
 DALI,Data Access Layer Interface (IVOA standard),VO,,,A
 DAPC,SLAC FPD Departmental Appointments and Promotion Committee,OPS,,,A
-
 DAQ,Data Acquisition System,LSST DM,,,A
 DAX,Data Access Services,LSST DM,,,A
 DB,DataBase,Gen,,,A
