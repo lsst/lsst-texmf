@@ -6,6 +6,7 @@ Term,Description,Subsystem Tags,Documentation Tags,Associated Acronyms and Alter
 A2,Anastasia Alexov,Gen,,,A
 A/D,Analogue-to-Digital (converter),Gen,,,A
 AA,Authentication and Authorization,TS,Document-11921,,A
+AAA,"Authentication, Authorization and Accounting",OPS,,,A
 AAAC,Astronomy and Astrophysics Advisory Committee,TS,Document-11921,,A
 AAAS,American Association for the Advancement of Science,Gen,,,A
 AAL,Astronomy Australia Limited,OPS,,,A
@@ -43,6 +44,7 @@ AIT,Assembly Integration and Test,Gen,,,A
 AI&T,Assembly Integration and Test,Gen,,,A
 AIV,Assembly Integration and Verification,Gen,,,A
 AJ,The Astronomical Journal,Sci,,,A
+AJO,Academic Jobs Online,OPS,,,A
 ALeRCE,Automatic Learning for the Rapid Classification of Events,OPS,,,A
 ALD,Associate Lab Director,OPS DOE,,,A
 ALICE,A Large Ion Collider Experiment,Gen,,,A
@@ -220,6 +222,7 @@ DAA,Dual Axis Actuator,TS,,,A
 DAC,Data Access Center,LSST DM,,,A
 DAF,data access framework,TS,Document-11936,,A
 DALI,Data Access Layer Interface (IVOA standard),VO,,,A
+DAPC,SLAC FPD Departmental Appointments and Promotion Committee,OPS,,,A
 DAQ,Data Acquisition System,LSST DM,,,A
 DAX,Data Access Services,LSST DM,,,A
 DB,DataBase,Gen,,,A
