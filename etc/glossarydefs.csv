@@ -200,6 +200,8 @@ CPU,Central Processing Unit,Gen,,,A
 CQA,Compliance and Quality Administrator,,,,A
 CR,Change Request,LSST DM,,,A
 CR,Cosmic Ray,Gen,,,A
+CRAC,Computer Room Air Conditioner,Gen,,,A
+CRAH,Computer Room Air Handling,Gen,,,A
 CRB,cluster reference boards,TS,Document-11956,,A
 CRIC,Computing Resource Information Catalogue,DM,,,A
 CRIO,CompactRIO National Instruments,TSSW,,,A

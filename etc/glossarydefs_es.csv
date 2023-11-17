@@ -197,6 +197,8 @@ CPU,Unidad central de procesamiento
 CQA,Administrador de Cumplimiento y Calidad
 CR,Solicitud de cambio
 CR,Radiación cósmica
+CRAC,"aire acondicionado para sala de ordenadores"
+CRAH,"tratamiento del aire para sala de ordenadores"
 CRB,►cluster reference boards◄
 CRIC,Catálogo de información de recursos de computación
 CRIO,CompactRIO National Instruments [Controlador]
