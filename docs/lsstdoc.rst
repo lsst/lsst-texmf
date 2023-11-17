@@ -329,7 +329,7 @@ You must also wrap terms that appear in the document's text with a ``\gls{}`` co
 
    We do not suggest adding ``generateAcronyms.py`` with the ``-gu`` flags to Makefile as it occasionally does something unexpected so you should run it and check the result by building the document.
 
-Output mode 
+Output mode
 -----------
 You may output acronyms as text, rst or tex
 using the ``-m`` or ``-mode`` flag:
@@ -338,6 +338,20 @@ using the ``-m`` or ``-mode`` flag:
 
    generateAcronyms.py -m rst -t "DM"
 
-for example would output an rst file. 
+for example would output an rst file.
 
 The current modes are ``tex, rst, txt`` and the default is tex. ``txt`` outputs a tab separated list. ``rst`` adorns the tex output with RST markup to make an RST table.
+
+Spanish
+-------
+
+Practically all acronym and glossary terms have been translated in ``lsst-texmf/etc/glossarydefs_es.csv``.   This file has the following format:
+
+.. code-block:: latex
+
+   Term,Description in Spanish
+
+The Term must match exactly the term in the ``glossarydefs.csv``.
+
+If you add a new term please also try to add a translation - you may use google translate or a tool like
+ `DeepL <https://www.deepl.com/en/translator>`_.
