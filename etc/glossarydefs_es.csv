@@ -457,7 +457,7 @@ GPS,Sistema de posicionamiento global
 GPU,Unidad de procesamiento gráfico
 GR,Relatividad general
 GRB,Estallido de rayos gamma
-GRE,Generic Routing Encapsulation [protocolo de encapsulación para enrutamiento]
+GRE,protocolo de encapsulación para enrutamiento
 GSE,Gaia Sausage-Enceladus [«Salchicha Gaia»]
 GST,Tiempo sidéreo de Greenwich
 GUI,Interfaz gráfica de usuario
@@ -1121,6 +1121,7 @@ VPC, Nube privada virtual
 VPHAS,Sondeo fotométrico en Hα con VST/OmegaCAM [VST/OmegaCAM Photometric H-Alpha Survey]
 VPN,red privada virtual
 VQ,cotización de proveedor
+VRF,enrutamiento y reenvío virtual
 VRO,(no usar) Observatorio Vera C. Rubin
 VST,Telescopio de rastreo VLT
 VXLAN,Red de área local virtual extensible
