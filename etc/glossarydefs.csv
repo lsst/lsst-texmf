@@ -520,7 +520,7 @@ INAF,Istituto Nazionale di Astrofisica,Gen,,,A
 IN2P3,Institut National de Physique Nucléaire et de Physique des Particules,Gen,,,A
 IoA,Institute of Astronomy (Cambridge; also denoted IOA),Gen,,,A
 IP,Internet Protocol,DM,,,A
-IPA,"FreeIPA is an integrated security information management solution",DM,,,A
+IPA,"FreeIPA - Identity, Policy, Audit",DM,,,A
 IPC,In-kind Program Coordinator,OPS,,,A
 IPAC,No longer an acronym; science and data center at Caltech,Gen,,,A
 IPEDS,Integrated Postsecondary Educational Data System,DEI,,,A
@@ -1349,6 +1349,7 @@ FORCE11," a community of scholars, librarians, archivists, publishers and resear
 forced photometry,"A measurement of the photometric properties of a source, or expected source, with one or more parameters held fixed. Most often this means fixing the location of the center of the brightness profile (which may be known or predicted in advance), and measuring other properties such as total brightness, shape, and orientation. Forced photometry will be done for all Objects in the Data Release Production",DM,"LDM-151, LSE-163",,G
 ForcedSource,DRP table resulting from forced photometry,DM,"LDM-151, LSE-163",,G
 Full-Time Equivalent,"A unit equivalent to one person working full time for one year with normal holidays, vacations, and sick time. No paid overtime is assumed",Adm Gen,,,G
+FreeIPA,"is an integrated security information management solution",DM,https://www.freeipa.org/page/Main_Page,,A
 Gaia,"a space observatory of the European Space Agency, launched in 2013 and expected to operate until 2025. The spacecraft is designed for astrometry: measuring the positions, distances and motions of stars with unprecedented precision",Sci,,,G
 GalSim,"GalSim is open-source software for simulating images of astronomical objects (stars, galaxies) in a variety of ways.",Sci,,,G
 Gaussian Aperture and PSF," involves Gaussianizing the PSFs and then using a Gaussian aperture (instead of top-hat) for measuring photometry. The aperture+PSF is designed to be the same across all bands, so that you measure consistent colors.",DM,,,G
