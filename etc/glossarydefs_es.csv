@@ -457,7 +457,7 @@ GPS,Sistema de posicionamiento global
 GPU,Unidad de procesamiento gráfico
 GR,Relatividad general
 GRB,Estallido de rayos gamma
-GRE,Generic Routing Encapsulation [protocolo de encapsulación para enrutamiento]
+GRE,protocolo de encapsulación para enrutamiento
 GSE,Gaia Sausage-Enceladus [«Salchicha Gaia»]
 GST,Tiempo sidéreo de Greenwich
 GUI,Interfaz gráfica de usuario
@@ -515,7 +515,7 @@ INAF,Instituto Nacional de Astrofísica [Italia]
 IN2P3,Instituto Nacional de Física Nuclear y Física de Partículas [Francia]
 IoA,Instituto de Astronomía (Cambridge; también expresado como IOA)
 IP,Protocolo de Internet
-IPA,FreeIPA es una solución integrada de gestión de información de seguridad
+IPA,"FreeIPA - Identidad, política y auditoría"
 IPC,Coordinador del programa de contribuciones en especie
 IPAC,Ya no es un acrónimo; centro de ciencia y datos en Caltech
 IPEDS,Sistema Integrado de Datos de Educación Postsecundaria
@@ -1121,6 +1121,7 @@ VPC, Nube privada virtual
 VPHAS,Sondeo fotométrico en Hα con VST/OmegaCAM [VST/OmegaCAM Photometric H-Alpha Survey]
 VPN,red privada virtual
 VQ,cotización de proveedor
+VRF,enrutamiento y reenvío virtual
 VRO,(no usar) Observatorio Vera C. Rubin
 VST,Telescopio de rastreo VLT
 VXLAN,Red de área local virtual extensible
@@ -1333,6 +1334,7 @@ FORCE11,"[FORCE11]  una comunidad de académicos, bibliotecarios, archivistas, e
 "
 forced photometry,"[fotometría forzada] Una medición de las propiedades fotométricas de una fuente, o fuente esperada, con uno o más parámetros que se mantienen fijos. En la mayoría de los casos esto significa fijar la ubicación del centro de perfil de brillo (que puede ser conocido o pronosticarse por adelantado) y medir otras propiedades tales como brillo total, forma y orientación. Se hará fotometría forzada para todos los Objetos en la Producción para Divulgación de Datos."
 ForcedSource,[ForcedSource] Tabla de DRP que surge de la fotometría forzada.
+FreeIPA,es una solución integrada de gestión de información de seguridad
 Full-Time Equivalent,"[Equivalente a tiempo completo] Una unidad equivalente a una persona que trabaja a tiempo completo por un año, con los días festivos, vacaciones y licencias por enfermedad normales. No se presume pago de horas extras."
 Gaia,"[Gaia] Un observatorio espacial de la Agencia Espacial Europea, lanzado en 2013 y que se espera que opere hasta 2025. La nave espacial está diseñada para astrometría; mide las posiciones, distancias y movimientos de estrellas con una precisión sin precedentes."
 GalSim,"[GalSim] GalSim es un software de fuente abierta para la simulación de imágenes de objetos astronómicos (estrellas, galaxias) en diversas formas."
