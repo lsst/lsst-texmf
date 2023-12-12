@@ -1209,6 +1209,13 @@ authors:
     initials: Seth W.
     name: Digel
     orcid: null
+  dinob:
+    affil:
+    - Washington
+    altaffil: []
+    initials: Dino
+    name: Bektesevic
+    orcid: null
   dohertyp:
     affil:
     - Harvard-Physics
@@ -1224,13 +1231,13 @@ authors:
     initials: Mariano
     name: Dominguez
     orcid:
-  dinob:
+  drassh:
     affil:
-    - Washington
+    - RubinObs
     altaffil: []
-    initials: Dino
-    name: Bektesevic
-    orcid: null
+    initials: Holger
+    name: Drass
+    orcid: 0000-0002-7790-9971
   duboisfelsmanngp:
     affil:
     - IPAC
