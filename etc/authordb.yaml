@@ -1127,7 +1127,7 @@ authors:
     orcid: null
   daruichf:
     affil:
-    - RubinObs
+    - RubinObsC
     altaffil: []
     initials: Felipe
     name: Daruich
@@ -1233,7 +1233,7 @@ authors:
     orcid:
   drassh:
     affil:
-    - RubinObs
+    - RubinObsC
     altaffil: []
     initials: Holger
     name: Drass
@@ -2835,7 +2835,7 @@ authors:
     orcid: null
   omullanew:
     affil:
-    - RubinObs
+    - RubinObsC
     altaffil: []
     initials: William
     name: O'Mullane
