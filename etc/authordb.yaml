@@ -214,7 +214,7 @@ affiliations:
   Rider: Department of Chemistry, Biochemistry, and Physics, Rider University, Lawrenceville,
     NJ 08648, USA
   RubinObs: Rubin Observatory Project Office, 950 N.\ Cherry Ave., Tucson, AZ  85719, USA
-  RubinObsC: Vera C. Rubin Observatory, Casilla 603 Colina El Pino, La Serena, Chile
+  RubinObsC: Vera C. Rubin Observatory, Avenida Juan Cisternas \#1500, La Serena, Chile
   Rutgers: Department of Physics and Astronomy, Rutgers University, 136 Frelinghuysen
     Rd., Piscataway, NJ 08854, USA
   Saclay: Universit\'e Paris-Saclay, Universit\'e Paris Cit\'e, CEA, CNRS, AIM, 91191, Gif-sur-Yvette, France
@@ -1127,7 +1127,7 @@ authors:
     orcid: null
   daruichf:
     affil:
-    - RubinObs
+    - RubinObsC
     altaffil: []
     initials: Felipe
     name: Daruich
@@ -1233,7 +1233,7 @@ authors:
     orcid:
   drassh:
     affil:
-    - RubinObs
+    - RubinObsC
     altaffil: []
     initials: Holger
     name: Drass
@@ -2835,7 +2835,7 @@ authors:
     orcid: null
   omullanew:
     affil:
-    - RubinObs
+    - RubinObsC
     altaffil: []
     initials: William
     name: O'Mullane
