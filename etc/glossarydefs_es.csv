@@ -24,8 +24,8 @@ ACWP,Costo real de trabajo realizado
 AD,Director asociado
 ADAM,"Descubrimiento, análisis y mapeo de asteroides"
 ADASS,Software y Sistemas de Análisis de Datos Astronómicos
-ADC,corrector de dispersión atmosférica
-ADC,Conversor analógico a digital
+ADC,corrector de dispersión atmosférica,TS
+ADC,Conversor analógico a digital,Gen
 ADCO,Director asociado para operaciones chilenas
 ADQL,Lenguaje de consulta de datos astronómicos
 ADS,Sistema de datos astrofísicos
@@ -77,8 +77,8 @@ ASTRON,Instituto de Radioastronomía de los Países Bajos
 AT,Telescopio auxiliar
 ATCA,Arquitectura avanzada de telecomunicaciones
 ATCS,Sistema auxiliar de control de telescopios
-ATLAS,Aparato toroidal del gran colisionador de hadrones
-ATLAS,Sistema de Última Alerta de Impacto Terrestre de Asteroides
+ATLAS,Aparato toroidal del gran colisionador de hadrones,Gen
+ATLAS,Sistema de Última Alerta de Impacto Terrestre de Asteroides,Sci
 ATM,Gestión de pruebas Adaptavist [Adaptavist Test Management: Aplicación de control de calidad y gestión de pruebas para Jira]
 AU,Acrónimo obsoleto para «unidad astronómica»; en su reemplazo usar «au»
 au,unidad astronómica
@@ -119,8 +119,8 @@ BTU,Unidad térmica británica
 CA,Cuenta de control (o costo)
 CADC,Centro Canadiense de Datos Astronómicos
 CALTECH,Instituto Tecnológico de California
-CAM,CÁMara
-CAM,Gerente de Cuentas de Control (o Costo)
+CAM,CÁMara,DM
+CAM,Gerente de Cuentas de Control (o Costo),Gen
 CANFAR,Red Canadiense Avanzada para la Investigación Astronómica
 CAOM,Modelo común de observación de archivos [Common Archive Observation Model: modelo de datos]
 CARMENES,Calar Alto high-Resolution search for M dwarfs with Exoearths with Near-infrared and optical Echelle Spectrographs [Búsqueda de alta resolución en Calar Alto de enanas M con exotierras con espectrógrafos Echelle ópticos y del infrarrojo cercano]
@@ -143,8 +143,8 @@ CDMX,Ciudad de México
 CDN,Red de distribución de contenidos
 CD-4,Decisión crítica 4
 CDS,Centro de Datos Astronómicos de Estrasburgo
-CE,Interacción de comunicaciones
-CE,Elemento de computación
+CE,Interacción de comunicaciones,OPS
+CE,Elemento de computación,DM
 CEC,Comité Internacional de Evaluación de Contribuciones en Especie
 CEE,"Comunicaciones, educación e interacción"
 CEP,Plan de estimación de costos
@@ -160,8 +160,8 @@ CFHTLS,Investigación histórica del telescopio Canadá-Francia-Hawái
 CFR,Código de Regulaciones Federales
 CHEP,Computación en Física Nuclear y de Altas Energías
 CHIME,Experimento Canadiense de Mapeo de la Intensidad del Hidrógeno
-CI,Integración continua
-CI,Ciberinfraestructura
+CI,Integración continua,DM
+CI,Ciberinfraestructura,Sci
 CIGALE,Código de investigación de la emisión de galaxias
 CIS,Soporte de infraestructura informática
 CL,Lenguaje de comandos
@@ -174,8 +174,8 @@ CMB-S4,Fondo cósmico de microondas estadio 4
 CMDB,Base de datos de gestión de configuraciones
 CMMS,Sistema computarizado de gestión de mantenimiento
 CMOS,semiconductor complementario de óxido metálico
-CMS,Solenoide compacto de muones
-CMS,Sistema centralizado de monitoreo
+CMS,Solenoide compacto de muones,Sci
+CMS,Sistema centralizado de monitoreo,IT DM
 CNN,Red neuronal convolucional
 CNP,Procesos neuronales condicionales
 CNRS,Centro Nacional de Investigación Científica
@@ -195,8 +195,8 @@ CPP,Producción de Productos para Calibración
 CPR,Resucitación cardiopulmonar
 CPU,Unidad central de procesamiento
 CQA,Administrador de Cumplimiento y Calidad
-CR,Solicitud de cambio
-CR,Radiación cósmica
+CR,Solicitud de cambio,LSST DM
+CR,Radiación cósmica,Sci
 CRAC,"aire acondicionado para sala de computadores"
 CRAH,"tratamiento del aire para sala de computadores"
 CRB,►cluster reference boards◄
@@ -247,14 +247,13 @@ DECaLS,Dark Energy Camera Legacy Survey [Estudio histórico con cámara de energ
 DECAT,Alianza DECam para transitorios
 DEEP,Deep Extragalactic Evolutionary Probe [proyecto de exploración de galaxias distantes]
 DELVE,DECam Local Volume Exploration Survey [Exploración de volumen local con DECam]
-DHO,Oscilador armónico amortiguado
 DEI,"Diversidad, equidad e inclusión"
-DELVE,DECam Local Volume Exploration Survey [Exploración de volumen local con DECam]
 DES,Dark Energy Survey [Estudio de la energía oscura]
 DESC,Colaboración Científica en Energía Oscura
 DESI,Instrumento espectroscópico de energía oscura
 DETF,Fuerza de Tareas en Energía Oscura (Subcomité asesor conjunto AAAC/HEPAP)
 DF,Centro de datos
+DHO,Oscilador armónico amortiguado
 DIA,Análisis de imágenes diferenciales
 DIMM,Monitor de movimiento de imágenes diferenciales
 DKIST,Telescopio solar Daniel K. Inouye
@@ -390,8 +389,8 @@ FLOPS,Operación de punto/coma flotante por segundo
 FMEA,análisis de modos de falla y efectos
 FMECA,"Análisis de modos de fallas, efectos y causalidad"
 FNAL,Laboratorio Nacional de Aceleradores Fermi
-FOA,Anuncio de oportunidad de financiamiento
-FOA,Operaciones de instalaciones en Arizona
+FOA,Anuncio de oportunidad de financiamiento,Sci
+FOA,Operaciones de instalaciones en Arizona,OPS
 FOC,Operaciones de instalaciones en Chile
 FOH,Operaciones de instalaciones en Hawái
 FOIA,Ley sobre Libertad de Información
@@ -530,8 +529,8 @@ IRU, Derecho ►irrevocable◄ de uso
 IS,Científico de interfaz
 ISD,Documento de soporte de interfaz
 ISM,Medio interestelar
-ISO,Oficial de seguridad de la información
-ISO,Organización Internacional de Normalización
+ISO,Oficial de seguridad de la información,LSST
+ISO,Organización Internacional de Normalización,Gen
 ISR,Eliminación de señal de instrumentos
 IT,Tecnología de la información
 ITAR,Reglamento sobre tráfico internacional de armas
@@ -692,11 +691,11 @@ MYDB,Mi base de datos
 N9K,Cisco Nexus Serie 9000
 NACME,Consejo Nacional de Acción para las Minorías en Ingeniería
 NAOJ,Observatorio Astronómico Nacional de Japón
-NAS,Academia Nacional de Ciencias
-NAS,Almacenamiento conectado en red
+NAS,Academia Nacional de Ciencias,Sci
+NAS,Almacenamiento conectado en red,DM
 NASA,Administración Nacional de Aeronáutica y el Espacio de los EE. UU.
-NAT,Traducción de direcciones de red
-NAT,teoría nodal de aberraciones
+NAT,Traducción de direcciones de red,IT
+NAT,teoría nodal de aberraciones,TS
 NAVO,Observatorios Astronómicos Virtuales de la NASA
 NBD,Siguiente día laborable
 NCOA,Centro Nacional de Astronomía Óptica e Infrarroja
@@ -771,8 +770,8 @@ OSHA,Administración de Seguridad y Salud Ocupacional de los EE. UU.
 OSI,interconexión de sistemas abiertos
 OSPF,"Open Short Path First [«Abrir el camino más corto primero», protocolo de red]"
 OSPL,OpenSplice DDS - sistema de mensajería subyacente para SAL
-OSS,Especificaciones del sistema de observatorios; LSE-30
-OSS,Sistema de suministro de aceite
+OSS,Especificaciones del sistema de observatorios; LSE-30,DM
+OSS,Sistema de suministro de aceite,TS
 OSX,Sistema operativo Macintosh (obsoleto; actualmente macOS)
 OTB,Reajuste de presupuesto base [«over-target baseline»]
 OTS,sistema de telemetría del observatorio
@@ -791,8 +790,8 @@ PCS,Sistema refrigerante por bombeo
 PCW,Taller comunitario del proyecto
 PD,Desarrollo de programas
 PDAC,Centro de acceso a datos de prototipos
-PDF,Formato de documento portable
-PDF,Función de densidad de probabilidad
+PDF,Formato de documento portable,Gen
+PDF,Función de densidad de probabilidad,Sci
 PDR,Revisión del diseño preliminar
 PDR1,Divulgación de datos al público 1 (HSC)
 PDR2,Publicación de datos al público 2 (HSC)
@@ -815,8 +814,8 @@ PMO,Oficina de Gestión del Proyecto
 PMP,(DM) Plan de Gestión del Proyecto; LDM-294
 PNG,Portable Network Graphics [formato gráfico]
 PO,Operaciones de programa
-POC,Prueba de concepto
-POC,Personas de color
+POC,Prueba de concepto,Gen
+POC,Personas de color,DEI
 POCIT,Personas de color en tecnología
 POE,Poliésteres
 POI,Punto de interés
@@ -901,10 +900,10 @@ RS232C,Conexión serial estándar de 25 pines entre computadoras y módems
 RSA,Matriz de sensores de raft
 RSE,Elemento de almacenamiento de Rucio
 RSP,Plataforma científica de Rubin
-RSS,raíz cuadrada de la suma de los cuadrados
-RSS,Tamaño del conjunto residente
-RTA,Análisis en tiempo real
-RTA,autoridad técnica responsable
+RSS,raíz cuadrada de la suma de los cuadrados,TS
+RSS,Tamaño del conjunto residente,DM
+RTA,Análisis en tiempo real,Sci
+RTA,autoridad técnica responsable,TS
 RTD,Detector de temperatura resistivo
 RTI,invariabilidad del tiempo de subida
 RTM,Módulo torre de raft
@@ -926,8 +925,8 @@ SAPP,"Algoritmos, pipelines y productos científicos"
 SATA,Serial Advanced Technology Attachment [interfaz de transferencia de datos]
 SB,Brillo superficial
 SBS,Servicios empresariales compartidos
-SC,Puesta a punto del sistema
-SC,Colaboración científica
+SC,Puesta a punto del sistema,PMO
+SC,Colaboración científica,DM
 SCADA,"Supervisión , control y adquisición de datos [Sistema] "
 SCIDAR,Detección y medición de centelleo
 SCOC,Comité de Optimización de la Cadencia de la Investigación
@@ -935,15 +934,14 @@ SCOSC,Comité de Estrategias de Optimización de la Cadencia de la Investigació
 SDQA,Evaluación de la calidad de datos científicos
 SDS,Subsistema de adquisición de datos científicos
 SDSS,Exploración Digital Sloan del Cielo
-EE,Ingeniería de sistemas
 SED,Distribución espectral de energía
-SEM,Microcopio electrónico de barrido
-SEM,Gerente de Ingeniería de Sistemas
+SEM,Microcopio electrónico de barrido,CAM
+SEM,Gerente de Ingeniería de Sistemas,Adm
 SEMP,Plan de gestión de Ingeniería de Sistemas
 SEWG,Grupo de trabajo para evaluación de estudios
 SF,Función de estructura
-SFR,Ritmo de formación de estrellas
-SFR,Solicitud de financiamiento suplementario
+SFR,Ritmo de formación de estrellas,Sci
+SFR,Solicitud de financiamiento suplementario,Adm
 SHA-1,Algoritmo de Hash seguro 1
 SHE,"Seguridad, salud y medio ambiente"
 SHPE,Sociedad de Ingenieros Profesionales Hispanos
@@ -968,12 +966,12 @@ SNANA,SuperNova ANAlysis [software de análisis de supernovas](\url{https://snan
 SNAPS,Sistema de Procesamiento de Alertas de Notificación del Sistema Solar
 SNR,Relación señal/ruido
 SNTC,Smart Net Total Care [servicio de Cisco]
-SO,Observatorio Simons
-SO,operaciones científicas
+SO,Observatorio Simons,Sci
+SO,operaciones científicas,TS
 SOAP,Simple Object Access Protocol [protocolo para intercambio de información]
 SOAR,Telescopio Austral de Investigación Astrofísica
-SOC,Centro de Operaciones de Seguridad
-SOC,Centro de Operaciones Científicas
+SOC,Centro de Operaciones de Seguridad,OPS IT
+SOC,Centro de Operaciones Científicas,Gaia
 SODA,Server-side Operations for Data Access [funcionalidad para procesamiento de datos en servidor]
 SODAR,detección y medición de ondas acústicas
 SOF,Ajuste de un objeto individual
@@ -981,9 +979,9 @@ SOG,grupo de operaciones científicas
 SOML,Laboratorio de Espejos del Observatorio Steward (Universidad de Arizona)
 SOS,Servicios de Operaciones Científicas
 SOW,Declaración de trabajo
-SP,Desempeño de exploraciones
-SP,Desempeño de sistemas
-SP,Punto de historia
+SP,Desempeño de exploraciones,Sci
+SP,Desempeño de sistemas,OPS
+SP,Punto de historia,DM
 SPI,Índice de desempeño del cronograma
 SPIE,Sociedad Internacional de Óptica y Fotónica
 SPL,Pipelines científicas
@@ -1007,8 +1005,8 @@ SSM,Gerente de Subsistema
 SSO,Objeto del sistema solar
 SSOIS,Búsqueda de imágenes de objetos del sistema solar
 SSP,Procesamiento del sistema solar
-SST,Telescopio de rastreo Simonyi
-SST,Equipo Científico de Subsistema
+SST,Telescopio de rastreo Simonyi,Gen
+SST,Equipo Científico de Subsistema,LSST DM
 stdin,entrada estándar
 stdout,salida estándar
 STEM,"Ciencia, Tecnología, Ingeniería y Matemáticas"
@@ -1023,8 +1021,8 @@ SW,Software (también expresado como S/W)
 SWE,Sociedad de Mujeres Ingenieras
 T/CAM,Gerente de Cuentas Técnicas/de Control (o Costo)
 T&S,Telescopio y sitio
-TAC,Comité de asignación de tiempo
-TAC,Centro de Asistencia Técnica Global de Arista
+TAC,Comité de asignación de tiempo,OPS
+TAC,Centro de Asistencia Técnica Global de Arista,IT
 TACABS,exactitud absoluta del registro del tiempo (milisegundo)
 TACC,Centro de Computación Avanzada de Texas
 TACREL,exactitud interna (relativa) del registro del tiempo (milisegundo)
@@ -1173,7 +1171,7 @@ aggregate metric,"[métrica agregada] Agregación de métricas de múltiples pun
 aggregation,"[agregación] El proceso de reducir múltiples valores de entrada a un valor único de salida, es decir, un valor de métrica computado a partir de un conjunto de valores de entrada. Por ejemplo, una sumatoria o promedio de una métrica computada en varias parcelas para producir una métrica agregada a nivel de región. Véase también «métrica», «métrica agregada»."
 airmass,"[masa de aire] La longitud del camino de la luz desde una fuente astrofísica a través de la atmósfera de la Tierra. Se calcula aproximadamente como sec z, donde z es la distancia angular desde el cénit (el punto directamente sobre la cabeza del observador, donde la masa de aire = 1,0) a la fuente."
 Akaike Information Criterion,"[Criterio de información de Akaike] Estimador del error de predicción y, en consecuencia, la calidad relativa de los modelos estadísticos para un conjunto de datos dado."
-AMPEL,"[AMPEL] AMPEL (Broker) es una plataforma modular y escalable con seguimiento explícito de procedencia, adecuada para procesar sistemáticamente grandes conjuntos de datos, posiblemente complejos y heterogéneos, ya sea en tiempo real u offline.\url{https://ampelproject.github.io/} "
+"Alert Management, Photometry, and Evaluation of Light curves","AMPEL (Broker) es una plataforma modular y escalable con seguimiento explícito de procedencia, adecuada para procesar sistemáticamente grandes conjuntos de datos, posiblemente complejos y heterogéneos, ya sea en tiempo real u offline.\url{https://ampelproject.github.io/} "
 APC,"[APC] Actividades, proyectos o consideraciones sobre el estado de la profesión (por décadas)."
 arcmin,[arcmin] arcminute minuto de arco (unidad angular)
 arcsec,[arcsec] arcsecond segundo de arco (unidad angular)

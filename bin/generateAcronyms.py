@@ -721,9 +721,11 @@ def update(texfiles):
 
 
 def load_translation(locale, filename):
-    """load a trandaltion file for given locale
+    """load a translation file for given locale
     simplistic for now - append local to file name
-    load in a dict assume acronyn, definition"""
+    load in a dict assume acronynm, definition, [tag].
+    We need to use the tag for overloaded acronyms.
+    This will also check for repeat acronym without tag"""
 
     transfile = filename.replace(".csv", f"_{locale}.csv")
     translation = {}
@@ -734,7 +736,26 @@ def load_translation(locale, filename):
                 ind = 0
                 acr = escape_for_tex(row[ind])
                 defn = escape_for_tex(row[ind + 1])
-                translation[acr] = defn
+                tag = ""
+                # if there is a tag its overloaded - so make a map of tags to defns
+                if len(row) > 2:
+                    tag = row[ind + 2]
+                if tag:
+                    trans = {}
+                    if acr in translation:
+                        trans = translation[acr]
+                    if tag in trans:
+                        raise ValueError(
+                            f"Duplicate tag {tag} for {acr} in {transfile} line {lc}"
+                        )
+                    trans[tag] = defn
+                    translation[acr] = trans
+                else:
+                    if acr in translation:
+                        raise ValueError(
+                            f"Duplicate translation for {acr} in {transfile} line {lc} without tag"
+                        )
+                    translation[acr] = defn
             except BaseException as ex:
                 print("Error reading {} on line {} - {}".format(transfile, lc, row))
                 raise ex
@@ -772,11 +793,24 @@ def dump_gls(filename, out_file):
                         continue  # There is a header line
                     ind = 0
                     acr = escape_for_tex(row[ind])
-                    trans = None
-                    if row[ind] in translate:
-                        trans = translate[row[ind]]
                     defn = escape_for_tex(row[ind + 1])
                     tags = row[ind + 2]
+                    trans = None
+                    if acr in translate:
+                        # it may be a map of tags
+                        transm = translate[acr]
+                        if type(transm) is dict:
+                            # The TAG is the key if it's set up properly
+                            if tags in transm:
+                                trans = transm[tags]
+                            else:
+                                print(
+                                    f"Warning: {tags} not in {transm.keys()}  for {acr}"
+                                )
+                                k = transm.keys()[0]
+                                trans = transm[k]
+                        else:  # it is a simple string
+                            trans = translate[acr]
                     if "," in acr:
                         csv_acr = f'"{acr}"'
                     else:
@@ -784,7 +818,7 @@ def dump_gls(filename, out_file):
                     print(",".join([csv_acr, f'"{defn}"', tags]), file=ogfile)
                     if trans:
                         trans = escape_for_tex(trans)
-                        print(",".join([acr, f'"{trans}"', ""]), file=ogfile)
+                        print(",".join([acr, f'"{trans}"', f"{tags}"]), file=ogfile)
                         defn = defn + "\n\n" + escape_for_tex(trans)
                     print(sep.join([acr, defn, tags]) + end, file=ofd)
                 except BaseException as ex:
@@ -878,7 +912,7 @@ if __name__ == "__main__":
             dump_gls(setup_paths()[0], texfiles[0])
         except BaseException as ex:
             status = 1
-            print(ex)
+            print(f"Exception:{ex}")
         exit(status)
 
     if doGlossary or (not args.update):

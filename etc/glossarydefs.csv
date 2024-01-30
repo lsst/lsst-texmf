@@ -123,7 +123,7 @@ CA,Control (or Cost) Account,Gen,,,A
 CAA,Committee on Astronomy and Astrophysics (NSF),Gen,,,A
 CADC,Canadian Astronomy Data Centre,Gen,,,A
 CALTECH,California Institute of Technology,Gen,,,A
-CAM,CAMera,LSST DM,,,A
+CAM,CAMera,DM,,,A
 CAM,Control (or Cost) Account Manager,Gen,,,A
 CANFAR,Canadian Advanced Network for Astronomical Research,Gen,,,A
 CAOM,Common Archive Observation Model,DM Gen,,,A
@@ -200,7 +200,7 @@ CPR,Cardiopulmonary resuscitation,Gen,,,A
 CPU,Central Processing Unit,Gen,,,A
 CQA,Compliance and Quality Administrator,,,,A
 CR,Change Request,LSST DM,,,A
-CR,Cosmic Ray,Gen,,,A
+CR,Cosmic Ray,Sci,,,A
 CRAC,Computer Room Air Conditioner,Gen,,,A
 CRAH,Computer Room Air Handling,Gen,,,A
 CRB,cluster reference boards,TS,Document-11956,,A
@@ -1022,7 +1022,7 @@ SSM,Subsystem Manager,Adm,,,A
 SSO,Solar System Object,DM,,,A
 SSOIS,Solar System Object Image Search,Sci,,,A
 SSP,Solar System Processing,LSST DM,,,A
-SST,Simonyi Survey Telescope,Gen,,,A
+SST,Simonyi Survey Telescope (SST not to be used),Gen,,,A
 SST,Subsystem Science Team,LSST DM,,,A
 stdin,standard input,Gen,,,A
 stdout,standard output,Gen,,,A
@@ -1190,7 +1190,7 @@ aggregate metric,"An aggregation of multiple point metrics. For example, the ove
 aggregation,"The process of reducing multiple input values to a single output, e.g., a metric value, computed from a collection of input values. For example, a sum or average of a metric computed over patches to produce an aggregate metric at tract level. See also: “metric”, “aggregate metric”",DM QA,DMTN-085,,G
 airmass,"The pathlength of light from an astrophysical source through the Earth's atmosphere. It is given approximately by sec z, where z is the angular distance from the zenith (the point directly overhead, where airmass = 1.0) to the source",Sci,,,G
 Akaike Information Criterion,"an estimator of prediction error and thereby relative quality of statistical models for a given set of data",Sci,,,G
-AMPEL,"AMPEL (Broker) is a modular and scalable platform with explicit provenance tracking, suited for systematically processing large — possibly complex and heterogeneous — datasets either in real time or offline.\url{https://ampelproject.github.io/} ",OPS,,,G
+"Alert Management, Photometry, and Evaluation of Light curves","AMPEL (Broker) is a modular and scalable platform with explicit provenance tracking, suited for systematically processing large — possibly complex and heterogeneous — datasets either in real time or offline.\url{https://ampelproject.github.io/} ",OPS,,,G
 APC,"activities, projects, or state of the profession considerations (decadal)",Sci,,,G
 arcmin,arcminute minute of arc (unit of angle),Gen,,,G
 arcsec,arcsecond second of arc (unit of angle),Gen,,,G
