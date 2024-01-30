@@ -2507,6 +2507,13 @@ authors:
     initials: Ilija
     name: Medan
     orcid: null
+  megiasg:
+    affil:
+    - SLAC-Kavli
+    altaffil: []
+    initials: Guillem
+    name: Megias Homar
+    orcid: 0000-0001-6013-1131
   meisnera:
     affil:
     - NOIRLab
