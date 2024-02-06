@@ -4039,6 +4039,13 @@ authors:
     initials: Jason
     name: Weiss
     orcid: null
+  whitebj:
+    affil:
+    - Fermilab
+    altaffil: []
+    initials: Brandon J.D.
+    name: White
+    orcid: 0000-0002-9906-9037
   williamscc:
     affil:
     - NOIRLab
