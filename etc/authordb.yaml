@@ -1608,6 +1608,12 @@ authors:
     initials: Iain
     name: Goodenow
     orcid: null
+  gorsuchmr:
+    affil: WisconsinMadison
+    altaaffil: []
+    initials: Miranda R.
+    name: Gorsuch
+    orcid: 0000-0002-3135-3824
   gowerm:
     affil:
     - NCSA
