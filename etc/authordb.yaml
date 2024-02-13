@@ -1609,7 +1609,8 @@ authors:
     name: Goodenow
     orcid: null
   gorsuchmr:
-    affil: WisconsinMadison
+    affil: 
+    - WisconsinMadison
     altaffil: []
     initials: Miranda R.
     name: Gorsuch
