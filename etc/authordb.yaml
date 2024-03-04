@@ -24,6 +24,7 @@ affiliations:
   Cardiff: School of Physics and Astronomy, Cardiff University, The Parade, Cardiff, CF24 3AA, UK
   CCA: Center for Computational Astrophysics, Flatiron Institute, 162 Fifth Ave, New York, NY,
     10010, USA
+  CIEMAT: Centro de Investigaciones Energ\'eticas, Medioambientales y Tecnol\'ogicas, Av. Complutense 40, 28040 Madrid, Spain
   CMU: McWilliams Center for Cosmology, Department of Physics, Carnegie Mellon University,
     Pittsburgh, PA 15213, USA
   CNRS: Centre national de la recherche scientifique, 3 Rue Michel Ange, 75016 Paris, France
@@ -3470,6 +3471,13 @@ authors:
     initials: Eduardo
     name: Serrano
     orcid: null
+  sevillai:
+    affil:
+    - CIEMAT
+    altaffil: []
+    initials: Ignacio
+    name: Sevilla-Noarbe
+    orcid: 0000-0002-1831-1953
   shawra:
     affil:
     - STScI
@@ -3781,6 +3789,13 @@ authors:
     altaffil: []
     initials: Erik
     name: Tollerud
+    orcid: null
+  toribiol:
+    affil:
+    - CIEMAT
+    altaffil: []
+    initials: Laura
+    name: Toribio San Cipriano
     orcid: null
   torresn:
     affil:
