@@ -194,6 +194,8 @@ affiliations:
     et L\'{e}onie Duquet, Paris Cedex 13, France
   Paris-Diderot: Universit\'{e} Paris Diderot, Sorbonne Paris Cit\'{e}, F-75013 Paris,
     France
+  Paris-IJCLAB: Laboratoire de Physique des 2 infinis Irène Joliot-Curie – IJCLab - 
+  Universit\'e Paris-Saclay, CNRS/IN2P3, Bât. 100, 15 rue Georges Clémenceau, 91405 Orsay, France
   Paris-LAL: Laboratoire de l'Acc\'{e}l\'{e}rateur Lin\'{e}aire, CNRS/IN2P3, Universit\'{e}
     de Paris-Sud, B.P.\ 34, 91898 Orsay Cedex, France
   Paris-LPNHE: Laboratoire de Physique Nucl\'{e}aire et des Hautes Energies, Universit\'{e}
@@ -1105,6 +1107,13 @@ authors:
     initials: Luiz Nicolaci
     name: da Costa
     orcid: null
+  dagorets:
+    affil:
+    - Paris-IJCLAB
+    altaffil: []
+    initials: Sylvie
+    name: Dagoret-Campagne
+    orcid: 000-003-1131-7030
   dalcantonj:
     affil:
     - CCA
