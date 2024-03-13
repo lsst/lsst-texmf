@@ -194,8 +194,8 @@ affiliations:
     et L\'{e}onie Duquet, Paris Cedex 13, France
   Paris-Diderot: Universit\'{e} Paris Diderot, Sorbonne Paris Cit\'{e}, F-75013 Paris,
     France
-  Paris-LAL: Laboratoire de l'Acc\'{e}l\'{e}rateur Lin\'{e}aire, CNRS/IN2P3, Universit\'{e}
-    de Paris-Sud, B.P.\ 34, 91898 Orsay Cedex, France
+  Paris-IJCLAB: Laboratoire de Physique des 2 infinis Irène Joliot-Curie – IJCLab -
+    Universit\'e Paris-Saclay, CNRS/IN2P3, Bât. 100, 15 rue Georges Clémenceau, 91405 Orsay, France
   Paris-LPNHE: Laboratoire de Physique Nucl\'{e}aire et des Hautes Energies, Universit\'{e}
     Pierre et Marie Curie, Universit\'{e} Paris Diderot, CNRS/IN2P3, 4 place Jussieu,
     75005 Paris, France
@@ -421,7 +421,7 @@ authors:
     orcid: 0000-0003-0930-5815
   ansarir:
     affil:
-    - Paris-LAL
+    - Paris-IJCLAB
     altaffil: []
     initials: Reza
     name: Ansari
@@ -638,14 +638,6 @@ authors:
     altaffil: []
     initials: Rahul
     name: Biswas
-    orcid: null
-  blancg:
-    affil:
-    - Paris-LAL
-    - Paris-Diderot
-    altaffil: []
-    initials: Guillaume
-    name: Blanc
     orcid: null
   blandfordrd:
     affil:
@@ -1105,6 +1097,13 @@ authors:
     initials: Luiz Nicolaci
     name: da Costa
     orcid: null
+  dagorets:
+    affil:
+    - Paris-IJCLAB
+    altaffil: []
+    initials: Sylvie
+    name: Dagoret-Campagne
+    orcid: 0000-0003-1131-7030
   dalcantonj:
     affil:
     - CCA
@@ -2615,7 +2614,7 @@ authors:
     orcid: null
   moniezm:
     affil:
-    - Paris-LAL
+    - Paris-IJCLAB
     altaffil: []
     initials: Marc
     name: Moniez
@@ -2733,6 +2732,13 @@ authors:
     initials: Eric H.
     name: Neilsen, Jr.
     orcid: 0000-0002-7357-0317
+  neveuj:
+    affil:
+    - Paris-IJCLAB
+    altaffil: []
+    initials: Jeremy
+    name: Neveu
+    orcid: null
   newbrysp:
     affil:
     - SLAC
