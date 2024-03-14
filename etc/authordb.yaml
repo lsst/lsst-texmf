@@ -1863,6 +1863,13 @@ authors:
     initials: Walter R.
     name: Innes
     orcid: null
+  irvingd:
+    affil:
+    - RubinObs
+    altaffil: []
+    initials: David H.
+    name: Irving
+    orcid: 0009-0005-9099-4970
   ishidaeo:
     affil:
     - Clermont-LPC
