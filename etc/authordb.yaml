@@ -2328,6 +2328,13 @@ authors:
     initials: Xiaolong
     name: Li
     orcid: 0000-0002-0514-5650
+  liy:
+    affil:
+    - SLAC
+    altaffil: []
+    initials: Yee-Ting
+    name: Li
+    orcid: null
   lintottcj:
     affil:
     - Oxford
@@ -4159,6 +4166,13 @@ authors:
     initials: Bo
     name: Xin
     orcid: 0000-0002-9171-4046
+  yangw:
+    affil:
+    - SLAC
+    altaffil: []
+    initials: Wei
+    name: Yang
+    orcid: null
   yoachimp:
     affil:
     - Washington
