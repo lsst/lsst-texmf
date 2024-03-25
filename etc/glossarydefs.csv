@@ -49,6 +49,7 @@ ALeRCE,Automatic Learning for the Rapid Classification of Events,OPS,,,A
 ALD,Associate Lab Director,OPS DOE,,,A
 ALICE,A Large Ion Collider Experiment,Gen,,,A
 ALMA,Atacama Large Millimeter Array (ESO),Gen,,,A
+AMB,Afternoon Mini Bus,TS,,,A
 AMCL,AURA Management Council for LSST,LSST,,,A
 AMCR,AURA management Council for Rubin Observatory,OPS Rubin,,,A
 AMD,Advanced Micro Devices,OPS,,,A
@@ -664,6 +665,7 @@ ML,Machine Learning,Sci,,,A
 MLAG,Multi-chassis Link Aggregation,IT,,,A
 MLP,Multi-Layer Perceptron,Sci,,,A
 MMA,Multi Messenger Astronomy,OPS,,,A
+MMB,Morning Mini Bus,TS,,,A
 MMT,Multiple Mirror Telescope,OPS,,,A
 MNRAS,Monthly Notices of the Royal Astronomical Society,TS,Document-12016,,A
 MOA,Memo Of Agreement,OPS,,,A
