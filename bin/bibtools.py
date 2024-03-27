@@ -32,6 +32,7 @@ class BibEntry:
         year=None,
         note="",
         url="",
+        publisher="",
     ):
         self.author = author
         self.title = title
@@ -40,11 +41,13 @@ class BibEntry:
         self.note = note
         self.url = url
         self.year = year
-        self.type = "@DocuShare"
+        self.type = "@Misc"
+        self.publisher = publisher
+
         if "" == note and handle:
             prefix, _ = self.handle.split("-", 1)
             series = TN_SERIES.get(prefix, "")
-            self.note = f"{{Vera C. Rubin Observatory {series}}}"
+            self.note = f"{{Vera C. Rubin Observatory {series} {self.handle}}}"
 
     def write_latex_bibentry(self, fd=sys.stdout):
         """Write a bibentry for document info passed.
@@ -54,19 +57,21 @@ class BibEntry:
         """
 
         print("{}{{{},".format(self.type, self.handle), file=fd)
-        print("   author = {{{}}},".format(self.author), file=fd)
-        print('    title = "{{{}}}",'.format(self.title), file=fd)
-        print("     year = {},".format(self.year), file=fd)
-        print("    month = {},".format(self.month), file=fd)
-        print("   handle = {{{}}},".format(self.handle), file=fd)
-        print("     note = {{{}}},".format(self.note), file=fd)
-        print("      url = {{{}}} }}".format(self.url), file=fd)
+        print("      author = {{{}}},".format(self.author), file=fd)
+        print('       title = "{{{}}}",'.format(self.title), file=fd)
+        print('   publisher = "{{{}}}",'.format(self.publisher), file=fd)
+        print("        year = {},".format(self.year), file=fd)
+        print("       month = {},".format(self.month), file=fd)
+        print("      handle = {{{}}},".format(self.handle), file=fd)
+        print("        note = {{{}}},".format(self.note), file=fd)
+        print("         url = {{{}}} }}".format(self.url), file=fd)
 
     def __eq__(self, other):
         ret = True
         ret = ret and self.handle == other.handle
         ret = ret and (self.author.strip() == other.author.strip())
         ret = ret and (self.title.strip() == other.title.strip())
+        ret = ret and (self.publisher.strip() == other.publisher.strip())
         ret = ret and self.month == other.month
         ret = ret and (self.note.strip() == other.note.strip())
         # this fails no idea why ret = ret and (self.url == other.url)
