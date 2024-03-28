@@ -4,14 +4,15 @@ from io import StringIO
 
 from bibtools import BibEntry
 
-TESTENTRY = """@DocuShare{DMTN-005,
-   author = {Testy McTest},
-    title = "{A great title}",
-     year = 2001,
-    month = nov,
-   handle = {DMTN-005},
-     note = {NO note},
-      url = {http://nolplace.com} }"""
+TESTENTRY = """@Misc{DMTN-005,
+      author = {Testy McTest},
+       title = "{A great title}",
+   publisher = "{test pub}",
+        year = 2001,
+       month = nov,
+      handle = {DMTN-005},
+        note = {NO note},
+         url = {http://nolplace.com} }"""
 
 
 def make_comparable(instr):
@@ -27,6 +28,7 @@ class TestBib(unittest.TestCase):
         2001,
         "NO note",
         "http://nolplace.com",
+        "test pub",
     )
 
     def testConstructPrint(self):

@@ -98,6 +98,7 @@ def generate_bibfile(outfile, query=""):
             d["handle"],
             date.year,
             url=url,
+            publisher="{Vera C. Rubin Observatory}",
         )
         be.write_latex_bibentry(outfile)
         print(file=outfile)
