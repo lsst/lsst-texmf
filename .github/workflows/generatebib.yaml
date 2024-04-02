@@ -11,19 +11,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v5
         with:
-          python-version: 3.7
+          python-version: 3.11
 
       - name: Install Python dependencies
         run: |
           python -m pip install --upgrade pip
-          python -m pip install pyyaml
-          python -m pip install algoliasearch
-          python -m pip install latexcodec
+          python -m pip install uv
+          python -m uv pip install --system pyyaml
+          python -m uv pip install --system algoliasearch
+          python -m uv pip install --system latexcodec
 
 
       - name: Generate bibfile
@@ -52,7 +53,7 @@ jobs:
       - name: Create Pull Request
         id: cpr
         if: env.CHANGED == 'true'
-        uses: peter-evans/create-pull-request@v3
+        uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.WOM_UPDATEBIB_PAT }}
           branch: update-bibfile
@@ -63,7 +64,7 @@ jobs:
 
       - name: Enable Pull Request Automerge
         if: steps.cpr.outputs.pull-request-operation == 'created'
-        uses: peter-evans/enable-pull-request-automerge@v1
+        uses: peter-evans/enable-pull-request-automerge@v3
         with:
           token: ${{ secrets.WOM_UPDATEBIB_PAT }}
           pull-request-number: ${{ steps.cpr.outputs.pull-request-number }}
