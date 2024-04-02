@@ -21,9 +21,10 @@ jobs:
       - name: Install Python dependencies
         run: |
           python -m pip install --upgrade pip
-          python -m pip install pyyaml
-          python -m pip install algoliasearch
-          python -m pip install latexcodec
+          python -m pip install uv
+          python -m uv pip install --system pyyaml
+          python -m uv pip install --system algoliasearch
+          python -m uv pip install --system latexcodec
 
 
       - name: Generate bibfile
