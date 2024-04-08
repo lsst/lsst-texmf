@@ -1392,7 +1392,7 @@ No actions have been identified.}
 \newcommand{\reqparam}[1]{\margin@req{#1}}
 
 % Reference a JIRA ticket
-\newcommand{\jira}[1]{\href{https://jira.lsstcorp.org/browse/#1}{#1}}
+\newcommand{\jira}[1]{\href{https://rubinobs.atlassian.net/browse/#1}{#1}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
