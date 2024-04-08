@@ -4,6 +4,7 @@ copyright = "2016-2024 Association of Universities for Research in Astronomy, In
 base_url = "https://lsst-texmf.lsst.io"
 github_url = "https://github.com/lsst/lsst-texmf"
 
+[sphinx]
 extensions = [
     "sphinxcontrib.bibtex",
     "documenteer.ext.bibtex",
