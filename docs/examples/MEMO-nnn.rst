@@ -1,4 +1,4 @@
-.. _DMTN-nnn:
+.. _MEMO-nnn:
 
 ################################
 Memo example - use any series
