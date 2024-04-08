@@ -9,3 +9,6 @@ extensions = [
     "sphinxcontrib.bibtex",
     "documenteer.ext.bibtex",
 ]
+exclude = [
+  "_templates/README.md"  # This markdown file is not part of the documentation
+]
