@@ -422,7 +422,7 @@ def escape_for_tex(str):
     text = str
     for c in specialChars:
         text = text.replace(c, fr"\{c}")
-        text = text.replace(f"\\\\{c}", f"\\{c}")
+        text = text.replace(fr"\\{c}", fr"\{c}")
     return text
 
 
