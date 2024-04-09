@@ -421,7 +421,7 @@ def escape_for_tex(str):
     But watch out for double whamies .."""
     text = str
     for c in specialChars:
-        text = text.replace(c, f"\\{c}")
+        text = text.replace(c, fr"\{c}")
         text = text.replace(f"\\\\{c}", f"\\{c}")
     return text
 
