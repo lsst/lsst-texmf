@@ -801,7 +801,7 @@ def dump_gls(filename, out_file):
                     acr = row[ind]
                     # put every glossary entry in a file.. unless it has an odd char
                     # AI&T seems ok as acronym breaks glossary
-                    if not specialCharsRe.search(acr) and len(acr) > 1:
+                    if not specialCharsRe.search(acr):
                         print(f"\\gls{{{acr}}}", file=fg)
                     defn = escape_for_tex(row[ind + 1])
                     tags = row[ind + 2]
