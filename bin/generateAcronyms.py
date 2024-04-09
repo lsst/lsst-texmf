@@ -371,7 +371,7 @@ def find_matches_combo(filename, acronyms, ignore_str=" %"):
     }
 
     # findall matches non-overlapping left to right in the order that
-    # we give alternate strings. Therefor when we build the regex
+    # we give alternate strings. Therefore when we build the regex
     # ensure that we supply strings sorted by length. Ideally we would also
     # take into account word boundaries but for now length ensures that
     # R&D matches before R and D.
@@ -500,12 +500,14 @@ def write_latex_table(acronyms, dotex=True, dorst=False, fd=sys.stdout):
         print(r"""======= ===========""", file=fd)
 
 
-def forceConverge(prevCount, utags, noadorn, skipnone):
+def forceConverge(prevCount, utags, noadorn, skipnoacronyms):
     """Run through the glossary looking for defnitions until
     no more are added.
     """
     while True:
-        count = main({glsFile}, True, utags, True, False, "tex", noadorn, skipnone)
+        count = main(
+            {glsFile}, True, utags, True, False, "tex", noadorn, skipnoacronyms
+        )
         # If no glossary items are added we are done
         if count == prevCount:
             break
@@ -519,7 +521,9 @@ def setup_paths():
     return (lsst_glossary_path, global_skip_path)
 
 
-def main(texfiles, doGlossary, utags, dotex, dorst, mode, noadorn, skipnone=False):
+def main(
+    texfiles, doGlossary, utags, dotex, dorst, mode, noadorn, skipnoacronyms=False
+):
     """Run program and generate acronyms file."""
 
     if not texfiles:
@@ -553,7 +557,7 @@ def main(texfiles, doGlossary, utags, dotex, dorst, mode, noadorn, skipnone=Fals
         skip = global_skip | local_skip
 
     # Remove the skipped items
-    if not skipnone:
+    if not skipnoacronyms:
         for s in skip:
             if s in local_definitions:
                 local_definitions.pop(s)
@@ -895,14 +899,14 @@ if __name__ == "__main__":
     )
     parser.add_argument(
         "-s",
-        "--skipnone",
+        "--skipnoacronyms",
         action="store_true",
         help="""Do not load skip acronyms file""",
     )
     args = parser.parse_args()
     doGlossary = args.glossary
     doCheck = args.check
-    skipnone = args.skipnone
+    skipnoacronyms = args.skipnoacronyms
 
     texfiles = args.files
     tagstr = args.tags
@@ -936,10 +940,17 @@ if __name__ == "__main__":
         # Allow update to really just update/rewrite files not regenerate
         # glossary
         count = main(
-            texfiles, doGlossary, utags, dotex, dorst, args.mode, noadorn, skipnone
+            texfiles,
+            doGlossary,
+            utags,
+            dotex,
+            dorst,
+            args.mode,
+            noadorn,
+            skipnoacronyms,
         )
         if doGlossary and dotex:
-            forceConverge(count, utags, noadorn, skipnone)
+            forceConverge(count, utags, noadorn, skipnoacronyms)
     # Go through files on second pass  or on demand and \gls  or not (-u)
     if args.update:
         update(texfiles)
