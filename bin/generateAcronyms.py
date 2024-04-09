@@ -418,7 +418,7 @@ find_matches = find_matches_combo
 
 def escape_for_tex(str):
     """Escape tex nasties and return new string.
-    But watch out for double whamies .."""
+    But watch out for double whammies."""
     text = str
     for c in specialChars:
         text = text.replace(c, fr"\{c}")
