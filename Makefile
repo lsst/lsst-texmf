@@ -35,16 +35,21 @@ $(PDF): %.pdf: examples/%.tex
 $(TESTS): %.pdf: tests/%.tex
 	latexmk -pdf -bibtex -f $<
 
-test-acronyms: glossary-table.pdf 
+test-acronyms: glossary-table.pdf
 
 glossary-table.pdf: glstab.tex
-	latexmk -xelatex -f examples/glossary-table.tex 
+	latexmk -xelatex -f examples/glossary-table.tex
 
-	
+full-glossary.pdf: glstab.tex
+	bin/generateAcronyms.py -g --skipnone --noadorn fullgls.tex
+	latexmk -xelatex -f examples/full-glossary.tex
+	makeglossaries full-glossary
+	xelatex examples/full-glossary.tex
+
 glstab.tex:
 	@echo "Testing glossarydefs"
 	@echo
-	bin/generateAcronyms.py -c glstab.tex 
+	bin/generateAcronyms.py -c glstab.tex
 
 .PHONY: test-pybtex
 test-pybtex:
@@ -56,9 +61,9 @@ test-pybtex:
 test-authors:
 	@echo "Testing authorsdb"
 	@echo
-	bin/validate_authors.py 
+	bin/validate_authors.py
 
-.PHONY: docs 
+.PHONY: docs
 docs: $(PDF) $(TESTS) glstab.tex
 	mkdir -p docs/_static/examples
 	cp *.pdf docs/_static/examples/
@@ -66,10 +71,10 @@ docs: $(PDF) $(TESTS) glstab.tex
 	cp htmlglossary.csv docs
 	make -C docs html
 
-lsst.bib: 
+lsst.bib:
 	bin/generateBibfile.py texmf/bibtex/bib/lsst.bib
 	cat etc/static_entries.bib >> texmf/bibtex/bib/lsst.bib
-	
+
 
 .PHONY: clean
 clean:

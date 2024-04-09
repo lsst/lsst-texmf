@@ -31,6 +31,8 @@ import warnings
 
 glsFile = "aglossary.tex"
 OUTPUT_MODES = ["txt", "rst", "tex"]
+specialChars = "_$&%^#"
+specialCharsRe = re.compile(r"[_$&%^#]")
 
 try:
     import pypandoc
@@ -354,9 +356,7 @@ def find_matches_combo(filename, acronyms, ignore_str=" %"):
                     or line.startswith("%")
                 ):
                     continue
-                line = line.replace(r"\&", "&")
-                line = line.replace(r"\_", "_")
-                line = line.replace(r"\%", "%")
+                line = escape_for_tex(line)
                 lines.append(line)
 
             text = " ".join(lines)
@@ -371,7 +371,7 @@ def find_matches_combo(filename, acronyms, ignore_str=" %"):
     }
 
     # findall matches non-overlapping left to right in the order that
-    # we give alternate strings. Therefore when we build the regex
+    # we give alternate strings. Therefor when we build the regex
     # ensure that we supply strings sorted by length. Ideally we would also
     # take into account word boundaries but for now length ensures that
     # R&D matches before R and D.
@@ -417,11 +417,13 @@ find_matches = find_matches_combo
 
 
 def escape_for_tex(str):
-    """Escape tex nasties and return new string"""
-    nstr = str.replace("&", r"\&")
-    nstr = nstr.replace("_", r"\_")
-    nstr = nstr.replace("%", r"\%")
-    return nstr
+    """Escape tex nasties and return new string.
+    But watch out for double whamies .."""
+    text = str
+    for c in specialChars:
+        text = text.replace(c, f"\\{c}")
+        text = text.replace(f"\\\\{c}", f"\\{c}")
+    return text
 
 
 def write_latex_glossary(acronyms, fd=sys.stdout):
@@ -498,12 +500,12 @@ def write_latex_table(acronyms, dotex=True, dorst=False, fd=sys.stdout):
         print(r"""======= ===========""", file=fd)
 
 
-def forceConverge(prevCount, utags, noadorn):
+def forceConverge(prevCount, utags, noadorn, skipnone):
     """Run through the glossary looking for defnitions until
     no more are added.
     """
     while True:
-        count = main({glsFile}, True, utags, True, False, "tex", noadorn)
+        count = main({glsFile}, True, utags, True, False, "tex", noadorn, skipnone)
         # If no glossary items are added we are done
         if count == prevCount:
             break
@@ -517,7 +519,7 @@ def setup_paths():
     return (lsst_glossary_path, global_skip_path)
 
 
-def main(texfiles, doGlossary, utags, dotex, dorst, mode, noadorn):
+def main(texfiles, doGlossary, utags, dotex, dorst, mode, noadorn, skipnone=False):
     """Run program and generate acronyms file."""
 
     if not texfiles:
@@ -551,11 +553,12 @@ def main(texfiles, doGlossary, utags, dotex, dorst, mode, noadorn):
         skip = global_skip | local_skip
 
     # Remove the skipped items
-    for s in skip:
-        if s in local_definitions:
-            local_definitions.pop(s)
-        if s in lsst_definitions:
-            lsst_definitions.pop(s)
+    if not skipnone:
+        for s in skip:
+            if s in local_definitions:
+                local_definitions.pop(s)
+            if s in lsst_definitions:
+                lsst_definitions.pop(s)
 
     # Master list of all acronyms
     acronyms = set(lsst_definitions) | set(local_definitions)
@@ -772,9 +775,12 @@ def dump_gls(filename, out_file):
     lc = 0
     translate = load_translation("es", filename)
     gfile = "htmlglossary.csv"
+    fullgloss = "fullgls.tex"
     with open(filename, "r") as fd:
         reader = csv.reader(fd, delimiter=",", quotechar='"')
-        with open(out_file, "w") as ofd, open(gfile, "w") as ogfile:
+        with open(out_file, "w") as ofd, open(gfile, "w") as ogfile, open(
+            fullgloss, "w"
+        ) as fg:
             print(
                 r"""\addtocounter{table}{-1}
             \begin{longtable}{p{0.15\textwidth}p{0.7\textwidth}p{0.15\textwidth}}\hline
@@ -792,7 +798,11 @@ def dump_gls(filename, out_file):
                     if lc == 1:
                         continue  # There is a header line
                     ind = 0
-                    acr = escape_for_tex(row[ind])
+                    acr = row[ind]
+                    # put every glossary entry in a file.. unless it has an odd char
+                    # AI&T seems ok as acronym breaks glossary
+                    if not specialCharsRe.search(acr) and len(acr) > 1:
+                        print(f"\\gls{{{acr}}}", file=fg)
                     defn = escape_for_tex(row[ind + 1])
                     tags = row[ind + 2]
                     trans = None
@@ -883,9 +893,16 @@ if __name__ == "__main__":
         help=""" Generate glossary dump file using passed
                                  filename containing  all entries.""",
     )
+    parser.add_argument(
+        "-s",
+        "--skipnone",
+        action="store_true",
+        help=""" Do not load skip acronyms file""",
+    )
     args = parser.parse_args()
     doGlossary = args.glossary
     doCheck = args.check
+    skipnone = args.skipnone
 
     texfiles = args.files
     tagstr = args.tags
@@ -918,9 +935,11 @@ if __name__ == "__main__":
     if doGlossary or (not args.update):
         # Allow update to really just update/rewrite files not regenerate
         # glossary
-        count = main(texfiles, doGlossary, utags, dotex, dorst, args.mode, noadorn)
+        count = main(
+            texfiles, doGlossary, utags, dotex, dorst, args.mode, noadorn, skipnone
+        )
         if doGlossary and dotex:
-            forceConverge(count, utags, noadorn)
+            forceConverge(count, utags, noadorn, skipnone)
     # Go through files on second pass  or on demand and \gls  or not (-u)
     if args.update:
         update(texfiles)
