@@ -27,7 +27,7 @@ PDF = $(EXAMPLES:.tex=.pdf)
 
 TESTS = $(TESTFILES:.tex=.pdf)
 
-all: $(PDF) $(TESTS) glossary-table.pdf
+all: $(PDF) $(TESTS) glossary-table.pdf full-glossary.pdf
 
 $(PDF): %.pdf: examples/%.tex
 	latexmk -xelatex -f $<
