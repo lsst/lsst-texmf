@@ -897,7 +897,7 @@ if __name__ == "__main__":
         "-s",
         "--skipnone",
         action="store_true",
-        help=""" Do not load skip acronyms file""",
+        help="""Do not load skip acronyms file""",
     )
     args = parser.parse_args()
     doGlossary = args.glossary
