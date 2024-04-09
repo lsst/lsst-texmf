@@ -41,7 +41,7 @@ glossary-table.pdf: glstab.tex
 	latexmk -xelatex -f examples/glossary-table.tex
 
 full-glossary.pdf: glstab.tex
-	bin/generateAcronyms.py -g --skipnoacronyms --noadorn fullgls.tex
+	bin/generateAcronyms.py -g --writeallacronyms --noadorn fullgls.tex
 	latexmk -xelatex -f examples/full-glossary.tex
 	makeglossaries full-glossary
 	xelatex examples/full-glossary.tex

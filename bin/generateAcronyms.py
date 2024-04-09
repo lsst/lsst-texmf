@@ -421,8 +421,8 @@ def escape_for_tex(str):
     But watch out for double whammies."""
     text = str
     for c in specialChars:
-        text = text.replace(c, fr"\{c}")
-        text = text.replace(fr"\\{c}", fr"\{c}")
+        text = text.replace(c, rf"\{c}")
+        text = text.replace(rf"\\{c}", rf"\{c}")
     return text
 
 
@@ -500,13 +500,13 @@ def write_latex_table(acronyms, dotex=True, dorst=False, fd=sys.stdout):
         print(r"""======= ===========""", file=fd)
 
 
-def forceConverge(prevCount, utags, noadorn, skipnoacronyms):
+def forceConverge(prevCount, utags, noadorn, writeallacronyms):
     """Run through the glossary looking for defnitions until
     no more are added.
     """
     while True:
         count = main(
-            {glsFile}, True, utags, True, False, "tex", noadorn, skipnoacronyms
+            {glsFile}, True, utags, True, False, "tex", noadorn, writeallacronyms
         )
         # If no glossary items are added we are done
         if count == prevCount:
@@ -522,7 +522,7 @@ def setup_paths():
 
 
 def main(
-    texfiles, doGlossary, utags, dotex, dorst, mode, noadorn, skipnoacronyms=False
+    texfiles, doGlossary, utags, dotex, dorst, mode, noadorn, writeallacronyms=False
 ):
     """Run program and generate acronyms file."""
 
@@ -557,7 +557,7 @@ def main(
         skip = global_skip | local_skip
 
     # Remove the skipped items
-    if not skipnoacronyms:
+    if not writeallacronyms:
         for s in skip:
             if s in local_definitions:
                 local_definitions.pop(s)
@@ -899,14 +899,14 @@ if __name__ == "__main__":
     )
     parser.add_argument(
         "-s",
-        "--skipnoacronyms",
+        "--writeallacronyms",
         action="store_true",
         help="""Do not load skip acronyms file""",
     )
     args = parser.parse_args()
     doGlossary = args.glossary
     doCheck = args.check
-    skipnoacronyms = args.skipnoacronyms
+    writeallacronyms = args.writeallacronyms
 
     texfiles = args.files
     tagstr = args.tags
@@ -947,10 +947,10 @@ if __name__ == "__main__":
             dorst,
             args.mode,
             noadorn,
-            skipnoacronyms,
+            writeallacronyms,
         )
         if doGlossary and dotex:
-            forceConverge(count, utags, noadorn, skipnoacronyms)
+            forceConverge(count, utags, noadorn, writeallacronyms)
     # Go through files on second pass  or on demand and \gls  or not (-u)
     if args.update:
         update(texfiles)
