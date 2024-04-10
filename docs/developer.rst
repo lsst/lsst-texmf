@@ -28,13 +28,13 @@ In this way, we can ensure that all documents agree on references without duplic
 Reminder that author lists in bibliography entries should use and to separate authors thus "William O'Mullane and Tim Jenness".
 
 For new documents made with sqrbot-jr a file will be created called ``bibentry.txt`` which will contain a bib entry for
-the the document which could be added to the appropriate local bibfile. 
+the the document which could be added to the appropriate local bibfile.
 This should be a temporary measure as the entry should appear in lsst.bib the next day.
 
-A githubaction ``generatebib`` runs daily and gathers all the metadata from notes published on lsst.io and adds them to ``lsst.bib``. 
-This covers all notes created with sqrbot-jr. 
+A githubaction ``generatebib`` runs daily and gathers all the metadata from notes published on lsst.io and adds them to ``lsst.bib``.
+This covers all notes created with sqrbot-jr.
 Other documents from docushare still need to be manually added in ``etc/static-entries.bib``.
-This action may also be manually run (for the impatient). 
+This action may also be manually run (for the impatient).
 It results in a pull-request which may be merged after CI passes.
 
 For older LaTeX documents a script ``lsstdoc2bib.py`` exists in the bin folder of lsst-texmf which attempts to get info from the
@@ -49,7 +49,7 @@ Bibliography file organization
   One day DocuShare entries may also be auto-generated.
 * :file:`lsst-dm.bib` includes LSST Data Management publications (ADS and non-ADS) and presentations.
   Do not include DocuShare items in this file.
-  Presentations should use a key of form ``YYYYauthor-meeting``. 
+  Presentations should use a key of form ``YYYYauthor-meeting``.
 * :file:`refs_ads.bib` includes any reference that can be found on ADS (aside from those in :file:`lsst-dm.bib`).
   Entries must be the standard ADS bibtex export and use the ADS Bibcode.
   This file should be used for arXiv entries obtained from ADS.
