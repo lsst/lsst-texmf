@@ -97,15 +97,9 @@ Write a beamer file to illustrate all the available themes:
     )
 
     parser.add_argument("ARG", type=str, nargs="?", help="XXX")
-    parser.add_argument(
-        "--aspectratio", type=int, help="Aspect ratio (e.g. 169)", default=43
-    )
-    parser.add_argument(
-        "--xetex", help="Use xelatex?", action="store_true", default=False
-    )
-    parser.add_argument(
-        "--verbose", action="store_true", help="How chatty should I be?", default=False
-    )
+    parser.add_argument("--aspectratio", type=int, help="Aspect ratio (e.g. 169)", default=43)
+    parser.add_argument("--xetex", help="Use xelatex?", action="store_true", default=False)
+    parser.add_argument("--verbose", action="store_true", help="How chatty should I be?", default=False)
 
     args = parser.parse_args()
 
