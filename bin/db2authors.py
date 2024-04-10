@@ -58,7 +58,7 @@ buffer_authors = False  # out put authors in one \author command (adass)
 affil_cmd = "affiliation"  # command for latex affiliation
 affil_form = r"\{}[{}]{{{}}}"  # format of the affiliation
 auth_afil_form = "{}{}{}"  # format of author with affiliation
-author_form = r"\author{}{{~{}~{}}}"  # fomrmat of the author
+author_form = r"\author{}{{{}~{}}}"  # format of the author
 author_super = False  # Author affiliation as super script
 author_sep = " and "
 
