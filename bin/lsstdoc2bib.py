@@ -27,16 +27,10 @@ def find_meta(filename):
         Ready to use bib entry
     """
     auth = re.compile(r"\\author\s*{([\w'`,\- ]+)}")
-    title = re.compile(
-        r"\\title\s*[\[\]a-z A-Z\\]+{([\w\\#,:\-\+ ]+)}"
-    )  # a real pity .+ consumes closing }
+    title = re.compile(r"\\title\s*[\[\]a-z A-Z\\]+{([\w\\#,:\-\+ ]+)}")  # a real pity .+ consumes closing }
     title2 = re.compile(r"\\title\{(.+)} \\setD")  # a real pity .+ consumes closing }
-    yearm = re.compile(
-        r"\\date\s*{([0-9]+)-([0-9]+)-.+}"
-    )  # only if its an actual date not a macro
-    yearm2 = re.compile(
-        r"\\vcs[dD]ate}{(.+)-(.+)-.+}"
-    )  # only chance from meta.tex if it was a macro
+    yearm = re.compile(r"\\date\s*{([0-9]+)-([0-9]+)-.+}")  # only if its an actual date not a macro
+    yearm2 = re.compile(r"\\vcs[dD]ate}{(.+)-(.+)-.+}")  # only chance from meta.tex if it was a macro
     handle = re.compile(r"\\setDocRef\s*{([A-Z]+-[0-9]+)}")
     comment = re.compile(r"%.*")
     doctype = re.compile(r"lsstDocType}{(.+)} .+\\")

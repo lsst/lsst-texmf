@@ -192,11 +192,7 @@ def genTables(values):
                 bold_next = True
             else:
                 if name and row:
-                    if (
-                        row[0].startswith("Year")
-                        or row[0].startswith("Total")
-                        or bold_next
-                    ):
+                    if row[0].startswith("Year") or row[0].startswith("Total") or bold_next:
                         # print header/total in bold
                         outputrow(tout, "\\textbf", row, cols, skip)
                         bold_next = False
@@ -225,8 +221,7 @@ def get_sheet(sheet_id, range):
 
 
 def main(sheetId, sheets):
-    """Grab the googlesheet and process tables in each sheet.
-    """
+    """Grab the googlesheet and process tables in each sheet."""
     for r in sheets:
         print(f"Google {sheetId} , Sheet {r}")
         result = get_sheet(sheetId, r)

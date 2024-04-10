@@ -50,9 +50,7 @@ parser.add_argument(
     help="""Display mode for translated parameters.
                          'verbose' displays all the information...""",
 )
-parser.add_argument(
-    "-n", "--noafil", action="store_true", help="""Do not add affil at all for arxiv."""
-)
+parser.add_argument("-n", "--noafil", action="store_true", help="""Do not add affil at all for arxiv.""")
 args = parser.parse_args()
 
 buffer_affil = False  # hold affiliation until after author output
@@ -162,9 +160,7 @@ for anum, authorid in enumerate(authors):
     try:
         auth = authorinfo[authorid]
     except KeyError as e:
-        raise RuntimeError(
-            f"Author ID {authorid} not defined in author database."
-        ) from e
+        raise RuntimeError(f"Author ID {authorid} not defined in author database.") from e
 
     affilOutput = list()
     affilAuth = ""
@@ -176,9 +172,7 @@ for anum, authorid in enumerate(authors):
         if theAffil not in affilset:
             affilset.append(theAffil)
             # unforuneately you can not output an affil before an author
-            affilOutput.append(
-                affil_form.format(affil_cmd, len(affilset), affil[theAffil])
-            )
+            affilOutput.append(affil_form.format(affil_cmd, len(affilset), affil[theAffil]))
 
         affilInd = affilset.index(theAffil) + 1
         if args.noafil:
@@ -267,9 +261,7 @@ if buffer_authors:
     for auth in authOutput:
         print(auth, end="")
         anum = anum + 1
-        if (anum == numAuths and numAuths > 1) or (
-            args.mode == "arxiv" and anum < numAuths
-        ):
+        if (anum == numAuths and numAuths > 1) or (args.mode == "arxiv" and anum < numAuths):
             print(author_sep, end="")
         else:
             if anum < numAuths:
