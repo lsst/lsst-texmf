@@ -14,7 +14,6 @@ file in the etc/authordb.yaml file in this package.
 This program requires the "yaml" package to be installed.
 
 """
-from __future__ import print_function
 
 import argparse
 import os
@@ -51,9 +50,7 @@ parser.add_argument(
     help="""Display mode for translated parameters.
                          'verbose' displays all the information...""",
 )
-parser.add_argument(
-    "-n", "--noafil", action="store_true", help="""Do not add affil at all for arxiv."""
-)
+parser.add_argument("-n", "--noafil", action="store_true", help="""Do not add affil at all for arxiv.""")
 args = parser.parse_args()
 
 buffer_affil = False  # hold affiliation until after author output
@@ -61,7 +58,7 @@ buffer_authors = False  # out put authors in one \author command (adass)
 affil_cmd = "affiliation"  # command for latex affiliation
 affil_form = r"\{}[{}]{{{}}}"  # format of the affiliation
 auth_afil_form = "{}{}{}"  # format of author with affiliation
-author_form = r"\author{}{{~{}~{}}}"  # fomrmat of the author
+author_form = r"\author{}{{{}~{}}}"  # format of the author
 author_super = False  # Author affiliation as super script
 author_sep = " and "
 
@@ -90,7 +87,7 @@ if args.mode == "adass":
     buffer_authors = True
     author_super = True
 
-with open(authorfile, "r") as fh:
+with open(authorfile) as fh:
     authors = yaml.safe_load(fh)
 
 # This is the database file with all the generic information
@@ -98,7 +95,7 @@ with open(authorfile, "r") as fh:
 exedir = os.path.abspath(os.path.dirname(__file__))
 dbfile = os.path.normpath(os.path.join(exedir, os.path.pardir, "etc", "authordb.yaml"))
 
-with open(dbfile, "r") as fh:
+with open(dbfile) as fh:
     authordb = yaml.safe_load(fh)
 
 # author db is dict indexed by author id.
@@ -113,7 +110,7 @@ authorinfo = authordb["authors"]
 # dict of all the affiliations, key is a label
 # used in author list
 affil = authordb["affiliations"]
-affilset = list()  # it will be a set but I want index() which is supported in list
+affilset = []  # it will be a set but I want index() which is supported in list
 
 # AASTeX6.1 author files are of the form:
 # \author[ORCID]{Initials~Surname}
@@ -124,7 +121,7 @@ affilset = list()  # it will be a set but I want index() which is supported in l
 
 if WRITE_CSV:
     # Used for arXiv submission
-    names = ["{auth[initials]} {auth[name]}".format(auth=a) for a in authors]
+    names = [f"{a['initials']} {a['name']}" for a in authors]
     print(", ".join(names))
     sys.exit(0)
 
@@ -135,17 +132,20 @@ print(
 print(f"%%    python $LSST_TEXMF_DIR/bin/db2authors.py {args} ")
 print()
 
-authOutput = list()
-allAffil = list()
-pAuthorOutput = list()
-indexOutput = list()
+authOutput = []
+allAffil = []
+pAuthorOutput = []
+indexOutput = []
 
 anum = 0
 
 
 def get_initials(initials):
-    """Authors db has full name not initials -
-    sometimes we just want intials"""
+    """Get the initials rather than full name.
+
+    Authors db has full name not initials -
+    sometimes we just want initials.
+    """
     names = re.split(r"[ -\.\~]", initials)
     realInitials = []
     for name in names:
@@ -160,11 +160,9 @@ for anum, authorid in enumerate(authors):
     try:
         auth = authorinfo[authorid]
     except KeyError as e:
-        raise RuntimeError(
-            f"Author ID {authorid} not defined in author database."
-        ) from e
+        raise RuntimeError(f"Author ID {authorid} not defined in author database.") from e
 
-    affilOutput = list()
+    affilOutput = []
     affilAuth = ""
     affilSep = ""
     if author_super and anum < len(authors) - 1:
@@ -174,9 +172,7 @@ for anum, authorid in enumerate(authors):
         if theAffil not in affilset:
             affilset.append(theAffil)
             # unforuneately you can not output an affil before an author
-            affilOutput.append(
-                affil_form.format(affil_cmd, len(affilset), affil[theAffil])
-            )
+            affilOutput.append(affil_form.format(affil_cmd, len(affilset), affil[theAffil]))
 
         affilInd = affilset.index(theAffil) + 1
         if args.noafil:
@@ -187,7 +183,7 @@ for anum, authorid in enumerate(authors):
         affilSep = " "
 
     if buffer_affil:
-        orcid = "[{}]".format(affilAuth)
+        orcid = f"[{affilAuth}]"
     else:
         if "orcid" in auth and auth["orcid"]:
             orcid = "[{}]".format(auth["orcid"])
@@ -226,17 +222,17 @@ for anum, authorid in enumerate(authors):
         city = addr[ind]
 
     pAuthorOutput.append(
-        r"\paperauthor{{{}~{}}}{{{}}}{{{}}}{{{}}}{{}}{{{}}}{{{}}}{{{}}}{{{}}}".format(
-            initials, surname, email, orc, tute, city, state, pcode, country
-        )
+        r"\paperauthor"
+        f"{{{initials}~{surname}}}{{{email}}}{{{orc}}}"
+        f"{{{tute}}}{{}}{{{city}}}{{{state}}}{{{pcode}}}{{{country}}}"
     )
 
     if args.mode == "arxiv":
-        affilOutput = list()  # reset this
+        affilOutput = []  # reset this
         affilOutput.append(affil_form.format(affil_cmd, len(affilset), tute))
 
     justInitials = get_initials(initials)
-    indexOutput.append(r"%\aindex{{{},{}}}".format(surname, justInitials))
+    indexOutput.append(rf"%\aindex{{{surname},{justInitials}}}")
 
     if buffer_authors:
         authOutput.append(author_form.format(initials, surname, affilAuth))
@@ -248,11 +244,11 @@ for anum, authorid in enumerate(authors):
         else:
             if auth.get("altaffil"):
                 for af in auth["altaffil"]:
-                    print(r"\altaffiliation{{{}}}".format(af))
+                    print(rf"\altaffiliation{{{af}}}")
 
             # The affiliations have to be retrieved via label
             for aflab in auth["affil"]:
-                print(r"\{}{{{}}}".format(affil_cmd, affil[aflab]))
+                print(rf"\{affil_cmd}{{{affil[aflab]}}}")
         print()
 
 if buffer_authors:
@@ -265,9 +261,7 @@ if buffer_authors:
     for auth in authOutput:
         print(auth, end="")
         anum = anum + 1
-        if (anum == numAuths and numAuths > 1) or (
-            args.mode == "arxiv" and anum < numAuths
-        ):
+        if (anum == numAuths and numAuths > 1) or (args.mode == "arxiv" and anum < numAuths):
             print(author_sep, end="")
         else:
             if anum < numAuths:

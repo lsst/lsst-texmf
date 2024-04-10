@@ -1,0 +1,51 @@
+[tool.black]
+line-length = 110
+target-version = ["py311"]
+
+[tool.isort]
+profile = "black"
+line_length = 110
+
+[tool.ruff]
+line-length = 110
+target-version = "py311"
+exclude = [
+    "__init__.py",
+    "lex.py",
+    "yacc.py",
+]
+
+[tool.ruff.lint]
+ignore = [
+    "N802",
+    "N803",
+    "N806",
+    "N812",
+    "N815",
+    "N816",
+    "N999",
+    "D107",
+    "D105",
+    "D102",
+    "D104",
+    "D100",
+    "D200",
+    "D205",
+    "D400",
+    "UP007",  # Allow UNION in type annotation
+]
+select = [
+    "E",  # pycodestyle
+    "F",  # pycodestyle
+    "N",  # pep8-naming
+    "W",  # pycodestyle
+    "D",  # pydocstyle
+    "UP",  # pyupgrade
+    "C4",  # list comprehensions
+]
+
+[tool.ruff.lint.pycodestyle]
+max-doc-length = 79
+
+[tool.ruff.lint.pydocstyle]
+convention = "numpy"

@@ -1,6 +1,7 @@
-"""This class represents a bibtex bibentry.
-it can construct from a string and output to the bib file as needed.
-it is comparable hence sortable.
+"""Representation of a bibtex bibentry.
+
+It can construct from a string and output to the bib file as needed.
+It is comparable hence sortable.
 """
 
 import sys
@@ -51,20 +52,21 @@ class BibEntry:
 
     def write_latex_bibentry(self, fd=sys.stdout):
         """Write a bibentry for document info passed.
+
         Parameters
         ----------
-        fd : default stdout : file to write to
+        fd : `typing.IO`, optional
+            File to write to. Defaults stdout.
         """
-
-        print("{}{{{},".format(self.type, self.handle), file=fd)
-        print("      author = {{{}}},".format(self.author), file=fd)
-        print('       title = "{{{}}}",'.format(self.title), file=fd)
-        print('   publisher = "{{{}}}",'.format(self.publisher), file=fd)
-        print("        year = {},".format(self.year), file=fd)
-        print("       month = {},".format(self.month), file=fd)
-        print("      handle = {{{}}},".format(self.handle), file=fd)
-        print("        note = {{{}}},".format(self.note), file=fd)
-        print("         url = {{{}}} }}".format(self.url), file=fd)
+        print(f"{self.type}{{{self.handle},", file=fd)
+        print(f"      author = {{{self.author}}},", file=fd)
+        print(f'       title = "{{{self.title}}}",', file=fd)
+        print(f'   publisher = "{{{self.publisher}}}",', file=fd)
+        print(f"        year = {self.year},", file=fd)
+        print(f"       month = {self.month},", file=fd)
+        print(f"      handle = {{{self.handle}}},", file=fd)
+        print(f"        note = {{{self.note}}},", file=fd)
+        print(f"         url = {{{self.url}}} }}", file=fd)
 
     def __eq__(self, other):
         ret = True

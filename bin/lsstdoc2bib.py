@@ -14,7 +14,7 @@ from bibtools import BibEntry
 
 
 def find_meta(filename):
-    """search for the bibentry items
+    """Search for the bibentry items
 
     Parameters
     ----------
@@ -26,18 +26,11 @@ def find_meta(filename):
     bibentry : `str'
         Ready to use bib entry
     """
-
     auth = re.compile(r"\\author\s*{([\w'`,\- ]+)}")
-    title = re.compile(
-        r"\\title\s*[\[\]a-z A-Z\\]+{([\w\\#,:\-\+ ]+)}"
-    )  # a real pity .+ consumes closing }
+    title = re.compile(r"\\title\s*[\[\]a-z A-Z\\]+{([\w\\#,:\-\+ ]+)}")  # a real pity .+ consumes closing }
     title2 = re.compile(r"\\title\{(.+)} \\setD")  # a real pity .+ consumes closing }
-    yearm = re.compile(
-        r"\\date\s*{([0-9]+)-([0-9]+)-.+}"
-    )  # only if its an actual date not a macro
-    yearm2 = re.compile(
-        r"\\vcs[dD]ate}{(.+)-(.+)-.+}"
-    )  # only chance from meta.tex if it was a macro
+    yearm = re.compile(r"\\date\s*{([0-9]+)-([0-9]+)-.+}")  # only if its an actual date not a macro
+    yearm2 = re.compile(r"\\vcs[dD]ate}{(.+)-(.+)-.+}")  # only chance from meta.tex if it was a macro
     handle = re.compile(r"\\setDocRef\s*{([A-Z]+-[0-9]+)}")
     comment = re.compile(r"%.*")
     doctype = re.compile(r"lsstDocType}{(.+)} .+\\")
@@ -51,7 +44,7 @@ def find_meta(filename):
     doctypes = ""
     docnums = ""
     meta = filename == "meta.tex"
-    with open(filename, "r") as fd:
+    with open(filename) as fd:
         for line in fd:
             line = line.strip()
             # Latex specific ignore
@@ -107,7 +100,6 @@ def find_meta(filename):
 
 def main(texfiles):
     """Run program and generate bibentry ."""
-
     if not texfiles:
         raise RuntimeError("No files supplied.")
     be = BibEntry()

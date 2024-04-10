@@ -8,7 +8,7 @@ Memo example - use any series
 
 This document demonstrates how to use the :ref:`lsstdoc <lsstdoc>` class to make a memo in any  series.
 
-For this replace maketitle with mkmemotitle in the document. 
+For this replace maketitle with mkmemotitle in the document.
 
 .. literalinclude:: ../../examples/MEMO-nnn.tex
    :caption: examples/MEMO-nnn.tex
