@@ -14,7 +14,7 @@ from bibtools import BibEntry
 
 
 def find_meta(filename):
-    """search for the bibentry items
+    """Search for the bibentry items
 
     Parameters
     ----------
@@ -26,7 +26,6 @@ def find_meta(filename):
     bibentry : `str'
         Ready to use bib entry
     """
-
     auth = re.compile(r"\\author\s*{([\w'`,\- ]+)}")
     title = re.compile(
         r"\\title\s*[\[\]a-z A-Z\\]+{([\w\\#,:\-\+ ]+)}"
@@ -107,7 +106,6 @@ def find_meta(filename):
 
 def main(texfiles):
     """Run program and generate bibentry ."""
-
     if not texfiles:
         raise RuntimeError("No files supplied.")
     be = BibEntry()

@@ -16,10 +16,13 @@ TESTENTRY = """@Misc{DMTN-005,
 
 
 def make_comparable(instr):
+    """Remove whitespace."""
     return re.sub(r"\s+", "", instr)
 
 
 class TestBib(unittest.TestCase):
+    """Test bib entries."""
+
     be = BibEntry(
         "Testy McTest",
         "A great title",

@@ -1,16 +1,19 @@
 #!/usr/bin/env python3
 
-r"""This script will generate latex tables from cells in a google sheet.
+r"""Script to generate latex tables from cells in a google sheet.
+
 You must pass the sheet Identifier and Sheet name(s) you wish to process.
 Identify your table by putting in a cell in column A `Table ID` where ID
 is the unique name used as the label in tex and will be the name of the
 file holding the table.
-Column B should hold the description.
-Column C is an integer value for the number of columns you want to extract.
-Column D is an integer for the number of columns you want to skip
-         not including the first
-Column E can hold an optional Longtable format for the table.
-Column F can hold d a directive for font size default \tiny
+
+* Column B should hold the description.
+* Column C is an integer value for the number of columns you want to extract.
+* Column D is an integer for the number of columns you want to skip
+  not including the first
+* Column E can hold an optional Longtable format for the table.
+* Column F can hold d a directive for font size default \tiny
+
 The next row is assumed to be a title row and will be bold.
 All following rows are output accordingly as table rows.
 If the word Total appears in Column A the row will be bold.
@@ -50,15 +53,16 @@ APPLICATION_NAME = "LSST Tables from Google Sheet"
 
 
 def get_credentials() -> Credentials:
-    """Gets valid user credentials from storage.
+    """Get valid user credentials from storage.
 
     If nothing has been stored, or if the stored credentials are invalid,
     the OAuth2 flow is completed to obtain the new credentials.
 
-    Returns:
+    Returns
+    -------
+    creds : `Credentials`
         Credentials, the obtained credential.
     """
-
     # The file token.pickle stores the user's access and refresh tokens, and is
     # created automatically when the authorization flow completes for the first
     # time.
@@ -80,6 +84,7 @@ def get_credentials() -> Credentials:
 
 
 def complete_and_close_table(tout):
+    """Terminate the latex table and close the output file."""
     if tout:
         print(r"\end{longtable} \normalsize", file=tout)
         tout.close()
@@ -89,6 +94,7 @@ def complete_and_close_table(tout):
 
 
 def outhead(ncols, tout, name, cap, form=None, font=r"\tiny"):
+    """Return the table header."""
     print(r"%s \begin{longtable} {" % font, file=tout, end="")
     c = 1
     if form is None:
@@ -102,19 +108,20 @@ def outhead(ncols, tout, name, cap, form=None, font=r"\tiny"):
     else:
         print(form + "} ", file=tout, end="")
 
-    print(r"\caption{%s \label{tab:%s}}\\ " % (cap, name), file=tout)
+    print(rf"\caption{{{cap} \label{{tab:{name}}}}}\\ ", file=tout)
     print(r"\hline ", file=tout)
     return
 
 
 def outputrow(tout, pre, row, cols, skip):
+    """Return output table row."""
     skipped = 0
     for i in range(cols):
         if i > 0 and skipped < skip:
             skipped = skipped + 1
         else:
             try:
-                print("%s{%s}" % (pre, fixTex(row[i])), end="", file=tout)
+                print(rf"{pre}{{{fixTex(row[i])}}}", end="", file=tout)
             except IndexError:
                 pass
             if i < cols - 1:
@@ -123,6 +130,7 @@ def outputrow(tout, pre, row, cols, skip):
 
 
 def fixTex(text):
+    """Escape special latex characters."""
     specialChars = "_$&%^#"
     for c in specialChars:
         text = text.replace(c, f"\\{c}")
@@ -130,7 +138,10 @@ def fixTex(text):
 
 
 def genTables(values):
-    """
+    """Generate tables.
+
+    Notes
+    -----
     values contains the selected cells from a google sheet
     this routine goes through the rows looking for rows indicating a new table
     Such rows contain Table in the first cell followed by description,
@@ -142,7 +153,6 @@ def genTables(values):
     The next row after the declaration is the first output and it is in bold
     assumed to contain the header.
     """
-
     name = ""
     tout = None
 
@@ -197,12 +207,15 @@ def genTables(values):
 
 
 def get_sheet(sheet_id, range):
-    """
-    grab the google sheet and return data from sheet
-    :String sheetId: GoogelSheet Id like
-        1R1h41KVtN2gKXJAVzd4KLlcF-FnNhpt1G06YhzwuWiY
-    :String sheets: List of TabName!An:Zn  ranges
+    """Grab the google sheet and return data from sheet.
 
+    Parameters
+    ----------
+    sheetId : `str`
+        GoogelSheet Id like
+        ``1R1h41KVtN2gKXJAVzd4KLlcF-FnNhpt1G06YhzwuWiY``
+    sheets : `str`
+        List of ``TabName!An:Zn``  ranges
     """
     creds = get_credentials()
     service = build("sheets", "v4", credentials=creds)
@@ -212,10 +225,8 @@ def get_sheet(sheet_id, range):
 
 
 def main(sheetId, sheets):
+    """Grab the googlesheet and process tables in each sheet.
     """
-    grab the googlesheet and process tables in each sheet
-    """
-
     for r in sheets:
         print(f"Google {sheetId} , Sheet {r}")
         result = get_sheet(sheetId, r)

@@ -143,8 +143,11 @@ anum = 0
 
 
 def get_initials(initials):
-    """Authors db has full name not initials -
-    sometimes we just want intials"""
+    """Get the initials rather than full name.
+
+    Authors db has full name not initials -
+    sometimes we just want initials.
+    """
     names = re.split(r"[ -\.\~]", initials)
     realInitials = []
     for name in names:

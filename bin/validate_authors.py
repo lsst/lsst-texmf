@@ -9,7 +9,7 @@ import yaml
 
 
 def make_all(authordb):
-    """Go through all authors and put in one big file so we can test"""
+    """Go through all authors and put in one big file so we can test."""
     allauthors = []
     for a in authordb["authors"]:
         allauthors.append(a)
@@ -18,6 +18,7 @@ def make_all(authordb):
 
 
 def main():
+    """Run script."""
     dbfile = os.path.normpath(os.path.join(".", "etc", "authordb.yaml"))
 
     with open(dbfile) as fh:

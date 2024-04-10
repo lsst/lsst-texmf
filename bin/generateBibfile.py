@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 
-"""This script generates a bibfile from the Rubin documentation search service,
+"""Script to generate a bibfile from the Rubin documentation search service,
 which is hosted by Algolia.
+
 Note: The front-end for this documentation metadata is https://www.lsst.io. The
 data is supplied by Ook, https://github.com/lsst-sqre/ook.
 """
@@ -18,11 +19,13 @@ from bibtools import BibEntry
 MAXREC = 2000
 
 
-def isCommitee(author):
-    #  for DM-39724 decide if we have a non regular author
-    # for Comittee and Working group papers we need to {} them
-    # This is a way to decide if we have a committee
+def isCommittee(author):
+    """Guess if this is a committee or working group paper.
 
+    For DM-39724 decide if we have a non regular author
+    for Committee and Working group papers we need to {} them
+    This is a way to decide if we have a committee.
+    """
     if "," in author:
         # assume if there is Author, A.N  it is regular
         return False
@@ -79,7 +82,7 @@ def generate_bibfile(outfile, query=""):
         if "series" in d.keys() and d["series"] == "TESTN":
             continue
         bcount = bcount + 1
-        if len(d["authorNames"]) == 1 and isCommitee(d["authorNames"][0]):
+        if len(d["authorNames"]) == 1 and isCommittee(d["authorNames"][0]):
             authors = f"{{{d['authorNames'][0]}}}"
         else:
             authors = " and ".join(d["authorNames"])

@@ -1,6 +1,7 @@
-"""This class represents a bibtex bibentry.
-it can construct from a string and output to the bib file as needed.
-it is comparable hence sortable.
+"""Representation of a bibtex bibentry.
+
+It can construct from a string and output to the bib file as needed.
+It is comparable hence sortable.
 """
 
 import sys
@@ -51,11 +52,12 @@ class BibEntry:
 
     def write_latex_bibentry(self, fd=sys.stdout):
         """Write a bibentry for document info passed.
+
         Parameters
         ----------
-        fd : default stdout : file to write to
+        fd : `typing.IO`, optional
+            File to write to. Defaults stdout.
         """
-
         print(f"{self.type}{{{self.handle},", file=fd)
         print(f"      author = {{{self.author}}},", file=fd)
         print(f'       title = "{{{self.title}}}",', file=fd)

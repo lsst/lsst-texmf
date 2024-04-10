@@ -16,6 +16,7 @@ from pybtex.database.input import bibtex
 
 
 def main():
+    """Run script."""
     parser = argparse.ArgumentParser()
     parser.add_argument("paths", nargs="*", help="Paths to bib files.")
     args = parser.parse_args()
