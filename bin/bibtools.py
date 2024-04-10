@@ -56,15 +56,15 @@ class BibEntry:
         fd : default stdout : file to write to
         """
 
-        print("{}{{{},".format(self.type, self.handle), file=fd)
-        print("      author = {{{}}},".format(self.author), file=fd)
-        print('       title = "{{{}}}",'.format(self.title), file=fd)
-        print('   publisher = "{{{}}}",'.format(self.publisher), file=fd)
-        print("        year = {},".format(self.year), file=fd)
-        print("       month = {},".format(self.month), file=fd)
-        print("      handle = {{{}}},".format(self.handle), file=fd)
-        print("        note = {{{}}},".format(self.note), file=fd)
-        print("         url = {{{}}} }}".format(self.url), file=fd)
+        print(f"{self.type}{{{self.handle},", file=fd)
+        print(f"      author = {{{self.author}}},", file=fd)
+        print(f'       title = "{{{self.title}}}",', file=fd)
+        print(f'   publisher = "{{{self.publisher}}}",', file=fd)
+        print(f"        year = {self.year},", file=fd)
+        print(f"       month = {self.month},", file=fd)
+        print(f"      handle = {{{self.handle}}},", file=fd)
+        print(f"        note = {{{self.note}}},", file=fd)
+        print(f"         url = {{{self.url}}} }}", file=fd)
 
     def __eq__(self, other):
         ret = True

@@ -51,7 +51,7 @@ def find_meta(filename):
     doctypes = ""
     docnums = ""
     meta = filename == "meta.tex"
-    with open(filename, "r") as fd:
+    with open(filename) as fd:
         for line in fd:
             line = line.strip()
             # Latex specific ignore

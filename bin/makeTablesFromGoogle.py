@@ -217,7 +217,7 @@ def main(sheetId, sheets):
     """
 
     for r in sheets:
-        print("Google %s , Sheet %s" % (sheetId, r))
+        print(f"Google {sheetId} , Sheet {r}")
         result = get_sheet(sheetId, r)
         values = result.get("values", [])
         genTables(values)

@@ -14,7 +14,6 @@ file in the etc/authordb.yaml file in this package.
 This program requires the "yaml" package to be installed.
 
 """
-from __future__ import print_function
 
 import argparse
 import os
@@ -90,7 +89,7 @@ if args.mode == "adass":
     buffer_authors = True
     author_super = True
 
-with open(authorfile, "r") as fh:
+with open(authorfile) as fh:
     authors = yaml.safe_load(fh)
 
 # This is the database file with all the generic information
@@ -98,7 +97,7 @@ with open(authorfile, "r") as fh:
 exedir = os.path.abspath(os.path.dirname(__file__))
 dbfile = os.path.normpath(os.path.join(exedir, os.path.pardir, "etc", "authordb.yaml"))
 
-with open(dbfile, "r") as fh:
+with open(dbfile) as fh:
     authordb = yaml.safe_load(fh)
 
 # author db is dict indexed by author id.
@@ -124,7 +123,7 @@ affilset = list()  # it will be a set but I want index() which is supported in l
 
 if WRITE_CSV:
     # Used for arXiv submission
-    names = ["{auth[initials]} {auth[name]}".format(auth=a) for a in authors]
+    names = [f"{a['initials']} {a['name']}" for a in authors]
     print(", ".join(names))
     sys.exit(0)
 
@@ -187,7 +186,7 @@ for anum, authorid in enumerate(authors):
         affilSep = " "
 
     if buffer_affil:
-        orcid = "[{}]".format(affilAuth)
+        orcid = f"[{affilAuth}]"
     else:
         if "orcid" in auth and auth["orcid"]:
             orcid = "[{}]".format(auth["orcid"])
@@ -226,9 +225,9 @@ for anum, authorid in enumerate(authors):
         city = addr[ind]
 
     pAuthorOutput.append(
-        r"\paperauthor{{{}~{}}}{{{}}}{{{}}}{{{}}}{{}}{{{}}}{{{}}}{{{}}}{{{}}}".format(
-            initials, surname, email, orc, tute, city, state, pcode, country
-        )
+        r"\paperauthor"
+        f"{{{initials}~{surname}}}{{{email}}}{{{orc}}}"
+        f"{{{tute}}}{{}}{{{city}}}{{{state}}}{{{pcode}}}{{{country}}}"
     )
 
     if args.mode == "arxiv":
@@ -236,7 +235,7 @@ for anum, authorid in enumerate(authors):
         affilOutput.append(affil_form.format(affil_cmd, len(affilset), tute))
 
     justInitials = get_initials(initials)
-    indexOutput.append(r"%\aindex{{{},{}}}".format(surname, justInitials))
+    indexOutput.append(rf"%\aindex{{{surname},{justInitials}}}")
 
     if buffer_authors:
         authOutput.append(author_form.format(initials, surname, affilAuth))
@@ -248,11 +247,11 @@ for anum, authorid in enumerate(authors):
         else:
             if auth.get("altaffil"):
                 for af in auth["altaffil"]:
-                    print(r"\altaffiliation{{{}}}".format(af))
+                    print(rf"\altaffiliation{{{af}}}")
 
             # The affiliations have to be retrieved via label
             for aflab in auth["affil"]:
-                print(r"\{}{{{}}}".format(affil_cmd, affil[aflab]))
+                print(rf"\{affil_cmd}{{{affil[aflab]}}}")
         print()
 
 if buffer_authors:

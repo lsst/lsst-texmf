@@ -23,12 +23,12 @@ def main():
     # Validate input paths
     for bibpath in args.paths:
         if not os.path.exists(bibpath):
-            print("Cannot find bib for testing: {}".format(bibpath))
+            print(f"Cannot find bib for testing: {bibpath}")
             sys.exit(1)
 
     parser = bibtex.Parser()
     for bibpath in args.paths:
-        print("Parsing {}".format(bibpath))
+        print(f"Parsing {bibpath}")
         parser.parse_file(bibpath)
 
 

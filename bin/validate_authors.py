@@ -20,7 +20,7 @@ def make_all(authordb):
 def main():
     dbfile = os.path.normpath(os.path.join(".", "etc", "authordb.yaml"))
 
-    with open(dbfile, "r") as fh:
+    with open(dbfile) as fh:
         authordb = yaml.safe_load(fh)
 
     make_all(authordb)

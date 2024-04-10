@@ -115,7 +115,7 @@ def read_glossarydef(filename, utags, init=None):
         definitions = init.copy()
 
     lc = 0
-    with open(filename, "r") as fd:
+    with open(filename) as fd:
         reader = csv.reader(fd, delimiter=",", quotechar='"')
         for row in reader:
             if len(row) < 2:  # blank line
@@ -204,7 +204,7 @@ def read_myacronyms(
         # flatten the set to a single entry for each glossarydef
         definitions = {d: options.pop() for d, options in localdefs.items()}
     else:
-        with open(filename, "r") as fd:
+        with open(filename) as fd:
             for line in fd:
                 acr, defn = _parse_line(line)
                 if acr is None:
@@ -213,16 +213,14 @@ def read_myacronyms(
                 if acr in definitions:
                     if defn != definitions[acr]:
                         raise RuntimeError(
-                            "Duplicate definitions of {} differ in {}".format(
-                                acr, filename
-                            )
+                            f"Duplicate definitions of {acr} differ in {filename}"
                         )
                     else:
                         warnings.warn(
                             UserWarning(
-                                "Entry {} exists multiple times"
-                                " with same definition in {}, you may"
-                                " want to try using a tag (-t)".format(acr, filename)
+                                f"Entry {acr} exists multiple times"
+                                f" with same definition in {filename}, you may"
+                                " want to try using a tag (-t)"
                             )
                         )
                 # myacronyms will contains by definition only acronyms
@@ -258,7 +256,7 @@ def read_skip_acronyms(file_name="skipacronyms.txt"):
     if not os.path.exists(file_name):
         return skip
 
-    with open(file_name, "r") as fd:
+    with open(file_name) as fd:
         for line in fd:
             line = line.strip()
             if not line:
@@ -295,7 +293,7 @@ def find_matches_per_line(filename, acronyms, ignore_str=" %"):
     regex = re.compile(pattern)
 
     matches = set()
-    with open(filename, "r") as fd:
+    with open(filename) as fd:
         for line in fd:
             if ignore_str:
                 posn = line.find(ignore_str)
@@ -340,7 +338,7 @@ def find_matches_combo(filename, acronyms, ignore_str=" %"):
     else:
         # Read the content of the file into a single string
         lines = []
-        with open(filename, "r") as fd:
+        with open(filename) as fd:
             for line in fd:
                 if ignore_str:
                     posn = line.find(ignore_str)
@@ -449,13 +447,13 @@ def write_latex_glossary(acronyms, fd=sys.stdout):
         acr2 = escape_for_tex(acr)
         if defn[1] == "A":
             print(
-                "\\newacronym{{{}}} {{{}}} {{{}}}".format(acr, acr2, definition),
+                f"\\newacronym{{{acr}}} {{{acr2}}} {{{definition}}}",
                 file=fd,
             )
         else:
             print(
-                "\\newglossaryentry{{{}}} {{name={{{}}},"
-                " description={{{}}}}}".format(acr, acr2, definition),
+                f"\\newglossaryentry{{{acr}}} {{name={{{acr2}}},"
+                f" description={{{definition}}}}}",
                 file=fd,
             )
 
@@ -575,7 +573,7 @@ def main(
         matches.update(local_matches)
         missing.update(local_missing)
 
-    print("Matched {} acronyms".format(len(matches)), file=sys.stderr)
+    print(f"Matched {len(matches)} acronyms", file=sys.stderr)
 
     # Report missing definitions, taking into account skips
     missing = missing - skip
@@ -587,7 +585,7 @@ def main(
             "(note that the list may not be complete)."
         )
         for m in missing:
-            print("Missing definition: {}".format(m), file=sys.stderr)
+            print(f"Missing definition: {m}", file=sys.stderr)
 
     # Attach definitions to matches
     results = []
@@ -598,14 +596,14 @@ def main(
             options = lsst_definitions[acr]
             if len(options) > 1:
                 print(
-                    "Entry {} exists multiple ({}) times. "
-                    "Including all definitions.".format(acr, len(options)),
+                    f"Entry {acr} exists multiple ({len(options)}) times. "
+                    "Including all definitions.",
                     file=sys.stderr,
                 )
             for a in options:
                 results.append((acr, a))
         else:
-            raise RuntimeError("Internal error handling {}".format(acr))
+            raise RuntimeError(f"Internal error handling {acr}")
 
     acrFile = f"acronyms.{mode}"
     if doGlossary and dotex:  # otherwise its just a table
@@ -645,7 +643,7 @@ def loadGLSlist():
     we can then use those entries to go back and search for them in the
     tex files to see of they have \\gls"""
 
-    with open(glsFile, "r") as fin:
+    with open(glsFile) as fin:
         # match gls entry but only take the first group
         regex = re.compile(r"\\new.+\s*{(.+)}\s*{.+}\s*")
         text = fin.read()
@@ -692,7 +690,7 @@ def updateFile(inFile, GLSlist):
     os.rename(newf, oldf)
     regexmap = make_regexmap(GLSlist)
     try:
-        with open(oldf, "r") as fin, open(newf, "w") as fout:
+        with open(oldf) as fin, open(newf, "w") as fout:
             for line in fin:
                 if not (
                     line.startswith("%")
@@ -736,7 +734,7 @@ def load_translation(locale, filename):
 
     transfile = filename.replace(".csv", f"_{locale}.csv")
     translation = {}
-    with open(transfile, "r") as fd:
+    with open(transfile) as fd:
         reader = csv.reader(fd, delimiter=",", quotechar='"')
         for lc, row in enumerate(reader):
             try:
@@ -764,7 +762,7 @@ def load_translation(locale, filename):
                         )
                     translation[acr] = defn
             except BaseException as ex:
-                print("Error reading {} on line {} - {}".format(transfile, lc, row))
+                print(f"Error reading {transfile} on line {lc} - {row}")
                 raise ex
     return translation
 
@@ -780,7 +778,7 @@ def dump_gls(filename, out_file):
     translate = load_translation("es", filename)
     gfile = "htmlglossary.csv"
     fullgloss = "fullgls.tex"
-    with open(filename, "r") as fd:
+    with open(filename) as fd:
         reader = csv.reader(fd, delimiter=",", quotechar='"')
         with open(out_file, "w") as ofd, open(gfile, "w") as ogfile, open(
             fullgloss, "w"
@@ -836,7 +834,7 @@ def dump_gls(filename, out_file):
                         defn = defn + "\n\n" + escape_for_tex(trans)
                     print(sep.join([acr, defn, tags]) + end, file=ofd)
                 except BaseException as ex:
-                    print("Error reading {} on line {} - {}".format(filename, lc, row))
+                    print(f"Error reading {filename} on line {lc} - {row}")
                     raise ex
             print(r"\end{longtable}", file=ofd)
     return lc
