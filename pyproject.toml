@@ -41,6 +41,7 @@ select = [
     "W",  # pycodestyle
     "D",  # pydocstyle
     "UP",  # pyupgrade
+    "C4",  # list comprehensions
 ]
 
 [tool.ruff.lint.pycodestyle]

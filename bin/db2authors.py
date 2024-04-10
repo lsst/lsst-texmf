@@ -110,7 +110,7 @@ authorinfo = authordb["authors"]
 # dict of all the affiliations, key is a label
 # used in author list
 affil = authordb["affiliations"]
-affilset = list()  # it will be a set but I want index() which is supported in list
+affilset = []  # it will be a set but I want index() which is supported in list
 
 # AASTeX6.1 author files are of the form:
 # \author[ORCID]{Initials~Surname}
@@ -132,10 +132,10 @@ print(
 print(f"%%    python $LSST_TEXMF_DIR/bin/db2authors.py {args} ")
 print()
 
-authOutput = list()
-allAffil = list()
-pAuthorOutput = list()
-indexOutput = list()
+authOutput = []
+allAffil = []
+pAuthorOutput = []
+indexOutput = []
 
 anum = 0
 
@@ -162,7 +162,7 @@ for anum, authorid in enumerate(authors):
     except KeyError as e:
         raise RuntimeError(f"Author ID {authorid} not defined in author database.") from e
 
-    affilOutput = list()
+    affilOutput = []
     affilAuth = ""
     affilSep = ""
     if author_super and anum < len(authors) - 1:
@@ -228,7 +228,7 @@ for anum, authorid in enumerate(authors):
     )
 
     if args.mode == "arxiv":
-        affilOutput = list()  # reset this
+        affilOutput = []  # reset this
         affilOutput.append(affil_form.format(affil_cmd, len(affilset), tute))
 
     justInitials = get_initials(initials)
