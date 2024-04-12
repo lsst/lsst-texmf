@@ -583,7 +583,7 @@ authors:
     orcid: 0000-0001-6661-3043
   beckettg:
     affil:
-    - Edinburgh
+    - EdinburghIA
     altaffil: []
     initials: Geroge
     name: Beckett
@@ -2811,7 +2811,7 @@ authors:
     orcid: null
   nordb:
     affil:
-    - Fermi
+    - Fermilab
     - Chicago
     altaffil: []
     initials: Brian
