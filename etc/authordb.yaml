@@ -215,6 +215,7 @@ affiliations:
   Rider: Department of Chemistry, Biochemistry, and Physics, Rider University, Lawrenceville,
     NJ 08648, USA
   RubinObs: Rubin Observatory Project Office, 950 N.\ Cherry Ave., Tucson, AZ  85719, USA
+  RubinOps: Vera C. Rubin Observatory, 950 N.\ Cherry Ave., Tucson, AZ  85719, USA
   RubinObsC: Vera C. Rubin Observatory, Avenida Juan Cisternas \#1500, La Serena, Chile
   Rutgers: Department of Physics and Astronomy, Rutgers University, 136 Frelinghuysen
     Rd., Piscataway, NJ 08854, USA
@@ -677,7 +678,7 @@ authors:
     orcid: null
   blumrd:
     affil:
-    - RubinObs
+    - RubinOps
     - NOIRLab
     altaffil: []
     initials: Robert D.
@@ -1546,6 +1547,7 @@ authors:
   gillr:
     affil:
     - RubinObsC
+    - NOIRLab
     altaffil: []
     initials: Ranpal K.
     name: Gill
@@ -3011,7 +3013,8 @@ authors:
     orcid: null
   petryce:
     affil:
-    - RubinObs
+    - RubinOps
+    - NOIRLab
     altaffil: []
     initials: Cathy E.
     name: Petry
