@@ -1547,8 +1547,7 @@ authors:
     orcid: null
   gillr:
     affil:
-    - RubinObsC
-    - NOIRLab
+    - RubinOpsC
     altaffil: []
     initials: Ranpal K.
     name: Gill
