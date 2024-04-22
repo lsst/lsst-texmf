@@ -93,8 +93,8 @@ affiliations:
     250, Pasadena, CA 91107, USA
   GMU: School of Physics, Astronomy and Computational Sciences, George Mason University,
     4400 University Drive, Fairfax, VA 22030, USA
-  GeminiN: Gemini Observatory, Northern Operations Center, 670 North A'ohoku Place,
-    Hilo, HI 96720, USA
+  GeminiN: International Gemini Observatory/NSF NOIRLab, 670 N.\ A’ohoku Place, Hilo, HI 96720, USA
+  GeminiS: International Gemini Observatory/NSF NOIRLab, Casilla 603, La Serena, Chile
   Goddard: Astrophysics Science Division, NASA Goddard Space Flight Center, Mail Code 661, Greenbelt, MD 20771, US
   Google: Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA
   Grenoble-LPSC: Laboratoire de Physique Subatomique et de Cosmologie, Universit\'{e}
@@ -166,7 +166,8 @@ affiliations:
   NCNRP: National Centre of Nuclear Research, Andrzeja So\l{}tana 7, 05-400 Otwock, Poland
   NCSA: NCSA, University of Illinois at Urbana-Champaign, 1205 W.\ Clark St., Urbana,
     IL 61801, USA
-  NOIRLab: NSF's National Optical-Infrared Astronomy Research Laboratory, 950 N.\ Cherry Ave., Tucson, AZ 85719, USA
+  NOIRLab: NSF NOIRLab, 950 N.\ Cherry Ave., Tucson, AZ 85719, USA
+  NOIRLabC: NSF NOIRLab, Casilla 603, La Serena, Chile
   NovaGorica: Center for Astrophysics and Cosmology, University of Nova Gorica, Vipavska 13
     5000 Nova Gorica, Slovenia
   NRAO: National Radio Astronomy Observstory, 520 Edgemont Road, Charlottesville, VA 22903, USA
@@ -214,9 +215,10 @@ affiliations:
     Box 9010, 6500 GL Nijmegen, The Netherlands
   Rider: Department of Chemistry, Biochemistry, and Physics, Rider University, Lawrenceville,
     NJ 08648, USA
-  RubinObs: Rubin Observatory Project Office, 950 N.\ Cherry Ave., Tucson, AZ  85719, USA
-  RubinOps: Vera C. Rubin Observatory, 950 N.\ Cherry Ave., Tucson, AZ  85719, USA
-  RubinObsC: Vera C. Rubin Observatory, Avenida Juan Cisternas \#1500, La Serena, Chile
+  RubinObs: Vera C.\ Rubin Observatory Project Office, 950 N.\ Cherry Ave., Tucson, AZ  85719, USA
+  RubinObsC: Vera C.\ Rubin Observatory, Avenida Juan Cisternas \#1500, La Serena, Chile
+  RubinOps: Vera C.\ Rubin Observatory/NSF NOIRLab, 950 N.\ Cherry Ave., Tucson, AZ  85719, USA
+  RubinOpsC: Vera C.\ Rubin Observatory/NSF NOIRLab, Casilla 603, La Serena, Chile
   Rutgers: Department of Physics and Astronomy, Rutgers University, 136 Frelinghuysen
     Rd., Piscataway, NJ 08854, USA
   Saclay: Universit\'e Paris-Saclay, Universit\'e Paris Cit\'e, CEA, CNRS, AIM, 91191, Gif-sur-Yvette, France
@@ -247,7 +249,7 @@ affiliations:
   UA-CompSci: Department of Computer Science, The University of Arizona, 1040 E.\
     4th St., Tucson, AZ 85719, USA
   UAM: Universidad Aut\'onoma de Madrid, Madrid, Madrid, ES
-  UA-Astro: University of Arizona, Department of Astronomy and Steward Observatory, 933 N Cherry Ave, Tucson, AZ 85721, USA
+  UA-Astro: University of Arizona, Department of Astronomy and Steward Observatory, 933 N.\ Cherry Ave, Tucson, AZ 85721, USA
   UA-Physics: Department of Physics, University of Arizona, 1118 E.\ Fourth Street,
     Tucson, AZ 85721, USA
   UA-Steward: Steward Observatory, The University of Arizona, 933 N.\ Cherry Ave.,
@@ -679,7 +681,6 @@ authors:
   blumrd:
     affil:
     - RubinOps
-    - NOIRLab
     altaffil: []
     initials: Robert D.
     name: Blum
@@ -1546,8 +1547,7 @@ authors:
     orcid: null
   gillr:
     affil:
-    - RubinObsC
-    - NOIRLab
+    - RubinOpsC
     altaffil: []
     initials: Ranpal K.
     name: Gill
@@ -1881,7 +1881,7 @@ authors:
     orcid: null
   irvingd:
     affil:
-    - RubinObs
+    - RubinOps
     altaffil: []
     initials: David H.
     name: Irving
@@ -3014,7 +3014,6 @@ authors:
   petryce:
     affil:
     - RubinOps
-    - NOIRLab
     altaffil: []
     initials: Cathy E.
     name: Petry
