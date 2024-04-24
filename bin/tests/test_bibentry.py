@@ -2,7 +2,7 @@ import re
 import unittest
 
 import pybtex.database
-from bibtools import BibEntry
+from bibtools import BibDict, BibEntry
 
 TESTENTRY = """@Misc{DMTN-005,
       author = {Testy McTest},
@@ -79,6 +79,26 @@ class TestBib(unittest.TestCase):
         )
         self.assertEqual(bels, bel)
         self.assertFalse(bel == beg)
+
+    def test_bibdict(self):
+        """Test that BibDict works as expected."""
+        bd = BibDict()
+        bd["dmtn-234"] = "a"
+
+        bd["DMTN-234"] = "b"
+        self.assertEqual(bd["DMtn-234"], "b")
+        self.assertIn("dmTN-234", bd)
+
+        bd["Agreement-51"] = "x"
+        self.assertEqual(len(bd), 2)
+        self.assertIn("agrEEMent-51", bd)
+
+        export = {k: v for k, v in bd.items()}
+        self.assertEqual(export["Agreement-51"], "x")
+        self.assertEqual(export["DMTN-234"], "b")
+
+        del bd["AgReeMeNt-51"]
+        self.assertEqual(len(bd), 1)
 
 
 if __name__ == "__main__":
