@@ -124,6 +124,13 @@ def generate_bibfile(query: str = "", external: list[str] | None = None) -> str:
 
 """
     result += bibdata.to_string("bibtex")
+
+    # pybtex is currently broken such that it escapes escapes:
+    # https://bitbucket.org/pybtex-devs/pybtex/issues/153/backslashes-accumulate-when-saving-loading
+    # Remove all the escaped \ characters (and assume that no titles have
+    # them).
+    result = result.replace("\\\\", "\\")
+
     return result
 
 
