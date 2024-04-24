@@ -1,7 +1,7 @@
 import re
 import unittest
-from io import StringIO
 
+import pybtex.database
 from bibtools import BibEntry
 
 TESTENTRY = """@Misc{DMTN-005,
@@ -11,7 +11,7 @@ TESTENTRY = """@Misc{DMTN-005,
         year = 2001,
        month = nov,
       handle = {DMTN-005},
-        note = {NO note},
+        note = "{NO note}",
          url = {http://nolplace.com} }"""
 
 
@@ -23,24 +23,25 @@ def make_comparable(instr):
 class TestBib(unittest.TestCase):
     """Test bib entries."""
 
-    be = BibEntry(
-        "Testy McTest",
-        "A great title",
-        "nov",
-        "DMTN-005",
-        2001,
-        "NO note",
-        "http://nolplace.com",
-        "test pub",
-    )
+    def setUp(self):
+        self.be = BibEntry(
+            "Testy McTest",
+            "A great title",
+            "nov",
+            "DMTN-005",
+            2001,
+            "NO note",
+            "http://nolplace.com",
+            "test pub",
+        )
 
     def testConstructPrint(self):
-        bestr = ""
-        file = StringIO(bestr)
-        TestBib.be.write_latex_bibentry(file)
-        bestr = make_comparable(file.getvalue())
-        ctest = make_comparable(TESTENTRY)
-        self.assertEqual(bestr, ctest)
+        ref_bib = pybtex.database.BibliographyData.from_string(TESTENTRY, "bibtex")
+        ref_entry = ref_bib.to_string("bibtex")
+
+        entry = str(self.be)
+
+        self.assertEqual(entry, ref_entry)
 
     def testCompare(self):
         bel = BibEntry(
@@ -63,8 +64,8 @@ class TestBib(unittest.TestCase):
         )
 
         #  why does this fail self.assertGreater(beg,TestBib.be)
-        self.assertTrue(beg.handle > TestBib.be.handle)
-        self.assertTrue(bel.handle < TestBib.be.handle)
+        self.assertTrue(beg.handle > self.be.handle)
+        self.assertTrue(bel.handle < self.be.handle)
         self.assertEqual(bel, bel)
         # same entry bunch of spaces..
         bels = BibEntry(
