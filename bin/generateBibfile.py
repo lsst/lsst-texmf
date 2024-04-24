@@ -128,6 +128,7 @@ def generate_bibfile(query: str = "", external: list[str] | None = None) -> str:
 
 
 def create_bibentries(res) -> BibliographyData:
+    """Create the bibtex entries."""
     bcount = 0
     entries: dict[str, pybtex.database.Entry] = {}
     for count, d in enumerate(res["hits"]):

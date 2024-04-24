@@ -93,7 +93,7 @@ class TestBib(unittest.TestCase):
         self.assertEqual(len(bd), 2)
         self.assertIn("agrEEMent-51", bd)
 
-        export = {k: v for k, v in bd.items()}
+        export = dict(bd.items())
         self.assertEqual(export["Agreement-51"], "x")
         self.assertEqual(export["DMTN-234"], "b")
 
