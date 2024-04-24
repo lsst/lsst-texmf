@@ -6,6 +6,8 @@ It is comparable hence sortable.
 
 import sys
 
+import pybtex.database
+
 TN_SERIES = {
     "DMTN": "Data Management Technical Note",
     "RTN": "Technical Note",
@@ -48,7 +50,15 @@ class BibEntry:
         if "" == note and handle:
             prefix, _ = self.handle.split("-", 1)
             series = TN_SERIES.get(prefix, "")
-            self.note = f"{{Vera C. Rubin Observatory {series} {self.handle}}}"
+            self.note = f"Vera C. Rubin Observatory {series} {self.handle}"
+
+    def get_pybtex(self) -> pybtex.database.Entry:
+        """Retrieve the entry in standard pybtex form."""
+        return pybtex.database.Entry.from_string(self._form_bib_entry_string(), "bibtex")
+
+    def __str__(self) -> str:
+        """Return entry as bibtex string."""
+        return self.get_pybtex().to_string("bibtex")
 
     def write_latex_bibentry(self, fd=sys.stdout):
         """Write a bibentry for document info passed.
@@ -58,15 +68,24 @@ class BibEntry:
         fd : `typing.IO`, optional
             File to write to. Defaults stdout.
         """
-        print(f"{self.type}{{{self.handle},", file=fd)
-        print(f"      author = {{{self.author}}},", file=fd)
-        print(f'       title = "{{{self.title}}}",', file=fd)
-        print(f'   publisher = "{{{self.publisher}}}",', file=fd)
-        print(f"        year = {self.year},", file=fd)
-        print(f"       month = {self.month},", file=fd)
-        print(f"      handle = {{{self.handle}}},", file=fd)
-        print(f"        note = {{{self.note}}},", file=fd)
-        print(f"         url = {{{self.url}}} }}", file=fd)
+        print(str(self), file=fd)
+
+    def _form_bib_entry_string(self) -> str:
+        """Return the internal string form of the bib entry.
+
+        This is not yet normalized by pybtex.
+        """
+        return f"""{self.type}{{{self.handle},
+            author = {{{self.author}}},
+             title = "{{{self.title}}}",
+         publisher = "{{{self.publisher}}}",
+              year = {self.year},
+             month = {self.month},
+            handle = {{{self.handle}}},
+              note = "{{{self.note}}}",
+              url = {{{self.url}}}
+        }}
+        """
 
     def __eq__(self, other):
         ret = True
