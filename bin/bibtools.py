@@ -4,6 +4,7 @@ It can construct from a string and output to the bib file as needed.
 It is comparable hence sortable.
 """
 
+import collections.abc
 import sys
 
 import pybtex.database
@@ -116,3 +117,36 @@ class BibEntry:
 
     def __ge__(self, other):
         return self.handle >= other.handle
+
+
+class BibDict(collections.abc.MutableMapping):
+    """BibTeX compatible dictionary.
+
+    Keys are case insensitive but the original case is preserved. This allows
+    DMTN-056 and dmtn-056 to be treated as identical keys without changing
+    the key that was originally given.
+
+    Does not support constructor parameters.
+    """
+
+    def __init__(self):
+        self._dict = {}
+
+    def __contains__(self, key):
+        return key.lower() in self._dict
+
+    def __getitem__(self, key):
+        return self._dict[key.lower()]["val"]
+
+    def __setitem__(self, key, value):
+        self._dict[key.lower()] = {"key": key, "val": value}
+
+    def __delitem__(self, key):
+        del self._dict[key.lower()]
+
+    def __len__(self):
+        return len(self._dict)
+
+    def __iter__(self):
+        for kv in self._dict.values():
+            yield kv["key"]
