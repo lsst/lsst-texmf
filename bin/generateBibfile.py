@@ -9,7 +9,7 @@ data is supplied by Ook, https://github.com/lsst-sqre/ook.
 
 import argparse
 import calendar
-from datetime import datetime
+from datetime import UTC, datetime
 
 import latexcodec  # noqa provides the latex+latin codec
 import pybtex.database
@@ -147,7 +147,7 @@ def create_bibentries(res) -> BibliographyData:
         else:
             authors = " and ".join(d["authorNames"])
         dt = d["sourceUpdateTimestamp"]
-        date = datetime.fromtimestamp(dt)
+        date = datetime.fromtimestamp(dt, UTC)
         month = calendar.month_abbr[date.month].lower()
         if "baseUrl" in d:
             url = d["baseUrl"]

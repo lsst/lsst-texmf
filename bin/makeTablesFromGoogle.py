@@ -95,7 +95,7 @@ def complete_and_close_table(tout):
 
 def outhead(ncols, tout, name, cap, form=None, font=r"\tiny"):
     """Return the table header."""
-    print(r"%s \begin{longtable} {" % font, file=tout, end="")
+    print(rf"{font} \begin{{longtable}} {{", file=tout, end="")
     c = 1
     if form is None:
         print(" |p{0.22\\textwidth} ", file=tout, end="")
