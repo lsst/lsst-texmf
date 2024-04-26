@@ -234,6 +234,8 @@ affiliations:
     Accelerator Laboratory, Stanford University, Stanford, CA 94025, USA
   Southampton: University of Southampton, Hartley Library B12, University Rd,
     Highfield, Southampton SO17 1BJ, United Kingdom
+  Stanford-AeroAstro: Department of Aeronautics and Astronautics, Stanford University, 
+    Stanford, CA 94305, USA
   STScI: Space Telescope Science Institute, 3700 San Martin Drive, Baltimore, MD 21218,
     USA
   SVC: Saint Vincent College, Department of Physics, 300 Fraser Purchase Road, Latrobe,
@@ -2560,6 +2562,7 @@ authors:
     orcid: null
   megiasg:
     affil:
+    - Stanford-AeroAstro
     - SLAC-Kavli
     altaffil: []
     initials: Guillem
