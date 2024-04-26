@@ -377,6 +377,7 @@ FAQ,Frequently Asked Question,Gen,,,A
 FAR,Federal Acquisition Regulations,TS,Document-11992,,A
 FBOT,Fast blue optical transient,Sci,,,A
 FBOTs,Fast blue optical transients,Sci,,,A
+FBS,Feature-Based Scheduler,Sims,,,A
 FDP,federated data product,TS,Document-11990,,A
 FDR,Final Design Review,LSST DM,,,A
 FEA,Finite Element Analysis,OPS,,,A
@@ -835,6 +836,7 @@ POC,People Of Color,DEI,,,A
 POCIT,People Of Color In Tech,DEI,,,A
 POE,POly Esters,OPS,,,A
 POI,Point Of Interest,OPS,,,A
+POM,Program Operations Manager,OPS,,,A
 POP,Project Operating Plan,LSST OPS,,,A
 POSIX,Portable Operating System Interface,Gen,,,A
 PPDB,Prompt Products DataBase,DM,,,A
