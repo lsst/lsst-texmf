@@ -129,6 +129,7 @@ affiliations:
     91109, USA
   JPMORGAN: J.P. Morgan, New York, NY, USA
   JSI: Joint Space-Science Institute, University of Maryland, College Park, MD 20742, USA
+  JSickCodes: J.Sick Codes Inc., Penetanguishene, Ontario, Canada
   KECK: W. M. Keck Observatory, 65-1120 Mamalahoa Hwy.  Kamuela, HI 96743, USA
   KIPAC: Kavli Institute for Particle Astrophysics and Cosmology, SLAC
   KLOA: Key Laboratory of Optical Astronomy, National Astronomical Observatories,
@@ -3561,6 +3562,7 @@ authors:
     orcid: null
   sickj:
     affil:
+    - JSickCodes
     - RubinObs
     altaffil: []
     initials: Jonathan
