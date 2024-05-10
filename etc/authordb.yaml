@@ -19,6 +19,7 @@ affiliations:
     CA 94720, USA
   Berkeley-Space: Space Sciences Lab, University of California, 7 Gauss Way, Berkeley,
     CA 94720-7450, USA
+  Bologna-Phys: Department of Physics and Astronomy (DIFA), University of Bologna, Via P. Gobetti 93/2, 40129, Bologna, Italy
   Burwood: Burwood Group, 125 South Wacker Drive Suite 2950, Chicago, IL 60606, USA
   CADC: Canadian Astronomy Data Centre, 5071 West Saanich Road, Victoria, British Columbia V9E 2E7, Canada
   Cardiff: School of Physics and Astronomy, Cardiff University, The Parade, Cardiff, CF24 3AA, UK
@@ -119,9 +120,12 @@ affiliations:
     St., Urbana, IL  61801, USA
   Illinois-astro: University of Illinois, Department of Astronomy, 1110 W.\ Green
     St., Urbana, IL  61801, USA
+  INAF-IASF-Pa: INAF Istituto di Astrofisica Spaziale e Fisica Cosmica di Palermo, Via Ugo la Malfa 153, 90146, Palermo, Italy
+  INAF-OAC: INAF Osservatorio Astronomico di Capodimonte, Salita Moiariello 16, 80131, Napoli, Italy
+  INAF-OAS: INAF Osservatorio di Astrofisica e Scienza dello Spazio Bologna, Via P. Gobetti 93/3, 40129, Bologna, Italy
+  INAF-OAT: INAF Osservatorio Astronomico di Trieste, Via Giovan Battista Tiepolo 11, 34143, Trieste, Italy
+  INAF-Palermo: INAF - Osservatorio Astronomico di Palermo, Piazza del Parlamento 1 90134, Palermo, Italy
   INAF-Rome: Istituto Nazionale di Astrofisica, Viale del Parco Mellini 84, 00136 Rome, Italy
-  INAF-Palermo: INAF - Osservatorio Astronomico di Palermo, Piazza del Parlamento 1 90134,
-    Palermo, Italy
   IUPUI: IUPUI, 535 W. Michigan Street, IT 400, Indianapolis, IN, USA
   JHU: Department of Physics and Astronomy, The John Hopkins University, 3701 San
     Martin Drive, Baltimore, MD 21218, USA
@@ -786,6 +790,13 @@ authors:
     initials: Katelyn
     name: Breivik
     orcid: 0000-0001-5228-6598
+  bresciam:
+    affil:
+    - INAF-OAC
+    altaffil: []
+    initials: Massimo
+    name: Brescia
+    orcid: 0000-0001-9506-5680
   brownme:
     affil:
     - DGPS
@@ -870,6 +881,13 @@ authors:
     initials: Andresa
     name: Rodrigues de Campos
     orcid: 0000-0002-5124-0771
+  canestrarir:
+    affil:
+    - INAF-IASF-Pa
+    altaffil: []
+    initials: Rodolfo
+    name: Canestrari
+    orcid: 0000-0003-4591-7763
   cantiellom:
     affil:
     - CCA
@@ -1576,6 +1594,13 @@ authors:
     initials: D. Kirk
     name: Gilmore
     orcid: null
+  giroe:
+    affil:
+    - INAF-OAT
+    altaffil: []
+    initials: Enrico
+    name: Giro
+    orcid: 0000-0001-7301-8285
   glanzmant:
     affil:
     - SLAC
@@ -3291,6 +3316,13 @@ authors:
     initials: William
     name: Roby
     orcid: null
+  rodeghierog:
+    affil:
+    - INAF-OAS
+    altaffil: []
+    initials: Gabriele
+    name: Rodeghiero
+    orcid: 0000-0002-3469-9863
   roodmana:
     affil:
     - SLAC
@@ -3298,6 +3330,13 @@ authors:
     initials: Aaron
     name: Roodman
     orcid: 0000-0001-5326-3486
+  rosignolil:
+    affil:
+    - Bologna-Phys
+    altaffil: []
+    initials: Luca
+    name: Rosignoli
+    orcid: 0000-0002-7778-2165
   rosingw:
     affil:
     - CUMBRES
