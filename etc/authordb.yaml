@@ -1120,6 +1120,13 @@ authors:
     initials: Wei
     name: Cui
     orcid: 0000-0002-6324-5772
+  cusanof:
+    affil:
+    - INAF-OAS
+    altaffil: []
+    initials: Felice
+    name: Cusano
+    orcid: 0000-0003-2910-6565
   cutrir:
     affil:
     - IPAC
