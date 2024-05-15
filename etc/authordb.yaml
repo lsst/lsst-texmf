@@ -232,6 +232,7 @@ affiliations:
   Santiago-Millenium: Millennium Institute of Astrophysics, Nuncio Monse{\~{n}}or S{\'{o}}tero
     Sanz 100, Of 104, Providencia, Santiago, Chile
   SAO: Smithsonian Astrophysical Observatory, 60 Garden St., Cambridge MA 02138, USA
+  SBU: Department of Physics and Astronomy, Stony Brook University, Stony Brook, NY 11794, USA
   SETI: SETI Institute, 339 Bernardo Avenue, Suite 200, Mountain View, CA 94043, USA
   SLAC: SLAC National Accelerator Laboratory,  2575 Sand Hill Rd., Menlo Park, CA
     94025, USA
@@ -335,6 +336,13 @@ authors:
     initials: Christina L.
     name: Adair
     orcid: null
+  adarip:
+    affil:
+    - SBU
+    altaffil: []
+    initials: Prakruth
+    name: Adari
+    orcid: 0000-0001-9431-3806
   ahumadat:
     affil:
     - Maryland
@@ -2358,6 +2366,13 @@ authors:
     initials: Laurent
     name: Le Guillou
     orcid: null
+  levineb:
+    affil:
+    - SBU
+    altaffil: []
+    initials: Ben
+    name: Levine
+    orcid: null
   levined:
     affil:
     - IPAC
@@ -2399,6 +2414,13 @@ authors:
     altaffil: []
     initials: Yee-Ting
     name: Li
+    orcid: null
+  lindena:
+    affil:
+    - SBU
+    altaffil: []
+    initials: Anja von der
+    name: Linden
     orcid: null
   lintottcj:
     affil:
