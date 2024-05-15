@@ -459,6 +459,7 @@ GMU,George Mason University,TS,Document-11944,,A
 GNU,GNU's Not Unix! An operating system and an extensive collection of free computer software,OPS DM,,,A
 GOA,Government Office of Accounting,Gen,,,A
 GP,Gaussian Process,Sci,,,A
+GP,Galactic Plane,LSST,,,A
 GPFS,General Parallel File System (now IBM Spectrum Scale),Gen,,,A
 GPL,GNU Public License,Gen,,,A
 GPP,Gemini Program Platform,Sci,,,A
@@ -720,6 +721,7 @@ NEA,Near-Earth Asteroid,Gen,,,A
 NED,NASA/IPAC Extragalactic Database,Gen,,,A
 NEO,Near-Earth Object,Gen,,,A
 NERSC,National Energy Research Scientific Computing Center,OPS,,,A
+NES,North Ecliptic Spur,Sci,,,A
 NET,Network Engineering Team,LSST DM,,,A
 NFPA,National Fire Protection Association,OPS,,,A
 NFS,Network File System,Gen,,,A
@@ -952,6 +954,7 @@ SCADA,Supervisory Control And Data Acquisition,TS,,,A
 SCIDAR,Scintillation Detection And Ranging,TS,,,A
 SCOC,Survey Cadence Optimization Committee,OPS,,,A
 SCOSC,Survey Cadence Optimization Strategy Committee,OPS,,,A
+SCP,South Celestial Pool,Sci,,,A
 SCS,Simple Cone Search (IVOA standard),VO,,,A
 SDQA,Science Data Quality Assessment,DM LSST,,,A
 SDS,Science array Data acquisition Subsystem,TS,,,A
