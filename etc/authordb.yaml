@@ -241,6 +241,7 @@ affiliations:
     Highfield, Southampton SO17 1BJ, United Kingdom
   Stanford-AeroAstro: Department of Aeronautics and Astronautics, Stanford University,
     Stanford, CA 94305, USA
+  StonyBrookU: Department of Physics and Astronomy, Stony Brook University, Stony Brook, NY 11794, USA
   STScI: Space Telescope Science Institute, 3700 San Martin Drive, Baltimore, MD 21218,
     USA
   SVC: Saint Vincent College, Department of Physics, 300 Fraser Purchase Road, Latrobe,
@@ -335,6 +336,13 @@ authors:
     initials: Christina L.
     name: Adair
     orcid: null
+  adarip:
+    affil:
+    - StonyBrookU
+    altaffil: []
+    initials: Prakruth
+    name: Adari
+    orcid: 0000-0001-9431-3806
   ahumadat:
     affil:
     - Maryland
@@ -2358,6 +2366,13 @@ authors:
     initials: Laurent
     name: Le Guillou
     orcid: null
+  levineb:
+    affil:
+    - StonyBrookU
+    altaffil: []
+    initials: Ben
+    name: Levine
+    orcid: null
   levined:
     affil:
     - IPAC
@@ -2399,6 +2414,13 @@ authors:
     altaffil: []
     initials: Yee-Ting
     name: Li
+    orcid: null
+  lindena:
+    affil:
+    - StonyBrookU
+    altaffil: []
+    initials: Anja von der
+    name: Linden
     orcid: null
   lintottcj:
     affil:
