@@ -384,6 +384,7 @@ FEA,Análisis de elementos finitos,
 FEC,Jaula frontal,
 FEE,Electrónica frontal,
 FELTs,Transitorios luminosos de evolución rápida,
+FES,Sistema de intercambio de filtros,CAM
 FFRDC,Centro de Investigación y Desarrollo Financiado con Fondos Federales,
 FFT,Transformada rápida de Fourier,
 FGCM,Modelo global directo de calibración,
