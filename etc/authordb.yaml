@@ -163,6 +163,7 @@ affiliations:
   Maryland: University of Maryland, College Park, MD 20742
   Maryland-astro: Department of Astronomy, University of Maryland, College Park, MD 20742, USA
   MMTO: MMT Observatory, 1540 E. Second Street, University of Arizona, Tucson, AZ 85721-0064, USA
+  Napoli: Department of Physics "E. Pancini", University Federico II of Napoli, Via Cintia, 80126 Napoli, Italy
   NAOChina: National Astronomical Observatories, Chinese Academy of Sciences, A20
     Datun Rd, Chaoyang District, Beijing 100012, People's Republic of China
   NASA: National Aeronautics and Space Administration, Goddard Space Flight Center, Greenbelt, Maryland, USA
@@ -800,7 +801,7 @@ authors:
     orcid: 0000-0001-5228-6598
   bresciam:
     affil:
-    - INAF-OAC
+    - Napoli
     altaffil: []
     initials: Massimo
     name: Brescia
@@ -2091,6 +2092,14 @@ authors:
     initials: Bryce
     name: Kalmbach
     orcid: 0000-0002-6825-5283
+  kangy:
+    affil:
+    - SLAC-Kavli
+    - RubinObsC
+    altaffil: []
+    initials: Yijung
+    name: Kang
+    orcid: 0000-0002-5261-5803
   kannawadia:
     affil:
     - Princeton-Astro
@@ -2479,6 +2488,13 @@ authors:
     initials: Nate B.
     name: Lust
     orcid: 0000-0002-4122-9384
+  lutfim:
+    affil:
+    - RubinObs
+    altaffil: []
+    initials: Mostafa
+    name: Lutfi
+    orcid: 0000-0003-2866-3802
   macarthurla:
     affil:
     - Princeton-Astro
@@ -3020,6 +3036,13 @@ authors:
     initials: John K.
     name: Parejko
     orcid: null
+  parkhy:
+    affil:
+    - Duke
+    altaffil: []
+    initials: Hye Yun
+    name: Park
+    orcid: 0000-0002-7295-2743
   parsonsjb:
     affil:
     - NCSA
@@ -3365,7 +3388,7 @@ authors:
     altaffil: []
     initials: Luca
     name: Rosignoli
-    orcid: 0000-0002-7778-2165
+    orcid: 0000-0002-0327-5929
   rosingw:
     affil:
     - CUMBRES
@@ -3466,7 +3489,7 @@ authors:
     initials: \DJ{}or\dj{}e V.
     name: Savi\'c
     orcid: 0000-0003-0880-8963
-  assolasb:
+  sassolasb:
     affil:
     - Lyon-LMA-IN2P3
     altaffil: []
@@ -3628,6 +3651,13 @@ authors:
     initials: Ian
     name: Shipsey
     orcid: null
+  shugarta:
+    affil:
+    - RubinObsC
+    altaffil: []
+    initials: Alysha
+    name: Shugart
+    orcid: 0009-0000-6778-7168
   sickj:
     affil:
     - JSickCodes
@@ -3700,6 +3730,13 @@ authors:
     initials: Christine
     name: Soldahl
     orcid: null
+  sonaniskarm:
+    affil:
+    - RubinObs
+    altaffil: []
+    initials: Malhar
+    name: Sonaniskar
+    orcid: 0000-0002-4573-3027
   speckd:
     affil:
     - Burwood
