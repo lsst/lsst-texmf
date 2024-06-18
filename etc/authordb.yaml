@@ -1094,6 +1094,13 @@ authors:
     initials: Luis
     name: Corral
     orcid: null
+  cortes:
+    afill:
+    - NOIRLabC
+    altaffil: []
+    initials: Patricio
+    name: Cortes
+    orcid: null
   coveykr:
     affil:
     - WestWashington
