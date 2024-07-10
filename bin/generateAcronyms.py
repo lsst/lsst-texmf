@@ -812,7 +812,7 @@ def dump_gls(filename, out_file):
                         print(",".join([acr, f'"{trans}"', f"{tags}"]), file=ogfile)
                         defn = defn + "\n\n" + escape_for_tex(trans)
                     else:
-                        print(f"Missing traslation for:{acr}:{defn}")
+                        print(f"Missing translation for: {acr}:{defn}")
                     print(sep.join([acr, defn, tags]) + end, file=ofd)
                 except BaseException as ex:
                     print(f"Error reading {filename} on line {lc} - {row}")
