@@ -16,11 +16,13 @@ AAVSO,American Association of Variable Star Observers,TS,Document-11922,,A
 ABI,Application Binary Interface,Gen,,,A
 ABOD,AURA Board of Directors,Gen,,,A
 AC,Alternating Current,Gen,,,A
+AC,Access Control,DM,,,A
 ACCS,Auxiliary Camera Control System,LSST DM,,,A
 ACGIH,American Conference of Governmental Industrial Hygienists,Gen,,,A
 ACI,Application Centric Infrastructure,IT,,,A
 ACID,"Atomicity, Consistency, Isolation, and Durability",DM,,,A
 ACM,Award Cash Management Service,OPS,,,A
+ACP,Access Control Plan,OPS,,,A
 ACWP,Actual Cost of Work Performed,Gen,,,A
 AD,Associate Director,OPS,,,A
 ADAM,"Asteroid Discovery, Analysis, and Mapping",Sci,,,A
@@ -78,12 +80,14 @@ ASP,Astronomical Society of the Pacific,TS,Document-11934,,A
 AST,NSF Division of Astronomical Sciences,TS,Document-11935,,A
 ASTRON,Netherlands Institute for Radio Astronomy,Gen,,,A
 AT,Auxiliary Telescope,TS,,,A
+AT,Awareness and Training,IT,,,A
 ATCA,Advanced Telecommunications Architecture,TS,Document-11936,,A
 ATCS,Auxiliary Telescope Control System,TSSW,,,A
 ATLAS,A Toroidal LHC Apparatus,Gen,,,A
 ATLAS,Asteroid Terrestrial-impact Last Alert System,Sci,,,A
 ATM,Adaptavist Test Management,LSST DM,,,A
 AU,deprecated acronym for astronomical unit; use au instead,Gen,,,A
+AU,Audit and Accountability,IT,,,A
 au,astronomical unit,Gen,,,A
 AURA,Association of Universities for Research in Astronomy,Gen,,,A
 Avro,is a row-oriented remote procedure call and data serialization framework developed within Apache's Hadoop project,OPS,,,A
@@ -121,6 +125,8 @@ BSR,Business Systems Review,OPS,,,A
 BTS,Base (La Serena) Test Stand,LSST,,,A
 BTU,British Thermal Unit,OPS,,,A
 CA,Control (or Cost) Account,Gen,,,A
+CA,Certificate Authority,DM,,,A
+CA,"Certification, Accreditation, and Security Assessments",IT,,,A
 CAA,Committee on Astronomy and Astrophysics (NSF),Gen,,,A
 CADC,Canadian Astronomy Data Centre,Gen,,,A
 CALTECH,California Institute of Technology,Gen,,,A
@@ -196,6 +202,7 @@ COTS,Commercial-Off-The-Shelf,Gen,,,A
 COVID,COrona VIrus Disease,Gen,,,A
 COVID19,COrona VIrus Disease 2019,Gen,,,A
 CP,catalog prices,TS,Document-12022,,A
+CP,Contingency Planning,DM,,,A
 CPI,Cost Performance Index,Gen,,,A
 CPP,Calibration Production Processing,LSST DM,,,A
 CPR,Cardiopulmonary resuscitation,Gen,,,A
@@ -506,6 +513,7 @@ HVAC,"Heating, Ventilation, and Air Conditioning",OPS,,,A
 HW,HardWare,Gen,,,A
 I&T,Integration and Test,Gen,,,A
 IaC,Infrastructure as Code,IT,,,A
+IA,Identification and Authentication,IT,,,A
 IAM,Identity and Access Management,IT,,,A
 IaS,Infrastructure as a Service,IT,,,A
 IAU,International Astronomical Union,Gen,,,A
@@ -534,7 +542,8 @@ IPAC,No longer an acronym; science and data center at Caltech,Gen,,,A
 IPEDS,Integrated Postsecondary Educational Data System,DEI,,,A
 IPS,Integrated Project Schedule,Adm,,,A
 IPsec,Internet Protocol Security,DM,,,A
-IR,infrared,TS,Document-11949,,A
+IR,infrared,Gen,Document-11949,,A
+IR,Incident Response,IT,,,A
 IRAF,Image Reduction and Analysis Facility,Hist,,,A
 IRIS,e-Infrastructure for Research and Innovation for STFC,OPS,,,A
 IRNC,International Research Network Connections,TS,Document-11973,,A
@@ -644,6 +653,7 @@ LZ,LUX-ZEPELIN (Dark Matter Mission),Sci,,,A
 M1,primary mirror,TS,Document-12017,,A
 M1M3,Primary Mirror Tertiary Mirror,LSST,,,A
 M2,Secondary Mirror,LSST,,,A
+MA,Maintenance,IT,,,A
 M3,tertiary mirror,TS,Document-12023,,A
 MAC,Media Access Control,IT,,,A
 MACHO,massive compact halo object,TS,Document-11962,,A
@@ -683,6 +693,7 @@ MOPS,Moving Object Processing System (deprecated; see SSP),LSST DM,,,A
 MOSFET,Metal-Oxide Semiconductor Field-Electric Transistor,Gen,,,A
 MOSS,Multi-beam Optical Steering Sensor,LSST,,,A
 MOU,Memo Of Understanding,OPS,,,A
+MP,Media Protection,IT,,,A
 MPA,Max Planck Institute for Astrophysics,Gen,,,A
 MPC,Minor Planet Center,Gen,,,A
 MPCORB,Minor Planet Center Orbit database,Gen,,,A
@@ -822,6 +833,7 @@ PDR2,Public Data Release 2 (HSC),OPS,,,A
 PDM,Phase Dispersion Minimization,OPS,,,A
 PDS,Planetary Data System,Sci,,,A
 PDU,Power Distribution Unit,LSST DM,,,A
+PE,Physical and Environmental Protection,IT,,,A
 PEP,Project Execution Plan,Adm,,,A
 PFS,Prime Focus Spectrograph,Gen,,,A
 PHA,potentially hazardous asteroids,TS,Document-11971,,A
@@ -829,6 +841,7 @@ photo-z,"photometric redshift",Sci,,,A
 PI,Principle Investigator,Sci OPS,,,A
 PII,personally identifiable information,TS,Document-11976,,A
 PIM,Protocol Independent Multicast,IT,,,A
+PL,Planning,IT,,,A
 PLATO,PLAnetary Transits and Oscillations of stars,Sci,,,A
 PLL,Phase-Locked Loop,Gen,,,A
 PM,Project Manager,LSST DM,,,A
@@ -851,6 +864,7 @@ PPE,Personal Protection Equipment,OPS,,,A
 PR,Pull Request,Gen,,,A
 PRC,Procurement Charge,OPS DOE,,,A
 PRT,Personal Research Time,OPS,,,A
+PS,Personnel Security,IT,,,A
 PS,Project Scientist,LSST DM,,,A
 PS1,Pan-STARRS 1 survey,LSST DM,,,A
 PS1-MDS,PS1 Medium Deep Survey,Sci,,,A
@@ -877,6 +891,7 @@ QOS,Quality of Service,IT,,,A
 QSERV,LSST Query Services,TS,Document-12025,,A
 QSFP,Quad Small Form Factor Plugable,IT,,,A
 QSO,Quasi-Stellar Object (Quasar),Sci,,,A
+RA,Risk Assessment,IT,,,A
 RA,Right Ascension,Gen,,,A
 RAC,Resource Allocation Committee,OPS,,,A
 RAD,Rear Access Door,TS,,,A
@@ -938,6 +953,7 @@ RTV,raster to vector,TS,Document-11984,,A
 RU,Rack Unit,IT,,,A
 S3,(Amazon) Simple Storage Service,IT,,,A
 S3DF,SLAC Shared Scientific Data Facility,LSST,https://www.amlight.net/?page_id=24,,A
+SA,System and Services Acquisition,IT,,,A
 SA3CC,South American-African Astronomy Coordination Committee,LSST,https://www.amlight.net/?page_id=24,,A
 SAA,Single Axis Actuator,TS,,,A
 SAACC,South American Astronomy Coordination Committee (now SA3CC),LSST,https://www.amlight.net/?page_id=24,,A
@@ -954,6 +970,7 @@ SATA,Serial Advanced Technology Attachment,IT DM,,,A
 SB,Surface Brightness,Sci,,,A
 SBS,Shared Business Services,OPS OIR,,,A
 SC,System Commissioning,PMO,,,A
+SC,System and Communications Protection,IT,,,A
 SC,Science Collaboration,DM,,,A
 SCADA,Supervisory Control And Data Acquisition,TS,,,A
 SCIDAR,Scintillation Detection And Ranging,TS,,,A
@@ -976,6 +993,7 @@ SFR,Supplemental Funding Request,Adm,,,A
 SHA-1,Secure Hash Algorithm 1,Gen,,,A
 SHE,"Safety, Health, and Environmental",,,,A
 SHPE,Society of Hispanic Professional Engineers,DEI,,,A
+SI,System and Information Integrity,IT,,,A
 SI,Syst\`eme International (International System of units defined by ISO),Gen,,,A
 SIA,Simple Image Access (IVOA standard),VO,,,A
 SIAP,Simple Image Access Protocol (IVOA standard),VO,,,A
