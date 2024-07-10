@@ -797,9 +797,9 @@ def dump_gls(filename, out_file):
                             if tags in transm:
                                 trans = transm[tags]
                             else:
-                                print(f"Warning: {tags} not in {transm.keys()}  for {acr}")
-                                k = transm.keys()[0]
-                                trans = transm[k]
+                                print(
+                                    f"Warning: {tags} not in {transm.keys()}  for {acr} - translation missing"
+                                )
                         else:  # it is a simple string
                             trans = translate[acr]
                     if "," in acr:
@@ -812,7 +812,7 @@ def dump_gls(filename, out_file):
                         print(",".join([acr, f'"{trans}"', f"{tags}"]), file=ogfile)
                         defn = defn + "\n\n" + escape_for_tex(trans)
                     else:
-                        print(f"No traslation for:{acr}")
+                        print(f"Missing translation for: {acr}:{defn}")
                     print(sep.join([acr, defn, tags]) + end, file=ofd)
                 except BaseException as ex:
                     print(f"Error reading {filename} on line {lc} - {row}")
