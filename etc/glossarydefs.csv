@@ -89,6 +89,7 @@ ATM,Adaptavist Test Management,LSST DM,,,A
 AU,deprecated acronym for astronomical unit; use au instead,Gen,,,A
 AU,Audit and Accountability,IT,,,A
 au,astronomical unit,Gen,,,A
+AUP,Acceptable Use Policy,IT,,,A
 AURA,Association of Universities for Research in Astronomy,Gen,,,A
 Avro,is a row-oriented remote procedure call and data serialization framework developed within Apache's Hadoop project,OPS,,,A
 AVS,Alert Vetting System,OPS,,,A
@@ -810,6 +811,7 @@ OSS,Oil Supply System,TS,,,A
 OSX,Macintosh Operating System (obsolete; now macOS),Gen,,,A
 OTB,Over Target Baseline,Gen,,,A
 OTS,observatory telemetry system,TS,Document-12015,,A
+OUO,Official Use Only,OPS,,,A
 P5,"The Particle Physics Project Prioritization Panel is a scientific advisory panel tasked with recommending prioritization for U.S. investment in particle physics research, on the basis of various funding scenarios.",Adm,,,A
 P6,"Primavera, a comprehensive project management tool",Adm,,,A
 PanDA, Production ANd Distributed Analysis system,OPS,,,A
@@ -834,6 +836,7 @@ PDM,Phase Dispersion Minimization,OPS,,,A
 PDS,Planetary Data System,Sci,,,A
 PDU,Power Distribution Unit,LSST DM,,,A
 PE,Physical and Environmental Protection,IT,,,A
+PEN,Penetration testing,IT,,,A
 PEP,Project Execution Plan,Adm,,,A
 PFS,Prime Focus Spectrograph,Gen,,,A
 PHA,potentially hazardous asteroids,TS,Document-11971,,A
