@@ -85,6 +85,7 @@ ATLAS,Sistema de Última Alerta de Impacto Terrestre de Asteroides,Sci
 ATM,Gestión de pruebas Adaptavist [Adaptavist Test Management: Aplicación de control de calidad y gestión de pruebas para Jira],
 AU,Acrónimo obsoleto para «unidad astronómica»; en su reemplazo usar «au»,
 au,unidad astronómica,
+AUP,Política de uso aceptable,IT
 AURA,Asociación de Universidades para la Investigación en Astronomía,
 Avro,Es un marco de llamada a procedimientos remotos y de serialización de datos orientado a filas desarrollado dentro del proyecto Hadoop de Apache,
 AVS,Sistema de investigación de alertas,
@@ -756,7 +757,8 @@ NRC,Consejo Nacional de Estados Unidos de Investigación,
 NSB,Junta Nacional de Ciencias de los EE. UU.,
 NSBP,Sociedad Nacional de Estados Unidos  de Físicos Negros,
 NSF,Fundación Nacional de Estados Unidos  de Ciencias,
-OIR Lab de la NSF,Laboratorio Nacional de Investigación en Astronomía Óptica e Infrarroja de la NSF,
+NSF's OIR Lab,Laboratorio Nacional de Investigación en Astronomía Óptica e Infrarroja de la NSF,
+OUO,Uso oficial exclusivamente,OPS
 NSO,Observatorio Solar Nacional de los EE. UU.,
 NSS,Servicios de soporte de los NOAO,
 NSTA,Asociación Nacional de Profesores de Ciencias,
@@ -826,6 +828,7 @@ PDM,Minimización de dispersión de fase,
 PDS,Sistema de datos planetarios,
 PDU,Unidad de distribución de energía,
 PE,Protección física y ambiental,IT
+PEN,Pruebas de penetración,IT
 PEP,Plan de ejecución del proyecto,
 PFS,Espectrógrafo de foco primario,
 PHA,asteroides potencialmente peligrosos,
