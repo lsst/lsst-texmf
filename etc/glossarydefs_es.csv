@@ -69,6 +69,7 @@ API,Interfaz de programación de aplicaciones,
 APS,Sociedad Estadounidense de Física,
 ARAS,Círculo Astronómico para el Acceso a la Espectroscopia,
 ARC,Advanced Resource Connector [middleware],
+ARP,Protocolo de resolución de direcciones,
 ASAP,Lo más pronto posible,
 ASAS-SN,All-Sky Automated Survey for Supernovae [Sondeo automatizado de búsqueda de supernovas en todo el cielo],
 ASCII,Código Estándar Estadounidense para el Intercambio de Información,
@@ -168,6 +169,7 @@ CHEP,Computación en Física Nuclear y de Altas Energías,
 CHIME,Experimento Canadiense de Mapeo de la Intensidad del Hidrógeno,
 CI,Integración continua,DM
 CI,Ciberinfraestructura,Sci
+CIDR,Enrutamiento entre dominios sin clases,DM
 CIGALE,Código de investigación de la emisión de galaxias,
 CIS,Soporte de infraestructura informática,
 CL,Lenguaje de comandos,
@@ -380,6 +382,7 @@ FATC,Condiciones financieras y administrativas,
 FBOT,Transitorio óptico azul rápido,
 FBOTs,Transitorios ópticos azules rápidos,
 FDP,producto de datos federados,
+FDQN,Nombre de dominio totalmente cualificado,DM
 FDR,Revisión final del diseño,
 FBS,Planificador basado en características,
 FEA,Análisis de elementos finitos,
