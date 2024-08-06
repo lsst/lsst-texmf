@@ -751,8 +751,9 @@ NFS,Network File System,Gen,,,A
 NGC,New General Catalogue,Sci,,,A
 NGSS,Next-Generation Science Standards,OPS,,,A
 NGVLA,Next Generation Very Large Array,OPS,,,A
-NIR,Near Infrared,Sci,,,A
+NIC,Network Interface Card,DM,,,A
 NICRA,(federally) Negotiated Indirect Cost Rate Agreement,Adm,,,A
+NIR,Near Infrared,Sci,,,A
 NIST,National Institute of Standards and Technology (USA),Gen,,,A
 NLR,National Lambda Rail,TS,Document-11941,,A
 NLT,NOIRLab Leadership Team,OPS,,,A
