@@ -1,4 +1,4 @@
-algoliasearch<4
+algoliasearch
 pybtex
 pytest
 pyyaml
@@ -9,3 +9,4 @@ oauth2client
 latexcodec
 pygments
 pre-commit
+asyncio
