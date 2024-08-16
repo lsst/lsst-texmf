@@ -93,10 +93,10 @@ async def generate_bibfile(query: str = "", external: list[str] | None = None) -
                 "authorNames",
             ],
             "hitsPerPage": MAXREC,
-            "index_name": index_name,
             "query": query,
         }
 
+        # "index_name": index_name,
         res = await client.search_single_index(index_name=index_name, search_params=params)
         print(f"Total hits: {len(res['hits'])}, Query:'{query}'")
 
