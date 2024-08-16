@@ -8,12 +8,13 @@ data is supplied by Ook, https://github.com/lsst-sqre/ook.
 """
 
 import argparse
+import asyncio
 import calendar
 from datetime import UTC, datetime
 
 import latexcodec  # noqa provides the latex+latin codec
 import pybtex.database
-from algoliasearch.search_client import SearchClient
+from algoliasearch.search.client import SearchClient
 from bibtools import BibDict, BibEntry
 from pybtex.database import BibliographyData
 
@@ -57,7 +58,7 @@ def sort_by_handle(key):
     return f"{hdl.upper()}-{num:09d}"
 
 
-def generate_bibfile(query: str = "", external: list[str] | None = None) -> str:
+async def generate_bibfile(query: str = "", external: list[str] | None = None) -> str:
     """
     Query ook for the list of entries.
     Only returning meta data needed for bib entries.
@@ -78,27 +79,29 @@ def generate_bibfile(query: str = "", external: list[str] | None = None) -> str:
     """
     if query is None:
         query = ""  # Algolia take None as string literal None
-    client = SearchClient.create("0OJETYIVL5", "b7bd2f1080a5c4fe5eee502462bcc9d3")
-    index = client.init_index("document_dev")
+    async with SearchClient(app_id="0OJETYIVL5", api_key="b7bd2f1080a5c4fe5eee502462bcc9d3") as client:
+        index_name = "document_dev"
 
-    params = {
-        "attributesToRetrieve": [
-            "handle",
-            "series",
-            "h1",
-            "baseUrl",
-            "sourceUpdateTime",
-            "sourceUpdateTimestamp",
-            "authorNames",
-        ],
-        "hitsPerPage": MAXREC,
-    }
+        params = {
+            "attributesToRetrieve": [
+                "handle",
+                "series",
+                "h1",
+                "baseUrl",
+                "sourceUpdateTime",
+                "sourceUpdateTimestamp",
+                "authorNames",
+            ],
+            "hitsPerPage": MAXREC,
+            "index_name": index_name,
+            "query": query,
+        }
 
-    res = index.search(query, params)
-    print(f"Total hits: {len(res['hits'])}, Query:'{query}'")
+        res = await client.search_single_index(index_name=index_name, search_params=params)
+        print(f"Total hits: {len(res['hits'])}, Query:'{query}'")
 
-    search_data = create_bibentries(res)
-    print(f"Got {len(res['hits'])} records max:{MAXREC} produced {len(search_data.entries)} bibentries.")
+        search_data = create_bibentries(res)
+        print(f"Got {len(res['hits'])} records max:{MAXREC} produced {len(search_data.entries)} bibentries.")
 
     # Read the external files that will be merged with the search results.
     # Do not use a BilbiographyData because duplicate key overwriting is
@@ -281,7 +284,7 @@ if __name__ == "__main__":
     )
 
     args = parser.parse_args()
-    result = generate_bibfile(args.query, args.external)
+    result = asyncio.run(generate_bibfile(args.query, args.external))
 
     if args.bibfile:
         with open(args.bibfile, "w") as outfile:
