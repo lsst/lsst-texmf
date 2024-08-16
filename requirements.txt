@@ -1,10 +1,10 @@
+algoliasearch<4
 pytest
 pyyaml
 google-api-python-client
 google-auth-httplib2
 google-auth-oauthlib
 oauth2client
-algoliasearch <4
 latexcodec
 pygments
 pre-commit
