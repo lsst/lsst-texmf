@@ -369,6 +369,7 @@ ESFRI,European Strategy Forum on Research Infrastructures,Gen,,,A
 ESNet,Energy Sciences Network,Gen,,,A
 ESO,European Southern Observatory,OPS,,,A
 ESP,Early Science Program,OPS,,,A
+ESS,Environmental Sensors Support,TS,https://obs-ops.lsst.io/Observatory-Control-System/EAS/ESS/index.html,,A
 ET,exposure time,TS,Document-12010,,A
 ETC,Estimate To Complete,Gen LSST DM,,,A
 ETL,extract-transform-load,TS,Document-11957,,A
