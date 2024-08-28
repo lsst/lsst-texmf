@@ -1795,6 +1795,13 @@ authors:
     initials: Ron
     name: Harris
     orcid: null
+  hascalld:
+    affil:
+    - SLAC
+    altaffil: []
+    initials: Diane
+    name: Hascall
+    orcid: null
   hascallpa:
     affil:
     - SLAC
