@@ -241,11 +241,12 @@ for anum, authorid in enumerate(authors):
     justInitials = get_initials(initials)
     indexOutput.append(rf"%\aindex{{{surname},{justInitials}}}")
 
+    author = author_form.format(orcid=orcid, initials=initials, surname=surname, affilAuth=affilAuth)
     if buffer_authors:
-        authOutput.append(author_form.format(initials=initials, surname=surname, affilAuth=affilAuth))
+        authOutput.append(author)
         allAffil = allAffil + affilOutput
     else:
-        print(author_form.format(orcid=orcid, initials=initials, surname=surname, affilAuth=affilAuth))
+        print(author)
         if buffer_affil:
             print(*affilOutput, sep="\n")
         else:
