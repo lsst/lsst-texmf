@@ -36,7 +36,7 @@ authorfile = os.path.join("authors.yaml")
 
 # this should probably be a dict with the value of affil_cmd
 # the keys could then be passed to the arg parser.
-OUTPUT_MODES = ["aas", "spie", "adass", "arxiv"]
+OUTPUT_MODES = ["aas", "spie", "adass", "arxiv", "ascom"]
 
 description = __doc__
 formatter = argparse.RawDescriptionHelpFormatter
@@ -86,6 +86,10 @@ if args.mode == "adass":
     buffer_affil = True
     buffer_authors = True
     author_super = True
+
+if args.mode == "ascom":
+    buffer_affil = True
+    affil_out_sep = ", "
 
 with open(authorfile) as fh:
     authors = yaml.safe_load(fh)
@@ -178,7 +182,10 @@ for anum, authorid in enumerate(authors):
         if args.noafil:
             affilAuth = affilAuth
         else:
-            affilAuth = auth_afil_form.format(affilAuth, affilSep, str(affilInd))
+            if args.mode == "ascom":
+                affilAuth = auth_afil_form.format(str(affilInd), affilAuth, affilSep)
+            else:
+                affilAuth = auth_afil_form.format(affilAuth, affilSep, str(affilInd))
 
         affilSep = " "
 
@@ -191,6 +198,7 @@ for anum, authorid in enumerate(authors):
     orc = auth.get("orcid", "")
     if orc is None:
         orc = ""
+
     email = auth.get("email", "")
     if email is None:
         email = ""
@@ -235,7 +243,10 @@ for anum, authorid in enumerate(authors):
     indexOutput.append(rf"%\aindex{{{surname},{justInitials}}}")
 
     if buffer_authors:
-        authOutput.append(author_form.format(initials, surname, affilAuth))
+        if args.mode == "ascom":
+            authOutput.append(author_form.format(affilAuth, initials, surname))
+        else:
+            authOutput.append(author_form.format(initials, surname, affilAuth))
         allAffil = allAffil + affilOutput
     else:
         print(author_form.format(orcid, initials, surname))
