@@ -36,7 +36,7 @@ authorfile = os.path.join("authors.yaml")
 
 # this should probably be a dict with the value of affil_cmd
 # the keys could then be passed to the arg parser.
-OUTPUT_MODES = ["aas", "spie", "adass", "arxiv"]
+OUTPUT_MODES = ["aas", "spie", "adass", "arxiv", "ascom"]
 
 description = __doc__
 formatter = argparse.RawDescriptionHelpFormatter
@@ -56,19 +56,19 @@ args = parser.parse_args()
 buffer_affil = False  # hold affiliation until after author output
 buffer_authors = False  # out put authors in one \author command (adass)
 affil_cmd = "affiliation"  # command for latex affiliation
-affil_form = r"\{}[{}]{{{}}}"  # format of the affiliation
-auth_afil_form = "{}{}{}"  # format of author with affiliation
-author_form = r"\author{}{{{}~{}}}"  # format of the author
+affil_form = r"\{cmd}[{affilId}]{{{affil}}}"  # format of the affiliation
+auth_afil_form = "{affilAuth}{affilSep}{affilInd}"  # format of author with affiliation
+author_form = r"\author{orcid}{{{initials}~{surname}}}"  # format of the author
 author_super = False  # Author affiliation as super script
 author_sep = " and "
 
 # The default is AAS and if no mode is specified you get that
 if args.mode == "arxiv":
-    author_form = r"{} {}{}"
+    author_form = "{orcid} {initials}{surname}"
     affil_cmd = ""
     affil_out_sep = ", "
-    affil_form = r"{}({}) {}"
-    auth_afil_form = "{}{}({})"
+    affil_form = r"{cmd}({affilId}) {affil}"
+    auth_afil_form = "{affilAuth}{affilSep}({affilInd})"  # format of author with affiliation
     buffer_affil = True
     buffer_authors = True
     author_sep = ", "
@@ -80,12 +80,18 @@ if args.mode == "spie":
 if args.mode == "adass":
     affil_cmd = "affil"
     affil_out_sep = "\n"
-    affil_form = r"\{}{{$^{}${}}}"
-    auth_afil_form = "{}{}$^{}$"
-    author_form = r"{}~{}{}"  # initial, surname, affil
+    affil_form = r"\{cmd}{{$^{affilId}${affil}}}"
+    auth_afil_form = "{affilAuth}{affilSep}$^{affilInd}$"
+    author_form = "{initials}~{surname}{affilAuth}"  # initial, surname, affil
     buffer_affil = True
     buffer_authors = True
     author_super = True
+
+if args.mode == "ascom":
+    author_form = r"\author[{affilAuth}]{{{initials}~{surname}}}"  # format of the author
+    buffer_affil = True
+    affil_out_sep = ", "
+    auth_afil_form = "{affilInd}{affilAuth}{affilSep}"
 
 with open(authorfile) as fh:
     authors = yaml.safe_load(fh)
@@ -172,13 +178,13 @@ for anum, authorid in enumerate(authors):
         if theAffil not in affilset:
             affilset.append(theAffil)
             # unforuneately you can not output an affil before an author
-            affilOutput.append(affil_form.format(affil_cmd, len(affilset), affil[theAffil]))
+            affilOutput.append(affil_form.format(cmd=affil_cmd, affilId=len(affilset), affil=affil[theAffil]))
 
         affilInd = affilset.index(theAffil) + 1
         if args.noafil:
             affilAuth = affilAuth
         else:
-            affilAuth = auth_afil_form.format(affilAuth, affilSep, str(affilInd))
+            affilAuth = auth_afil_form.format(affilAuth=affilAuth, affilInd=affilInd, affilSep=affilSep)
 
         affilSep = " "
 
@@ -191,6 +197,7 @@ for anum, authorid in enumerate(authors):
     orc = auth.get("orcid", "")
     if orc is None:
         orc = ""
+
     email = auth.get("email", "")
     if email is None:
         email = ""
@@ -229,16 +236,17 @@ for anum, authorid in enumerate(authors):
 
     if args.mode == "arxiv":
         affilOutput = []  # reset this
-        affilOutput.append(affil_form.format(affil_cmd, len(affilset), tute))
+        affilOutput.append(affil_form.format(cmd=affil_cmd, affilId=len(affilset), affil=tute))
 
     justInitials = get_initials(initials)
     indexOutput.append(rf"%\aindex{{{surname},{justInitials}}}")
 
+    author = author_form.format(orcid=orcid, initials=initials, surname=surname, affilAuth=affilAuth)
     if buffer_authors:
-        authOutput.append(author_form.format(initials, surname, affilAuth))
+        authOutput.append(author)
         allAffil = allAffil + affilOutput
     else:
-        print(author_form.format(orcid, initials, surname))
+        print(author)
         if buffer_affil:
             print(*affilOutput, sep="\n")
         else:
