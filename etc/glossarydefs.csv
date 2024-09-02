@@ -195,7 +195,6 @@ CNP,Conditional Neural Processes,Sci,,,A
 CNPG,Cloud Native Postgres,DM,,,A
 CNRS,Centre national de la recherche scientifique,Gen,,,A
 CO,Carbon Monoxide,Sci,,,A
-ComCam,"The commissioning camera is a single-raft, 9-CCD camera that will be installed in LSST during commissioning, before the final camera is ready.",Gen,,,A
 COMP,Complete,PMO,,,A
 COMPASS,Catalogues of Objects and Measured Parameters from All Sky Surveys,Gen,,,A
 CORBA,Common Object Request Broker Architecture,Gen,,,A
@@ -1318,6 +1317,7 @@ CmdLineTask,"A special kind of Task that can read its inputs and write its outpu
 Coadd Image,"An image that is the combination of multiple input images. The inputs are aligned to a common projection and pixel grid, corrected to the same photometric scale and zero-point, with bad pixels and artifacts rejected. (Image PSFs may also be matched prior to co-addition.) Coadd Images have had non-astrophysical background removed",DM,,"Co-Add, CoAdd, co-add, coadd",G
 COBRA,The trade name for an integrated suite of project management software programs that work together to track all aspects of an ongoing construction job,Adm,,,G
 Collimated Beam Projector,"The hardware to project a field of sources onto discrete sections of the telescope optics in order to characterize spatial variations in the telescope and instrument transmission function, and to monitor filter throughput evolution during the survey. Images obtained using the CBP will be used in calibration",DM,LDM-151,CBP,G
+ComCam,"The commissioning camera is a single-raft, 9-CCD camera that will be installed in LSST during commissioning, before the final camera is ready.",Gen,,,G
 command-line task,"An enhancement of a Task in the LSST Stack context, it is the equivalent of a data processing pipeline and may be run directly from the shell command-line. A command-line task minimally consists of: a configuration and metadata, an argument parser, and a run method and a runner script",DM,,Task,G
 Commissioning,"A two-year phase at the end of the Construction project during which a technical team a) integrates the various technical components of the three subsystems; b) shows their compliance with ICDs and system-level requirements as detailed in the LSST Observatory System Specifications document (OSS, LSE-30); and c) performs science verification to show compliance with the survey performance specifications as detailed in the LSST Science Requirements Document (SRD, LPM-17)",Adm,,,G
 "community alert broker","term for Broker built by the community",SCI,,,G
