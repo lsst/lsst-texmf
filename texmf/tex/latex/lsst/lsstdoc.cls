@@ -403,7 +403,7 @@
 
 \newcommand{\mkmemotitle}{
    \thispagestyle{empty}
-   \newgeometry{top= 1cm,left=2cm,bottom=1cm, right=2cm} 
+   \newgeometry{top= 1cm,left=2cm,bottom=1cm, right=2cm}
    \vspace*{-30pt}
 
    \includegraphics[width=4cm]{rubin_logo}
@@ -411,14 +411,14 @@
    \begin{minipage}{0.3\textwidth}
         \begin{flushright}
         \vspace*{-50pt}
-        \large 
+        \large
         950 North Cherry Avenue,
         Tucson, AZ, 85719.
         \vspace{3mm}
-	\textbf{\docDate} 
+	\textbf{\docDate}
 	\end{flushright}
    \end{minipage}
-      
+
    \vspace{10pt}
    \textbf {To: \memoto}\\
    \textbf {From: \@author}\\
@@ -1109,14 +1109,15 @@ No actions have been identified.}
 % -----------------------------------------------------------------------------
 % Useful definition
 % -----------------------------------------------------------------------------
-\def\VRO{Vera C. Rubin Observatory~} 
-\def\RO{Rubin Observatory~} 
+\def\VRO{Vera C. Rubin Observatory~}
+\def\RO{Rubin Observatory~}
 \def\aaps{A\&AS}           % Astronomy and Astrophysics Suplement
 \def\aap{A\&A}             % Astronomy and Astrophysics
 \def\ssr{Space~Sci.~Rev.}  % Space Science Reviews
 \def\apj{ApJ}              % Astrophysical Journal
 \def\apjs{ApJS}            % Astrophysical Journal Supplement
 \def\aj{AJ}                % Astronomical Journal
+\def\jcap{JCAP}            % Journal of Cosmology and Astroparticle Physics
 \def\mnras{MNRAS}          % Monthly Notices of the RAS
 \def\araa{ARA\&A}          % Annual Review of Astron and Astrophys
 \def\nat{Nature}           % Nature
