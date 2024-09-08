@@ -578,6 +578,7 @@ IUSE,Improving Undergraduate STEM Education,Sci,,,A
 IVOA,International Virtual-Observatory Alliance,Gen,,,A
 JBOD,Just a Bunch of Disks,OPS,,,A
 JEDI,Job Execution and Definition Interface,OPS,,,A
+JCAP,Journal of Cosmology and Astroparticle Physics,Sci,,,A
 JD,Julian Date,Gen,,,A
 JDBC,Java DataBase Connectivity,Gen,,,A
 JDR,Joint Directors Review,LSST,,,A
@@ -1031,7 +1032,7 @@ SMC,Small Magellanic Cloud,Sci,,,A
 SME,Subject Matter Expert,Gen,,,A
 SMF,Stellar Mass Function,Sci,,,A
 SMR,Spherical Mirror Retroreflectors,Sci,,,A
-SMWLV,Stars, Milky Way and Local Volume,Sci,,,A
+SMWLV,"Stars, Milky Way and Local Volume",Sci,,,A
 SN,SuperNovae,Sci,,,A
 SNANA,SuperNova ANAlysis (\url{https://snana.uchicago.edu/}),Sci,,,A
 SNAPS,Solar System Notification Alert Processing System,OPS,,,A
