@@ -1,4 +1,4 @@
-algoliasearch
+algoliasearch<4.4.0
 pybtex
 pytest
 pyyaml
