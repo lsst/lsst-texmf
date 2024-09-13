@@ -2631,6 +2631,13 @@ authors:
     initials: Morgan
     name: May
     orcid: null
+  mccormickj:
+    affil:
+    - SLAC
+    altaffil: []
+    initials: Jeremy
+    name: McCormick
+    orcid: null
   mccullyc:
     affil:
     - CUMBRES
