@@ -643,7 +643,8 @@ LOY,Año de operaciones de LSST,
 LPGL,Licencia Pública General Reducida de GNU,
 LPM,Gestión del proyecto de LSST (Código identificador de documento),
 LRG,Galaxias rojas luminosas,
-LSB,Bajo brillo superficial,
+LSB,Bajo brillo superficial,Sci
+LSB,Base La Serena,PMO
 LSE,Ingeniería de sistemas de LSST (Código identificador de documento),
 LSP,Plataforma científica de LSST (actualmente Plataforma científica de Rubin),
 LSR,Requisitos del sistema de LSST; LSE-29,
