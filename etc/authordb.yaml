@@ -2395,6 +2395,13 @@ authors:
     initials: Ilin
     name: Lazar
     orcid: null
+  leboulchq:
+    affil:
+    - Lyon-CC-IN2P3
+    altaffil: []
+    initials: Quentin
+    name: Le Boulc'h
+    orcid: null
   leguilloul:
     affil:
     - Paris-UPMC
@@ -2545,6 +2552,13 @@ authors:
     initials: Ashish A.
     name: Mahabal
     orcid: 0000-0003-2242-0244
+  mainettig:
+    affil:
+    - Lyon-CC-IN2P3
+    altaffil: []
+    initials: Gabriele
+    name: Mainetti
+    orcid: 0000-0003-2384-2377
   malza:
     affil:
     - GCCL
