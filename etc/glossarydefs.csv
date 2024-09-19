@@ -37,6 +37,7 @@ AED,Automated External Defibrillator,OPS,,,A
 AEON,Alert Event Observatory Network,OPS Sci,,,A
 AES,Advanced Encryption Standard,OPS,,,A
 AGN,Active Galactic Nuclei,TS,Document-11927,,A
+AGNSC,Active Galactic Nuclei Science Collaboration,Sci,,,A
 AGU,American Geophysical Society,TS,Document-11928,,A
 AI,Artificial Intelligence,Gen,,,A
 AIC,Akaike Information Criterion,Gen,,,A
@@ -486,6 +487,7 @@ GPU,Graphics Processing Unit,Gen,,,A
 GR,General Relativity,Gen,,,A
 GRB,Gamma-Ray Burst,Gen,,,A
 GRE,Generic Routing Encapsulation,IT,,,A
+GSC,Galaxies Science Collaboration,Sci,,,A
 GSE,Gaia Sausage-Enceladus,Sci,,,A
 GST,Greenwich Sidereal Time,Gen,,,A
 GUI,Graphical User Interface,Gen,,,A
@@ -566,6 +568,7 @@ ISM,interstellar medium,TS,Document-12009,,A
 ISO,Information Security Officer,LSST,,,A
 ISO,International Standards Organisation,Gen,,,A
 ISR,Instrument Signal Removal,LSST DM,,,A
+ISSC,Informatics and Statistics Science Collaboration,Sci,,,A
 IT,Information Technology,Gen,,,A
 ITAR,International Traffic in Arms Regulations,Gen,,,A
 ITC,Information Technology Center,LSST DM,,,A
@@ -1026,6 +1029,7 @@ SKF,Svenska Kullagerfabriken,PMO,,,A
 SKU,Stock Keeping Unit (Google),OPS,,,A
 SLA,Service Level Agreement,Gen,,,A
 SLAC,SLAC National Accelerator Laboratory,LSST DM,,,A
+SLSC,Strong Lensing Science Collaboration,Sci,,,A
 SLSN,super luminous supernova(e),Sci,,,A
 SMARTS,Small and Moderate Aperture Research Telescope System,OPS,,,A
 SMBH,Supermassive Black Hole,Sci,,,A
@@ -1079,6 +1083,7 @@ SSM,Subsystem Manager,Adm,,,A
 SSO,Solar System Object,DM,,,A
 SSOIS,Solar System Object Image Search,Sci,,,A
 SSP,Solar System Processing,LSST DM,,,A
+SSSC,Solar System Science Collaboration,Sci,,,A
 SST,Simonyi Survey Telescope (SST not to be used),Gen,,,A
 SST,Subsystem Science Team,LSST DM,,,A
 stdin,standard input,Gen,,,A
