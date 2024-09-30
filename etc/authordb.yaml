@@ -2899,6 +2899,13 @@ authors:
     initials: Eric H.
     name: Neilsen, Jr.
     orcid: 0000-0002-7357-0317
+  nelsons:
+    affil:
+    - Washington
+    altaffil: []
+    initials: Spencer
+    name: Nelson
+    orcid: null
   neveuj:
     affil:
     - Paris-IJCLAB
@@ -3743,6 +3750,13 @@ authors:
     initials: Colin T.
     name: Slater
     orcid: 0000-0002-0558-0521
+  smartbm:
+    affil:
+    - Washington
+    altaffil: []
+    initials: Brianna M.
+    name: Smart
+    orcid: 0000-0002-3677-0571
   smithja:
     affil:
     - Peay
