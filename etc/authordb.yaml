@@ -4155,6 +4155,14 @@ authors:
     initials: Jos\'e Antonio
     name: V\'azquez-Mata
     orcid: 0000-0001-8694-1204
+  venegasp:
+    affil:
+    - RubinObsC
+    altaffil: []
+    initials: Paulina
+    name: Venegas
+    orcid: null
+    email: pvenegas@lsst.org
   venutil:
     affil:
     - SETI
