@@ -121,6 +121,7 @@ BOE,Basis of Estimate,Gen,,,A
 BOF,Birds of a Feather (Sessions at ADASS),Gen,,,A
 BOSS,Baryon Oscillation Spectroscopic Survey,Sci,,,A
 BOT,Bench for Optical Testing,CAM,,,A
+BPM,Bad pixel mask,DM,,,A
 BPS,Batch Production Service,DF LDF DM,,,A
 Bps,Bytes per second,Gen,,,A
 bps,bit(s) per second,Gen,,,A
