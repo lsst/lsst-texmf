@@ -127,7 +127,7 @@ CA,Cuenta de control (o costo),
 CAA,Comité de Astronomía y Astrofísica (NSF),
 CADC,Centro Canadiense de Datos Astronómicos,
 CALTECH,Instituto Tecnológico de California,
-CAM,CÁMara,
+CAM,CÁMara,DM
 CAM,Gerente de Cuentas de Control (o Costo),Gen
 CANFAR,Red Canadiense Avanzada para la Investigación Astronómica,
 CAOM,Modelo común de observación de archivos [Common Archive Observation Model: modelo de datos],
@@ -816,7 +816,7 @@ OSHA,Administración de Seguridad y Salud Ocupacional de los EE. UU.,
 OSI,interconexión de sistemas abiertos,
 OSPF,"Open Short Path First [«Abrir el camino más corto primero», protocolo de red]",
 OSPL,OpenSplice DDS - sistema de mensajería subyacente para SAL,
-OSS,Especificaciones del sistema de observatorios; LSE-30,
+OSS,Especificaciones del sistema de observatorios; LSE-30,DM
 OSS,Sistema de suministro de aceite,TS
 OSX,Sistema operativo Macintosh (obsoleto; actualmente macOS),
 OTB,Reajuste de presupuesto base [«over-target baseline»],
