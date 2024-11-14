@@ -798,8 +798,10 @@ def dump_gls(filename, out_file):
                                 trans = transm[tags]
                             else:
                                 print(
-                                    f"Warning: {tags} not in {transm.keys()}  for {acr} - translation missing"
+                                    f"Warning: {tags} not in {transm.keys()}  for"
+                                    f" {acr} - translation missing or the tags do not match"
                                 )
+                                exit(2)
                         else:  # it is a simple string
                             trans = translate[acr]
                     if "," in acr:
