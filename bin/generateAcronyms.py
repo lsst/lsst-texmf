@@ -798,7 +798,7 @@ def dump_gls(filename, out_file):
                                 trans = transm[tags]
                             else:
                                 print(
-                                    f"Warning: {tags} not in {transm.keys()}  for"
+                                    f"Error: {tags} not in {transm.keys()}  for"
                                     f" {acr} - translation missing or the tags do not match"
                                 )
                                 exit(2)
