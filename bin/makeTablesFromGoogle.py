@@ -168,7 +168,7 @@ def genTables(values):
                     complete_and_close_table(tout)
                 vals = row[0].split(" ")
                 name = vals[1]
-                print("Create new table %s %i " % (name, len(row)))
+                print(f"Create new table {name} {len(row)}")
                 tout = open(name + ".tex", "w")
 
                 col = 1
