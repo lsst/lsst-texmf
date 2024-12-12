@@ -897,6 +897,13 @@ authors:
     initials: Rodolfo
     name: Canestrari
     orcid: 0000-0003-4591-7763
+  cancinob:
+    afill:
+    - NOIRLabC
+    altaffil: []
+    initials: Braulio
+    name: Cancino
+    orcid: null
   cantiellom:
     affil:
     - CCA
@@ -1269,6 +1276,13 @@ authors:
     initials: Miguel
     name: de Val-Borro
     orcid: 0000-0002-0455-9384
+  diazn:
+    afill:
+    - NOIRLabC
+    altaffil: []
+    initials: Norman
+    name: Diaz
+    orcid: null
   digelsw:
     affil:
     - SLAC
@@ -1680,6 +1694,13 @@ authors:
     altaffil: []
     initials: Andreja
     name: Gomboc
+    orcid: null
+  gomezm:
+    afill:
+    - NOIRLabC
+    altaffil: []
+    initials: Manuel
+    name: Gomez Jimenez
     orcid: null
   gonzalesa:
     affil:
@@ -3807,6 +3828,13 @@ authors:
     initials: Malhar
     name: Sonaniskar
     orcid: 0000-0002-4573-3027
+  sotuelai:
+    affil:
+    - RubinObsC
+    altaffil: []
+    initials: Ioana
+    name: Sotuela Elorriaga
+    orcid: null
   speckd:
     affil:
     - Burwood
