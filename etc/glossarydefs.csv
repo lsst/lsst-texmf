@@ -1090,6 +1090,7 @@ SST,Simonyi Survey Telescope (SST not to be used),Gen,,,A
 SST,Subsystem Science Team,LSST DM,,,A
 stdin,standard input,Gen,,,A
 stdout,standard output,Gen,,,A
+STAC,"Gemini Science and Technology Advisory Committee",Gen,,,A
 STEM,"Science, Technology, Engineering and Math",Gen,,,A
 STFC,UK Science and Technology Facilities Council,OPS,,,A
 SU,Stanford University,OPS,,,A
