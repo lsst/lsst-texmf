@@ -230,6 +230,7 @@ CSDC,Community Science Data Center,OPS OIR,,,A
 CSM,Circum-Stellar Material,Sci,,,A
 CSV,Comma Separated Values,Gen,,,A
 CTA,Cherenkov Telescope Array \url{https://www.cta-observatory.org/},Gen,,,A
+CTI,Charge Transfer Inefficiency,CAM,,,A
 CTIO,Cerro Tololo Inter-American Observatory,Gen,,,A
 CUI,Controlled Unclassified Information,OPS,,,A
 CV,Curriculum Vitae,Gen,,,A
@@ -1004,6 +1005,7 @@ SBS,Shared Business Services,OPS OIR,,,A
 SC,System Commissioning,PMO,,,A
 SC,System and Communications Protection,IT,,,A
 SC,Science Collaboration,DM,,,A
+SCTI,Serial Charge Transfer Inefficiency,CAM,,,A
 SCADA,Supervisory Control And Data Acquisition,TS,,,A
 SCIDAR,Scintillation Detection And Ranging,TS,,,A
 SCOC,Survey Cadence Optimization Committee,OPS,,,A
