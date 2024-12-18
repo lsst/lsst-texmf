@@ -342,6 +342,7 @@ EAC,Estimate At Completion,LSST DM,,,A
 EAS,Environmental Awareness System,TS,,,A
 EB,ExaByte,Gen,,,A
 EC2,Amazon Elastic Compute Cloud,DM,,,A
+ECDFS,Extended Chandra Deep Field-South Survey,Sci,,,A
 EDC,EPO Data Center,OPS EPO,,,A
 EDFS,Euclid Deep Field South,Sci,,,A
 EDR,early data release,TS,Document-11972,,A
@@ -478,6 +479,7 @@ GMT,Giant Magellan Telescope,OPS,,,A
 GMU,George Mason University,TS,Document-11944,,A
 GNU,GNU's Not Unix! An operating system and an extensive collection of free computer software,OPS DM,,,A
 GOA,Government Office of Accounting,Gen,,,A
+GOODS,The Great Observatories Origins Deep Survey,Sci,,,A
 GP,Gaussian Process,Sci,,,A
 GP,Galactic Plane,LSST,,,A
 GPFS,General Parallel File System (now IBM Spectrum Scale),Gen,,,A
@@ -730,6 +732,7 @@ MSB,Most Significant Bit,Gen,,,A
 MSE,Maunakea Spectroscopic Explorer,Sci,,,A
 MSO,Mid-Scale Observatories,OPS OIR,,,A
 MT,Main Telescope,TS,,,A
+MTAOS,Main Telescope Active Optics System,TS,,,A
 MTU,Maximum Transmission Unit,IT NET,,,A
 MTBF,Mean Time Between Failures,OPS,,,A
 MTDC,Modified Total Direct Costs,OPS,,,A
@@ -949,6 +952,7 @@ RFC,Request For Comment,LSST DM,,,A
 RFP,Request For Proposals,PMO,,,A
 RFQ,Request For Quotations,LSST OPS,,,A
 RGB,Red Giant Branch,Sci,,,A
+RINGS,RSS Imaging spectroscopy Nearby Galaxy Survey,Sci,,,A
 RM,Release Manager,LSST DM,,,A
 RMA,Return Merchandise Authorization,IT,,,A
 RMS,Root-Mean-Square,Gen,,,A
@@ -1110,6 +1114,7 @@ TACC,Texas Advanced Computing Center,Gen,,,A
 TACREL,internal (relative) time-recording accuracy (millisecond),TS,,,A
 TAI,International Atomic Time,Gen,,,A
 TAP,Table Access Protocol (IVOA standard),VO,,,A
+TAXICAB,Telescope and Auxiliary Instrumentation Calibration Acceptance Board,TS,,,A
 TB,TeraByte,Gen,,,A
 TBA,To Be Announced,Gen,,,A
 TBC,To Be Confirmed,Gen,,,A
