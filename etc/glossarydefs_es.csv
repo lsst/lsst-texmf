@@ -223,6 +223,7 @@ CSDC,Centro de Datos de Ciencia Comunitaria,
 CSM,Material circunestelar,
 CSV,Valores separados por coma,
 CTA,Red de Telescopios Cherenkov  \url{https://www.cta-observatory.org/},
+CTI,Ineficiencia de transferencia de carga,CAM
 CTIO,Observatorio InterEstadounidense Cerro Tololo,
 CUI,Información controlada no clasificada,
 CV,Curriculum vitae,
@@ -834,6 +835,7 @@ PCA,Análisis de componentes principales,
 PCB,placas de circuitos impresos,
 PCI,Interconexión de componentes periféricos,
 PCS,Sistema refrigerante por bombeo,
+PCTI,Ineficiencia de transferencia de carga en paralelo,CAM
 PCW,Taller comunitario del proyecto,
 PD,Desarrollo de programas,
 PDAC,Centro de acceso a datos de prototipos,
@@ -885,6 +887,7 @@ PSE,Ingeniería de Sistemas del Proyecto,
 PSF,Función de dispersión de punto,
 PST,Equipo Científico del Proyecto,
 PSTN,Nota técnica científica del proyecto,
+PTC,photon transfer curve,
 PTF,Fábrica de transitorios de Palomar,
 PVI,Imagen procesada de visita,
 PWI,Institución predominantemente blanca,
@@ -983,6 +986,7 @@ SBS,Servicios empresariales compartidos,
 SC,Protección del sistema y las comunicaciones,IT
 SC,Puesta a punto del sistema,PMO
 SC,Colaboración científica,DM
+SCTI,Serie Ineficiencia de transferencia de carga,CAM
 SCADA,"Supervisión , control y adquisición de datos [Sistema] ",
 SCIDAR,Detección y medición de centelleo,
 SCOC,Comité de Optimización de la Cadencia de la Investigación,
