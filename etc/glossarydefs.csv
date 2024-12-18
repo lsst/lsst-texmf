@@ -852,6 +852,7 @@ PCA,Principal Component Analysis,Gen,,,A
 PCB,printed circuit boards,TS,Document-12030,,A
 PCI,Peripheral Component Interconnect,Gen,,,A
 PCS,Pumped Coolant System,CAM,,,A
+PCTI,Parallel Charge Transfer Inefficiency,CAM,,,A
 PCW,Project Community Workshop,LSST DM,,,A
 PD,Program Development,OPS,,,A
 PDAC,Prototype Data Access Center,LSST DM,,,A

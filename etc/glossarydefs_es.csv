@@ -835,6 +835,7 @@ PCA,Análisis de componentes principales,
 PCB,placas de circuitos impresos,
 PCI,Interconexión de componentes periféricos,
 PCS,Sistema refrigerante por bombeo,
+PCTI,Ineficiencia de transferencia de carga en paralelo,CAM
 PCW,Taller comunitario del proyecto,
 PD,Desarrollo de programas,
 PDAC,Centro de acceso a datos de prototipos,
@@ -985,7 +986,7 @@ SBS,Servicios empresariales compartidos,
 SC,Protección del sistema y las comunicaciones,IT
 SC,Puesta a punto del sistema,PMO
 SC,Colaboración científica,DM
-SCTI,Serie Ineficiencia de transferencia de carga, CAM
+SCTI,Serie Ineficiencia de transferencia de carga,CAM
 SCADA,"Supervisión , control y adquisición de datos [Sistema] ",
 SCIDAR,Detección y medición de centelleo,
 SCOC,Comité de Optimización de la Cadencia de la Investigación,
