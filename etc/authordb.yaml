@@ -139,6 +139,7 @@ affiliations:
   KLOA: Key Laboratory of Optical Astronomy, National Astronomical Observatories,
     Chinese Academy of Sciences, 20A Datun Road, Chaoyang District, Beijing 100012,
     People's Republic of China
+  LancasterU: Lancaster University, Lancaster, UK
   LAPP: Universit\'{e} Grenoble-Alpes, Universit\'{e} Savoie Mont Blanc, CNRS/IN2P3
     Laboratoire d'Annecy-le-Vieux de Physique des Particules, 9 Chemin de Bellevue
     -- BP 110, F-74940 Annecy-le-Vieux Cedex, France
@@ -240,6 +241,7 @@ affiliations:
     Accelerator Laboratory, Stanford University, Stanford, CA 94025, USA
   Southampton: University of Southampton, Hartley Library B12, University Rd,
     Highfield, Southampton SO17 1BJ, United Kingdom
+  STFC-RAL: Science and Technology Facilities Council, Rutherford Appleton Laboratory, Harwell, UK
   Stanford-AeroAstro: Department of Aeronautics and Astronautics, Stanford University,
     Stanford, CA 94305, USA
   StonyBrookU: Department of Physics and Astronomy, Stony Brook University, Stony Brook, NY 11794, USA
@@ -2515,6 +2517,13 @@ authors:
     initials: Paul J.
     name: Lotz
     orcid: null
+  lovep:
+    affil:
+    - LancasterU
+    altaffil: []
+    initials: Peter
+    name: Love
+    orcid: null
   luj:
     affil:
     - FSU
@@ -2969,6 +2978,13 @@ authors:
     initials: Nima
     name: Sedaghat
     orcid: 0000-0003-4734-2019
+  noblet:
+    affil:
+    - STFC-RAL
+    altaffil: []
+    initials: Timothy
+    name: Noble
+    orcid: null
   nomerotskia:
     affil:
     - BNL
