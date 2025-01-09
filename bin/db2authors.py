@@ -36,7 +36,7 @@ authorfile = os.path.join("authors.yaml")
 
 # this should probably be a dict with the value of affil_cmd
 # the keys could then be passed to the arg parser.
-OUTPUT_MODES = ["aas", "spie", "adass", "arxiv", "ascom"]
+OUTPUT_MODES = ["aas", "spie", "adass", "arxiv", "ascom", "webofc"]
 
 description = __doc__
 formatter = argparse.RawDescriptionHelpFormatter
@@ -92,6 +92,16 @@ if args.mode == "ascom":
     buffer_affil = True
     affil_out_sep = ", "
     auth_afil_form = "{affilInd}{affilAuth}{affilSep}"
+
+if args.mode == "webofc":
+    affil_cmd = ""
+    author_sep = " \\and\n"
+    affil_out_sep = " \\and\n"
+    buffer_affil = True
+    buffer_authors = True
+    author_form = r"    \firstname{{{initials}}} \lastname{{{surname}}} {affilAuth}"
+    auth_afil_form = "{affilAuth}{affilSep}\\inst{{{affilInd}}}"
+    affil_form = "{affil}"
 
 with open(authorfile) as fh:
     authors = yaml.safe_load(fh)
@@ -269,7 +279,7 @@ if buffer_authors:
     for auth in authOutput:
         print(auth, end="")
         anum = anum + 1
-        if (anum == numAuths and numAuths > 1) or (args.mode == "arxiv" and anum < numAuths):
+        if (anum == numAuths and numAuths > 1) or (args.mode in ("arxiv", "webofc") and anum < numAuths):
             print(author_sep, end="")
         else:
             if anum < numAuths:
@@ -279,10 +289,14 @@ if buffer_authors:
     else:
         print("}")
     if not args.noafil:
+        if args.mode == "webofc":
+            print("\\institute{")
         print(*allAffil, sep=affil_out_sep, end="")
+        if args.mode == "webofc":
+            print("\n}")
     if args.mode == "arxiv":
         print(")\n")
-    if args.mode != "arxiv":
+    if args.mode == "adass":
         print("")
         print(*pAuthorOutput, sep="\n")
         print("% Yes they said to have these index commands commented out.")
