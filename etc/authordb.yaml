@@ -524,6 +524,13 @@ authors:
     initials: Stephen
     name: Bailey
     orcid: null
+  barriac:
+    affil:
+    - RubinObsC
+    altaffil: []
+    initials: Carlos
+    name: Barr\'{i}a
+    orcid: null
   barddj:
     affil:
     - SLAC
@@ -1377,6 +1384,13 @@ authors:
     initials: Michael
     name: Eracleous
     orcid: 0000-0002-3719-940X
+  erbb:
+    affil:
+    - RubinObsC
+    altaffil: []
+    initials: Baden
+    name: Erb
+    orcid: null
   estevesjh:
     affil:
     - Harvard-Physics
@@ -1712,6 +1726,13 @@ authors:
     initials: Alma X.
     name: Gonzalez-Morales
     orcid: 0000-0003-4089-6924
+  gonzalesi:
+    affil:
+    - RubinObsC
+    altaffil: []
+    initials: Ivan
+    name: Gonzales
+    orcid: null
   goodenowi:
     affil:
     - RubinObs
@@ -2667,6 +2688,13 @@ authors:
     altaffil: []
     initials: Rafael
     name: Mart\'{i}nez-Galarza
+    orcid: null
+  mauleng:
+    affil:
+    - RubinObsC
+    altaffil: []
+    initials: Guido
+    name: Maulen
     orcid: null
   maym:
     affil:
@@ -3775,7 +3803,7 @@ authors:
     orcid: 0000-0003-3001-676X
   silvac:
     affil:
-    - RubinObs
+    - RubinObsC
     altaffil: []
     initials: Cristian
     name: Silva
@@ -3894,6 +3922,13 @@ authors:
     initials: Martin
     name: Still
     orcid: null
+  stockebrandh:
+    affil:
+    - RubinObsC
+    altaffil: []
+    initials: Hernan
+    name: Stockebrand
+    orcid: null
   stoehrf:
     affil:
     - ESO
@@ -3979,6 +4014,13 @@ authors:
     altaffil: []
     initials: Alexander
     name: Szalay
+    orcid: null
+  tapiad:
+    affil:
+    - RubinObsC
+    altaffil: []
+    initials: Diego
+    name: Tapia
     orcid: null
   takacsp:
     affil:
