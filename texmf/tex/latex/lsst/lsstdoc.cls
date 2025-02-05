@@ -329,13 +329,15 @@
 \@dmccbfalse
 \newif\if@ccb
 \@ccbfalse
+\newif\if@occb
+\@occbfalse
 \newcommand{\docRef}{set the Reference with {$\backslash$}setDocRef}
 \newcommand{\setDocRef}[1]{
    \renewcommand{\docRef}{#1}
    \if@dmccb\relax\else\IfBeginWith{#1}{LDM-}{\@dmccbtrue}{}\fi
    \if@ccb\relax\else\IfBeginWith{#1}{LSE-}{\@ccbtrue}{}\fi
    \if@ccb\relax\else\IfBeginWith{#1}{LPM-}{\@ccbtrue}{}\fi
-   \if@ccb\relax\else\IfBeginWith{#1}{RDO-}{\@ccbtrue}{}\fi
+   \if@occb\relax\else\IfBeginWith{#1}{RDO-}{\@occbtrue}{}\fi
 }
 
 \newcommand{\docAuthor}{set the Author with {$\backslash$}setDocAuthor}
@@ -516,6 +518,17 @@
    }
    \def\@controlFootText{%
    The contents of this document are subject to configuration control by the Rubin Observatory DM Change Control Board.
+   }
+   \fi
+   \if@occb
+   \def\@controlText{%
+   This Rubin Observatory document has been approved as a Content-Controlled Document by the Rubin Observatory Change Control Board.
+   If this document is changed or superseded, the new document will retain the Handle designation shown above.
+   The control is on the most recent digital document with this Handle in the Rubin Observatory digital archive and not printed versions.
+   Additional information may be found in the corresponding CCB Jira ticket.
+   }
+   \def\@controlFootText{%
+   The contents of this document are subject to configuration control by the Rubin Observatory Change Control Board.
    }
    \fi
 
