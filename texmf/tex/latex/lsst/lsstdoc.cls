@@ -329,13 +329,15 @@
 \@dmccbfalse
 \newif\if@ccb
 \@ccbfalse
+\newif\if@occb
+\@occbfalse
 \newcommand{\docRef}{set the Reference with {$\backslash$}setDocRef}
 \newcommand{\setDocRef}[1]{
    \renewcommand{\docRef}{#1}
    \if@dmccb\relax\else\IfBeginWith{#1}{LDM-}{\@dmccbtrue}{}\fi
    \if@ccb\relax\else\IfBeginWith{#1}{LSE-}{\@ccbtrue}{}\fi
    \if@ccb\relax\else\IfBeginWith{#1}{LPM-}{\@ccbtrue}{}\fi
-   \if@ccb\relax\else\IfBeginWith{#1}{RDO-}{\@occbtrue}{}\fi
+   \if@occb\relax\else\IfBeginWith{#1}{RDO-}{\@occbtrue}{}\fi
 }
 
 \newcommand{\docAuthor}{set the Author with {$\backslash$}setDocAuthor}
@@ -528,6 +530,7 @@
    \def\@controlFootText{%
    The contents of this document are subject to configuration control by the Rubin Observatory Change Control Board.
    }
+   \fi
 
    % For obsolete documents we never want to report that the document is approved
    \if@isobsolete
