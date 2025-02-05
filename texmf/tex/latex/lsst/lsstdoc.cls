@@ -335,6 +335,7 @@
    \if@dmccb\relax\else\IfBeginWith{#1}{LDM-}{\@dmccbtrue}{}\fi
    \if@ccb\relax\else\IfBeginWith{#1}{LSE-}{\@ccbtrue}{}\fi
    \if@ccb\relax\else\IfBeginWith{#1}{LPM-}{\@ccbtrue}{}\fi
+   \if@ccb\relax\else\IfBeginWith{#1}{RDO-}{\@ccbtrue}{}\fi
 }
 
 \newcommand{\docAuthor}{set the Author with {$\backslash$}setDocAuthor}
