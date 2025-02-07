@@ -278,6 +278,7 @@ DETF,Dark Energy Task Force (AAAC/HEPAP joint advisory sub-committee),TS,Documen
 DF,Data Facility,OPS DF DM,,,A
 DHO,Damped Harmonic Oscillator,Sci,,,A
 DIA,Difference Image Analysis,DM,,,A
+DID,Data Identifier (Rucio),DM,,,A
 DIMM,Differential Image Motion Monitor,Gen,,,A
 DKIST,Daniel K. Inouye Solar Telescope,OPS,,,A
 DLS,Deep Lens Survey,TS,Document-11937,,A
@@ -508,6 +509,7 @@ HEALPix,Hierarchical Equal-Area iso-Latitude Pixelisation,Gen,,,A
 HEASARC,NASA's Archive of Data on Energetic Phenomena,Gen,,,A
 HELP, Herschel Extragalactic Legacy Project,Gen,,,A
 HEP, High Energy Physics,Gen,,,A
+HEP-CCE,High-Energy Physics Center for Computational Excellence (Argonne),DM,,,A
 HEPAP,HEP Advisory Panel,TS,Document-11986,,A
 HERMES,a high-resolution fibre-fed spectrograph for the 1.2m Mercator telescope,Sci,,,A
 HI,Hydrogen iodide,Sci,,,A
