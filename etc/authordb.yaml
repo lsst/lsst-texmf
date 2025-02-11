@@ -907,7 +907,7 @@ authors:
     name: Canestrari
     orcid: 0000-0003-4591-7763
   cancinob:
-    afill:
+    affil:
     - NOIRLabC
     altaffil: []
     initials: Braulio
@@ -1118,7 +1118,7 @@ authors:
     name: Corral
     orcid: null
   cortes:
-    afill:
+    affil:
     - NOIRLabC
     altaffil: []
     initials: Patricio
@@ -1286,7 +1286,7 @@ authors:
     name: de Val-Borro
     orcid: 0000-0002-0455-9384
   diazn:
-    afill:
+    affil:
     - NOIRLabC
     altaffil: []
     initials: Norman
@@ -1712,7 +1712,7 @@ authors:
     name: Gomboc
     orcid: null
   gomezm:
-    afil:
+    affil:
     - NOIRLabC
     altaffil: []
     initials: Manuel
