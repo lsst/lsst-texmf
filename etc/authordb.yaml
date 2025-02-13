@@ -719,7 +719,7 @@ authors:
     orcid: null
   boltona:
     affil:
-    - NOIRLab
+    - SLAC
     altaffil: []
     initials: Adam
     name: Bolton
@@ -1369,6 +1369,13 @@ authors:
     altaffil: []
     initials: Tim
     name: Eifler
+    orcid: null
+  eigero:
+    affil:
+    - SLAC-Kavli
+    altaffil: []
+    initials: Orion
+    name: Eiger
     orcid: null
   emmonsbl:
     affil:
