@@ -1370,6 +1370,13 @@ authors:
     initials: Tim
     name: Eifler
     orcid: null
+  eigero:
+    affil:
+    - SLAC-Kavli
+    altaffil: []
+    initials: Orion
+    name: Eiger
+    orcid: null
   emmonsbl:
     affil:
     - RubinObs
