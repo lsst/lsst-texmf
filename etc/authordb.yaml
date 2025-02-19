@@ -1373,10 +1373,10 @@ authors:
   eigero:
     affil:
     - SLAC-Kavli
-    altaffil: []
+    altaffil: [SLAC]
     initials: Orion
     name: Eiger
-    orcid: null
+    orcid: 0000-0003-2933-391X
   emmonsbl:
     affil:
     - RubinObs
