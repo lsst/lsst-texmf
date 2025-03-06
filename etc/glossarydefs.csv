@@ -1410,7 +1410,7 @@ Earned Value Management System,"A set of tools, techniques and procedures which 
 Education and Public Outreach,"The LSST subsystem responsible for the cyberinfrastructure, user interfaces, and outreach programs necessary to connect educators, planetaria, citizen scientists, amateur astronomers, and the general public to the transformative LSST dataset",EPO,,EPO,G
 Eimage,"An output product of PhoSim, an Eimage is a simulation of the response of a single sensor, where the outputs of the constituent amps have been integrated, and the effects of variations in pixel-to-pixel sensitivity and amplifier gains have been removed",Sims,,,G
 element,A node in the hierarchical project WBS,DM,,,G
-Enclave,"Individually defined portions of the computational resources at the Summit, Base, NCSA, and Satellite Facilities, such as the Prompt Enclave, the Archive Enclave, etc. ",DM,LDM-148,,G
+Enclave,"No Longer used - Rubin uses Zone now",DM,LDM-148,,G
 Encumbrances,"A contingent liability, contract, purchase order, payroll commitment, tax payable, or legal penalty that is chargeable to an account; it ceases to be an encumbrance when paid out or when the actual liability amount is determined and recorded as an expense",Adm,,,G
 ephemeris,"An ephemeris (pl: ephemerides) gives the predicted positions of astronomical objects or artificial satellites in the sky with time. The ephemerides are computed from mathematical models of motion of the object and the Earth. In LSST Solar System Processing, it refers to a predicted position (RA/Dec/time/etc) of a Solar System Object (SSObject)",Sci,,,G
 epic,A self contained work with a concrete deliverable which my be scheduled to take place with a single cycle and WBS element,DM,,,G
@@ -1674,3 +1674,4 @@ Work Breakdown Structure,a tool that defines and organizes the LSST project's to
 Work Elements,The critical tasks of the LSST Project as represented in the WBS,Adm,,,G
 World Coordinate System,"a mapping from image pixel coordinates to physical coordinates; in the case of images the mapping is to sky coordinates, generally in an equatorial (RA, Dec) system. The WCS is expressed in FITS file extensions as a collection of header keyword=value pairs (basically, the values of parameters for a selected functional representation of the mapping) that are specified in the FITS Standard",Sci,,,G
 zBEAMS,"Extension of BEAMS light curve classification method to include redshift ($z$) information",Sci,,,G
+Zone,"Individually defined portions of the computational resources at the Summit, Base, USDF, and Satellite Facilities, such as the Pixel Zone, Prompt Zone,  Archive Zone, etc. ",DM,LDM-148,,G
