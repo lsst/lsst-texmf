@@ -803,6 +803,7 @@ NSTA,National Science Teachers Association,OPS,,,A
 NTP,Network Time Protocol,OPS,,,A
 NTS,NCSA Test Stand,DM CAM,,,A
 NTT,Nippon Telegraph and Telephone Corporation,IT,,,A
+NUMA,Non-Uniform Memory Access,IT,,,A
 NUV,Near Ultraviolet,Sci,,,A
 NVMe,Non Volatile Memory Express,DM IT,,,A
 NXOS,Nexus OS,IT,,,A
