@@ -128,12 +128,13 @@ authorinfo = authordb["authors"]
 affil = authordb["affiliations"]
 affilset = []  # it will be a set but I want index() which is supported in list
 
-# AASTeX6.1 author files are of the form:
+# AASTeX7 author files are of the form:
 # \author[ORCID]{Initials~Surname}
+# \email{manndetory}
 # \altaffiliation{Hubble Fellow}   * must come straight after author
 # \affiliation{Affil1}
 # \affiliation{Affill2}
-# Do not yet handle \email or \correspondingauthor
+# Do not yet handle  \correspondingauthor
 
 if WRITE_CSV:
     # Used for arXiv submission
@@ -211,6 +212,9 @@ for anum, authorid in enumerate(authors):
     email = auth.get("email", "")
     if email is None:
         email = ""
+        if args.mode == "aas":
+            # as of aas7 email is mandetory
+            email = "noemail@none.com"
     # For spaces in surnames use a ~
     surname = re.sub(r"\s+", "~", auth["name"])
 
@@ -257,17 +261,16 @@ for anum, authorid in enumerate(authors):
         allAffil = allAffil + affilOutput
     else:
         print(author)
-        if buffer_affil:
-            print(*affilOutput, sep="\n")
-        else:
-            if auth.get("altaffil"):
-                for af in auth["altaffil"]:
-                    print(rf"\altaffiliation{{{af}}}")
+        if args.mode == "aas":
+            print(rf"\email{{{email}}}")
+        if auth.get("altaffil"):
+            for af in auth["altaffil"]:
+                print(rf"\altaffiliation{{{af}}}")
 
-            # The affiliations have to be retrieved via label
-            for aflab in auth["affil"]:
-                print(rf"\{affil_cmd}{{{affil[aflab]}}}")
-        print()
+        # The affiliations have to be retrieved via label
+        for aflab in auth["affil"]:
+            print(rf"\{affil_cmd}{{{affil[aflab]}}}")
+    print()
 
 if buffer_authors:
     if args.mode == "arxiv":
