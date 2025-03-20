@@ -1806,11 +1806,12 @@ authors:
     orcid: 0000-0003-3023-8362
   guylp:
     affil:
-    - RubinObs
+    - RubinObsC
     altaffil: []
     initials: Leanne P.
     name: Guy
     orcid: 0000-0003-0800-8755
+    email: leanne.guy@noirlab.edu
   guyonneta:
     affil:
     - Harvard-Physics
