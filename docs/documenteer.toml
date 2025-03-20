@@ -1,0 +1,14 @@
+[project]
+title = "lsst-texmf: The LSST LaTeX Classes"
+copyright = "2016-2024 Association of Universities for Research in Astronomy, Inc. (AURA)"
+base_url = "https://lsst-texmf.lsst.io"
+github_url = "https://github.com/lsst/lsst-texmf"
+
+[sphinx]
+extensions = [
+    "sphinxcontrib.bibtex",
+    "documenteer.ext.bibtex",
+]
+exclude = [
+  "_templates/README.md"  # This markdown file is not part of the documentation
+]
