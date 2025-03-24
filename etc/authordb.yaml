@@ -4038,6 +4038,13 @@ authors:
     initials: Peter
     name: Takacs
     orcid: null
+  tarantoa:
+    affil:
+    - Bologna-Phys
+    altaffil: []
+    initials: Alessio
+    name: Taranto
+    orcid: 0009-0009-3271-3498
   taranuds:
     affil:
     - Princeton-Astro
