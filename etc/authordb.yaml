@@ -1549,6 +1549,14 @@ authors:
     initials: Michael D.
     name: Freemon
     orcid: null
+  fus:
+    affil:
+    - SLAC-Kavli
+    - KIPAC
+    altaffil: []
+    initials: Shenming
+    name: Fu
+    orcid: 0000-0001-5422-1958
   gaffneyn:
     affil:
     - TACC
