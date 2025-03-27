@@ -1549,6 +1549,13 @@ authors:
     initials: Michael D.
     name: Freemon
     orcid: null
+  fuchsds:
+    affil:
+    - SLAC
+    altaffil: []
+    initials: Dan S.
+    name: Fuchs
+    orcid: 0009-0007-2454-1951
   fus:
     affil:
     - SLAC-Kavli
