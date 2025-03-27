@@ -135,7 +135,6 @@ affiliations:
   JSI: Joint Space-Science Institute, University of Maryland, College Park, MD 20742, USA
   JSickCodes: J.Sick Codes Inc., Penetanguishene, Ontario, Canada
   KECK: W. M. Keck Observatory, 65-1120 Mamalahoa Hwy.  Kamuela, HI 96743, USA
-  KIPAC: Kavli Institute for Particle Astrophysics and Cosmology, SLAC
   KLOA: Key Laboratory of Optical Astronomy, National Astronomical Observatories,
     Chinese Academy of Sciences, 20A Datun Road, Chaoyang District, Beijing 100012,
     People's Republic of China
@@ -235,10 +234,10 @@ affiliations:
     Sanz 100, Of 104, Providencia, Santiago, Chile
   SAO: Smithsonian Astrophysical Observatory, 60 Garden St., Cambridge MA 02138, USA
   SETI: SETI Institute, 339 Bernardo Avenue, Suite 200, Mountain View, CA 94043, USA
-  SLAC: SLAC National Accelerator Laboratory,  2575 Sand Hill Rd., Menlo Park, CA
+  SLAC: SLAC National Accelerator Laboratory, 2575 Sand Hill Rd., Menlo Park, CA
     94025, USA
   SLAC-Kavli: Kavli Institute for Particle Astrophysics and Cosmology, SLAC National
-    Accelerator Laboratory, Stanford University, Stanford, CA 94025, USA
+    Accelerator Laboratory, 2575 Sand Hill Rd., Menlo Park, CA 94025, USA
   Southampton: University of Southampton, Hartley Library B12, University Rd,
     Highfield, Southampton SO17 1BJ, United Kingdom
   STFC-RAL: Science and Technology Facilities Council, Rutherford Appleton Laboratory, Harwell, UK
@@ -789,7 +788,7 @@ authors:
   bradshawa:
     affil:
     - SLAC
-    - KIPAC
+    - SLAC-Kavli
     altaffil: []
     initials: Andrew
     name: Bradshaw
@@ -1559,7 +1558,6 @@ authors:
   fus:
     affil:
     - SLAC-Kavli
-    - KIPAC
     altaffil: []
     initials: Shenming
     name: Fu
