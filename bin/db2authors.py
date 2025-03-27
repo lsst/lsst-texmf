@@ -128,6 +128,9 @@ authorinfo = authordb["authors"]
 affil = authordb["affiliations"]
 affilset = []  # it will be a set but I want index() which is supported in list
 
+# Email domains, keyed on affiliation.
+emails = authordb["emails"]
+
 # AASTeX7 author files are of the form:
 # \author[ORCID]{Initials~Surname}
 # \email{manndetory}
@@ -210,11 +213,26 @@ for anum, authorid in enumerate(authors):
         orc = ""
 
     email = auth.get("email", "")
-    if email is None:
-        email = ""
-        if args.mode == "aas":
-            # as of aas7 email is mandetory
-            email = "noemail@none.com"
+    if "@" in email:
+        username, domain = email.split("@", 1)
+    else:
+        username = email
+        domain = auth["affil"][0]
+    if "." not in domain:
+        # This is a key to a email domain.
+        domain = emails.get(domain)
+    if args.mode == "aas" and (not domain or not username):
+        # Only warn if we need the email.
+        print(
+            f"WARNING: Unable to resolve email address for author '{authorid}' email '{email}'",
+            file=sys.stderr,
+        )
+    if not domain:
+        domain = "none.com"
+    if not username:
+        username = "unknown"
+    email = f"{username}@{domain}"
+
     # For spaces in surnames use a ~
     surname = re.sub(r"\s+", "~", auth["name"])
 

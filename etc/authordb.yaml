@@ -215,6 +215,7 @@ affiliations:
     Slovance 2, 182 21 Praha 8, Czech Republic
   Princeton-Astro: Department of Astrophysical Sciences, Princeton University, Princeton,
     NJ 08544, USA
+  Princeton: Princeton University, Princeton, NJ 08544, USA
   Purdue-Astro: Department of Physics and Astronomy, Purdue University, 525 Northwestern
     Ave., West Lafayette, IN  47907, USA
   Radboud-Astro: Department of Astrophysics/IMAPP, Radboud University Nijmegen, P.O.\
@@ -241,6 +242,7 @@ affiliations:
   Southampton: University of Southampton, Hartley Library B12, University Rd,
     Highfield, Southampton SO17 1BJ, United Kingdom
   STFC-RAL: Science and Technology Facilities Council, Rutherford Appleton Laboratory, Harwell, UK
+  Stanford: Stanford University, 450 Jane Stanford Way, Stanford, CA 94305, USA
   Stanford-AeroAstro: Department of Aeronautics and Astronautics, Stanford University,
     Stanford, CA 94305, USA
   StonyBrookU: Department of Physics and Astronomy, Stony Brook University, Stony Brook, NY 11794, USA
@@ -301,6 +303,28 @@ affiliations:
   WisconsinMadison: Department of Physics, University of Wisconsin-Madison, Madison,
     WI 53706, USA
   Yale: Astronomy Department, Yale University, New Haven, CT 06520, USA
+emails:
+  Duke: duke.edu
+  EdinburghIA: ed.ac.uk
+  IPAC: ipac.caltech.edu
+  LancasterU: lancaster.ac.uk
+  Lyon-CC-IN2P3: in2p3.fr
+  NCSA: illinois.edu
+  NOIRLab: noirlab.edu
+  NOIRLabC: noirlab.edu
+  Pitts: pitt.edu
+  Princeton: princeton.edu
+  Princeton-Astro: astro.princeton.edu
+  RubinObs: lsst.org
+  RubinObsC: lsst.org
+  RubinOps: noirlab.edu
+  RubinOpsC: noirlab.edu
+  SLAC-Kavli: slac.stanford.edu
+  SLAC: slac.stanford.edu
+  STFC-RAL: stfc.ac.uk
+  Stanford: stanford.edu
+  Washington-Dirac: uw.edu
+  Washington: uw.edu
 authors:
   abelb:
     affil:
@@ -359,6 +383,7 @@ authors:
     initials: Russ
     name: Allbery
     orcid: null
+    email: rra
   allsmanr:
     affil:
     - RubinObs
@@ -380,6 +405,7 @@ authors:
     initials: Yusra
     name: AlSayyad
     orcid: 0009-0008-9216-7516
+    email: yusra
   alvecs:
     affil:
     - UCL
@@ -601,6 +627,7 @@ authors:
     initials: Keith
     name: Bechtol
     orcid: 0000-0001-8156-0429
+    email: KBechtol
   beckerac:
     affil:
     - Washington
@@ -615,6 +642,7 @@ authors:
     initials: Mark G.
     name: Beckett
     orcid: 0000-0003-3623-9753
+    email: george.beckett
   beclaj:
     affil:
     - SLAC
@@ -643,6 +671,7 @@ authors:
     initials: Eric C.
     name: Bellm
     orcid: 0000-0001-8018-5348
+    email: ecbellm
   berukoffs:
     affil:
     - NOIRLab
@@ -771,6 +800,7 @@ authors:
     initials: James F.
     name: Bosch
     orcid: 0000-0003-2759-5764
+    email: jbosch
   boutignyd:
     affil:
     - LAPP
@@ -934,6 +964,7 @@ authors:
     initials: Jeffrey L.
     name: Carlin
     orcid: 0000-0002-3936-9628
+    email: jcarlin
   carlsonel:
     affil:
     - RubinObs
@@ -948,6 +979,7 @@ authors:
     initials: Ross
     name: Ceballo
     orcid: null
+    email: ross.ceballo
   chandlerc:
     affil:
     - NAU
@@ -1263,6 +1295,7 @@ authors:
     initials: Erik
     name: Dennihy
     orcid: null
+    email: edennihy
   depeysterr:
     affil:
     - SLAC
@@ -1334,6 +1367,7 @@ authors:
     initials: Gregory P.
     name: Dubois-Felsmann
     orcid: 0000-0003-1598-6979
+    email: gpdf
   duboisr:
     affil:
     - SLAC
@@ -1355,6 +1389,7 @@ authors:
     initials: Frossie
     name: Economou
     orcid: 0000-0002-8333-7615
+    email: frossie
   eggls:
     affil:
     - Washington
@@ -1440,6 +1475,7 @@ authors:
     initials: Angelo
     name: Fausti Neto
     orcid: 0000-0002-8095-305X
+    email: afausti
   fergusonh:
     affil:
     - STScI
@@ -1461,6 +1497,7 @@ authors:
     initials: Agn\`{e}s F.
     name: Fert\'{e}
     orcid: 0000-0003-3065-9941
+    email: ferte
   fieldb:
     affil:
     - DOE
@@ -1482,6 +1519,7 @@ authors:
     initials: Krzysztof
     name: Findeisen
     orcid: 0000-0003-1898-5760
+    email: kfindeis
   fisherlevinem:
     affil:
     - RubinObs
@@ -1555,6 +1593,7 @@ authors:
     initials: Dan S.
     name: Fuchs
     orcid: 0009-0007-2454-1951
+    email: danfuchs
   fus:
     affil:
     - SLAC-Kavli
@@ -1774,6 +1813,7 @@ authors:
     initials: Michelle
     name: Gower
     orcid: 0000-0001-9513-6987
+    email: mgower
   grahamml:
     affil:
     - Washington
@@ -1824,7 +1864,7 @@ authors:
     initials: Leanne P.
     name: Guy
     orcid: 0000-0003-0800-8755
-    email: leanne.guy@noirlab.edu
+    email: leanne.guy@NOIRLab
   guyonneta:
     affil:
     - Harvard-Physics
@@ -1853,6 +1893,7 @@ authors:
     initials: Andrew
     name: Hanushevsky
     orcid: null
+    email: abh
   harrisr:
     affil:
     - NOIRLab
@@ -1902,6 +1943,7 @@ authors:
     initials: Fabio
     name: Hernandez
     orcid: 0000-0001-7203-2552
+    email: fabio
   herrmanns:
     affil:
     - SLAC
@@ -2030,6 +2072,7 @@ authors:
     initials: David H.
     name: Irving
     orcid: 0009-0005-9099-4970
+    email: david.irving
   ishidaeo:
     affil:
     - Clermont-LPC
@@ -2093,6 +2136,7 @@ authors:
     initials: Tim
     name: Jenness
     orcid: 0000-0001-5982-167X
+    email: tjenness
   jernigang:
     affil:
     - Berkeley-Space
@@ -2201,6 +2245,7 @@ authors:
     initials: Arun
     name: Kannawadi
     orcid: 0000-0001-8783-6529
+    email: arunkannawadi@Princeton-Astro
   kantorjp:
     affil:
     - RubinObs
@@ -2257,6 +2302,7 @@ authors:
     initials: Lee S.
     name: Kelvin
     orcid: 0000-0001-9395-4759
+    email: lkelvin
   kernj:
     affil:
     - NRAO
@@ -2327,6 +2373,7 @@ authors:
     initials: Mikolaj
     name: Kowalik
     orcid: 0000-0002-9801-5969
+    email: mxk
   krabbendamvl:
     affil:
     - RubinObs
@@ -2348,6 +2395,7 @@ authors:
     initials: K. Simon
     name: Krughoff
     orcid: 0000-0002-4410-7868
+    email: skrughoff
   kubanekp:
     affil:
     - Praha-ASCR
@@ -2511,6 +2559,7 @@ authors:
     initials: Kian-Tat
     name: Lim
     orcid: 0000-0002-6338-6516
+    email: ktl
   lix:
     affil:
     - Delaware-PhyAst
@@ -2567,6 +2616,7 @@ authors:
     initials: Peter
     name: Love
     orcid: null
+    email: p.love
   luj:
     affil:
     - FSU
@@ -2589,6 +2639,7 @@ authors:
     initials: Robert H.
     name: Lupton
     orcid: 0000-0003-1666-0962
+    email: rhl
   lustnb:
     affil:
     - Princeton-Astro
@@ -2596,6 +2647,7 @@ authors:
     initials: Nate B.
     name: Lust
     orcid: 0000-0002-4122-9384
+    email: nlust
   lutfim:
     affil:
     - RubinObs
@@ -2610,6 +2662,7 @@ authors:
     initials: Lauren A.
     name: MacArthur
     orcid: 0009-0003-5548-6773
+    email: lauren
   madejskig:
     affil:
     - SLAC-Kavli
@@ -2732,6 +2785,7 @@ authors:
     initials: Jeremy
     name: McCormick
     orcid: 0009-0005-0229-7607
+    email: jeremym
   mccullyc:
     affil:
     - CUMBRES
@@ -2909,6 +2963,7 @@ authors:
     initials: Fritz
     name: Mueller
     orcid: 0000-0002-7061-4644
+    email: fritzm
   muencha:
     affil:
     - AAS
@@ -3035,6 +3090,7 @@ authors:
     initials: Timothy
     name: Noble
     orcid: null
+    email: timothy.noble
   nomerotskia:
     affil:
     - BNL
@@ -3071,6 +3127,7 @@ authors:
     initials: Erfan
     name: Nourbakhsh
     orcid: 0000-0003-3827-4691
+    email: erfan@Princeton
   oconnorp:
     affil:
     - BNL
@@ -3136,7 +3193,7 @@ authors:
     initials: William
     name: O'Mullane
     orcid: 0000-0003-4141-6195
-    email: womullan@lsst.org
+    email: womullan
   ortizs:
     affil:
     - RubinObs
@@ -3214,6 +3271,7 @@ authors:
     initials: Nathan M.
     name: Pease
     orcid: 0000-0002-9701-5975
+    email: npease
   pedrazaiv:
     affil:
     - DACC
@@ -3277,6 +3335,7 @@ authors:
     initials: Stephen
     name: Pietrowicz
     orcid: 0000-0002-2158-6480
+    email: srp
   piker:
     affil:
     - Google
@@ -3313,6 +3372,7 @@ authors:
     initials: Andr\'es A.
     name: Plazas Malag\'on
     orcid: 0000-0002-2598-0514
+    email: plazas@Stanford
   plutchakjp:
     affil:
     - NCSA
@@ -3455,6 +3515,7 @@ authors:
     initials: Sophie L.
     name: Reed
     orcid: 0000-0002-4422-0553
+    email: sophiereed@Princeton
   regnaultn:
     affil:
     - Paris-LPNHE
@@ -3595,6 +3656,7 @@ authors:
     initials: Eli S.
     name: Rykoff
     orcid: 0000-0001-9376-3135
+    email: erykoff@Stanford
   saccot:
     affil:
     - NOIRLab
@@ -3616,6 +3678,7 @@ authors:
     initials: Andrei
     name: Salnikov
     orcid: 0000-0002-3623-0161
+    email: salnikov
   sanchezsaezp:
     affil:
     - ESO
@@ -3674,6 +3737,7 @@ authors:
     initials: Pim
     name: Schellart
     orcid: 0000-0002-8324-0880
+    email: P.Schellart@Princeton
   schindlerrh:
     affil:
     - SLAC-Kavli
@@ -3823,6 +3887,7 @@ authors:
     initials: Jonathan
     name: Sick
     orcid: 0000-0003-3001-676X
+    email: jsick@RubinObs
   silvac:
     affil:
     - RubinObsC
@@ -3844,6 +3909,7 @@ authors:
     initials: Colin T.
     name: Slater
     orcid: 0000-0002-0558-0521
+    email: ctslater
   smartbm:
     affil:
     - Washington
@@ -4015,6 +4081,7 @@ authors:
     initials: Ian S.
     name: Sullivan
     orcid: 0000-0001-8708-251X
+    email: sullii
   sweeneyd:
     affil:
     - RubinObs
@@ -4065,6 +4132,7 @@ authors:
     initials: Dan S.
     name: Taranu
     orcid: 0000-0001-6268-1882
+    email: dtaranu@Princeton
   tethersa:
     affil:
     - SLAC
@@ -4114,6 +4182,7 @@ authors:
     initials: Adam J.
     name: Thornton
     orcid: 0000-0001-9342-6032
+    email: athornton
   thukralv:
     affil:
     - SLAC
@@ -4262,6 +4331,7 @@ authors:
     initials: Brian
     name: Van Klaveren
     orcid: null
+    email: bvan
   vanvelzens:
     affil:
     - Leiden
@@ -4336,6 +4406,7 @@ authors:
     initials: Stelios
     name: Voutsinas
     orcid: 0009-0003-4290-2942
+    email: svoutsinas
   vucinat:
     affil:
     - RubinObs
@@ -4372,6 +4443,7 @@ authors:
     initials: Christopher W.
     name: Walter
     orcid: 0000-0003-2035-2380
+    email: chris.walter
   wangdl:
     affil:
     - SLAC
@@ -4400,6 +4472,7 @@ authors:
     initials: Christopher Z.
     name: Waters
     orcid: 0000-0003-1989-4879
+    email: czw
   weaverb:
     affil:
     - NOIRLab
@@ -4492,6 +4565,7 @@ authors:
     initials: W. Michael
     name: Wood-Vasey
     orcid: 0000-0001-7113-1233
+    email: wmwv
   wux:
     affil:
     - IPAC
@@ -4520,6 +4594,7 @@ authors:
     initials: Wei
     name: Yang
     orcid: null
+    email: yangw
   yoachimp:
     affil:
     - Washington
