@@ -143,7 +143,7 @@ affiliations:
   LAPP: Universit\'{e} Grenoble-Alpes, Universit\'{e} Savoie Mont Blanc, CNRS/IN2P3
     Laboratoire d'Annecy-le-Vieux de Physique des Particules, 9 Chemin de Bellevue
     -- BP 110, F-74940 Annecy-le-Vieux Cedex, France
-  Lieden: Leiden Observatory, Leiden University, Postbus 9513, 2300 RA, Leiden, The Netherlands
+  Leiden: Leiden Observatory, Leiden University, Postbus 9513, 2300 RA, Leiden, The Netherlands
   Liege: Institut d'Astrophysique et de G\'{e}ophysique, Universit\'{e} de Li\`{e}ge,
     All\'{e}e du 6 Ao\^{u}t 19c, 4000 Li\`{e}ge, Belgium
   LINEA: Laborat\'{o}rio Interinstitucional de e-Astronomia, Rua General Jos\'e Cristino, 77,
@@ -4259,7 +4259,7 @@ authors:
     orcid: null
   vanvelzens:
     affil:
-    - Lieden
+    - Leiden
     altaffil: []
     initials: Sjoert
     name: van Velzen
