@@ -19,6 +19,7 @@ TN_SERIES = {
     "SQR": "SQuaRE Technical Note",
     "DMTR": "Data Management Test Report",
     "LDM": "Data Management Controlled Document",
+    "CTN": "Camera Technical Note",
 }
 
 
