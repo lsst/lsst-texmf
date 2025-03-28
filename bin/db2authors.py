@@ -279,8 +279,6 @@ for anum, authorid in enumerate(authors):
         allAffil = allAffil + affilOutput
     else:
         print(author)
-        if args.mode == "aas":
-            print(rf"\email{{{email}}}")
         if auth.get("altaffil"):
             for af in auth["altaffil"]:
                 print(rf"\altaffiliation{{{af}}}")
@@ -288,6 +286,8 @@ for anum, authorid in enumerate(authors):
         # The affiliations have to be retrieved via label
         for aflab in auth["affil"]:
             print(rf"\{affil_cmd}{{{affil[aflab]}}}")
+        if args.mode == "aas":
+            print(rf"\email{{{email}}}")
     print()
 
 if buffer_authors:
