@@ -2391,7 +2391,9 @@ authors:
   krughoffks:
     affil:
     - RubinObs
-    altaffil: []
+    altaffil: [
+      "Author is deceased"
+    ]
     initials: K. Simon
     name: Krughoff
     orcid: 0000-0002-4410-7868
