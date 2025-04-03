@@ -4,13 +4,15 @@ import unittest
 import pybtex.database
 from bibtools import BibDict, BibEntry
 
-TESTENTRY = """@Misc{DMTN-005,
+TESTENTRY = """@TechReport{DMTN-005,
       author = {Testy McTest},
        title = "{A great title}",
-   publisher = "{test pub}",
+ institution = "{test pub}",
         year = 2001,
        month = nov,
       handle = {DMTN-005},
+        type = "{Data Management Technical Note}",
+      number = "DMTN-005",
         note = "{NO note}",
          url = {http://nolplace.com} }"""
 

@@ -17,9 +17,21 @@ TN_SERIES = {
     "SITCOMTN": "Commissioning Technical Note",
     "SMTN": "Simulations Team Technical Note",
     "SQR": "SQuaRE Technical Note",
+    "ITTN": "Information Technology Technical Note",
+    "TSTN": "Telescope and Site Technical Note",
     "DMTR": "Data Management Test Report",
     "LDM": "Data Management Controlled Document",
+    "LSE": "Systems Engineering Controlled Document",
+    "LCA": "Camera Controlled Document",
+    "LTS": "Telescope & Site Controlled Document",
+    "LPM": "Project Controlled Document",
+    "LEP": "Education and Public Outreach Controlled Document",
     "CTN": "Camera Technical Note",
+    "RDO": "Data Management Operations Controlled Document",
+    "Agreement": "Formal Construction Agreement",
+    "Document": "Informal Construction Document",
+    "Publication": "LSST Construction Publication",
+    "Report": "Construction Report",
 }
 
 
@@ -38,6 +50,7 @@ class BibEntry:
         note="",
         url="",
         publisher="",
+        report_type=None,
     ):
         self.author = author
         self.title = title
@@ -46,13 +59,16 @@ class BibEntry:
         self.note = note
         self.url = url
         self.year = year
-        self.type = "@Misc"
+        self.type = "@TechReport"
         self.publisher = publisher
+        self.report_type = report_type
 
-        if "" == note and handle:
+        if handle and not report_type:
             prefix, _ = self.handle.split("-", 1)
             series = TN_SERIES.get(prefix, "")
-            self.note = f"Vera C. Rubin Observatory {series} {self.handle}"
+            self.report_type = series
+            if self.type.lower() == "@misc" and not self.note:
+                self.note = f"Vera C. Rubin Observatory {series} {self.handle}"
 
     def get_pybtex(self) -> pybtex.database.Entry:
         """Retrieve the entry in standard pybtex form."""
@@ -77,17 +93,34 @@ class BibEntry:
 
         This is not yet normalized by pybtex.
         """
-        return f"""{self.type}{{{self.handle},
+        if self.note:
+            note = f'\n             note = "{{{self.note}}}",'
+        else:
+            note = ""
+        if self.type.lower() == "@techreport":
+            entry = f"""{self.type}{{{self.handle},
+                author = {{{self.author}}},
+                title = "{{{self.title}}}",
+            institution = "{{{self.publisher}}}",
+                year = {self.year},
+                month = {self.month},
+                handle = {{{self.handle}}},
+                type = "{{{self.report_type}}}",
+                number = {{{self.handle}}},{note}
+                url = {{{self.url}}}
+            }}
+"""
+        else:
+            entry = f"""{self.type}{{{self.handle},
             author = {{{self.author}}},
              title = "{{{self.title}}}",
          publisher = "{{{self.publisher}}}",
               year = {self.year},
              month = {self.month},
-            handle = {{{self.handle}}},
-              note = "{{{self.note}}}",
+            handle = {{{self.handle}}},{note}
               url = {{{self.url}}}
-        }}
-        """
+        }}"""
+        return entry
 
     def __eq__(self, other):
         ret = True
