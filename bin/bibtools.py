@@ -18,6 +18,7 @@ TN_SERIES = {
     "SMTN": "Simulations Team Technical Note",
     "SQR": "SQuaRE Technical Note",
     "ITTN": "Information Technology Technical Note",
+    "TSTN": "Telescope and Site Technical Note",
     "DMTR": "Data Management Test Report",
     "LDM": "Data Management Controlled Document",
     "LSE": "Systems Engineering Controlled Document",
