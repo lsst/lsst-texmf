@@ -287,8 +287,10 @@ if __name__ == "__main__":
     args = parser.parse_args()
     result = asyncio.run(generate_bibfile(args.query, args.external))
 
+    # pybtex has already added a new line so do not add an additional
+    # new line when printing.
     if args.bibfile:
         with open(args.bibfile, "w") as outfile:
-            print(result, file=outfile)
+            print(result, file=outfile, end="")
     else:
-        print(result)
+        print(result, end="")
