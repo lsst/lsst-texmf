@@ -303,7 +303,9 @@ affiliations:
   WisconsinMadison: Department of Physics, University of Wisconsin-Madison, Madison,
     WI 53706, USA
   Yale: Astronomy Department, Yale University, New Haven, CT 06520, USA
+  _: Placeholder used for collective author that will not be shown
 emails:
+  _: none.com
   Duke: duke.edu
   EdinburghIA: ed.ac.uk
   IPAC: ipac.caltech.edu
@@ -326,6 +328,13 @@ emails:
   Washington-Dirac: uw.edu
   Washington: uw.edu
 authors:
+  DMPipelines:
+    affil:
+    - _
+    altaffil: []
+    initials: ""
+    name: Rubin Observatory Science Pipelines Developers
+    orcid: null
   abelb:
     affil:
     - Olympic
