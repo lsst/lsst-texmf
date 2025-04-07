@@ -61,6 +61,8 @@ auth_afil_form = "{affilAuth}{affilSep}{affilInd}"  # format of author with affi
 author_form = r"\author{orcid}{{{initials}~{surname}}}"  # format of the author
 author_super = False  # Author affiliation as super script
 author_sep = " and "
+# AASTeX7 currently requires an affiliation field but it can be empty.
+noaffil_cmd = r"\noaffiliation" + "\n" + r"\affiliation{}"
 
 # The default is AAS and if no mode is specified you get that
 if args.mode == "arxiv":
@@ -191,8 +193,13 @@ for anum, authorid in enumerate(authors):
     for theAffil in auth["affil"]:
         if theAffil not in affilset:
             affilset.append(theAffil)
-            # unforuneately you can not output an affil before an author
-            affilOutput.append(affil_form.format(cmd=affil_cmd, affilId=len(affilset), affil=affil[theAffil]))
+            if theAffil == "_":
+                affilOutput.append(noaffil_cmd)
+            else:
+                # Unfortunately you can not output an affil before an author.
+                affilOutput.append(
+                    affil_form.format(cmd=affil_cmd, affilId=len(affilset), affil=affil[theAffil])
+                )
 
         affilInd = affilset.index(theAffil) + 1
         if args.noafil:
@@ -221,7 +228,7 @@ for anum, authorid in enumerate(authors):
     if "." not in domain:
         # This is a key to a email domain.
         domain = emails.get(domain)
-    if args.mode == "aas" and (not domain or not username):
+    if args.mode == "aas" and (not domain or not username) and auth["affil"][0] != "_":
         # Only warn if we need the email.
         print(
             f"WARNING: Unable to resolve email address for author '{authorid}' email '{email}'",
@@ -246,6 +253,9 @@ for anum, authorid in enumerate(authors):
     addr = [a.strip() for a in affil[theAffil].split(",")]
     tute = addr[0]
     ind = len(addr) - 1
+    state = ""
+    pcode = ""
+    country = ""
     if ind > 0:
         country = addr[ind]
         ind = ind - 1
@@ -285,7 +295,10 @@ for anum, authorid in enumerate(authors):
 
         # The affiliations have to be retrieved via label
         for aflab in auth["affil"]:
-            print(rf"\{affil_cmd}{{{affil[aflab]}}}")
+            if aflab == "_":
+                print(noaffil_cmd)
+            else:
+                print(rf"\{affil_cmd}{{{affil[aflab]}}}")
         if args.mode == "aas":
             print(rf"\email{{{email}}}")
     print()
