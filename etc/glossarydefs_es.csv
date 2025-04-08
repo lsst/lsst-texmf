@@ -849,7 +849,8 @@ PDF,Función de densidad de probabilidad,Sci
 PDR,Revisión del diseño preliminar,
 PDR1,Divulgación de datos al público 1 (HSC),
 PDR2,Publicación de datos al público 2 (HSC),
-PDM,Minimización de dispersión de fase,
+PDM,Minimización de dispersión de fase,OPS
+PDM,Gestión de datos de productos SOLIDWORKS,TS
 PDS,Sistema de datos planetarios,
 PDU,Unidad de distribución de energía,
 PE,Protección física y ambiental,IT
@@ -914,6 +915,7 @@ QSO,Objeto cuasi estelar (cuásar),
 RA,Ascensión recta,
 RAC,Comité de Asignación de Recursos,
 RAD,Puerto Accesso Posterior,
+RAG,Recuperación-Generación mejorada,Gen
 RAID,Matriz redundante de discos independientes,
 RAL,Rutherford Appleton Laboratory (Reino Unido),
 RAM,Memoria de acceso aleatorio,

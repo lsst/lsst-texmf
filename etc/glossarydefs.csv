@@ -867,6 +867,7 @@ PDR,Preliminary Design Review,LSST DM,,,A
 PDR1,Public Data Release 1 (HSC),OPS,,,A
 PDR2,Public Data Release 2 (HSC),OPS,,,A
 PDM,Phase Dispersion Minimization,OPS,,,A
+PDM,SOLIDWORKS® Product Data Management,TS,,,A
 PDS,Planetary Data System,Sci,,,A
 PDU,Power Distribution Unit,LSST DM,,,A
 PE,Physical and Environmental Protection,IT,,,A
@@ -933,6 +934,7 @@ RA,Risk Assessment,IT,,,A
 RA,Right Ascension,Gen,,,A
 RAC,Resource Allocation Committee,OPS,,,A
 RAD,Rear Access Door,TS,,,A
+RAG,Retrieval-Augmented Generation,Gen,,,A
 RAID,Redundant Array of Inexpensive Disks,Gen,,,A
 RAL,Rutherford Appleton Laboratory (UK),Gen,,,A
 RAM,Random Access Memory,Gen,,,A
