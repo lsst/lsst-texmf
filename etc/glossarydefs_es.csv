@@ -62,6 +62,7 @@ AOC, Consejo de Supervisión de AURA,
 AOS,Sistema de óptica activa,
 AOSS,Servicios de soporte del Observatorio AURA,
 AP,Producción de alertas,
+APN,nombre del punto de acceso,
 APL,Licencia pública Apache,
 APT,Herramienta para propuestas de astrónomos,
 APDB,Base de datos de producción de alertas,
@@ -851,6 +852,7 @@ PDR1,Divulgación de datos al público 1 (HSC),
 PDR2,Publicación de datos al público 2 (HSC),
 PDM,Minimización de dispersión de fase,OPS
 PDM,Gestión de datos de productos SOLIDWORKS,TS
+PDN,Red de paquetes de datos,IT
 PDS,Sistema de datos planetarios,
 PDU,Unidad de distribución de energía,
 PE,Protección física y ambiental,IT

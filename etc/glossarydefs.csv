@@ -66,6 +66,7 @@ AOS,Active Optics System,TS,,,A
 AOSS,AURA Observatory Support Services,OPS,,,A
 AP,Alert Production,LSST DM,,,A
 APL,Apache Public License,LSST DM,,,A
+APN,Access Point Name,IT,,,A
 APT,Astronomer's Proposal Tool,Sci,,,A
 APDB,Alert Production DataBase,DM,,,A
 API,Application Programming Interface,Gen,,,A
@@ -868,6 +869,7 @@ PDR1,Public Data Release 1 (HSC),OPS,,,A
 PDR2,Public Data Release 2 (HSC),OPS,,,A
 PDM,Phase Dispersion Minimization,OPS,,,A
 PDM,SOLIDWORKS® Product Data Management,TS,,,A
+PDN,Packet Data Network,IT,,,A
 PDS,Planetary Data System,Sci,,,A
 PDU,Power Distribution Unit,LSST DM,,,A
 PE,Physical and Environmental Protection,IT,,,A
