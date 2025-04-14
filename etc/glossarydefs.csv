@@ -821,7 +821,7 @@ OCPS,OCS Controlled Pipeline System,TS DM,,,A
 OCS,Observatory Control System,LSST DM,,,A
 ODBC,"Open DataBase Connectivity, a standard API for SQL databases.",LSST DM,,,A
 ODI,"Obligation to Inform",PMO,,,A
-ODI,"Optical Data Interface",CAM,,,A
+ODI,"Output drain current (i)",CAM,,,A
 OGA,Other Government Agencies,OPS,,,A
 OHEP,Office of High-Energy Physics,TS,Document-12001,,A
 OI,Organization International,OPS,,,A
