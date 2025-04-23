@@ -228,6 +228,7 @@ CSV,Valores separados por coma,
 CTA,Red de Telescopios Cherenkov  \url{https://www.cta-observatory.org/},
 CTI,Ineficiencia de transferencia de carga,CAM
 CTIO,Observatorio InterEstadounidense Cerro Tololo,
+CTN,Nota técnica de Cámera,CAM
 CUI,Información controlada no clasificada,
 CV,Curriculum vitae,
 CVE,Vulnerabilidades y exposiciones comunes,
@@ -1014,6 +1015,7 @@ SEM,Gerente de Ingeniería de Sistemas,Adm
 SEMP,Plan de gestión de Ingeniería de Sistemas,
 SEWG,Grupo de trabajo para evaluación de estudios,
 SF,Función de estructura,
+SFP,procesamiento de una sola trama,DM
 SFR,Ritmo de formación de estrellas,Sci
 SFR,Solicitud de financiamiento suplementario,Adm
 SHA-1,Algoritmo de Hash seguro 1,
@@ -1129,6 +1131,7 @@ TLD,Dominio de nivel superior,
 TLS,Seguridad de la capa de transporte,
 TMA,Conunto de la montura del telescopio,
 TMT,Telescopio de Treinta Metros,
+TN,nota técnica,Gen
 TNO,objeto transneptuniano,
 TNS,Servidor de nombres de transitorios,
 TOM,Gerente de Objetivos y Observaciones,
@@ -1169,8 +1172,10 @@ UNSO,Observatorio Naval de los EE. UU.,
 UPS,fuente de alimentación ininterrumpible,
 URL,Localizador universal de recursos,
 US,Estados Unidos,
+USA,Estados Unidos de América,
 USB,Bus universal en serie,
 USD,Dólar estadounidense,
+USDAC,centro de acceso a datos de estados unidos,DM
 USDF,Centro de Datos de EE. UU.,
 USNO,Observatorio Naval de los EE. UU.,
 UT,Tiempo universal,
@@ -1213,6 +1218,7 @@ WBS,Estructura de desglose del trabajo,
 WCA,Defensor de la cultura del lugar de trabajo,
 WCAG,Directrices de Accesibilidad para el Contenido en Web,
 WCS,Sistema de coordenadas mundiales,
+WebDav,Creación y versionado distribuidos en la Web,DM
 WEPAN,Red proactiva de mujeres en ingeniería,
 WFD,"Ancho, rápido, profundo",
 WFIRST,Telescopio de sondeo infrarrojo de campo ancho,
