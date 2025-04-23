@@ -235,6 +235,7 @@ CSV,Comma Separated Values,Gen,,,A
 CTA,Cherenkov Telescope Array \url{https://www.cta-observatory.org/},Gen,,,A
 CTI,Charge Transfer Inefficiency,CAM,,,A
 CTIO,Cerro Tololo Inter-American Observatory,Gen,,,A
+CTN,Camera Technical Note,CAM,,,A
 CUI,Controlled Unclassified Information,OPS,,,A
 CV,Curriculum Vitae,Gen,,,A
 CVE,Common Vulnerabilities and Exposures,IT,,,A
@@ -588,6 +589,7 @@ ITSC,Information Technology Services Committee,Adm,,,A
 ITTN,IT Technote,IT,,,A
 IUSE,Improving Undergraduate STEM Education,Sci,,,A
 IVOA,International Virtual-Observatory Alliance,Gen,,,A
+JATIS,"Journal of Astronomical Telescopes, Instruments, and Systems",Gen,,,A
 JBOD,Just a Bunch of Disks,OPS,,,A
 JEDI,Job Execution and Definition Interface,OPS,,,A
 JCAP,Journal of Cosmology and Astroparticle Physics,Sci,,,A
@@ -1034,6 +1036,7 @@ SEM,Systems Engineering Manager,Adm,,,A
 SEMP,Systems Engineering Management Plan,LSST DM,,,A
 SEWG,Survey Evaluation Working Group,OPS,,,A
 SF,Structure Function,Sci,,,A
+SFP,Single Frame Processing,DM,,,A
 SFR,Star Formation Rate,Sci,,,A
 SFR,Supplemental Funding Request,Adm,,,A
 SHA-1,Secure Hash Algorithm 1,Gen,,,A
@@ -1151,6 +1154,7 @@ TLD,Top Level Domain,IT,,,A
 TLS,Transport Layer Security,IT,,,A
 TMA,Telescope Mount Assembly,TS DM,,,A
 TMT,Thirty Meter Telescope,OPS,,,A
+TN,Technical Note,Gen,,,A
 TNO,trans-Neptunian object,TS,Document-11979,,A
 TNS,Transient Name Server,Sci,,,A
 TOM,Target and Observation Manager,Sci,,,A
@@ -1191,8 +1195,10 @@ UNSO,United States Naval Observatory,TS,Document-11938,,A
 UPS,uninterruptible power supply,TS,Document-11989,,A
 URL,Universal Resource Locator,Gen,,,A
 US,United States,Gen,,,A
+USA,United States of America,Gen,,,A
 USB,Universal Serial Bus,IT,,,A
 USD,United States dollar,TS,Document-11967,,A
+USDAC,United States Data Access Center,DM,,,A
 USDF,United States Data Facility,OPS DF DM,,,A
 USNO,United States Naval Observatory,Gen,,,A
 UT,Universal Time,Gen,,,A
@@ -1235,6 +1241,7 @@ WBS,Work Breakdown Structure,Gen,,,A
 WCA,Workplace Culture Advocate,Gen,,,A
 WCAG,Web Content Accessibility Guidelines,OPS,,,A
 WCS,World Coordinate System,Gen,,,A
+WebDav,"Web Distributed Authoring and Versioning",DM,,,A
 WEPAN,Women in Engineering ProActive Network,Gen,,,A
 WFD,Wide Fast Deep,OPS,,,A
 WFIRST,Wide Field Infrared Survey Telescope,OPS,,,A
@@ -1256,6 +1263,7 @@ XHTML,eXtensible HyperText Markup Language,Gen,,,A
 XML,eXtensible Markup Language,Gen,,,A
 XMM,ESA X-ray Multi-mirror Mission,Gen,,,A
 XMM-Newton, ESA X-ray Multi-mirror Mission,Gen,,,A
+XP,B or R Photometry (Gaia),Sci,,,A
 XRAC,XSEDE Resource Allocation Committee,Sci,,,A
 XRISM,X-ray Imaging and Spectroscopy Mission,Sci,,,A
 XSD,XML Schema Definition,Gen,,,A
