@@ -111,6 +111,7 @@ BCWS,Budgeted Cost of Work Scheduled,Gen,,,A
 BDC, Base Data Center, DM IT,,,A
 BEE,back-end electronics,TS,Document-11970,,A
 BDFL,Benevolent Dictator For Life, DM,,,A
+BFD,Bidirectional Forwarding Detection,DM,,,A
 BGP, Border Gateway Protocol,IT,,,A
 BH,Black Hole,Sci,,,A
 BHB,Black Hole Binary,Sci,,,A
