@@ -100,6 +100,7 @@ AVS,Alert Vetting System,OPS,,,A
 AWIS,Association for Women in Science,Gen,,,A
 AWS,Amazon Web Services,Gen,,,A
 AXS,Astronomy eXtensions for Spark,Sci,,,A
+AZ,Asimuth,Gen,,,A
 B,Byte (8 bit),Gen,,,A
 b,bit,Gen,,,A
 BAC,Budget At Complete,Gen,,,A
@@ -188,6 +189,7 @@ CL,Command Language,Sci,IRAF,,A
 CLI,Command Line Interface,IT,,,A
 CLO,"community.lsst.org - use of this acronym is discouraged. The language that should be used in official documents is 'Community Forum' or 'Vera C. Rubin Community Forum'.",DM,,,A
 CLP,Chilean Peso,OPS,,,A
+CLT, Chile Standard Time (UTC-4),Gen,,,A
 CM,Configuration Management,LSST DM,,,A
 CMB,Cosmic Microwave Background,Sci OPS,,,A
 CMB-S4,Cosmic Microwave Background Stage 4,Sci OPS,,,A
@@ -232,6 +234,7 @@ CSA,Cooperative Support Agreement,Gen,,,A
 CSC,Commandable SAL Component,TS,,SAL,A
 CSDC,Community Science Data Center,OPS OIR,,,A
 CSM,Circum-Stellar Material,Sci,,,A
+CST,"Community Science Team",OPS OIR,,,A
 CSV,Comma Separated Values,Gen,,,A
 CTA,Cherenkov Telescope Array \url{https://www.cta-observatory.org/},Gen,,,A
 CTI,Charge Transfer Inefficiency,CAM,,,A
@@ -532,6 +535,7 @@ HTM,Hierarchical Triangular Mesh,Gen,,,A
 HTML,HyperText Markup Language,Gen,,,A
 HTTP,HyperText Transfer Protocol,Gen,,,A
 HVAC,"Heating, Ventilation, and Air Conditioning",OPS,,,A
+HV,High Voltage,Gen,,,A
 HW,HardWare,Gen,,,A
 I&T,Integration and Test,Gen,,,A
 IaC,Infrastructure as Code,IT,,,A
@@ -742,6 +746,8 @@ MSE,Maunakea Spectroscopic Explorer,Sci,,,A
 MSO,Mid-Scale Observatories,OPS OIR,,,A
 MT,Main Telescope,TS,,,A
 MTAOS,Main Telescope Active Optics System,TS,,,A
+MTCamera,Main Telescope Camera,TS,,,A
+MTMount,Main Telescope Mount,TS,,,A
 MTU,Maximum Transmission Unit,IT NET,,,A
 MTBF,Mean Time Between Failures,OPS,,,A
 MTDC,Modified Total Direct Costs,OPS,,,A
@@ -841,6 +847,7 @@ OpSim,Operations Simulation,Sims,,,A
 OPSTN,Operations Technical Note,LSST DM,,,A
 ORR,Operations Readiness Review,OPS,,,A
 OS,Operating System,Gen,,,A
+OS,Observing Scientist,Gen,,,A
 OSHA,Occupational Safety and Health Administration,OPS,,,A
 OSI,open systems interconnect,TS,Document-12012,,A
 OSPF,Open Short Path First,IT,,,A
@@ -898,6 +905,7 @@ PNG,Portable Network Graphics,DM,,,A
 PO,Program Operations,OPS,,,A
 POC,Proof Of Concept,Gen,,,A
 POC,People Of Color,Gen,,,A
+PoC,Point of Contact,Gen,,,A
 POCIT,People Of Color In Tech,Gen,,,A
 POE,POly Esters,OPS,,,A
 POI,Point Of Interest,OPS,,,A
@@ -977,6 +985,7 @@ RNADE,Real-valued Neural Autoregressive Distribution Estimation,Sci,,,A
 RNN,Recurrent Neural Network,Sci,,,A
 RNP,Rede Nacional de Ensino e Pesquisa (National Education and Research Network Brazil),IT,,,A
 ROE,Royal Observatory Edinburgh,OPS,,,A
+ROI,Region of Interest,Gen,,,A
 ROO,Rubin Observatory Operations,OPS,,,A
 ROOT,Object-oriented data analysis framework developed at CERN,Gen,,,A
 ROP,Rubin Operations Plan,OPS,,,A
