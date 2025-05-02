@@ -100,6 +100,7 @@ AVS,Alert Vetting System,OPS,,,A
 AWIS,Association for Women in Science,Gen,,,A
 AWS,Amazon Web Services,Gen,,,A
 AXS,Astronomy eXtensions for Spark,Sci,,,A
+AZ,Asimuth,Gen,,,A
 B,Byte (8 bit),Gen,,,A
 b,bit,Gen,,,A
 BAC,Budget At Complete,Gen,,,A
@@ -174,9 +175,10 @@ CfA,(Harvard-Smithsonian) Center for Astrophysics,Gen,,,A
 CFD,computational fluid dynamics,TS,Document-12005,,A
 CFHT,Canada-France-Hawaii Telescope,TS,Document-11945,,A
 CFHT-LS,A 5-passband legacy imaging survey conducted at the Canada-France-Hawaii Telescope from 2003-2008,Sci,,,A
-CFO,Chief Financial Officer,OPS,,,A
 CFHTLS,Canada-France-Hawaii Telescope Legacy Survey,TS,Document-11959,,A
+CFO,Chief Financial Officer,OPS,,,A
 CFR,Code of Federal Regulations,OPS,,,A
+CFS,Configuration File System,Gen,,,A
 CHEP,Computing in High Energy and Nuclear Physics,Sci,,,A
 CHIME,Canadian Hydrogen Intensity Mapping Experiment,Sci,,,A
 CI,Continuous Integration,DM,,,A
@@ -188,6 +190,7 @@ CL,Command Language,Sci,IRAF,,A
 CLI,Command Line Interface,IT,,,A
 CLO,"community.lsst.org - use of this acronym is discouraged. The language that should be used in official documents is 'Community Forum' or 'Vera C. Rubin Community Forum'.",DM,,,A
 CLP,Chilean Peso,OPS,,,A
+CLT, Chile Standard Time (UTC-4),Gen,,,A
 CM,Configuration Management,LSST DM,,,A
 CMB,Cosmic Microwave Background,Sci OPS,,,A
 CMB-S4,Cosmic Microwave Background Stage 4,Sci OPS,,,A
@@ -232,6 +235,7 @@ CSA,Cooperative Support Agreement,Gen,,,A
 CSC,Commandable SAL Component,TS,,SAL,A
 CSDC,Community Science Data Center,OPS OIR,,,A
 CSM,Circum-Stellar Material,Sci,,,A
+CST,"Community Science Team",OPS OIR,,,A
 CSV,Comma Separated Values,Gen,,,A
 CTA,Cherenkov Telescope Array \url{https://www.cta-observatory.org/},Gen,,,A
 CTI,Charge Transfer Inefficiency,CAM,,,A
@@ -357,6 +361,7 @@ EE,engineering estimate,TS,Document-12024,,A
 EEPROM,Electrically Erasable Programmable Read-Only Memory,Gen,,,A
 EFD,Engineering and Facility Database,LSST DM,,,A
 EIE,European Industrial Engineering - Italian engineering company (Dome),LSST DM,,,A
+EL,Elevation,Gen,,,A
 ELAsTiCC,Extended LSST Astronomical Time Series Classification Challenge,Sci,,,A
 ELG,Emission-Line Galaxies,Sci,,,A
 ELM,Extremely Low Mass(Survey),Sci,,,A
@@ -403,6 +408,7 @@ FATC,Financial and Administrative Terms and Conditions,OPS,,,A
 FBOT,Fast blue optical transient,Sci,,,A
 FBOTs,Fast blue optical transients,Sci,,,A
 FBS,Feature-Based Scheduler,Sims,,,A
+FCS,Filter Changer System,TS,,,A
 FCU,Fain Coil Unit,TS,,,A
 FDP,federated data product,TS,Document-11990,,A
 FDQN,Fully Qualified Domain Name,DM,,,A
@@ -532,6 +538,7 @@ HTM,Hierarchical Triangular Mesh,Gen,,,A
 HTML,HyperText Markup Language,Gen,,,A
 HTTP,HyperText Transfer Protocol,Gen,,,A
 HVAC,"Heating, Ventilation, and Air Conditioning",OPS,,,A
+HV,High Voltage,Gen,,,A
 HW,HardWare,Gen,,,A
 I&T,Integration and Test,Gen,,,A
 IaC,Infrastructure as Code,IT,,,A
@@ -568,12 +575,15 @@ IPS,Integrated Project Schedule,Adm,,,A
 IPsec,Internet Protocol Security,DM,,,A
 IR,infrared,Gen,Document-11949,,A
 IR,Incident Response,IT,,,A
+IR2,Interaction Region 2 (at SLAC),Gen,,,A
+IR2,Infrared 2 Camera,Gen,,,A
 IRAF,Image Reduction and Analysis Facility,Hist,,,A
 IRIS,e-Infrastructure for Research and Innovation for STFC,OPS,,,A
 IRNC,International Research Network Connections,TS,Document-11973,,A
 IRSA,Infrared Science Archive (NASA),Gen,,,A
 IRU,indefeasible right to use,TS,Document-11969,,A
 IS,Interface Scientist,LSST DM,,,A
+IS,Integration System,Gen,,,A
 ISD,Interface Support Document,,,,A
 ISM,interstellar medium,TS,Document-12009,,A
 ISO,Information Security Officer,LSST,,,A
@@ -628,6 +638,7 @@ L1,Lens 1,TS,,,A
 L2,Lens 2,TS,,,A
 L3,Lens 3,TS,,,A
 L4,Lens 4,TS,,,A
+L#,Example(L&7) Level 7 of observatory complex,Gen,,,A
 LAG,List of Acronyms and Glossary,Gen,,,A
 LAMOST,"Large Sky Area Multi-Object Fibre Spectroscopic Telescope, also known as the Guo Shoujing Telescope",Sci,,,A
 LAN,Local Area Network,Gen,,,A
@@ -742,12 +753,16 @@ MSE,Maunakea Spectroscopic Explorer,Sci,,,A
 MSO,Mid-Scale Observatories,OPS OIR,,,A
 MT,Main Telescope,TS,,,A
 MTAOS,Main Telescope Active Optics System,TS,,,A
+MTCamera,Main Telescope Camera,TS,,,A
+MTMount,Main Telescope Mount,TS,,,A
 MTU,Maximum Transmission Unit,IT NET,,,A
 MTBF,Mean Time Between Failures,OPS,,,A
 MTDC,Modified Total Direct Costs,OPS,,,A
 MTM1M3,Main Telescope M1M3,TS,,,A
 MTM2,Main Telescope Secondary Mirror,TS,,,A
 MTOFC,Main Telescope Optical Feedback Control,TS,,,A
+MTPtg,Main Telescope Pointing,TS,,,A
+MTQueue,Main Telescope Queue,TS,,,A
 MTTR,Mean Time To Repair,OPS,,,A
 MW,Milky Way,Sci,,,A
 MYDB,My Database,DM Gen,,,A
@@ -841,6 +856,7 @@ OpSim,Operations Simulation,Sims,,,A
 OPSTN,Operations Technical Note,LSST DM,,,A
 ORR,Operations Readiness Review,OPS,,,A
 OS,Operating System,Gen,,,A
+OS,Observing Scientist,Gen,,,A
 OSHA,Occupational Safety and Health Administration,OPS,,,A
 OSI,open systems interconnect,TS,Document-12012,,A
 OSPF,Open Short Path First,IT,,,A
@@ -898,6 +914,7 @@ PNG,Portable Network Graphics,DM,,,A
 PO,Program Operations,OPS,,,A
 POC,Proof Of Concept,Gen,,,A
 POC,People Of Color,Gen,,,A
+PoC,Point of Contact,Gen,,,A
 POCIT,People Of Color In Tech,Gen,,,A
 POE,POly Esters,OPS,,,A
 POI,Point Of Interest,OPS,,,A
@@ -922,6 +939,7 @@ PTC,Photon Transfer Curve,CAM,,,A
 PTF,Palomar Transient Factory,Sci,,,A
 PVI,Processed Visit Image,DM,,,A
 PWI,Predominantly White Institution,Gen,,,A
+PXI,PCI eXtensions for Instrumentation,Gen,,,A
 PZ,"photo-z",Sci,,,A
 Q1,Quarter one,Gen,,,A
 Q2,Quarter two,Gen,,,A
@@ -937,8 +955,9 @@ QOS,Quality of Service,IT,,,A
 QSERV,LSST Query Services,TS,Document-12025,,A
 QSFP,Quad Small Form Factor Plugable,IT,,,A
 QSO,Quasi-Stellar Object (Quasar),Sci,,,A
-RA,Risk Assessment,IT,,,A
+RA,Rapid Analysis,Gen,,,A
 RA,Right Ascension,Gen,,,A
+RA,Risk Assessment,IT,,,A
 RAC,Resource Allocation Committee,OPS,,,A
 RAD,Rear Access Door,TS,,,A
 RAG,Retrieval-Augmented Generation,Gen,,,A
@@ -977,6 +996,7 @@ RNADE,Real-valued Neural Autoregressive Distribution Estimation,Sci,,,A
 RNN,Recurrent Neural Network,Sci,,,A
 RNP,Rede Nacional de Ensino e Pesquisa (National Education and Research Network Brazil),IT,,,A
 ROE,Royal Observatory Edinburgh,OPS,,,A
+ROI,Region of Interest,Gen,,,A
 ROO,Rubin Observatory Operations,OPS,,,A
 ROOT,Object-oriented data analysis framework developed at CERN,Gen,,,A
 ROP,Rubin Operations Plan,OPS,,,A
@@ -1116,6 +1136,7 @@ stdout,standard output,Gen,,,A
 STAC,"Gemini Science and Technology Advisory Committee",Gen,,,A
 STEM,"Science, Technology, Engineering and Math",Gen,,,A
 STFC,UK Science and Technology Facilities Council,OPS,,,A
+STO,Safe Torque Off,Gen,,,A
 SU,Stanford University,OPS,,,A
 SUI,Science User Interface (original name for the LSP Portal and API Aspects),LSST DM,,,A
 SUIT,"Science User Interface and Tools (LSST Data Management WBS element and team, responsible for LSP Portal Aspect)",LSST DM,,,A
@@ -1168,7 +1189,9 @@ TPU,Tensor Processing Unit,DM,,,A
 TS,Test Specification,LSST DM,,,A
 TSIP,Telescope System Instrumentation Program,OPS,,,A
 TSS,Telescope and Site Software,LSST,,,A
+TS#,Example (TS7) Test Stand 7 at SLAC,Gen,,,A
 TTS,Tucson Test Stand,LSST,,,A
+TU,Tucson,Gen,,,A
 TVS,Transients and Variable Stars Science Collaboration,OPS,,,A
 TVSSC,Transients and Variable Stars Science Collaboration,OPS,,,A
 TVSS,transient voltage surge suppressor,TS,Document-12034,,A
