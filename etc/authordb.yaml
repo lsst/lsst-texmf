@@ -84,6 +84,7 @@ affiliations:
   EPFL: Institute of Physics, Laboratory of Astrophysics, \'{E}cole Polytechnique
     Fed\`{e}rale de Lausanne (EPFL), Observatoire de Sauverny, 1290 Versoix, Switzerland
   ESO: European Southern Observatory, Karl-Schwarzschild-Strasse 2, 85748 Garching bei München, Germany
+  Exeter: University of Exeter, Stocker Road, Exeter EX4 4QL, UK
   FacebookNE: Facebook,  14734 Friend Plaza, Springfield, NE 68059, USA
   Fermilab: Fermi National Accelerator Laboratory, P. O. Box 500, Batavia, IL 60510, USA
   FSU: Florida State University, Tallahassee, FL 32306
@@ -3031,6 +3032,13 @@ authors:
     initials: Gautham
     name: Narayan
     orcid: null
+  naylor:
+    affil:
+    - Exeter
+    altaffil: []
+    initials: Tim
+    name: Naylor
+    orcid: null
   neilldr:
     affil:
     - RubinObs
@@ -4548,6 +4556,13 @@ authors:
     initials: Beth
     name: Willman
     orcid: 0000-0003-2892-9906
+  wilson:
+    affil:
+    - Exeter
+    altaffil: []
+    initials: Tom J.
+    name: Wilson
+    orcid: 0000-0001-6352-9735
   wintersse:
     affil:
     - LLNL
