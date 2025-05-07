@@ -285,6 +285,8 @@ for anum, authorid in enumerate(authors):
 
     author = author_form.format(orcid=orcid, initials=initials, surname=surname, affilAuth=affilAuth)
     if buffer_authors:
+        if args.mode == "webofc" and orc:
+            author += f" \\orcidlink{{{orc}}}"
         authOutput.append(author)
         allAffil = allAffil + affilOutput
     else:
