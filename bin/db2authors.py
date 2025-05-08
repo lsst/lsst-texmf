@@ -36,7 +36,7 @@ authorfile = os.path.join("authors.yaml")
 
 # this should probably be a dict with the value of affil_cmd
 # the keys could then be passed to the arg parser.
-OUTPUT_MODES = ["aas", "spie", "adass", "arxiv", "ascom", "webofc"]
+OUTPUT_MODES = ["aas", "spie", "adass", "arxiv", "ascom", "webofc", "lsstdoc"]
 
 description = __doc__
 formatter = argparse.RawDescriptionHelpFormatter
@@ -104,6 +104,15 @@ if args.mode == "webofc":
     author_form = r"    \firstname{{{initials}}} \lastname{{{surname}}} {affilAuth}"
     auth_afil_form = "{affilAuth}{affilSep}\\inst{{{affilInd}}}"
     affil_form = "{affil}"
+
+if args.mode == "lsstdoc":
+    affil_cmd = ""
+    author_sep = ",\n"
+    affil_out_sep = ""
+    buffer_affil = True
+    buffer_authors = True
+    author_form = "{initials}~{surname}"
+    affil_form = ""
 
 with open(authorfile) as fh:
     authors = yaml.safe_load(fh)
@@ -315,7 +324,9 @@ if buffer_authors:
     for auth in authOutput:
         print(auth, end="")
         anum = anum + 1
-        if (anum == numAuths and numAuths > 1) or (args.mode in ("arxiv", "webofc") and anum < numAuths):
+        if (anum == numAuths and numAuths > 1) or (
+            args.mode in ("arxiv", "webofc", "lsstdoc") and anum < numAuths
+        ):
             print(author_sep, end="")
         else:
             if anum < numAuths:
