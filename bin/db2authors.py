@@ -16,335 +16,507 @@ This program requires the "yaml" package to be installed.
 """
 
 import argparse
+import dataclasses
 import os
 import os.path
 import re
+import string
 import sys
+from typing import Any, Self
 
 import yaml
 
-# Set to True to write a comma separated list of authors
-WRITE_CSV = False
 
-# There is a file listing all the authors and a file mapping
-# those authors to full names and affiliations
+def latex2text(latex: str) -> str:
+    """Convert a LaTeX string into a plain text string.
 
-# This is the author list. It's a yaml file with authorID that
-# maps to the database file below.  For now we assume this file is in
-# the current working directory.
-authorfile = os.path.join("authors.yaml")
+    Parameters
+    ----------
+    latex : `str`
+        Latex string to convert.
 
-# this should probably be a dict with the value of affil_cmd
-# the keys could then be passed to the arg parser.
-OUTPUT_MODES = ["aas", "spie", "adass", "arxiv", "ascom", "webofc", "lsstdoc"]
-
-description = __doc__
-formatter = argparse.RawDescriptionHelpFormatter
-parser = argparse.ArgumentParser(description=description, formatter_class=formatter)
-
-parser.add_argument(
-    "-m",
-    "--mode",
-    default="aas",
-    choices=OUTPUT_MODES,
-    help="""Display mode for translated parameters.
-                         'verbose' displays all the information...""",
-)
-parser.add_argument("-n", "--noafil", action="store_true", help="""Do not add affil at all for arxiv.""")
-args = parser.parse_args()
-
-buffer_affil = False  # hold affiliation until after author output
-buffer_authors = False  # out put authors in one \author command (adass)
-affil_cmd = "affiliation"  # command for latex affiliation
-affil_form = r"\{cmd}[{affilId}]{{{affil}}}"  # format of the affiliation
-auth_afil_form = "{affilAuth}{affilSep}{affilInd}"  # format of author with affiliation
-author_form = r"\author{orcid}{{{initials}~{surname}}}"  # format of the author
-author_super = False  # Author affiliation as super script
-author_sep = " and "
-# AASTeX7 currently requires an affiliation field but it can be empty.
-noaffil_cmd = r"\noaffiliation" + "\n" + r"\affiliation{}"
-
-# The default is AAS and if no mode is specified you get that
-if args.mode == "arxiv":
-    author_form = "{orcid} {initials}{surname}"
-    affil_cmd = ""
-    affil_out_sep = ", "
-    affil_form = r"{cmd}({affilId}) {affil}"
-    auth_afil_form = "{affilAuth}{affilSep}({affilInd})"  # format of author with affiliation
-    buffer_affil = True
-    buffer_authors = True
-    author_sep = ", "
-
-if args.mode == "spie":
-    affil_cmd = "affil"
-    buffer_affil = True
-
-if args.mode == "adass":
-    affil_cmd = "affil"
-    affil_out_sep = "\n"
-    affil_form = r"\{cmd}{{$^{affilId}${affil}}}"
-    auth_afil_form = "{affilAuth}{affilSep}$^{affilInd}$"
-    author_form = "{initials}~{surname}{affilAuth}"  # initial, surname, affil
-    buffer_affil = True
-    buffer_authors = True
-    author_super = True
-
-if args.mode == "ascom":
-    author_form = r"\author[{affilAuth}]{{{initials}~{surname}}}"  # format of the author
-    buffer_affil = True
-    affil_out_sep = ", "
-    auth_afil_form = "{affilInd}{affilAuth}{affilSep}"
-
-if args.mode == "webofc":
-    affil_cmd = ""
-    author_sep = " \\and\n"
-    affil_out_sep = " \\and\n"
-    buffer_affil = True
-    buffer_authors = True
-    author_form = r"    \firstname{{{initials}}} \lastname{{{surname}}} {affilAuth}"
-    auth_afil_form = "{affilAuth}{affilSep}\\inst{{{affilInd}}}"
-    affil_form = "{affil}"
-
-if args.mode == "lsstdoc":
-    affil_cmd = ""
-    author_sep = ",\n"
-    affil_out_sep = ""
-    buffer_affil = True
-    buffer_authors = True
-    author_form = "{initials}~{surname}"
-    affil_form = ""
-
-with open(authorfile) as fh:
-    authors = yaml.safe_load(fh)
-
-# This is the database file with all the generic information
-# about authors. Locate it relative to this script.
-exedir = os.path.abspath(os.path.dirname(__file__))
-dbfile = os.path.normpath(os.path.join(exedir, os.path.pardir, "etc", "authordb.yaml"))
-
-with open(dbfile) as fh:
-    authordb = yaml.safe_load(fh)
-
-# author db is dict indexed by author id.
-# Each entry is a dict with keys
-# name: Surname
-# initials: A.B.
-# orcid: ORCID (can be None)
-# affil: List of affiliation labels
-# altaffil: List of alternate affiliation text
-authorinfo = authordb["authors"]
-
-# dict of all the affiliations, key is a label
-# used in author list
-affil = authordb["affiliations"]
-affilset = []  # it will be a set but I want index() which is supported in list
-
-# Email domains, keyed on affiliation.
-emails = authordb["emails"]
-
-# AASTeX7 author files are of the form:
-# \author[ORCID]{Initials~Surname}
-# \email{manndetory}
-# \altaffiliation{Hubble Fellow}   * must come straight after author
-# \affiliation{Affil1}
-# \affiliation{Affill2}
-# Do not yet handle  \correspondingauthor
-
-if WRITE_CSV:
-    # Used for arXiv submission
-    names = [f"{a['initials']} {a['name']}" for a in authors]
-    print(", ".join(names))
-    sys.exit(0)
-
-print(
-    """%% DO NOT EDIT THIS FILE. IT IS GENERATED FROM db2authors.py"
-%% Regenerate using:"""
-)
-print(f"%%    python $LSST_TEXMF_DIR/bin/db2authors.py -m {args.mode} ")
-print()
-
-authOutput = []
-allAffil = []
-pAuthorOutput = []
-indexOutput = []
-
-anum = 0
-
-
-def get_initials(initials):
-    """Get the initials rather than full name.
-
-    Authors db has full name not initials -
-    sometimes we just want initials.
+    Returns
+    -------
+    plain : `str`
+        The plain text version.
     """
-    names = re.split(r"[ -\.\~]", initials)
-    realInitials = []
-    for name in names:
-        if len(name) > 0:
-            realInitials.append(name[0])
-    return "~" + ".~".join(realInitials) + "."
+    from pylatexenc.latex2text import LatexNodes2Text
+
+    return LatexNodes2Text().latex_to_text(latex)
 
 
-for anum, authorid in enumerate(authors):
-    orcid = ""
+@dataclasses.dataclass(frozen=True)
+class Author:
+    """Representation of an author."""
 
-    try:
-        auth = authorinfo[authorid]
-    except KeyError as e:
-        raise RuntimeError(f"Author ID {authorid} not defined in author database.") from e
+    given_name: str
+    family_name: str
+    email: str
+    orcid: str | None
+    affiliations: list[str]
+    altaffil: list[str]
 
-    affilOutput = []
-    affilAuth = ""
-    affilSep = ""
-    if author_super and anum < len(authors) - 1:
-        # ADASS  comma before the affil except the last entry
-        affilSep = ","
-    for theAffil in auth["affil"]:
-        if theAffil not in affilset:
-            affilset.append(theAffil)
-            if theAffil == "_":
-                affilOutput.append(noaffil_cmd)
-            else:
-                # Unfortunately you can not output an affil before an author.
-                affilOutput.append(
-                    affil_form.format(cmd=affil_cmd, affilId=len(affilset), affil=affil[theAffil])
-                )
+    @property
+    def full_name(self) -> str:
+        """Return full name with spaces and no latex."""
+        latex_name = self.full_latex_name
+        return latex2text(latex_name)
 
-        affilInd = affilset.index(theAffil) + 1
-        if args.noafil:
-            affilAuth = affilAuth
+    @property
+    def full_latex_name(self) -> str:
+        """Return full name with latex spaces."""
+        if not self.given_name:
+            full = self.family_name
         else:
-            affilAuth = auth_afil_form.format(affilAuth=affilAuth, affilInd=affilInd, affilSep=affilSep)
+            full = f"{self.given_name}~{self.family_name}"
+        return full.replace(" ", "~")
 
-        affilSep = " "
+    @property
+    def initials_latex_name(self) -> str:
+        """Return full name but using initials for given name."""
+        if not self.given_name:
+            full = self.family_name
+        else:
+            full = f"{self.initials}~{self.family_name}"
+        return full.replace(" ", "~")
 
-    if buffer_affil:
-        orcid = f"[{affilAuth}]"
-    else:
-        if "orcid" in auth and auth["orcid"]:
-            orcid = "[{}]".format(auth["orcid"])
+    @property
+    def initials(self) -> str:
+        """Return initials instead of full given name.
 
-    orc = auth.get("orcid", "")
-    if orc is None:
-        orc = ""
+        Notes
+        -----
+        G. Mark -> G. M.
+        Kian-Tat -> K-T.
+        """
+        if not self.given_name:
+            # Non-human collaboration.
+            return ""
+        initials = []
+        # Split on whitespace, latex space ~.
+        for name in re.split(r"[\s\~]", self.given_name):
+            if "-" in name:
+                parts = name.split("-")
+                sub_initials = [c[0] for c in parts]
+                initials.append("-".join(sub_initials))
+            else:
+                initials.append(name[0])
+        return ". ".join(initials) + "."
 
-    email = auth.get("email", "")
-    if "@" in email:
-        username, domain = email.split("@", 1)
-    else:
-        username = email
-        domain = auth["affil"][0]
-    if "." not in domain:
-        # This is a key to a email domain.
-        domain = emails.get(domain)
-    if args.mode == "aas" and (not domain or not username) and auth["affil"][0] != "_":
-        # Only warn if we need the email.
-        print(
-            f"WARNING: Unable to resolve email address for author '{authorid}' email '{email}'",
-            file=sys.stderr,
+
+class AuthorFactory:
+    """Extract author information from author database."""
+
+    def __init__(
+        self, affiliations: dict[str, str], email_domains: dict[str, str], authors: dict[str, Any]
+    ) -> None:
+        self._affiliations = affiliations
+        self._email_domains = email_domains
+        self._authors = authors
+
+    @classmethod
+    def from_authordb(cls, authordb: dict[str, Any]) -> Self:
+        return cls(
+            affiliations=authordb["affiliations"],
+            email_domains=authordb["emails"],
+            authors=authordb["authors"],
         )
-    if not domain:
-        domain = "none.com"
-    if not username:
-        username = "unknown"
-    email = f"{username}@{domain}"
 
-    # For spaces in surnames use a ~
-    surname = re.sub(r"\s+", "~", auth["name"])
+    def get_author(self, authorid: str) -> Author:
+        if authorid not in self._authors:
+            raise RuntimeError(f"Author {authorid!r} not found in author database")
+        author = self._authors[authorid]
 
-    # Preference for A.~B.~Surname rather than A.B.~Surname
-    initials = re.sub(r"\.(\w)", lambda m: ".~" + m.group(1), auth["initials"])
+        affiliations = []
+        for affil in author["affil"]:
+            affiliation = self._affiliations.get(affil)
+            if not affiliation:
+                raise RuntimeError(f"Author {authorid!r} refers to affiliation {affil} that is not known.")
+            affiliations.append(affiliation)
 
-    # For spaces in initials use a ~
-    initials = re.sub(r"\s+", "~", initials)
-
-    # adass has index and paper authors ..
-    addr = [a.strip() for a in affil[theAffil].split(",")]
-    tute = addr[0]
-    ind = len(addr) - 1
-    state = ""
-    pcode = ""
-    country = ""
-    if ind > 0:
-        country = addr[ind]
-        ind = ind - 1
-    if ind > 0:
-        sc = addr[ind].split()
-        ind = ind - 1
-        state = sc[0]
-        pcode = ""
-        if len(sc) == 2:
-            pcode = sc[1]
-    city = ""
-    if ind > 0:
-        city = addr[ind]
-
-    pAuthorOutput.append(
-        r"\paperauthor"
-        f"{{{initials}~{surname}}}{{{email}}}{{{orc}}}"
-        f"{{{tute}}}{{}}{{{city}}}{{{state}}}{{{pcode}}}{{{country}}}"
-    )
-
-    if args.mode == "arxiv":
-        affilOutput = []  # reset this
-        affilOutput.append(affil_form.format(cmd=affil_cmd, affilId=len(affilset), affil=tute))
-
-    justInitials = get_initials(initials)
-    indexOutput.append(rf"%\aindex{{{surname},{justInitials}}}")
-
-    author = author_form.format(orcid=orcid, initials=initials, surname=surname, affilAuth=affilAuth)
-    if buffer_authors:
-        if args.mode == "webofc" and orc:
-            author += f" \\orcidlink{{{orc}}}"
-        authOutput.append(author)
-        allAffil = allAffil + affilOutput
-    else:
-        print(author)
-        if auth.get("altaffil"):
-            for af in auth["altaffil"]:
-                print(rf"\altaffiliation{{{af}}}")
-
-        # The affiliations have to be retrieved via label
-        for aflab in auth["affil"]:
-            if aflab == "_":
-                print(noaffil_cmd)
-            else:
-                print(rf"\{affil_cmd}{{{affil[aflab]}}}")
-        if args.mode == "aas":
-            print(rf"\email{{{email}}}")
-    print()
-
-if buffer_authors:
-    if args.mode == "arxiv":
-        print(r"Authors:", end="")
-    else:
-        print(r"\author{", end="")
-    anum = 0
-    numAuths = len(authOutput) - 1
-    for auth in authOutput:
-        print(auth, end="")
-        anum = anum + 1
-        if (anum == numAuths and numAuths > 1) or (
-            args.mode in ("arxiv", "webofc", "lsstdoc") and anum < numAuths
-        ):
-            print(author_sep, end="")
+        # email is a bit more involved.
+        email = author.get("email", "")
+        if "@" in email:
+            username, domain = email.split("@", 1)
         else:
-            if anum < numAuths:
-                print(" ", end="")
-    if args.mode == "arxiv":
-        print("\n(", end="")
-    else:
-        print("}")
-    if not args.noafil:
-        if args.mode == "webofc":
-            print("\\institute{")
-        print(*allAffil, sep=affil_out_sep, end="")
-        if args.mode == "webofc":
-            print("\n}")
-    if args.mode == "arxiv":
-        print(")\n")
-    if args.mode == "adass":
-        print("")
-        print(*pAuthorOutput, sep="\n")
-        print("% Yes they said to have these index commands commented out.")
-        print(*indexOutput, sep="\n")
+            username = email
+            domain = author["affil"][0]  # Key to look up in email domains
+        if "." not in domain:
+            # This is a key to a email domain.
+            domain = self._email_domains.get(domain)
+
+        # In theory should only warn if this is AAS but we do not know the
+        # mode here.
+        if (not domain or not username) and author["affil"][0] != "_":
+            # Only warn if we need the email.
+            print(
+                f"WARNING: Unable to resolve email address for author '{authorid}' email '{email}'",
+                file=sys.stderr,
+            )
+        if not domain:
+            domain = "none.com"
+        if not username:
+            username = "unknown"
+        email = f"{username}@{domain}"
+
+        return Author(
+            given_name=author["initials"],
+            family_name=author["name"],
+            orcid=author.get("orcid"),
+            email=email,
+            affiliations=affiliations,
+            altaffil=list(author["altaffil"]),
+        )
+
+
+class AuthorTextGenerator:
+    """Class to create some text for authors."""
+
+    mode: str = "undefined"
+
+    def __init__(self, authors: list[Author]) -> None:
+        self.authors = authors
+
+    def get_header(self) -> str:
+        return f"""%% DO NOT EDIT THIS FILE. IT IS GENERATED FROM db2authors.py"
+%% Regenerate using:
+%%    python $LSST_TEXMF_DIR/bin/db2authors.py -m {self.mode}
+
+"""
+
+    def number_affiliations(self) -> dict[str, int]:
+        """Assign number to each affiliation."""
+        # Affiliations found so far.
+        affil_to_number = {}
+        counter = 0
+        for author in self.authors:
+            for affiliation in author.affiliations:
+                if affiliation not in affil_to_number:
+                    counter += 1
+                    affil_to_number[affiliation] = counter
+
+        return affil_to_number
+
+    @classmethod
+    def parse_affiliation(cls, affiliation: str) -> dict[str, str]:
+        """Given a mailing address, try to parse it.
+
+        Would be better for authordb affiliations to be pre-parsed.
+        """
+        addr = [a.strip() for a in affiliation.split(",")]
+        institute = addr[0]
+        ind = len(addr) - 1
+        state = ""
+        pcode = ""
+        country = ""
+        if ind > 0:
+            country = addr[ind]
+            ind = ind - 1
+        if ind > 0:
+            sc = addr[ind].split()
+            ind = ind - 1
+            state = sc[0]
+            pcode = ""
+            if len(sc) == 2:
+                pcode = sc[1]
+        city = ""
+        if ind > 0:
+            city = addr[ind]
+        return {"institute": institute, "city": city, "country": country, "state": state, "postcode": pcode}
+
+
+class AASTeX(AuthorTextGenerator):
+    """AASTeX specific generation."""
+
+    mode = "aas"
+
+    def generate(self) -> str:
+        """Generate AASTeX format."""
+        lines = []
+        for author in self.authors:
+            lines.append("")
+            orcid = f"[{author.orcid}]" if author.orcid else ""
+            lines.append(rf"\author{orcid}{{{author.full_latex_name}}}")
+            for alt in author.altaffil:
+                lines.append(rf"\altaffiliation{{{alt}}}")
+            for affil in author.affiliations:
+                lines.append(rf"\affiliation{{{affil}}}")
+            lines.append(rf"\email{{{author.email}}}")
+
+        return self.get_header() + "\n".join(lines)
+
+
+class LsstDoc(AuthorTextGenerator):
+    """LaTeX lsstdoc tech notes."""
+
+    mode = "lsstdoc"
+
+    def generate(self) -> str:
+        authors = list(self.authors)
+        last = authors.pop()
+
+        # Join with "," until last author joins with "and"
+        lines = [f"{author.full_latex_name}," for author in authors]
+        if lines:
+            lines.append("and")
+        lines.append(last.full_latex_name)
+
+        return self.get_header() + "\\author{\n" + "\n".join(lines) + "\n}"
+
+
+class Arxiv(AuthorTextGenerator):
+    """Generate ArXiv format.
+
+    Authors: Author One (1), Author Two (1 and 2), Author Three (2)
+       ((1) Institution One, (2) Institution Two)
+    """
+
+    mode = "arxiv"
+
+    def generate(self) -> str:
+        """Generate ArXiv format."""
+        affil_to_number = self.number_affiliations()
+
+        author_text = []
+        for author in self.authors:
+            affil_numbers = [str(affil_to_number[affil]) for affil in author.affiliations]
+            author_text.append(f"{author.full_name} ({' and '.join(affil_numbers)})")
+
+        institutions = []
+        for affil, number in affil_to_number.items():
+            parsed = self.parse_affiliation(affil)
+            institutions.append(f"({number}) {latex2text(parsed['institute'])}")
+
+        return f"Authors: {', '.join(author_text)}\n       ({', '.join(institutions)})"
+
+
+class ProcSpie(AuthorTextGenerator):
+    r"""SPIE proceedings.
+
+    \author[a]{Anna A. Author}
+    \author[a,b]{Barry B. Author}
+    \affil[a]{Affiliation1, Address, City, Country}
+    \affil[b]{Affiliation2, Address, City, Country}
+
+    """
+
+    mode = "spie"
+
+    def generate(self) -> str:
+        affil_to_number = self.number_affiliations()
+        chars = string.ascii_lowercase + string.ascii_uppercase
+
+        # SPIE prefers labels over numbers, so convert affiliation numbers
+        # to labels but once we have more than the number of letters we switch
+        # back to numbers.
+        affil_to_label = {}
+        label_counter = 1
+        for affil, number in affil_to_number.items():
+            # Offset from affiliation number into an array index.
+            char_index = number - 1
+            if char_index < len(chars):
+                label = chars[char_index]
+            else:
+                label = str(label_counter)
+                label_counter += 1
+            affil_to_label[affil] = label
+
+        authors = []
+        for author in self.authors:
+            labels = [affil_to_label[affil] for affil in author.affiliations]
+            authors.append(rf"\author[{','.join(labels)}]{{{author.full_latex_name}}}")
+
+        affiliations = []
+        for affil, label in affil_to_label.items():
+            affiliations.append(rf"\affil[{label}]{{{affil}}}")
+
+        return self.get_header() + "\n".join(authors + affiliations)
+
+
+class WebOfC(AuthorTextGenerator):
+    """WebOfC generator."""
+
+    mode = "webofc"
+
+    def generate(self) -> str:
+        affil_to_number = self.number_affiliations()
+
+        authors = []
+        for author in self.authors:
+            author_text = rf"\firstname{{{author.given_name}}} \lastname{{{author.family_name}}}"
+            affil_numbers = [affil_to_number[affil] for affil in author.affiliations]
+            author_text += " " + " ".join(rf"\inst{{{n}}}" for n in affil_numbers)
+            if author.orcid:
+                author_text += rf" \orcidlink{{{author.orcid}}}"
+            authors.append(author_text)
+
+        # The dict is ordered correctly by default.
+        affiliations = " \\and\n".join(affil_to_number)
+
+        return (
+            self.get_header()
+            + "\\author{\n"
+            + " \\and\n".join(authors)
+            + "\n}\n\\institute{\n"
+            + affiliations
+            + "\n}"
+        )
+
+
+class ASCOM(AuthorTextGenerator):
+    """Astronomy and Computing."""
+
+    mode = "ascom"
+
+    def generate(self) -> str:
+        """Generate A&C format."""
+        affil_to_number = self.number_affiliations()
+
+        authors = []
+        for author in self.authors:
+            affil_numbers = [str(affil_to_number[affil]) for affil in author.affiliations]
+            author_text = f"\\author[{','.join(affil_numbers)}]{{{author.full_latex_name}}}"
+            if author.orcid:
+                author_text += f"[orcid={author.orcid}]"
+            authors.append(author_text)
+
+        affiliations = []
+        for affil, number in affil_to_number.items():
+            parsed = self.parse_affiliation(affil)
+            affil_text = f"""\\affiliation[{number}]{{organization={{{parsed['institute']}}},
+                country={{{parsed['country']}}}
+               }}"""
+            affiliations.append(affil_text)
+
+        return self.get_header() + "\n".join(authors) + "\n" + "\n".join(affiliations)
+
+
+class ADASS(AuthorTextGenerator):
+    """Generate ADASS text."""
+
+    mode = "adass"
+
+    @staticmethod
+    def _to_affil_text(affil_to_number: dict[str, int], affiliations: list[str]) -> str:
+        affil_numbers = [str(affil_to_number[affil]) for affil in affiliations]
+        affil_text = " ".join(f"$^{n}$" for n in affil_numbers)
+        return affil_text
+
+    def generate(self) -> str:
+        affil_to_number = self.number_affiliations()
+
+        authors = list(self.authors)
+        last = authors.pop()
+        author_lines = []
+        for author in authors:
+            author_text = author.full_latex_name + ","
+            affil_text = self._to_affil_text(affil_to_number, author.affiliations)
+            author_lines.append(author_text + affil_text)
+
+        final_and = ""
+        if author_lines:
+            final_and = "and "
+        author_lines.append(
+            final_and + last.full_latex_name + self._to_affil_text(affil_to_number, last.affiliations)
+        )
+
+        affiliations = []
+        for affil, number in affil_to_number.items():
+            affiliations.append(f"\\affil{{$^{number}${affil}}}")
+
+        paperauthors = []
+        for author in self.authors:
+            # Uses primary affiliation.
+            parsed = self.parse_affiliation(author.affiliations[0])
+            parsed["full_name"] = author.full_latex_name
+            parsed["email"] = author.email
+            parsed["orcid"] = author.orcid or ""
+            paperauthors.append(
+                (
+                    r"\paperauthor"
+                    "{{{full_name}}}{{{email}}}{{{orcid}}}"
+                    "{{{institute}}}{{}}{{{city}}}{{{state}}}{{{postcode}}}{{{country}}}"
+                ).format(**parsed)
+            )
+
+        aindexes = ["%% Must be commented out"]
+        for author in self.authors:
+            initials = "" if not author.given_name else f",~{author.initials.replace(" ", "~")}"
+            aindexes.append(f"%\\aindex{{{author.family_name}{initials}}}")
+
+        return (
+            self.get_header()
+            + "\\author{"
+            + " ".join(author_lines)
+            + "}\n"
+            + "\n".join(affiliations)
+            + "\n"
+            + "\n".join(paperauthors)
+            + "\n"
+            + "\n".join(aindexes)
+        )
+
+
+if __name__ == "__main__":
+    # There is a file listing all the authors and a file mapping
+    # those authors to full names and affiliations
+
+    # This is the author list. It's a yaml file with authorID that
+    # maps to the database file below.  For now we assume this file is in
+    # the current working directory.
+    authorfile = os.path.join("authors.yaml")
+
+    # this should probably be a dict with the value of affil_cmd
+    # the keys could then be passed to the arg parser.
+    OUTPUT_MODES = ["aas", "spie", "adass", "arxiv", "ascom", "webofc", "lsstdoc"]
+
+    description = __doc__
+    formatter = argparse.RawDescriptionHelpFormatter
+    parser = argparse.ArgumentParser(description=description, formatter_class=formatter)
+
+    parser.add_argument(
+        "-m",
+        "--mode",
+        default="aas",
+        choices=OUTPUT_MODES,
+        help="""Display mode for translated parameters.
+                            'verbose' displays all the information...""",
+    )
+    parser.add_argument("-n", "--noafil", action="store_true", help="""Do not add affil at all for arxiv.""")
+    args = parser.parse_args()
+
+    with open(authorfile) as fh:
+        authors = yaml.safe_load(fh)
+
+    # This is the database file with all the generic information
+    # about authors. Locate it relative to this script.
+    exedir = os.path.abspath(os.path.dirname(__file__))
+    dbfile = os.path.normpath(os.path.join(exedir, os.path.pardir, "etc", "authordb.yaml"))
+
+    with open(dbfile) as fh:
+        authordb = yaml.safe_load(fh)
+
+    factory = AuthorFactory.from_authordb(authordb)
+
+    authors = [factory.get_author(authorid) for authorid in authors]
+
+    match args.mode:
+        case "aas":
+            generator_class = AASTeX
+        case "lsstdoc":
+            generator_class = LsstDoc
+        case "arxiv":
+            generator_class = Arxiv
+        case "spie":
+            generator_class = ProcSpie
+        case "webofc":
+            generator_class = WebOfC
+        case "ascom":
+            generator_class = ASCOM
+        case "adass":
+            generator_class = ADASS
+        case _:
+            raise RuntimeError("Unknown generator mode")
+
+    generator = generator_class(authors)
+    print(generator.generate())
