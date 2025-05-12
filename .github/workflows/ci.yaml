@@ -12,7 +12,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: 3.11
+          python-version: 3.12
 
       - name: Install dependancies and linters
         run: |
@@ -20,6 +20,7 @@ jobs:
           python -m pip install uv
           python -m uv pip install --system pybtex
           python -m uv pip install --system -r requirements.txt
+          python -m uv pip install --system setuptools
 
       - name: Run pybtex
         run: make test-pybtex
@@ -46,7 +47,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: 3.11
+          python-version: 3.12
 
       - name: Install Python dependencies
         run: |
