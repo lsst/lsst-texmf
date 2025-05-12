@@ -72,6 +72,15 @@ class Author:
         return full.replace(" ", "~")
 
     @property
+    def latex_name_then_initials(self) -> str:
+        """Return Given Name, Initials"""
+        if not self.given_name:
+            initials = ""
+        else:
+            initials = ", " + self.initials
+        return f"{self.family_name}{initials}".replace(" ", "~")
+
+    @property
     def initials_latex_name(self) -> str:
         """Return full name but using initials for given name."""
         if not self.given_name:
@@ -441,8 +450,7 @@ class ADASS(AuthorTextGenerator):
 
         aindexes = ["%% Must be commented out"]
         for author in self.authors:
-            initials = "" if not author.given_name else f",~{author.initials.replace(" ", "~")}"
-            aindexes.append(f"%\\aindex{{{author.family_name}{initials}}}")
+            aindexes.append(f"%\\aindex{{{author.latex_name_then_initials}}}")
 
         return (
             self.get_header()
