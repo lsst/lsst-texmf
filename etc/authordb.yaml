@@ -329,6 +329,7 @@ emails:
   Stanford: stanford.edu
   Washington-Dirac: uw.edu
   Washington: uw.edu
+  URijeka: uniri.hr
 authors:
   DMPipelines:
     affil:
@@ -2976,6 +2977,14 @@ authors:
     initials: Christopher B.
     name: Morrison
     orcid: null
+  mrakovcick:
+    affil:
+    - URijeka
+    altaffil: []
+    initials: Karlo
+    name: Mrakov\v{c}i\'{c}
+    orcid: 0009-0009-8154-3827
+    email: karlo.mrakovcic
   muellerf:
     affil:
     - SLAC
