@@ -508,23 +508,17 @@ if __name__ == "__main__":
 
     authors = [factory.get_author(authorid) for authorid in authors]
 
-    match args.mode:
-        case "aas":
-            generator_class = AASTeX
-        case "lsstdoc":
-            generator_class = LsstDoc
-        case "arxiv":
-            generator_class = Arxiv
-        case "spie":
-            generator_class = ProcSpie
-        case "webofc":
-            generator_class = WebOfC
-        case "ascom":
-            generator_class = ASCOM
-        case "adass":
-            generator_class = ADASS
-        case _:
-            raise RuntimeError("Unknown generator mode")
+    generator_lut = {
+        "aas": AASTeX,
+        "lsstdoc": LsstDoc,
+        "arxiv": Arxiv,
+        "spie": ProcSpie,
+        "webofc": WebOfC,
+        "ascom": ASCOM,
+        "adass": ADASS,
+    }
+    if args.mode not in generator_lut:
+        raise RuntimeError(f"Unknown generator mode: {args.mode}")
 
-    generator = generator_class(authors)
+    generator = generator_lut[args.mode](authors)
     print(generator.generate())
