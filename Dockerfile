@@ -42,7 +42,7 @@ RUN git config --global --add safe.directory '*'
 
 # Point $TEXMFHOME to the container's lsst-texmf. This environment variable
 # exists for container runs by a user.
-ENV TEXMFHOME "/lsst-texmf/texmf"
+ENV TEXMFHOME="/lsst-texmf/texmf"
 
 # Make sure we use the virtualenv; also add lsst-texmf's scripts to the path.
 ENV PATH="/lsst-texmf/bin:/opt/venv/bin:$PATH"
