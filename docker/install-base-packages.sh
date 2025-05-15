@@ -37,7 +37,7 @@ apt-get -y install --no-install-recommends \
     graphviz \
     pandoc \
     texlive \
-    texlive-generic-recommended \
+    texlive-plain-generic \
     texlive-latex-recommended \
     texlive-latex-extra \
     texlive-xetex \
