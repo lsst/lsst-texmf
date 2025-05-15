@@ -7,9 +7,9 @@
 # 2. "dependencies" installs the Python dependencies defined in
 #     requirements.txt.
 # 3. "runtime" is the final image for end users. It is based on the "base"
-#    image and includes both the Python depndencies and a copy of lsst-texmf.
+#    image and includes both the Python dependencies and a copy of lsst-texmf.
 
-FROM python:3.7-slim-buster AS base
+FROM python:3.13 AS base
 
 # Copy a file to prevent docs from being installed
 COPY docker/01_nodoc /etc/dpkg/dpkg.cfg.d
