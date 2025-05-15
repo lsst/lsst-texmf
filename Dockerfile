@@ -7,9 +7,9 @@
 # 2. "dependencies" installs the Python dependencies defined in
 #     requirements.txt.
 # 3. "runtime" is the final image for end users. It is based on the "base"
-#    image and includes both the Python depndencies and a copy of lsst-texmf.
+#    image and includes both the Python dependencies and a copy of lsst-texmf.
 
-FROM python:3.7-slim-buster AS base
+FROM python:3.13 AS base
 
 # Copy a file to prevent docs from being installed
 COPY docker/01_nodoc /etc/dpkg/dpkg.cfg.d
@@ -42,7 +42,7 @@ RUN git config --global --add safe.directory '*'
 
 # Point $TEXMFHOME to the container's lsst-texmf. This environment variable
 # exists for container runs by a user.
-ENV TEXMFHOME "/lsst-texmf/texmf"
+ENV TEXMFHOME="/lsst-texmf/texmf"
 
 # Make sure we use the virtualenv; also add lsst-texmf's scripts to the path.
 ENV PATH="/lsst-texmf/bin:/opt/venv/bin:$PATH"
