@@ -304,6 +304,7 @@ affiliations:
   WisconsinMadison: Department of Physics, University of Wisconsin-Madison, Madison,
     WI 53706, USA
   Yale: Astronomy Department, Yale University, New Haven, CT 06520, USA
+  ZurichPhys: University of Zurich Physik-Institut, Winterthurerstrasse 190, 8057 Zurich, Switzerland
   _: Placeholder used for collective author that will not be shown
 emails:
   _: none.com
@@ -330,6 +331,7 @@ emails:
   Washington-Dirac: uw.edu
   Washington: uw.edu
   URijeka: uniri.hr
+  ZurichPhys: physik.uzh.ch
 authors:
   DMPipelines:
     affil:
@@ -2684,6 +2686,14 @@ authors:
     name: MacArthur
     orcid: 0009-0003-5548-6773
     email: lauren
+  macbrides:
+    affil:
+    - ZurichPhys
+    altaffil: []
+    initials: Sean
+    name: MacBride
+    orcid: 0000-0002-9514-7245
+    email: sean.macbride
   madejskig:
     affil:
     - SLAC-Kavli
