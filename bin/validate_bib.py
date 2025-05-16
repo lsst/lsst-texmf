@@ -15,7 +15,7 @@ import latexcodec  # noqa provides the latex+latin codec
 from pybtex.database.input import bibtex
 
 
-def main():
+def main() -> None:
     """Run script."""
     parser = argparse.ArgumentParser()
     parser.add_argument("paths", nargs="*", help="Paths to bib files.")
@@ -27,10 +27,10 @@ def main():
             print(f"Cannot find bib for testing: {bibpath}")
             sys.exit(1)
 
-    parser = bibtex.Parser()
+    bib_parser = bibtex.Parser()
     for bibpath in args.paths:
         print(f"Parsing {bibpath}")
-        parser.parse_file(bibpath)
+        bib_parser.parse_file(bibpath)
 
 
 if __name__ == "__main__":
