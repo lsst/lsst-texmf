@@ -6,6 +6,7 @@ It is comparable hence sortable.
 
 import collections.abc
 import sys
+from typing import IO, Any, NamedTuple
 
 import pybtex.database
 
@@ -42,15 +43,15 @@ class BibEntry:
 
     def __init__(
         self,
-        author=None,
-        title=None,
-        month=None,
-        handle=None,
-        year=None,
-        note="",
-        url="",
-        publisher="",
-        report_type=None,
+        author: str = "",
+        title: str = "",
+        month: str = "",
+        handle: str = "",
+        year: int | None = None,
+        note: str = "",
+        url: str = "",
+        publisher: str = "",
+        report_type: str | None = None,
     ):
         self.author = author
         self.title = title
@@ -63,7 +64,7 @@ class BibEntry:
         self.publisher = publisher
         self.report_type = report_type
 
-        if handle and not report_type:
+        if self.handle and not report_type:
             prefix, _ = self.handle.split("-", 1)
             series = TN_SERIES.get(prefix, "")
             self.report_type = series
@@ -78,7 +79,7 @@ class BibEntry:
         """Return entry as bibtex string."""
         return self.get_pybtex().to_string("bibtex")
 
-    def write_latex_bibentry(self, fd=sys.stdout):
+    def write_latex_bibentry(self, fd: IO | None = sys.stdout) -> None:
         """Write a bibentry for document info passed.
 
         Parameters
@@ -122,7 +123,9 @@ class BibEntry:
         }}"""
         return entry
 
-    def __eq__(self, other):
+    def __eq__(self, other: Any) -> bool:
+        if not isinstance(other, BibEntry):
+            return NotImplemented
         ret = True
         ret = ret and self.handle == other.handle
         ret = ret and (self.author.strip() == other.author.strip())
@@ -136,21 +139,34 @@ class BibEntry:
 
         return ret
 
-    def __ne__(self, other):
+    def __ne__(self, other: Any) -> bool:
         return not self.__eq__(other)
 
-    def __lt__(self, other):
+    def __lt__(self, other: Any) -> bool:
+        if not isinstance(other, BibEntry):
+            return NotImplemented
         # sorting on handles only
         return self.handle < other.handle
 
-    def __le__(self, other):
+    def __le__(self, other: Any) -> bool:
+        if not isinstance(other, BibEntry):
+            return NotImplemented
         return self.handle <= other.handle
 
-    def __gt__(self, other):
+    def __gt__(self, other: Any) -> bool:
+        if not isinstance(other, BibEntry):
+            return NotImplemented
         return self.handle > other.handle
 
-    def __ge__(self, other):
+    def __ge__(self, other: Any) -> bool:
+        if not isinstance(other, BibEntry):
+            return NotImplemented
         return self.handle >= other.handle
+
+
+class _BibDictItem(NamedTuple):
+    key: str
+    value: pybtex.database.Entry
 
 
 class BibDict(collections.abc.MutableMapping):
@@ -163,24 +179,24 @@ class BibDict(collections.abc.MutableMapping):
     Does not support constructor parameters.
     """
 
-    def __init__(self):
-        self._dict = {}
+    def __init__(self) -> None:
+        self._dict: dict[str, _BibDictItem] = {}
 
-    def __contains__(self, key):
+    def __contains__(self, key: Any) -> bool:
         return key.lower() in self._dict
 
-    def __getitem__(self, key):
-        return self._dict[key.lower()]["val"]
+    def __getitem__(self, key: str) -> pybtex.database.Entry:
+        return self._dict[key.lower()].value
 
-    def __setitem__(self, key, value):
-        self._dict[key.lower()] = {"key": key, "val": value}
+    def __setitem__(self, key: str, value: pybtex.database.Entry) -> None:
+        self._dict[key.lower()] = _BibDictItem(key=key, value=value)
 
-    def __delitem__(self, key):
+    def __delitem__(self, key: str) -> None:
         del self._dict[key.lower()]
 
-    def __len__(self):
+    def __len__(self) -> int:
         return len(self._dict)
 
-    def __iter__(self):
+    def __iter__(self) -> collections.abc.Iterator[str]:
         for kv in self._dict.values():
-            yield kv["key"]
+            yield kv.key
