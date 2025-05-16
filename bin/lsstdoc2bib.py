@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 """
-Utility that ican be executed in a latex document directory and will
+Utility that can be executed in a latex document directory and will
 produce a bib entry suitable to be put in lsst.bib in texmf.
 
 """
@@ -13,7 +13,7 @@ from datetime import datetime
 from bibtools import BibEntry
 
 
-def find_meta(filename):
+def find_meta(filename: str) -> BibEntry:
     """Search for the bibentry items
 
     Parameters
@@ -23,7 +23,7 @@ def find_meta(filename):
 
     Returns
     -------
-    bibentry : `str'
+    bibentry : `bibtools.BibEntry'
         Ready to use bib entry
     """
     auth = re.compile(r"\\author\s*{([\w'`,\- ]+)}")
@@ -98,7 +98,7 @@ def find_meta(filename):
     return be
 
 
-def main(texfiles):
+def main(texfiles: tuple[str, ...]) -> None:
     """Run program and generate bibentry ."""
     if not texfiles:
         raise RuntimeError("No files supplied.")
@@ -127,7 +127,7 @@ if __name__ == "__main__":
         "files",
         metavar="FN",
         nargs="+",
-        help="FILE to process - usullly the main LDM,DMTN tex file",
+        help="FILE to process - usually the main LDM,DMTN tex file",
     )
 
     args = parser.parse_args()
