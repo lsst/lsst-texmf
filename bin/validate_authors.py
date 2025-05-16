@@ -5,10 +5,12 @@
 import os
 import subprocess
 
+from typing import Any
+
 import yaml
 
 
-def make_all(authordb):
+def make_all(authordb: dict[str, Any]) -> None:
     """Go through all authors and put in one big file so we can test."""
     allauthors = []
     for a in authordb["authors"]:
@@ -17,7 +19,7 @@ def make_all(authordb):
         yaml.dump(allauthors, file)
 
 
-def main():
+def main() -> None:
     """Run script."""
     dbfile = os.path.normpath(os.path.join(".", "etc", "authordb.yaml"))
 
