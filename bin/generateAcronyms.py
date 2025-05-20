@@ -28,6 +28,8 @@ import os.path
 import re
 import sys
 import warnings
+from collections.abc import Iterable
+from typing import IO
 
 glsFile = "aglossary.tex"
 OUTPUT_MODES = ["txt", "rst", "tex"]
@@ -53,7 +55,7 @@ CAP_ACRONYM = re.compile(r"\b[A-Z][A-Z0-9]+\b")
 pypandoc = None  # it can not handle gls
 
 
-def _parse_line(line):
+def _parse_line(line: str) -> tuple[str, str] | tuple[None, None]:
     """Parse a line and return an acronym and definition.
 
     Parameters
@@ -86,7 +88,9 @@ def _parse_line(line):
     return acr.rstrip(), defn
 
 
-def read_glossarydef(filename, utags, init=None):
+def read_glossarydef(
+    filename: str, utags: set[str] | None, init: dict[str, set[tuple[str, str]]] | None = None
+) -> dict[str, set[tuple[str, str]]]:
     """Read glossary  definitions from LSST format glossarydefs.csv file.
 
     Parameters
@@ -111,6 +115,8 @@ def read_glossarydef(filename, utags, init=None):
         definitions = {}
     else:
         definitions = init.copy()
+    if utags is None:
+        utags = set()
 
     lc = 0
     with open(filename) as fd:
@@ -139,8 +145,8 @@ def read_glossarydef(filename, utags, init=None):
             hasTag = False
             if tags:
                 tagset.update(tags.split())
-                hasTag = tagset.intersection(utags)
-            if acr is None:
+                hasTag = bool(tagset.intersection(utags))
+            if not acr:
                 continue
 
             if acr not in definitions:
@@ -161,7 +167,12 @@ def read_glossarydef(filename, utags, init=None):
     return definitions
 
 
-def read_myacronyms(filename="myacronyms.txt", allow_duplicates=False, defaults=None, utags=None):
+def read_myacronyms(
+    filename: str = "myacronyms.txt",
+    allow_duplicates: bool = False,
+    defaults: dict[str, tuple[str, str]] | None = None,
+    utags: set[str] | None = None,
+) -> dict[str, tuple[str, str]]:
     """Read the supplied file and extract acronyms or glossary entries.
 
     File must contain lines in format if it is myacronyms.txt :
@@ -194,7 +205,7 @@ def read_myacronyms(filename="myacronyms.txt", allow_duplicates=False, defaults=
     definitions : `dict`
         Dictionary with acronym as key and definition as value.
     """
-    definitions = {}
+    definitions: dict[str, tuple[str, str]] = {}
     if filename.endswith(".csv"):
         localdefs = read_glossarydef(filename, utags)
         # flatten the set to a single entry for each glossarydef
@@ -205,9 +216,11 @@ def read_myacronyms(filename="myacronyms.txt", allow_duplicates=False, defaults=
                 acr, defn = _parse_line(line)
                 if acr is None:
                     continue
+                if defn is None:  # for mypy.
+                    continue
 
                 if acr in definitions:
-                    if defn != definitions[acr]:
+                    if defn != definitions[acr][1]:
                         raise RuntimeError(f"Duplicate definitions of {acr} differ in {filename}")
                     else:
                         warnings.warn(
@@ -215,7 +228,8 @@ def read_myacronyms(filename="myacronyms.txt", allow_duplicates=False, defaults=
                                 f"Entry {acr} exists multiple times"
                                 f" with same definition in {filename}, you may"
                                 " want to try using a tag (-t)"
-                            )
+                            ),
+                            stacklevel=1,
                         )
                 # myacronyms will contains by definition only acronyms
                 definitions[acr] = (defn, "A")
@@ -230,7 +244,7 @@ def read_myacronyms(filename="myacronyms.txt", allow_duplicates=False, defaults=
     return combined
 
 
-def read_skip_acronyms(file_name="skipacronyms.txt"):
+def read_skip_acronyms(file_name: str = "skipacronyms.txt") -> set[str]:
     """Read the supplied file to obtain a list of terms to skip.
 
     File must contain lines in format of one term per line. Repeat
@@ -246,7 +260,7 @@ def read_skip_acronyms(file_name="skipacronyms.txt"):
     skip : `set`
         Set containing terms to be skipped.
     """
-    skip = set()
+    skip: set[str] = set()
     if not os.path.exists(file_name):
         return skip
 
@@ -262,7 +276,9 @@ def read_skip_acronyms(file_name="skipacronyms.txt"):
     return skip
 
 
-def find_matches_per_line(filename, acronyms, ignore_str=" %"):
+def find_matches_per_line(
+    filename: str, acronyms: set[str], ignore_str: str = " %"
+) -> tuple[set[str], set[str]]:
     """Return list of matching acronyms in file.
 
     Parameters
@@ -300,7 +316,9 @@ def find_matches_per_line(filename, acronyms, ignore_str=" %"):
     return matches, set()
 
 
-def find_matches_combo(filename, acronyms, ignore_str=" %"):
+def find_matches_combo(
+    filename: str, acronyms: set[str], ignore_str: str = " %"
+) -> tuple[set[str], set[str]]:
     """Return list of matching acronyms in file.
 
     Parameters
@@ -404,18 +422,17 @@ def find_matches_combo(filename, acronyms, ignore_str=" %"):
 find_matches = find_matches_combo
 
 
-def escape_for_tex(str):
+def escape_for_tex(text: str) -> str:
     """Escape tex nasties and return new string.
     But watch out for double whammies.
     """
-    text = str
     for c in specialChars:
         text = text.replace(c, rf"\{c}")
         text = text.replace(rf"\\{c}", rf"\{c}")
     return text
 
 
-def write_latex_glossary(acronyms, fd=sys.stdout):
+def write_latex_glossary(acronyms: list[tuple[str, tuple[str, str]]], fd: IO | None = sys.stdout) -> None:
     """Write a glossary file with newglossaryitem per definition  -
     or new acronym if it is type A for acronym.
 
@@ -426,7 +443,7 @@ def write_latex_glossary(acronyms, fd=sys.stdout):
     fd : `file`, optional
     """
     print(
-        f"% DO NOT EDIT - generated by {sys.argv[0]} from " "https://lsst-texmf.lsst.io/.",
+        f"% DO NOT EDIT - generated by {sys.argv[0]} from https://lsst-texmf.lsst.io/.",
         file=fd,
     )
     for acr, defn in acronyms:
@@ -441,12 +458,17 @@ def write_latex_glossary(acronyms, fd=sys.stdout):
             )
         else:
             print(
-                f"\\newglossaryentry{{{acr}}} {{name={{{acr2}}}," f" description={{{definition}}}}}",
+                f"\\newglossaryentry{{{acr}}} {{name={{{acr2}}}, description={{{definition}}}}}",
                 file=fd,
             )
 
 
-def write_latex_table(acronyms, dotex=True, dorst=False, fd=sys.stdout):
+def write_latex_table(
+    acronyms: list[tuple[str, tuple[str, str]]],
+    dotex: bool = True,
+    dorst: bool = False,
+    fd: IO | None = sys.stdout,
+) -> None:
     """Write latex table to supplied file descriptor.
 
     Parameters
@@ -475,9 +497,7 @@ def write_latex_table(acronyms, dotex=True, dorst=False, fd=sys.stdout):
             print(r"""======= ===========""", file=fd)
         sep = "\t"
         end = ""
-    for acr, defn in acronyms:
-        if len(defn) > 1:
-            defn = defn[0]
+    for acr, (defn, _) in acronyms:
         acr = escape_for_tex(acr)
         print(f"{acr}{sep}{defn}{end}", file=fd)
     if dotex:
@@ -486,8 +506,8 @@ def write_latex_table(acronyms, dotex=True, dorst=False, fd=sys.stdout):
         print(r"""======= ===========""", file=fd)
 
 
-def forceConverge(prevCount, utags, noadorn, writeallacronyms):
-    """Run through the glossary looking for defnitions until
+def forceConverge(prevCount: int, utags: set[str], noadorn: bool, writeallacronyms: bool) -> None:
+    """Run through the glossary looking for definitions until
     no more are added.
     """
     while True:
@@ -498,7 +518,7 @@ def forceConverge(prevCount, utags, noadorn, writeallacronyms):
         prevCount = count
 
 
-def setup_paths():
+def setup_paths() -> tuple[str, str]:
     """Calculate the paths to glossary definitions and skip files."""
     defaults_dir = os.path.join(os.path.dirname(__file__), os.path.pardir, "etc")
     lsst_glossary_path = os.path.join(defaults_dir, "glossarydefs.csv")
@@ -506,7 +526,16 @@ def setup_paths():
     return (lsst_glossary_path, global_skip_path)
 
 
-def main(texfiles, doGlossary, utags, dotex, dorst, mode, noadorn, writeallacronyms=False):
+def main(
+    texfiles: set[str],
+    doGlossary: bool,
+    utags: set[str],
+    dotex: bool,
+    dorst: bool,
+    mode: str,
+    noadorn: bool,
+    writeallacronyms: bool = False,
+) -> int:
     """Run program and generate acronyms file."""
     if not texfiles:
         raise RuntimeError("No files supplied.")
@@ -570,7 +599,7 @@ def main(texfiles, doGlossary, utags, dotex, dorst, mode, noadorn, writeallacron
             print(f"Missing definition: {m}", file=sys.stderr)
 
     # Attach definitions to matches
-    results = []
+    results: list[tuple[str, tuple[str, str]]] = []
     for acr in sorted(matches):
         if acr in local_definitions:
             results.append((acr, local_definitions[acr]))
@@ -578,7 +607,7 @@ def main(texfiles, doGlossary, utags, dotex, dorst, mode, noadorn, writeallacron
             options = lsst_definitions[acr]
             if len(options) > 1:
                 print(
-                    f"Entry {acr} exists multiple ({len(options)}) times. " "Including all definitions.",
+                    f"Entry {acr} exists multiple ({len(options)}) times. Including all definitions.",
                     file=sys.stderr,
                 )
             for a in options:
@@ -598,7 +627,9 @@ def main(texfiles, doGlossary, utags, dotex, dorst, mode, noadorn, writeallacron
     return len(results)
 
 
-def update_gls_entries(results, GLSlist):
+def update_gls_entries(
+    results: list[tuple[str, tuple[str, str]]], GLSlist: dict[str, set[tuple[str, str]]]
+) -> list[tuple[str, tuple[str, str]]]:
     r"""Scan through the acronym and gls definitions and add \gls where
     appropriate (similar to -u for the files)
     """
@@ -619,7 +650,7 @@ def update_gls_entries(results, GLSlist):
     return new_result
 
 
-def loadGLSlist():
+def loadGLSlist() -> set[str]:
     r"""Load all the glossary items from the generated glossary file.
 
     We can then use those entries to go back and search for them in the
@@ -633,12 +664,12 @@ def loadGLSlist():
     return GLSlist
 
 
-def glsfn(s):
+def glsfn(s: re.Match) -> str:
     r"""Put ``\gls{}`` -- used in the regexp substitution"""
     return s.group(1) + "\\gls{" + s.group(2) + "}" + s.group(3)
 
 
-def make_regexmap(GLSlist):
+def make_regexmap(GLSlist: Iterable[str]) -> dict[str, re.Pattern]:
     """Make a re map of regexps for substitution"""
     regexmap = {}
     for g in GLSlist:
@@ -646,7 +677,7 @@ def make_regexmap(GLSlist):
     return regexmap
 
 
-def sub_line(line, regexmap, GLSlist):
+def sub_line(line: str, regexmap: dict[str, re.Pattern], GLSlist: Iterable[str]) -> str:
     r"""For given line put \gls around gls items not already adorned.
     :return: modified line
     """
@@ -664,7 +695,7 @@ def sub_line(line, regexmap, GLSlist):
     return nline
 
 
-def updateFile(inFile, GLSlist):
+def updateFile(inFile: str, GLSlist: set[str]) -> None:
     """Update the tex file by looking for acronyms
     and glossary items GLSlist.
     """
@@ -690,7 +721,7 @@ def updateFile(inFile, GLSlist):
         sys.exit(1)
 
 
-def update(texfiles):
+def update(texfiles: list[str]) -> None:
     """Update the passed tex files by looking for acronyms and glossary items
     loaded from aglossary.tex.
     """
@@ -708,7 +739,7 @@ def update(texfiles):
         updateFile(f, GLSlist)
 
 
-def load_translation(locale, filename):
+def load_translation(locale: str, filename: str) -> dict[str, str | dict[str, str]]:
     """Load a translation file for given locale
     simplistic for now - append local to file name
     load in a dict assume acronynm, definition, [tag].
@@ -716,9 +747,10 @@ def load_translation(locale, filename):
     This will also check for repeat acronym without tag
     """
     transfile = filename.replace(".csv", f"_{locale}.csv")
-    translation = {}
+    translation: dict[str, str | dict[str, str]] = {}
     with open(transfile) as fd:
         reader = csv.reader(fd, delimiter=",", quotechar='"')
+        _ = next(reader)  # This is the header
         for lc, row in enumerate(reader):
             try:
                 ind = 0
@@ -730,9 +762,17 @@ def load_translation(locale, filename):
                 if len(row) > 2:
                     tag = row[ind + 2]
                 if tag:
-                    trans = {}
+                    trans: dict[str, str] = {}
                     if acr in translation:
-                        trans = translation[acr]
+                        existing = translation[acr]
+                        if isinstance(existing, str):
+                            if existing != defn:
+                                raise ValueError(
+                                    f"Duplicate translation for tag {tag} for {acr} in "
+                                    f"{transfile} line {lc}: {defn} != {existing}"
+                                )
+                        else:
+                            trans = existing
                     if tag in trans:
                         raise ValueError(f"Duplicate tag {tag} for {acr} in {transfile} line {lc}")
                     trans[tag] = defn
@@ -749,7 +789,7 @@ def load_translation(locale, filename):
     return translation
 
 
-def dump_gls(filename, out_file):
+def dump_gls(filename: str, out_file: str) -> int:
     """Read the definition file and just output a latex table,
     include spanish where available and also do that for a csv to
     be used on the glossary page.
@@ -803,7 +843,7 @@ def dump_gls(filename, out_file):
                                 )
                                 exit(2)
                         else:  # it is a simple string
-                            trans = translate[acr]
+                            trans = transm
                     if "," in acr:
                         csv_acr = f'"{acr}"'
                     else:

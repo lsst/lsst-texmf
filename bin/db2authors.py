@@ -22,6 +22,7 @@ import os.path
 import re
 import string
 import sys
+from abc import ABC, abstractmethod
 from typing import Any, Self
 
 import yaml
@@ -178,7 +179,7 @@ class AuthorFactory:
         )
 
 
-class AuthorTextGenerator:
+class AuthorTextGenerator(ABC):
     """Class to create some text for authors."""
 
     mode: str = "undefined"
@@ -232,6 +233,17 @@ class AuthorTextGenerator:
         if ind > 0:
             city = addr[ind]
         return {"institute": institute, "city": city, "country": country, "state": state, "postcode": pcode}
+
+    @abstractmethod
+    def generate(self) -> str:
+        """Generate the author text.
+
+        Returns
+        -------
+        author_text : `str`
+            The text in the expected format.
+        """
+        raise NotImplementedError()
 
 
 class AASTeX(AuthorTextGenerator):
@@ -392,8 +404,8 @@ class ASCOM(AuthorTextGenerator):
         affiliations = []
         for affil, number in affil_to_number.items():
             parsed = self.parse_affiliation(affil)
-            affil_text = f"""\\affiliation[{number}]{{organization={{{parsed['institute']}}},
-                country={{{parsed['country']}}}
+            affil_text = f"""\\affiliation[{number}]{{organization={{{parsed["institute"]}}},
+                country={{{parsed["country"]}}}
                }}"""
             affiliations.append(affil_text)
 
@@ -508,7 +520,7 @@ if __name__ == "__main__":
 
     authors = [factory.get_author(authorid) for authorid in authors]
 
-    generator_lut = {
+    generator_lut: dict[str, type[AuthorTextGenerator]] = {
         "aas": AASTeX,
         "lsstdoc": LsstDoc,
         "arxiv": Arxiv,

@@ -17,7 +17,7 @@ TESTENTRY = """@TechReport{DMTN-005,
          url = {http://nolplace.com} }"""
 
 
-def make_comparable(instr):
+def make_comparable(instr: str) -> str:
     """Remove whitespace."""
     return re.sub(r"\s+", "", instr)
 
@@ -25,7 +25,7 @@ def make_comparable(instr):
 class TestBib(unittest.TestCase):
     """Test bib entries."""
 
-    def setUp(self):
+    def setUp(self) -> None:
         self.be = BibEntry(
             "Testy McTest",
             "A great title",
@@ -37,7 +37,7 @@ class TestBib(unittest.TestCase):
             "test pub",
         )
 
-    def testConstructPrint(self):
+    def testConstructPrint(self) -> None:
         ref_bib = pybtex.database.BibliographyData.from_string(TESTENTRY, "bibtex")
         ref_entry = ref_bib.to_string("bibtex")
 
@@ -45,7 +45,7 @@ class TestBib(unittest.TestCase):
 
         self.assertEqual(entry, ref_entry)
 
-    def testCompare(self):
+    def testCompare(self) -> None:
         bel = BibEntry(
             "Testy McTest",
             "A great title",
@@ -82,7 +82,7 @@ class TestBib(unittest.TestCase):
         self.assertEqual(bels, bel)
         self.assertFalse(bel == beg)
 
-    def test_bibdict(self):
+    def test_bibdict(self) -> None:
         """Test that BibDict works as expected."""
         bd = BibDict()
         bd["dmtn-234"] = "a"

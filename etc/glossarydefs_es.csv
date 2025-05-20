@@ -878,6 +878,7 @@ PFS,Espectrógrafo de foco primario,
 PHA,asteroides potencialmente peligrosos,
 photo-z,corrimiento al rojo fotométrico,
 PI,Investigador principal,
+PIFF,PSF en el FOV completo,
 PII,información personalmente identificable,
 PIM,Protocol Independent Multicast [protocolo de enrutamiento],
 PL,Planificación,IT

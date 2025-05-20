@@ -34,11 +34,11 @@ You have to do this once to allow the script to access your google stuff
 from this machine.
 """
 
-
 import argparse
 import os
 import os.path
 import pickle
+from typing import IO, Any
 
 from google.auth.transport.requests import Request
 from google_auth_oauthlib.flow import InstalledAppFlow
@@ -83,7 +83,7 @@ def get_credentials() -> Credentials:
     return creds
 
 
-def complete_and_close_table(tout):
+def complete_and_close_table(tout: IO | None) -> None:
     """Terminate the latex table and close the output file."""
     if tout:
         print(r"\end{longtable} \normalsize", file=tout)
@@ -93,13 +93,14 @@ def complete_and_close_table(tout):
         raise Exception("Expected and open file to end table in")
 
 
-def outhead(ncols, tout, name, cap, form=None, font=r"\tiny"):
+def outhead(
+    ncols: int, tout: IO | None, name: str, cap: str, form: str | None = None, font: str = r"\tiny"
+) -> None:
     """Return the table header."""
     print(rf"{font} \begin{{longtable}} {{", file=tout, end="")
-    c = 1
     if form is None:
         print(" |p{0.22\\textwidth} ", file=tout, end="")
-        for c in range(1, ncols + 1):
+        for _ in range(1, ncols + 1):
             print(" |r ", file=tout, end="")
         print(
             "|} ",
@@ -113,7 +114,7 @@ def outhead(ncols, tout, name, cap, form=None, font=r"\tiny"):
     return
 
 
-def outputrow(tout, pre, row, cols, skip):
+def outputrow(tout: IO | None, pre: str, row: list, cols: int, skip: int) -> None:
     """Return output table row."""
     skipped = 0
     for i in range(cols):
@@ -129,7 +130,7 @@ def outputrow(tout, pre, row, cols, skip):
     print(r" \\ \hline", file=tout)
 
 
-def fixTex(text):
+def fixTex(text: str) -> str:
     """Escape special latex characters."""
     specialChars = "_$&%^#"
     for c in specialChars:
@@ -137,7 +138,7 @@ def fixTex(text):
     return text
 
 
-def genTables(values):
+def genTables(values: list) -> None:
     """Generate tables.
 
     Notes
@@ -177,7 +178,7 @@ def genTables(values):
                 cols = int(row[col])
                 col = col + 1
                 skip = int(row[col])
-                form = None
+                form: str | None = None
                 font = r"\tiny"
                 col = col + 1
                 if len(row) > col:
@@ -202,7 +203,7 @@ def genTables(values):
     return
 
 
-def get_sheet(sheet_id, range):
+def get_sheet(sheet_id: str, range: str) -> dict[str, Any]:
     """Grab the google sheet and return data from sheet.
 
     Parameters
@@ -220,12 +221,12 @@ def get_sheet(sheet_id, range):
     return result
 
 
-def main(sheetId, sheets):
+def main(sheetId: str, sheets: str) -> None:
     """Grab the googlesheet and process tables in each sheet."""
     for r in sheets:
         print(f"Google {sheetId} , Sheet {r}")
         result = get_sheet(sheetId, r)
-        values = result.get("values", [])
+        values: list[Any] = result.get("values", [])
         genTables(values)
 
 

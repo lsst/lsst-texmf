@@ -11,17 +11,18 @@ import argparse
 import asyncio
 import calendar
 from datetime import UTC, datetime
+from typing import cast
 
 import latexcodec  # noqa provides the latex+latin codec
 import pybtex.database
-from algoliasearch.search.client import SearchClient
+from algoliasearch.search.client import SearchClient, SearchResponse
 from bibtools import BibDict, BibEntry
 from pybtex.database import BibliographyData
 
 MAXREC = 2000
 
 
-def isCommittee(author):
+def isCommittee(author: str) -> bool:
     """Guess if this is a committee or working group paper.
 
     For DM-39724 decide if we have a non regular author
@@ -42,7 +43,7 @@ def isCommittee(author):
     return len(words) > 5
 
 
-def sort_by_handle(key):
+def sort_by_handle(key: str) -> str:
     """Allow Document-11 to come before Document-8."""
     try:
         hdl, num = key.split("-")
@@ -51,14 +52,14 @@ def sort_by_handle(key):
         return key
     num = num.lstrip("0")
     try:
-        num = int(num)
+        handle_number = int(num)
     except ValueError:
         # Not a number.
         return key
-    return f"{hdl.upper()}-{num:09d}"
+    return f"{hdl.upper()}-{handle_number:09d}"
 
 
-async def generate_bibfile(query: str = "", external: list[str] | None = None) -> str:
+async def generate_bibfile(query: str | None = "", external: list[str] | None = None) -> str:
     """
     Query ook for the list of entries.
     Only returning meta data needed for bib entries.
@@ -77,7 +78,7 @@ async def generate_bibfile(query: str = "", external: list[str] | None = None) -
     result : `str`
         Formatted bib file string ready to be printed.
     """
-    if query is None:
+    if not query:
         query = ""  # Algolia take None as string literal None
     async with SearchClient(app_id="0OJETYIVL5", api_key="b7bd2f1080a5c4fe5eee502462bcc9d3") as client:
         index_name = "document_dev"
@@ -97,7 +98,8 @@ async def generate_bibfile(query: str = "", external: list[str] | None = None) -
         }
 
         # "index_name": index_name,
-        res = await client.search_single_index(index_name=index_name, search_params=params)
+        client = cast(SearchClient, client)
+        res = await client.search_single_index(index_name=index_name, search_params=params)  # type: ignore
         print(f"Total hits: {len(res.hits)}, Query:'{query}'")
 
         search_data = create_bibentries(res)
@@ -108,7 +110,7 @@ async def generate_bibfile(query: str = "", external: list[str] | None = None) -
     # not allowed. BibTeX is case insensitive so use a special
     # case-insensitive but case-preserving dict. This is needed else pybtex
     # will complain if it finds Document-123 and document-123 in the dict.
-    all_data: BibDict[str, pybtex.database.Entry] = BibDict()
+    all_data = BibDict()
     if external:
         for bibfile in external:
             with open(bibfile) as fd:
@@ -137,15 +139,13 @@ async def generate_bibfile(query: str = "", external: list[str] | None = None) -
     return result
 
 
-def create_bibentries(res) -> BibliographyData:
+def create_bibentries(res: SearchResponse) -> BibliographyData:
     """Create the bibtex entries."""
-    bcount = 0
     entries: dict[str, pybtex.database.Entry] = {}
-    for count, hit in enumerate(res.hits):
+    for hit in res.hits:
         d = hit.additional_properties
         if "series" in d.keys() and d["series"] == "TESTN":
             continue
-        bcount = bcount + 1
         if len(d["authorNames"]) == 1 and isCommittee(d["authorNames"][0]):
             authors = f"{{{d['authorNames'][0]}}}"
         else:
@@ -177,7 +177,7 @@ def create_bibentries(res) -> BibliographyData:
     return BibliographyData(entries={k: entries[k] for k in sorted(entries)})
 
 
-def fixTex(text):
+def fixTex(text: str) -> str:
     """
     Escape special TeX chars.
     :param text:
@@ -189,7 +189,7 @@ def fixTex(text):
     return text
 
 
-def checkFixAuthAndComma(authors):
+def checkFixAuthAndComma(authors: str) -> str:
     """
     Soem people used comm seperated author lists - bibtex does not like that.
     Here we replave the comma with and.
@@ -206,7 +206,7 @@ def checkFixAuthAndComma(authors):
     return authors
 
 
-def fixTexSS(text):
+def fixTexSS(text: str) -> str:
     """
     There are several UTF special chars in lsst.io which need to be TeXified.
     This routing catches them and replaces them with TeX versions (or nothing).
