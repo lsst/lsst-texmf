@@ -98,10 +98,9 @@ def outhead(
 ) -> None:
     """Return the table header."""
     print(rf"{font} \begin{{longtable}} {{", file=tout, end="")
-    c = 1
     if form is None:
         print(" |p{0.22\\textwidth} ", file=tout, end="")
-        for c in range(1, ncols + 1):
+        for _ in range(1, ncols + 1):
             print(" |r ", file=tout, end="")
         print(
             "|} ",

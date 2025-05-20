@@ -228,7 +228,8 @@ def read_myacronyms(
                                 f"Entry {acr} exists multiple times"
                                 f" with same definition in {filename}, you may"
                                 " want to try using a tag (-t)"
-                            )
+                            ),
+                            stacklevel=1,
                         )
                 # myacronyms will contains by definition only acronyms
                 definitions[acr] = (defn, "A")

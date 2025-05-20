@@ -141,13 +141,11 @@ async def generate_bibfile(query: str | None = "", external: list[str] | None = 
 
 def create_bibentries(res: SearchResponse) -> BibliographyData:
     """Create the bibtex entries."""
-    bcount = 0
     entries: dict[str, pybtex.database.Entry] = {}
-    for count, hit in enumerate(res.hits):
+    for hit in res.hits:
         d = hit.additional_properties
         if "series" in d.keys() and d["series"] == "TESTN":
             continue
-        bcount = bcount + 1
         if len(d["authorNames"]) == 1 and isCommittee(d["authorNames"][0]):
             authors = f"{{{d['authorNames'][0]}}}"
         else:
