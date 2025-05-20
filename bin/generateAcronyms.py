@@ -496,9 +496,7 @@ def write_latex_table(
             print(r"""======= ===========""", file=fd)
         sep = "\t"
         end = ""
-    for acr, defn in acronyms:
-        if len(defn) > 1:
-            defn = defn[0]
+    for acr, (defn, _) in acronyms:
         acr = escape_for_tex(acr)
         print(f"{acr}{sep}{defn}{end}", file=fd)
     if dotex:
@@ -751,6 +749,7 @@ def load_translation(locale: str, filename: str) -> dict[str, str | dict[str, st
     translation: dict[str, str | dict[str, str]] = {}
     with open(transfile) as fd:
         reader = csv.reader(fd, delimiter=",", quotechar='"')
+        _ = next(reader)  # This is the header
         for lc, row in enumerate(reader):
             try:
                 ind = 0
@@ -764,7 +763,15 @@ def load_translation(locale: str, filename: str) -> dict[str, str | dict[str, st
                 if tag:
                     trans: dict[str, str] = {}
                     if acr in translation:
-                        trans = translation[acr]
+                        existing = translation[acr]
+                        if isinstance(existing, str):
+                            if existing != defn:
+                                raise ValueError(
+                                    f"Duplicate translation for tag {tag} for {acr} in "
+                                    f"{transfile} line {lc}: {defn} != {existing}"
+                                )
+                        else:
+                            trans = existing
                     if tag in trans:
                         raise ValueError(f"Duplicate tag {tag} for {acr} in {transfile} line {lc}")
                     trans[tag] = defn
