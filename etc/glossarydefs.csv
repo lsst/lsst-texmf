@@ -901,6 +901,7 @@ PFS,Prime Focus Spectrograph,Gen,,,A
 PHA,potentially hazardous asteroids,TS,Document-11971,,A
 photo-z,"photometric redshift",Sci,,,A
 PI,Principle Investigator,Sci OPS,,,A
+PIFF,PSFs In the Full FOV,DM,,,A
 PII,personally identifiable information,TS,Document-11976,,A
 PIM,Protocol Independent Multicast,IT,,,A
 PL,Planning,IT,,,A
