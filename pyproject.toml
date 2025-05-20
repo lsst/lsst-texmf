@@ -1,6 +1,6 @@
 [tool.black]
 line-length = 110
-target-version = ["py311"]
+target-version = ["py312"]
 
 [tool.isort]
 profile = "black"
@@ -8,7 +8,7 @@ line_length = 110
 
 [tool.ruff]
 line-length = 110
-target-version = "py311"
+target-version = "py312"
 exclude = [
     "__init__.py",
     "lex.py",
@@ -42,6 +42,7 @@ select = [
     "D",  # pydocstyle
     "UP",  # pyupgrade
     "C4",  # list comprehensions
+    "I",  # isort
 ]
 
 [tool.ruff.lint.pycodestyle]
@@ -49,3 +50,9 @@ max-doc-length = 79
 
 [tool.ruff.lint.pydocstyle]
 convention = "numpy"
+
+[tool.ruff.lint.isort]
+known-first-party = ["lsst"]
+
+[tool.ruff.format]
+docstring-code-format = true
