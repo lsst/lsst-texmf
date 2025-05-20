@@ -1,10 +1,8 @@
 #!/usr/bin/env python
-"""Ensure that lsst-texmf authors file is ok in case an entry was added.
-"""
+"""Ensure that lsst-texmf authors file is ok in case an entry was added."""
 
 import os
 import subprocess
-
 from typing import Any
 
 import yaml

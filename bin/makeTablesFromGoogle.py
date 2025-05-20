@@ -34,7 +34,6 @@ You have to do this once to allow the script to access your google stuff
 from this machine.
 """
 
-
 import argparse
 import os
 import os.path

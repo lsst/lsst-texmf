@@ -404,8 +404,8 @@ class ASCOM(AuthorTextGenerator):
         affiliations = []
         for affil, number in affil_to_number.items():
             parsed = self.parse_affiliation(affil)
-            affil_text = f"""\\affiliation[{number}]{{organization={{{parsed['institute']}}},
-                country={{{parsed['country']}}}
+            affil_text = f"""\\affiliation[{number}]{{organization={{{parsed["institute"]}}},
+                country={{{parsed["country"]}}}
                }}"""
             affiliations.append(affil_text)
 
