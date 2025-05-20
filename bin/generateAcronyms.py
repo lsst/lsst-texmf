@@ -29,7 +29,7 @@ import re
 import sys
 import warnings
 from collections.abc import Iterable
-from typing import IO, Any
+from typing import IO
 
 glsFile = "aglossary.tex"
 OUTPUT_MODES = ["txt", "rst", "tex"]
