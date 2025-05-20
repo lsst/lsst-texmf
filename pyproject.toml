@@ -43,6 +43,7 @@ select = [
     "UP",  # pyupgrade
     "C4",  # list comprehensions
     "I",  # isort
+    "B",  # bugbear
 ]
 
 [tool.ruff.lint.pycodestyle]
