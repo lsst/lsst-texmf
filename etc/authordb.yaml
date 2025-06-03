@@ -3449,6 +3449,13 @@ authors:
     initials: Luka {\v{C}}.
     name: Popovi\'c
     orcid: null
+  porterm:
+    affil:
+    - Peay
+    altaffil: []
+    initials: Meagan N.
+    name: Porter
+    orcid: 0000-0001-9279-3770
   pricepa:
     affil:
     - Princeton-Astro
@@ -3977,7 +3984,7 @@ authors:
     altaffil: []
     initials: J. Allyn
     name: Smith
-    orcid: null
+    orcid: 0000-0002-6261-4601
   smithrc:
     affil:
     - CTIO
