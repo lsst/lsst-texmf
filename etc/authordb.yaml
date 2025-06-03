@@ -4,6 +4,8 @@ affiliations:
   ALMA: Atacama Large Millimeter/submillimeter Array, San Pedro de Atacama, Antofagasta, Chile
   AMNH: Department of Astrophysics, American Museum of Natural History, New York,
     NY 10028, USA
+  APSU: Deptartment of Physics, Engineering \& Astronomy, Austin Peay State University, 
+    Clarksville, TN  7044, USA
   ASTRON: ASTRON, Oude Hoogeveensedijk 4, 7991\,PD, Dwingeloo, The Netherlands
   BNL: Brookhaven National Laboratory, Upton, NY 11973, USA
   Belgrade-AO: Astronomical Observatory, Volgina 7, P.O.\ Box 74, 11060 Belgrade,
@@ -3449,6 +3451,13 @@ authors:
     initials: Luka {\v{C}}.
     name: Popovi\'c
     orcid: null
+  porterm:
+    affil:
+    - Peay
+    altaffil: []
+    initials: Meagan N.
+    name: Porter
+    orcid: 0000-0001-9279-3770
   pricepa:
     affil:
     - Princeton-Astro
@@ -3977,7 +3986,7 @@ authors:
     altaffil: []
     initials: J. Allyn
     name: Smith
-    orcid: null
+    orcid: 0000-0002-6261-4601
   smithrc:
     affil:
     - CTIO
