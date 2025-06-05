@@ -63,12 +63,16 @@ test-authors:
 	@echo
 	bin/validate_authors.py
 
+authors.csv: etc/authordb.yaml
+	bin/db2authors.py -m csv
+
 .PHONY: docs
-docs: $(PDF) $(TESTS) glstab.tex
+docs: $(PDF) $(TESTS) glstab.tex authors.csv
 	mkdir -p docs/_static/examples
 	cp *.pdf docs/_static/examples/
 	cp etc/glossary.html docs
 	cp htmlglossary.csv docs
+	cp authors.csv docs
 	make -C docs html
 
 lsst.bib:

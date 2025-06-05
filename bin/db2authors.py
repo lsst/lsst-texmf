@@ -17,7 +17,6 @@ This program requires the "yaml" package to be installed.
 
 import argparse
 import dataclasses
-import os
 import os.path
 import re
 import string
@@ -131,6 +130,9 @@ class AuthorFactory:
             email_domains=authordb["emails"],
             authors=authordb["authors"],
         )
+
+    def get_authors(self) -> dict[str, dict]:
+        return self._authors
 
     def get_author(self, authorid: str) -> Author:
         if authorid not in self._authors:
@@ -477,6 +479,21 @@ class ADASS(AuthorTextGenerator):
         )
 
 
+def dump_csv(factory: AuthorFactory) -> None:
+    """Generate CSV of ALL authors for easier lookup of ID .
+    Authorid, Name, Institution id
+    put this in authors.csv
+    """
+    authors: dict[str, dict] = factory.get_authors()
+    with open("authors.csv", "w") as outf:
+        print("Rubin ID, Name, Affiliation(s)", file=outf)
+        for authorid in authors.keys():
+            author = factory.get_author(authorid)
+            line = f'{authorid},{author.full_name},"{author.affiliations}"'
+            print(line, file=outf)
+        outf.close()
+
+
 if __name__ == "__main__":
     # There is a file listing all the authors and a file mapping
     # those authors to full names and affiliations
@@ -488,7 +505,7 @@ if __name__ == "__main__":
 
     # this should probably be a dict with the value of affil_cmd
     # the keys could then be passed to the arg parser.
-    OUTPUT_MODES = ["aas", "spie", "adass", "arxiv", "ascom", "webofc", "lsstdoc"]
+    OUTPUT_MODES = ["aas", "spie", "adass", "arxiv", "ascom", "webofc", "lsstdoc", "csv"]
 
     description = __doc__
     formatter = argparse.RawDescriptionHelpFormatter
@@ -505,9 +522,6 @@ if __name__ == "__main__":
     parser.add_argument("-n", "--noafil", action="store_true", help="""Do not add affil at all for arxiv.""")
     args = parser.parse_args()
 
-    with open(authorfile) as fh:
-        authors = yaml.safe_load(fh)
-
     # This is the database file with all the generic information
     # about authors. Locate it relative to this script.
     exedir = os.path.abspath(os.path.dirname(__file__))
@@ -517,6 +531,13 @@ if __name__ == "__main__":
         authordb = yaml.safe_load(fh)
 
     factory = AuthorFactory.from_authordb(authordb)
+
+    if args.mode == "csv":
+        dump_csv(factory)
+        exit(0)
+
+    with open(authorfile) as fh:
+        authors = yaml.safe_load(fh)
 
     authors = [factory.get_author(authorid) for authorid in authors]
 
