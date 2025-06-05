@@ -64,7 +64,7 @@ test-authors:
 	bin/validate_authors.py
 
 authors.csv: etc/authordb.yaml
-	bin/db2authors.py -m csv
+	bin/db2authors.py -m csvall
 
 .PHONY: docs
 docs: $(PDF) $(TESTS) glstab.tex authors.csv

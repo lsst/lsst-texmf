@@ -21,6 +21,7 @@ import os.path
 import re
 import string
 import sys
+from _collections_abc import dict_keys
 from abc import ABC, abstractmethod
 from typing import Any, Self
 
@@ -131,8 +132,8 @@ class AuthorFactory:
             authors=authordb["authors"],
         )
 
-    def get_authors(self) -> dict[str, dict]:
-        return self._authors
+    def get_author_ids(self) -> dict_keys:
+        return self._authors.keys()
 
     def get_author(self, authorid: str) -> Author:
         if authorid not in self._authors:
@@ -479,7 +480,7 @@ class ADASS(AuthorTextGenerator):
         )
 
 
-def dump_csv(factory: AuthorFactory) -> None:
+def dump_csvall(factory: AuthorFactory) -> None:
     """Generate CSV of ALL authors for easier lookup of ID .
     Authorid, Name, Institution id
     put this in authors.csv
@@ -487,11 +488,11 @@ def dump_csv(factory: AuthorFactory) -> None:
     author_ids = factory.get_author_ids()
     with open("authors.csv", "w") as outf:
         print("Rubin ID, Name, Affiliation(s)", file=outf)
-        for authorid in authors.keys():
+        for authorid in author_ids:
             author = factory.get_author(authorid)
-            line = f'{authorid},{author.full_name},"{author.affiliations}"'
+            affils = " | ".join(author.affiliations)
+            line = f'{authorid},{latex2text(author.full_name)},"{latex2text(affils)}"'
             print(line, file=outf)
-        outf.close()
 
 
 if __name__ == "__main__":
@@ -505,7 +506,7 @@ if __name__ == "__main__":
 
     # this should probably be a dict with the value of affil_cmd
     # the keys could then be passed to the arg parser.
-    OUTPUT_MODES = ["aas", "spie", "adass", "arxiv", "ascom", "webofc", "lsstdoc", "csv"]
+    OUTPUT_MODES = ["aas", "spie", "adass", "arxiv", "ascom", "webofc", "lsstdoc", "csvall"]
 
     description = __doc__
     formatter = argparse.RawDescriptionHelpFormatter
@@ -532,8 +533,8 @@ if __name__ == "__main__":
 
     factory = AuthorFactory.from_authordb(authordb)
 
-    if args.mode == "csv":
-        dump_csv(factory)
+    if args.mode == "csvall":
+        dump_csvall(factory)
         exit(0)
 
     with open(authorfile) as fh:
