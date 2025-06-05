@@ -484,7 +484,7 @@ def dump_csv(factory: AuthorFactory) -> None:
     Authorid, Name, Institution id
     put this in authors.csv
     """
-    authors: dict[str, dict] = factory.get_authors()
+    author_ids = factory.get_author_ids()
     with open("authors.csv", "w") as outf:
         print("Rubin ID, Name, Affiliation(s)", file=outf)
         for authorid in authors.keys():
