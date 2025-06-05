@@ -17,11 +17,11 @@ This program requires the "yaml" package to be installed.
 
 import argparse
 import dataclasses
-import os
 import os.path
 import re
 import string
 import sys
+from _collections_abc import dict_keys
 from abc import ABC, abstractmethod
 from typing import Any, Self
 
@@ -131,6 +131,9 @@ class AuthorFactory:
             email_domains=authordb["emails"],
             authors=authordb["authors"],
         )
+
+    def get_author_ids(self) -> dict_keys:
+        return self._authors.keys()
 
     def get_author(self, authorid: str) -> Author:
         if authorid not in self._authors:
@@ -477,6 +480,21 @@ class ADASS(AuthorTextGenerator):
         )
 
 
+def dump_csvall(factory: AuthorFactory) -> None:
+    """Generate CSV of ALL authors for easier lookup of ID .
+    Authorid, Name, Institution id
+    put this in authors.csv
+    """
+    author_ids = factory.get_author_ids()
+    with open("authors.csv", "w") as outf:
+        print("Rubin ID, Name, Affiliation(s)", file=outf)
+        for authorid in author_ids:
+            author = factory.get_author(authorid)
+            affils = " | ".join(author.affiliations)
+            line = f'{authorid},{latex2text(author.full_name)},"{latex2text(affils)}"'
+            print(line, file=outf)
+
+
 if __name__ == "__main__":
     # There is a file listing all the authors and a file mapping
     # those authors to full names and affiliations
@@ -488,7 +506,7 @@ if __name__ == "__main__":
 
     # this should probably be a dict with the value of affil_cmd
     # the keys could then be passed to the arg parser.
-    OUTPUT_MODES = ["aas", "spie", "adass", "arxiv", "ascom", "webofc", "lsstdoc"]
+    OUTPUT_MODES = ["aas", "spie", "adass", "arxiv", "ascom", "webofc", "lsstdoc", "csvall"]
 
     description = __doc__
     formatter = argparse.RawDescriptionHelpFormatter
@@ -505,9 +523,6 @@ if __name__ == "__main__":
     parser.add_argument("-n", "--noafil", action="store_true", help="""Do not add affil at all for arxiv.""")
     args = parser.parse_args()
 
-    with open(authorfile) as fh:
-        authors = yaml.safe_load(fh)
-
     # This is the database file with all the generic information
     # about authors. Locate it relative to this script.
     exedir = os.path.abspath(os.path.dirname(__file__))
@@ -517,6 +532,13 @@ if __name__ == "__main__":
         authordb = yaml.safe_load(fh)
 
     factory = AuthorFactory.from_authordb(authordb)
+
+    if args.mode == "csvall":
+        dump_csvall(factory)
+        exit(0)
+
+    with open(authorfile) as fh:
+        authors = yaml.safe_load(fh)
 
     authors = [factory.get_author(authorid) for authorid in authors]
 
