@@ -64,6 +64,8 @@ affiliations:
     Evanston, IL 60201, USA
   Clermont-LPC: Universit\'e Clermont Auvergne, CNRS$/$IN2P3, Laboratoire de Physique de Clermont,
     F-63000 Clermont-Ferrand, France
+  D4D: D4D CONSULTING LTD., Suite 1 Second Floor, Everdene House, Deansleigh Road,
+        Bournemouth, UK BH7 7DU
   DACC: DACC New Mexico State University, Central Campus, Las Cruces, New Mexico, USA
   DARK: DARK, Niels Bohr Institute, University of Copenhagen, Denmark
   Delaware-PhyAst: Department of Physics and Astronomy, University of Delaware, Newark,
@@ -1544,7 +1546,7 @@ authors:
     email: kfindeis
   fisherlevinem:
     affil:
-    - RubinObs
+    - D4D
     altaffil: []
     initials: Merlin
     name: Fisher-Levine
