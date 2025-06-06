@@ -72,7 +72,7 @@ docs: $(PDF) $(TESTS) glstab.tex authors.csv
 	cp *.pdf docs/_static/examples/
 	cp etc/glossary.html docs
 	cp htmlglossary.csv docs
-	cp authors.csv docs
+	cp af*.csv authors.csv docs
 	make -C docs html
 
 lsst.bib:

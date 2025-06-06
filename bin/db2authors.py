@@ -135,6 +135,12 @@ class AuthorFactory:
     def get_author_ids(self) -> dict_keys:
         return self._authors.keys()
 
+    def get_affiliation_ids(self) -> dict_keys:
+        return self._affiliations.keys()
+
+    def get_affiliation(self, affiliationid: str) -> str:
+        return str(self._affiliations.get(affiliationid))
+
     def get_author(self, authorid: str) -> Author:
         if authorid not in self._authors:
             raise RuntimeError(f"Author {authorid!r} not found in author database")
@@ -492,6 +498,13 @@ def dump_csvall(factory: AuthorFactory) -> None:
             author = factory.get_author(authorid)
             affils = " | ".join(author.affiliations)
             line = f'{authorid},{latex2text(author.full_name)},"{latex2text(affils)}"'
+            print(line, file=outf)
+    affil_ids = factory.get_affiliation_ids()
+    with open("affiliations.csv", "w") as outf:
+        print("ID, Affiliation", file=outf)
+        for id in affil_ids:
+            affil = factory.get_affiliation(id)
+            line = f'{id},"{latex2text(affil)}"'
             print(line, file=outf)
 
 
