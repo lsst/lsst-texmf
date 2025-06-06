@@ -242,6 +242,7 @@ affiliations:
     Accelerator Laboratory, 2575 Sand Hill Rd., Menlo Park, CA 94025, USA
   Southampton: University of Southampton, Hartley Library B12, University Rd,
     Highfield, Southampton SO17 1BJ, United Kingdom
+  soZen: soZen Inc., 105 Clearview Dr, Penfield, NY 14526
   STFC-RAL: Science and Technology Facilities Council, Rutherford Appleton Laboratory, Harwell, UK
   Stanford: Stanford University, 450 Jane Stanford Way, Stanford, CA 94305, USA
   Stanford-AeroAstro: Department of Aeronautics and Astronautics, Stanford University,
@@ -2967,7 +2968,7 @@ authors:
     orcid: null
   moolekampfe:
     affil:
-    - RubinObs
+    - soZen
     altaffil: []
     initials: Fred E.
     name: Moolekamp
