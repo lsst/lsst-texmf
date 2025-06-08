@@ -169,6 +169,8 @@ affiliations:
   Napoli: Department of Physics "E. Pancini", University Federico II of Napoli, Via Cintia, 80126 Napoli, Italy
   NAOChina: National Astronomical Observatories, Chinese Academy of Sciences, A20
     Datun Rd, Chaoyang District, Beijing 100012, People's Republic of China
+  NAOJ: National Astronomical Observatory of Japan, 2-21-1 Osawa, Mitaka, Tokyo 181-8588, Japan
+  NAOJ-Chile: National Astronomical Observatory of Japan, Chile Observatory, Los Abedules 3085, Vitacura, Santiago, Chile
   NASA: National Aeronautics and Space Administration, Goddard Space Flight Center, Greenbelt, Maryland, USA
   NAU: Department of Astronomy and Planetary Science, Northern Arizona University, P.O.\ Box
     6010, Flagstaff, AZ 86011, USA
@@ -317,6 +319,7 @@ emails:
   IPAC: ipac.caltech.edu
   LancasterU: lancaster.ac.uk
   Lyon-CC-IN2P3: in2p3.fr
+  NAOJ: nao.ac.jp
   NCSA: illinois.edu
   NOIRLab: noirlab.edu
   NOIRLabC: noirlab.edu
@@ -4365,6 +4368,14 @@ authors:
     initials: Sabina
     name: Ustamujic
     orcid: 0000-0003-4596-2628
+  utsumiy:
+    affil:
+    - NAOJ-Chile
+    altaffil: []
+    initials: Yousuke
+    name: Utsumi
+    orcid: 0000-0001-6161-8988
+    email: yousuke.utsumi@NAOJ
   vanbergr:
     affil:
     - SLAC
