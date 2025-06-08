@@ -64,6 +64,8 @@ affiliations:
     Evanston, IL 60201, USA
   Clermont-LPC: Universit\'e Clermont Auvergne, CNRS$/$IN2P3, Laboratoire de Physique de Clermont,
     F-63000 Clermont-Ferrand, France
+  D4D: D4D CONSULTING LTD., Suite 1 Second Floor, Everdene House, Deansleigh Road,
+        Bournemouth, UK BH7 7DU
   DACC: DACC New Mexico State University, Central Campus, Las Cruces, New Mexico, USA
   DARK: DARK, Niels Bohr Institute, University of Copenhagen, Denmark
   Delaware-PhyAst: Department of Physics and Astronomy, University of Delaware, Newark,
@@ -242,6 +244,7 @@ affiliations:
     Accelerator Laboratory, 2575 Sand Hill Rd., Menlo Park, CA 94025, USA
   Southampton: University of Southampton, Hartley Library B12, University Rd,
     Highfield, Southampton SO17 1BJ, United Kingdom
+  soZen: soZen Inc., 105 Clearview Dr, Penfield, NY 14526
   STFC-RAL: Science and Technology Facilities Council, Rutherford Appleton Laboratory, Harwell, UK
   Stanford: Stanford University, 450 Jane Stanford Way, Stanford, CA 94305, USA
   Stanford-AeroAstro: Department of Aeronautics and Astronautics, Stanford University,
@@ -1543,7 +1546,7 @@ authors:
     email: kfindeis
   fisherlevinem:
     affil:
-    - RubinObs
+    - D4D
     altaffil: []
     initials: Merlin
     name: Fisher-Levine
@@ -2967,8 +2970,7 @@ authors:
     orcid: null
   moolekampfe:
     affil:
-    - Rider
-    - Princeton-Astro
+    - soZen
     altaffil: []
     initials: Fred E.
     name: Moolekamp
