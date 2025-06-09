@@ -318,6 +318,7 @@ emails:
   Exeter: exeter.ac.uk
   IPAC: ipac.caltech.edu
   LancasterU: lancaster.ac.uk
+  LSST-list: lists.lsst.org
   Lyon-CC-IN2P3: in2p3.fr
   NAOJ: nao.ac.jp
   NCSA: illinois.edu
@@ -339,6 +340,14 @@ emails:
   URijeka: uniri.hr
   ZurichPhys: physik.uzh.ch
 authors:
+  RubinBuilderPaper:
+    affil:
+    - _
+    altaffil: []
+    initials: ""
+    name: "Vera C. Rubin Observatory"
+    orcid: null
+    email: pubboard@LSST-list
   DMPipelines:
     affil:
     - _
@@ -346,6 +355,7 @@ authors:
     initials: ""
     name: Rubin Observatory Science Pipelines Developers
     orcid: null
+    email: dm-admin@LSST-list
   abelb:
     affil:
     - Olympic
