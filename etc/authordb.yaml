@@ -399,6 +399,13 @@ authors:
     initials: Prakruth
     name: Adari
     orcid: 0000-0001-9431-3806
+  adelmanmccarthyj:
+    affil:
+    - Fermilab
+    altaffil: []
+    initials: Jennifer K.
+    name: Adelman-McCarthy
+    orcid: 0000-0002-4100-8928
   ahumadat:
     affil:
     - Maryland
@@ -4687,6 +4694,13 @@ authors:
     name: Yang
     orcid: null
     email: yangw
+  yannyb:
+    affil:
+    - Fermilab
+    altaffil: []
+    initials: Brian P.
+    name: Yanny
+    orcid: 0000-0002-9541-2678
   yoachimp:
     affil:
     - Washington
