@@ -348,6 +348,8 @@ DTN,Data Transfer Node,LSST DM,,,A
 DUNE,Deep Underground Neutrino Experiment,Sci,,,A
 Duo,2 factor authentication system,LSST DM,,,A
 DWDM,Dense Wave Division Multiplex,Gen LSST DM,,,A
+E2V,Teledyne E2V Company,CAM,,,A
+EA,enterprise architect,TS,Document-12035,,A
 EA,enterprise architect,TS,Document-12035,,A
 EAC,Estimate At Completion,LSST DM,,,A
 EAS,Environmental Awareness System,TS,,,A
@@ -688,6 +690,8 @@ LSR,LSST System Requirements; LSE-29,LSST DM,,,A
 LSS,Large Scale Structure,Sci,,,A
 LSST,Legacy Survey of Space and Time (formerly Large Synoptic Survey Telescope),Gen,,,A
 LSSTC,LSST Corporation,Adm,,,A
+LSSTCam,LSST Camera,CAM,,,A
+LSSTComCam,see ComCam,CAM,,,A
 LSSTPO,LSST Project Office,Adm,,,A
 LTS,LSST Telescope and Site (Document Handle),TS,,,A
 LUT,Look-Up Table,Gen,,,A
@@ -981,7 +985,7 @@ RDO,Rubin Directors Office,OPS,,,A
 RDM,Rubin Data Management,OPS,,,A
 RDP,Rubin Data Production (Obsolete use RDM),OPS,,,A
 REB,Readout Electronics Board,LSST DM,,,A
-REN,Research and Education Network,OPS,,,A
+REN,Research and Education Network,OPS,,,A
 RENATER,Réseau National de télécommunications pour la Technologie l’Enseignement et la Recherche,OPS,,,A
 REO,Rubin Education and Outreach,OPS,,,A
 REST,REpresentational State Transfer,IT,,,A
@@ -991,6 +995,7 @@ RFP,Request For Proposals,PMO,,,A
 RFQ,Request For Quotations,LSST OPS,,,A
 RGB,Red Giant Branch,Sci,,,A
 RINGS,RSS Imaging spectroscopy Nearby Galaxy Survey,Sci,,,A
+RINGSS,Ring-Image Next Generation Scintillation Sensor,Sci,,,A
 RM,Release Manager,LSST DM,,,A
 RMA,Return Merchandise Authorization,IT,,,A
 RMS,Root-Mean-Square,Gen,,,A
@@ -1394,7 +1399,7 @@ Coadd Image,"An image that is the combination of multiple input images. The inpu
 COBRA,The trade name for an integrated suite of project management software programs that work together to track all aspects of an ongoing construction job,Adm,,,G
 Collimated Beam Projector,"The hardware to project a field of sources onto discrete sections of the telescope optics in order to characterize spatial variations in the telescope and instrument transmission function, and to monitor filter throughput evolution during the survey. Images obtained using the CBP will be used in calibration",DM,LDM-151,CBP,G
 ComCam,"The commissioning camera is a single-raft, 9-CCD camera that will be installed in LSST during commissioning, before the final camera is ready.",Gen,,,G
-command-line task,"An enhancement of a Task in the LSST Stack context, it is the equivalent of a data processing pipeline and may be run directly from the shell command-line. A command-line task minimally consists of: a configuration and metadata, an argument parser, and a run method and a runner script",DM,,Task,G
+command-line task,"An enhancement of a Task in the LSST Stack context, it is the equivalent of a data processing pipeline and may be run directly from the shell command-line. A command-line task minimally consists of: a configuration and metadata, an argument parser, and a run method and a runner script",DM,,Task,G
 Commissioning,"A two-year phase at the end of the Construction project during which a technical team a) integrates the various technical components of the three subsystems; b) shows their compliance with ICDs and system-level requirements as detailed in the LSST Observatory System Specifications document (OSS, LSE-30); and c) performs science verification to show compliance with the survey performance specifications as detailed in the LSST Science Requirements Document (SRD, LPM-17)",Adm,,,G
 "community alert broker","term for Broker built by the community",Sci,,,G
 Compliance,"Adherence to the laws, regulations, award terms and conditions, specifications, and internal policies applicable to the LSST Project",Adm,,,G
@@ -1479,7 +1484,7 @@ GalSim,"GalSim is open-source software for simulating images of astronomical obj
 Gaussian Aperture and PSF," involves Gaussianizing the PSFs and then using a Gaussian aperture (instead of top-hat) for measuring photometry. The aperture+PSF is designed to be the same across all bands, so that you measure consistent colors.",DM,,,G
 GEANT,pan-European data network for the research and education community,Gen,,,G
 General Parallel File System,The bulk data storage provided through a POSIX filesystem interface at the LSST Data Facility. Refers specifically to IBM’s General Parallel File System; also known as IBM Spectrum Scale,DM QA,DMTN-085,GBFS,G
-git,"A distributed revision control system, often used for software source code. See the Git User Manual for details. Not developed by LSST DM",DM,https://git-scm.com/,,G
+git,"A distributed revision control system, often used for software source code. See the Git User Manual for details. Not developed by LSST DM",DM,https://git-scm.com/,,G
 git-tag,The tag assigned to a particular SHA-1 identifier which associates the git source with an eups-tag of the build product,DM,https://git-scm.com/,git,G
 Global Interlock System,"A safety system that makes mechanisms or functions of the observatory system mutually dependent in order to prevent equipment from harming people or equipment by preventing  one element from changing state due to the state of another element, and vice versa",TS,,,G
 Handle,The unique identifier assigned to a document uploaded to DocuShare,Adm,,,G
@@ -1609,8 +1614,8 @@ Review Decision Making Authority,"The person responsible for a project component
 Review Hub,An LSST website that acts as a clearinghouse for information about external reviews of all LSST components planned to occur in the next six months. The site links to review-specific websites for both planned reviews and reviews that have been conducted already,Adm,,,G
 Review Plan,"An enumeration of the necessary components for a proposed review of a project component; the review plan defines the Review Committee chair and members, the charge to the Review Committee, the Review Data Package, and the expected/required participants, including key team members presenting review material",Adm,,,G
 right ascension,"Often abbreviated RA, it is a part of an equatorial coordinate pair that expresses the angular distance along the Celestial Equator. It is analogous to terrestrial longitude. RA increases to the east along the projection of the Earth's equator, from the origin (i.e., the Vernal Equinox). Positions are customarily expressed in degrees (0 < RA < 360), or hours (0 < RA < 24, usually in sexagesimal format)",Sci,,,G
-Risk,"The degree of exposure to an event that might happen to the detriment of a program, project, or other activity. It is described by a combination of the probability that the risk event will occur and the consequence of the extent of loss from the occurrence, or impact. Risk is an inherent part of all activities, whether the activity is simple and small, or large and complex",Adm,,,G
-Risk Management,"The art and science of planning, assessing, and handling future events to avoid unfavorable impacts on project cost, schedule, or performance to the extent possible. Risk management is a structured, formal, and disciplined activity focused on the necessary steps and planning actions to determine and control risks to an acceptable level. Risk Management is an event-based management approach to managing uncertainty",Adm,,,G
+Risk,"The degree of exposure to an event that might happen to the detriment of a program, project, or other activity. It is described by a combination of the probability that the risk event will occur and the consequence of the extent of loss from the occurrence, or impact. Risk is an inherent part of all activities, whether the activity is simple and small, or large and complex",Adm,,,G
+Risk Management,"The art and science of planning, assessing, and handling future events to avoid unfavorable impacts on project cost, schedule, or performance to the extent possible. Risk management is a structured, formal, and disciplined activity focused on the necessary steps and planning actions to determine and control risks to an acceptable level. Risk Management is an event-based management approach to managing uncertainty",Adm,,,G
 "Risk, Cost","The possibility that available budget will be exceeded. Cost risk exists if a) the project must devote more resources than planned to achieve technical requirements, b) the project must add resources to support slipped schedules due to any reason, c) if changes must be made to the number of items to be produced, or d) if changes occur in the organization or national economy. Cost risk can be predicted at the total project level or for a system element. The collective effects of element-level cost risk can produce cost risk for the total project",Adm,,,G
 "Risk, Programmatic","Produced by events that are beyond the control of the project manager. These events often are produced by decisions made by personnel at higher levels of authority, such as reductions in project priority, delays in receiving authorization to proceed with a project, reduced or delayed funding, changes in organization or national objectives, etc. Programmatic risk can be a source of risk in any of the other three risk categories",Adm,,,G
 "Risk, Schedule","The possibility that the project will fail to meet scheduled milestones. Schedule risk exists if there is inadequate allowance for acquisition delays or if difficulty is experienced in achieving scheduled technical accomplishments, such as the development of software. Schedule risk can be incurred at the total project level for milestones such as deployment of the first system element. The cascading effects of element-level schedule risks can produce schedule risk for the total project",Adm,,,G
@@ -1677,7 +1682,7 @@ story,"A JIRA issue type describing a scheduled, self-contained task worked as p
 Stripe 82,"A 2.5° wide equatorial band of sky covering roughly 300 square degrees that was observed repeatedly in 5 passbands during the course of the SDSS, In part for calibration purposes",Sci,,,G
 Structure Function,"measure of variance of observations separated in time",Sci,,,G
 Subcontract,An agreement under which another entity will perform part or all of the project's contract obligations,Adm,,,G
-Subsystem,A set of elements comprising a system within the larger LSST system that is responsible for a key technical deliverable of the project,Adm,,,G
+Subsystem,A set of elements comprising a system within the larger LSST system that is responsible for a key technical deliverable of the project,Adm,,,G
 Subsystem Manager,"responsible manager for an LSST subsystem; he or she exercises authority, within prescribed limits and under scrutiny of the Project Manager, over the relevant subsystem's cost, schedule, and work plans",Adm,,,G
 Subsystem Scientist,The principal science advisor  to a Subsystem Manager; he or she ensures that the subsystem specifications are appropriated for achieving the project's goals,Adm,,,G
 Subsystem Systems Engineer,A subsystem team member who works closely with the Subsystem Manager and the project Systems Engineering group on internal integration of the subsystem's component parts and the subsystem's integration with the larger LSST system,Adm,,,G
