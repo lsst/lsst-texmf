@@ -28,7 +28,7 @@ import dataclasses
 import os
 import os.path
 import pickle
-from typing import Any
+from typing import Any, NamedTuple
 
 import yaml
 from db2authors import AuthorFactory
@@ -43,6 +43,15 @@ SCOPES = ["https://www.googleapis.com/auth/spreadsheets.readonly"]
 CLIENT_SECRET_FILE = "client_secret.json"
 APPLICATION_NAME = "Process Authors Google Sheet"
 
+# Fields in the form we care about
+EMAIL = 1
+AUTHORID = 5
+AUTHORIDALT = 6
+SURNAME = 7
+NAME = 8
+AFFIL = 9
+ORCID = 10
+
 
 @dataclasses.dataclass(frozen=True)
 class AuthorY:
@@ -56,6 +65,14 @@ class AuthorY:
     orcid: str | None
     affil: list[str]
     altaffil: list[str]
+
+
+class Row(NamedTuple):
+    """convenice tupple for handling the row"""
+
+    id: str
+    name: str
+    affil: str
 
 
 def get_credentials() -> Credentials:
@@ -89,9 +106,9 @@ def get_credentials() -> Credentials:
     return creds
 
 
-def get_initials(names: str) -> str:
+def get_initials(names: str, div: str = " ") -> str:
     """Get first letter of word (upto 5) to make an id"""
-    all = names.split(" ")
+    all = names.split(div)
     initials = ""
     count = 0
     for n in all:
@@ -106,6 +123,35 @@ def write_yaml(name: str, values: Any) -> None:
     """Write given dat to  the file name  YAML"""
     with open(name, "w") as file:
         yaml.dump(values, file)
+
+
+def handle_email(email: str, domains: dict[str, str], affilid: str, newdomains: dict[str, str]) -> str:
+    """Figure out if we know the domain or if we need a new one"""
+    theEmail = email
+    if "@" in email:
+        split = email.split("@")
+        mailid = split[0]
+        domain = split[1]
+        # check if we have the domain
+        # easy if the affil matches
+        if affilid in domains and domains[affilid] == domain:
+            return f"{mailid}@{affilid}"
+        # ok perhpas we   know the domain but it is not the affil
+        if domain in domains.values():
+            domainid = list(domains.keys())[list(domains.values()).index(domain)]
+            return f"{mailid}@{domainid}"
+        # right then - we need a new one
+        if affilid in domains:
+            # can not use the affilid so try to make an id
+            domainid = domain.split(".")[0]
+            while domainid in domains:  # hopefully not ever
+                domainid = f"{domainid}Z"
+        else:  # an afill without a domain .. possibly new
+            domainid = affilid
+        newdomains[domainid] = domain
+        return f"{mailid}@{domainid}"
+
+    return theEmail
 
 
 def genFiles(values: list) -> None:
@@ -132,6 +178,7 @@ def genFiles(values: list) -> None:
         clash = []
         newauthors: dict[str, AuthorY] = {}
         newaffils: dict[str, str] = {}
+        newdomains: dict[str, str] = {}
         exedir = os.path.abspath(os.path.dirname(__file__))
         dbfile = os.path.normpath(os.path.join(exedir, os.path.pardir, "etc", "authordb.yaml"))
         with open(dbfile) as fh:
@@ -140,28 +187,28 @@ def genFiles(values: list) -> None:
         factory = AuthorFactory.from_authordb(authordb)
         authors = factory.get_author_ids()
         affils = factory.get_affiliation_ids()
+        domains = factory.get_emaili_domains()
 
         for row in values:
-            id = row[5]
+            id = row[AUTHORID]
             if len(id) == 0:  # may be an update
-                id = row[6]
-            if len(id) < 3:
-                initials = get_initials(row[8])
-                id = f"{row[7]}{initials}"  # last name initial
+                id = row[AUTHORIDALT]
+                initials = get_initials(row[NAME])
+                id = f"{row[SURNAME]}{initials}"  # last name initial
                 id = id.lower()
                 # loaded the authorids from suthordb and check ..
                 if id in authors:
-                    print("Perhaps check  clash - author {id} - {row[5]}, {row[6]} ")
+                    print(f"Perhaps check  clash - author {id} - {row[AUTHORID]}, {row[AUTHORIDALT]} ")
                     clash.append(id)
-                print(f"New author {id} - {row[7]}, {row[8]} ")
+                print(f"New author {id} - {row[NAME]}, {row[SURNAME]} ")
             # we have an id or a new id now
             if id not in authorids:
                 authorids.append(id)
 
             # next are we updating or creating?
-            if len(row) > 6 and len(row[6]) > 0:
+            if len(row) > 6 and len(row[AUTHORIDALT]) > 0:
                 # affiliation is it known
-                affilid = row[9]
+                affilid = row[AFFIL]
                 if affilid not in affils:
                     if len(affilid) < 10:
                         print(f"Affiliation does not exist :{affilid}")
@@ -171,17 +218,13 @@ def genFiles(values: list) -> None:
                         newaffils[affilid] = affil
 
                 # we have a name so we need to gather the rest.
-                orcid = row[10]
+                orcid = row[ORCID]
                 if len(orcid) == 0:
                     orcid = None
-                email: str = row[1]
-                if "@" in email:
-                    split = email.split("@")
-                    email = split[0]
-
+                email: str = handle_email(row[EMAIL], domains, affilid, newdomains)
                 author: AuthorY = AuthorY(
-                    initials=row[8],
-                    name=row[7],
+                    initials=row[NAME],
+                    name=row[SURNAME],
                     orcid=orcid,
                     email=email,
                     affil=[affilid],
@@ -192,11 +235,13 @@ def genFiles(values: list) -> None:
         print(
             f"got {len(authorids)} authors, "
             f"{len(newauthors)} new or updated author entries. "
+            f"{len(newdomains)} new email domains. "
             f" {len(clash)} author entries need to be checked"
         )
         write_yaml("authors.yaml", authorids)
         write_yaml("new_authors.yaml", newauthors)
         write_yaml("new_affiliations.yaml", newaffils)
+        write_yaml("new_domains.yaml", newdomains)
     return
 
 
