@@ -15,6 +15,7 @@ from typing import cast
 
 import latexcodec  # noqa provides the latex+latin codec
 import pybtex.database
+import yaml
 from algoliasearch.search.client import SearchClient, SearchResponse
 from bibtools import BibDict, BibEntry
 from pybtex.database import BibliographyData
@@ -59,7 +60,9 @@ def sort_by_handle(key: str) -> str:
     return f"{hdl.upper()}-{handle_number:09d}"
 
 
-async def generate_bibfile(query: str | None = "", external: list[str] | None = None) -> str:
+async def generate_bibfile(
+    query: str | None = "", external: list[str] | None = None, dois: dict[str, str] | None = None
+) -> str:
     """
     Query ook for the list of entries.
     Only returning meta data needed for bib entries.
@@ -72,6 +75,10 @@ async def generate_bibfile(query: str | None = "", external: list[str] | None = 
         External bib files to seed the results. They are merged together in
         order (the final one takes priority) and then the results from
         the query are copied in, over-writing any previous entries.
+    dois : `dict`, optional
+        Mapping of a document handle to DOI.
+        This is a temporary way of adding in a DOI into the bib entry until
+        the DOI is part of the central data model.
 
     Returns
     -------
@@ -102,7 +109,7 @@ async def generate_bibfile(query: str | None = "", external: list[str] | None = 
         res = await client.search_single_index(index_name=index_name, search_params=params)  # type: ignore
         print(f"Total hits: {len(res.hits)}, Query:'{query}'")
 
-        search_data = create_bibentries(res)
+        search_data = create_bibentries(res, dois)
         print(f"Got {len(res.hits)} records max:{MAXREC} produced {len(search_data.entries)} bibentries.")
 
     # Read the external files that will be merged with the search results.
@@ -139,9 +146,10 @@ async def generate_bibfile(query: str | None = "", external: list[str] | None = 
     return result
 
 
-def create_bibentries(res: SearchResponse) -> BibliographyData:
+def create_bibentries(res: SearchResponse, dois: dict[str, str] | None = None) -> BibliographyData:
     """Create the bibtex entries."""
     entries: dict[str, pybtex.database.Entry] = {}
+    doimap = dois if dois else {}
     for hit in res.hits:
         d = hit.additional_properties
         if "series" in d.keys() and d["series"] == "TESTN":
@@ -168,6 +176,7 @@ def create_bibentries(res: SearchResponse) -> BibliographyData:
             date.year,
             url=url,
             publisher="Vera C. Rubin Observatory",
+            doi=doimap.get(d["handle"]),
         )
         entry = be.get_pybtex()
         entries[entry.key] = entry
@@ -283,9 +292,16 @@ if __name__ == "__main__":
         action="append",
         nargs="?",
     )
+    parser.add_argument("--dois", help="File mapping handles to DOIs.", type=str)
 
     args = parser.parse_args()
-    result = asyncio.run(generate_bibfile(args.query, args.external))
+
+    doimap: dict[str, str] | None = None
+    if args.dois:
+        with open(args.dois) as fh:
+            doimap = yaml.safe_load(fh)
+
+    result = asyncio.run(generate_bibfile(args.query, args.external, doimap))
 
     # pybtex has already added a new line so do not add an additional
     # new line when printing.

@@ -52,6 +52,7 @@ class BibEntry:
         url: str = "",
         publisher: str = "",
         report_type: str | None = None,
+        doi: str | None = None,
     ):
         self.author = author
         self.title = title
@@ -63,6 +64,7 @@ class BibEntry:
         self.type = "@TechReport"
         self.publisher = publisher
         self.report_type = report_type
+        self.doi = doi
 
         if self.handle and not report_type:
             prefix, _ = self.handle.split("-", 1)
@@ -98,6 +100,11 @@ class BibEntry:
             note = f'\n             note = "{{{self.note}}}",'
         else:
             note = ""
+        if self.doi:
+            doi = f'\n               doi = "{{{self.doi}}}",'
+            print("HAVE A DOI")
+        else:
+            doi = ""
         if self.type.lower() == "@techreport":
             entry = f"""{self.type}{{{self.handle},
                 author = {{{self.author}}},
@@ -107,7 +114,7 @@ class BibEntry:
                 month = {self.month},
                 handle = {{{self.handle}}},
                 type = "{{{self.report_type}}}",
-                number = {{{self.handle}}},{note}
+                number = {{{self.handle}}},{note}{doi}
                 url = {{{self.url}}}
             }}
 """
@@ -118,7 +125,7 @@ class BibEntry:
          publisher = "{{{self.publisher}}}",
               year = {self.year},
              month = {self.month},
-            handle = {{{self.handle}}},{note}
+            handle = {{{self.handle}}},{note}{doi}
               url = {{{self.url}}}
         }}"""
         return entry

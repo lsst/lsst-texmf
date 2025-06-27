@@ -76,7 +76,7 @@ docs: $(PDF) $(TESTS) glstab.tex authors.csv
 	make -C docs html
 
 lsst.bib:
-	bin/generateBibfile.py --external texmf/bibtex/bib/lsst.bib --external etc/static_entries.bib texmf/bibtex/bib/lsst.bib
+	bin/generateBibfile.py --external texmf/bibtex/bib/lsst.bib --external etc/static_entries.bib --dois etc/dois.yaml texmf/bibtex/bib/lsst.bib
 
 
 .PHONY: clean
