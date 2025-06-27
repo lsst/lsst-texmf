@@ -673,7 +673,7 @@ def make_regexmap(GLSlist: Iterable[str]) -> dict[str, re.Pattern]:
     """Make a re map of regexps for substitution"""
     regexmap = {}
     for g in GLSlist:
-        regexmap[g] = re.compile(r"([,\s(](?<!={))(" + g + r")(\b)")
+        regexmap[g] = re.compile(r"(^|[-,\s(](?<!={))(" + g + r")(\b)")
     return regexmap
 
 
@@ -712,6 +712,7 @@ def updateFile(inFile: str, GLSlist: set[str]) -> None:
                     or "seciton" in line
                     or "title" in line
                     or "author" in line
+                    or "begin" in line
                 ):  # it is a comment ignore
                     line = sub_line(line, regexmap, GLSlist)
                 fout.write(line)
