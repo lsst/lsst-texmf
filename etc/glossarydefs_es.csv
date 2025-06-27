@@ -1016,6 +1016,7 @@ SBS,Servicios empresariales compartidos,
 SC,Protección del sistema y las comunicaciones,IT
 SC,Puesta a punto del sistema,PMO
 SC,Colaboración científica,DM
+SCP,Polo Celeste Sur,Sci
 SCTI,Serie Ineficiencia de transferencia de carga,CAM
 SCADA,"Supervisión , control y adquisición de datos [Sistema] ",
 SCIDAR,Detección y medición de centelleo,
@@ -1050,6 +1051,8 @@ SKF,Svenska Kullagerfabriken,
 SKU,Unidad de mantenimiento de inventarios [código alfanumérico de referencia] (Google),
 SLA,Acuerdo de nivel de servicio,
 SLAC,Laboratorio Nacional de Aceleradores SLAC,
+SLR,Réflex de objetivo único,Gen
+SLR,Regresión de locus estelar,Sci
 SLSN,Supernova(s) súper luminosa(s),
 SMARTS,Sistema de telescopios de investigación de apertura pequeña y moderada,
 SMBH,Agujero negro supermasivo,

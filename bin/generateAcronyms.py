@@ -688,7 +688,8 @@ def sub_line(line: str, regexmap: dict[str, re.Pattern], GLSlist: Iterable[str])
         if res is not None:  # ok now .. more checks
             # check its not a word in a GLS item but not
             # too greedy
-            glsed = re.search(r"gls{.+" + g + "[a-z,A-Z, ]*}", line)
+            # cite also has LDM sometimes - and that is not an acronym
+            glsed = re.search(r"cite|gls{.*" + g + "[a-z,A-Z, ]*}", line)
             if not glsed:  # already glsed or contained in one
                 # .. find and add \gls -
                 nline = regx.sub(glsfn, line)
@@ -709,7 +710,7 @@ def updateFile(inFile: str, GLSlist: set[str]) -> None:
                 if not (
                     line.startswith("%")
                     or "entry" in line
-                    or "seciton" in line
+                    or "section" in line
                     or "title" in line
                     or "author" in line
                     or "begin" in line
