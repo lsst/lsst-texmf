@@ -23,7 +23,8 @@ ACM,Gestión de Fondos de Becas,
 ACP,Plan de control de acceso,
 ACWP,Costo real de trabajo realizado,
 AD,Director asociado,
-ADAM,"Descubrimiento, análisis y mapeo de asteroides",
+ADAM,"Descubrimiento, análisis y mapeo de asteroides",Sci
+Adam,"Estimación adaptativa de momentos",DM
 ADASS,Software y Sistemas de Análisis de Datos Astronómicos,
 ADC,corrector de dispersión atmosférica,TS
 ADC,Conversor analógico a digital,Gen
@@ -521,7 +522,8 @@ HQ,Sede central,
 HR,Recursos Humanos,
 HSC,Hyper Suprime-Cam [cámara del telescopio Subaru],
 HSI,Instituciones al servicio de los hispanos,
-HSM,Gestión de almacenamiento jerárquico,
+HSM,Gestión de almacenamiento jerárquico,DM
+HSM,Momento del medio segundo,Sci
 HST,Telescopio espacial Hubble,
 HTC,Computación de alta productividad,
 HTM,Malla triangular jerárquica,

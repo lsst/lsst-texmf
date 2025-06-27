@@ -11,6 +11,10 @@ __pycache__
 *.fdb_latexmk
 *.bbl
 *.blg
+*.glg
+*.glo
+*.gls
+*.ist
 /beamer-LSST2016.pdf
 /beamer-desc.pdf
 /presentation.pdf
@@ -28,3 +32,4 @@ glossary-table.pdf
 docs/glo*
 pythonProject
 bin/.idea/
+.idea/
