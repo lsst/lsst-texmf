@@ -521,7 +521,8 @@ HQ,Sede central,
 HR,Recursos Humanos,
 HSC,Hyper Suprime-Cam [cámara del telescopio Subaru],
 HSI,Instituciones al servicio de los hispanos,
-HSM,Gestión de almacenamiento jerárquico,
+HSM,Gestión de almacenamiento jerárquico,DM
+HSM,Momento del medio segundo,Sci
 HST,Telescopio espacial Hubble,
 HTC,Computación de alta productividad,
 HTM,Malla triangular jerárquica,
