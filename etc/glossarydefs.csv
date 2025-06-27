@@ -340,7 +340,7 @@ DR11,Data Release 11,OPS,,,A
 DRAGONS,Data Reduction for Astronomy from Gemini Observatory North and South,Sci,,,A
 DRB,Data Release Board,OPS,,,A
 DREAM,Dutch Rubin Enhanced Atmospheric Monitor,OPS,,,A
-DRP,Data Release Production,LSST DM,,,A
+DRP,Data Release Processing,LSST DM,,,A
 DRW,Damped Random Walk,Sci,,,A
 DS9,Deep Space 9 (specific astronomical data visualisation application; SAOImage),Gen,,,A
 DSFP,LSSTC Data Science Fellowship Program,Gen,,,A
@@ -348,7 +348,7 @@ DTN,Data Transfer Node,LSST DM,,,A
 DUNE,Deep Underground Neutrino Experiment,Sci,,,A
 Duo,2 factor authentication system,LSST DM,,,A
 DWDM,Dense Wave Division Multiplex,Gen LSST DM,,,A
-E2V,Teledyne E2V Company,CAM,,,A
+E2V,Teledyne,CAM,,,A
 EA,enterprise architect,TS,Document-12035,,A
 EAC,Estimate At Completion,LSST DM,,,A
 EAS,Environmental Awareness System,TS,,,A
@@ -524,7 +524,8 @@ HEP-CCE,High-Energy Physics Center for Computational Excellence (Argonne),DM,,,A
 HEPAP,HEP Advisory Panel,TS,Document-11986,,A
 HERMES,a high-resolution fibre-fed spectrograph for the 1.2m Mercator telescope,Sci,,,A
 HI,Hydrogen iodide,Sci,,,A
-HIPS,Hierarchical Progressive Survey (IVOA standard),VO,,,A
+HIPS,use HiPS,VO,,,A
+HiPS,Hierarchical Progressive Survey (IVOA standard),VO,,,A
 HITS,High Cadence Transient Survey,Sci,https://iopscience.iop.org/article/10.3847/0004-637X/832/2/155,,A
 HPC,High Performance Computing,DM,,,A
 HPO,Head of Program Operations,OPS,,,A
@@ -689,7 +690,7 @@ LSR,LSST System Requirements; LSE-29,LSST DM,,,A
 LSS,Large Scale Structure,Sci,,,A
 LSST,Legacy Survey of Space and Time (formerly Large Synoptic Survey Telescope),Gen,,,A
 LSSTC,LSST Corporation,Adm,,,A
-LSSTCam,LSST Camera,CAM,,,A
+LSSTCam,LSST Science Camera,CAM,,,A
 LSSTComCam,Rubin Commissioning Camera,CAM,,,A
 LSSTPO,LSST Project Office,Adm,,,A
 LTS,LSST Telescope and Site (Document Handle),TS,,,A
@@ -1046,13 +1047,13 @@ SBS,Shared Business Services,OPS OIR,,,A
 SC,System Commissioning,PMO,,,A
 SC,System and Communications Protection,IT,,,A
 SC,Science Collaboration,DM,,,A
-SCTI,Serial Charge Transfer Inefficiency,CAM,,,A
 SCADA,Supervisory Control And Data Acquisition,TS,,,A
 SCIDAR,Scintillation Detection And Ranging,TS,,,A
 SCOC,Survey Cadence Optimization Committee,OPS,,,A
 SCOSC,Survey Cadence Optimization Strategy Committee,OPS,,,A
-SCP,South Celestial Pool,Sci,,,A
+SCP,South Celestial Pole,Sci,,,A
 SCS,Simple Cone Search (IVOA standard),VO,,,A
+SCTI,Serial Charge Transfer Inefficiency,CAM,,,A
 SDQA,Science Data Quality Assessment,DM LSST,,,A
 SDS,Science array Data acquisition Subsystem,TS,,,A
 SDSS,Sloan Digital Sky Survey,Gen,,,A
@@ -1080,6 +1081,8 @@ SKF,Svenska Kullagerfabriken,PMO,,,A
 SKU,Stock Keeping Unit (Google),OPS,,,A
 SLA,Service Level Agreement,Gen,,,A
 SLAC,SLAC National Accelerator Laboratory,LSST DM,,,A
+SLR,Stellar Locus Regression,Sci,,,A
+SLR,Single Lens Reflex,Gen,,,A
 SLSC,Strong Lensing Science Collaboration,Sci,,,A
 SLSN,super luminous supernova(e),Sci,,,A
 SMARTS,Small and Moderate Aperture Research Telescope System,OPS,,,A
