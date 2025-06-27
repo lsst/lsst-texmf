@@ -1016,14 +1016,13 @@ SBS,Servicios empresariales compartidos,
 SC,Protección del sistema y las comunicaciones,IT
 SC,Puesta a punto del sistema,PMO
 SC,Colaboración científica,DM
-SCP,Polo Celeste Sur,Sci
-SCTI,Serie Ineficiencia de transferencia de carga,CAM
 SCADA,"Supervisión , control y adquisición de datos [Sistema] ",
 SCIDAR,Detección y medición de centelleo,
 SCOC,Comité de Optimización de la Cadencia de la Investigación,
 SCOSC,Comité de Estrategias de Optimización de la Cadencia de la Investigación,
-SCP,Piscina Celeste Sur,
+SCP,Polo Celeste Sur,Sci
 SCS,Búsqueda simple de conos (parte del estándar de la Alianza Internacional de Observatorios Virtuales),
+SCTI,Serie Ineficiencia de transferencia de carga,CAM
 SDQA,Evaluación de la calidad de datos científicos,
 SDS,Subsistema de adquisición de datos científicos,
 SDSS,Exploración Digital Sloan del Cielo,

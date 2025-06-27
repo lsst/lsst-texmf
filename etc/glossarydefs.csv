@@ -1047,14 +1047,13 @@ SBS,Shared Business Services,OPS OIR,,,A
 SC,System Commissioning,PMO,,,A
 SC,System and Communications Protection,IT,,,A
 SC,Science Collaboration,DM,,,A
-SCP,South Celestial Pole,Sci,,,A
-SCTI,Serial Charge Transfer Inefficiency,CAM,,,A
 SCADA,Supervisory Control And Data Acquisition,TS,,,A
 SCIDAR,Scintillation Detection And Ranging,TS,,,A
 SCOC,Survey Cadence Optimization Committee,OPS,,,A
 SCOSC,Survey Cadence Optimization Strategy Committee,OPS,,,A
-SCP,South Celestial Pool,Sci,,,A
+SCP,South Celestial Pole,Sci,,,A
 SCS,Simple Cone Search (IVOA standard),VO,,,A
+SCTI,Serial Charge Transfer Inefficiency,CAM,,,A
 SDQA,Science Data Quality Assessment,DM LSST,,,A
 SDS,Science array Data acquisition Subsystem,TS,,,A
 SDSS,Sloan Digital Sky Survey,Gen,,,A
