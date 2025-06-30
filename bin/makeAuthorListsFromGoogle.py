@@ -45,6 +45,7 @@ APPLICATION_NAME = "Process Authors Google Sheet"
 
 # Fields in the form we care about
 EMAIL = 1
+UPDATE = 4
 AUTHORID = 5
 AUTHORIDALT = 6
 SURNAME = 7
@@ -176,6 +177,8 @@ def genFiles(values: list) -> None:
     else:
         authorids = []
         clash = []
+        toupdate = []
+        notfound = []
         newauthors: dict[str, AuthorY] = {}
         newaffils: dict[str, str] = {}
         newdomains: dict[str, str] = {}
@@ -193,14 +196,24 @@ def genFiles(values: list) -> None:
             id = row[AUTHORID]
             if len(id) == 0:  # may be an update
                 id = row[AUTHORIDALT]
-                initials = get_initials(row[NAME])
-                id = f"{row[SURNAME]}{initials}"  # last name initial
-                id = id.lower()
-                # loaded the authorids from suthordb and check ..
-                if id in authors:
-                    print(f"Perhaps check  clash - author {id} - {row[AUTHORID]}, {row[AUTHORIDALT]} ")
-                    clash.append(id)
-                print(f"New author {id} - {row[NAME]}, {row[SURNAME]} ")
+                if len(id) == 0:  # no id
+                    initials = get_initials(row[NAME])
+                    id = f"{row[SURNAME]}{initials}"  # last name initial
+                    id = id.lower().replace(" ", "")
+                # loaded the authorids from authordb and check ..
+                update = "but" in row[UPDATE]
+                if update:
+                    print(f"Update author {id} - {row[NAME]}, {row[SURNAME]} ")
+                    if id not in authors:
+                        print(f"      but  author {id} - NOT FOUND ")
+                        notfound.append(id)
+                    toupdate.append(id)
+                else:
+                    if id in authors:
+                        print(f"Perhaps check  clash - author {id} - {row[AUTHORID]}, {row[AUTHORIDALT]} ")
+                        clash.append(id)
+                    else:
+                        print(f"New author {id} - {row[NAME]}, {row[SURNAME]} ")
             # we have an id or a new id now
             if id not in authorids:
                 authorids.append(id)
@@ -218,8 +231,9 @@ def genFiles(values: list) -> None:
                         newaffils[affilid] = affil
 
                 # we have a name so we need to gather the rest.
-                orcid = row[ORCID]
-                if len(orcid) == 0:
+                if len(row) > ORCID:
+                    orcid = row[ORCID]
+                else:
                     orcid = None
                 email: str = handle_email(row[EMAIL], domains, affilid, newdomains)
                 author: AuthorY = AuthorY(
@@ -233,10 +247,14 @@ def genFiles(values: list) -> None:
                 newauthors[id] = author
         authorids = sorted(authorids)
         print(
+            "\n"
+            f" Clash: {', '.join(clash)} \n"
+            f" Not FOUND: {', '.join(notfound)} \n"
             f"got {len(authorids)} authors, "
-            f"{len(newauthors)} new or updated author entries. "
-            f"{len(newdomains)} new email domains. "
-            f" {len(clash)} author entries need to be checked"
+            f"{len(newauthors)} new or updated({len(toupdate)}) author entries. "
+            f"{len(newdomains)} new email domains. \n"
+            f" {len(clash)} author entries need to be checked (see above) \n"
+            f" {len(notfound)} author updates wher authorid not found (see above) \n"
         )
         write_yaml("authors.yaml", authorids)
         write_yaml("new_authors.yaml", newauthors)
