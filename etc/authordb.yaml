@@ -2613,6 +2613,13 @@ authors:
     initials: Xiaolong
     name: Li
     orcid: 0000-0002-0514-5650
+  lix2:
+    affil:
+    - BNL
+    altaffil: []
+    initials: Xiangchong
+    name: Li
+    orcid: 0000-0003-2880-5102
   liy:
     affil:
     - SLAC
