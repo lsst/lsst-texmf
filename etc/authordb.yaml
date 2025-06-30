@@ -153,7 +153,6 @@ affiliations:
   LLNL: Lawrence Livermore National Laboratory, 7000 East Avenue, Livermore, CA 94550,
     USA
   LOC: Library of Congress, 101 Independence Ave.\ SE, Washington, DC 20540, USA
-  PSI: Planetary Science Institute, 1700 East Fort Lowell Road, Suite 106, Tucson, AZ 85719, USA
   LUPM: Laboratoire Univers et Particules de Montpellier (LUPM), Universit\'{e} de
     Montpellier, CNRS/IN2P3, Place Eug\`{e}ne Bataillon, F-34095 Montpellier, France
   Longhorn: Longhorn Industries, Ellensburg, WA 98926, USA
@@ -197,6 +196,7 @@ affiliations:
   Olympic: Olympic College, 1600 Chester Ave., Bremerton, WA 98337-1699, USA
   Oxford: Department of Physics, University of Oxford, Denys Wilkinson Building, Keble
     Road, Oxford, OX1 3RH, UK
+  PSI: Planetary Science Institute, 1700 East Fort Lowell Road, Suite 106, Tucson, AZ 85719, USA
   PSU: Department of Astronomy and Astrophysics, The Pennsylvania State University,
     525 Davey Lab, University Park, PA 16802, USA
   PSUCDS: Institute for Computational \& Data Sciences, The Pennsylvania State University, University Park, PA 16802, USA
@@ -307,6 +307,7 @@ affiliations:
   WisconsinMadison: Department of Physics, University of Wisconsin-Madison, Madison,
     WI 53706, USA
   Yale: Astronomy Department, Yale University, New Haven, CT 06520, USA
+  Yonsei: 50 Yonsei-ro, Seodaemun-gu, Seoul, South Korea
   ZurichPhys: Physik-Institut, University of Zurich, Winterthurerstrasse 190, 8057 Zurich, Switzerland
   _: Placeholder used for collective author that will not be shown
 emails:

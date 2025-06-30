@@ -28,7 +28,8 @@ import dataclasses
 import os
 import os.path
 import pickle
-from typing import Any, NamedTuple
+import re
+from typing import Any
 
 import yaml
 from db2authors import AuthorFactory
@@ -36,6 +37,7 @@ from google.auth.transport.requests import Request
 from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 from oauth2client.client import Credentials
+from pylatexenc.latexencode import unicode_to_latex
 
 # If modifying these scopes, delete your previously saved credentials
 # at ~/.credentials/sheets.googleapis.com-python-quickstart.json
@@ -66,14 +68,6 @@ class AuthorY:
     orcid: str | None
     affil: list[str]
     altaffil: list[str]
-
-
-class Row(NamedTuple):
-    """convenice tupple for handling the row"""
-
-    id: str
-    name: str
-    affil: str
 
 
 def get_credentials() -> Credentials:
@@ -114,7 +108,8 @@ def get_initials(names: str, div: str = " ") -> str:
     count = 0
     for n in all:
         count = count + 1
-        initials = f"{initials}{n[0]}"
+        if len(n) > 0:
+            initials = f"{initials}{n[0]}"
         if count > 5:
             break
     return initials
@@ -151,8 +146,23 @@ def handle_email(email: str, domains: dict[str, str], affilid: str, newdomains: 
             domainid = affilid
         newdomains[domainid] = domain
         return f"{mailid}@{domainid}"
-
     return theEmail
+
+
+def strip_utf(ins: str) -> str:
+    """Want simple ids wiht now latex or unicode"""
+    outs = unicode_to_latex(ins)
+    outs = re.sub("\\.", "", outs)
+    outs = re.sub("[{}]", "", outs)
+    return outs
+
+
+def make_id(name: str, surname: str) -> str:
+    """Make id form surnameinitials no space lowecase"""
+    initials = get_initials(name)
+    id = strip_utf(f"{surname}{initials}")  # last name initial
+    id = id.lower().replace(" ", "")
+    return id
 
 
 def genFiles(values: list) -> None:
@@ -190,20 +200,18 @@ def genFiles(values: list) -> None:
         factory = AuthorFactory.from_authordb(authordb)
         authors = factory.get_author_ids()
         affils = factory.get_affiliation_ids()
-        domains = factory.get_emaili_domains()
+        domains = factory.get_email_domains()
 
         for row in values:
-            id = row[AUTHORID]
+            id = str(row[AUTHORID]).replace(" ", "")
             if len(id) == 0:  # may be an update
                 id = row[AUTHORIDALT]
-                if len(id) == 0:  # no id
-                    initials = get_initials(row[NAME])
-                    id = f"{row[SURNAME]}{initials}"  # last name initial
-                    id = id.lower().replace(" ", "")
+                if len(id) == 0 or id == "NEW":  # no id
+                    id = make_id(row[NAME], row[SURNAME])
                 # loaded the authorids from authordb and check ..
                 update = "but" in row[UPDATE]
                 if update:
-                    print(f"Update author {id} - {row[NAME]}, {row[SURNAME]} ")
+                    print(f"Update author {id}  ")
                     if id not in authors:
                         print(f"      but  author {id} - NOT FOUND ")
                         notfound.append(id)
@@ -221,27 +229,29 @@ def genFiles(values: list) -> None:
             # next are we updating or creating?
             if len(row) > 6 and len(row[AUTHORIDALT]) > 0:
                 # affiliation is it known
-                affilid = row[AFFIL]
-                if affilid not in affils:
-                    if len(affilid) < 10:
-                        print(f"Affiliation does not exist :{affilid}")
-                    else:  # assue its new
-                        affil = affilid
-                        affilid = get_initials(affil)
-                        newaffils[affilid] = affil
-
-                # we have a name so we need to gather the rest.
+                affilidForm = str(row[AFFIL]).split("/")
+                affilids = []
+                for affilid in affilidForm:
+                    if affilid not in affils:
+                        if len(affilid) < 10:
+                            print(f"Affiliation does not exist :{affilid}")
+                        else:  # assume its new
+                            affil = affilid
+                            affilid = get_initials(affil)
+                            newaffils[affilid] = affil
+                    affilids.append(affilid)
+                    # we have a name so we need to gather the rest.
                 if len(row) > ORCID:
-                    orcid = row[ORCID]
+                    orcid = str(row[ORCID]).replace("https://orcid.org/", "")
                 else:
                     orcid = None
                 email: str = handle_email(row[EMAIL], domains, affilid, newdomains)
                 author: AuthorY = AuthorY(
-                    initials=row[NAME],
-                    name=row[SURNAME],
+                    initials=unicode_to_latex(row[NAME]),
+                    name=unicode_to_latex(row[SURNAME]),
                     orcid=orcid,
                     email=email,
-                    affil=[affilid],
+                    affil=affilids,
                     altaffil=[],
                 )
                 newauthors[id] = author
