@@ -138,7 +138,7 @@ class AuthorFactory:
     def get_affiliation_ids(self) -> dict_keys:
         return self._affiliations.keys()
 
-    def get_emaili_domains(self) -> dict:
+    def get_email_domains(self) -> dict:
         return self._email_domains
 
     def get_affiliation(self, affiliationid: str) -> str:

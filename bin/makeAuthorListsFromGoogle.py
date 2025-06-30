@@ -28,7 +28,8 @@ import dataclasses
 import os
 import os.path
 import pickle
-from typing import Any, NamedTuple
+import re
+from typing import Any
 
 import yaml
 from db2authors import AuthorFactory
@@ -36,6 +37,7 @@ from google.auth.transport.requests import Request
 from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 from oauth2client.client import Credentials
+from pylatexenc.latexencode import unicode_to_latex
 
 # If modifying these scopes, delete your previously saved credentials
 # at ~/.credentials/sheets.googleapis.com-python-quickstart.json
@@ -45,6 +47,7 @@ APPLICATION_NAME = "Process Authors Google Sheet"
 
 # Fields in the form we care about
 EMAIL = 1
+UPDATE = 4
 AUTHORID = 5
 AUTHORIDALT = 6
 SURNAME = 7
@@ -65,14 +68,6 @@ class AuthorY:
     orcid: str | None
     affil: list[str]
     altaffil: list[str]
-
-
-class Row(NamedTuple):
-    """convenice tupple for handling the row"""
-
-    id: str
-    name: str
-    affil: str
 
 
 def get_credentials() -> Credentials:
@@ -113,7 +108,8 @@ def get_initials(names: str, div: str = " ") -> str:
     count = 0
     for n in all:
         count = count + 1
-        initials = f"{initials}{n[0]}"
+        if len(n) > 0:
+            initials = f"{initials}{n[0]}"
         if count > 5:
             break
     return initials
@@ -150,8 +146,22 @@ def handle_email(email: str, domains: dict[str, str], affilid: str, newdomains: 
             domainid = affilid
         newdomains[domainid] = domain
         return f"{mailid}@{domainid}"
-
     return theEmail
+
+
+def strip_utf(ins: str) -> str:
+    """Want simple ids wiht now latex or unicode"""
+    outs = unicode_to_latex(ins)
+    outs = re.sub(r"[\\'c}{]", "", outs)
+    return outs
+
+
+def make_id(name: str, surname: str) -> str:
+    """Make id form surnameinitials no space lowecase"""
+    initials = get_initials(name)
+    id = strip_utf(f"{surname}{initials}")  # last name initial
+    id = id.lower().replace(" ", "")
+    return id
 
 
 def genFiles(values: list) -> None:
@@ -176,6 +186,8 @@ def genFiles(values: list) -> None:
     else:
         authorids = []
         clash = []
+        toupdate = []
+        notfound = []
         newauthors: dict[str, AuthorY] = {}
         newaffils: dict[str, str] = {}
         newdomains: dict[str, str] = {}
@@ -187,20 +199,28 @@ def genFiles(values: list) -> None:
         factory = AuthorFactory.from_authordb(authordb)
         authors = factory.get_author_ids()
         affils = factory.get_affiliation_ids()
-        domains = factory.get_emaili_domains()
+        domains = factory.get_email_domains()
 
         for row in values:
-            id = row[AUTHORID]
+            id = str(row[AUTHORID]).replace(" ", "")
             if len(id) == 0:  # may be an update
                 id = row[AUTHORIDALT]
-                initials = get_initials(row[NAME])
-                id = f"{row[SURNAME]}{initials}"  # last name initial
-                id = id.lower()
-                # loaded the authorids from suthordb and check ..
-                if id in authors:
-                    print(f"Perhaps check  clash - author {id} - {row[AUTHORID]}, {row[AUTHORIDALT]} ")
-                    clash.append(id)
-                print(f"New author {id} - {row[NAME]}, {row[SURNAME]} ")
+                if len(id) == 0 or id == "NEW":  # no id
+                    id = make_id(row[NAME], row[SURNAME])
+                # loaded the authorids from authordb and check ..
+                update = "but" in row[UPDATE]
+                if update:
+                    print(f"Update author {id}  ")
+                    if id not in authors:
+                        print(f"      but  author {id} - NOT FOUND ")
+                        notfound.append(id)
+                    toupdate.append(id)
+                else:
+                    if id in authors:
+                        print(f"Perhaps check  clash - author {id} - {row[AUTHORID]}, {row[AUTHORIDALT]} ")
+                        clash.append(id)
+                    else:
+                        print(f"New author {id} - {row[NAME]}, {row[SURNAME]} ")
             # we have an id or a new id now
             if id not in authorids:
                 authorids.append(id)
@@ -208,35 +228,43 @@ def genFiles(values: list) -> None:
             # next are we updating or creating?
             if len(row) > 6 and len(row[AUTHORIDALT]) > 0:
                 # affiliation is it known
-                affilid = row[AFFIL]
-                if affilid not in affils:
-                    if len(affilid) < 10:
-                        print(f"Affiliation does not exist :{affilid}")
-                    else:  # assue its new
-                        affil = affilid
-                        affilid = get_initials(affil)
-                        newaffils[affilid] = affil
-
-                # we have a name so we need to gather the rest.
-                orcid = row[ORCID]
-                if len(orcid) == 0:
+                affilidForm = str(row[AFFIL]).split("/")
+                affilids = []
+                for affilid in affilidForm:
+                    if affilid not in affils:
+                        if len(affilid) < 10:
+                            print(f"Affiliation does not exist :{affilid}")
+                        else:  # assume its new
+                            affil = affilid
+                            affilid = get_initials(affil)
+                            newaffils[affilid] = affil
+                    affilids.append(affilid)
+                    # we have a name so we need to gather the rest.
+                if len(row) > ORCID:
+                    orcid = str(row[ORCID]).replace("https://orcid.org/", "")
+                else:
                     orcid = None
                 email: str = handle_email(row[EMAIL], domains, affilid, newdomains)
                 author: AuthorY = AuthorY(
-                    initials=row[NAME],
-                    name=row[SURNAME],
+                    initials=unicode_to_latex(row[NAME]),
+                    name=unicode_to_latex(row[SURNAME]),
                     orcid=orcid,
                     email=email,
-                    affil=[affilid],
+                    affil=affilids,
                     altaffil=[],
                 )
                 newauthors[id] = author
         authorids = sorted(authorids)
         print(
+            "\n"
+            f" Clash: {', '.join(clash)} \n"
+            f" Not FOUND: {', '.join(notfound)} \n"
             f"got {len(authorids)} authors, "
-            f"{len(newauthors)} new or updated author entries. "
-            f"{len(newdomains)} new email domains. "
-            f" {len(clash)} author entries need to be checked"
+            f"{len(newauthors) - len(toupdate)} new  and {len(toupdate)} to update, author entries.\n"
+            f" {len(newdomains)} new email domains. \n"
+            f" {len(newaffils)} new affiliations \n"
+            f" {len(clash)} author entries need to be checked (see above) \n"
+            f" {len(notfound)} author updates wher authorid not found (see above) \n"
         )
         write_yaml("authors.yaml", authorids)
         write_yaml("new_authors.yaml", newauthors)

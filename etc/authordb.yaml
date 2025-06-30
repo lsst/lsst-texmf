@@ -5,6 +5,7 @@ affiliations:
   AMNH: Department of Astrophysics, American Museum of Natural History, New York,
     NY 10028, USA
   ASTRON: ASTRON, Oude Hoogeveensedijk 4, 7991\,PD, Dwingeloo, The Netherlands
+  AWSS: Amazon Web Services, Seattle, WA 98121, USA
   BNL: Brookhaven National Laboratory, Upton, NY 11973, USA
   Belgrade-AO: Astronomical Observatory, Volgina 7, P.O.\ Box 74, 11060 Belgrade,
     Serbia
@@ -153,7 +154,6 @@ affiliations:
   LLNL: Lawrence Livermore National Laboratory, 7000 East Avenue, Livermore, CA 94550,
     USA
   LOC: Library of Congress, 101 Independence Ave.\ SE, Washington, DC 20540, USA
-  PSI: Planetary Science Institute, 1700 East Fort Lowell Road, Suite 106, Tucson, AZ 85719, USA
   LUPM: Laboratoire Univers et Particules de Montpellier (LUPM), Universit\'{e} de
     Montpellier, CNRS/IN2P3, Place Eug\`{e}ne Bataillon, F-34095 Montpellier, France
   Longhorn: Longhorn Industries, Ellensburg, WA 98926, USA
@@ -197,13 +197,12 @@ affiliations:
   Olympic: Olympic College, 1600 Chester Ave., Bremerton, WA 98337-1699, USA
   Oxford: Department of Physics, University of Oxford, Denys Wilkinson Building, Keble
     Road, Oxford, OX1 3RH, UK
+  PSI: Planetary Science Institute, 1700 East Fort Lowell Road, Suite 106, Tucson, AZ 85719, USA
   PSU: Department of Astronomy and Astrophysics, The Pennsylvania State University,
     525 Davey Lab, University Park, PA 16802, USA
   PSUCDS: Institute for Computational \& Data Sciences, The Pennsylvania State University, University Park, PA 16802, USA
   PSUGC: Institute for Gravitation and the Cosmos, The Pennsylvania State University, University Park, PA 16802, USA
-  Paris-APC: AstroParticule et Cosmologie, Universit\'{e} Paris Diderot, CNRS/IN2P3,
-    CEA/lrfu, Observatoire de Paris, Sorbonne Paris Cit\'{e}, 10, rue Alice Domon
-    et L\'{e}onie Duquet, Paris Cedex 13, France
+  Paris-APC: Universit\'{e} Paris Cit\'{e}, CNRS, Astroparticule et Cosmologie, F-75013 Paris, France
   Paris-Diderot: Universit\'{e} Paris Diderot, Sorbonne Paris Cit\'{e}, F-75013 Paris,
     France
   Paris-IJCLAB: Laboratoire de Physique des 2 infinis Irène Joliot-Curie – IJCLab -
@@ -309,17 +308,25 @@ affiliations:
   WisconsinMadison: Department of Physics, University of Wisconsin-Madison, Madison,
     WI 53706, USA
   Yale: Astronomy Department, Yale University, New Haven, CT 06520, USA
-  ZurichPhys: University of Zurich Physik-Institut, Winterthurerstrasse 190, 8057 Zurich, Switzerland
+  Yonsei: Department of Astronomy, Yonsei University, 50 Yonsei-ro, Seoul 03722, Republic of Korea
+  ZurichPhys: Physik-Institut, University of Zurich, Winterthurerstrasse 190, 8057 Zurich, Switzerland
   _: Placeholder used for collective author that will not be shown
 emails:
   _: none.com
+  APC: apc.in2p3.fr
+  BNL: bnl.gov
+  cern: cern.ch
   Duke: duke.edu
   EdinburghIA: ed.ac.uk
   Exeter: exeter.ac.uk
+  Fermilab: fnal.gov
+  gmail: gmail.com
+  Harvard-CfA: cfa.harvard.edu
   IPAC: ipac.caltech.edu
   LancasterU: lancaster.ac.uk
   LSST-list: lists.lsst.org
   Lyon-CC-IN2P3: in2p3.fr
+  LPNHE: lpnhe.in2p3.fr
   NAOJ: nao.ac.jp
   NCSA: illinois.edu
   NOIRLab: noirlab.edu
@@ -335,10 +342,14 @@ emails:
   SLAC: slac.stanford.edu
   STFC-RAL: stfc.ac.uk
   Stanford: stanford.edu
+  Tekniker: tekniker.es
+  UCSC: ucsc.edu
+  URijeka: uniri.hr
   Washington-Dirac: uw.edu
   Washington: uw.edu
-  URijeka: uniri.hr
+  YUD: yonsei.ac.kr
   ZurichPhys: physik.uzh.ch
+
 authors:
   RubinBuilderPaper:
     affil:
