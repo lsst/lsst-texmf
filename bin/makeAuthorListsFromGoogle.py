@@ -152,8 +152,7 @@ def handle_email(email: str, domains: dict[str, str], affilid: str, newdomains: 
 def strip_utf(ins: str) -> str:
     """Want simple ids wiht now latex or unicode"""
     outs = unicode_to_latex(ins)
-    outs = re.sub("\\.", "", outs)
-    outs = re.sub("[{}]", "", outs)
+    outs = re.sub(r"[\\'c}{]", "", outs)
     return outs
 
 
@@ -261,8 +260,9 @@ def genFiles(values: list) -> None:
             f" Clash: {', '.join(clash)} \n"
             f" Not FOUND: {', '.join(notfound)} \n"
             f"got {len(authorids)} authors, "
-            f"{len(newauthors)} new or updated({len(toupdate)}) author entries. "
-            f"{len(newdomains)} new email domains. \n"
+            f"{len(newauthors) - len(toupdate)} new  and {len(toupdate)} to update, author entries.\n"
+            f" {len(newdomains)} new email domains. \n"
+            f" {len(newaffils)} new affiliations \n"
             f" {len(clash)} author entries need to be checked (see above) \n"
             f" {len(notfound)} author updates wher authorid not found (see above) \n"
         )
