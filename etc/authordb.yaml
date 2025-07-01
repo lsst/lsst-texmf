@@ -852,6 +852,13 @@ authors:
     name: Bosch
     orcid: 0000-0003-2759-5764
     email: jbosch
+  boucauda:
+    affil:
+    - IN2P3-APC
+    altaffil: []
+    initials: Alexandre
+    name: Boucaud
+    orcid: 0000-0001-7387-2633
   boutignyd:
     affil:
     - IN2P3-LAPP
@@ -881,6 +888,13 @@ authors:
     initials: William Nielsen
     name: Brandt
     orcid: 0000-0002-0167-2453
+  bregeonj:
+    affil:
+    - IN2P3-LPSC
+    altaffil: []
+    initials: Johan
+    name: Bregeon
+    orcid: 0000-0002-6790-5328
   breivikk:
     affil:
     - CCA
@@ -895,6 +909,13 @@ authors:
     initials: Massimo
     name: Brescia
     orcid: 0000-0001-9506-5680
+  breugnonp:
+    affil:
+    - IN2P3-CPPM
+    altaffil: []
+    initials: Patrick
+    name: Breugnon
+    orcid: null
   brondelbj:
     affil:
     - RubinOpsC
@@ -2498,6 +2519,13 @@ authors:
     initials: Nadine R.
     name: Kurita
     orcid: null
+  kusuljam:
+    affil:
+    - IN2P3-LPSC
+    altaffil: []
+    initials: Mile
+    name: Kusulja
+    orcid: null
   labriek:
     affil:
     - NOIRLab
@@ -2547,6 +2575,13 @@ authors:
     altaffil: []
     initials: Fran\c{c}ois
     name: Lanusse
+    orcid: null
+  laported:
+    affil:
+    - IN2P3-LPNHE
+    altaffil: []
+    initials: Didier
+    name: Laporte
     orcid: null
   laur:
     affil:
@@ -2784,6 +2819,13 @@ authors:
     initials: Yao-Yuan
     name: Mao
     orcid: 0000-0002-1200-0820
+  marinia:
+    affil:
+    - IN2P3-CPPM
+    altaffil: []
+    initials: Aur\'{e}lien
+    name: Marini
+    orcid: null
   markiewicztw:
     affil:
     - SLAC
@@ -4481,6 +4523,13 @@ authors:
     altaffil: []
     initials: Kurt
     name: Vetter
+    orcid: null
+  vezzuf:
+    affil:
+    - IN2P3-LPSC
+    altaffil: []
+    initials: Francis
+    name: Vezzu
     orcid: null
   vieiraj:
     affil:
