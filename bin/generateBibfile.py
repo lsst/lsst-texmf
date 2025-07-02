@@ -169,7 +169,7 @@ def create_bibentries(res: SearchResponse, dois: dict[str, str] | None = None) -
             # in case those turn up.
             url = f"https://ls.st/{d['handle']}"
             print(f"{url} did not have baseUrl set")
-        print(d["handle"])
+
         if d["handle"] == "DMTN-306":
             # Total parsing failure of the latex so we must provide the
             # values ourselves.
@@ -266,7 +266,6 @@ def checkFixAuthAndComma(authors: str) -> str:
         raise RuntimeError("WTF")
     # Split on "and"
     author_list = re.split(r"\s+and\s+", authors)
-    print(authors)
     author_modified: list[str] = []
     for author in author_list:
         if author in ("on behalf of the Rubin Construction Project", "...."):
@@ -299,13 +298,25 @@ def checkFixAuthAndComma(authors: str) -> str:
             # Sometimes they start with "the" so capitalize the first.
             author = author[0].capitalize() + author[1:]
             author = "{" + author + "}"
-        for known in (r"Plazas Malag\'{o}n", "Fonseca Alvarez", "von der Linden"):
+        for known in (
+            r"Plazas Malag\'{o}n",
+            "Fonseca Alvarez",
+            "von der Linden",
+            "Fausti Neto",
+            "Araya Cortes",
+            "de Peyster",
+            "Lopez Toro",
+            "Orellana Munoz",
+            "Ribeiro de Souza",
+            "Sedaghat Alvar",
+            "van Reeven",
+            "van Klaveren",
+        ):
             if known in author:
                 author = author.replace(known, f"{{{known}}}")
         author = author.strip()
         if author:
             author_modified.append(author)
-    print(author_modified)
     return " and ".join(author_modified)
 
 
