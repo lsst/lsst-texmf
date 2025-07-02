@@ -298,7 +298,20 @@ def checkFixAuthAndComma(authors: str) -> str:
             # Sometimes they start with "the" so capitalize the first.
             author = author[0].capitalize() + author[1:]
             author = "{" + author + "}"
-        for known in (r"Plazas Malag\'{o}n", "Fonseca Alvarez", "von der Linden", "Fausti Neto"):
+        for known in (
+            r"Plazas Malag\'{o}n",
+            "Fonseca Alvarez",
+            "von der Linden",
+            "Fausti Neto",
+            "Araya Cortes",
+            "de Peyster",
+            "Lopez Toro",
+            "Orellana Munoz",
+            "Ribeiro de Souza",
+            "Sedaghat Alvar",
+            "van Reeven",
+            "van Klaveren",
+        ):
             if known in author:
                 author = author.replace(known, f"{{{known}}}")
         author = author.strip()
