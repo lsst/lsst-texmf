@@ -36,7 +36,6 @@ affiliations:
   COOK: Cook Astronomical Consulting, 220 Duxbury Ct., San Ramon, CA 94583, USA
   CONICET: Consejo Nacional de Investigaciones Cient\'{i}ficas y T\'{e}cnicas, Argentina
   Columbia: Columbia University, 533 W. 218th St. New York, NY 10034
-  CPPM: Aix Marseille Univ, CNRS/IN2P3, CPPM, Marseille, France
   CTIO: Cerro Tololo Inter-American Observatory, La Serena, Chile
   CUMBRES: Las Cumbres Observatory, 6740 Cortona Dr., Suite 102, Goleta, CA
     93117, USA
@@ -63,8 +62,6 @@ affiliations:
   CIERA: Center for Interdisciplinary Exploration and Research in Astrophysics (CIERA) and
     Department of Physics and Astronomy, Northwestern University, 1800 Sherman Road,
     Evanston, IL 60201, USA
-  Clermont-LPC: Universit\'e Clermont Auvergne, CNRS$/$IN2P3, Laboratoire de Physique de Clermont,
-    F-63000 Clermont-Ferrand, France
   D4D: D4D CONSULTING LTD., Suite 1 Second Floor, Everdene House, Deansleigh Road,
         Bournemouth, UK BH7 7DU
   DACC: DACC New Mexico State University, Central Campus, Las Cruces, New Mexico, USA
@@ -102,8 +99,6 @@ affiliations:
   GeminiS: International Gemini Observatory/NSF NOIRLab, Casilla 603, La Serena, Chile
   Goddard: Astrophysics Science Division, NASA Goddard Space Flight Center, Mail Code 661, Greenbelt, MD 20771, US
   Google: Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA
-  Grenoble-LPSC: Laboratoire de Physique Subatomique et de Cosmologie, Universit\'{e}
-    Grenoble-Alpes, CNRS/IN2P3, 53 av.\ des Martyrs, 38026 Grenoble cedex, France
   Hamburg: Hamburger Sternwarte, Universitat Hamburg, Gojenbergsweg 112,
     21029 Hamburg, Germany
   Harvard-Astro: Department of Astronomy, Center for Astrophysics, Harvard University,
@@ -117,6 +112,25 @@ affiliations:
     M{\"o}nchhofstr. 12-14, 69120 Heidelberg, Germany
   Herts: Centre for Astrophysics Research, University of Hertfordshire, Hatfield, Hertfordshire, AL10 9AB, UK
   IAFE: Instituto de Astronom\'ia y F\'isica del Espacio (IAFE), Av. Inte. G\"uiraldes 2620, C1428ZAA, Buenos Aires, Argentina
+  IN2P3-APC: Universit\'{e} Paris Cit\'{e}, CNRS, Astroparticule et Cosmologie, F-75013 Paris, France
+  IN2P3-APC-CEA: Universit\'{e} Paris Cit\'{e}, CNRS, CEA, Astroparticule et Cosmologie, F-75013 Paris, France
+  IN2P3-CC: CNRS, CC-IN2P3, 21 avenue Pierre de Coubertin, CS70202, F-69627 Villeurbanne cedex, France
+  IN2P3-CPPM: Aix Marseille Univ, CNRS/IN2P3, CPPM, Marseille, France
+  IN2P3-IJCLAB: Universit\'{e} Paris-Saclay, CNRS/IN2P3, IJCLab, Orsay, France
+  IN2P3-IP2I: Univ Lyon, Univ Claude Bernard Lyon 1, CNRS, IP2I Lyon/IN2P3, UMR 5822, F-69622 Villeurbanne, France
+  IN2P3-LAPP: Universit\'{e} Grenoble-Alpes, Universit\'{e} Savoie Mont Blanc, CNRS/IN2P3
+    Laboratoire d'Annecy-le-Vieux de Physique des Particules, 9 Chemin de Bellevue
+    -- BP 110, F-74940 Annecy-le-Vieux Cedex, France
+  IN2P3-LPCA: Universit\'e Clermont Auvergne, CNRS/IN2P3, Laboratoire de Physique de Clermont Auvergne,
+    F-63000 Clermont-Ferrand, France
+  IN2P3-LPNHE: Laboratoire de Physique Nucl\'{e}aire et des Hautes Energies, Universit\'{e}
+    Pierre et Marie Curie, Universit\'{e} Paris Cit\'{e}, CNRS/IN2P3, 4 place Jussieu, 75005 Paris, France
+  IN2P3-LPSC: Laboratoire de Physique Subatomique et de Cosmologie, Universit\'{e}
+    Grenoble-Alpes, CNRS/IN2P3, 53 av.\ des Martyrs, 38026 Grenoble cedex, France
+  IN2P3-LUPM: Laboratoire Univers et Particules de Montpellier (LUPM), Universit\'{e} de
+    Montpellier, CNRS/IN2P3, Place Eug\`{e}ne Bataillon, F-34095 Montpellier, France
+  IN2P3-UPMC: Sorbonne Universit\'{e}s, UPMC Univ Paris 06, UMR 7585, LPNHE, F-75005, Paris, France
+  INSU-AIM: Universit\'{e} Paris-Saclay, Universit\'{e} Paris Cit\'{e}, CEA, CNRS, AIM, 91191, Gif-sur-Yvette, France
   IPAC: Caltech/IPAC, California Institute of Technology, MS 100-22, Pasadena, CA 91125-2200, USA
   IRAM: Instituto de Radioastronom\'ia Milim\'{e}trica, Av.\ Divina Pastora 7, N\'{u}cleo
     Central, E-18012 Granada, Spain
@@ -143,9 +157,6 @@ affiliations:
     Chinese Academy of Sciences, 20A Datun Road, Chaoyang District, Beijing 100012,
     People's Republic of China
   LancasterU: Lancaster University, Lancaster, UK
-  LAPP: Universit\'{e} Grenoble-Alpes, Universit\'{e} Savoie Mont Blanc, CNRS/IN2P3
-    Laboratoire d'Annecy-le-Vieux de Physique des Particules, 9 Chemin de Bellevue
-    -- BP 110, F-74940 Annecy-le-Vieux Cedex, France
   Leiden: Leiden Observatory, Leiden University, Postbus 9513, 2300 RA, Leiden, The Netherlands
   Liege: Institut d'Astrophysique et de G\'{e}ophysique, Universit\'{e} de Li\`{e}ge,
     All\'{e}e du 6 Ao\^{u}t 19c, 4000 Li\`{e}ge, Belgium
@@ -154,15 +165,9 @@ affiliations:
   LLNL: Lawrence Livermore National Laboratory, 7000 East Avenue, Livermore, CA 94550,
     USA
   LOC: Library of Congress, 101 Independence Ave.\ SE, Washington, DC 20540, USA
-  LUPM: Laboratoire Univers et Particules de Montpellier (LUPM), Universit\'{e} de
-    Montpellier, CNRS/IN2P3, Place Eug\`{e}ne Bataillon, F-34095 Montpellier, France
   Longhorn: Longhorn Industries, Ellensburg, WA 98926, USA
   Lowell: 1400 W.\ Mars Hill Rd., Lowell Observatory, Flagstaff, AZ 86001, USA
   LSSTC: The LSST Corporation
-  Lyon-CC-IN2P3: CNRS, CC-IN2P3, 21 avenue Pierre de Coubertin, CS70202, F-69627 Villeurbanne
-    cedex, France
-  Lyon-LMA-IN2P3: Laboratoire des Materiaux Avances (LMA), CNRS/IN2P3, Universit\'{e}
-    de Lyon, F-69622 Villeurbanne, Lyon, France
   Maryland: University of Maryland, College Park, MD 20742
   Maryland-astro: Department of Astronomy, University of Maryland, College Park, MD 20742, USA
   MMTO: MMT Observatory, 1540 E. Second Street, University of Arizona, Tucson, AZ 85721-0064, USA
@@ -202,16 +207,6 @@ affiliations:
     525 Davey Lab, University Park, PA 16802, USA
   PSUCDS: Institute for Computational \& Data Sciences, The Pennsylvania State University, University Park, PA 16802, USA
   PSUGC: Institute for Gravitation and the Cosmos, The Pennsylvania State University, University Park, PA 16802, USA
-  Paris-APC: Universit\'{e} Paris Cit\'{e}, CNRS, Astroparticule et Cosmologie, F-75013 Paris, France
-  Paris-Diderot: Universit\'{e} Paris Diderot, Sorbonne Paris Cit\'{e}, F-75013 Paris,
-    France
-  Paris-IJCLAB: Laboratoire de Physique des 2 infinis Irène Joliot-Curie – IJCLab -
-    Universit\'e Paris-Saclay, CNRS/IN2P3, Bât. 100, 15 rue Georges Clémenceau, 91405 Orsay, France
-  Paris-LPNHE: Laboratoire de Physique Nucl\'{e}aire et des Hautes Energies, Universit\'{e}
-    Pierre et Marie Curie, Universit\'{e} Paris Diderot, CNRS/IN2P3, 4 place Jussieu,
-    75005 Paris, France
-  Paris-UPMC: Sorbonne Universit\'{e}s, UPMC Univ Paris 06, UMR 7585, LPNHE, F-75005,
-    Paris, France
   Peay: Austin Peay State University, Clarksville, TN 37044, USA
   Pitts: Department of Physics and Astronomy, University of Pittsburgh, 3941 O'Hara
     Street, Pittsburgh, PA 15260, USA
@@ -232,7 +227,6 @@ affiliations:
   RubinOpsC: Vera C.\ Rubin Observatory/NSF NOIRLab, Casilla 603, La Serena, Chile
   Rutgers: Department of Physics and Astronomy, Rutgers University, 136 Frelinghuysen
     Rd., Piscataway, NJ 08854, USA
-  Saclay: Universit\'e Paris-Saclay, Universit\'e Paris Cit\'e, CEA, CNRS, AIM, 91191, Gif-sur-Yvette, France
   Santiago-dept: Departamento de Ciencias Fisicas, Universidad Andres Bello Fernandez
     Concha 700, Las Condes, Santiago, Chile
   Santiago-Millenium: Millennium Institute of Astrophysics, Nuncio Monse{\~{n}}or S{\'{o}}tero
@@ -313,7 +307,6 @@ affiliations:
   _: Placeholder used for collective author that will not be shown
 emails:
   _: none.com
-  APC: apc.in2p3.fr
   BNL: bnl.gov
   cern: cern.ch
   Duke: duke.edu
@@ -322,11 +315,19 @@ emails:
   Fermilab: fnal.gov
   gmail: gmail.com
   Harvard-CfA: cfa.harvard.edu
+  IN2P3-APC: apc.in2p3.fr
+  IN2P3-CC: in2p3.fr
+  IN2P3-CPPM: cppm.in2p3.fr
+  IN2P3-IJCLAB: ijclab.in2p3.fr
+  IN2P3-IP2I: ip2i.in2p3.fr
+  IN2P3-LAPP: lapp.in2p3.fr
+  IN2P3-LPCA: lpca.in2p3.fr
+  IN2P3-LPNHE: lpnhe.in2p3.fr
+  IN2P3-LPSC: lpsc.in2p3.fr
+  IN2P3-LUPM: lupm.in2p3.fr
   IPAC: ipac.caltech.edu
   LancasterU: lancaster.ac.uk
   LSST-list: lists.lsst.org
-  Lyon-CC-IN2P3: in2p3.fr
-  LPNHE: lpnhe.in2p3.fr
   NAOJ: nao.ac.jp
   NCSA: illinois.edu
   NOIRLab: noirlab.edu
@@ -517,7 +518,7 @@ authors:
     orcid: 0000-0003-0930-5815
   ansarir:
     affil:
-    - Paris-IJCLAB
+    - IN2P3-IJCLAB
     altaffil: []
     initials: Reza
     name: Ansari
@@ -531,7 +532,7 @@ authors:
     orcid: null
   antilogusp:
     affil:
-    - Paris-LPNHE
+    - IN2P3-LPNHE
     altaffil: []
     initials: Pierre
     name: Antilogus
@@ -559,14 +560,14 @@ authors:
     orcid: 0000-0002-6826-8340
   astierp:
     affil:
-    - Paris-LPNHE
+    - IN2P3-LPNHE
     altaffil: []
     initials: Pierre
     name: Astier
     orcid: null
   aubourge:
     affil:
-    - Paris-APC
+    - IN2P3-APC-CEA
     altaffil: []
     initials: \'{E}ric
     name: Aubourg
@@ -615,7 +616,7 @@ authors:
     orcid: 0000-0002-5162-5153
   barraua:
     affil:
-    - Grenoble-LPSC
+    - IN2P3-LPSC
     altaffil: []
     initials: Aurelian
     name: Barrau
@@ -635,7 +636,7 @@ authors:
     name: Barrett
   bartlettjg:
     affil:
-    - Paris-APC
+    - IN2P3-APC
     altaffil: []
     initials: James G.
     name: Bartlett
@@ -656,8 +657,8 @@ authors:
     orcid: null
   baumonts:
     affil:
-    - Paris-UPMC
-    - Paris-LPNHE
+    - IN2P3-UPMC
+    - IN2P3-LPNHE
     altaffil: []
     initials: Sylvain
     name: Baumont
@@ -851,9 +852,16 @@ authors:
     name: Bosch
     orcid: 0000-0003-2759-5764
     email: jbosch
+  boucauda:
+    affil:
+    - IN2P3-APC
+    altaffil: []
+    initials: Alexandre
+    name: Boucaud
+    orcid: 0000-0001-7387-2633
   boutignyd:
     affil:
-    - LAPP
+    - IN2P3-LAPP
     altaffil: []
     initials: Dominique
     name: Boutigny
@@ -880,6 +888,13 @@ authors:
     initials: William Nielsen
     name: Brandt
     orcid: 0000-0002-0167-2453
+  bregeonj:
+    affil:
+    - IN2P3-LPSC
+    altaffil: []
+    initials: Johan
+    name: Bregeon
+    orcid: 0000-0002-6790-5328
   breivikk:
     affil:
     - CCA
@@ -894,6 +909,13 @@ authors:
     initials: Massimo
     name: Brescia
     orcid: 0000-0001-9506-5680
+  breugnonp:
+    affil:
+    - IN2P3-CPPM
+    altaffil: []
+    initials: Patrick
+    name: Breugnon
+    orcid: null
   brondelbj:
     affil:
     - RubinOpsC
@@ -945,7 +967,7 @@ authors:
     orcid: 0000-0003-1866-1950
   cagnolig:
     affil:
-    - Lyon-LMA-IN2P3
+    - IN2P3-IP2I
     altaffil: []
     initials: Gianpietro
     name: Cagnoli
@@ -1144,7 +1166,7 @@ authors:
     orcid: null
   cohentanugij:
     affil:
-    - LUPM
+    - IN2P3-LUPM
     altaffil: []
     initials: Johann
     name: Cohen-Tanugi
@@ -1270,7 +1292,7 @@ authors:
     orcid: null
   dagorets:
     affil:
-    - Paris-IJCLAB
+    - IN2P3-IJCLAB
     altaffil: []
     initials: Sylvie
     name: Dagoret-Campagne
@@ -1305,7 +1327,7 @@ authors:
     orcid: null
   daubardg:
     affil:
-    - Paris-LPNHE
+    - IN2P3-LPNHE
     altaffil: []
     initials: Guillaume
     name: Daubard
@@ -1688,7 +1710,7 @@ authors:
     orcid: 0000-0002-8526-3963
   ganglere:
     affil:
-    - Clermont-LPC
+    - IN2P3-LPCA
     altaffil: []
     initials: Emmanuel
     name: Gangler
@@ -1902,7 +1924,7 @@ authors:
     orcid: null
   grisp:
     affil:
-    - Clermont-LPC
+    - IN2P3-LPCA
     altaffil: []
     initials: Philippe
     name: Gris
@@ -1995,7 +2017,7 @@ authors:
     orcid:
   hernandezf:
     affil:
-    - Lyon-CC-IN2P3
+    - IN2P3-CC
     altaffil: []
     initials: Fabio
     name: Hernandez
@@ -2132,7 +2154,7 @@ authors:
     email: david.irving
   ishidaeo:
     affil:
-    - Clermont-LPC
+    - IN2P3-LPCA
     altaffil: []
     initials: Emille E. O.
     name: Ishida
@@ -2174,7 +2196,7 @@ authors:
     orcid: null
   jammesf:
     affil:
-    - Clermont-LPC
+    - IN2P3-LPCA
     altaffil: []
     initials: Fabrice
     name: Jammes
@@ -2238,7 +2260,7 @@ authors:
     orcid: 0000-0001-5916-0031
   juramygillesc:
     affil:
-    - Paris-LPNHE
+    - IN2P3-LPNHE
     altaffil: []
     initials: Claire
     name: Juramy-Gilles
@@ -2312,7 +2334,7 @@ authors:
     orcid: null
   karstp:
     affil:
-    - CPPM
+    - IN2P3-CPPM
     altaffil: []
     initials: Pierre
     name: Karst
@@ -2497,6 +2519,13 @@ authors:
     initials: Nadine R.
     name: Kurita
     orcid: null
+  kusuljam:
+    affil:
+    - IN2P3-LPSC
+    altaffil: []
+    initials: Mile
+    name: Kusulja
+    orcid: null
   labriek:
     affil:
     - NOIRLab
@@ -2542,10 +2571,17 @@ authors:
     orcid: null
   lanussef:
     affil:
-    - Saclay
+    - INSU-AIM
     altaffil: []
     initials: Fran\c{c}ois
     name: Lanusse
+    orcid: null
+  laported:
+    affil:
+    - IN2P3-LPNHE
+    altaffil: []
+    initials: Didier
+    name: Laporte
     orcid: null
   laur:
     affil:
@@ -2570,15 +2606,15 @@ authors:
     orcid: null
   leboulchq:
     affil:
-    - Lyon-CC-IN2P3
+    - IN2P3-CC
     altaffil: []
     initials: Quentin
     name: Le Boulc'h
     orcid: null
   leguilloul:
     affil:
-    - Paris-UPMC
-    - Paris-LPNHE
+    - IN2P3-UPMC
+    - IN2P3-LPNHE
     altaffil: []
     initials: Laurent
     name: Le Guillou
@@ -2755,7 +2791,7 @@ authors:
     orcid: 0000-0003-2242-0244
   mainettig:
     affil:
-    - Lyon-CC-IN2P3
+    - IN2P3-CC
     altaffil: []
     initials: Gabriele
     name: Mainetti
@@ -2783,6 +2819,13 @@ authors:
     initials: Yao-Yuan
     name: Mao
     orcid: 0000-0002-1200-0820
+  marinia:
+    affil:
+    - IN2P3-CPPM
+    altaffil: []
+    initials: Aur\'{e}lien
+    name: Marini
+    orcid: null
   markiewicztw:
     affil:
     - SLAC
@@ -2927,7 +2970,7 @@ authors:
     orcid: 0000-0002-2308-4230
   migliorem:
     affil:
-    - Grenoble-LPSC
+    - IN2P3-LPSC
     altaffil: []
     initials: Myriam
     name: Migliore
@@ -2990,7 +3033,7 @@ authors:
     orcid: null
   moniezm:
     affil:
-    - Paris-IJCLAB
+    - IN2P3-IJCLAB
     altaffil: []
     initials: Marc
     name: Moniez
@@ -3133,7 +3176,7 @@ authors:
     orcid: null
   neveuj:
     affil:
-    - Paris-IJCLAB
+    - IN2P3-IJCLAB
     altaffil: []
     initials: Jeremy
     name: Neveu
@@ -3147,7 +3190,7 @@ authors:
     orcid: null
   niefj:
     affil:
-    - Lyon-CC-IN2P3
+    - IN2P3-CC
     altaffil: []
     initials: Jean-Yves
     name: Nief
@@ -3314,7 +3357,7 @@ authors:
     orcid: null
   painr:
     affil:
-    - Paris-LPNHE
+    - IN2P3-LPNHE
     altaffil: []
     initials: Reynald
     name: Pain
@@ -3615,7 +3658,7 @@ authors:
     email: sophiereed@Princeton
   regnaultn:
     affil:
-    - Paris-LPNHE
+    - IN2P3-LPNHE
     altaffil: []
     initials: Nicolas
     name: Regnault
@@ -3713,7 +3756,7 @@ authors:
     orcid: null
   roucellec:
     affil:
-    - Paris-APC
+    - IN2P3-APC
     altaffil: []
     initials: Cecille
     name: Roucelle
@@ -3778,7 +3821,7 @@ authors:
     email: salnikov
   sanchezbo:
     affil:
-    - CPPM
+    - IN2P3-CPPM
     altaffil: []
     initials: Bruno O.
     name: S\'anchez
@@ -3815,7 +3858,7 @@ authors:
     orcid: 0000-0003-0880-8963
   sassolasb:
     affil:
-    - Lyon-LMA-IN2P3
+    - IN2P3-IP2I
     altaffil: []
     initials: Benoit
     name: Sassolas
@@ -4481,6 +4524,13 @@ authors:
     initials: Kurt
     name: Vetter
     orcid: null
+  vezzuf:
+    affil:
+    - IN2P3-LPSC
+    altaffil: []
+    initials: Francis
+    name: Vezzu
+    orcid: null
   vieiraj:
     affil:
     - Illinois-astro
@@ -4513,7 +4563,7 @@ authors:
     orcid: 0000-0002-8847-0335
   virieuxf:
     affil:
-    - Paris-APC
+    - IN2P3-APC
     altaffil: []
     initials: Francoise
     name: Virieux
