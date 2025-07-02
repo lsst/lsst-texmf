@@ -342,6 +342,7 @@ emails:
   SLAC: slac.stanford.edu
   STFC-RAL: stfc.ac.uk
   Stanford: stanford.edu
+  StonyBrookU: stonybrook.edu
   Tekniker: tekniker.es
   UCSC: ucsc.edu
   URijeka: uniri.hr
@@ -410,6 +411,7 @@ authors:
     initials: Prakruth
     name: Adari
     orcid: 0000-0001-9431-3806
+    email: prakruth.adari
   adelmanmccarthyj:
     affil:
     - Fermilab
@@ -2642,9 +2644,10 @@ authors:
     affil:
     - StonyBrookU
     altaffil: []
-    initials: Anja von der
-    name: Linden
-    orcid: null
+    initials: Anja
+    name: von der Linden
+    orcid: 0000-0002-3881-7724
+    email: anja.vonderlinden
   lintottcj:
     affil:
     - Oxford

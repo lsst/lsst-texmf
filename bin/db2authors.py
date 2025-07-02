@@ -226,6 +226,27 @@ class AuthorTextGenerator(ABC):
         Would be better for authordb affiliations to be pre-parsed.
         """
         addr = [a.strip() for a in affiliation.split(",")]
+        # We have a problem with departments in affiliations.
+        # Until we have proper Affiliation object we have to kluge things
+        # and try to spot when departments are involved in addition to the
+        # institute.
+        combined_institutes: list[str] = []
+        combining = True
+        modified: list[str] = []
+        for a in addr:
+            if combining:
+                if "Dep" in a or "Faculty" in a:
+                    combined_institutes.append(a)
+                    continue
+                else:
+                    # Run of out of departments. Merge with the next and then
+                    # disable combinations.
+                    combined_institutes.append(a)
+                    a = ", ".join(combined_institutes)
+                    combining = False
+            modified.append(a)
+        addr = modified
+
         institute = addr[0]
         ind = len(addr) - 1
         state = ""

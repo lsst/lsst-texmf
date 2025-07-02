@@ -101,7 +101,7 @@ class BibEntry:
         else:
             note = ""
         if self.doi:
-            doi = f'\n               doi = "{{{self.doi}}}",'
+            doi = f"\n               doi = {{{self.doi}}},"
         else:
             doi = ""
         if self.type.lower() == "@techreport":
