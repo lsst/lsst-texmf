@@ -10,6 +10,7 @@ data is supplied by Ook, https://github.com/lsst-sqre/ook.
 import argparse
 import asyncio
 import calendar
+import re
 from datetime import UTC, datetime
 from typing import cast
 
@@ -168,6 +169,23 @@ def create_bibentries(res: SearchResponse, dois: dict[str, str] | None = None) -
             # in case those turn up.
             url = f"https://ls.st/{d['handle']}"
             print(f"{url} did not have baseUrl set")
+        print(d["handle"])
+        if d["handle"] == "DMTN-306":
+            # Total parsing failure of the latex so we must provide the
+            # values ourselves.
+            authors = " and ".join(
+                [
+                    "Fabio Hernandez",
+                    "Mark G. Beckett",
+                    "Andrew Hanushevsky",
+                    "Tim Jenness",
+                    "Kian-Tat Lim",
+                    "Peter Love",
+                    "Timothy Noble",
+                    "Stephen R. Pietrowicz",
+                    "Wei Yang",
+                ]
+            )
         be = BibEntry(
             checkFixAuthAndComma(fixTexSS(authors)),
             fixTex(d["h1"]),
@@ -199,20 +217,96 @@ def fixTex(text: str) -> str:
 
 
 def checkFixAuthAndComma(authors: str) -> str:
-    """
-    Soem people used comm seperated author lists - bibtex does not like that.
-    Here we replave the comma with and.
+    """Fix author lists.
+
+    Some people used comma-separated author lists - bibtex does not like that.
+    Here we replace the comma with and.
     And someone put an & in the author list - that is not allowed either.
 
     :param authors:
     :return: authors in and format
     """
+    # Special case DMTN-085 which currently parses wrong because it uses
+    # commas in the author names.
+    if (
+        authors == "Bellm and E.C. and Chiang and H.-F. and Fausti and A. and Krughoff and K.S. and MacArthur"
+        " and L.A. and Morton and T.D. and Swinbank and J.D. (chair) and Roby and T."
+    ):
+        authors = (
+            "E. C Bellm and H.-F. Chiang and A. Fausti and K. S. Krughoff and L. A. MacArthur "
+            "and T. D. Morton and J. D. Swinbank and T. Roby"
+        )
+
     if "," in authors:
         # a bit heavy handed but
         authors = authors.replace(",", " and")
     if "&" in authors:
         authors = authors.replace("&", " and")
-    return authors
+
+    # This is now in bibtex form. In the absence of authorids we have to
+    # now use heuristics to fix some authors who have two surnames without
+    # a hyphen. pybtex makes some bad assumptions.
+    authors = authors.removesuffix("et al.")
+
+    authors = authors.strip()
+    if not authors:
+        return authors
+
+    # System Integration Test and Commissioning Team is a single author
+    authors = authors.replace("System Integration Test and Commissioning Team", "SITCOM")
+
+    # Sometimes we have a "and and"
+    authors = re.sub(r"and\s+and", "and", authors)
+
+    # We do not want the oversight text in that one document.
+    authors = authors.replace(
+        "Agency oversight: Ashley Zauderer-Vanderley (NSF) and Helmut Marsiske (DOE)", ""
+    )
+    if not authors:
+        raise RuntimeError("WTF")
+    # Split on "and"
+    author_list = re.split(r"\s+and\s+", authors)
+    print(authors)
+    author_modified: list[str] = []
+    for author in author_list:
+        if author in ("on behalf of the Rubin Construction Project", "...."):
+            continue
+        if author == "SITCOM":
+            author = "System Integration Test and Commissioning Team"
+        for zero_out in (
+            "_for the LSST Project_",
+            "_for the LSST Data Management_",
+            "on behalf of the Rubin Observatory Project Science Team",
+            "(She/Her)",
+            "(University of Washington)",
+            "(LPNHE/IN2P3/CNRS Paris)",
+            "(chair)",
+            "on behalf of Science Pipelines Team",
+            "other contributors",
+        ):
+            author = author.replace(zero_out, "")
+        # In one case we get {} around the entire author string.
+        # But we do not want to break latex escapes.
+        if author.endswith(" }") and author.startswith("{G"):
+            author = author.removeprefix("{")
+            author = author.removesuffix("}")
+        author = author.strip()
+        author = author.removesuffix(" and")
+        if author.lower() == "{On behalf of Rubin Observatory Project}".lower():
+            author = "Vera C. Rubin Observatory"
+        if "Rubin Observatory" in author or "Team" in author or "Collaboration" in author:
+            # Organizational author. Need to quote the entire author.
+            # Sometimes they start with "the" so capitalize the first.
+            author = author[0].capitalize() + author[1:]
+            author = "{" + author + "}"
+        for known in (r"Plazas Malag\'{o}n", "Fonseca Alvarez", "von der Linden"):
+            if known in author:
+                author = author.replace(known, f"{{{known}}}")
+        author = author.strip()
+        if author:
+            author_modified.append(author)
+    print(author_modified)
+    return " and ".join(author_modified)
 
 
 def fixTexSS(text: str) -> str:
