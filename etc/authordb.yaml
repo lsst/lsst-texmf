@@ -4,7 +4,11 @@ affiliations:
   ALMA: Atacama Large Millimeter/submillimeter Array, San Pedro de Atacama, Antofagasta, Chile
   AMNH: Department of Astrophysics, American Museum of Natural History, New York,
     NY 10028, USA
+  ARCSoM: Astrophysics Research Cluster, School of Mathematical and Physical Sciences,
+    University of Sheffield, Sheffield, S3 7RH, United Kingdom
   ASTRON: ASTRON, Oude Hoogeveensedijk 4, 7991\,PD, Dwingeloo, The Netherlands
+  AURA-C: AURA Observatory, Juan Cisternas 1500, La Serena, Región de Coquimbo, Chile
+  AURA-T: AURA, 950 N.\ Cherry Ave., Tucson, AZ  85719, USA
   AWSS: Amazon Web Services, Seattle, WA 98121, USA
   BNL: Brookhaven National Laboratory, Upton, NY 11973, USA
   Belgrade-AO: Astronomical Observatory, Volgina 7, P.O.\ Box 74, 11060 Belgrade,
@@ -240,7 +244,9 @@ affiliations:
   Southampton: University of Southampton, Hartley Library B12, University Rd,
     Highfield, Southampton SO17 1BJ, United Kingdom
   soZen: soZen Inc., 105 Clearview Dr, Penfield, NY 14526
+  STFC: Science and Technology Facilities Council, UK Research and Innovation
   STFC-RAL: Science and Technology Facilities Council, Rutherford Appleton Laboratory, Harwell, UK
+
   Stanford: Stanford University, 450 Jane Stanford Way, Stanford, CA 94305, USA
   Stanford-AeroAstro: Department of Aeronautics and Astronautics, Stanford University,
     Stanford, CA 94305, USA
@@ -307,6 +313,7 @@ affiliations:
   _: Placeholder used for collective author that will not be shown
 emails:
   _: none.com
+  ARCSoM: sheffield.ac.uk
   BNL: bnl.gov
   cern: cern.ch
   Chicago: uchicago.edu
@@ -3793,7 +3800,7 @@ authors:
     orcid: null
   russos:
     affil:
-    - SLAC
+    - IN2P3-LPNHE
     altaffil: []
     initials: Stefano
     name: Russo
