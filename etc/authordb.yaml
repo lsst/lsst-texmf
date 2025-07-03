@@ -172,9 +172,11 @@ affiliations:
   Longhorn: Longhorn Industries, Ellensburg, WA 98926, USA
   Lowell: 1400 W.\ Mars Hill Rd., Lowell Observatory, Flagstaff, AZ 86001, USA
   LSSTC: The LSST Corporation
+  LSST-DA: LSST Discovery Alliance, 933 N. Cherry Ave., Tucson, AZ 85719, USA
   Maryland: University of Maryland, College Park, MD 20742
   Maryland-astro: Department of Astronomy, University of Maryland, College Park, MD 20742, USA
   MMTO: MMT Observatory, 1540 E. Second Street, University of Arizona, Tucson, AZ 85721-0064, USA
+  na: no affiliation
   Napoli: Department of Physics "E. Pancini", University Federico II of Napoli, Via Cintia, 80126 Napoli, Italy
   NAOChina: National Astronomical Observatories, Chinese Academy of Sciences, A20
     Datun Rd, Chaoyang District, Beijing 100012, People's Republic of China
@@ -336,6 +338,7 @@ emails:
   IPAC: ipac.caltech.edu
   LancasterU: lancaster.ac.uk
   LSST-list: lists.lsst.org
+  LSST-DA: lsst-da.org
   NAOJ: nao.ac.jp
   NCSA: illinois.edu
   NOIRLab: noirlab.edu

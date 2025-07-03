@@ -40,7 +40,7 @@ def dump_authordb(adb: AuthorDbYaml, file_name: str | None = None) -> str:
 
     with open(authordb_path, "w") as adbfile:
         print(f"Writing AuthorDbYaml object to {authordb_path}...\n")
-        adbfile.write(adb.model_dump_json(indent=2))
+        yaml.dump(adb.model_dump(), adbfile)
     return authordb_path
 
 
@@ -53,7 +53,7 @@ class AuthorDbAuthor(BaseModel):
 
     affil: list[str] = Field(default_factory=list, description="Affiliation IDs")
 
-    alt_affil: list[str] = Field(default_factory=list, description="Alternative affiliations / notes.")
+    altaffil: list[str] = Field(default_factory=list, description="Alternative affiliations / notes.")
 
     orcid: str | None = Field(
         default=None,
@@ -65,7 +65,7 @@ class AuthorDbAuthor(BaseModel):
         description=(
             "Author's email username (if using a known email provider given "
             "their affiliation ID) or ``username@provider`` (to specify the "
-            "provider) or their full email address."
+            "provider)."
         ),
     )
 
