@@ -2008,13 +2008,6 @@ authors:
     initials: Joseph
     name: Hennawi
     orcid:
-  herrolda:
-    affil:
-    - RubinObs
-    altaffil: []
-    initials: Ardis
-    name: Herrold
-    orcid:
   hernandezf:
     affil:
     - IN2P3-CC
@@ -2038,6 +2031,13 @@ authors:
     initials: Sven
     name: Herrmann
     orcid: null
+  herrolda:
+    affil:
+    - RubinObs
+    altaffil: []
+    initials: Ardis
+    name: Herrold
+    orcid:
   hilemane:
     affil:
     - RubinObs
