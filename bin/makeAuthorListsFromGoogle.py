@@ -31,7 +31,7 @@ import re
 from typing import Any
 
 import yaml
-from authordb import AuthorDbAuthor, load_authordb
+from authordb import AuthorDbAuthor, dump_authordb, load_authordb
 from google.auth.transport.requests import Request
 from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
@@ -118,6 +118,15 @@ def write_model(name: str, authors: dict[str, AuthorDbAuthor]) -> None:
     adb = AuthorYaml(authors=authors)
     with open(name, "w") as file:
         yaml.dump(adb.model_dump(), file)
+
+
+def load_model(filename: str) -> dict[str, AuthorDbAuthor]:
+    """Read authors  data from the YAML file"""
+    with open(filename) as file:
+        yaml_data = yaml.safe_load(file)
+        print("Parsing into AuthorYaml object...\n")
+        adb = AuthorYaml.model_validate(yaml_data)
+    return adb.authors
 
 
 def handle_email(email: str, domains: dict[str, str], affilid: str, newdomains: dict[str, str]) -> str:
@@ -285,33 +294,67 @@ def get_sheet(sheet_id: str, range: str) -> dict[str, Any]:
     return result
 
 
-def main(sheetId: str, sheets: str) -> None:
-    """Grab the googlesheet and process data."""
+def process_google(sheet_id: str, sheets: str) -> None:
+    """Grab the googlesheet and process data.
+    will create new_authos new_afilliations and new_domains
+    """
+    print(f"Processing Google Sheet ID: {sheet_id}")
+    print(f"Sheet ranges: {sheets}")
     for r in sheets:
-        print(f"Google {sheetId} , Sheet {r}")
-        result = get_sheet(sheetId, r)
+        result = get_sheet(sheet_id, r)
         values: list[Any] = result.get("values", [])
         genFiles(values)
 
 
+def merge_authors(author_file: str) -> None:
+    """Take the given author yaml file and merge to authodd
+    this file shold mathc the AuthorYaml class in authodb.py
+    """
+    print(f"Merging authors using file: {author_file}")
+    authors = load_model(author_file)
+    adb = load_authordb()
+    print(f"Have {len(adb.authors)} authors")
+    adb.authors.update(authors)
+    print(f"After update have {len(adb.authors)} authors")
+    dump_authordb(adb, "new_adb.yaml")
+
+
 if __name__ == "__main__":
-    description = __doc__
+    description = __doc__ or "Process Google Sheets and merge authors."
     formatter = argparse.RawDescriptionHelpFormatter
+
     parser = argparse.ArgumentParser(description=description, formatter_class=formatter)
 
+    # Required --process-google with 2+ args: id + sheets
     parser.add_argument(
-        "id",
-        help="""ID of the google sheet like
-                                18wu9f4ov79YDMR1CTEciqAhCawJ7n47C8L9pTAxe""",
-    )
-    parser.add_argument(
-        "sheet",
+        "-p",
+        "--process-google",
         nargs="+",
-        help="""Sheet names  and ranges to process
-                             within the google sheet e.g. Model!A1:H""",
+        metavar=("ID", "SHEET"),
+        help="Process Google Sheet: provide the ID and one or more sheet ranges (e.g. Model!A1:D)",
     )
-    args = parser.parse_args()
-    sheetId = args.id
-    sheets = args.sheet
 
-    main(sheetId, sheets)
+    # Optional --merge-authors with one file
+    parser.add_argument(
+        "-m",
+        "--merge-authors",
+        metavar="AUTHOR_FILE",
+        help="Path to YAML file to use for merging authors",
+    )
+
+    args = parser.parse_args()
+
+    did_something = False
+
+    if args.process_google:
+        sheet_id = args.process_google[0]
+        sheet_ranges = args.process_google[1:]
+        process_google(sheet_id, sheet_ranges)
+        did_something = True
+
+    if args.merge_authors:
+        merge_authors(args.merge_authors)
+        did_something = True
+
+    if not did_something:
+        parser.print_help()
