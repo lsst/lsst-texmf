@@ -22,7 +22,7 @@ def load_authordb(file_name: str | None = None) -> AuthorDbYaml:
 
     with open(authordb_path) as adbfile:
         authordb_yaml = yaml.safe_load(adbfile)
-        print("Parsing into AuthorDbYaml object...\n")
+        print(f"Parsing into AuthorDbYaml object from {authordb_path}")
         adb = AuthorDbYaml.model_validate(authordb_yaml)
     return adb
 
@@ -97,16 +97,16 @@ if __name__ == "__main__":
 
     adb = load_authordb()
 
-    print("Successfully parsed AuthorDb with:\n")
-    print(f"  - {len(adb.affiliations)} affiliations\n")
-    print(f"  - {len(adb.emails)} email domains\n")
-    print(f"  - {len(adb.authors)} authors\n")
+    print("Successfully parsed AuthorDb with:")
+    print(f"  - {len(adb.affiliations)} affiliations")
+    print(f"  - {len(adb.emails)} email domains")
+    print(f"  - {len(adb.authors)} authors")
 
     file = dump_authordb(adb, "new_adb.yaml")
     print(f"Wrote {file}")
 
     adb = load_authordb(file)
-    print(f"Successfully parsed AuthorDb {file} with:\n")
-    print(f"  - {len(adb.affiliations)} affiliations\n")
-    print(f"  - {len(adb.emails)} email domains\n")
-    print(f"  - {len(adb.authors)} authors\n")
+    print(f"Successfully parsed AuthorDb {file} with:")
+    print(f"  - {len(adb.affiliations)} affiliations")
+    print(f"  - {len(adb.emails)} email domains")
+    print(f"  - {len(adb.authors)} authors")
