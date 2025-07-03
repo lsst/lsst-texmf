@@ -1,5 +1,6 @@
 setuptools
 algoliasearch<4.4.0
+ook
 pybtex
 pytest
 pylatexenc
