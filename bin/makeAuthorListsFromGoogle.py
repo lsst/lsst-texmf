@@ -294,7 +294,7 @@ def get_sheet(sheet_id: str, range: str) -> dict[str, Any]:
     return result
 
 
-def process_google(sheet_id, sheets) -> None:
+def process_google(sheet_id: str, sheets: str) -> None:
     """Grab the googlesheet and process data.
     will create new_authos new_afilliations and new_domains
     """
