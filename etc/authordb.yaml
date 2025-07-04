@@ -1,357 +1,2747 @@
 affiliations:
-  AAS: American Astronomical Society
-  Adler: The Adler Planetarium, 1300 South Lakeshore Ave., Chicago, IL 60605, USA
-  ALMA: Atacama Large Millimeter/submillimeter Array, San Pedro de Atacama, Antofagasta, Chile
-  AMNH: Department of Astrophysics, American Museum of Natural History, New York,
-    NY 10028, USA
-  ASTRON: ASTRON, Oude Hoogeveensedijk 4, 7991\,PD, Dwingeloo, The Netherlands
-  AWSS: Amazon Web Services, Seattle, WA 98121, USA
-  BNL: Brookhaven National Laboratory, Upton, NY 11973, USA
-  Belgrade-AO: Astronomical Observatory, Volgina 7, P.O.\ Box 74, 11060 Belgrade,
-    Serbia
-  Belgrade-Uni: Faculty of Mathematics, Department of Astronomy, University of Belgrade,
-    Studentski trg 16 Belgrade, Serbia
-  Belgrade-CS: Department of Informatics and Computer Science, Faculty of Mathematics,
-    University of Belgrade, Studentski trg 16, 11000 Belgrade, Serbia
-  Belldex: Belldex IT Consulting, Tucson, AZ 85742, USA
-  Berkeley-Astro: Astronomy Department,  University of California, 601 Campbell Hall,
-    Berkeley, CA 94720, USA
-  Berkeley-LBNL: Lawrence Berkeley National Laboratory, 1 Cyclotron Road, Berkeley,
-    CA 94720, USA
-  Berkeley-Space: Space Sciences Lab, University of California, 7 Gauss Way, Berkeley,
-    CA 94720-7450, USA
-  Bologna-Phys: Department of Physics and Astronomy (DIFA), University of Bologna, Via P. Gobetti 93/2, 40129, Bologna, Italy
-  Burwood: Burwood Group, 125 South Wacker Drive Suite 2950, Chicago, IL 60606, USA
-  CADC: Canadian Astronomy Data Centre, 5071 West Saanich Road, Victoria, British Columbia V9E 2E7, Canada
-  Cardiff: School of Physics and Astronomy, Cardiff University, The Parade, Cardiff, CF24 3AA, UK
-  CCA: Center for Computational Astrophysics, Flatiron Institute, 162 Fifth Ave, New York, NY,
-    10010, USA
-  CIEMAT: Centro de Investigaciones Energ\'eticas, Medioambientales y Tecnol\'ogicas, Av. Complutense 40, 28040 Madrid, Spain
-  CMU: McWilliams Center for Cosmology, Department of Physics, Carnegie Mellon University,
-    Pittsburgh, PA 15213, USA
-  CNRS: Centre national de la recherche scientifique, 3 Rue Michel Ange, 75016 Paris, France
-  Cochin: The Cochin College, Kerala, India 682002
-  CNCT: Consejo Nacional de Ciencia y Tecnolog\'ia, Av. Insurgentes Sur 1582.
-    Colonia Cr\'edito Constructor, Del. Benito   Ju\'arez C.P. 03940, M\'exico D.F. M\'exico
-  COOK: Cook Astronomical Consulting, 220 Duxbury Ct., San Ramon, CA 94583, USA
-  CONICET: Consejo Nacional de Investigaciones Cient\'{i}ficas y T\'{e}cnicas, Argentina
-  Columbia: Columbia University, 533 W. 218th St. New York, NY 10034
-  CTIO: Cerro Tololo Inter-American Observatory, La Serena, Chile
-  CUMBRES: Las Cumbres Observatory, 6740 Cortona Dr., Suite 102, Goleta, CA
-    93117, USA
-  CUNY: City University of New York
-  CUNYAMNH: City University of New York, American Museum of Natural History
-  CUNYCT: City University of New York, New York City College of Technology, USA
-  CUNYBM: Department of Science, CUNY Borough of Manhattan Community College, 199 Chambers
-    Street, New York, NY 10007, USA
-  CUNYL: Department of Physics and Astronomy, Lehman College, City University of New York,
-    NY 10468, USA
-  CUNY-Grad: The Graduate Center of the City University of New York, 365 Fifth Avenue,
-    New York, NY 10016, USA
-  CUNY-Hunter: City University of New York,  Hunter College, Hunter North Building, 695 Park Ave.,
-    New York, NY 10065, USA
-  Caltech-Astro: Astronomy Department, California Institute of Technology, 1200 East
-    California Blvd., Pasadena CA 91125, USA
-  Caltech: Division of Physics, Mathematics and Astronomy, California Institute of Technology,
-    Pasadena, CA 91125, USA
-  Caltech-CDDD: Center for Data Driven Discovery, California Institute of Technology,
-    Pasadena, CA 91125, USA
-  ChUniv: Astronomical Institute, Charles University, Praha, Czech Republic
-  Chicago: Department of Astronomy and Astrophysics, University of Chicago, 5640 South
-    Ellis Avenue, Chicago, IL 60637, USA
-  CIERA: Center for Interdisciplinary Exploration and Research in Astrophysics (CIERA) and
-    Department of Physics and Astronomy, Northwestern University, 1800 Sherman Road,
-    Evanston, IL 60201, USA
-  D4D: D4D CONSULTING LTD., Suite 1 Second Floor, Everdene House, Deansleigh Road,
-        Bournemouth, UK BH7 7DU
-  DACC: DACC New Mexico State University, Central Campus, Las Cruces, New Mexico, USA
-  DARK: DARK, Niels Bohr Institute, University of Copenhagen, Denmark
-  Delaware-PhyAst: Department of Physics and Astronomy, University of Delaware, Newark,
-    DE 19716-2570, USA
-  Delaware-Policy: Joseph R.\ Biden, Jr.,  School of Public Policy and Administration,
-    University of Delaware, Newark, DE 19717 USA
-  Delaware-DataSci: Data Science Institute, University of Delaware, Newark, DE 19717 USA
-  DGPS: Division of Geological and Planetary Sciences, California Institute of Technology,
-    Pasadena, CA 91125, USA
-  DIRAC: Institute for Data-intensive Research in Astrophysics and Cosmology, University of Washington,
-    Seattle, WA
-  DOE: Office of Science, U.S. Department of Energy, 1000 Independence Ave.,
-    SW Washington, DC 20585, USA
-  Drexel: Drexel University, 3141 Chestnut St, Philadelphia, PA 19104
-  Duke: Department of Physics, Duke University, Durham, NC 27708, USA
-  Edinburgh: University of Edinburgh, Old College, South Bridge, Edinburgh EH8 9YL
-  EdinburghIA: Institute for Astronomy, University of Edinburgh,  Royal Observatory, Blackford Hill, Edinburgh EH9 3HJ, UK
-  EPFL: Institute of Physics, Laboratory of Astrophysics, \'{E}cole Polytechnique
-    Fed\`{e}rale de Lausanne (EPFL), Observatoire de Sauverny, 1290 Versoix, Switzerland
-  ESO: European Southern Observatory, Karl-Schwarzschild-Strasse 2, 85748 Garching bei München, Germany
-  Exeter: University of Exeter, Stocker Road, Exeter EX4 4QL, UK
-  FacebookNE: Facebook,  14734 Friend Plaza, Springfield, NE 68059, USA
-  Fermilab: Fermi National Accelerator Laboratory, P. O. Box 500, Batavia, IL 60510, USA
-  FSU: Florida State University, Tallahassee, FL 32306
-  GCCL: German Centre for Cosmological Lensing, Astronomisches Institut,
-    Ruhr-Universit\"{a}t Bochum, Universit\"{a}tsstr. 150, 44801 Bochum, Germany
-  GeorgiaState: Georgia State University, Atlanta, GA 30302, USA
-  GMTO: Giant Magellan Telescope Organization (GMTO), 465 N.\ Halstead Street, Suite
-    250, Pasadena, CA 91107, USA
-  GMU: School of Physics, Astronomy and Computational Sciences, George Mason University,
-    4400 University Drive, Fairfax, VA 22030, USA
-  GeminiN: International Gemini Observatory/NSF NOIRLab, 670 N.\ A’ohoku Place, Hilo, HI 96720, USA
-  GeminiS: International Gemini Observatory/NSF NOIRLab, Casilla 603, La Serena, Chile
-  Goddard: Astrophysics Science Division, NASA Goddard Space Flight Center, Mail Code 661, Greenbelt, MD 20771, US
-  Google: Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA
-  Hamburg: Hamburger Sternwarte, Universitat Hamburg, Gojenbergsweg 112,
-    21029 Hamburg, Germany
-  Harvard-Astro: Department of Astronomy, Center for Astrophysics, Harvard University,
-    60 Garden St., Cambridge, MA 02138, USA
-  Harvard-CfA: Center for Astrophysics, Harvard \& Smithsonian, 60 Garden Street, Cambridge, MA 02138
-  Harvard-Physics: Department of Physics, Harvard University, 17 Oxford St., Cambridge
-    MA 02138, USA
-  Haverford: Department of Astronomy, Haverford College, 370 Lancaster Avenue, Haverford,
-    PA 19041, USA
-  Heidelberg: Zentrum f{\"u}r Astronomie der Universit{\"a}t Heidelberg, Astronomisches Rechen-Institut,
-    M{\"o}nchhofstr. 12-14, 69120 Heidelberg, Germany
-  Herts: Centre for Astrophysics Research, University of Hertfordshire, Hatfield, Hertfordshire, AL10 9AB, UK
-  IAFE: Instituto de Astronom\'ia y F\'isica del Espacio (IAFE), Av. Inte. G\"uiraldes 2620, C1428ZAA, Buenos Aires, Argentina
-  IN2P3-APC: Universit\'{e} Paris Cit\'{e}, CNRS, Astroparticule et Cosmologie, F-75013 Paris, France
-  IN2P3-APC-CEA: Universit\'{e} Paris Cit\'{e}, CNRS, CEA, Astroparticule et Cosmologie, F-75013 Paris, France
-  IN2P3-CC: CNRS, CC-IN2P3, 21 avenue Pierre de Coubertin, CS70202, F-69627 Villeurbanne cedex, France
-  IN2P3-CPPM: Aix Marseille Univ, CNRS/IN2P3, CPPM, Marseille, France
-  IN2P3-IJCLAB: Universit\'{e} Paris-Saclay, CNRS/IN2P3, IJCLab, Orsay, France
-  IN2P3-IP2I: Univ Lyon, Univ Claude Bernard Lyon 1, CNRS, IP2I Lyon/IN2P3, UMR 5822, F-69622 Villeurbanne, France
-  IN2P3-LAPP: Universit\'{e} Grenoble-Alpes, Universit\'{e} Savoie Mont Blanc, CNRS/IN2P3
-    Laboratoire d'Annecy-le-Vieux de Physique des Particules, 9 Chemin de Bellevue
-    -- BP 110, F-74940 Annecy-le-Vieux Cedex, France
-  IN2P3-LPCA: Universit\'e Clermont Auvergne, CNRS/IN2P3, Laboratoire de Physique de Clermont Auvergne,
-    F-63000 Clermont-Ferrand, France
-  IN2P3-LPNHE: Laboratoire de Physique Nucl\'{e}aire et des Hautes Energies, Universit\'{e}
-    Pierre et Marie Curie, Universit\'{e} Paris Cit\'{e}, CNRS/IN2P3, 4 place Jussieu, 75005 Paris, France
-  IN2P3-LPSC: Laboratoire de Physique Subatomique et de Cosmologie, Universit\'{e}
-    Grenoble-Alpes, CNRS/IN2P3, 53 av.\ des Martyrs, 38026 Grenoble cedex, France
-  IN2P3-LUPM: Laboratoire Univers et Particules de Montpellier (LUPM), Universit\'{e} de
-    Montpellier, CNRS/IN2P3, Place Eug\`{e}ne Bataillon, F-34095 Montpellier, France
-  IN2P3-UPMC: Sorbonne Universit\'{e}s, UPMC Univ Paris 06, UMR 7585, LPNHE, F-75005, Paris, France
-  INSU-AIM: Universit\'{e} Paris-Saclay, Universit\'{e} Paris Cit\'{e}, CEA, CNRS, AIM, 91191, Gif-sur-Yvette, France
-  IPAC: Caltech/IPAC, California Institute of Technology, MS 100-22, Pasadena, CA 91125-2200, USA
-  IRAM: Instituto de Radioastronom\'ia Milim\'{e}trica, Av.\ Divina Pastora 7, N\'{u}cleo
-    Central, E-18012 Granada, Spain
-  Illinois: University of Illinois, Physics and Astronomy Departments, 1110 W.\ Green
-    St., Urbana, IL  61801, USA
-  Illinois-astro: University of Illinois, Department of Astronomy, 1110 W.\ Green
-    St., Urbana, IL  61801, USA
-  INAF-IASF-Pa: INAF Istituto di Astrofisica Spaziale e Fisica Cosmica di Palermo, Via Ugo la Malfa 153, 90146, Palermo, Italy
-  INAF-OAC: INAF Osservatorio Astronomico di Capodimonte, Salita Moiariello 16, 80131, Napoli, Italy
-  INAF-OAS: INAF Osservatorio di Astrofisica e Scienza dello Spazio Bologna, Via P. Gobetti 93/3, 40129, Bologna, Italy
-  INAF-OAT: INAF Osservatorio Astronomico di Trieste, Via Giovan Battista Tiepolo 11, 34143, Trieste, Italy
-  INAF-Palermo: INAF - Osservatorio Astronomico di Palermo, Piazza del Parlamento 1 90134, Palermo, Italy
-  INAF-Rome: Istituto Nazionale di Astrofisica, Viale del Parco Mellini 84, 00136 Rome, Italy
-  IUPUI: IUPUI, 535 W. Michigan Street, IT 400, Indianapolis, IN, USA
-  JHU: Department of Physics and Astronomy, The John Hopkins University, 3701 San
-    Martin Drive, Baltimore, MD 21218, USA
-  JPL: Jet Propulsion Laboratory, California Institute of Technology, Pasadena, CA
-    91109, USA
-  JPMORGAN: J.P. Morgan, New York, NY, USA
-  JSI: Joint Space-Science Institute, University of Maryland, College Park, MD 20742, USA
-  JSickCodes: J.Sick Codes Inc., Penetanguishene, Ontario, Canada
-  KECK: W. M. Keck Observatory, 65-1120 Mamalahoa Hwy.  Kamuela, HI 96743, USA
-  KLOA: Key Laboratory of Optical Astronomy, National Astronomical Observatories,
-    Chinese Academy of Sciences, 20A Datun Road, Chaoyang District, Beijing 100012,
-    People's Republic of China
-  LancasterU: Lancaster University, Lancaster, UK
-  Leiden: Leiden Observatory, Leiden University, Postbus 9513, 2300 RA, Leiden, The Netherlands
-  Liege: Institut d'Astrophysique et de G\'{e}ophysique, Universit\'{e} de Li\`{e}ge,
-    All\'{e}e du 6 Ao\^{u}t 19c, 4000 Li\`{e}ge, Belgium
-  LINEA: Laborat\'{o}rio Interinstitucional de e-Astronomia, Rua General Jos\'e Cristino, 77,
-    Rio de Janeiro, RJ, 20921-400, Brazil
-  LLNL: Lawrence Livermore National Laboratory, 7000 East Avenue, Livermore, CA 94550,
-    USA
-  LOC: Library of Congress, 101 Independence Ave.\ SE, Washington, DC 20540, USA
-  Longhorn: Longhorn Industries, Ellensburg, WA 98926, USA
-  Lowell: 1400 W.\ Mars Hill Rd., Lowell Observatory, Flagstaff, AZ 86001, USA
-  LSSTC: The LSST Corporation
-  Maryland: University of Maryland, College Park, MD 20742
-  Maryland-astro: Department of Astronomy, University of Maryland, College Park, MD 20742, USA
-  MMTO: MMT Observatory, 1540 E. Second Street, University of Arizona, Tucson, AZ 85721-0064, USA
-  Napoli: Department of Physics "E. Pancini", University Federico II of Napoli, Via Cintia, 80126 Napoli, Italy
-  NAOChina: National Astronomical Observatories, Chinese Academy of Sciences, A20
-    Datun Rd, Chaoyang District, Beijing 100012, People's Republic of China
-  NAOJ: National Astronomical Observatory of Japan, 2-21-1 Osawa, Mitaka, Tokyo 181-8588, Japan
-  NAOJ-Chile: National Astronomical Observatory of Japan, Chile Observatory, Los Abedules 3085, Vitacura, Santiago, Chile
-  NASA: National Aeronautics and Space Administration, Goddard Space Flight Center, Greenbelt, Maryland, USA
-  NAU: Department of Astronomy and Planetary Science, Northern Arizona University, P.O.\ Box
-    6010, Flagstaff, AZ 86011, USA
-  NCNRP: National Centre of Nuclear Research, Andrzeja So\l{}tana 7, 05-400 Otwock, Poland
-  NCSA: NCSA, University of Illinois at Urbana-Champaign, 1205 W.\ Clark St., Urbana,
-    IL 61801, USA
-  NOIRLab: NSF NOIRLab, 950 N.\ Cherry Ave., Tucson, AZ 85719, USA
-  NOIRLabC: NSF NOIRLab, Casilla 603, La Serena, Chile
-  NovaGorica: Center for Astrophysics and Cosmology, University of Nova Gorica, Vipavska 13
-    5000 Nova Gorica, Slovenia
-  NRAO: National Radio Astronomy Observstory, 520 Edgemont Road, Charlottesville, VA 22903, USA
-  NRC: National Research Council Canada, 5071 West Saanich Road, Victoria, Canada
-  NSF: National Science Foundation, 2415 Eisenhower Avenue, Alexandria, Virginia 22314, USA
-  NSO: National Solar Observatory, 3665 Discovery Drive, Boulder, CO 80303, USA
-  NYU: New York University, New York,
-  NYU-CCPP: Center for Cosmology \& Particle Physics, New York University,
-    726 Broadway, New York, 10003, USA
-  NYU-CUSP: Center for Urban Science \& Progress, New York University, Brooklyn, NY
-    11021, USA
-  OKC: Oskar Klein Centre, Department of Physics, Stockholm University, SE 106 91
-    Stockholm, Sweden
-  OSU: Center for Cosmology and Astro-Particle Physics, The Ohio State University,
-    Columbus, OH 43210, USA
-  Olympic: Olympic College, 1600 Chester Ave., Bremerton, WA 98337-1699, USA
-  Oxford: Department of Physics, University of Oxford, Denys Wilkinson Building, Keble
-    Road, Oxford, OX1 3RH, UK
-  PSI: Planetary Science Institute, 1700 East Fort Lowell Road, Suite 106, Tucson, AZ 85719, USA
-  PSU: Department of Astronomy and Astrophysics, The Pennsylvania State University,
-    525 Davey Lab, University Park, PA 16802, USA
-  PSUCDS: Institute for Computational \& Data Sciences, The Pennsylvania State University, University Park, PA 16802, USA
-  PSUGC: Institute for Gravitation and the Cosmos, The Pennsylvania State University, University Park, PA 16802, USA
-  Peay: Austin Peay State University, Clarksville, TN 37044, USA
-  Pitts: Department of Physics and Astronomy, University of Pittsburgh, 3941 O'Hara
-    Street, Pittsburgh, PA 15260, USA
-  Praha-ASCR: Institute of Physics, Academy of Sciences of the Czech Republic, Na
-    Slovance 2, 182 21 Praha 8, Czech Republic
-  Princeton-Astro: Department of Astrophysical Sciences, Princeton University, Princeton,
-    NJ 08544, USA
-  Princeton: Princeton University, Princeton, NJ 08544, USA
-  Purdue-Astro: Department of Physics and Astronomy, Purdue University, 525 Northwestern
-    Ave., West Lafayette, IN  47907, USA
-  Radboud-Astro: Department of Astrophysics/IMAPP, Radboud University Nijmegen, P.O.\
-    Box 9010, 6500 GL Nijmegen, The Netherlands
-  Rider: Department of Chemistry, Biochemistry, and Physics, Rider University, Lawrenceville,
-    NJ 08648, USA
-  RubinObs: Vera C.\ Rubin Observatory Project Office, 950 N.\ Cherry Ave., Tucson, AZ  85719, USA
-  RubinObsC: Vera C.\ Rubin Observatory, Avenida Juan Cisternas \#1500, La Serena, Chile
-  RubinOps: Vera C.\ Rubin Observatory/NSF NOIRLab, 950 N.\ Cherry Ave., Tucson, AZ  85719, USA
-  RubinOpsC: Vera C.\ Rubin Observatory/NSF NOIRLab, Casilla 603, La Serena, Chile
-  Rutgers: Department of Physics and Astronomy, Rutgers University, 136 Frelinghuysen
-    Rd., Piscataway, NJ 08854, USA
-  Santiago-dept: Departamento de Ciencias Fisicas, Universidad Andres Bello Fernandez
-    Concha 700, Las Condes, Santiago, Chile
-  Santiago-Millenium: Millennium Institute of Astrophysics, Nuncio Monse{\~{n}}or S{\'{o}}tero
-    Sanz 100, Of 104, Providencia, Santiago, Chile
-  SAO: Smithsonian Astrophysical Observatory, 60 Garden St., Cambridge MA 02138, USA
-  SETI: SETI Institute, 339 Bernardo Avenue, Suite 200, Mountain View, CA 94043, USA
-  SLAC: SLAC National Accelerator Laboratory, 2575 Sand Hill Rd., Menlo Park, CA
-    94025, USA
-  SLAC-Kavli: Kavli Institute for Particle Astrophysics and Cosmology, SLAC National
-    Accelerator Laboratory, 2575 Sand Hill Rd., Menlo Park, CA 94025, USA
-  Southampton: University of Southampton, Hartley Library B12, University Rd,
-    Highfield, Southampton SO17 1BJ, United Kingdom
-  soZen: soZen Inc., 105 Clearview Dr, Penfield, NY 14526
-  STFC-RAL: Science and Technology Facilities Council, Rutherford Appleton Laboratory, Harwell, UK
-  Stanford: Stanford University, 450 Jane Stanford Way, Stanford, CA 94305, USA
-  Stanford-AeroAstro: Department of Aeronautics and Astronautics, Stanford University,
-    Stanford, CA 94305, USA
-  StonyBrookU: Department of Physics and Astronomy, Stony Brook University, Stony Brook, NY 11794, USA
-  STScI: Space Telescope Science Institute, 3700 San Martin Drive, Baltimore, MD 21218,
-    USA
-  SVC: Saint Vincent College, Department of Physics, 300 Fraser Purchase Road, Latrobe,
-    PA 15650, USA
-  TACC: Texas Advanced Computing Center, The University of Texas at Austin, USA.
-  TAMU-inst: George P.~and Cynthia Woods Mitchell Institute for Fundamental Physics and Astronomy,
-    Texas A\&M University, College Station, TX 77843, USA
-  TAMU: Department of Physics and Astronomy, Texas A\&M University, College Station, TX 77843, USA
-  TMT: TMT International Observatory
-  TTU: Department of Physics and Astronomy, Texas Tech University, Lubbock, TX 79409, USA
-  TTU-media: College of Media and Communication, Texas Tech University, Lubbock, TX 79409, USA
-  UA: University of Arizona, Tucson, AZ 85721, USA
-  UA-CompSci: Department of Computer Science, The University of Arizona, 1040 E.\
-    4th St., Tucson, AZ 85719, USA
-  UAM: Universidad Aut\'onoma de Madrid, Madrid, Madrid, ES
-  UA-Astro: University of Arizona, Department of Astronomy and Steward Observatory, 933 N.\ Cherry Ave, Tucson, AZ 85721, USA
-  UA-Physics: Department of Physics, University of Arizona, 1118 E.\ Fourth Street,
-    Tucson, AZ 85721, USA
-  UA-Steward: Steward Observatory, The University of Arizona, 933 N.\ Cherry Ave.,
-    Tucson, AZ 85721, USA
-  UCDavis: Physics Department, University of California, One Shields Avenue, Davis,
-    CA 95616, USA
-  UCIrvine-Astro: Department of Physics and Astronomy, University of California, 4129
-    Frederick Reines Hall, Irvine, CA 92697, USA
-  UCIrvine-CC: Center for Cosmology, University of California, Irvine, CA 92697, USA
-  UCL: University College London, Gower St, London WC1E 6BT, United Kingdom
-  UCO: UC Observatories, UC Santa Cruz, 1156 High Street, Santa Cruz, CA 95064
-  UCSB: University of California, Santa Barbara, CA 93106-9530, USA
-  UCSC: Santa Cruz Institute for Particle Physics and Physics Department, University
-    of California--Santa Cruz, 1156 High St., Santa Cruz, CA 95064, USA
-  UdG: Departamento de F\'isica, DCI, Campus Le\'on, Universidad de Guanajuato, 37150, Le\'on, Guanajuato, M\'exico
-  UniAndes: Universidad de los Andes, Cra 1 Num. 18A - 12 Bogot\'{a} - Colombia
-  UNAM: Universidad Nacional Aut\'{o}noma de M\'{e}xico
-  UNAM-physics: Departamento de F\'isica, Facultad de Ciencias, Universidad Nacional Aut\'onoma de M\'exico,
-    Ciudad Universitaria, CDMX, 04510, M\'exico
-  UNAM-astro: Instituto de Astronom\'ia sede Ensenada, Universidad Nacional Aut\'onoma de M\'exico, Km 107,
-    Carret. Tij.-Ens., Ensenada, 22060, BC, M\'exico
-  UNED: Dpt. of Artificial Intelligence, Universidad Nacional de Educaci\'{o}n a Distancia, Madrid, Madrid, ES
-  UPenn: Department of Physics \& Astronomy, University of Pennsylvania, 209 South
-    33rd Street, Philadelphia, PA 19104-6396, USA
-  URijeka: Faculty of Physics, University of Rijeka, Radmile Matej\v{c}i\'{c} 2, Rijeka, Croatia
-  Utah: Department of Physics and Astronomy, University of Utah, Salt Lake City, UT 84112, USA
-  UToronto: University of Toronto, 27 King's College Circle, Toronto, Ontario M5S 1A1 Canada
-  USNO: US Naval Observatory Flagstaff Station, 10391 Naval Observatory Road, Flagstaff,
-    AZ 86001, USA
-  UVa: Department of Astronomy, University of Virginia, Charlottesville, VA 22904,
-    USA
-  Vdb: Vanderbilt University, Nashville, Tennessee 37240
-  Washington: University of Washington, Dept.\ of Astronomy, Box 351580, Seattle,
-    WA 98195, USA
-  Washington-Dirac: Department of Astronomy and the DIRAC Institute, University of Washington,
-    3910 15th Avenue NE, Seattle, WA 98195, USA
-  WestWashington: Western Washington University, 516 High Street, Bellingham, WA 98225,
-    USA
-  WisconsinMadison: Department of Physics, University of Wisconsin-Madison, Madison,
-    WI 53706, USA
-  Yale: Astronomy Department, Yale University, New Haven, CT 06520, USA
-  Yonsei: Department of Astronomy, Yonsei University, 50 Yonsei-ro, Seoul 03722, Republic of Korea
-  ZurichPhys: Physik-Institut, University of Zurich, Winterthurerstrasse 190, 8057 Zurich, Switzerland
-  _: Placeholder used for collective author that will not be shown
-emails:
-  _: none.com
-  BNL: bnl.gov
-  cern: cern.ch
-  Duke: duke.edu
-  EdinburghIA: ed.ac.uk
-  Exeter: exeter.ac.uk
-  Fermilab: fnal.gov
-  gmail: gmail.com
-  Harvard-CfA: cfa.harvard.edu
-  IN2P3-APC: apc.in2p3.fr
-  IN2P3-CC: in2p3.fr
-  IN2P3-CPPM: cppm.in2p3.fr
-  IN2P3-IJCLAB: ijclab.in2p3.fr
-  IN2P3-IP2I: ip2i.in2p3.fr
-  IN2P3-LAPP: lapp.in2p3.fr
-  IN2P3-LPCA: lpca.in2p3.fr
-  IN2P3-LPNHE: lpnhe.in2p3.fr
-  IN2P3-LPSC: lpsc.in2p3.fr
-  IN2P3-LUPM: lupm.in2p3.fr
-  IPAC: ipac.caltech.edu
-  LancasterU: lancaster.ac.uk
-  LSST-list: lists.lsst.org
-  NAOJ: nao.ac.jp
-  NCSA: illinois.edu
-  NOIRLab: noirlab.edu
-  NOIRLabC: noirlab.edu
-  Pitts: pitt.edu
-  Princeton: princeton.edu
-  Princeton-Astro: astro.princeton.edu
-  RubinObs: lsst.org
-  RubinObsC: lsst.org
-  RubinOps: noirlab.edu
-  RubinOpsC: noirlab.edu
-  SLAC-Kavli: slac.stanford.edu
-  SLAC: slac.stanford.edu
-  STFC-RAL: stfc.ac.uk
-  Stanford: stanford.edu
-  StonyBrookU: stonybrook.edu
-  Tekniker: tekniker.es
-  UCSC: ucsc.edu
-  URijeka: uniri.hr
-  Washington-Dirac: uw.edu
-  Washington: uw.edu
-  YUD: yonsei.ac.kr
-  ZurichPhys: physik.uzh.ch
-
+  AAS:
+    address:
+      city: null
+      country_code: USA
+      example_expanded: American Astronomical Society
+      postcode: ''
+      state: ''
+      street: ''
+    department: null
+    email: null
+    institute: American Astronomical Society
+    ror_id: null
+  ALMA:
+    address:
+      city: San Pedro de Atacama, Antofagasta
+      country_code: Chile
+      example_expanded: Atacama Large Millimeter/submillimeter Array, San Pedro de
+        Atacama, Antofagasta, Chile
+      postcode: ''
+      state: ''
+      street: ''
+    department: null
+    email: null
+    institute: Atacama Large Millimeter/submillimeter Array
+    ror_id: null
+  AMNH:
+    address:
+      city: New York
+      country_code: USA
+      example_expanded: Department of Astrophysics, American Museum of Natural History,
+        New York, NY 10028, USA
+      postcode: '10028'
+      state: NY
+      street: ''
+    department: Department of Astrophysics,
+    email: null
+    institute: American Museum of Natural History
+    ror_id: null
+  ASTRON:
+    address:
+      city: Dwingeloo
+      country_code: The Netherlands
+      example_expanded: ASTRON, Oude Hoogeveensedijk 4, 7991 PD, Dwingeloo, The Netherlands
+      postcode: 7991 PD
+      state: ''
+      street: Oude Hoogeveensedijk 4
+    department: null
+    email: null
+    institute: ASTRON
+    ror_id: null
+  AWSS:
+    address:
+      city: Seattle
+      country_code: USA
+      example_expanded: Amazon Web Services, Seattle, WA 98121, USA
+      postcode: '98121'
+      state: WA
+      street: ''
+    department: null
+    email: null
+    institute: Amazon Web Services
+    ror_id: null
+  Adler:
+    address:
+      city: Chicago
+      country_code: USA
+      example_expanded: The Adler Planetarium, 1300 South Lakeshore Ave., Chicago,
+        IL 60605, USA
+      postcode: '60605'
+      state: IL
+      street: 1300 South Lakeshore Ave.
+    department: null
+    email: null
+    institute: The Adler Planetarium
+    ror_id: null
+  BNL:
+    address:
+      city: Upton
+      country_code: USA
+      example_expanded: Brookhaven National Laboratory, Upton, NY 11973, USA
+      postcode: '11973'
+      state: NY
+      street: ''
+    department: null
+    email: bnl.gov
+    institute: Brookhaven National Laboratory
+    ror_id: null
+  Belgrade-AO:
+    address:
+      city: Belgrade
+      country_code: Serbia
+      example_expanded: Astronomical Observatory, Volgina 7, P.O.\ Box 74, 11060 Belgrade,
+        Serbia
+      postcode: '11060'
+      state: ''
+      street: P.O.\ Box 74, Volgina 7
+    department: null
+    email: null
+    institute: Astronomical Observatory
+    ror_id: null
+  Belgrade-CS:
+    address:
+      city: Belgrade
+      country_code: Serbia
+      example_expanded: Department of Informatics and Computer Science, Faculty of
+        Mathematics, University of Belgrade, Studentski trg 16, 11000 Belgrade, Serbia
+      postcode: '11000'
+      state: ''
+      street: Studentski trg 16
+    department: Department of Informatics and Computer Science, Faculty of Mathematics
+    email: null
+    institute: University of Belgrade
+    ror_id: null
+  Belgrade-Uni:
+    address:
+      city: Belgrade
+      country_code: Serbia
+      example_expanded: Faculty of Mathematics, Department of Astronomy, University
+        of Belgrade, Studentski trg 16 Belgrade, Serbia
+      postcode: '11000'
+      state: ''
+      street: Studentski trg 16
+    department: Faculty of Mathematics, Department of Astronomy
+    email: null
+    institute: University of Belgrade
+    ror_id: null
+  Belldex:
+    address:
+      city: Tucson
+      country_code: USA
+      example_expanded: Belldex IT Consulting, Tucson, AZ 85742, USA
+      postcode: '85742'
+      state: AZ
+      street: ''
+    department: null
+    email: null
+    institute: Belldex IT Consulting
+    ror_id: null
+  Berkeley-Astro:
+    address:
+      city: Berkeley
+      country_code: USA
+      example_expanded: Astronomy Department,  University of California, 601 Campbell
+        Hall, Berkeley, CA 94720, USA
+      postcode: '94720'
+      state: CA
+      street: 601 Campbell Hall
+    department: Astronomy Department,
+    email: null
+    institute: University of California
+    ror_id: null
+  Berkeley-LBNL:
+    address:
+      city: Berkeley
+      country_code: USA
+      example_expanded: Lawrence Berkeley National Laboratory, 1 Cyclotron Road, Berkeley,
+        CA 94720, USA
+      postcode: '94720'
+      state: CA
+      street: 1 Cyclotron Road
+    department: null
+    email: null
+    institute: Lawrence Berkeley National Laboratory
+    ror_id: null
+  Berkeley-Space:
+    address:
+      city: Berkeley
+      country_code: USA
+      example_expanded: Space Sciences Lab, University of California, 7 Gauss Way,
+        Berkeley, CA 94720-7450, USA
+      postcode: 94720-7450
+      state: CA
+      street: 7 Gauss Way
+    department: Space Sciences Lab
+    email: null
+    institute: University of California
+    ror_id: null
+  Bologna-Phys:
+    address:
+      city: Bologna
+      country_code: Italy
+      example_expanded: Department of Physics and Astronomy (DIFA), University of
+        Bologna, Via P. Gobetti 93/2, 40129, Bologna, Italy
+      postcode: '40129'
+      state: ''
+      street: Via P. Gobetti 93/2
+    department: Department of Physics and Astronomy (DIFA)
+    email: null
+    institute: University of Bologna
+    ror_id: null
+  Burwood:
+    address:
+      city: Chicago
+      country_code: USA
+      example_expanded: Burwood Group, 125 South Wacker Drive Suite 2950, Chicago,
+        IL 60606, USA
+      postcode: '60606'
+      state: IL
+      street: 125 South Wacker Drive Suite 2950
+    department: null
+    email: null
+    institute: Burwood Group
+    ror_id: null
+  CADC:
+    address:
+      city: Victoria
+      country_code: Canada
+      example_expanded: Canadian Astronomy Data Centre, 5071 West Saanich Road, Victoria,
+        British Columbia V9E 2E7, Canada
+      postcode: V9E 2E7
+      state: BC
+      street: 5071 West Saanich Road
+    department: null
+    email: null
+    institute: Canadian Astronomy Data Centre
+    ror_id: null
+  CCA:
+    address:
+      city: New York
+      country_code: USA
+      example_expanded: Center for Computational Astrophysics, Flatiron Institute,
+        162 Fifth Ave, New York, NY, 10010, USA
+      postcode: '10010'
+      state: NY
+      street: 162 Fifth Ave
+    department: Center for Computational Astrophysics
+    email: null
+    institute: Flatiron Institute
+    ror_id: null
+  CIEMAT:
+    address:
+      city: Madrid
+      country_code: Spain
+      example_expanded: Centro de Investigaciones Energeticas, Medioambientales y
+        Tecnologicas, Av. Complutense 40, 28040 Madrid, Spain
+      postcode: '28040'
+      state: ''
+      street: Av. Complutense 40
+    department: null
+    email: null
+    institute: Centro de Investigaciones Energeticas, Medioambientales y Tecnologicas
+    ror_id: null
+  CIERA:
+    address:
+      city: Evanston
+      country_code: USA
+      example_expanded: Center for Interdisciplinary Exploration and Research in Astrophysics
+        (CIERA) and Department of Physics and Astronomy, Northwestern University,
+        1800 Sherman Road, Evanston, IL 60201, USA
+      postcode: '60201'
+      state: IL
+      street: 1800 Sherman Road
+    department: Center for Interdisciplinary Exploration and Research in Astrophysics
+      (CIERA) and Department of Physics and Astronomy
+    email: null
+    institute: Northwestern University
+    ror_id: null
+  CMU:
+    address:
+      city: Pittsburgh
+      country_code: USA
+      example_expanded: McWilliams Center for Cosmology, Department of Physics, Carnegie
+        Mellon University, Pittsburgh, PA 15213, USA
+      postcode: '15213'
+      state: PA
+      street: ''
+    department: McWilliams Center for Cosmology, Department of Physics
+    email: null
+    institute: Carnegie Mellon University
+    ror_id: null
+  CNCT:
+    address:
+      city: Mexico City
+      country_code: Mexico
+      example_expanded: Consejo Nacional de Ciencia y Tecnologia, Av. Insurgentes
+        Sur 1582. Colonia Credito Constructor, Del. Benito Juarez C.P. 03940, Mexico
+        D.F. Mexico
+      postcode: C.P. 03940
+      state: ''
+      street: Av. Insurgentes Sur 1582. Colonia Credito Constructor, Del. Benito Juarez
+    department: null
+    email: null
+    institute: Consejo Nacional de Ciencia y Tecnologia
+    ror_id: null
+  CNRS:
+    address:
+      city: Paris
+      country_code: France
+      example_expanded: Centre national de la recherche scientifique, 3 Rue Michel
+        Ange, 75016 Paris, France
+      postcode: '75016'
+      state: ''
+      street: 3 Rue Michel Ange
+    department: null
+    email: null
+    institute: Centre national de la recherche scientifique
+    ror_id: null
+  CONICET:
+    address:
+      city: null
+      country_code: Argentina
+      example_expanded: Consejo Nacional de Investigaciones Cientificas y Tecnicas,
+        Argentina
+      postcode: ''
+      state: ''
+      street: ''
+    department: null
+    email: null
+    institute: Consejo Nacional de Investigaciones Cientificas y Tecnicas
+    ror_id: null
+  COOK:
+    address:
+      city: San Ramon
+      country_code: USA
+      example_expanded: Cook Astronomical Consulting, 220 Duxbury Ct., San Ramon,
+        CA 94583, USA
+      postcode: '94583'
+      state: CA
+      street: 220 Duxbury Ct.
+    department: null
+    email: null
+    institute: Cook Astronomical Consulting
+    ror_id: null
+  CTIO:
+    address:
+      city: La Serena
+      country_code: Chile
+      example_expanded: Cerro Tololo Inter-American Observatory, La Serena, Chile
+      postcode: ''
+      state: ''
+      street: ''
+    department: null
+    email: null
+    institute: Cerro Tololo Inter-American Observatory
+    ror_id: null
+  CUMBRES:
+    address:
+      city: Goleta
+      country_code: USA
+      example_expanded: Las Cumbres Observatory, 6740 Cortona Dr., Suite 102, Goleta,
+        CA 93117, USA
+      postcode: '93117'
+      state: CA
+      street: 6740 Cortona Dr., Suite 102
+    department: null
+    email: null
+    institute: Las Cumbres Observatory
+    ror_id: null
+  CUNY:
+    address:
+      city: null
+      country_code: USA
+      example_expanded: City University of New York
+      postcode: ''
+      state: ''
+      street: ''
+    department: null
+    email: null
+    institute: City University of New York
+    ror_id: null
+  CUNY-Grad:
+    address:
+      city: New York
+      country_code: USA
+      example_expanded: The Graduate Center of the City University of New York, 365
+        Fifth Avenue, New York, NY 10016, USA
+      postcode: '10016'
+      state: NY
+      street: 365 Fifth Avenue
+    department: The Graduate Center of the City University of New York
+    email: null
+    institute: City University of New York
+    ror_id: null
+  CUNY-Hunter:
+    address:
+      city: New York
+      country_code: USA
+      example_expanded: City University of New York,  Hunter College, Hunter North
+        Building, 695 Park Ave., New York, NY 10065, USA
+      postcode: '10065'
+      state: NY
+      street: 695 Park Ave.
+    department: Hunter College, Hunter North Building
+    email: null
+    institute: City University of New York
+    ror_id: null
+  CUNYAMNH:
+    address:
+      city: New York
+      country_code: USA
+      example_expanded: City University of New York, American Museum of Natural History
+      postcode: ''
+      state: NY
+      street: ''
+    department: American Museum of Natural History
+    email: null
+    institute: City University of New York
+    ror_id: null
+  CUNYBM:
+    address:
+      city: New York
+      country_code: USA
+      example_expanded: Department of Science, CUNY Borough of Manhattan Community
+        College, 199 Chambers Street, New York, NY 10007, USA
+      postcode: '10007'
+      state: NY
+      street: 199 Chambers Street
+    department: Department of Science
+    email: null
+    institute: CUNY Borough of Manhattan Community College
+    ror_id: null
+  CUNYCT:
+    address:
+      city: New York
+      country_code: USA
+      example_expanded: City University of New York, New York City College of Technology,
+        USA
+      postcode: ''
+      state: NY
+      street: ''
+    department: New York City College of Technology
+    email: null
+    institute: City University of New York
+    ror_id: null
+  CUNYL:
+    address:
+      city: New York
+      country_code: USA
+      example_expanded: Department of Physics and Astronomy, Lehman College, City
+        University of New York, NY 10468, USA
+      postcode: '10468'
+      state: NY
+      street: ''
+    department: Department of Physics and Astronomy, Lehman College
+    email: null
+    institute: City University of New York
+    ror_id: null
+  Caltech:
+    address:
+      city: Pasadena
+      country_code: USA
+      example_expanded: Division of Physics, Mathematics and Astronomy, California
+        Institute of Technology, Pasadena, CA 91125, USA
+      postcode: '91125'
+      state: CA
+      street: null
+    department: Division of Physics, Mathematics and Astronomy
+    email: null
+    institute: California Institute of Technology
+    ror_id: null
+  Caltech-Astro:
+    address:
+      city: Pasadena
+      country_code: USA
+      example_expanded: Astronomy Department, California Institute of Technology,
+        1200 East California Blvd., Pasadena CA 91125, USA
+      postcode: 91125'
+      state: CA
+      street: 1200 East California Blvd.
+    department: null
+    email: null
+    institute: Astronomy Department, California Institute of Technology
+    ror_id: null
+  Caltech-CDDD:
+    address:
+      city: Pasadena
+      country_code: USA
+      example_expanded: Center for Data Driven Discovery, California Institute of
+        Technology, Pasadena, CA 91125, USA
+      postcode: '91125'
+      state: CA
+      street: null
+    department: Center for Data Driven Discovery
+    email: null
+    institute: California Institute of Technology
+    ror_id: null
+  Cardiff:
+    address:
+      city: CF24 3AA
+      country_code: UK
+      example_expanded: School of Physics and Astronomy, Cardiff University, The Parade,
+        Cardiff, CF24 3AA, UK
+      postcode: CF24 3AA
+      state: ''
+      street: The Parade
+    department: School of Physics and Astronomy
+    email: null
+    institute: Cardiff University
+    ror_id: null
+  ChUniv:
+    address:
+      city: Praha
+      country_code: Czech Republic
+      example_expanded: Astronomical Institute, Charles University, Praha, Czech Republic
+      postcode: ''
+      state: ''
+      street: ''
+    department: Astronomical Institute
+    email: null
+    institute: Charles University
+    ror_id: null
+  Chicago:
+    address:
+      city: Chicago
+      country_code: USA
+      example_expanded: Department of Astronomy and Astrophysics, University of Chicago,
+        5640 South Ellis Avenue, Chicago, IL 60637, USA
+      postcode: '60637'
+      state: IL
+      street: 5640 South Ellis Avenue
+    department: Department of Astronomy and Astrophysics
+    email: null
+    institute: University of Chicago
+    ror_id: null
+  Cochin:
+    address:
+      city: null
+      country_code: India
+      example_expanded: The Cochin College, Kerala, India 682002
+      postcode: '682002'
+      state: ''
+      street: ''
+    department: null
+    email: null
+    institute: The Cochin College
+    ror_id: null
+  Columbia:
+    address:
+      city: New York
+      country_code: USA
+      example_expanded: Columbia University, 533 W. 218th St. New York, NY 10034
+      postcode: '10034'
+      state: NY
+      street: 533 W. 218th St.
+    department: null
+    email: null
+    institute: Columbia University
+    ror_id: null
+  D4D:
+    address:
+      city: Bournemouth
+      country_code: UK
+      example_expanded: D4D CONSULTING LTD., Suite 1 Second Floor, Everdene House,
+        Deansleigh Road, Bournemouth, UK BH7 7DU
+      postcode: BH7 7DU
+      state: ''
+      street: Suite 1 Second Floor, Everdene House, Deansleigh Road
+    department: null
+    email: null
+    institute: D4D CONSULTING LTD.
+    ror_id: null
+  DACC:
+    address:
+      city: Las Cruces
+      country_code: USA
+      example_expanded: DACC New Mexico State University, Central Campus, Las Cruces,
+        New Mexico, USA
+      postcode: ''
+      state: NM
+      street: ''
+    department: "Do\xF1a Ana Community College, Central Campus"
+    email: null
+    institute: New Mexico State University
+    ror_id: null
+  DARK:
+    address:
+      city: null
+      country_code: USA
+      example_expanded: DARK, Niels Bohr Institute, University of Copenhagen, Denmark
+      postcode: ''
+      state: ''
+      street: Denmark
+    department: DARK, Niels Bohr Institute
+    email: null
+    institute: University of Copenhagen
+    ror_id: null
+  DGPS:
+    address:
+      city: Pasadena
+      country_code: USA
+      example_expanded: Division of Geological and Planetary Sciences, California
+        Institute of Technology, Pasadena, CA 91125, USA
+      postcode: '91125'
+      state: CA
+      street: null
+    department: Division of Geological and Planetary Sciences
+    email: null
+    institute: California Institute of Technology
+    ror_id: null
+  DIRAC:
+    address:
+      city: Seattle
+      country_code: USA
+      example_expanded: Institute for Data-intensive Research in Astrophysics and
+        Cosmology, University of Washington, Seattle, WA
+      postcode: ''
+      state: WA
+      street: ''
+    department: Institute for Data-intensive Research in Astrophysics and Cosmology
+    email: null
+    institute: University of Washington
+    ror_id: null
+  DOE:
+    address:
+      city: SW Washington
+      country_code: USA
+      example_expanded: Office of Science, U.S. Department of Energy, 1000 Independence
+        Ave., SW Washington, DC 20585, USA
+      postcode: '20585'
+      state: DC
+      street: 1000 Independence Ave.
+    department: null
+    email: null
+    institute: Office of Science, U.S. Department of Energy
+    ror_id: null
+  Delaware-DataSci:
+    address:
+      city: Newark
+      country_code: USA
+      example_expanded: Data Science Institute, University of Delaware, Newark, DE
+        19717 USA
+      postcode: '19717'
+      state: DE
+      street: ''
+    department: Data Science Institute
+    email: null
+    institute: University of Delaware
+    ror_id: null
+  Delaware-PhyAst:
+    address:
+      city: Newark
+      country_code: USA
+      example_expanded: Department of Physics and Astronomy, University of Delaware,
+        Newark, DE 19716-2570, USA
+      postcode: 19716-2570
+      state: DE
+      street: ''
+    department: Department of Physics and Astronomy
+    email: null
+    institute: University of Delaware
+    ror_id: null
+  Delaware-Policy:
+    address:
+      city: Newark
+      country_code: USA
+      example_expanded: Joseph R.\ Biden, Jr., School of Public Policy and Administration,
+        University of Delaware, Newark, DE 19717 USA
+      postcode: '19717'
+      state: DE
+      street: ''
+    department: Joseph R.\ Biden School of Public Policy and Administration
+    email: null
+    institute: University of Delaware
+    ror_id: null
+  Drexel:
+    address:
+      city: Philadelphia
+      country_code: USA
+      example_expanded: Drexel University, 3141 Chestnut St, Philadelphia, PA 19104
+      postcode: '19104'
+      state: PA
+      street: 3141 Chestnut St
+    department: null
+    email: null
+    institute: Drexel University
+    ror_id: null
+  Duke:
+    address:
+      city: Durham
+      country_code: USA
+      example_expanded: Department of Physics, Duke University, Durham, NC 27708,
+        USA
+      postcode: '27708'
+      state: NC
+      street: ''
+    department: Department of Physics
+    email: duke.edu
+    institute: Duke University
+    ror_id: null
+  EPFL:
+    address:
+      city: Versoix
+      country_code: Switzerland
+      example_expanded: Institute of Physics, Laboratory of Astrophysics, \'Ecole
+        Polytechnique Fed\`erale de Lausanne (EPFL), Observatoire de Sauverny, 1290
+        Versoix, Switzerland
+      postcode: '1290'
+      state: ''
+      street: ''
+    department: Institute of Physics, Laboratory of Astrophysics, \'Ecole Polytechnique
+      Fed\`erale de Lausanne (EPFL)
+    email: null
+    institute: Observatoire de Sauverny
+    ror_id: null
+  ESO:
+    address:
+      city: "Garching bei M\xFCnchen"
+      country_code: Germany
+      example_expanded: "European Southern Observatory, Karl-Schwarzschild-Strasse\
+        \ 2, 85748 Garching bei M\xFCnchen, Germany"
+      postcode: '85748'
+      state: ''
+      street: Karl-Schwarzschild-Strasse 2
+    department: null
+    email: null
+    institute: European Southern Observatory
+    ror_id: null
+  Edinburgh:
+    address:
+      city: Edinburgh
+      country_code: UK
+      example_expanded: University of Edinburgh, Old College, South Bridge, Edinburgh
+        EH8 9YL
+      postcode: EH8 9YL
+      state: ''
+      street: Old College, South Bridge
+    department: null
+    email: null
+    institute: University of Edinburgh
+    ror_id: null
+  EdinburghIA:
+    address:
+      city: Edinburgh
+      country_code: UK
+      example_expanded: Institute for Astronomy, University of Edinburgh, Royal Observatory,
+        Blackford Hill, Edinburgh EH9 3HJ, UK
+      postcode: EH9 3HJ
+      state: ''
+      street: Blackford Hill
+    department: Institute for Astronomy
+    email: ed.ac.uk
+    institute: University of Edinburgh
+    ror_id: null
+  Exeter:
+    address:
+      city: Exeter
+      country_code: UK
+      example_expanded: University of Exeter, Stocker Road, Exeter EX4 4QL, UK
+      postcode: EX4 4QL
+      state: ''
+      street: Stocker Road
+    department: null
+    email: exeter.ac.uk
+    institute: University of Exeter
+    ror_id: null
+  FSU:
+    address:
+      city: Tallahassee
+      country_code: USA
+      example_expanded: Florida State University, Tallahassee, FL 32306
+      postcode: '32306'
+      state: FL
+      street: ''
+    department: null
+    email: null
+    institute: Florida State University
+    ror_id: null
+  FacebookNE:
+    address:
+      city: Springfield
+      country_code: USA
+      example_expanded: Facebook,  14734 Friend Plaza, Springfield, NE 68059, USA
+      postcode: '68059'
+      state: NE
+      street: 14734 Friend Plaza
+    department: null
+    email: null
+    institute: Facebook
+    ror_id: null
+  Fermilab:
+    address:
+      city: Batavia
+      country_code: USA
+      example_expanded: Fermi National Accelerator Laboratory, P. O. Box 500, Batavia,
+        IL 60510, USA
+      postcode: '60510'
+      state: IL
+      street: P. O. Box 500
+    department: null
+    email: fnal.gov
+    institute: Fermi National Accelerator Laboratory
+    ror_id: null
+  GCCL:
+    address:
+      city: Bochum
+      country_code: Germany
+      example_expanded: German Centre for Cosmological Lensing, Astronomisches Institut,
+        Ruhr-Universit\"at Bochum, Universit\"atsstr. 150, 44801 Bochum, Germany
+      postcode: '44801'
+      state: ''
+      street: Universit\"atsstr. 150
+    department: German Centre for Cosmological Lensing, Astronomisches Institut,
+    email: null
+    institute: Ruhr-Universit\"at Bochum
+    ror_id: null
+  GMTO:
+    address:
+      city: Pasadena
+      country_code: USA
+      example_expanded: Giant Magellan Telescope Organization (GMTO), 465 N.\ Halstead
+        Street, Suite 250, Pasadena, CA 91107, USA
+      postcode: '91107'
+      state: CA
+      street: 465 N.\ Halstead Street, Suite 250
+    department: null
+    email: null
+    institute: Giant Magellan Telescope Organization (GMTO)
+    ror_id: null
+  GMU:
+    address:
+      city: Fairfax
+      country_code: USA
+      example_expanded: School of Physics, Astronomy and Computational Sciences, George
+        Mason University, 4400 University Drive, Fairfax, VA 22030, USA
+      postcode: '22030'
+      state: VA
+      street: 4400 University Drive
+    department: School of Physics, Astronomy and Computational Sciences,
+    email: null
+    institute: George Mason University
+    ror_id: null
+  GeminiN:
+    address:
+      city: Hilo
+      country_code: USA
+      example_expanded: "International Gemini Observatory/NSF NOIRLab, 670 N.\\ A\u2019\
+        ohoku Place, Hilo, HI 96720, USA"
+      postcode: '96720'
+      state: HI
+      street: "670 N.\\ A\u2019ohoku Place"
+    department: null
+    email: null
+    institute: International Gemini Observatory/NSF NOIRLab
+    ror_id: null
+  GeminiS:
+    address:
+      city: La Serena
+      country_code: Chile
+      example_expanded: International Gemini Observatory/NSF NOIRLab, Casilla 603,
+        La Serena, Chile
+      postcode: ''
+      state: ''
+      street: Casilla 603
+    department: null
+    email: null
+    institute: International Gemini Observatory/NSF NOIRLab
+    ror_id: null
+  GeorgiaState:
+    address:
+      city: Atlanta
+      country_code: USA
+      example_expanded: Georgia State University, Atlanta, GA 30302, USA
+      postcode: '30302'
+      state: GA
+      street: ''
+    department: null
+    email: null
+    institute: Georgia State University
+    ror_id: null
+  Gmail:
+    address: null
+    institute: Google Mail email domain Placeholder
+    email: gmail.com
+  Goddard:
+    address:
+      city: Greenbelt
+      country_code: USA
+      example_expanded: Astrophysics Science Division, NASA Goddard Space Flight Center,
+        Mail Code 661, Greenbelt, MD 20771, US
+      postcode: '20771'
+      state: MD
+      street: ''
+    department: Astrophysics Science Division
+    email: null
+    institute: NASA Goddard Space Flight Center
+    ror_id: null
+  Google:
+    address:
+      city: Mountain View
+      country_code: USA
+      example_expanded: Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043,
+        USA
+      postcode: '94043'
+      state: CA
+      street: 1600 Amphitheatre Parkway
+    department: null
+    email: null
+    institute: Google LLC
+    ror_id: null
+  Hamburg:
+    address:
+      city: Hamburg
+      country_code: Germany
+      example_expanded: Hamburger Sternwarte, Universitat Hamburg, Gojenbergsweg 112,
+        21029 Hamburg, Germany
+      postcode: '21029'
+      state: ''
+      street: Gojenbergsweg 112
+    department: Hamburger Sternwarte
+    email: null
+    institute: Universitat Hamburg
+    ror_id: null
+  Harvard-Astro:
+    address:
+      city: Cambridge
+      country_code: USA
+      example_expanded: Department of Astronomy, Center for Astrophysics, Harvard
+        University, 60 Garden St., Cambridge, MA 02138, USA
+      postcode: 02138
+      state: MA
+      street: 60 Garden St.
+    department: Department of Astronomy, Center for Astrophysics
+    email: null
+    institute: Harvard University
+    ror_id: null
+  Harvard-CfA:
+    address:
+      city: Cambridge
+      country_code: USA
+      example_expanded: Center for Astrophysics, Harvard & Smithsonian, 60 Garden
+        Street, Cambridge, MA 02138
+      postcode: 02138
+      state: MA
+      street: 60 Garden Street
+    department: Center for Astrophysics
+    email: cfa.harvard.edu
+    institute: Harvard & Smithsonian
+    ror_id: null
+  Harvard-Physics:
+    address:
+      city: Cambridge
+      country_code: USA
+      example_expanded: Department of Physics, Harvard University, 17 Oxford St.,
+        Cambridge MA 02138, USA
+      postcode: 02138
+      state: MA
+      street: 17 Oxford St.
+    department: Department of Physics
+    email: null
+    institute: Harvard University
+    ror_id: null
+  Haverford:
+    address:
+      city: Haverford
+      country_code: USA
+      example_expanded: Department of Astronomy, Haverford College, 370 Lancaster
+        Avenue, Haverford, PA 19041, USA
+      postcode: '19041'
+      state: PA
+      street: 370 Lancaster Avenue
+    department: Department of Astronomy
+    email: null
+    institute: Haverford College
+    ror_id: null
+  Heidelberg:
+    address:
+      city: Heidelberg
+      country_code: Germany
+      example_expanded: Zentrum f\"ur Astronomie der Universit\"at Heidelberg, Astronomisches
+        Rechen-Institut, M\"onchhofstr. 12-14, 69120 Heidelberg, Germany
+      postcode: '69120'
+      state: ''
+      street: M\"onchhofstr. 12-14
+    department: Zentrum f\"ur Astronomie der Universit\"at Heidelberg, Astronomisches
+      Rechen-Institut
+    email: null
+    institute: Universit\"at Heidelberg
+    ror_id: null
+  Herts:
+    address:
+      city: Hatfield
+      country_code: UK
+      example_expanded: Centre for Astrophysics Research, University of Hertfordshire,
+        Hatfield, Hertfordshire, AL10 9AB, UK
+      postcode: AL10 9AB
+      state: ''
+      street: ''
+    department: Centre for Astrophysics Research
+    email: null
+    institute: University of Hertfordshire
+    ror_id: null
+  IAFE:
+    address:
+      city: Buenos Aires
+      country_code: Argentina
+      example_expanded: Instituto de Astronomia y Fisica del Espacio (IAFE), Av. Inte.
+        G\"uiraldes 2620, C1428ZAA, Buenos Aires, Argentina
+      postcode: C1428ZAA
+      state: ''
+      street: Av. Inte. G\"uiraldes 2620
+    department: null
+    email: null
+    institute: Instituto de Astronomia y Fisica del Espacio (IAFE)
+    ror_id: null
+  IN2P3-APC:
+    address:
+      city: Paris
+      country_code: France
+      example_expanded: Universite Paris Cite, CNRS, Astroparticule et Cosmologie,
+        F-75013 Paris, France
+      postcode: F-75013
+      state: ''
+      street: ''
+    department: Astroparticule et Cosmologie
+    email: apc.in2p3.fr
+    institute: Universite Paris Cite, CNRS
+    ror_id: null
+  IN2P3-APC-CEA:
+    address:
+      city: Paris
+      country_code: France
+      example_expanded: Universite Paris Cite, CNRS, CEA, Astroparticule et Cosmologie,
+        F-75013 Paris, France
+      postcode: F-75013
+      state: ''
+      street: ''
+    department: Astroparticule et Cosmologie
+    email: null
+    institute: Universite Paris Cite, CNRS, CEA
+    ror_id: null
+  IN2P3-CC:
+    address:
+      city: Villeurbanne cedex
+      country_code: France
+      example_expanded: CNRS, CC-IN2P3, 21 avenue Pierre de Coubertin, CS70202, F-69627
+        Villeurbanne cedex, France
+      postcode: F-69627
+      state: ''
+      street: 21 avenue Pierre de Coubertin
+    department: null
+    email: in2p3.fr
+    institute: CC-IN2P3/CNRS
+    ror_id: null
+  IN2P3-CPPM:
+    address:
+      city: Marseille
+      country_code: France
+      example_expanded: Aix Marseille Univ, CNRS/IN2P3, CPPM, Marseille, France
+      postcode: ''
+      state: ''
+      street: ''
+    department: null
+    email: cppm.in2p3.fr
+    institute: Aix Marseille Univ, CNRS/IN2P3, CPPM
+    ror_id: null
+  IN2P3-IJCLAB:
+    address:
+      city: Orsay
+      country_code: France
+      example_expanded: Universite Paris-Saclay, CNRS/IN2P3, IJCLab, Orsay, France
+      postcode: ''
+      state: ''
+      street: ''
+    department: null
+    email: ijclab.in2p3.fr
+    institute: Universite Paris-Saclay, CNRS/IN2P3, IJCLab
+    ror_id: null
+  IN2P3-IP2I:
+    address:
+      city: Villeurbanne
+      country_code: France
+      example_expanded: Univ Lyon, Univ Claude Bernard Lyon 1, CNRS, IP2I Lyon/IN2P3,
+        UMR 5822, F-69622 Villeurbanne, France
+      postcode: F-69622
+      state: ''
+      street: UMR 5822
+    department: null
+    email: ip2i.in2p3.fr
+    institute: University of Lyon, University Claude Bernard Lyon 1, CNRS, IP2I Lyon/IN2P3
+    ror_id: null
+  IN2P3-LAPP:
+    address:
+      city: Annecy-le-Vieux Cedex
+      country_code: France
+      example_expanded: Universite Grenoble-Alpes, Universite Savoie Mont Blanc, CNRS/IN2P3
+        Laboratoire d'Annecy-le-Vieux de Physique des Particules, 9 Chemin de Bellevue
+        -- BP 110, F-74940 Annecy-le-Vieux Cedex, France
+      postcode: F-74940
+      state: ''
+      street: 9 Chemin de Bellevue -- BP 110
+    department: Laboratoire d'Annecy-le-Vieux de Physique des Particules
+    email: lapp.in2p3.fr
+    institute: Universite Grenoble-Alpes, Universite Savoie Mont Blanc, CNRS/IN2P3
+    ror_id: null
+  IN2P3-LPCA:
+    address:
+      city: Clermont-Ferrand
+      country_code: France
+      example_expanded: Universite Clermont Auvergne, CNRS/IN2P3, Laboratoire de Physique
+        de Clermont Auvergne, F-63000 Clermont-Ferrand, France
+      postcode: F-63000
+      state: ''
+      street: ''
+    department: Laboratoire de Physique de Clermont Auvergne
+    email: lpca.in2p3.fr
+    institute: Universite Clermont Auvergne
+    ror_id: null
+  IN2P3-LPNHE:
+    address:
+      city: Paris
+      country_code: France
+      example_expanded: Laboratoire de Physique Nucleaire et des Hautes Energies,
+        Universite Pierre et Marie Curie, Universite Paris Cite, CNRS/IN2P3, 4 place
+        Jussieu, 75005 Paris, France
+      postcode: '75005'
+      state: ''
+      street: 4 place Jussieu
+    department: Laboratoire de Physique Nucleaire et des Hautes Energies
+    email: lpnhe.in2p3.fr
+    institute: Universite Pierre et Marie Curie, Universite Paris Cite, CNRS/IN2P3
+    ror_id: null
+  IN2P3-LPSC:
+    address:
+      city: Grenoble cedex
+      country_code: France
+      example_expanded: Laboratoire de Physique Subatomique et de Cosmologie, Universite
+        Grenoble-Alpes, CNRS/IN2P3, 53 av.\ des Martyrs, 38026 Grenoble cedex, France
+      postcode: '38026'
+      state: ''
+      street: 53 av.\ des Martyrs
+    department: Laboratoire de Physique Subatomique et de Cosmologie
+    email: lpsc.in2p3.fr
+    institute: Universite Grenoble-Alpes, CNRS/IN2P3
+    ror_id: null
+  IN2P3-LUPM:
+    address:
+      city: F-34095 Montpellier
+      country_code: France
+      example_expanded: Laboratoire Univers et Particules de Montpellier (LUPM), Universite
+        de Montpellier, CNRS/IN2P3, Place Eug\`ene Bataillon, F-34095 Montpellier,
+        France
+      postcode: ''
+      state: ''
+      street: Place Eug\`ene Bataillon
+    department: Laboratoire Univers et Particules de Montpellier (LUPM)
+    email: lupm.in2p3.fr
+    institute: Universite de Montpellier, CNRS/IN2P3
+    ror_id: null
+  IN2P3-UPMC:
+    address:
+      city: Paris
+      country_code: France
+      example_expanded: Sorbonne Universites, UPMC Univ Paris 06, UMR 7585, LPNHE,
+        F-75005, Paris, France
+      postcode: F-75005
+      state: ''
+      street: UMR 7585
+    department: null
+    email: null
+    institute: Sorbonne Universites, UPMC Univ Paris 06, LPNHE
+    ror_id: null
+  INAF-IASF-Pa:
+    address:
+      city: Palermo
+      country_code: Italy
+      example_expanded: INAF Istituto di Astrofisica Spaziale e Fisica Cosmica di
+        Palermo, Via Ugo la Malfa 153, 90146, Palermo, Italy
+      postcode: '90146'
+      state: ''
+      street: Via Ugo la Malfa 153
+    department: null
+    email: null
+    institute: INAF Istituto di Astrofisica Spaziale e Fisica Cosmica di Palermo
+    ror_id: null
+  INAF-OAC:
+    address:
+      city: Napoli
+      country_code: Italy
+      example_expanded: INAF Osservatorio Astronomico di Capodimonte, Salita Moiariello
+        16, 80131, Napoli, Italy
+      postcode: '80131'
+      state: ''
+      street: Salita Moiariello 16
+    department: null
+    email: null
+    institute: INAF Osservatorio Astronomico di Capodimonte
+    ror_id: null
+  INAF-OAS:
+    address:
+      city: Bologna
+      country_code: Italy
+      example_expanded: INAF Osservatorio di Astrofisica e Scienza dello Spazio Bologna,
+        Via P. Gobetti 93/3, 40129, Bologna, Italy
+      postcode: '40129'
+      state: ''
+      street: Via P. Gobetti 93/3
+    department: null
+    email: null
+    institute: INAF Osservatorio di Astrofisica e Scienza dello Spazio Bologna
+    ror_id: null
+  INAF-OAT:
+    address:
+      city: Trieste
+      country_code: Italy
+      example_expanded: INAF Osservatorio Astronomico di Trieste, Via Giovan Battista
+        Tiepolo 11, 34143, Trieste, Italy
+      postcode: '34143'
+      state: ''
+      street: Via Giovan Battista Tiepolo 11
+    department: null
+    email: null
+    institute: INAF Osservatorio Astronomico di Trieste
+    ror_id: null
+  INAF-Palermo:
+    address:
+      city: Palermo
+      country_code: Italy
+      example_expanded: INAF - Osservatorio Astronomico di Palermo, Piazza del Parlamento
+        1 90134, Palermo, Italy
+      postcode: '90134'
+      state: ''
+      street: Piazza del Parlamento 1
+    department: null
+    email: null
+    institute: INAF - Osservatorio Astronomico di Palermo
+    ror_id: null
+  INAF-Rome:
+    address:
+      city: Rome
+      country_code: Italy
+      example_expanded: Istituto Nazionale di Astrofisica, Viale del Parco Mellini
+        84, 00136 Rome, Italy
+      postcode: '00136'
+      state: ''
+      street: Viale del Parco Mellini 84
+    department: null
+    email: null
+    institute: Istituto Nazionale di Astrofisica
+    ror_id: null
+  INSU-AIM:
+    address:
+      city: Gif-sur-Yvette
+      country_code: France
+      example_expanded: Universite Paris-Saclay, Universite Paris Cite, CEA, CNRS,
+        AIM, 91191, Gif-sur-Yvette, France
+      postcode: '91191'
+      state: ''
+      street: ''
+    department: null
+    email: null
+    institute: Universite Paris-Saclay, Universite Paris Cite, CEA, CNRS, AIM,
+    ror_id: null
+  IPAC:
+    address:
+      city: Pasadena
+      country_code: USA
+      example_expanded: Caltech/IPAC, California Institute of Technology, MS 100-22,
+        Pasadena, CA 91125-2200, USA
+      postcode: 91125-2200
+      state: CA
+      street: MS 100-22
+    department: Caltech/IPAC,
+    email: ipac.caltech.edu
+    institute: California Institute of Technology
+    ror_id: null
+  IRAM:
+    address:
+      city: Granada
+      country_code: Spain
+      example_expanded: Instituto de Radioastronomia Milimetrica, Av.\ Divina Pastora
+        7, Nucleo Central, E-18012 Granada, Spain
+      postcode: E-18012
+      state: ''
+      street: Av.\ Divina Pastora 7, Nucleo Central
+    department: null
+    email: null
+    institute: Instituto de Radioastronomia Milimetrica
+    ror_id: null
+  IUPUI:
+    address:
+      city: Indianapolis
+      country_code: USA
+      example_expanded: IUPUI, 535 W. Michigan Street, IT 400, Indianapolis, IN, USA
+      postcode: ''
+      state: IN
+      street: 535 W. Michigan Street
+    department: null
+    email: null
+    institute: Indiana University Indianapolis
+    ror_id: null
+  Illinois:
+    address:
+      city: Urbana
+      country_code: USA
+      example_expanded: University of Illinois, Physics and Astronomy Departments,
+        1110 W.\ Green St., Urbana, IL  61801, USA
+      postcode: '61801'
+      state: IL
+      street: 1110 W.\ Green St.
+    department: Physics and Astronomy Departments
+    email: null
+    institute: University of Illinois
+    ror_id: null
+  Illinois-astro:
+    address:
+      city: Urbana
+      country_code: USA
+      example_expanded: University of Illinois, Department of Astronomy, 1110 W.\
+        Green St., Urbana, IL  61801, USA
+      postcode: '61801'
+      state: IL
+      street: 1110 W.\ Green St.
+    department: Department of Astronomy
+    email: null
+    institute: University of Illinois
+    ror_id: null
+  JHU:
+    address:
+      city: Baltimore
+      country_code: USA
+      example_expanded: Department of Physics and Astronomy, The John Hopkins University,
+        3701 San Martin Drive, Baltimore, MD 21218, USA
+      postcode: '21218'
+      state: MD
+      street: 3701 San Martin Drive
+    department: Department of Physics and Astronomy
+    email: null
+    institute: The John Hopkins University
+    ror_id: null
+  JPL:
+    address:
+      city: Pasadena
+      country_code: USA
+      example_expanded: Jet Propulsion Laboratory, California Institute of Technology,
+        Pasadena, CA 91109, USA
+      postcode: '91109'
+      state: CA
+      street: ''
+    department: Jet Propulsion Laboratory
+    email: null
+    institute: California Institute of Technology
+    ror_id: null
+  JPMORGAN:
+    address:
+      city: New York
+      country_code: USA
+      example_expanded: J.P. Morgan, New York, NY, USA
+      postcode: ''
+      state: NY
+      street: ''
+    department: null
+    email: null
+    institute: J.P. Morgan
+    ror_id: null
+  JSI:
+    address:
+      city: College Park
+      country_code: USA
+      example_expanded: Joint Space-Science Institute, University of Maryland, College
+        Park, MD 20742, USA
+      postcode: '20742'
+      state: MD
+      street: ''
+    department: Joint Space-Science Institute
+    email: null
+    institute: University of Maryland
+    ror_id: null
+  JSickCodes:
+    address:
+      city: Ontario
+      country_code: Canada
+      example_expanded: J.Sick Codes Inc., Penetanguishene, Ontario, Canada
+      postcode: ''
+      state: ''
+      street: Penetanguishene
+    department: null
+    email: null
+    institute: J.Sick Codes Inc.
+    ror_id: null
+  KECK:
+    address:
+      city: Kamuela
+      country_code: USA
+      example_expanded: W. M. Keck Observatory, 65-1120 Mamalahoa Hwy.  Kamuela, HI
+        96743, USA
+      postcode: '96743'
+      state: HI
+      street: 65-1120 Mamalahoa Hwy.
+    department: null
+    email: null
+    institute: W. M. Keck Observatory
+    ror_id: null
+  KLOA:
+    address:
+      city: Beijing
+      country_code: People's Republic of China
+      example_expanded: Key Laboratory of Optical Astronomy, National Astronomical
+        Observatories, Chinese Academy of Sciences, 20A Datun Road, Chaoyang District,
+        Beijing 100012, People's Republic of China
+      postcode: '100012'
+      state: ''
+      street: 20A Datun Road, Chaoyang District
+    department: Key Laboratory of Optical Astronomy
+    email: null
+    institute: National Astronomical Observatories, Chinese Academy of Sciences
+    ror_id: null
+  LINEA:
+    address:
+      city: Rio de Janeiro
+      country_code: Brazil
+      example_expanded: Laboratorio Interinstitucional de e-Astronomia, Rua General
+        Jose Cristino, 77, Rio de Janeiro, RJ, 20921-400, Brazil
+      postcode: 20921-400
+      state: RJ
+      street: Rua General Jose Cristino, 77
+    department: null
+    email: null
+    institute: Laboratorio Interinstitucional de e-Astronomia
+    ror_id: null
+  LLNL:
+    address:
+      city: Livermore
+      country_code: USA
+      example_expanded: Lawrence Livermore National Laboratory, 7000 East Avenue,
+        Livermore, CA 94550, USA
+      postcode: '94550'
+      state: CA
+      street: 7000 East Avenue
+    department: null
+    email: null
+    institute: Lawrence Livermore National Laboratory
+    ror_id: null
+  LOC:
+    address:
+      city: Washington
+      country_code: USA
+      example_expanded: Library of Congress, 101 Independence Ave.\ SE, Washington,
+        DC 20540, USA
+      postcode: '20540'
+      state: DC
+      street: 101 Independence Ave.\ SE
+    department: null
+    email: null
+    institute: Library of Congress
+    ror_id: null
+  LSSTC:
+    address:
+      city: Tucson
+      country_code: USA
+      example_expanded: The LSST Corporation
+      postcode: '85719'
+      state: AZ
+      street: 933 N. Cherry Ave.
+    department: null
+    email: null
+    institute: The LSST Corporation
+    ror_id: null
+  LSST-list:
+    address: null
+    department: null
+    email: lists.lsst.org
+    institute: Vera C.\ Rubin Observatory Project Office
+    ror_id: null
+  LancasterU:
+    address:
+      city: Lancaster
+      country_code: UK
+      example_expanded: Lancaster University, Lancaster, UK
+      postcode: ''
+      state: ''
+      street: ''
+    department: null
+    email: lancaster.ac.uk
+    institute: Lancaster University
+    ror_id: null
+  Leiden:
+    address:
+      city: Leiden
+      country_code: The Netherlands
+      example_expanded: Leiden Observatory, Leiden University, Postbus 9513, 2300
+        RA, Leiden, The Netherlands
+      postcode: 2300 RA
+      state: ''
+      street: Postbus 9513
+    department: Leiden Observatory
+    email: null
+    institute: Leiden University
+    ror_id: null
+  Liege:
+    address:
+      city: Li\`ege
+      country_code: Belgium
+      example_expanded: Institut d'Astrophysique et de Geophysique, Universite de
+        Li\`ege, Allee du 6 Ao\^ut 19c, 4000 Li\`ege, Belgium
+      postcode: '4000'
+      state: ''
+      street: Allee du 6 Ao\^ut 19c
+    department: Institut d'Astrophysique et de Geophysique
+    email: null
+    institute: Universite de Li\`ege
+    ror_id: null
+  Longhorn:
+    address:
+      city: Ellensburg
+      country_code: USA
+      example_expanded: Longhorn Industries, Ellensburg, WA 98926, USA
+      postcode: '98926'
+      state: WA
+      street: ''
+    department: null
+    email: null
+    institute: Longhorn Industries
+    ror_id: null
+  Lowell:
+    address:
+      city: Flagstaff
+      country_code: USA
+      example_expanded: 1400 W.\ Mars Hill Rd., Lowell Observatory, Flagstaff, AZ
+        86001, USA
+      postcode: '86001'
+      state: AZ
+      street: 1400 W.\ Mars Hill Rd.
+    department: null
+    email: null
+    institute: Lowell Observatory
+    ror_id: null
+  MMTO:
+    address:
+      city: Tucson
+      country_code: USA
+      example_expanded: MMT Observatory, 1540 E. Second Street, University of Arizona,
+        Tucson, AZ 85721-0064, USA
+      postcode: 85721-0064
+      state: AZ
+      street: 1540 E. Second Street
+    department: MMT Observatory,
+    email: null
+    institute: University of Arizona
+    ror_id: null
+  Maryland:
+    address:
+      city: College Park
+      country_code: USA
+      example_expanded: University of Maryland, College Park, MD 20742
+      postcode: '20742'
+      state: MD
+      street: ''
+    department: null
+    email: null
+    institute: University of Maryland
+    ror_id: null
+  Maryland-astro:
+    address:
+      city: College Park
+      country_code: USA
+      example_expanded: Department of Astronomy, University of Maryland, College Park,
+        MD 20742, USA
+      postcode: '20742'
+      state: MD
+      street: ''
+    department: Department of Astronomy
+    email: null
+    institute: University of Maryland
+    ror_id: null
+  NAOChina:
+    address:
+      city: Beijing
+      country_code: People's Republic of China
+      example_expanded: National Astronomical Observatories, Chinese Academy of Sciences,
+        A20 Datun Rd, Chaoyang District, Beijing 100012, People's Republic of China
+      postcode: '100012'
+      state: ''
+      street: A20 Datun Rd, Chaoyang District
+    department: null
+    email: null
+    institute: National Astronomical Observatories, Chinese Academy of Sciences
+    ror_id: null
+  NAOJ:
+    address:
+      city: Tokyo
+      country_code: Japan
+      example_expanded: National Astronomical Observatory of Japan, 2-21-1 Osawa,
+        Mitaka, Tokyo 181-8588, Japan
+      postcode: 181-8588
+      state: ''
+      street: 2-21-1 Osawa, Mitaka
+    department: null
+    email: nao.ac.jp
+    institute: National Astronomical Observatory of Japan
+    ror_id: null
+  NAOJ-Chile:
+    address:
+      city: Santiago
+      country_code: Chile
+      example_expanded: National Astronomical Observatory of Japan, Chile Observatory,
+        Los Abedules 3085, Vitacura, Santiago, Chile
+      postcode: ''
+      state: ''
+      street: Los Abedules 3085, Vitacura
+    department: null
+    email: null
+    institute: National Astronomical Observatory of Japan
+    ror_id: null
+  NASA:
+    address:
+      city: Greenbelt
+      country_code: USA
+      example_expanded: National Aeronautics and Space Administration, Goddard Space
+        Flight Center, Greenbelt, Maryland, USA
+      postcode: ''
+      state: MD
+      street: Greenbelt
+    department: Goddard Space Flight Center
+    email: null
+    institute: National Aeronautics and Space Administration
+    ror_id: null
+  NAU:
+    address:
+      city: Flagstaff
+      country_code: USA
+      example_expanded: Department of Astronomy and Planetary Science, Northern Arizona
+        University, P.O.\ Box 6010, Flagstaff, AZ 86011, USA
+      postcode: '86011'
+      state: AZ
+      street: P.O.\ Box 6010
+    department: Department of Astronomy and Planetary Science,
+    email: null
+    institute: Northern Arizona University
+    ror_id: null
+  NCNRP:
+    address:
+      city: Otwock
+      country_code: Poland
+      example_expanded: National Centre of Nuclear Research, Andrzeja Sotana 7, 05-400
+        Otwock, Poland
+      postcode: 05-400
+      state: ''
+      street: Andrzeja Sotana 7
+    department: null
+    email: null
+    institute: National Centre of Nuclear Research
+    ror_id: null
+  NCSA:
+    address:
+      city: Urbana
+      country_code: USA
+      example_expanded: NCSA, University of Illinois at Urbana-Champaign, 1205 W.\
+        Clark St., Urbana, IL 61801, USA
+      postcode: '61801'
+      state: IL
+      street: 1205 W.\ Clark St.
+    department: National Center for Supercomputing Applications
+    email: illinois.edu
+    institute: University of Illinois at Urbana-Champaign
+    ror_id: null
+  NOIRLab:
+    address:
+      city: Tucson
+      country_code: USA
+      example_expanded: NSF NOIRLab, 950 N.\ Cherry Ave., Tucson, AZ 85719, USA
+      postcode: '85719'
+      state: AZ
+      street: 950 N.\ Cherry Ave.
+    department: null
+    email: noirlab.edu
+    institute: NSF NOIRLab
+    ror_id: null
+  NOIRLabC:
+    address:
+      city: La Serena
+      country_code: Chile
+      example_expanded: NSF NOIRLab, Casilla 603, La Serena, Chile
+      postcode: ''
+      state: ''
+      street: Casilla 603
+    department: null
+    email: noirlab.edu
+    institute: NSF NOIRLab
+    ror_id: null
+  NRAO:
+    address:
+      city: Charlottesville
+      country_code: USA
+      example_expanded: National Radio Astronomy Observstory, 520 Edgemont Road, Charlottesville,
+        VA 22903, USA
+      postcode: '22903'
+      state: VA
+      street: 520 Edgemont Road
+    department: null
+    email: null
+    institute: National Radio Astronomy Observstory
+    ror_id: null
+  NRC:
+    address:
+      city: Victoria
+      country_code: Canada
+      example_expanded: National Research Council Canada, 5071 West Saanich Road,
+        Victoria, Canada
+      postcode: ''
+      state: BC
+      street: 5071 West Saanich Road
+    department: null
+    email: null
+    institute: National Research Council Canada
+    ror_id: null
+  NSF:
+    address:
+      city: Alexandria
+      country_code: USA
+      example_expanded: National Science Foundation, 2415 Eisenhower Avenue, Alexandria,
+        Virginia 22314, USA
+      postcode: '23314'
+      state: VA
+      street: 2415 Eisenhower Avenue
+    department: null
+    email: null
+    institute: National Science Foundation, 2415 Eisenhower Avenue
+    ror_id: null
+  NSO:
+    address:
+      city: Boulder
+      country_code: USA
+      example_expanded: National Solar Observatory, 3665 Discovery Drive, Boulder,
+        CO 80303, USA
+      postcode: '80303'
+      state: CO
+      street: 3665 Discovery Drive
+    department: null
+    email: null
+    institute: National Solar Observatory
+    ror_id: null
+  NYU:
+    address:
+      city: New York
+      country_code: USA
+      example_expanded: New York University, New York,
+      postcode: ''
+      state: NY
+      street: ''
+    department: null
+    email: null
+    institute: New York University
+    ror_id: null
+  NYU-CCPP:
+    address:
+      city: New York
+      country_code: USA
+      example_expanded: Center for Cosmology \& Particle Physics, New York University,
+        726 Broadway, New York, 10003, USA
+      postcode: '10003'
+      state: NY
+      street: 726 Broadway
+    department: Center for Cosmology \& Particle Physics,
+    email: null
+    institute: New York University
+    ror_id: null
+  NYU-CUSP:
+    address:
+      city: Brooklyn
+      country_code: USA
+      example_expanded: Center for Urban Science \& Progress, New York University,
+        Brooklyn, NY 11021, USA
+      postcode: '11021'
+      state: NY
+      street: ''
+    department: Center for Urban Science \& Progress
+    email: null
+    institute: New York University
+    ror_id: null
+  Napoli:
+    address:
+      city: Napoli
+      country_code: Italy
+      example_expanded: Department of Physics "E. Pancini", University Federico II
+        of Napoli, Via Cintia, 80126 Napoli, Italy
+      postcode: '80126'
+      state: ''
+      street: Via Cintia
+    department: Department of Physics "E. Pancini"
+    email: null
+    institute: University Federico II of Napoli
+    ror_id: null
+  NovaGorica:
+    address:
+      city: Nova Gorica
+      country_code: Slovenia
+      example_expanded: Center for Astrophysics and Cosmology, University of Nova
+        Gorica, Vipavska 13 5000 Nova Gorica, Slovenia
+      postcode: '5000'
+      state: ''
+      street: Vipavska 13
+    department: Center for Astrophysics and Cosmology
+    email: null
+    institute: University of Nova Gorica
+    ror_id: null
+  OKC:
+    address:
+      city: null
+      country_code: Sweden
+      example_expanded: Oskar Klein Centre, Department of Physics, Stockholm University,
+        SE 106 91 Stockholm, Sweden
+      postcode: SE 106 91
+      state: ''
+      street: ''
+    department: Oskar Klein Centre, Department of Physics
+    email: null
+    institute: Stockholm University
+    ror_id: null
+  OSU:
+    address:
+      city: Columbus
+      country_code: USA
+      example_expanded: Center for Cosmology and Astro-Particle Physics, The Ohio
+        State University, Columbus, OH 43210, USA
+      postcode: '43210'
+      state: OH
+      street: ''
+    department: Center for Cosmology and Astro-Particle Physics
+    email: null
+    institute: The Ohio State University
+    ror_id: null
+  Olympic:
+    address:
+      city: Bremerton
+      country_code: USA
+      example_expanded: Olympic College, 1600 Chester Ave., Bremerton, WA 98337-1699,
+        USA
+      postcode: 98337-1699
+      state: WA
+      street: 1600 Chester Ave.
+    department: null
+    email: null
+    institute: Olympic College
+    ror_id: null
+  Oxford:
+    address:
+      city: Oxford
+      country_code: UK
+      example_expanded: Department of Physics, University of Oxford, Denys Wilkinson
+        Building, Keble Road, Oxford, OX1 3RH, UK
+      postcode: OX1 3RH
+      state: ''
+      street: Denys Wilkinson Building, Keble Road
+    department: Department of Physics
+    email: null
+    institute: University of Oxford
+    ror_id: null
+  PSI:
+    address:
+      city: Tucson
+      country_code: USA
+      example_expanded: Planetary Science Institute, 1700 East Fort Lowell Road, Suite
+        106, Tucson, AZ 85719, USA
+      postcode: '85719'
+      state: AZ
+      street: 1700 East Fort Lowell Road, Suite 106
+    department: null
+    email: null
+    institute: Planetary Science Institute
+    ror_id: null
+  PSU:
+    address:
+      city: University Park
+      country_code: USA
+      example_expanded: Department of Astronomy and Astrophysics, The Pennsylvania
+        State University, 525 Davey Lab, University Park, PA 16802, USA
+      postcode: '16802'
+      state: PA
+      street: 525 Davey Lab
+    department: Department of Astronomy and Astrophysics
+    email: null
+    institute: The Pennsylvania State University
+    ror_id: null
+  PSUCDS:
+    address:
+      city: University Park
+      country_code: USA
+      example_expanded: Institute for Computational \& Data Sciences, The Pennsylvania
+        State University, University Park, PA 16802, USA
+      postcode: '16802'
+      state: PA
+      street: ''
+    department: Institute for Computational \& Data Sciences
+    email: null
+    institute: The Pennsylvania State University
+    ror_id: null
+  PSUGC:
+    address:
+      city: University Park
+      country_code: USA
+      example_expanded: Institute for Gravitation and the Cosmos, The Pennsylvania
+        State University, University Park, PA 16802, USA
+      postcode: '16802'
+      state: PA
+      street: ''
+    department: Institute for Gravitation and the Cosmos
+    email: null
+    institute: The Pennsylvania State University
+    ror_id: null
+  Peay:
+    address:
+      city: Clarksville
+      country_code: USA
+      example_expanded: Austin Peay State University, Clarksville, TN 37044, USA
+      postcode: '37044'
+      state: TN
+      street: ''
+    department: null
+    email: null
+    institute: Austin Peay State University
+    ror_id: null
+  Pitts:
+    address:
+      city: Pittsburgh
+      country_code: USA
+      example_expanded: Department of Physics and Astronomy, University of Pittsburgh,
+        3941 O'Hara Street, Pittsburgh, PA 15260, USA
+      postcode: '15260'
+      state: PA
+      street: 3941 O'Hara Street
+    department: Department of Physics and Astronomy
+    email: pitt.edu
+    institute: University of Pittsburgh
+    ror_id: null
+  Praha-ASCR:
+    address:
+      city: Praha 8
+      country_code: Czech Republic
+      example_expanded: Institute of Physics, Academy of Sciences of the Czech Republic,
+        Na Slovance 2, 182 21 Praha 8, Czech Republic
+      postcode: 182 21
+      state: ''
+      street: Na Slovance 2
+    department: Institute of Physics
+    email: null
+    institute: Academy of Sciences of the Czech Republic
+    ror_id: null
+  Princeton:
+    address:
+      city: Princeton
+      country_code: USA
+      example_expanded: Princeton University, Princeton, NJ 08544, USA
+      postcode: 08544
+      state: NJ
+      street: ''
+    department: null
+    email: princeton.edu
+    institute: Princeton University
+    ror_id: null
+  Princeton-Astro:
+    address:
+      city: Princeton
+      country_code: USA
+      example_expanded: Department of Astrophysical Sciences, Princeton University,
+        Princeton, NJ 08544, USA
+      postcode: 08544
+      state: NJ
+      street: ''
+    department: Department of Astrophysical Sciences
+    email: astro.princeton.edu
+    institute: Princeton University
+    ror_id: null
+  Purdue-Astro:
+    address:
+      city: West Lafayette
+      country_code: USA
+      example_expanded: Department of Physics and Astronomy, Purdue University, 525
+        Northwestern Ave., West Lafayette, IN  47907, USA
+      postcode: '47907'
+      state: IN
+      street: 525 Northwestern Ave.
+    department: Department of Physics and Astronomy
+    email: null
+    institute: Purdue University
+    ror_id: null
+  Radboud-Astro:
+    address:
+      city: Nijmegen
+      country_code: The Netherlands
+      example_expanded: Department of Astrophysics/IMAPP, Radboud University Nijmegen,
+        P.O.\ Box 9010, 6500 GL Nijmegen, The Netherlands
+      postcode: 6500 GL
+      state: ''
+      street: P.O.\ Box 9010
+    department: Department of Astrophysics/IMAPP
+    email: null
+    institute: Radboud University Nijmegen
+    ror_id: null
+  Rider:
+    address:
+      city: Lawrenceville
+      country_code: USA
+      example_expanded: Department of Chemistry, Biochemistry, and Physics, Rider
+        University, Lawrenceville, NJ 08648, USA
+      postcode: 08648
+      state: NJ
+      street: ''
+    department: Department of Chemistry, Biochemistry, and Physics
+    email: null
+    institute: Rider University
+    ror_id: null
+  RubinObs:
+    address:
+      city: Tucson
+      country_code: USA
+      example_expanded: Vera C.\ Rubin Observatory Project Office, 950 N.\ Cherry
+        Ave., Tucson, AZ  85719, USA
+      postcode: '85719'
+      state: AZ
+      street: 950 N.\ Cherry Ave.
+    department: null
+    email: lsst.org
+    institute: Vera C.\ Rubin Observatory Project Office
+    ror_id: 048g3cy84
+  RubinObsC:
+    address:
+      city: La Serena
+      country_code: Chile
+      example_expanded: 'Vera C.\ Rubin Observatory, Avenida Juan Cisternas #1500,
+        La Serena, Chile'
+      postcode: ''
+      state: ''
+      street: 'Avenida Juan Cisternas #1500'
+    department: null
+    email: lsst.org
+    institute: Vera C.\ Rubin Observatory
+    ror_id: 048g3cy84
+  RubinOps:
+    address:
+      city: Tucson
+      country_code: USA
+      example_expanded: Vera C.\ Rubin Observatory/NSF NOIRLab, 950 N.\ Cherry Ave.,
+        Tucson, AZ  85719, USA
+      postcode: '85719'
+      state: AZ
+      street: 950 N.\ Cherry Ave.
+    department: Vera C.\ Rubin Observatory
+    email: noirlab.edu
+    institute: NSF NOIRLab
+    ror_id: 048g3cy84
+  RubinOpsC:
+    address:
+      city: La Serena
+      country_code: Chile
+      example_expanded: Vera C.\ Rubin Observatory/NSF NOIRLab, Casilla 603, La Serena,
+        Chile
+      postcode: ''
+      state: ''
+      street: Casilla 603
+    department: null
+    email: noirlab.edu
+    institute: Vera C.\ Rubin Observatory/NSF NOIRLab
+    ror_id: 048g3cy84
+  Rutgers:
+    address:
+      city: Piscataway
+      country_code: USA
+      example_expanded: Department of Physics and Astronomy, Rutgers University, 136
+        Frelinghuysen Rd., Piscataway, NJ 08854, USA
+      postcode: 08854
+      state: NJ
+      street: 136 Frelinghuysen Rd.
+    department: Department of Physics and Astronomy
+    email: null
+    institute: Rutgers University
+    ror_id: null
+  SAO:
+    address:
+      city: Cambridge
+      country_code: USA
+      example_expanded: Smithsonian Astrophysical Observatory, 60 Garden St., Cambridge
+        MA 02138, USA
+      postcode: 02138
+      state: MA
+      street: 60 Garden St.
+    department: null
+    email: null
+    institute: Smithsonian Astrophysical Observatory
+    ror_id: null
+  SETI:
+    address:
+      city: Mountain View
+      country_code: USA
+      example_expanded: SETI Institute, 339 Bernardo Avenue, Suite 200, Mountain View,
+        CA 94043, USA
+      postcode: '94043'
+      state: CA
+      street: 339 Bernardo Avenue, Suite 200
+    department: null
+    email: null
+    institute: SETI Institute,
+    ror_id: null
+  SLAC:
+    address:
+      city: Menlo Park
+      country_code: USA
+      example_expanded: SLAC National Accelerator Laboratory, 2575 Sand Hill Rd.,
+        Menlo Park, CA 94025, USA
+      postcode: '94025'
+      state: CA
+      street: 2575 Sand Hill Rd.
+    department: null
+    email: slac.stanford.edu
+    institute: SLAC National Accelerator Laboratory
+    ror_id: null
+  SLAC-Kavli:
+    address:
+      city: Menlo Park
+      country_code: USA
+      example_expanded: Kavli Institute for Particle Astrophysics and Cosmology, SLAC
+        National Accelerator Laboratory, 2575 Sand Hill Rd., Menlo Park, CA 94025,
+        USA
+      postcode: '94025'
+      state: CA
+      street: 2575 Sand Hill Rd.
+    department: Kavli Institute for Particle Astrophysics and Cosmology
+    email: slac.stanford.edu
+    institute: SLAC National Accelerator Laboratory
+    ror_id: null
+  STFC-RAL:
+    address:
+      city: Harwell
+      country_code: UK
+      example_expanded: Science and Technology Facilities Council, Rutherford Appleton
+        Laboratory, Harwell, UK
+      postcode: ''
+      state: ''
+      street: null
+    department: Rutherford Appleton Laboratory
+    email: stfc.ac.uk
+    institute: Science and Technology Facilities Council
+    ror_id: null
+  STScI:
+    address:
+      city: Baltimore
+      country_code: USA
+      example_expanded: Space Telescope Science Institute, 3700 San Martin Drive,
+        Baltimore, MD 21218, USA
+      postcode: '21218'
+      state: MD
+      street: 3700 San Martin Drive
+    department: null
+    email: null
+    institute: Space Telescope Science Institute
+    ror_id: null
+  SVC:
+    address:
+      city: Latrobe
+      country_code: USA
+      example_expanded: Saint Vincent College, Department of Physics, 300 Fraser Purchase
+        Road, Latrobe, PA 15650, USA
+      postcode: '15650'
+      state: PA
+      street: 300 Fraser Purchase Road
+    department: Department of Physics
+    email: null
+    institute: Saint Vincent College
+    ror_id: null
+  Santiago-Millenium:
+    address:
+      city: Santiago
+      country_code: Chile
+      example_expanded: Millennium Institute of Astrophysics, Nuncio Monse\~nor Sotero
+        Sanz 100, Of 104, Providencia, Santiago, Chile
+      postcode: ''
+      state: ''
+      street: Nuncio Monse\~nor Sotero Sanz 100, Of 104, Providencia
+    department: null
+    email: null
+    institute: Millennium Institute of Astrophysics
+    ror_id: null
+  Santiago-dept:
+    address:
+      city: Santiago
+      country_code: Chile
+      example_expanded: Departamento de Ciencias Fisicas, Universidad Andres Bello
+        Fernandez Concha 700, Las Condes, Santiago, Chile
+      postcode: ''
+      state: ''
+      street: Concha 700, Las Condes
+    department: Departamento de Ciencias Fisicas
+    email: null
+    institute: Universidad Andres Bello Fernandez
+    ror_id: null
+  Southampton:
+    address:
+      city: Southampton
+      country_code: United Kingdom
+      example_expanded: University of Southampton, Hartley Library B12, University
+        Rd, Highfield, Southampton SO17 1BJ, United Kingdom
+      postcode: SO17 1BJ
+      state: ''
+      street: University Rd, Highfield
+    department: Hartley Library B12
+    email: null
+    institute: University of Southampton
+    ror_id: null
+  Stanford:
+    address:
+      city: Stanford
+      country_code: USA
+      example_expanded: Stanford University, 450 Jane Stanford Way, Stanford, CA 94305,
+        USA
+      postcode: '94305'
+      state: CA
+      street: 450 Jane Stanford Way
+    department: null
+    email: stanford.edu
+    institute: Stanford University
+    ror_id: null
+  Stanford-AeroAstro:
+    address:
+      city: Stanford
+      country_code: USA
+      example_expanded: Department of Aeronautics and Astronautics, Stanford University,
+        Stanford, CA 94305, USA
+      postcode: '94305'
+      state: CA
+      street: ''
+    department: Department of Aeronautics and Astronautics
+    email: null
+    institute: Stanford University
+    ror_id: null
+  StonyBrookU:
+    address:
+      city: Stony Brook
+      country_code: USA
+      example_expanded: Department of Physics and Astronomy, Stony Brook University,
+        Stony Brook, NY 11794, USA
+      postcode: '11794'
+      state: NY
+      street: ''
+    department: Department of Physics and Astronomy
+    email: stonybrook.edu
+    institute: Stony Brook University
+    ror_id: null
+  TACC:
+    address:
+      city: Austin
+      country_code: USA
+      example_expanded: Texas Advanced Computing Center, The University of Texas at
+        Austin, USA.
+      postcode: ''
+      state: TX
+      street: USA.
+    department: Texas Advanced Computing Center
+    email: null
+    institute: The University of Texas at Austin
+    ror_id: null
+  TAMU:
+    address:
+      city: College Station
+      country_code: USA
+      example_expanded: Department of Physics and Astronomy, Texas A\&M University,
+        College Station, TX 77843, USA
+      postcode: '77843'
+      state: TX
+      street: ''
+    department: Department of Physics and Astronomy
+    email: null
+    institute: Texas A\&M University
+    ror_id: null
+  TAMU-inst:
+    address:
+      city: College Station
+      country_code: USA
+      example_expanded: George P.~and Cynthia Woods Mitchell Institute for Fundamental
+        Physics and Astronomy, Texas A\&M University, College Station, TX 77843, USA
+      postcode: '77843'
+      state: TX
+      street: ''
+    department: George P.~and Cynthia Woods Mitchell Institute for Fundamental Physics
+      and Astronomy
+    email: null
+    institute: Texas A\&M University
+    ror_id: null
+  TMT:
+    address:
+      city: null
+      country_code: USA
+      example_expanded: TMT International Observatory
+      postcode: ''
+      state: ''
+      street: ''
+    department: null
+    email: null
+    institute: TMT International Observatory
+    ror_id: null
+  TTU:
+    address:
+      city: Lubbock
+      country_code: USA
+      example_expanded: Department of Physics and Astronomy, Texas Tech University,
+        Lubbock, TX 79409, USA
+      postcode: '79409'
+      state: TX
+      street: ''
+    department: Department of Physics and Astronomy
+    email: null
+    institute: Texas Tech University
+    ror_id: null
+  TTU-media:
+    address:
+      city: Lubbock
+      country_code: USA
+      example_expanded: College of Media and Communication, Texas Tech University,
+        Lubbock, TX 79409, USA
+      postcode: '79409'
+      state: TX
+      street: ''
+    department: College of Media and Communication
+    email: null
+    institute: Texas Tech University
+    ror_id: null
+  UA:
+    address:
+      city: Tucson
+      country_code: USA
+      example_expanded: University of Arizona, Tucson, AZ 85721, USA
+      postcode: '85721'
+      state: AZ
+      street: ''
+    department: null
+    email: null
+    institute: University of Arizona
+    ror_id: null
+  UA-Astro:
+    address:
+      city: Tucson
+      country_code: USA
+      example_expanded: University of Arizona, Department of Astronomy and Steward
+        Observatory, 933 N.\ Cherry Ave, Tucson, AZ 85721, USA
+      postcode: '85721'
+      state: AZ
+      street: 933 N.\ Cherry Ave
+    department: Department of Astronomy and Steward Observatory
+    email: null
+    institute: University of Arizona
+    ror_id: null
+  UA-CompSci:
+    address:
+      city: Tucson
+      country_code: USA
+      example_expanded: Department of Computer Science, The University of Arizona,
+        1040 E.\ 4th St., Tucson, AZ 85719, USA
+      postcode: '85719'
+      state: AZ
+      street: 1040 E.\ 4th St.
+    department: Department of Computer Science
+    email: null
+    institute: University of Arizona
+    ror_id: null
+  UA-Physics:
+    address:
+      city: Tucson
+      country_code: USA
+      example_expanded: Department of Physics, University of Arizona, 1118 E.\ Fourth
+        Street, Tucson, AZ 85721, USA
+      postcode: '85721'
+      state: AZ
+      street: 1118 E.\ Fourth Street
+    department: Department of Physics
+    email: null
+    institute: University of Arizona
+    ror_id: null
+  UA-Steward:
+    address:
+      city: Tucson
+      country_code: USA
+      example_expanded: Steward Observatory, The University of Arizona, 933 N.\ Cherry
+        Ave., Tucson, AZ 85721, USA
+      postcode: '85721'
+      state: AZ
+      street: 933 N.\ Cherry Ave.
+    department: Steward Observatory
+    email: null
+    institute: University of Arizona
+    ror_id: null
+  UAM:
+    address:
+      city: Madrid
+      country_code: Spain
+      example_expanded: Universidad Autonoma de Madrid, Madrid, Madrid, ES
+      postcode: ''
+      state: ''
+      street: ''
+    department: null
+    email: null
+    institute: Universidad Autonoma de Madrid
+    ror_id: null
+  UCDavis:
+    address:
+      city: Davis
+      country_code: USA
+      example_expanded: Physics Department, University of California, One Shields
+        Avenue, Davis, CA 95616, USA
+      postcode: '95616'
+      state: CA
+      street: One Shields Avenue
+    department: Physics Department
+    email: null
+    institute: University of California
+    ror_id: null
+  UCIrvine-Astro:
+    address:
+      city: Irvine
+      country_code: USA
+      example_expanded: Department of Physics and Astronomy, University of California,
+        4129 Frederick Reines Hall, Irvine, CA 92697, USA
+      postcode: '92697'
+      state: CA
+      street: 4129 Frederick Reines Hall
+    department: Department of Physics and Astronomy
+    email: null
+    institute: University of California
+    ror_id: null
+  UCIrvine-CC:
+    address:
+      city: Irvine
+      country_code: USA
+      example_expanded: Center for Cosmology, University of California, Irvine, CA
+        92697, USA
+      postcode: '92697'
+      state: CA
+      street: ''
+    department: Center for Cosmology
+    email: null
+    institute: University of California
+    ror_id: null
+  UCL:
+    address:
+      city: London
+      country_code: United Kingdom
+      example_expanded: University College London, Gower St, London WC1E 6BT, United
+        Kingdom
+      postcode: WC1E 6BT
+      state: ''
+      street: Gower St
+    department: null
+    email: null
+    institute: University College London
+    ror_id: null
+  UCO:
+    address:
+      city: Santa Cruz
+      country_code: USA
+      example_expanded: UC Observatories, UC Santa Cruz, 1156 High Street, Santa Cruz,
+        CA 95064
+      postcode: '95064'
+      state: CA
+      street: 1156 High Street
+    department: UC Observatories
+    email: null
+    institute: UC Santa Cruz
+    ror_id: null
+  UCSB:
+    address:
+      city: Santa Barbara
+      country_code: USA
+      example_expanded: University of California, Santa Barbara, CA 93106-9530, USA
+      postcode: 93106-9530
+      state: CA
+      street: ''
+    department: null
+    email: null
+    institute: University of California
+    ror_id: null
+  UCSC:
+    address:
+      city: Santa Cruz
+      country_code: USA
+      example_expanded: Santa Cruz Institute for Particle Physics and Physics Department,
+        University of California--Santa Cruz, 1156 High St., Santa Cruz, CA 95064,
+        USA
+      postcode: '95064'
+      state: CA
+      street: 1156 High St.
+    department: Santa Cruz Institute for Particle Physics and Physics Department,
+    email: ucsc.edu
+    institute: University of California Santa Cruz
+    ror_id: null
+  UNAM:
+    address:
+      city: null
+      country_code: Mexico
+      example_expanded: Universidad Nacional Autonoma de Mexico
+      postcode: ''
+      state: ''
+      street: ''
+    department: null
+    email: null
+    institute: Universidad Nacional Autonoma de Mexico
+    ror_id: null
+  UNAM-astro:
+    address:
+      city: Ensenada
+      country_code: Mexico
+      example_expanded: Instituto de Astronomia sede Ensenada, Universidad Nacional
+        Autonoma de Mexico, Km 107, Carret. Tij.-Ens., Ensenada, 22060, BC, Mexico
+      postcode: '22060'
+      state: BC
+      street: Km 107, Carret. Tij.-Ens.
+    department: Instituto de Astronomia sede Ensenada
+    email: null
+    institute: Universidad Nacional Autonoma de Mexico
+    ror_id: null
+  UNAM-physics:
+    address:
+      city: Ciudad Universitaria, CDMX
+      country_code: Mexico
+      example_expanded: Departamento de Fisica, Facultad de Ciencias, Universidad
+        Nacional Autonoma de Mexico, Ciudad Universitaria, CDMX, 04510, Mexico
+      postcode: 04519
+      state: ''
+      street: ''
+    department: Departamento de Fisica, Facultad de Ciencias
+    email: null
+    institute: Universidad Nacional Autonoma de Mexico
+    ror_id: null
+  UNED:
+    address:
+      city: Madrid
+      country_code: Spain
+      example_expanded: Dpt. of Artificial Intelligence, Universidad Nacional de Educacion
+        a Distancia, Madrid, Madrid, ES
+      postcode: ''
+      state: ''
+      street: ES
+    department: Dpt. of Artificial Intelligence
+    email: null
+    institute: Universidad Nacional de Educacion a Distancia
+    ror_id: null
+  UPenn:
+    address:
+      city: Philadelphia
+      country_code: USA
+      example_expanded: Department of Physics \& Astronomy, University of Pennsylvania,
+        209 South 33rd Street, Philadelphia, PA 19104-6396, USA
+      postcode: 19104-6396
+      state: PA
+      street: 209 South 33rd Street
+    department: Department of Physics \& Astronomy
+    email: null
+    institute: University of Pennsylvania
+    ror_id: null
+  URijeka:
+    address:
+      city: Rijeka
+      country_code: Croatia
+      example_expanded: Faculty of Physics, University of Rijeka, Radmile Matejci\'c
+        2, Rijeka, Croatia
+      postcode: ''
+      state: ''
+      street: Radmile Matejci\'c 2
+    department: Faculty of Physics
+    email: uniri.hr
+    institute: University of Rijeka
+    ror_id: null
+  USNO:
+    address:
+      city: Flagstaff
+      country_code: USA
+      example_expanded: US Naval Observatory Flagstaff Station, 10391 Naval Observatory
+        Road, Flagstaff, AZ 86001, USA
+      postcode: '86001'
+      state: AZ
+      street: 10391 Naval Observatory Road
+    department: null
+    email: null
+    institute: US Naval Observatory
+    ror_id: null
+  UToronto:
+    address:
+      city: Toronto
+      country_code: Canada
+      example_expanded: University of Toronto, 27 King's College Circle, Toronto,
+        Ontario M5S 1A1 Canada
+      postcode: M5S 1A1
+      state: Ontario
+      street: 27 King's College Circle
+    department: null
+    email: null
+    institute: University of Toronto
+    ror_id: null
+  UVa:
+    address:
+      city: Charlottesville
+      country_code: USA
+      example_expanded: Department of Astronomy, University of Virginia, Charlottesville,
+        VA 22904, USA
+      postcode: '22904'
+      state: VA
+      street: ''
+    department: Department of Astronomy
+    email: null
+    institute: University of Virginia
+    ror_id: null
+  UdG:
+    address:
+      city: Guanajuato
+      country_code: Mexico
+      example_expanded: Departamento de Fisica, DCI, Campus Leon, Universidad de Guanajuato,
+        37150, Leon, Guanajuato, Mexico
+      postcode: ''
+      state: ''
+      street: 37150, Leon
+    department: Departamento de Fisica, DCI, Campus Leon
+    email: null
+    institute: Universidad de Guanajuato
+    ror_id: null
+  UniAndes:
+    address:
+      city: Bogota
+      country_code: Colombia
+      example_expanded: Universidad de los Andes, Cra 1 Num. 18A - 12 Bogota - Colombia
+      postcode: '12'
+      state: ''
+      street: Cra 1 Num. 18A
+    department: null
+    email: null
+    institute: Universidad de los Andes
+    ror_id: null
+  Utah:
+    address:
+      city: Salt Lake City
+      country_code: USA
+      example_expanded: Department of Physics and Astronomy, University of Utah, Salt
+        Lake City, UT 84112, USA
+      postcode: '84112'
+      state: UT
+      street: ''
+    department: Department of Physics and Astronomy
+    email: null
+    institute: University of Utah
+    ror_id: null
+  Vdb:
+    address:
+      city: Nashville
+      country_code: USA
+      example_expanded: Vanderbilt University, Nashville, Tennessee 37240
+      postcode: '37240'
+      state: TN
+      street: ''
+    department: null
+    email: null
+    institute: Vanderbilt University
+    ror_id: null
+  Washington:
+    address:
+      city: Seattle
+      country_code: USA
+      example_expanded: University of Washington, Dept.\ of Astronomy, Box 351580,
+        Seattle, WA 98195, USA
+      postcode: '98195'
+      state: WA
+      street: P.O. Box 351580
+    department: Dept.\ of Astronomy
+    email: uw.edu
+    institute: University of Washington
+    ror_id: null
+  Washington-Dirac:
+    address:
+      city: Seattle
+      country_code: USA
+      example_expanded: Department of Astronomy and the DIRAC Institute, University
+        of Washington, 3910 15th Avenue NE, Seattle, WA 98195, USA
+      postcode: '98195'
+      state: WA
+      street: 3910 15th Avenue NE
+    department: University of Washington
+    email: uw.edu
+    institute: Department of Astronomy and the DIRAC Institute
+    ror_id: null
+  WestWashington:
+    address:
+      city: Bellingham
+      country_code: USA
+      example_expanded: Western Washington University, 516 High Street, Bellingham,
+        WA 98225, USA
+      postcode: '98225'
+      state: WA
+      street: 516 High Street
+    department: null
+    email: null
+    institute: Western Washington University
+    ror_id: null
+  WisconsinMadison:
+    address:
+      city: Madison
+      country_code: USA
+      example_expanded: Department of Physics, University of Wisconsin-Madison, Madison,
+        WI 53706, USA
+      postcode: '53706'
+      state: WI
+      street: ''
+    department: Department of Physics
+    email: null
+    institute: University of Wisconsin-Madison
+    ror_id: null
+  Yale:
+    address:
+      city: New Haven
+      country_code: USA
+      example_expanded: Astronomy Department, Yale University, New Haven, CT 06520,
+        USA
+      postcode: '06520'
+      state: CT
+      street: ''
+    department: Astronomy Department
+    email: null
+    institute: Yale University
+    ror_id: null
+  Yonsei:
+    address:
+      city: Seoul
+      country_code: Republic of Korea
+      example_expanded: Department of Astronomy, Yonsei University, 50 Yonsei-ro,
+        Seoul 03722, Republic of Korea
+      postcode: '03722'
+      state: ''
+      street: 50 Yonsei-ro
+    department: Department of Astronomy,
+    email: null
+    institute: Yonsei University
+    ror_id: null
+  ZurichPhys:
+    address:
+      city: Zurich
+      country_code: Switzerland
+      example_expanded: Physik-Institut, University of Zurich, Winterthurerstrasse
+        190, 8057 Zurich, Switzerland
+      postcode: '8057'
+      state: ''
+      street: Winterthurerstrasse 190
+    department: Physik-Institut
+    email: physik.uzh.ch
+    institute: University of Zurich
+    ror_id: null
+  soZen:
+    address:
+      city: Penfield
+      country_code: USA
+      example_expanded: soZen Inc., 105 Clearview Dr, Penfield, NY 14526
+      postcode: '14526'
+      state: NY
+      street: 105 Clearview Dr
+    department: null
+    email: null
+    institute: soZen Inc.
+    ror_id: null
+  _:
+    address: null
+    institute: Placeholder used for collective author that will not be shown
 authors:
   RubinBuilderPaper:
     affil:
