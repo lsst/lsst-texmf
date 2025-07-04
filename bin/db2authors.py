@@ -16,7 +16,6 @@ This program requires the "yaml" package to be installed.
 """
 
 import argparse
-import dataclasses
 import os.path
 import re
 import string
@@ -26,6 +25,11 @@ from abc import ABC, abstractmethod
 from typing import Any, Self
 
 import yaml
+
+try:
+    from pydantic import dataclasses
+except ImportError:
+    import dataclasses  # type: ignore[no-redef]
 
 
 def latex2text(latex: str) -> str:
@@ -47,6 +51,60 @@ def latex2text(latex: str) -> str:
 
 
 @dataclasses.dataclass(frozen=True)
+class Address:
+    """Representation of an address."""
+
+    example_expanded: str
+    street: str | None = None
+    city: str | None = None
+    state: str | None = None
+    postcode: str | None = None
+    country_code: str | None = None
+
+
+@dataclasses.dataclass(frozen=True)
+class Affiliation:
+    """Representation of an affiliation."""
+
+    institute: str
+    department: str | None = None
+    ror_id: str | None = None
+    email: str | None = None
+    address: Address | None = None
+
+    def get_department_and_institute(self) -> str:
+        """Return department and institute as a single string."""
+        if self.department:
+            return f"{self.department}, {self.institute}"
+        return self.institute
+
+    def get_full_address_with_institute(self) -> str:
+        """Return full address as a string."""
+        if not self.address:
+            return self.get_department_and_institute()
+
+        # For now assume the example_expanded is a string that contains
+        # the full address in a format that can be used.
+        if self.address.example_expanded:
+            # Use the example expanded address.
+            return self.address.example_expanded
+
+        # Otherwise, build the address from the parts.
+        parts = [self.get_department_and_institute()]
+        if self.address.street:
+            parts.append(self.address.street)
+        if self.address.city:
+            parts.append(self.address.city)
+        if self.address.state:
+            parts.append(self.address.state)
+        if self.address.postcode:
+            parts.append(self.address.postcode)
+        if self.address.country_code:
+            parts.append(self.address.country_code)
+        return ", ".join(parts)
+
+
+@dataclasses.dataclass(frozen=True)
 class Author:
     """Representation of an author."""
 
@@ -54,7 +112,7 @@ class Author:
     family_name: str
     email: str
     orcid: str | None
-    affiliations: list[str]
+    affiliations: list[Affiliation]
     altaffil: list[str]
 
     @property
@@ -117,18 +175,14 @@ class Author:
 class AuthorFactory:
     """Extract author information from author database."""
 
-    def __init__(
-        self, affiliations: dict[str, str], email_domains: dict[str, str], authors: dict[str, Any]
-    ) -> None:
+    def __init__(self, affiliations: dict[str, Any], authors: dict[str, Any]) -> None:
         self._affiliations = affiliations
-        self._email_domains = email_domains
         self._authors = authors
 
     @classmethod
     def from_authordb(cls, authordb: dict[str, Any]) -> Self:
         return cls(
             affiliations=authordb["affiliations"],
-            email_domains=authordb["emails"],
             authors=authordb["authors"],
         )
 
@@ -138,11 +192,49 @@ class AuthorFactory:
     def get_affiliation_ids(self) -> dict_keys:
         return self._affiliations.keys()
 
-    def get_email_domains(self) -> dict:
-        return self._email_domains
+    def get_affiliation(self, affiliationid: str) -> Affiliation:
+        raw_affil = self._affiliations.get(affiliationid)
+        if not raw_affil:
+            raise RuntimeError(f"Affiliation {affiliationid!r} not found in affiliation database")
+        if raw_affil["address"]:
+            address = Address(
+                street=raw_affil["address"].get("street"),
+                city=raw_affil["address"].get("city"),
+                state=raw_affil["address"].get("state"),
+                postcode=raw_affil["address"].get("postal_code"),
+                country_code=raw_affil["address"].get("country"),
+                example_expanded=raw_affil["address"]["example_expanded"],
+            )
+        else:
+            address = None
+        return Affiliation(
+            institute=raw_affil["institute"],
+            department=raw_affil.get("department"),
+            ror_id=raw_affil.get("ror_id"),
+            email=raw_affil.get("email"),
+            address=address,
+        )
 
-    def get_affiliation(self, affiliationid: str) -> str:
-        return str(self._affiliations.get(affiliationid))
+    def get_email_domain_from_id(self, domainid: str) -> str:
+        """Get email domain from ID.
+
+        This is used to resolve the email address for authors that do not
+        have a full email address but only a key to an email domain.
+        """
+        if domainid not in self._affiliations:
+            return ""
+        affil = self._affiliations[domainid]
+        if not (domain := affil.get("email")):
+            return ""
+        return domain
+
+    def get_email_domains(self) -> dict[str, str]:
+        """Get a dictionary of known email domains."""
+        domains = {}
+        for affilid, affil in self._affiliations.items():
+            if email := affil.get("email"):
+                domains[affilid] = email
+        return domains
 
     def get_author(self, authorid: str) -> Author:
         if authorid not in self._authors:
@@ -165,7 +257,7 @@ class AuthorFactory:
             domain = author["affil"][0]  # Key to look up in email domains
         if "." not in domain:
             # This is a key to a email domain.
-            domain = self._email_domains.get(domain)
+            domain = self.get_email_domain_from_id(domain)
 
         # In theory should only warn if this is AAS but we do not know the
         # mode here.
@@ -182,8 +274,8 @@ class AuthorFactory:
         email = f"{username}@{domain}"
 
         return Author(
-            given_name=author["initials"],
-            family_name=author["name"],
+            given_name=author["given_name"],
+            family_name=author["family_name"],
             orcid=author.get("orcid"),
             email=email,
             affiliations=affiliations,
@@ -206,7 +298,7 @@ class AuthorTextGenerator(ABC):
 
 """
 
-    def number_affiliations(self) -> dict[str, int]:
+    def number_affiliations(self) -> dict[Affiliation, int]:
         """Assign number to each affiliation."""
         # Affiliations found so far.
         affil_to_number = {}
@@ -218,54 +310,6 @@ class AuthorTextGenerator(ABC):
                     affil_to_number[affiliation] = counter
 
         return affil_to_number
-
-    @classmethod
-    def parse_affiliation(cls, affiliation: str) -> dict[str, str]:
-        """Given a mailing address, try to parse it.
-
-        Would be better for authordb affiliations to be pre-parsed.
-        """
-        addr = [a.strip() for a in affiliation.split(",")]
-        # We have a problem with departments in affiliations.
-        # Until we have proper Affiliation object we have to kluge things
-        # and try to spot when departments are involved in addition to the
-        # institute.
-        combined_institutes: list[str] = []
-        combining = True
-        modified: list[str] = []
-        for a in addr:
-            if combining:
-                if "Dep" in a or "Faculty" in a:
-                    combined_institutes.append(a)
-                    continue
-                else:
-                    # Run of out of departments. Merge with the next and then
-                    # disable combinations.
-                    combined_institutes.append(a)
-                    a = ", ".join(combined_institutes)
-                    combining = False
-            modified.append(a)
-        addr = modified
-
-        institute = addr[0]
-        ind = len(addr) - 1
-        state = ""
-        pcode = ""
-        country = ""
-        if ind > 0:
-            country = addr[ind]
-            ind = ind - 1
-        if ind > 0:
-            sc = addr[ind].split()
-            ind = ind - 1
-            state = sc[0]
-            pcode = ""
-            if len(sc) == 2:
-                pcode = sc[1]
-        city = ""
-        if ind > 0:
-            city = addr[ind]
-        return {"institute": institute, "city": city, "country": country, "state": state, "postcode": pcode}
 
     @abstractmethod
     def generate(self) -> str:
@@ -294,7 +338,7 @@ class AASTeX(AuthorTextGenerator):
             for alt in author.altaffil:
                 lines.append(rf"\altaffiliation{{{alt}}}")
             for affil in author.affiliations:
-                lines.append(rf"\affiliation{{{affil}}}")
+                lines.append(rf"\affiliation{{{affil.get_full_address_with_institute()}}}")
             lines.append(rf"\email{{{author.email}}}")
 
         return self.get_header() + "\n".join(lines)
@@ -338,8 +382,7 @@ class Arxiv(AuthorTextGenerator):
 
         institutions = []
         for affil, number in affil_to_number.items():
-            parsed = self.parse_affiliation(affil)
-            institutions.append(f"({number}) {latex2text(parsed['institute'])}")
+            institutions.append(f"({number}) {latex2text(affil.get_department_and_institute())}")
 
         return f"Authors: {', '.join(author_text)}\n       ({', '.join(institutions)})"
 
@@ -363,7 +406,7 @@ class ProcSpie(AuthorTextGenerator):
         # SPIE prefers labels over numbers, so convert affiliation numbers
         # to labels but once we have more than the number of letters we switch
         # back to numbers.
-        affil_to_label = {}
+        affil_to_label: dict[Affiliation, str] = {}
         label_counter = 1
         for affil, number in affil_to_number.items():
             # Offset from affiliation number into an array index.
@@ -380,9 +423,9 @@ class ProcSpie(AuthorTextGenerator):
             labels = [affil_to_label[affil] for affil in author.affiliations]
             authors.append(rf"\author[{','.join(labels)}]{{{author.full_latex_name}}}")
 
-        affiliations = []
+        affiliations: list[str] = []
         for affil, label in affil_to_label.items():
-            affiliations.append(rf"\affil[{label}]{{{affil}}}")
+            affiliations.append(rf"\affil[{label}]{{{affil.get_full_address_with_institute()}}}")
 
         return self.get_header() + "\n".join(authors + affiliations)
 
@@ -405,7 +448,7 @@ class WebOfC(AuthorTextGenerator):
             authors.append(author_text)
 
         # The dict is ordered correctly by default.
-        affiliations = " \\and\n".join(affil_to_number)
+        affiliations = " \\and\n".join(a.get_full_address_with_institute() for a in affil_to_number)
 
         return (
             self.get_header()
@@ -436,10 +479,11 @@ class ASCOM(AuthorTextGenerator):
 
         affiliations = []
         for affil, number in affil_to_number.items():
-            parsed = self.parse_affiliation(affil)
-            affil_text = f"""\\affiliation[{number}]{{organization={{{parsed["institute"]}}},
-                country={{{parsed["country"]}}}
-               }}"""
+            country = ""
+            if affil.address and (country_code := affil.address.country_code):
+                country = f", country={{{country_code}}}"
+            affil_text = f"""\\affiliation[{number}]{{
+organization={{{affil.get_department_and_institute()}}}{country}}}"""
             affiliations.append(affil_text)
 
         return self.get_header() + "\n".join(authors) + "\n" + "\n".join(affiliations)
@@ -451,7 +495,7 @@ class ADASS(AuthorTextGenerator):
     mode = "adass"
 
     @staticmethod
-    def _to_affil_text(affil_to_number: dict[str, int], affiliations: list[str]) -> str:
+    def _to_affil_text(affil_to_number: dict[Affiliation, int], affiliations: list[Affiliation]) -> str:
         affil_numbers = [str(affil_to_number[affil]) for affil in affiliations]
         affil_text = " ".join(f"$^{n}$" for n in affil_numbers)
         return affil_text
@@ -476,12 +520,24 @@ class ADASS(AuthorTextGenerator):
 
         affiliations = []
         for affil, number in affil_to_number.items():
-            affiliations.append(f"\\affil{{$^{number}${affil}}}")
+            affiliations.append(f"\\affil{{$^{number}${affil.get_full_address_with_institute()}}}")
 
         paperauthors = []
         for author in self.authors:
             # Uses primary affiliation.
-            parsed = self.parse_affiliation(author.affiliations[0])
+            affil = author.affiliations[0]
+            parsed = {}
+            if affil.address:
+                parsed["city"] = affil.address.city or ""
+                parsed["state"] = affil.address.state or ""
+                parsed["postcode"] = affil.address.postcode or ""
+                parsed["country"] = affil.address.country_code or ""
+            else:
+                parsed["city"] = ""
+                parsed["state"] = ""
+                parsed["postcode"] = ""
+                parsed["country"] = ""
+            parsed["institute"] = affil.get_department_and_institute()
             parsed["full_name"] = author.full_latex_name
             parsed["email"] = author.email
             parsed["orcid"] = author.orcid or ""
@@ -520,7 +576,7 @@ def dump_csvall(factory: AuthorFactory) -> None:
         print("Rubin ID, Name, Affiliation(s)", file=outf)
         for authorid in author_ids:
             author = factory.get_author(authorid)
-            affils = " | ".join(author.affiliations)
+            affils = " | ".join(a.get_full_address_with_institute() for a in author.affiliations)
             line = f'{authorid},{latex2text(author.full_name)},"{latex2text(affils)}"'
             print(line, file=outf)
     affil_ids = factory.get_affiliation_ids()
@@ -528,7 +584,7 @@ def dump_csvall(factory: AuthorFactory) -> None:
         print("ID, Affiliation", file=outf)
         for id in affil_ids:
             affil = factory.get_affiliation(id)
-            line = f'{id},"{latex2text(affil)}"'
+            line = f'{id},"{latex2text(affil.get_full_address_with_institute())}"'
             print(line, file=outf)
 
 
