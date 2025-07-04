@@ -274,8 +274,8 @@ class AuthorFactory:
         email = f"{username}@{domain}"
 
         return Author(
-            given_name=author["initials"],
-            family_name=author["name"],
+            given_name=author["given_name"],
+            family_name=author["family_name"],
             orcid=author.get("orcid"),
             email=email,
             affiliations=affiliations,

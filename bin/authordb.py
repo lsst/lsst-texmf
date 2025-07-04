@@ -68,9 +68,9 @@ class Affiliation(BaseModel):
 class AuthorDbAuthor(BaseModel):
     """Model for an author entry in the authordb.yaml file."""
 
-    name: str = Field(description="Author's surname.")
+    family_name: str = Field(description="Author's surname.")
 
-    initials: str = Field(description="Author's given name.")
+    given_name: str = Field(description="Author's given name or names.")
 
     affil: list[str] = Field(default_factory=list, description="Affiliation IDs")
 
@@ -93,7 +93,7 @@ class AuthorDbAuthor(BaseModel):
     @property
     def is_collaboration(self) -> bool:
         """Check if the author is a collaboration."""
-        return self.initials == "" and self.affil == ["_"]
+        return self.given_name == "" and self.affil == ["_"]
 
 
 class AuthorDbYaml(BaseModel):

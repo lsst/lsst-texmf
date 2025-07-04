@@ -249,8 +249,8 @@ def genFiles(values: list) -> None:
                     orcid = None
                 email: str = handle_email(row[EMAIL], domains, affilid, newdomains)
                 author: AuthorDbAuthor = AuthorDbAuthor(
-                    initials=unicode_to_latex(row[NAME]),
-                    name=unicode_to_latex(row[SURNAME]),
+                    given_name=unicode_to_latex(row[NAME]),
+                    family_name=unicode_to_latex(row[SURNAME]),
                     orcid=orcid,
                     email=email,
                     affil=affilids,
