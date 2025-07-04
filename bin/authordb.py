@@ -44,6 +44,27 @@ def dump_authordb(adb: AuthorDbYaml, file_name: str | None = None) -> str:
     return authordb_path
 
 
+class Address(BaseModel):
+    """Representation of an address."""
+
+    example_expanded: str
+    street: str | None = None
+    city: str | None = None
+    state: str | None = None
+    postcode: str | None = None
+    country_code: str | None = None
+
+
+class Affiliation(BaseModel):
+    """Representation of an affiliation."""
+
+    institute: str
+    department: str | None = None
+    ror_id: str | None = None
+    email: str | None = None
+    address: Address | None = None
+
+
 class AuthorDbAuthor(BaseModel):
     """Model for an author entry in the authordb.yaml file."""
 
@@ -78,15 +99,9 @@ class AuthorDbAuthor(BaseModel):
 class AuthorDbYaml(BaseModel):
     """Model for the authordb.yaml file in lsst/lsst-texmf."""
 
-    affiliations: dict[str, str] = Field(
-        description=(
-            "Mapping of affiliation IDs to affiliation info. Affiliations "
-            "are their name, a comma, and their address."
-        )
+    affiliations: dict[str, Affiliation] = Field(
+        description=("Mapping of affiliation IDs to affiliation info.")
     )
-
-    emails: dict[str, str] = Field(description=("Mapping of affiliation IDs to email domains."))
-
     authors: dict[str, AuthorDbAuthor] = Field(description="Mapping of author IDs to author information")
 
 
@@ -99,7 +114,6 @@ if __name__ == "__main__":
 
     print("Successfully parsed AuthorDb with:")
     print(f"  - {len(adb.affiliations)} affiliations")
-    print(f"  - {len(adb.emails)} email domains")
     print(f"  - {len(adb.authors)} authors")
 
     file = dump_authordb(adb, "new_adb.yaml")
@@ -108,5 +122,4 @@ if __name__ == "__main__":
     adb = load_authordb(file)
     print(f"Successfully parsed AuthorDb {file} with:")
     print(f"  - {len(adb.affiliations)} affiliations")
-    print(f"  - {len(adb.emails)} email domains")
     print(f"  - {len(adb.authors)} authors")

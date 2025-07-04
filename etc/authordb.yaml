@@ -41,12 +41,13 @@ affiliations:
     address:
       city: Sheffield
       country_code: UK
-      example_expanded: Astrophysics Research Cluster, School of Mathematical and Physical Sciences,
-        University of Sheffield, Sheffield, S3 7RH, United Kingdom
-      postcode: 'S3 7RH'
+      example_expanded: Astrophysics Research Cluster, School of Mathematical and
+        Physical Sciences, University of Sheffield, Sheffield, S3 7RH, United Kingdom
+      postcode: S3 7RH
       state: ''
       street: ''
-    department: Astrophysics Research Cluster, School of Mathematical and Physical Sciences
+    department: Astrophysics Research Cluster, School of Mathematical and Physical
+      Sciences
     email: sheffield.ac.uk
     institute: University of Sheffield
     ror_id: null
@@ -65,8 +66,11 @@ affiliations:
   AURA-C:
     address:
       city: La Serena
-      example_expanded: AURA Observatory, Juan Cisternas 1500, La Serena, Región de Coquimbo, Chile
       country_code: Chile
+      example_expanded: AURA Observatory, Juan Cisternas 1500, La Serena, Región de
+        Coquimbo, Chile
+      postcode: null
+      state: null
       street: Juan Cisternas 1500
     department: null
     email: null
@@ -75,10 +79,11 @@ affiliations:
   AURA-T:
     address:
       city: Tucson
-      example_expanded: AURA, 950 N.\ Cherry Ave., Tucson, AZ  85719, USA
       country_code: USA
-      street: 950 N. Cherry Ave.
+      example_expanded: AURA, 950 N.\ Cherry Ave., Tucson, AZ  85719, USA
       postcode: '85719'
+      state: null
+      street: 950 N. Cherry Ave.
     department: null
     email: null
     institute: AURA Observatory
@@ -593,7 +598,7 @@ affiliations:
       postcode: ''
       state: NM
       street: ''
-    department: "Do\xF1a Ana Community College, Central Campus"
+    department: Doña Ana Community College, Central Campus
     email: null
     institute: New Mexico State University
     ror_id: null
@@ -729,10 +734,10 @@ affiliations:
     ror_id: null
   ESO:
     address:
-      city: "Garching bei M\xFCnchen"
+      city: Garching bei München
       country_code: Germany
-      example_expanded: "European Southern Observatory, Karl-Schwarzschild-Strasse\
-        \ 2, 85748 Garching bei M\xFCnchen, Germany"
+      example_expanded: European Southern Observatory, Karl-Schwarzschild-Strasse
+        2, 85748 Garching bei München, Germany
       postcode: '85748'
       state: ''
       street: Karl-Schwarzschild-Strasse 2
@@ -858,11 +863,11 @@ affiliations:
     address:
       city: Hilo
       country_code: USA
-      example_expanded: "International Gemini Observatory/NSF NOIRLab, 670 N.\\ A\u2019\
-        ohoku Place, Hilo, HI 96720, USA"
+      example_expanded: International Gemini Observatory/NSF NOIRLab, 670 N.\ A’ohoku
+        Place, Hilo, HI 96720, USA
       postcode: '96720'
       state: HI
-      street: "670 N.\\ A\u2019ohoku Place"
+      street: 670 N.\ A’ohoku Place
     department: null
     email: null
     institute: International Gemini Observatory/NSF NOIRLab
@@ -894,8 +899,10 @@ affiliations:
     ror_id: null
   Gmail:
     address: null
-    institute: Google Mail email domain Placeholder
+    department: null
     email: gmail.com
+    institute: Google Mail email domain Placeholder
+    ror_id: null
   Goddard:
     address:
       city: Greenbelt
@@ -1468,24 +1475,12 @@ affiliations:
     email: null
     institute: Library of Congress
     ror_id: null
-  LSSTC:
-    address:
-      city: Tucson
-      country_code: USA
-      example_expanded: The LSST Corporation
-      postcode: '85719'
-      state: AZ
-      street: 933 N. Cherry Ave.
-    department: null
-    email: null
-    institute: The LSST Corporation
-    ror_id: null
   LSST-DA:
     address:
       city: Tucson
       country_code: USA
-      example_expanded: LSST Discovery Alliance, 933 N. Cherry Ave., Tucson, AZ
-        85719, USA
+      example_expanded: LSST Discovery Alliance, 933 N. Cherry Ave., Tucson, AZ 85719,
+        USA
       postcode: '85719'
       state: AZ
       street: 933 N. Cherry Ave.
@@ -1498,6 +1493,18 @@ affiliations:
     department: null
     email: lists.lsst.org
     institute: Vera C.\ Rubin Observatory Project Office
+    ror_id: null
+  LSSTC:
+    address:
+      city: Tucson
+      country_code: USA
+      example_expanded: The LSST Corporation
+      postcode: '85719'
+      state: AZ
+      street: 933 N. Cherry Ave.
+    department: null
+    email: null
+    institute: The LSST Corporation
     ror_id: null
   LancasterU:
     address:
@@ -2159,12 +2166,12 @@ affiliations:
     address:
       city: Swindon
       country_code: UK
-      example_expanded: Science and Technology Facilities Council, UK Research and Innovation,
-        Polaris House, North Star Avenue, Swindon, SN2 1SZ, UK
-      postcode: 'SN2 1SZ'
+      example_expanded: Science and Technology Facilities Council, UK Research and
+        Innovation, Polaris House, North Star Avenue, Swindon, SN2 1SZ, UK
+      postcode: SN2 1SZ
       state: ''
-      street: 'Polaris House, North Star Avenue'
-    department:
+      street: Polaris House, North Star Avenue
+    department: null
     email: stfc.ac.uk
     institute: Science and Technology Facilities Council, UK Research and Innovation
     ror_id: null
@@ -2787,6 +2794,12 @@ affiliations:
     email: physik.uzh.ch
     institute: University of Zurich
     ror_id: null
+  _:
+    address: null
+    department: null
+    email: null
+    institute: Placeholder used for collective author that will not be shown
+    ror_id: null
   soZen:
     address:
       city: Penfield
@@ -2799,30 +2812,28 @@ affiliations:
     email: null
     institute: soZen Inc.
     ror_id: null
-  _:
-    address: null
-    institute: Placeholder used for collective author that will not be shown
 authors:
-  RubinBuilderPaper:
-    affil:
-    - _
-    altaffil: []
-    initials: ""
-    name: "Vera C. Rubin Observatory"
-    orcid: null
-    email: pubboard@LSST-list
   DMPipelines:
     affil:
     - _
     altaffil: []
-    initials: ""
+    email: dm-admin@LSST-list
+    initials: ''
     name: Rubin Observatory Science Pipelines Developers
     orcid: null
-    email: dm-admin@LSST-list
+  RubinBuilderPaper:
+    affil:
+    - _
+    altaffil: []
+    email: pubboard@LSST-list
+    initials: ''
+    name: Vera C. Rubin Observatory
+    orcid: null
   abelb:
     affil:
     - Olympic
     altaffil: []
+    email: null
     initials: Bob
     name: Abel
     orcid: null
@@ -2830,6 +2841,7 @@ authors:
     affil:
     - Harvard-CfA
     altaffil: []
+    email: null
     initials: Alberto
     name: Accomazzi
     orcid: null
@@ -2837,6 +2849,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
+    email: null
     initials: Emily
     name: Acosta
     orcid: 0009-0006-1601-3246
@@ -2845,6 +2858,7 @@ authors:
     - CCA
     - CUNYCT
     altaffil: []
+    email: null
     initials: Viviana
     name: Acquaviva
     orcid: null
@@ -2852,6 +2866,7 @@ authors:
     affil:
     - SLAC
     altaffil: []
+    email: null
     initials: Christina L.
     name: Adair
     orcid: null
@@ -2859,14 +2874,15 @@ authors:
     affil:
     - StonyBrookU
     altaffil: []
+    email: prakruth.adari
     initials: Prakruth
     name: Adari
     orcid: 0000-0001-9431-3806
-    email: prakruth.adari
   adelmanmccarthyj:
     affil:
     - Fermilab
     altaffil: []
+    email: null
     initials: Jennifer K.
     name: Adelman-McCarthy
     orcid: 0000-0002-4100-8928
@@ -2874,6 +2890,7 @@ authors:
     affil:
     - Maryland
     altaffil: []
+    email: null
     initials: Tomas
     name: Ahumada
     orcid: null
@@ -2881,14 +2898,15 @@ authors:
     affil:
     - RubinObs
     altaffil: []
+    email: rra
     initials: Russ
     name: Allbery
     orcid: null
-    email: rra
   allsmanr:
     affil:
     - RubinObs
     altaffil: []
+    email: null
     initials: Robyn
     name: Allsman
     orcid: null
@@ -2896,6 +2914,7 @@ authors:
     affil:
     - Oxford
     altaffil: []
+    email: null
     initials: David
     name: Alonso
     orcid: null
@@ -2903,14 +2922,15 @@ authors:
     affil:
     - Princeton-Astro
     altaffil: []
+    email: yusra
     initials: Yusra
     name: AlSayyad
     orcid: 0009-0008-9216-7516
-    email: yusra
   alvecs:
     affil:
     - UCL
     altaffil: []
+    email: null
     initials: Catarina S.
     name: Alves
     orcid: 0000-0002-6164-9044
@@ -2918,15 +2938,9 @@ authors:
     affil:
     - Washington
     altaffil: []
+    email: null
     initials: Scott F.
     name: Anderson
-    orcid: null
-  andrewj:
-    affil:
-    - RubinObs
-    altaffil: []
-    initials: John
-    name: Andrew
     orcid: null
   andreonii:
     affil:
@@ -2934,13 +2948,23 @@ authors:
     - Maryland-astro
     - Goddard
     altaffil: []
+    email: null
     initials: Igor
     name: Andreoni
     orcid: 0000-0002-8977-1498
+  andrewj:
+    affil:
+    - RubinObs
+    altaffil: []
+    email: null
+    initials: John
+    name: Andrew
+    orcid: null
   andricmitrovicn:
     affil:
     - Belgrade-CS
     altaffil: []
+    email: null
     initials: Nikola
     name: Andri\'{c} Mitrovi\'{c}
     orcid: null
@@ -2948,6 +2972,7 @@ authors:
     affil:
     - GMTO
     altaffil: []
+    email: null
     initials: George Z.
     name: Angeli
     orcid: null
@@ -2955,6 +2980,7 @@ authors:
     affil:
     - UA-Steward
     altaffil: []
+    email: null
     initials: James Roger P.
     name: Angel
     orcid: null
@@ -2963,6 +2989,7 @@ authors:
     - Santiago-dept
     - Santiago-Millenium
     altaffil: []
+    email: null
     initials: Timo
     name: Anguita
     orcid: 0000-0003-0930-5815
@@ -2970,6 +2997,7 @@ authors:
     affil:
     - IN2P3-IJCLAB
     altaffil: []
+    email: null
     initials: Reza
     name: Ansari
     orcid: null
@@ -2977,6 +3005,7 @@ authors:
     affil:
     - NASA
     altaffil: []
+    email: null
     initials: Megan
     name: Ansdell
     orcid: null
@@ -2984,6 +3013,7 @@ authors:
     affil:
     - IN2P3-LPNHE
     altaffil: []
+    email: null
     initials: Pierre
     name: Antilogus
     orcid: null
@@ -2991,6 +3021,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
+    email: null
     initials: Constanza
     name: Araujo
     orcid: null
@@ -2998,6 +3029,7 @@ authors:
     affil:
     - Princeton-Astro
     altaffil: []
+    email: null
     initials: Robert
     name: Armstrong
     orcid: null
@@ -3005,6 +3037,7 @@ authors:
     affil:
     - Oxford
     altaffil: []
+    email: null
     initials: Kirk T.
     name: Arndt
     orcid: 0000-0002-6826-8340
@@ -3012,6 +3045,7 @@ authors:
     affil:
     - IN2P3-LPNHE
     altaffil: []
+    email: null
     initials: Pierre
     name: Astier
     orcid: null
@@ -3019,6 +3053,7 @@ authors:
     affil:
     - IN2P3-APC-CEA
     altaffil: []
+    email: null
     initials: \'{E}ric
     name: Aubourg
     orcid: null
@@ -3026,6 +3061,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
+    email: null
     initials: Nicole
     name: Auza
     orcid: null
@@ -3033,34 +3069,31 @@ authors:
     affil:
     - UA-Steward
     altaffil: []
+    email: null
     initials: Tim S.
     name: Axelrod
     orcid: 0000-0002-5722-7199
-  banekc:
-    affil:
-    - RubinObs
-    altaffil: []
-    initials: Christine
-    name: Banek
-    orcid: null
   baileys:
     affil:
     - Berkeley-LBNL
     altaffil: []
+    email: null
     initials: Stephen
     name: Bailey
     orcid: null
-  barriac:
+  banekc:
     affil:
-    - RubinObsC
+    - RubinObs
     altaffil: []
-    initials: Carlos
-    name: Barr\'{i}a
+    email: null
+    initials: Christine
+    name: Banek
     orcid: null
   barddj:
     affil:
     - SLAC
     altaffil: []
+    email: null
     initials: Deborah J.
     name: Bard
     orcid: 0000-0002-5162-5153
@@ -3068,26 +3101,39 @@ authors:
     affil:
     - IN2P3-LPSC
     altaffil: []
+    email: null
     initials: Aurelian
     name: Barrau
-    orcid: null
-  barrjd:
-    affil:
-    - RubinObs
-    altaffil: []
-    initials: Jeff D.
-    name: Barr
     orcid: null
   barrettp:
     affil:
     - USNO
     altaffil: []
+    email: null
     initials: Paul
     name: Barrett
+    orcid: null
+  barriac:
+    affil:
+    - RubinObsC
+    altaffil: []
+    email: null
+    initials: Carlos
+    name: Barr\'{i}a
+    orcid: null
+  barrjd:
+    affil:
+    - RubinObs
+    altaffil: []
+    email: null
+    initials: Jeff D.
+    name: Barr
+    orcid: null
   bartlettjg:
     affil:
     - IN2P3-APC
     altaffil: []
+    email: null
     initials: James G.
     name: Bartlett
     orcid: null
@@ -3095,6 +3141,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
+    email: null
     initials: Amanda E.
     name: Bauer
     orcid: 0000-0001-9037-6981
@@ -3102,6 +3149,7 @@ authors:
     affil:
     - LLNL
     altaffil: []
+    email: null
     initials: Brian J.
     name: Bauman
     orcid: null
@@ -3110,6 +3158,7 @@ authors:
     - IN2P3-UPMC
     - IN2P3-LPNHE
     altaffil: []
+    email: null
     initials: Sylvain
     name: Baumont
     orcid: null
@@ -3117,6 +3166,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
+    email: null
     initials: Ellen
     name: Bechtol
     orcid: null
@@ -3125,14 +3175,15 @@ authors:
     - RubinObs
     - WisconsinMadison
     altaffil: []
+    email: KBechtol
     initials: Keith
     name: Bechtol
     orcid: 0000-0001-8156-0429
-    email: KBechtol
   beckerac:
     affil:
     - Washington
     altaffil: []
+    email: null
     initials: Andrew C.
     name: Becker
     orcid: 0000-0001-6661-3043
@@ -3140,14 +3191,15 @@ authors:
     affil:
     - EdinburghIA
     altaffil: []
+    email: george.beckett
     initials: Mark G.
     name: Beckett
     orcid: 0000-0003-3623-9753
-    email: george.beckett
   beclaj:
     affil:
     - SLAC
     altaffil: []
+    email: null
     initials: Jacek
     name: Becla
     orcid: null
@@ -3155,6 +3207,7 @@ authors:
     affil:
     - NCSA
     altaffil: []
+    email: null
     initials: Cristina
     name: Beldica
     orcid: null
@@ -3162,6 +3215,7 @@ authors:
     affil:
     - BNL
     altaffil: []
+    email: null
     initials: Steve
     name: Bellavia
     orcid: null
@@ -3169,14 +3223,15 @@ authors:
     affil:
     - Washington
     altaffil: []
+    email: ecbellm
     initials: Eric C.
     name: Bellm
     orcid: 0000-0001-8018-5348
-    email: ecbellm
   berukoffs:
     affil:
     - NOIRLab
     altaffil: []
+    email: null
     initials: Steven
     name: Berukoff
     orcid: null
@@ -3184,6 +3239,7 @@ authors:
     affil:
     - CUNY-Grad
     altaffil: []
+    email: null
     initials: Henry J.
     name: Best
     orcid: null
@@ -3193,6 +3249,7 @@ authors:
     - Delaware-Policy
     - Delaware-DataSci
     altaffil: []
+    email: null
     initials: Federica B.
     name: Bianco
     orcid: 0000-0003-1953-8727
@@ -3200,6 +3257,7 @@ authors:
     affil:
     - OKC
     altaffil: []
+    email: null
     initials: Rahul
     name: Biswas
     orcid: null
@@ -3207,6 +3265,7 @@ authors:
     affil:
     - SLAC-Kavli
     altaffil: []
+    email: null
     initials: Roger D.
     name: Blandford
     orcid: null
@@ -3214,6 +3273,7 @@ authors:
     affil:
     - NYU-CCPP
     altaffil: []
+    email: null
     initials: Michael R.
     name: Blanton
     orcid: null
@@ -3222,6 +3282,7 @@ authors:
     - OSU
     - EPFL
     altaffil: []
+    email: null
     initials: Jonathan
     name: Blazek
     orcid: null
@@ -3229,6 +3290,7 @@ authors:
     affil:
     - Berkeley-Astro
     altaffil: []
+    email: null
     initials: Josh S.
     name: Bloom
     orcid: null
@@ -3236,6 +3298,7 @@ authors:
     affil:
     - RubinOps
     altaffil: []
+    email: null
     initials: Robert D.
     name: Blum
     orcid: 0000-0002-8622-4237
@@ -3243,6 +3306,7 @@ authors:
     affil:
     - SLAC-Kavli
     altaffil: []
+    email: null
     initials: Joanne
     name: Bogart
     orcid: null
@@ -3250,12 +3314,15 @@ authors:
     affil:
     - SLAC
     altaffil: []
+    email: null
     initials: Adam
     name: Bolton
+    orcid: null
   bondtw:
     affil:
     - SLAC
     altaffil: []
+    email: null
     initials: Tim W.
     name: Bond
     orcid: null
@@ -3263,6 +3330,7 @@ authors:
     affil:
     - INAF-Palermo
     altaffil: []
+    email: null
     initials: Rosaria
     name: Bonito
     orcid: 0000-0001-9297-7748
@@ -3270,20 +3338,15 @@ authors:
     affil:
     - RubinObs
     altaffil: []
+    email: null
     initials: Michael T.
     name: Booth
-    orcid: null
-  borrillj:
-    affil:
-    - Berkeley-LBNL
-    altaffil: []
-    initials: Julian
-    name: Borrill
     orcid: null
   borglandaw:
     affil:
     - SLAC
     altaffil: []
+    email: null
     initials: Anders W.
     name: Borgland
     orcid: null
@@ -3291,21 +3354,31 @@ authors:
     affil:
     - GMU
     altaffil: []
+    email: null
     initials: Kirk
     name: Borne
+    orcid: null
+  borrillj:
+    affil:
+    - Berkeley-LBNL
+    altaffil: []
+    email: null
+    initials: Julian
+    name: Borrill
     orcid: null
   boschjf:
     affil:
     - Princeton-Astro
     altaffil: []
+    email: jbosch
     initials: James F.
     name: Bosch
     orcid: 0000-0003-2759-5764
-    email: jbosch
   boucauda:
     affil:
     - IN2P3-APC
     altaffil: []
+    email: null
     initials: Alexandre
     name: Boucaud
     orcid: 0000-0001-7387-2633
@@ -3313,6 +3386,7 @@ authors:
     affil:
     - IN2P3-LAPP
     altaffil: []
+    email: null
     initials: Dominique
     name: Boutigny
     orcid: 0000-0003-4887-2150
@@ -3320,6 +3394,7 @@ authors:
     affil:
     - SLAC
     altaffil: []
+    email: null
     initials: Craig A.
     name: Brackett
     orcid: null
@@ -3328,6 +3403,7 @@ authors:
     - SLAC
     - SLAC-Kavli
     altaffil: []
+    email: null
     initials: Andrew
     name: Bradshaw
     orcid: null
@@ -3335,6 +3411,7 @@ authors:
     affil:
     - PSU
     altaffil: []
+    email: null
     initials: William Nielsen
     name: Brandt
     orcid: 0000-0002-0167-2453
@@ -3342,6 +3419,7 @@ authors:
     affil:
     - IN2P3-LPSC
     altaffil: []
+    email: null
     initials: Johan
     name: Bregeon
     orcid: 0000-0002-6790-5328
@@ -3349,6 +3427,7 @@ authors:
     affil:
     - CCA
     altaffil: []
+    email: null
     initials: Katelyn
     name: Breivik
     orcid: 0000-0001-5228-6598
@@ -3356,6 +3435,7 @@ authors:
     affil:
     - Napoli
     altaffil: []
+    email: null
     initials: Massimo
     name: Brescia
     orcid: 0000-0001-9506-5680
@@ -3363,6 +3443,7 @@ authors:
     affil:
     - IN2P3-CPPM
     altaffil: []
+    email: null
     initials: Patrick
     name: Breugnon
     orcid: null
@@ -3370,6 +3451,7 @@ authors:
     affil:
     - RubinOpsC
     altaffil: []
+    email: null
     initials: Brian J.
     name: Brondel
     orcid: 0009-0005-3510-6248
@@ -3377,6 +3459,7 @@ authors:
     affil:
     - DGPS
     altaffil: []
+    email: null
     initials: Michael E.
     name: Brown
     orcid: 0000-0002-8255-0545
@@ -3384,6 +3467,7 @@ authors:
     affil:
     - UCIrvine-CC
     altaffil: []
+    email: null
     initials: James S.
     name: Bullock
     orcid: null
@@ -3391,34 +3475,39 @@ authors:
     affil:
     - SLAC-Kavli
     altaffil: []
+    email: null
     initials: Patricia
     name: Burchat
-    orcid: null
-  butlerm:
-    affil:
-    - NCSA
-    altaffil: []
-    initials: Michelle
-    name: Butler
     orcid: null
   burkec:
     affil:
     - Illinois-astro
     altaffil: []
+    email: null
     initials: Colin J.
     name: Burke
-    orcid:
+    orcid: null
   burkedl:
     affil:
     - SLAC-Kavli
     altaffil: []
+    email: null
     initials: David L.
     name: Burke
     orcid: 0000-0003-1866-1950
+  butlerm:
+    affil:
+    - NCSA
+    altaffil: []
+    email: null
+    initials: Michelle
+    name: Butler
+    orcid: null
   cagnolig:
     affil:
     - IN2P3-IP2I
     altaffil: []
+    email: null
     initials: Gianpietro
     name: Cagnoli
     orcid: null
@@ -3426,6 +3515,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
+    email: null
     initials: Daniel
     name: Calabrese
     orcid: null
@@ -3433,6 +3523,7 @@ authors:
     affil:
     - Oxford
     altaffil: []
+    email: null
     initials: Nick
     name: Callahan
     orcid: null
@@ -3440,6 +3531,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
+    email: null
     initials: Shawn
     name: Callahan
     orcid: null
@@ -3447,6 +3539,7 @@ authors:
     affil:
     - SLAC
     altaffil: []
+    email: null
     initials: Alice L.
     name: Callen
     orcid: null
@@ -3454,35 +3547,40 @@ authors:
     affil:
     - CMU
     altaffil: []
+    email: null
     initials: Andresa
     name: Rodrigues de Campos
     orcid: 0000-0002-5124-0771
-  canestrarir:
-    affil:
-    - INAF-IASF-Pa
-    altaffil: []
-    initials: Rodolfo
-    name: Canestrari
-    orcid: 0000-0003-4591-7763
   cancinob:
     affil:
     - NOIRLabC
     altaffil: []
+    email: null
     initials: Braulio
     name: Cancino
     orcid: null
+  canestrarir:
+    affil:
+    - INAF-IASF-Pa
+    altaffil: []
+    email: null
+    initials: Rodolfo
+    name: Canestrari
+    orcid: 0000-0003-4591-7763
   cantiellom:
     affil:
     - CCA
     - Princeton-Astro
     altaffil: []
+    email: null
     initials: Matteo
     name: Cantiello
-    orcid:
+    orcid: null
   caplarn:
     affil:
     - Princeton-Astro
     altaffil: []
+    email: null
     initials: Neven
     name: Caplar
     orcid: 0000-0003-3287-5250
@@ -3490,14 +3588,15 @@ authors:
     affil:
     - RubinObs
     altaffil: []
+    email: jcarlin
     initials: Jeffrey L.
     name: Carlin
     orcid: 0000-0002-3936-9628
-    email: jcarlin
   carlsonel:
     affil:
     - RubinObs
     altaffil: []
+    email: null
     initials: Erin L.
     name: Carlson
     orcid: null
@@ -3505,35 +3604,39 @@ authors:
     affil:
     - RubinOps
     altaffil: []
+    email: ross.ceballo
     initials: Ross
     name: Ceballo
     orcid: null
-    email: ross.ceballo
   chandlerc:
     affil:
     - NAU
     altaffil: []
+    email: null
     initials: Colin Orion
     name: Chandler
     orcid: 0000-0001-7335-1715
-  chanj:
-    affil:
-    - CUNY
-    altaffil: []
-    initials: James
-    name: Chan
-    orcid: null
   chandrasekharans:
     affil:
     - UA-CompSci
     altaffil: []
+    email: null
     initials: Srinivasan
     name: Chandrasekharan
+    orcid: null
+  chanj:
+    affil:
+    - CUNY
+    altaffil: []
+    email: null
+    initials: James
+    name: Chan
     orcid: null
   charlesemersong:
     affil:
     - RubinObs
     altaffil: []
+    email: null
     initials: Glenaver
     name: Charles-Emerson
     orcid: null
@@ -3541,6 +3644,7 @@ authors:
     affil:
     - JPL
     altaffil: []
+    email: null
     initials: Steve
     name: Chesley
     orcid: 0000-0003-3240-6497
@@ -3548,6 +3652,7 @@ authors:
     affil:
     - UA-Physics
     altaffil: []
+    email: null
     initials: Elliott C.
     name: Cheu
     orcid: null
@@ -3555,6 +3660,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
+    email: null
     initials: Hsin-Fang
     name: Chiang
     orcid: 0000-0002-1181-1621
@@ -3562,6 +3668,7 @@ authors:
     affil:
     - SLAC-Kavli
     altaffil: []
+    email: null
     initials: James
     name: Chiang
     orcid: null
@@ -3569,6 +3676,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
+    email: null
     initials: Carol
     name: Chirino
     orcid: null
@@ -3576,6 +3684,7 @@ authors:
     affil:
     - NOIRLab
     altaffil: []
+    email: null
     initials: Yumi
     name: Choi
     orcid: 0000-0003-1680-1884
@@ -3583,6 +3692,7 @@ authors:
     affil:
     - SLAC
     altaffil: []
+    email: null
     initials: Derek
     name: Chow
     orcid: null
@@ -3590,6 +3700,7 @@ authors:
     affil:
     - IPAC
     altaffil: []
+    email: null
     initials: David R.
     name: Ciardi
     orcid: null
@@ -3597,6 +3708,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
+    email: null
     initials: Charles F.
     name: Claver
     orcid: null
@@ -3604,6 +3716,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
+    email: null
     initials: Andy W.
     name: Clements
     orcid: null
@@ -3611,6 +3724,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
+    email: null
     initials: Joseph J.
     name: Cockrum
     orcid: null
@@ -3618,6 +3732,7 @@ authors:
     affil:
     - IN2P3-LUPM
     altaffil: []
+    email: null
     initials: Johann
     name: Cohen-Tanugi
     orcid: 0000-0001-9022-4232
@@ -3625,6 +3740,7 @@ authors:
     affil:
     - OSU
     altaffil: []
+    email: null
     initials: Rebecca
     name: Coles
     orcid: 0000-0002-4774-9364
@@ -3632,6 +3748,7 @@ authors:
     affil:
     - RubinObsC
     altaffil: []
+    email: null
     initials: Franco
     name: Colleoni
     orcid: null
@@ -3639,6 +3756,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
+    email: null
     initials: Gabriele
     name: Comoretto
     orcid: null
@@ -3646,6 +3764,7 @@ authors:
     affil:
     - Washington-Dirac
     altaffil: []
+    email: null
     initials: Andrew J.
     name: Connolly
     orcid: 0000-0001-5576-8189
@@ -3653,6 +3772,7 @@ authors:
     affil:
     - COOK
     altaffil: []
+    email: null
     initials: Kem H.
     name: Cook
     orcid: null
@@ -3660,6 +3780,7 @@ authors:
     affil:
     - UCIrvine-CC
     altaffil: []
+    email: null
     initials: Asantha
     name: Cooray
     orcid: null
@@ -3667,6 +3788,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
+    email: null
     initials: Lauren
     name: Corlies
     orcid: 0000-0002-0646-1540
@@ -3674,6 +3796,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
+    email: null
     initials: Luis
     name: Corral
     orcid: null
@@ -3681,6 +3804,7 @@ authors:
     affil:
     - NOIRLabC
     altaffil: []
+    email: null
     initials: Patricio
     name: Cortes
     orcid: null
@@ -3688,6 +3812,7 @@ authors:
     affil:
     - WestWashington
     altaffil: []
+    email: null
     initials: Kevin R.
     name: Covey
     orcid: 0000-0001-6914-7797
@@ -3695,6 +3820,7 @@ authors:
     affil:
     - Washington-Dirac
     altaffil: []
+    email: null
     initials: John Franklin
     name: Crenshaw
     orcid: 0000-0002-2495-3514
@@ -3702,6 +3828,7 @@ authors:
     affil:
     - NCSA
     altaffil: []
+    email: null
     initials: Chris
     name: Cribbs
     orcid: null
@@ -3709,6 +3836,7 @@ authors:
     affil:
     - CUNY-Hunter
     altaffil: []
+    email: null
     initials: Kelle
     name: Cruz
     orcid: null
@@ -3716,6 +3844,7 @@ authors:
     affil:
     - Purdue-Astro
     altaffil: []
+    email: null
     initials: Wei
     name: Cui
     orcid: 0000-0002-6324-5772
@@ -3723,6 +3852,7 @@ authors:
     affil:
     - INAF-OAS
     altaffil: []
+    email: null
     initials: Felice
     name: Cusano
     orcid: 0000-0003-2910-6565
@@ -3730,6 +3860,7 @@ authors:
     affil:
     - IPAC
     altaffil: []
+    email: null
     initials: Roc
     name: Cutri
     orcid: 0000-0002-0077-2305
@@ -3737,6 +3868,7 @@ authors:
     affil:
     - LINEA
     altaffil: []
+    email: null
     initials: Luiz Nicolaci
     name: da Costa
     orcid: null
@@ -3744,6 +3876,7 @@ authors:
     affil:
     - IN2P3-IJCLAB
     altaffil: []
+    email: null
     initials: Sylvie
     name: Dagoret-Campagne
     orcid: 0000-0003-1131-7030
@@ -3751,6 +3884,7 @@ authors:
     affil:
     - CCA
     altaffil: []
+    email: null
     initials: Julianne
     name: Dalcanton
     orcid: null
@@ -3758,6 +3892,7 @@ authors:
     affil:
     - Princeton-Astro
     altaffil: []
+    email: null
     initials: Shany
     name: Danieli
     orcid: 0000-0002-1841-2252
@@ -3765,6 +3900,7 @@ authors:
     affil:
     - Washington
     altaffil: []
+    email: null
     initials: Scott F.
     name: Daniel
     orcid: null
@@ -3772,6 +3908,7 @@ authors:
     affil:
     - RubinObsC
     altaffil: []
+    email: null
     initials: Felipe
     name: Daruich
     orcid: null
@@ -3779,6 +3916,7 @@ authors:
     affil:
     - IN2P3-LPNHE
     altaffil: []
+    email: null
     initials: Guillaume
     name: Daubard
     orcid: null
@@ -3786,6 +3924,7 @@ authors:
     affil:
     - NCSA
     altaffil: []
+    email: null
     initials: Greg
     name: Daues
     orcid: null
@@ -3793,6 +3932,7 @@ authors:
     affil:
     - Washington-Dirac
     altaffil: []
+    email: null
     initials: James R. A.
     name: Davenport
     orcid: 0000-0002-0637-835X
@@ -3800,6 +3940,7 @@ authors:
     affil:
     - LLNL
     altaffil: []
+    email: null
     initials: William
     name: Dawson
     orcid: 0000-0003-0248-6123
@@ -3807,6 +3948,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
+    email: null
     initials: Francisco
     name: Delgado
     orcid: null
@@ -3814,6 +3956,7 @@ authors:
     affil:
     - BNL
     altaffil: []
+    email: null
     initials: Alfred
     name: Dellapenna
     orcid: null
@@ -3821,14 +3964,15 @@ authors:
     affil:
     - RubinObs
     altaffil: []
+    email: edennihy
     initials: Erik
     name: Dennihy
     orcid: null
-    email: edennihy
   depeysterr:
     affil:
     - SLAC
     altaffil: []
+    email: null
     initials: Robert
     name: de Peyster
     orcid: null
@@ -3836,6 +3980,7 @@ authors:
     affil:
     - IPAC
     altaffil: []
+    email: null
     initials: Vandana
     name: Desai
     orcid: null
@@ -3843,6 +3988,7 @@ authors:
     affil:
     - Princeton-Astro
     altaffil: []
+    email: null
     initials: Miguel
     name: de Val-Borro
     orcid: 0000-0002-0455-9384
@@ -3850,6 +3996,7 @@ authors:
     affil:
     - NOIRLabC
     altaffil: []
+    email: null
     initials: Norman
     name: Diaz
     orcid: null
@@ -3857,6 +4004,7 @@ authors:
     affil:
     - SLAC
     altaffil: []
+    email: null
     initials: Seth W.
     name: Digel
     orcid: null
@@ -3864,6 +4012,7 @@ authors:
     affil:
     - Washington
     altaffil: []
+    email: null
     initials: Dino
     name: Bektesevic
     orcid: null
@@ -3871,6 +4020,7 @@ authors:
     affil:
     - Harvard-Physics
     altaffil: []
+    email: null
     initials: Peter
     name: Doherty
     orcid: null
@@ -3879,13 +4029,15 @@ authors:
     - IAFE
     - CONICET
     altaffil: []
+    email: null
     initials: Mariano
     name: Dominguez
-    orcid:
+    orcid: null
   drassh:
     affil:
     - RubinObsC
     altaffil: []
+    email: null
     initials: Holger
     name: Drass
     orcid: 0000-0002-7790-9971
@@ -3893,14 +4045,15 @@ authors:
     affil:
     - IPAC
     altaffil: []
+    email: gpdf
     initials: Gregory P.
     name: Dubois-Felsmann
     orcid: 0000-0003-1598-6979
-    email: gpdf
   duboisr:
     affil:
     - SLAC
     altaffil: []
+    email: null
     initials: Richard
     name: Dubois
     orcid: 0009-0002-4679-3192
@@ -3908,6 +4061,7 @@ authors:
     affil:
     - ChUniv
     altaffil: []
+    email: null
     initials: Josef
     name: Durech
     orcid: null
@@ -3915,14 +4069,15 @@ authors:
     affil:
     - RubinObs
     altaffil: []
+    email: frossie
     initials: Frossie
     name: Economou
     orcid: 0000-0002-8333-7615
-    email: frossie
   eggls:
     affil:
     - Washington
     altaffil: []
+    email: null
     initials: Siegfried
     name: Eggl
     orcid: 0000-0002-1398-6302
@@ -3930,13 +4085,16 @@ authors:
     affil:
     - UA-Steward
     altaffil: []
+    email: null
     initials: Tim
     name: Eifler
     orcid: null
   eigero:
     affil:
     - SLAC-Kavli
-    altaffil: [SLAC]
+    altaffil:
+    - SLAC
+    email: null
     initials: Orion
     name: Eiger
     orcid: 0000-0003-2933-391X
@@ -3944,6 +4102,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
+    email: null
     initials: Benjamin L.
     name: Emmons
     orcid: null
@@ -3951,6 +4110,7 @@ authors:
     affil:
     - PSU
     altaffil: []
+    email: null
     initials: Michael
     name: Eracleous
     orcid: 0000-0002-3719-940X
@@ -3958,6 +4118,7 @@ authors:
     affil:
     - RubinObsC
     altaffil: []
+    email: null
     initials: Baden
     name: Erb
     orcid: null
@@ -3965,6 +4126,7 @@ authors:
     affil:
     - Harvard-Physics
     altaffil: []
+    email: null
     initials: Johnny H.
     name: Esteves
     orcid: 0000-0003-4373-2386
@@ -3972,6 +4134,7 @@ authors:
     affil:
     - Harvard-CfA
     altaffil: []
+    email: null
     initials: Janet D.
     name: Evans
     orcid: 0000-0003-3509-0870
@@ -3980,6 +4143,7 @@ authors:
     - CCA
     - Cardiff
     altaffil: []
+    email: null
     initials: Giulio
     name: Fabbian
     orcid: 0000-0002-3255-4695
@@ -3987,6 +4151,7 @@ authors:
     affil:
     - CUNY-Grad
     altaffil: []
+    email: null
     initials: Joshua
     name: Fagin
     orcid: null
@@ -3994,6 +4159,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
+    email: null
     initials: Parker
     name: Fagrelius
     orcid: null
@@ -4001,14 +4167,15 @@ authors:
     affil:
     - RubinObs
     altaffil: []
+    email: afausti
     initials: Angelo
     name: Fausti Neto
     orcid: 0000-0002-8095-305X
-    email: afausti
   fergusonh:
     affil:
     - STScI
     altaffil: []
+    email: null
     initials: Henry
     name: Ferguson
     orcid: 0000-0001-7113-2738
@@ -4016,6 +4183,7 @@ authors:
     affil:
     - WisconsinMadison
     altaffil: []
+    email: null
     initials: Peter S.
     name: Ferguson
     orcid: 0000-0001-6957-1627
@@ -4023,14 +4191,15 @@ authors:
     affil:
     - SLAC
     altaffil: []
+    email: ferte
     initials: Agn\`{e}s F.
     name: Fert\'{e}
     orcid: 0000-0003-3065-9941
-    email: ferte
   fieldb:
     affil:
     - DOE
     altaffil: []
+    email: null
     initials: Bryan
     name: Field
     orcid: null
@@ -4038,6 +4207,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
+    email: null
     initials: Enrique
     name: Figueroa
     orcid: null
@@ -4045,14 +4215,15 @@ authors:
     affil:
     - Washington
     altaffil: []
+    email: kfindeis
     initials: Krzysztof
     name: Findeisen
     orcid: 0000-0003-1898-5760
-    email: kfindeis
   fisherlevinem:
     affil:
     - D4D
     altaffil: []
+    email: null
     initials: Merlin
     name: Fisher-Levine
     orcid: 0000-0001-9440-8960
@@ -4060,6 +4231,7 @@ authors:
     affil:
     - SLAC
     altaffil: []
+    email: null
     initials: Warren
     name: Focke
     orcid: null
@@ -4067,6 +4239,7 @@ authors:
     affil:
     - NOIRLab
     altaffil: []
+    email: null
     initials: Gloria
     name: Fonseca Alvarez
     orcid: 0000-0003-0042-6936
@@ -4077,6 +4250,7 @@ authors:
     - CUNY-Grad
     - CCA
     altaffil: []
+    email: null
     initials: K. E. Saavik
     name: Ford
     orcid: 0000-0002-5956-851X
@@ -4084,6 +4258,7 @@ authors:
     affil:
     - CCA
     altaffil: []
+    email: null
     initials: Dan
     name: Foreman-Mackey
     orcid: null
@@ -4091,6 +4266,7 @@ authors:
     affil:
     - UniAndes
     altaffil: []
+    email: null
     initials: Jaime
     name: Forero-Romero
     orcid: null
@@ -4098,6 +4274,7 @@ authors:
     affil:
     - SLAC
     altaffil: []
+    email: null
     initials: Michael D.
     name: Foss
     orcid: null
@@ -4105,6 +4282,7 @@ authors:
     affil:
     - BNL
     altaffil: []
+    email: null
     initials: James
     name: Frank
     orcid: null
@@ -4112,6 +4290,7 @@ authors:
     affil:
     - NCSA
     altaffil: []
+    email: null
     initials: Michael D.
     name: Freemon
     orcid: null
@@ -4119,14 +4298,15 @@ authors:
     affil:
     - SLAC
     altaffil: []
+    email: danfuchs
     initials: Dan S.
     name: Fuchs
     orcid: 0009-0007-2454-1951
-    email: danfuchs
   fus:
     affil:
     - SLAC-Kavli
     altaffil: []
+    email: null
     initials: Shenming
     name: Fu
     orcid: 0000-0001-5422-1958
@@ -4134,6 +4314,7 @@ authors:
     affil:
     - TACC
     altaffil: []
+    email: null
     initials: Niall
     name: Gaffney
     orcid: null
@@ -4141,20 +4322,15 @@ authors:
     affil:
     - Illinois-astro
     altaffil: []
+    email: null
     initials: Alexander
     name: Gagliano
     orcid: 0000-0003-4906-8447
-  garaviton:
-    affil:
-    - CCA
-    altaffil: []
-    initials: Nicol\'{a}s
-    name: Garavito Camargo
-    orcid: null
   gallc:
     affil:
     - DARK
     altaffil: []
+    email: null
     initials: Christa
     name: Gall
     orcid: 0000-0002-8526-3963
@@ -4162,6 +4338,7 @@ authors:
     affil:
     - IN2P3-LPCA
     altaffil: []
+    email: null
     initials: Emmanuel
     name: Gangler
     orcid: 0000-0001-6728-1423
@@ -4169,13 +4346,23 @@ authors:
     affil:
     - SLAC
     altaffil: []
+    email: null
     initials: Igor
     name: Gaponenko
+    orcid: null
+  garaviton:
+    affil:
+    - CCA
+    altaffil: []
+    email: null
+    initials: Nicol\'{a}s
+    name: Garavito Camargo
     orcid: null
   gatesj:
     affil:
     - SLAC
     altaffil: []
+    email: null
     initials: John
     name: Gates
     orcid: null
@@ -4183,6 +4370,7 @@ authors:
     affil:
     - Rutgers
     altaffil: []
+    email: null
     initials: Eric
     name: Gawiser
     orcid: 0000-0003-1530-8713
@@ -4190,6 +4378,7 @@ authors:
     affil:
     - SAO
     altaffil: []
+    email: null
     initials: John C.
     name: Geary
     orcid: null
@@ -4197,6 +4386,7 @@ authors:
     affil:
     - UCDavis
     altaffil: []
+    email: null
     initials: Perry
     name: Gee
     orcid: null
@@ -4204,6 +4394,7 @@ authors:
     affil:
     - Yale
     altaffil: []
+    email: null
     initials: Marla
     name: Geha
     orcid: 0000-0002-7007-9725
@@ -4211,6 +4402,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
+    email: null
     initials: Charles J. B.
     name: Gessner
     orcid: null
@@ -4218,6 +4410,7 @@ authors:
     affil:
     - STScI
     altaffil: []
+    email: null
     initials: Suvi
     name: Gezari
     orcid: null
@@ -4225,27 +4418,31 @@ authors:
     affil:
     - Washington
     altaffil: []
+    email: null
     initials: Robert R.
     name: Gibson
-    orcid: null
-  gillr:
-    affil:
-    - RubinOpsC
-    altaffil: []
-    initials: Ranpal K.
-    name: Gill
     orcid: null
   gilliesk:
     affil:
     - TMT
     altaffil: []
+    email: null
     initials: Kim
     name: Gillies
+    orcid: null
+  gillr:
+    affil:
+    - RubinOpsC
+    altaffil: []
+    email: null
+    initials: Ranpal K.
+    name: Gill
     orcid: null
   gilmoredk:
     affil:
     - SLAC-Kavli
     altaffil: []
+    email: null
     initials: D. Kirk
     name: Gilmore
     orcid: null
@@ -4253,6 +4450,7 @@ authors:
     affil:
     - INAF-OAT
     altaffil: []
+    email: null
     initials: Enrico
     name: Giro
     orcid: 0000-0001-7301-8285
@@ -4260,6 +4458,7 @@ authors:
     affil:
     - SLAC
     altaffil: []
+    email: null
     initials: Thomas
     name: Glanzman
     orcid: 0000-0001-9649-3871
@@ -4267,6 +4466,7 @@ authors:
     affil:
     - NCSA
     altaffil: []
+    email: null
     initials: William
     name: Glick
     orcid: null
@@ -4274,6 +4474,7 @@ authors:
     affil:
     - IPAC
     altaffil: []
+    email: null
     initials: Tatiana
     name: Goldina
     orcid: null
@@ -4282,6 +4483,7 @@ authors:
     - Berkeley-Astro
     - Berkeley-LBNL
     altaffil: []
+    email: null
     initials: Daniel A.
     name: Goldstein
     orcid: 0000-0003-3461-8661
@@ -4289,6 +4491,7 @@ authors:
     affil:
     - JPMORGAN
     altaffil: []
+    email: null
     initials: V. Zach
     name: Golkhou
     orcid: null
@@ -4296,6 +4499,7 @@ authors:
     affil:
     - NovaGorica
     altaffil: []
+    email: null
     initials: Andreja
     name: Gomboc
     orcid: null
@@ -4303,6 +4507,7 @@ authors:
     affil:
     - NOIRLabC
     altaffil: []
+    email: null
     initials: Manuel
     name: Gomez Jimenez
     orcid: null
@@ -4311,6 +4516,7 @@ authors:
     - CNCT
     - UdG
     altaffil: []
+    email: null
     initials: Alma X.
     name: Gonzalez-Morales
     orcid: 0000-0003-4089-6924
@@ -4318,6 +4524,7 @@ authors:
     affil:
     - RubinObsC
     altaffil: []
+    email: null
     initials: Ivan
     name: Gonzales
     orcid: null
@@ -4325,6 +4532,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
+    email: null
     initials: Iain
     name: Goodenow
     orcid: null
@@ -4332,6 +4540,7 @@ authors:
     affil:
     - WisconsinMadison
     altaffil: []
+    email: null
     initials: Miranda R.
     name: Gorsuch
     orcid: 0000-0002-3135-3824
@@ -4339,15 +4548,16 @@ authors:
     affil:
     - NCSA
     altaffil: []
+    email: mgower
     initials: Michelle
     name: Gower
     orcid: 0000-0001-9513-6987
-    email: mgower
   grahamml:
     affil:
     - Washington
     - DIRAC
     altaffil: []
+    email: null
     initials: Melissa L.
     name: Graham
     orcid: 0000-0002-9154-3136
@@ -4355,6 +4565,7 @@ authors:
     affil:
     - Caltech-Astro
     altaffil: []
+    email: null
     initials: Matthew J.
     name: Graham
     orcid: 0000-0002-3168-0139
@@ -4362,6 +4573,7 @@ authors:
     affil:
     - NOIRLab
     altaffil: []
+    email: null
     initials: Sarah
     name: Greenstreet
     orcid: 0000-0002-4439-1539
@@ -4369,6 +4581,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
+    email: null
     initials: William J.
     name: Gressler
     orcid: null
@@ -4376,6 +4589,7 @@ authors:
     affil:
     - IN2P3-LPCA
     altaffil: []
+    email: null
     initials: Philippe
     name: Gris
     orcid: null
@@ -4383,6 +4597,7 @@ authors:
     affil:
     - LINEA
     altaffil: []
+    email: null
     initials: Julia
     name: Gschwend
     orcid: 0000-0003-3023-8362
@@ -4390,14 +4605,15 @@ authors:
     affil:
     - RubinObsC
     altaffil: []
+    email: leanne.guy@NOIRLab
     initials: Leanne P.
     name: Guy
     orcid: 0000-0003-0800-8755
-    email: leanne.guy@NOIRLab
   guyonneta:
     affil:
     - Harvard-Physics
     altaffil: []
+    email: null
     initials: Augustin
     name: Guyonnet
     orcid: null
@@ -4405,6 +4621,7 @@ authors:
     affil:
     - NRC
     altaffil: []
+    email: null
     initials: Steven
     name: Gwyn
     orcid: null
@@ -4412,6 +4629,7 @@ authors:
     affil:
     - SLAC
     altaffil: []
+    email: null
     initials: Gunther
     name: Haller
     orcid: null
@@ -4419,14 +4637,15 @@ authors:
     affil:
     - SLAC
     altaffil: []
+    email: abh
     initials: Andrew
     name: Hanushevsky
     orcid: null
-    email: abh
   harrisr:
     affil:
     - NOIRLab
     altaffil: []
+    email: null
     initials: Ron
     name: Harris
     orcid: null
@@ -4434,6 +4653,7 @@ authors:
     affil:
     - SLAC
     altaffil: []
+    email: null
     initials: Diane
     name: Hascall
     orcid: null
@@ -4441,6 +4661,7 @@ authors:
     affil:
     - SLAC
     altaffil: []
+    email: null
     initials: Patrick A.
     name: Hascall
     orcid: null
@@ -4448,6 +4669,7 @@ authors:
     affil:
     - BNL
     altaffil: []
+    email: null
     initials: Justine
     name: Haupt
     orcid: null
@@ -4455,29 +4677,31 @@ authors:
     affil:
     - UCSB
     altaffil: []
+    email: null
     initials: Joseph
     name: Hennawi
-    orcid:
+    orcid: null
   hernandezf:
     affil:
     - IN2P3-CC
     altaffil: []
+    email: fabio
     initials: Fabio
     name: Hernandez
     orcid: 0000-0001-7203-2552
-    email: fabio
   hernerk:
     affil:
     - Fermilab
     altaffil: []
+    email: kherner
     initials: Kenneth
     name: Herner
     orcid: 0000-0001-6718-2978
-    email: kherner
   herrmanns:
     affil:
     - SLAC
     altaffil: []
+    email: null
     initials: Sven
     name: Herrmann
     orcid: null
@@ -4485,13 +4709,15 @@ authors:
     affil:
     - RubinObs
     altaffil: []
+    email: null
     initials: Ardis
     name: Herrold
-    orcid:
+    orcid: null
   hilemane:
     affil:
     - RubinObs
     altaffil: []
+    email: null
     initials: Edward
     name: Hileman
     orcid: null
@@ -4499,6 +4725,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
+    email: null
     initials: Joshua
     name: Hoblitt
     orcid: 0000-0002-5292-5879
@@ -4506,6 +4733,7 @@ authors:
     affil:
     - SLAC
     altaffil: []
+    email: null
     initials: John A.
     name: Hodgson
     orcid: null
@@ -4513,6 +4741,7 @@ authors:
     affil:
     - Chicago
     altaffil: []
+    email: null
     initials: Craig
     name: Hogan
     orcid: null
@@ -4520,6 +4749,7 @@ authors:
     affil:
     - Vdb
     altaffil: []
+    email: null
     initials: Kelly
     name: Holley-Bockelmann
     orcid: null
@@ -4527,6 +4757,7 @@ authors:
     affil:
     - Harvard-CfA
     altaffil: []
+    email: null
     initials: Matthew J.
     name: Holman
     orcid: null
@@ -4534,6 +4765,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
+    email: null
     initials: James D.
     name: Howard
     orcid: null
@@ -4541,6 +4773,7 @@ authors:
     affil:
     - PSI
     altaffil: []
+    email: null
     initials: Henry H.
     name: Hsieh
     orcid: 0000-0001-7225-9271
@@ -4548,6 +4781,7 @@ authors:
     affil:
     - BNL
     altaffil: []
+    email: null
     initials: Dajun
     name: Huang
     orcid: null
@@ -4555,28 +4789,31 @@ authors:
     affil:
     - Google
     altaffil: []
+    email: huangflora@google.com
     initials: Flora
     name: Huang
-    email: huangflora@google.com
-    orcid: null
-  hughesa:
-    affil:
-    - NSO
-    altaffil: []
-    initials: Anna L.H.
-    name: Hughes
     orcid: null
   hufferme:
     affil:
     - SLAC-Kavli
     altaffil: []
+    email: null
     initials: Michael E.
     name: Huffer
+    orcid: null
+  hughesa:
+    affil:
+    - NSO
+    altaffil: []
+    email: null
+    initials: Anna L.H.
+    name: Hughes
     orcid: null
   hundertmarkm:
     affil:
     - Heidelberg
     altaffil: []
+    email: null
     initials: Markus
     name: Hundertmark
     orcid: 0000-0003-0961-5231
@@ -4585,6 +4822,7 @@ authors:
     - Belgrade-Uni
     - Hamburg
     altaffil: []
+    email: null
     initials: Dragana
     name: Ili{\'c}
     orcid: 0000-0002-1134-4015
@@ -4592,6 +4830,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
+    email: null
     initials: Patrick
     name: Ingraham
     orcid: 0000-0003-3715-8138
@@ -4599,6 +4838,7 @@ authors:
     affil:
     - SLAC-Kavli
     altaffil: []
+    email: null
     initials: Walter R.
     name: Innes
     orcid: null
@@ -4606,14 +4846,15 @@ authors:
     affil:
     - RubinOps
     altaffil: []
+    email: david.irving
     initials: David H.
     name: Irving
     orcid: 0009-0005-9099-4970
-    email: david.irving
   ishidaeo:
     affil:
     - IN2P3-LPCA
     altaffil: []
+    email: null
     initials: Emille E. O.
     name: Ishida
     orcid: null
@@ -4621,6 +4862,7 @@ authors:
     affil:
     - Washington
     altaffil: []
+    email: null
     initials: \v{Z}eljko
     name: Ivezi\'{c}
     orcid: 0000-0001-5250-2633
@@ -4628,6 +4870,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
+    email: null
     initials: Suzanne H.
     name: Jacoby
     orcid: null
@@ -4635,6 +4878,7 @@ authors:
     affil:
     - NASA
     altaffil: []
+    email: null
     initials: Tess
     name: Jaffe
     orcid: null
@@ -4642,6 +4886,7 @@ authors:
     affil:
     - NRAO
     altaffil: []
+    email: null
     initials: Preshanth
     name: Jagannathan
     orcid: null
@@ -4649,6 +4894,7 @@ authors:
     affil:
     - UPenn
     altaffil: []
+    email: null
     initials: Bhuvnesh
     name: Jain
     orcid: null
@@ -4656,6 +4902,7 @@ authors:
     affil:
     - IN2P3-LPCA
     altaffil: []
+    email: null
     initials: Fabrice
     name: Jammes
     orcid: null
@@ -4663,6 +4910,7 @@ authors:
     affil:
     - UCDavis
     altaffil: []
+    email: null
     initials: James
     name: Jee
     orcid: null
@@ -4670,14 +4918,15 @@ authors:
     affil:
     - RubinObs
     altaffil: []
+    email: tjenness
     initials: Tim
     name: Jenness
     orcid: 0000-0001-5982-167X
-    email: tjenness
   jernigang:
     affil:
     - Berkeley-Space
     altaffil: []
+    email: null
     initials: Garrett
     name: Jernigan
     orcid: null
@@ -4685,6 +4934,7 @@ authors:
     affil:
     - Belgrade-AO
     altaffil: []
+    email: null
     initials: Darko
     name: Jevremovi\'{c}
     orcid: null
@@ -4692,6 +4942,7 @@ authors:
     affil:
     - UA-Physics
     altaffil: []
+    email: null
     initials: Kenneth
     name: Johns
     orcid: null
@@ -4699,6 +4950,7 @@ authors:
     affil:
     - SLAC
     altaffil: []
+    email: null
     initials: Anthony S.
     name: Johnson
     orcid: 0000-0002-5729-2716
@@ -4706,6 +4958,7 @@ authors:
     affil:
     - NCSA
     altaffil: []
+    email: null
     initials: Margaret W.G.
     name: Johnson
     orcid: null
@@ -4713,6 +4966,7 @@ authors:
     affil:
     - Washington
     altaffil: []
+    email: null
     initials: R. Lynne
     name: Jones
     orcid: 0000-0001-5916-0031
@@ -4720,6 +4974,7 @@ authors:
     affil:
     - IN2P3-LPNHE
     altaffil: []
+    email: null
     initials: Claire
     name: Juramy-Gilles
     orcid: null
@@ -4727,6 +4982,7 @@ authors:
     affil:
     - Washington-Dirac
     altaffil: []
+    email: null
     initials: Mario
     name: Juri\'{c}
     orcid: 0000-0003-1996-9252
@@ -4734,6 +4990,7 @@ authors:
     affil:
     - URijeka
     altaffil: []
+    email: null
     initials: Tomislav
     name: Jurki\'{c}
     orcid: null
@@ -4742,6 +4999,7 @@ authors:
     - RubinObs
     - SLAC-Kavli
     altaffil: []
+    email: null
     initials: Steven M.
     name: Kahn
     orcid: null
@@ -4749,6 +5007,7 @@ authors:
     affil:
     - STScI
     altaffil: []
+    email: null
     initials: Jason S.
     name: Kalirai
     orcid: null
@@ -4756,6 +5015,7 @@ authors:
     affil:
     - UVa
     altaffil: []
+    email: null
     initials: Nitya J.
     name: Kallivayalil
     orcid: 0000-0002-3204-1742
@@ -4763,6 +5023,7 @@ authors:
     affil:
     - Washington
     altaffil: []
+    email: null
     initials: Bryce
     name: Kalmbach
     orcid: 0000-0002-6825-5283
@@ -4771,6 +5032,7 @@ authors:
     - SLAC-Kavli
     - RubinObsC
     altaffil: []
+    email: null
     initials: Yijung
     name: Kang
     orcid: 0000-0002-5261-5803
@@ -4779,14 +5041,15 @@ authors:
     - Duke
     - Princeton-Astro
     altaffil: []
+    email: arunkannawadi@Princeton-Astro
     initials: Arun
     name: Kannawadi
     orcid: 0000-0001-8783-6529
-    email: arunkannawadi@Princeton-Astro
   kantorjp:
     affil:
     - RubinObs
     altaffil: []
+    email: null
     initials: Jeffrey P.
     name: Kantor
     orcid: null
@@ -4794,6 +5057,7 @@ authors:
     affil:
     - IN2P3-CPPM
     altaffil: []
+    email: null
     initials: Pierre
     name: Karst
     orcid: null
@@ -4801,6 +5065,7 @@ authors:
     affil:
     - Caltech-Astro
     altaffil: []
+    email: null
     initials: Mansi M.
     name: Kasliwal
     orcid: 0000-0002-5619-4938
@@ -4808,6 +5073,7 @@ authors:
     affil:
     - CADC
     altaffil: []
+    email: null
     initials: JJ
     name: Kavelaars
     orcid: null
@@ -4815,6 +5081,7 @@ authors:
     affil:
     - TTU-media
     altaffil: []
+    email: null
     initials: Kerk
     name: Kee
     orcid: null
@@ -4822,6 +5089,7 @@ authors:
     affil:
     - RubinObsC
     altaffil: []
+    email: null
     initials: Kshitija
     name: Kelkar
     orcid: 0000-0002-8130-3593
@@ -4829,6 +5097,7 @@ authors:
     affil:
     - SLAC
     altaffil: []
+    email: null
     initials: Heather
     name: Kelly
     orcid: null
@@ -4836,14 +5105,15 @@ authors:
     affil:
     - Princeton-Astro
     altaffil: []
+    email: lkelvin
     initials: Lee S.
     name: Kelvin
     orcid: 0000-0001-9395-4759
-    email: lkelvin
   kernj:
     affil:
     - NRAO
     altaffil: []
+    email: null
     initials: Jeff
     name: Kern
     orcid: null
@@ -4851,6 +5121,7 @@ authors:
     affil:
     - Chicago
     altaffil: []
+    email: null
     initials: Richard
     name: Kessler
     orcid: 0000-0003-3221-0419
@@ -4858,6 +5129,7 @@ authors:
     affil:
     - NCSA
     altaffil: []
+    email: null
     initials: Htut
     name: Khine
     orcid: null
@@ -4865,6 +5137,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
+    email: null
     initials: Veronica
     name: Kinnison
     orcid: null
@@ -4872,6 +5145,7 @@ authors:
     affil:
     - UCIrvine-Astro
     altaffil: []
+    email: null
     initials: David
     name: Kirkby
     orcid: 0000-0002-8828-5463
@@ -4879,6 +5153,7 @@ authors:
     affil:
     - UCDavis
     altaffil: []
+    email: null
     initials: Lloyd
     name: Knox
     orcid: null
@@ -4886,6 +5161,7 @@ authors:
     affil:
     - TTU
     altaffil: []
+    email: null
     initials: Alekzander
     name: Kosakowski
     orcid: 0000-0002-9878-1647
@@ -4893,6 +5169,7 @@ authors:
     affil:
     - BNL
     altaffil: []
+    email: null
     initials: Ivan V.
     name: Kotov
     orcid: null
@@ -4900,6 +5177,7 @@ authors:
     affil:
     - Belgrade-Uni
     altaffil: []
+    email: null
     initials: Andjelka B.
     name: Kova{\v{c}}evi{\'c}
     orcid: 0000-0001-5139-1978
@@ -4907,14 +5185,15 @@ authors:
     affil:
     - NCSA
     altaffil: []
+    email: mxk
     initials: Mikolaj
     name: Kowalik
     orcid: 0000-0002-9801-5969
-    email: mxk
   krabbendamvl:
     affil:
     - RubinObs
     altaffil: []
+    email: null
     initials: Victor L.
     name: Krabbendam
     orcid: null
@@ -4922,23 +5201,24 @@ authors:
     affil:
     - Berkeley-LBNL
     altaffil: []
+    email: null
     initials: Anthony
     name: Kremin
     orcid: null
   krughoffks:
     affil:
     - RubinObs
-    altaffil: [
-      "Author is deceased"
-    ]
+    altaffil:
+    - Author is deceased
+    email: skrughoff
     initials: K. Simon
     name: Krughoff
     orcid: 0000-0002-4410-7868
-    email: skrughoff
   kubanekp:
     affil:
     - Praha-ASCR
     altaffil: []
+    email: null
     initials: Petr
     name: Kub\'{a}nek
     orcid: null
@@ -4946,6 +5226,7 @@ authors:
     affil:
     - CMU
     altaffil: []
+    email: null
     initials: Jeremy
     name: Kubica
     orcid: null
@@ -4953,6 +5234,7 @@ authors:
     affil:
     - BNL
     altaffil: []
+    email: null
     initials: John
     name: Kuczewski
     orcid: null
@@ -4960,6 +5242,7 @@ authors:
     affil:
     - SLAC
     altaffil: []
+    email: null
     initials: John
     name: Ku
     orcid: null
@@ -4967,6 +5250,7 @@ authors:
     affil:
     - Caltech-Astro
     altaffil: []
+    email: null
     initials: Shri
     name: Kulkarni
     orcid: 0000-0001-5390-8563
@@ -4974,6 +5258,7 @@ authors:
     affil:
     - SLAC
     altaffil: []
+    email: null
     initials: Nadine R.
     name: Kurita
     orcid: null
@@ -4981,6 +5266,7 @@ authors:
     affil:
     - IN2P3-LPSC
     altaffil: []
+    email: null
     initials: Mile
     name: Kusulja
     orcid: null
@@ -4988,6 +5274,7 @@ authors:
     affil:
     - NOIRLab
     altaffil: []
+    email: null
     initials: Kathleen
     name: Labrie
     orcid: null
@@ -4995,6 +5282,7 @@ authors:
     affil:
     - NRAO
     altaffil: []
+    email: null
     initials: Mark
     name: Lacy
     orcid: null
@@ -5002,6 +5290,7 @@ authors:
     affil:
     - UCDavis
     altaffil: []
+    email: null
     initials: Craig S.
     name: Lage
     orcid: null
@@ -5010,6 +5299,7 @@ authors:
     - RubinObs
     - CTIO
     altaffil: []
+    email: null
     initials: Ron
     name: Lambert
     orcid: null
@@ -5017,6 +5307,7 @@ authors:
     affil:
     - SLAC
     altaffil: []
+    email: null
     initials: Travis
     name: Lange
     orcid: null
@@ -5024,6 +5315,7 @@ authors:
     affil:
     - SLAC
     altaffil: []
+    email: null
     initials: J. Brian
     name: Langton
     orcid: null
@@ -5031,6 +5323,7 @@ authors:
     affil:
     - INSU-AIM
     altaffil: []
+    email: null
     initials: Fran\c{c}ois
     name: Lanusse
     orcid: null
@@ -5038,6 +5331,7 @@ authors:
     affil:
     - IN2P3-LPNHE
     altaffil: []
+    email: null
     initials: Didier
     name: Laporte
     orcid: null
@@ -5045,6 +5339,7 @@ authors:
     affil:
     - NOIRLab
     altaffil: []
+    email: null
     initials: Ryan M.
     name: Lau
     orcid: 0000-0003-0778-0321
@@ -5052,6 +5347,7 @@ authors:
     affil:
     - Caltech-Astro
     altaffil: []
+    email: null
     initials: Casey
     name: Law
     orcid: null
@@ -5059,6 +5355,7 @@ authors:
     affil:
     - Herts
     altaffil: []
+    email: null
     initials: Ilin
     name: Lazar
     orcid: null
@@ -5066,6 +5363,7 @@ authors:
     affil:
     - IN2P3-CC
     altaffil: []
+    email: null
     initials: Quentin
     name: Le Boulc'h
     orcid: null
@@ -5074,6 +5372,7 @@ authors:
     - IN2P3-UPMC
     - IN2P3-LPNHE
     altaffil: []
+    email: null
     initials: Laurent
     name: Le Guillou
     orcid: null
@@ -5081,6 +5380,7 @@ authors:
     affil:
     - StonyBrookU
     altaffil: []
+    email: null
     initials: Ben
     name: Levine
     orcid: null
@@ -5088,6 +5388,7 @@ authors:
     affil:
     - IPAC
     altaffil: []
+    email: null
     initials: Deborah
     name: Levine
     orcid: null
@@ -5095,6 +5396,7 @@ authors:
     affil:
     - Yale
     altaffil: []
+    email: null
     initials: W. Garrett
     name: Levine
     orcid: null
@@ -5102,6 +5404,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
+    email: null
     initials: Ming
     name: Liang
     orcid: null
@@ -5109,14 +5412,31 @@ authors:
     affil:
     - SLAC
     altaffil: []
+    email: ktl
     initials: Kian-Tat
     name: Lim
     orcid: 0000-0002-6338-6516
-    email: ktl
+  lindena:
+    affil:
+    - StonyBrookU
+    altaffil: []
+    email: anja.vonderlinden
+    initials: Anja
+    name: von der Linden
+    orcid: 0000-0002-3881-7724
+  lintottcj:
+    affil:
+    - Oxford
+    altaffil: []
+    email: null
+    initials: Chris J.
+    name: Lintott
+    orcid: 0000-0001-5578-359X
   lix:
     affil:
     - Delaware-PhyAst
     altaffil: []
+    email: null
     initials: Xiaolong
     name: Li
     orcid: 0000-0002-0514-5650
@@ -5124,6 +5444,7 @@ authors:
     affil:
     - BNL
     altaffil: []
+    email: null
     initials: Xiangchong
     name: Li
     orcid: 0000-0003-2880-5102
@@ -5131,28 +5452,15 @@ authors:
     affil:
     - SLAC
     altaffil: []
+    email: null
     initials: Yee-Ting
     name: Li
     orcid: null
-  lindena:
-    affil:
-    - StonyBrookU
-    altaffil: []
-    initials: Anja
-    name: von der Linden
-    orcid: 0000-0002-3881-7724
-    email: anja.vonderlinden
-  lintottcj:
-    affil:
-    - Oxford
-    altaffil: []
-    initials: Chris J.
-    name: Lintott
-    orcid: 0000-0001-5578-359X
   longke:
     affil:
     - Longhorn
     altaffil: []
+    email: null
     initials: Kevin E.
     name: Long
     orcid: null
@@ -5160,6 +5468,7 @@ authors:
     affil:
     - SLAC
     altaffil: []
+    email: null
     initials: Margaux
     name: Lopez
     orcid: null
@@ -5167,6 +5476,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
+    email: null
     initials: Paul J.
     name: Lotz
     orcid: null
@@ -5174,22 +5484,24 @@ authors:
     affil:
     - LancasterU
     altaffil: []
+    email: p.love
     initials: Peter
     name: Love
     orcid: null
-    email: p.love
   luj:
     affil:
     - FSU
     altaffil: []
+    email: null
     initials: Jing
     name: Lu
-    orcid:
+    orcid: null
   lunagjm:
     affil:
     - IAFE
     - CONICET
     altaffil: []
+    email: null
     initials: Gerardo Juan Manuel
     name: Luna
     orcid: 0000-0002-2647-4373
@@ -5197,22 +5509,23 @@ authors:
     affil:
     - Princeton-Astro
     altaffil: []
+    email: rhl
     initials: Robert H.
     name: Lupton
     orcid: 0000-0003-1666-0962
-    email: rhl
   lustnb:
     affil:
     - Princeton-Astro
     altaffil: []
+    email: nlust
     initials: Nate B.
     name: Lust
     orcid: 0000-0002-4122-9384
-    email: nlust
   lutfim:
     affil:
     - RubinObs
     altaffil: []
+    email: null
     initials: Mostafa
     name: Lutfi
     orcid: 0000-0003-2866-3802
@@ -5220,22 +5533,23 @@ authors:
     affil:
     - Princeton-Astro
     altaffil: []
+    email: lauren
     initials: Lauren A.
     name: MacArthur
     orcid: 0009-0003-5548-6773
-    email: lauren
   macbrides:
     affil:
     - ZurichPhys
     altaffil: []
+    email: sean.macbride
     initials: Sean
     name: MacBride
     orcid: 0000-0002-9514-7245
-    email: sean.macbride
   madejskig:
     affil:
     - SLAC-Kavli
     altaffil: []
+    email: null
     initials: Greg M.
     name: Madejski
     orcid: null
@@ -5244,6 +5558,7 @@ authors:
     - Caltech
     - Caltech-CDDD
     altaffil: []
+    email: null
     initials: Ashish A.
     name: Mahabal
     orcid: 0000-0003-2242-0244
@@ -5251,6 +5566,7 @@ authors:
     affil:
     - IN2P3-CC
     altaffil: []
+    email: null
     initials: Gabriele
     name: Mainetti
     orcid: 0000-0003-2384-2377
@@ -5259,6 +5575,7 @@ authors:
     - GCCL
     - CMU
     altaffil: []
+    email: null
     initials: Alex I.
     name: Malz
     orcid: 0000-0002-8676-1622
@@ -5266,6 +5583,7 @@ authors:
     affil:
     - CMU
     altaffil: []
+    email: null
     initials: Rachel
     name: Mandelbaum
     orcid: 0000-0003-2271-1527
@@ -5274,6 +5592,7 @@ authors:
     - Rutgers
     - Utah
     altaffil: []
+    email: null
     initials: Yao-Yuan
     name: Mao
     orcid: 0000-0002-1200-0820
@@ -5281,6 +5600,7 @@ authors:
     affil:
     - IN2P3-CPPM
     altaffil: []
+    email: null
     initials: Aur\'{e}lien
     name: Marini
     orcid: null
@@ -5288,6 +5608,7 @@ authors:
     affil:
     - SLAC
     altaffil: []
+    email: null
     initials: Thomas W.
     name: Markiewicz
     orcid: 0000-0003-3646-8724
@@ -5295,6 +5616,7 @@ authors:
     affil:
     - SLAC-Kavli
     altaffil: []
+    email: null
     initials: Philip J.
     name: Marshall
     orcid: null
@@ -5302,27 +5624,15 @@ authors:
     affil:
     - SLAC-Kavli
     altaffil: []
+    email: null
     initials: Stuart
     name: Marshall
-    orcid: null
-  masciarellij:
-    affil:
-    - Google
-    altaffil: []
-    initials: Jess
-    name: Masciarelli
-    orcid: null
-  masonb:
-    affil:
-    - RubinObs
-    altaffil: []
-    initials: Blake
-    name: Mason
     orcid: null
   marshds:
     affil:
     - SLAC
     altaffil: []
+    email: null
     initials: Darren S.
     name: Marsh
     orcid: null
@@ -5330,6 +5640,7 @@ authors:
     affil:
     - WisconsinMadison
     altaffil: []
+    email: null
     initials: Michael N.
     name: Martinez
     orcid: 0000-0002-8397-8412
@@ -5337,13 +5648,31 @@ authors:
     affil:
     - Harvard-Astro
     altaffil: []
+    email: null
     initials: Rafael
     name: Mart\'{i}nez-Galarza
+    orcid: null
+  masciarellij:
+    affil:
+    - Google
+    altaffil: []
+    email: null
+    initials: Jess
+    name: Masciarelli
+    orcid: null
+  masonb:
+    affil:
+    - RubinObs
+    altaffil: []
+    email: null
+    initials: Blake
+    name: Mason
     orcid: null
   mauleng:
     affil:
     - RubinObsC
     altaffil: []
+    email: null
     initials: Guido
     name: Maulen
     orcid: null
@@ -5351,6 +5680,7 @@ authors:
     affil:
     - BNL
     altaffil: []
+    email: null
     initials: Morgan
     name: May
     orcid: null
@@ -5358,14 +5688,15 @@ authors:
     affil:
     - SLAC
     altaffil: []
+    email: jeremym
     initials: Jeremy
     name: McCormick
     orcid: 0009-0005-0229-7607
-    email: jeremym
   mccullyc:
     affil:
     - CUMBRES
     altaffil: []
+    email: null
     initials: Curtis
     name: McCully
     orcid: null
@@ -5373,6 +5704,7 @@ authors:
     affil:
     - NASA
     altaffil: []
+    email: null
     initials: Julie
     name: McEnery
     orcid: null
@@ -5380,6 +5712,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
+    email: null
     initials: Robert
     name: McKercher
     orcid: null
@@ -5387,6 +5720,7 @@ authors:
     affil:
     - BNL
     altaffil: []
+    email: null
     initials: Michelle
     name: McQueen
     orcid: null
@@ -5394,6 +5728,7 @@ authors:
     affil:
     - GeorgiaState
     altaffil: []
+    email: null
     initials: Ilija
     name: Medan
     orcid: null
@@ -5402,6 +5737,7 @@ authors:
     - Stanford-AeroAstro
     - SLAC-Kavli
     altaffil: []
+    email: null
     initials: Guillem
     name: Megias Homar
     orcid: 0000-0001-6013-1131
@@ -5409,6 +5745,7 @@ authors:
     affil:
     - NOIRLab
     altaffil: []
+    email: null
     initials: Aaron M.
     name: Meisner
     orcid: 0000-0002-1125-7384
@@ -5416,6 +5753,7 @@ authors:
     affil:
     - NCSA
     altaffil: []
+    email: null
     initials: Felipe
     name: Menanteau
     orcid: null
@@ -5423,6 +5761,7 @@ authors:
     affil:
     - SLAC
     altaffil: []
+    email: null
     initials: Joshua E.
     name: Meyers
     orcid: 0000-0002-2308-4230
@@ -5430,6 +5769,7 @@ authors:
     affil:
     - IN2P3-LPSC
     altaffil: []
+    email: null
     initials: Myriam
     name: Migliore
     orcid: null
@@ -5437,6 +5777,7 @@ authors:
     affil:
     - CIERA
     altaffil: []
+    email: null
     initials: Adam A.
     name: Miller
     orcid: 0000-0001-9515-478X
@@ -5444,6 +5785,7 @@ authors:
     affil:
     - NOIRLab
     altaffil: []
+    email: null
     initials: Bryan
     name: Miller
     orcid: null
@@ -5451,6 +5793,7 @@ authors:
     affil:
     - NOIRLab
     altaffil: []
+    email: null
     initials: Michelle
     name: Miller
     orcid: null
@@ -5458,6 +5801,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
+    email: null
     initials: David J.
     name: Mills
     orcid: null
@@ -5465,6 +5809,7 @@ authors:
     affil:
     - BNL
     altaffil: []
+    email: null
     initials: Connor
     name: Miraval
     orcid: null
@@ -5472,6 +5817,7 @@ authors:
     affil:
     - Washington-Dirac
     altaffil: []
+    email: null
     initials: Joachim
     name: Moeyens
     orcid: 0000-0001-5820-3925
@@ -5479,6 +5825,7 @@ authors:
     affil:
     - Harvard-Physics
     altaffil: []
+    email: null
     initials: Nicholas
     name: Mondrik
     orcid: null
@@ -5486,6 +5833,7 @@ authors:
     affil:
     - USNO
     altaffil: []
+    email: null
     initials: David G.
     name: Monet
     orcid: null
@@ -5493,6 +5841,7 @@ authors:
     affil:
     - IN2P3-IJCLAB
     altaffil: []
+    email: null
     initials: Marc
     name: Moniez
     orcid: null
@@ -5500,6 +5849,7 @@ authors:
     affil:
     - IPAC
     altaffil: []
+    email: null
     initials: Serge
     name: Monkewitz
     orcid: null
@@ -5507,6 +5857,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
+    email: null
     initials: Christopher
     name: Montgomery
     orcid: null
@@ -5514,6 +5865,7 @@ authors:
     affil:
     - soZen
     altaffil: []
+    email: null
     initials: Fred E.
     name: Moolekamp
     orcid: 0000-0003-0093-4279
@@ -5521,6 +5873,7 @@ authors:
     affil:
     - Harvard-CfA
     altaffil: []
+    email: null
     initials: Christopher
     name: Moriarty
     orcid: null
@@ -5528,6 +5881,7 @@ authors:
     affil:
     - Washington
     altaffil: []
+    email: null
     initials: Christopher B.
     name: Morrison
     orcid: null
@@ -5535,22 +5889,23 @@ authors:
     affil:
     - URijeka
     altaffil: []
+    email: karlo.mrakovcic
     initials: Karlo
     name: Mrakov\v{c}i\'{c}
     orcid: 0009-0009-8154-3827
-    email: karlo.mrakovcic
   muellerf:
     affil:
     - SLAC
     altaffil: []
+    email: fritzm
     initials: Fritz
     name: Mueller
     orcid: 0000-0002-7061-4644
-    email: fritzm
   muencha:
     affil:
     - AAS
     altaffil: []
+    email: null
     initials: August
     name: Muench
     orcid: null
@@ -5558,6 +5913,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
+    email: null
     initials: Gary P.
     name: Muller
     orcid: null
@@ -5565,6 +5921,7 @@ authors:
     affil:
     - NASA
     altaffil: []
+    email: null
     initials: Demitri
     name: Muna
     orcid: null
@@ -5572,6 +5929,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
+    email: null
     initials: Freddy
     name: Mu\~noz Arancibia
     orcid: null
@@ -5579,6 +5937,7 @@ authors:
     affil:
     - IUPUI
     altaffil: []
+    email: null
     initials: Angela
     name: Murillo
     orcid: null
@@ -5586,6 +5945,7 @@ authors:
     affil:
     - Cochin
     altaffil: []
+    email: null
     initials: Sathya
     name: Narayanan K
     orcid: null
@@ -5593,6 +5953,7 @@ authors:
     affil:
     - Illinois
     altaffil: []
+    email: null
     initials: Gautham
     name: Narayan
     orcid: null
@@ -5600,14 +5961,15 @@ authors:
     affil:
     - Exeter
     altaffil: []
+    email: t.naylor
     initials: Tim
     name: Naylor
     orcid: 0000-0002-0506-8501
-    email: t.naylor
   neilldr:
     affil:
     - RubinObs
     altaffil: []
+    email: null
     initials: Douglas R.
     name: Neill
     orcid: null
@@ -5615,6 +5977,7 @@ authors:
     affil:
     - Caltech
     altaffil: []
+    email: null
     initials: James D.
     name: Neill
     orcid: null
@@ -5622,6 +5985,7 @@ authors:
     affil:
     - Fermilab
     altaffil: []
+    email: null
     initials: Eric H.
     name: Neilsen, Jr.
     orcid: 0000-0002-7357-0317
@@ -5629,6 +5993,7 @@ authors:
     affil:
     - Washington
     altaffil: []
+    email: null
     initials: Spencer
     name: Nelson
     orcid: null
@@ -5636,6 +6001,7 @@ authors:
     affil:
     - IN2P3-IJCLAB
     altaffil: []
+    email: null
     initials: Jeremy
     name: Neveu
     orcid: null
@@ -5643,6 +6009,7 @@ authors:
     affil:
     - SLAC
     altaffil: []
+    email: null
     initials: Scott P.
     name: Newbry
     orcid: null
@@ -5650,6 +6017,7 @@ authors:
     affil:
     - IN2P3-CC
     altaffil: []
+    email: null
     initials: Jean-Yves
     name: Nief
     orcid: null
@@ -5657,6 +6025,7 @@ authors:
     affil:
     - Belgrade-Uni
     altaffil: []
+    email: null
     initials: Mladen
     name: Nicoli\'{c}
     orcid: null
@@ -5664,6 +6033,7 @@ authors:
     affil:
     - NOIRLab
     altaffil: []
+    email: null
     initials: Robert
     name: Nikutta
     orcid: 0000-0002-7052-6900
@@ -5671,6 +6041,7 @@ authors:
     affil:
     - Washington
     altaffil: []
+    email: null
     initials: Nima
     name: Sedaghat
     orcid: 0000-0003-4734-2019
@@ -5678,14 +6049,15 @@ authors:
     affil:
     - STFC-RAL
     altaffil: []
+    email: timothy.noble
     initials: Timothy
     name: Noble
     orcid: null
-    email: timothy.noble
   nomerotskia:
     affil:
     - BNL
     altaffil: []
+    email: null
     initials: Andrei
     name: Nomerotski
     orcid: null
@@ -5694,6 +6066,7 @@ authors:
     - Fermilab
     - Chicago
     altaffil: []
+    email: null
     initials: Brian
     name: Nord
     orcid: 0000-0001-6706-8972
@@ -5701,6 +6074,7 @@ authors:
     affil:
     - SLAC
     altaffil: []
+    email: null
     initials: Martin
     name: Nordby
     orcid: null
@@ -5708,6 +6082,7 @@ authors:
     affil:
     - NOIRLab
     altaffil: []
+    email: null
     initials: Dara
     name: Norman
     orcid: 0000-0001-8452-9574
@@ -5715,14 +6090,15 @@ authors:
     affil:
     - Princeton-Astro
     altaffil: []
+    email: erfan@Princeton
     initials: Erfan
     name: Nourbakhsh
     orcid: 0000-0003-3827-4691
-    email: erfan@Princeton
   oconnorp:
     affil:
     - BNL
     altaffil: []
+    email: null
     initials: Paul
     name: O'Connor
     orcid: null
@@ -5731,6 +6107,7 @@ authors:
     - CUNYL
     - AMNH
     altaffil: []
+    email: null
     initials: Matt
     name: O'Dowd
     orcid: null
@@ -5738,6 +6115,7 @@ authors:
     affil:
     - NASA
     altaffil: []
+    email: null
     initials: Roopesh
     name: Ojha
     orcid: null
@@ -5746,6 +6124,7 @@ authors:
     - Harvard-Physics
     - Harvard-Astro
     altaffil: []
+    email: null
     initials: John
     name: Oliver
     orcid: null
@@ -5753,6 +6132,7 @@ authors:
     affil:
     - LLNL
     altaffil: []
+    email: null
     initials: Scot S.
     name: Olivier
     orcid: null
@@ -5760,13 +6140,15 @@ authors:
     affil:
     - Rutgers
     altaffil: []
+    email: null
     initials: Charlotte
     name: Olsen
-    orcid:
+    orcid: null
   olsenk:
     affil:
     - NOIRLab
     altaffil: []
+    email: null
     initials: Knut
     name: Olsen
     orcid: 0000-0002-7134-8296
@@ -5774,6 +6156,7 @@ authors:
     affil:
     - KECK
     altaffil: []
+    email: null
     initials: John
     name: O'Meara
     orcid: null
@@ -5781,14 +6164,15 @@ authors:
     affil:
     - RubinObsC
     altaffil: []
+    email: womullan
     initials: William
     name: O'Mullane
     orcid: 0000-0003-4141-6195
-    email: womullan
   ortizs:
     affil:
     - RubinObs
     altaffil: []
+    email: null
     initials: Sandra
     name: Ortiz
     orcid: null
@@ -5796,6 +6180,7 @@ authors:
     affil:
     - SLAC
     altaffil: []
+    email: null
     initials: Shawn
     name: Osier
     orcid: null
@@ -5803,6 +6188,7 @@ authors:
     affil:
     - Washington
     altaffil: []
+    email: null
     initials: Russell E.
     name: Owen
     orcid: null
@@ -5810,6 +6196,7 @@ authors:
     affil:
     - BNL
     altaffil: []
+    email: null
     initials: Sergey
     name: Padolski
     orcid: null
@@ -5817,6 +6204,7 @@ authors:
     affil:
     - IN2P3-LPNHE
     altaffil: []
+    email: null
     initials: Reynald
     name: Pain
     orcid: null
@@ -5824,6 +6212,7 @@ authors:
     affil:
     - BNL
     altaffil: []
+    email: null
     initials: Paul E.
     name: Palecek
     orcid: null
@@ -5831,6 +6220,7 @@ authors:
     affil:
     - Washington
     altaffil: []
+    email: null
     initials: John K.
     name: Parejko
     orcid: 0009-0001-9549-0457
@@ -5838,6 +6228,7 @@ authors:
     affil:
     - Duke
     altaffil: []
+    email: null
     initials: Hye Yun
     name: Park
     orcid: 0000-0002-7295-2743
@@ -5845,6 +6236,7 @@ authors:
     affil:
     - NCSA
     altaffil: []
+    email: null
     initials: James B.
     name: Parsons
     orcid: null
@@ -5852,6 +6244,7 @@ authors:
     affil:
     - NYU-CCPP
     altaffil: []
+    email: null
     initials: Sarah
     name: Pearson
     orcid: 0000-0001-5049-5396
@@ -5859,14 +6252,15 @@ authors:
     affil:
     - SLAC
     altaffil: []
+    email: npease
     initials: Nathan M.
     name: Pease
     orcid: 0000-0002-9701-5975
-    email: npease
   pedrazaiv:
     affil:
     - DACC
     altaffil: []
+    email: null
     initials: Ilhuiyolitzin
     name: Villicana Pedraza
     orcid: 0000-0002-9632-3132
@@ -5874,6 +6268,7 @@ authors:
     affil:
     - RubinObsC
     altaffil: []
+    email: null
     initials: Karla
     name: Pe\~{n}a Ram\'{i}rez
     orcid: 0000-0002-5855-401X
@@ -5881,6 +6276,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
+    email: null
     initials: J. Matt
     name: Peterson
     orcid: 0000-0002-6564-6246
@@ -5888,6 +6284,7 @@ authors:
     affil:
     - Purdue-Astro
     altaffil: []
+    email: null
     initials: John R.
     name: Peterson
     orcid: 0000-0001-5471-9609
@@ -5895,6 +6292,7 @@ authors:
     affil:
     - NCSA
     altaffil: []
+    email: null
     initials: Donald L.
     name: Petravick
     orcid: null
@@ -5902,6 +6300,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
+    email: null
     initials: M.E. Libby
     name: Petrick
     orcid: null
@@ -5909,6 +6308,7 @@ authors:
     affil:
     - RubinOps
     altaffil: []
+    email: null
     initials: Cathy E.
     name: Petry
     orcid: null
@@ -5916,6 +6316,7 @@ authors:
     affil:
     - IRAM
     altaffil: []
+    email: null
     initials: Francesco
     name: Pierfederici
     orcid: null
@@ -5923,14 +6324,15 @@ authors:
     affil:
     - NCSA
     altaffil: []
+    email: srp
     initials: Stephen
     name: Pietrowicz
     orcid: 0000-0002-2158-6480
-    email: srp
   piker:
     affil:
     - Google
     altaffil: []
+    email: null
     initials: Rob
     name: Pike
     orcid: null
@@ -5938,6 +6340,7 @@ authors:
     affil:
     - UA-Steward
     altaffil: []
+    email: null
     initials: Philip A.
     name: Pinto
     orcid: null
@@ -5945,6 +6348,7 @@ authors:
     affil:
     - NCSA
     altaffil: []
+    email: null
     initials: Raymond
     name: Plante
     orcid: null
@@ -5952,6 +6356,7 @@ authors:
     affil:
     - BNL
     altaffil: []
+    email: null
     initials: Stephen
     name: Plate
     orcid: null
@@ -5960,14 +6365,15 @@ authors:
     - SLAC
     - SLAC-Kavli
     altaffil: []
+    email: plazas@Stanford
     initials: Andr\'es A.
     name: Plazas Malag\'on
     orcid: 0000-0002-2598-0514
-    email: plazas@Stanford
   plutchakjp:
     affil:
     - NCSA
     altaffil: []
+    email: null
     initials: Joel P.
     name: Plutchak
     orcid: 0000-0002-1501-825X
@@ -5975,6 +6381,7 @@ authors:
     affil:
     - Duke
     altaffil: []
+    email: null
     initials: Bekah
     name: Polen
     orcid: null
@@ -5982,6 +6389,7 @@ authors:
     affil:
     - CUNYAMNH
     altaffil: []
+    email: null
     initials: Mark
     name: Popinchalk
     orcid: null
@@ -5990,6 +6398,7 @@ authors:
     - Belgrade-AO
     - Belgrade-Uni
     altaffil: []
+    email: null
     initials: Luka {\v{C}}.
     name: Popovi\'c
     orcid: null
@@ -5997,6 +6406,7 @@ authors:
     affil:
     - Peay
     altaffil: []
+    email: null
     initials: Meagan N.
     name: Porter
     orcid: 0000-0001-9279-3770
@@ -6004,6 +6414,7 @@ authors:
     affil:
     - Princeton-Astro
     altaffil: []
+    email: null
     initials: Paul A.
     name: Price
     orcid: null
@@ -6011,6 +6422,7 @@ authors:
     affil:
     - CCA
     altaffil: []
+    email: null
     initials: Adrian
     name: Price-Whelan
     orcid: 0000-0003-0872-7098
@@ -6018,6 +6430,7 @@ authors:
     affil:
     - NYU-CCPP
     altaffil: []
+    email: null
     initials: Tyler A.
     name: Pritchard
     orcid: null
@@ -6025,6 +6438,7 @@ authors:
     affil:
     - Praha-ASCR
     altaffil: []
+    email: null
     initials: Michael
     name: Prouza
     orcid: null
@@ -6032,6 +6446,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
+    email: null
     initials: Bruno C.
     name: Quint
     orcid: 0000-0002-1557-3560
@@ -6039,6 +6454,7 @@ authors:
     affil:
     - BNL
     altaffil: []
+    email: null
     initials: Veljko
     name: Radeka
     orcid: null
@@ -6046,6 +6462,7 @@ authors:
     affil:
     - Belgrade-Uni
     altaffil: []
+    email: null
     initials: Viktor
     name: Radovi\'{c}
     orcid: null
@@ -6053,49 +6470,15 @@ authors:
     affil:
     - INAF-Rome
     altaffil: []
+    email: null
     initials: Fabio
     name: Ragosta
-    orcid: null
-  ribeirot:
-    affil:
-    - RubinObs
-    altaffil: []
-    initials: Tiago
-    name: Ribeiro
-    orcid: null
-  ricciog:
-    affil:
-    - NCNRP
-    altaffil: []
-    initials: Gabriele
-    name: Riccio
-    orcid: null
-  rileya:
-    affil:
-    - TAMU-inst
-    - TAMU
-    altaffil: []
-    initials: Alexander H.
-    name: Riley
-    orcid: 0000-0001-5805-5766
-  riveram:
-    affil:
-    - RubinObsC
-    altaffil: []
-    initials: Mario
-    name: Rivera
-    orcid: null
-  rizzil:
-    affil:
-    - NSF
-    altaffil: []
-    initials: Luca
-    name: Rizzi
     orcid: null
   rajagopalj:
     affil:
     - NOIRLab
     altaffil: []
+    email: null
     initials: Jayadev
     name: Rajagopal
     orcid: null
@@ -6103,6 +6486,7 @@ authors:
     affil:
     - Purdue-Astro
     altaffil: []
+    email: null
     initials: Andrew P.
     name: Rasmussen
     orcid: null
@@ -6110,14 +6494,15 @@ authors:
     affil:
     - Princeton-Astro
     altaffil: []
+    email: sophiereed@Princeton
     initials: Sophie L.
     name: Reed
     orcid: 0000-0002-4422-0553
-    email: sophiereed@Princeton
   regnaultn:
     affil:
     - IN2P3-LPNHE
     altaffil: []
+    email: null
     initials: Nicolas
     name: Regnault
     orcid: null
@@ -6125,6 +6510,7 @@ authors:
     affil:
     - SLAC
     altaffil: []
+    email: null
     initials: Kevin A.
     name: Reil
     orcid: null
@@ -6132,6 +6518,7 @@ authors:
     affil:
     - Washington
     altaffil: []
+    email: null
     initials: David J.
     name: Reiss
     orcid: null
@@ -6139,20 +6526,48 @@ authors:
     affil:
     - RubinObs
     altaffil: []
+    email: null
     initials: Michael A.
     name: Reuter
     orcid: 0000-0003-3881-8310
+  ribeirot:
+    affil:
+    - RubinObs
+    altaffil: []
+    email: null
+    initials: Tiago
+    name: Ribeiro
+    orcid: null
+  ricciog:
+    affil:
+    - NCNRP
+    altaffil: []
+    email: null
+    initials: Gabriele
+    name: Riccio
+    orcid: null
   ridgwayst:
     affil:
     - NOIRLab
     altaffil: []
+    email: null
     initials: Stephen T.
     name: Ridgway
     orcid: 0000-0003-2557-7132
+  rileya:
+    affil:
+    - TAMU-inst
+    - TAMU
+    altaffil: []
+    email: null
+    initials: Alexander H.
+    name: Riley
+    orcid: 0000-0001-5805-5766
   riotvj:
     affil:
     - LLNL
     altaffil: []
+    email: null
     initials: Vincent J.
     name: Riot
     orcid: null
@@ -6160,13 +6575,31 @@ authors:
     affil:
     - UCSC
     altaffil: []
+    email: null
     initials: Steve
     name: Ritz
+    orcid: null
+  riveram:
+    affil:
+    - RubinObsC
+    altaffil: []
+    email: null
+    initials: Mario
+    name: Rivera
+    orcid: null
+  rizzil:
+    affil:
+    - NSF
+    altaffil: []
+    email: null
+    initials: Luca
+    name: Rizzi
     orcid: null
   robertsa:
     affil:
     - RubinObs
     altaffil: []
+    email: null
     initials: Austin
     name: Roberts
     orcid: null
@@ -6174,6 +6607,7 @@ authors:
     affil:
     - BNL
     altaffil: []
+    email: null
     initials: Sean
     name: Robinson
     orcid: null
@@ -6181,6 +6615,7 @@ authors:
     affil:
     - IPAC
     altaffil: []
+    email: null
     initials: William
     name: Roby
     orcid: null
@@ -6188,6 +6623,7 @@ authors:
     affil:
     - INAF-OAS
     altaffil: []
+    email: null
     initials: Gabriele
     name: Rodeghiero
     orcid: 0000-0002-3469-9863
@@ -6195,6 +6631,7 @@ authors:
     affil:
     - SLAC
     altaffil: []
+    email: null
     initials: Aaron
     name: Roodman
     orcid: 0000-0001-5326-3486
@@ -6202,6 +6639,7 @@ authors:
     affil:
     - Bologna-Phys
     altaffil: []
+    email: null
     initials: Luca
     name: Rosignoli
     orcid: 0000-0002-0327-5929
@@ -6209,6 +6647,7 @@ authors:
     affil:
     - CUMBRES
     altaffil: []
+    email: null
     initials: Wayne
     name: Rosing
     orcid: null
@@ -6216,6 +6655,7 @@ authors:
     affil:
     - IN2P3-APC
     altaffil: []
+    email: null
     initials: Cecille
     name: Roucelle
     orcid: null
@@ -6223,6 +6663,7 @@ authors:
     affil:
     - EdinburghIA
     altaffil: []
+    email: null
     initials: Agata
     name: Ro\.{z}ek
     orcid: 0000-0003-2341-2238
@@ -6230,6 +6671,7 @@ authors:
     affil:
     - BNL
     altaffil: []
+    email: null
     initials: Matthew R.
     name: Rumore
     orcid: 0009-0006-4475-3196
@@ -6237,6 +6679,7 @@ authors:
     affil:
     - IPAC
     altaffil: []
+    email: null
     initials: Ben
     name: Rusholme
     orcid: null
@@ -6244,6 +6687,7 @@ authors:
     affil:
     - IN2P3-LPNHE
     altaffil: []
+    email: null
     initials: Stefano
     name: Russo
     orcid: null
@@ -6251,14 +6695,15 @@ authors:
     affil:
     - SLAC-Kavli
     altaffil: []
+    email: erykoff@Stanford
     initials: Eli S.
     name: Rykoff
     orcid: 0000-0001-9376-3135
-    email: erykoff@Stanford
   saccot:
     affil:
     - NOIRLab
     altaffil: []
+    email: null
     initials: Timothy
     name: Sacco
     orcid: 0000-0002-0921-2187
@@ -6266,6 +6711,7 @@ authors:
     affil:
     - NOIRLab
     altaffil: []
+    email: null
     initials: Abhijit
     name: Saha
     orcid: 0000-0002-5091-0470
@@ -6273,14 +6719,15 @@ authors:
     affil:
     - SLAC
     altaffil: []
+    email: salnikov
     initials: Andrei
     name: Salnikov
     orcid: 0000-0002-3623-0161
-    email: salnikov
   sanchezbo:
     affil:
     - IN2P3-CPPM
     altaffil: []
+    email: null
     initials: Bruno O.
     name: S\'anchez
     orcid: 0000-0002-8687-0669
@@ -6288,6 +6735,7 @@ authors:
     affil:
     - ESO
     altaffil: []
+    email: null
     initials: Paula
     name: S\'anchez-S\'aez
     orcid: 0000-0003-0820-4692
@@ -6295,6 +6743,7 @@ authors:
     affil:
     - RubinObsC
     altaffil: []
+    email: null
     initials: David
     name: Sanmartim
     orcid: 0000-0002-9238-9521
@@ -6302,22 +6751,15 @@ authors:
     affil:
     - UNED
     altaffil: []
+    email: null
     initials: Luis M.
     name: Sarro
     orcid: 0000-0002-5622-5191
-  # Note: the savicd entry requires \usepackage[T1]{fontenc} to include Serbian accents.
-  savicd:
-    affil:
-    - Liege
-    - Belgrade-AO
-    altaffil: []
-    initials: \DJ{}or\dj{}e V.
-    name: Savi\'c
-    orcid: 0000-0003-0880-8963
   sassolasb:
     affil:
     - IN2P3-IP2I
     altaffil: []
+    email: null
     initials: Benoit
     name: Sassolas
     orcid: null
@@ -6325,13 +6767,24 @@ authors:
     affil:
     - Princeton-Astro
     altaffil: []
+    email: null
     initials: Clare
     name: Saunders
     orcid: 0000-0002-4094-2102
+  savicd:
+    affil:
+    - Liege
+    - Belgrade-AO
+    altaffil: []
+    email: null
+    initials: \DJ{}or\dj{}e V.
+    name: Savi\'c
+    orcid: 0000-0003-0880-8963
   schalktl:
     affil:
     - UCSC
     altaffil: []
+    email: null
     initials: Terry L.
     name: Schalk
     orcid: null
@@ -6339,14 +6792,15 @@ authors:
     affil:
     - Princeton-Astro
     altaffil: []
+    email: P.Schellart@Princeton
     initials: Pim
     name: Schellart
     orcid: 0000-0002-8324-0880
-    email: P.Schellart@Princeton
   schindlerrh:
     affil:
     - SLAC-Kavli
     altaffil: []
+    email: null
     initials: Rafe H.
     name: Schindler
     orcid: null
@@ -6354,6 +6808,7 @@ authors:
     affil:
     - UCDavis
     altaffil: []
+    email: null
     initials: Samuel
     name: Schmidt
     orcid: null
@@ -6361,6 +6816,7 @@ authors:
     affil:
     - PSU
     altaffil: []
+    email: null
     initials: Donald P.
     name: Schneider
     orcid: null
@@ -6368,6 +6824,7 @@ authors:
     affil:
     - LLNL
     altaffil: []
+    email: null
     initials: Michael D.
     name: Schneider
     orcid: 0000-0002-8505-7094
@@ -6375,6 +6832,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
+    email: null
     initials: William
     name: Schoening
     orcid: null
@@ -6383,6 +6841,7 @@ authors:
     - RubinObs
     - CTIO
     altaffil: []
+    email: null
     initials: German
     name: Schumacher
     orcid: null
@@ -6390,6 +6849,7 @@ authors:
     affil:
     - GeminiN
     altaffil: []
+    email: null
     initials: Megan E.
     name: Schwamb
     orcid: 0000-0003-4365-1455
@@ -6397,6 +6857,7 @@ authors:
     affil:
     - NOIRLab
     altaffil: []
+    email: null
     initials: Adam
     name: Scott
     orcid: null
@@ -6404,6 +6865,7 @@ authors:
     affil:
     - UA
     altaffil: []
+    email: null
     initials: Robert
     name: Seaman
     orcid: null
@@ -6411,6 +6873,7 @@ authors:
     affil:
     - RubinObsC
     altaffil: []
+    email: null
     initials: Jacques
     name: Sebag
     orcid: null
@@ -6418,6 +6881,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
+    email: null
     initials: Brian
     name: Selvy
     orcid: null
@@ -6425,6 +6889,7 @@ authors:
     affil:
     - Purdue-Astro
     altaffil: []
+    email: null
     initials: Glenn H.
     name: Sembroski
     orcid: null
@@ -6432,6 +6897,7 @@ authors:
     affil:
     - LLNL
     altaffil: []
+    email: null
     initials: Lynn G.
     name: Seppala
     orcid: null
@@ -6439,6 +6905,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
+    email: null
     initials: Andrew
     name: Serio
     orcid: null
@@ -6446,6 +6913,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
+    email: null
     initials: Eduardo
     name: Serrano
     orcid: null
@@ -6453,6 +6921,7 @@ authors:
     affil:
     - CIEMAT
     altaffil: []
+    email: null
     initials: Ignacio
     name: Sevilla-Noarbe
     orcid: 0000-0002-1831-1953
@@ -6460,27 +6929,31 @@ authors:
     affil:
     - STScI
     altaffil: []
+    email: null
     initials: Richard A.
     name: Shaw
-    orcid: null
-  shirleyr:
-    affil:
-    - Southampton
-    altaffil: []
-    initials: Raphael
-    name: Shirley
     orcid: null
   shipseyi:
     affil:
     - Oxford
     altaffil: []
+    email: null
     initials: Ian
     name: Shipsey
+    orcid: null
+  shirleyr:
+    affil:
+    - Southampton
+    altaffil: []
+    email: null
+    initials: Raphael
+    name: Shirley
     orcid: null
   shugarta:
     affil:
     - RubinObsC
     altaffil: []
+    email: null
     initials: Alysha
     name: Shugart
     orcid: 0009-0000-6778-7168
@@ -6489,14 +6962,15 @@ authors:
     - JSickCodes
     - RubinObs
     altaffil: []
+    email: jsick@RubinObs
     initials: Jonathan
     name: Sick
     orcid: 0000-0003-3001-676X
-    email: jsick@RubinObs
   silvac:
     affil:
     - RubinObsC
     altaffil: []
+    email: null
     initials: Cristi\'{a}n
     name: Silva
     orcid: null
@@ -6504,6 +6978,7 @@ authors:
     affil:
     - Washington
     altaffil: []
+    email: null
     initials: Nicole
     name: Silvestri
     orcid: null
@@ -6511,14 +6986,15 @@ authors:
     affil:
     - Washington
     altaffil: []
+    email: ctslater
     initials: Colin T.
     name: Slater
     orcid: 0000-0002-0558-0521
-    email: ctslater
   smartbm:
     affil:
     - Washington
     altaffil: []
+    email: null
     initials: Brianna M.
     name: Smart
     orcid: 0000-0002-3677-0571
@@ -6526,6 +7002,7 @@ authors:
     affil:
     - Peay
     altaffil: []
+    email: null
     initials: J. Allyn
     name: Smith
     orcid: 0000-0002-6261-4601
@@ -6533,6 +7010,7 @@ authors:
     affil:
     - CTIO
     altaffil: []
+    email: null
     initials: R. Chris
     name: Smith
     orcid: null
@@ -6540,6 +7018,7 @@ authors:
     affil:
     - Washington-Dirac
     altaffil: []
+    email: null
     initials: Hayden R.
     name: Smotherman
     orcid: 0000-0002-7895-4344
@@ -6547,6 +7026,7 @@ authors:
     affil:
     - Belldex
     altaffil: []
+    email: null
     initials: Shahram
     name: Sobhani
     orcid: null
@@ -6555,6 +7035,7 @@ authors:
     - LSSTC
     - Columbia
     altaffil: []
+    email: null
     initials: J. L.
     name: Sokoloski
     orcid: null
@@ -6562,6 +7043,7 @@ authors:
     affil:
     - SLAC
     altaffil: []
+    email: null
     initials: Christine
     name: Soldahl
     orcid: null
@@ -6569,6 +7051,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
+    email: null
     initials: Malhar
     name: Sonaniskar
     orcid: 0000-0002-4573-3027
@@ -6576,6 +7059,7 @@ authors:
     affil:
     - RubinObsC
     altaffil: []
+    email: null
     initials: Ioana
     name: Sotuela Elorriaga
     orcid: null
@@ -6583,14 +7067,15 @@ authors:
     affil:
     - Burwood
     altaffil: []
+    email: dspeck@burwood.com
     initials: Dan
     name: Speck
-    email: dspeck@burwood.com
     orcid: null
   stalderb:
     affil:
     - RubinObs
     altaffil: []
+    email: null
     initials: Brian
     name: Stalder
     orcid: null
@@ -6598,6 +7083,7 @@ authors:
     affil:
     - UToronto
     altaffil: []
+    email: null
     initials: Nathaniel
     name: Starkman
     orcid: null
@@ -6605,6 +7091,7 @@ authors:
     affil:
     - Washington-Dirac
     altaffil: []
+    email: null
     initials: Steven
     name: Stetzler
     orcid: null
@@ -6612,6 +7099,7 @@ authors:
     affil:
     - NSF
     altaffil: []
+    email: null
     initials: Martin
     name: Still
     orcid: null
@@ -6619,6 +7107,7 @@ authors:
     affil:
     - RubinObsC
     altaffil: []
+    email: null
     initials: Hernan
     name: Stockebrand
     orcid: null
@@ -6626,27 +7115,31 @@ authors:
     affil:
     - ESO
     altaffil: []
+    email: null
     initials: Felix
     name: Stoehr
-    orcid: null
-  storrielombardil:
-    affil:
-    - IPAC
-    altaffil: []
-    initials: Lisa
-    name: Storrie-Lombardi
     orcid: null
   storeyfisherk:
     affil:
     - NYU-CCPP
     altaffil: []
+    email: null
     initials: Kate
     name: Storey-Fisher
     orcid: 0000-0001-8764-7103
+  storrielombardil:
+    affil:
+    - IPAC
+    altaffil: []
+    email: null
+    initials: Lisa
+    name: Storrie-Lombardi
+    orcid: null
   stovere:
     affil:
     - RubinObs
     altaffil: []
+    email: null
     initials: Edward
     name: Stover
     orcid: null
@@ -6654,6 +7147,7 @@ authors:
     affil:
     - Princeton-Astro
     altaffil: []
+    email: null
     initials: Michael A.
     name: Strauss
     orcid: 0000-0002-0106-7755
@@ -6661,6 +7155,7 @@ authors:
     affil:
     - CUMBRES
     altaffil: []
+    email: null
     initials: Rachel A.
     name: Street
     orcid: 0000-0001-6279-0552
@@ -6669,6 +7164,7 @@ authors:
     - Harvard-Physics
     - Harvard-Astro
     altaffil: []
+    email: null
     initials: Christopher W.
     name: Stubbs
     orcid: 0000-0003-0347-1724
@@ -6676,6 +7172,7 @@ authors:
     affil:
     - Washington
     altaffil: []
+    email: null
     initials: Chris
     name: Suberlak
     orcid: null
@@ -6683,14 +7180,15 @@ authors:
     affil:
     - Washington
     altaffil: []
+    email: sullii
     initials: Ian S.
     name: Sullivan
     orcid: 0000-0001-8708-251X
-    email: sullii
   sweeneyd:
     affil:
     - RubinObs
     altaffil: []
+    email: null
     initials: Donald
     name: Sweeney
     orcid: null
@@ -6699,6 +7197,7 @@ authors:
     - ASTRON
     - Princeton-Astro
     altaffil: []
+    email: null
     initials: John D.
     name: Swinbank
     orcid: 0000-0001-9445-1846
@@ -6706,27 +7205,31 @@ authors:
     affil:
     - JHU
     altaffil: []
+    email: null
     initials: Alexander
     name: Szalay
-    orcid: null
-  tapiad:
-    affil:
-    - RubinObsC
-    altaffil: []
-    initials: Diego
-    name: Tapia
     orcid: null
   takacsp:
     affil:
     - BNL
     altaffil: []
+    email: null
     initials: Peter
     name: Takacs
+    orcid: null
+  tapiad:
+    affil:
+    - RubinObsC
+    altaffil: []
+    email: null
+    initials: Diego
+    name: Tapia
     orcid: null
   tarantoa:
     affil:
     - Bologna-Phys
     altaffil: []
+    email: null
     initials: Alessio
     name: Taranto
     orcid: 0009-0009-3271-3498
@@ -6734,14 +7237,15 @@ authors:
     affil:
     - Princeton-Astro
     altaffil: []
+    email: dtaranu@Princeton
     initials: Dan S.
     name: Taranu
     orcid: 0000-0001-6268-1882
-    email: dtaranu@Princeton
   tethersa:
     affil:
     - SLAC
     altaffil: []
+    email: null
     initials: Stephen A.
     name: Tether
     orcid: null
@@ -6749,6 +7253,7 @@ authors:
     affil:
     - Maryland
     altaffil: []
+    email: null
     initials: Peter
     name: Teuben
     orcid: null
@@ -6756,6 +7261,7 @@ authors:
     affil:
     - Illinois
     altaffil: []
+    email: null
     initials: Jon J.
     name: Thaler
     orcid: null
@@ -6763,6 +7269,7 @@ authors:
     affil:
     - SLAC
     altaffil: []
+    email: null
     initials: John Gregg
     name: Thayer
     orcid: null
@@ -6770,6 +7277,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
+    email: null
     initials: Thebo
     name: Adrein
     orcid: null
@@ -6777,6 +7285,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
+    email: null
     initials: Sandrine
     name: Thomas
     orcid: 0000-0002-9121-3436
@@ -6784,14 +7293,15 @@ authors:
     affil:
     - RubinObs
     altaffil: []
+    email: athornton
     initials: Adam J.
     name: Thornton
     orcid: 0000-0001-9342-6032
-    email: athornton
   thukralv:
     affil:
     - SLAC
     altaffil: []
+    email: null
     initials: Vaikunth
     name: Thukral
     orcid: null
@@ -6799,6 +7309,7 @@ authors:
     affil:
     - SLAC
     altaffil: []
+    email: null
     initials: Jeffrey
     name: Tice
     orcid: null
@@ -6806,6 +7317,7 @@ authors:
     affil:
     - RubinObsC
     altaffil: []
+    email: null
     initials: Roberto
     name: Tighe
     orcid: null
@@ -6813,6 +7325,7 @@ authors:
     affil:
     - ALMA
     altaffil: []
+    email: null
     initials: Ignacio
     name: Toledo
     orcid: null
@@ -6820,6 +7333,7 @@ authors:
     affil:
     - STScI
     altaffil: []
+    email: null
     initials: Erik
     name: Tollerud
     orcid: null
@@ -6827,6 +7341,7 @@ authors:
     affil:
     - CIEMAT
     altaffil: []
+    email: null
     initials: Laura
     name: Toribio San Cipriano
     orcid: null
@@ -6834,6 +7349,7 @@ authors:
     affil:
     - CUNY
     altaffil: []
+    email: null
     initials: Nathalia
     name: Torres
     orcid: null
@@ -6841,6 +7357,7 @@ authors:
     affil:
     - NAU
     altaffil: []
+    email: null
     initials: David E.
     name: Trilling
     orcid: 0000-0003-4580-3790
@@ -6848,6 +7365,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
+    email: null
     initials: Te-Wei
     name: Tsai
     orcid: null
@@ -6855,6 +7373,7 @@ authors:
     affil:
     - Heidelberg
     altaffil: []
+    email: null
     initials: Yiannis
     name: Tsapras
     orcid: 0000-0001-8411-351X
@@ -6862,27 +7381,31 @@ authors:
     affil:
     - Fermilab
     altaffil: []
+    email: null
     initials: Douglas L.
     name: Tucker
     orcid: 0000-0001-7211-5729
-  turnerj:
-    affil:
-    - NOIRLab
-    altaffil: []
-    initials: James
-    name: Turner
-    orcid: null
   turkm:
     affil:
     - Illinois
     altaffil: []
+    email: null
     initials: Matthew D.
     name: Turk
+    orcid: null
+  turnerj:
+    affil:
+    - NOIRLab
+    altaffil: []
+    email: null
+    initials: James
+    name: Turner
     orcid: null
   turrim:
     affil:
     - SLAC
     altaffil: []
+    email: null
     initials: Max
     name: Turri
     orcid: null
@@ -6890,6 +7413,7 @@ authors:
     affil:
     - UCDavis
     altaffil: []
+    email: null
     initials: J. Anthony
     name: Tyson
     orcid: 0000-0002-9242-8797
@@ -6897,6 +7421,7 @@ authors:
     affil:
     - Harvard-Physics
     altaffil: []
+    email: null
     initials: Elana K.
     name: Urbach
     orcid: 0000-0002-3205-2484
@@ -6904,6 +7429,7 @@ authors:
     affil:
     - INAF-Palermo
     altaffil: []
+    email: null
     initials: Sabina
     name: Ustamujic
     orcid: 0000-0003-4596-2628
@@ -6911,29 +7437,32 @@ authors:
     affil:
     - NAOJ-Chile
     altaffil: []
+    email: yousuke.utsumi@NAOJ
     initials: Yousuke
     name: Utsumi
     orcid: 0000-0001-6161-8988
-    email: yousuke.utsumi@NAOJ
+  vaccaw:
+    affil:
+    - NOIRLab
+    altaffil: []
+    email: null
+    initials: William
+    name: Vacca
+    orcid: null
   vanbergr:
     affil:
     - SLAC
     - UPenn
     altaffil: []
+    email: null
     initials: Richard
     name: Van Berg
-    orcid: null
-  vaccaw:
-    affil:
-    - NOIRLab
-    altaffil: []
-    initials: William
-    name: Vacca
     orcid: null
   vandenberkd:
     affil:
     - SVC
     altaffil: []
+    email: null
     initials: Daniel
     name: Vanden Berk
     orcid: null
@@ -6941,14 +7470,15 @@ authors:
     affil:
     - SLAC
     altaffil: []
+    email: bvan
     initials: Brian
     name: Van Klaveren
     orcid: null
-    email: bvan
   vanvelzens:
     affil:
     - Leiden
     altaffil: []
+    email: null
     initials: Sjoert
     name: van Velzen
     orcid: null
@@ -6957,6 +7487,7 @@ authors:
     - UNAM-physics
     - UNAM-astro
     altaffil: []
+    email: null
     initials: Jos\'e Antonio
     name: V\'azquez-Mata
     orcid: 0000-0001-8694-1204
@@ -6964,14 +7495,15 @@ authors:
     affil:
     - RubinObsC
     altaffil: []
+    email: pvenegas@lsst.org
     initials: Paulina
     name: Venegas
     orcid: null
-    email: pvenegas@lsst.org
   venutil:
     affil:
     - SETI
     altaffil: []
+    email: null
     initials: Laura
     name: Venuti
     orcid: 0000-0002-4115-0318
@@ -6979,6 +7511,7 @@ authors:
     affil:
     - BNL
     altaffil: []
+    email: null
     initials: Kurt
     name: Vetter
     orcid: null
@@ -6986,6 +7519,7 @@ authors:
     affil:
     - IN2P3-LPSC
     altaffil: []
+    email: null
     initials: Francis
     name: Vezzu
     orcid: null
@@ -6993,6 +7527,7 @@ authors:
     affil:
     - Illinois-astro
     altaffil: []
+    email: null
     initials: Joaquin
     name: Vieira
     orcid: null
@@ -7000,6 +7535,7 @@ authors:
     affil:
     - FacebookNE
     altaffil: []
+    email: null
     initials: Andres
     name: Villalobos
     orcid: null
@@ -7009,6 +7545,7 @@ authors:
     - PSUCDS
     - PSUGC
     altaffil: []
+    email: null
     initials: Ashley
     name: Villar
     orcid: 0000-0002-5814-4061
@@ -7016,6 +7553,7 @@ authors:
     affil:
     - SLAC
     altaffil: []
+    email: null
     initials: Antonia Sierra
     name: Villarreal
     orcid: 0000-0002-8847-0335
@@ -7023,6 +7561,7 @@ authors:
     affil:
     - IN2P3-APC
     altaffil: []
+    email: null
     initials: Francoise
     name: Virieux
     orcid: null
@@ -7030,14 +7569,15 @@ authors:
     affil:
     - RubinObs
     altaffil: []
+    email: svoutsinas
     initials: Stelios
     name: Voutsinas
     orcid: 0009-0003-4290-2942
-    email: svoutsinas
   vucinat:
     affil:
     - RubinObs
     altaffil: []
+    email: null
     initials: Tomislav
     name: Vucina
     orcid: null
@@ -7045,6 +7585,7 @@ authors:
     affil:
     - BNL
     altaffil: []
+    email: null
     initials: William
     name: Wahl
     orcid: null
@@ -7053,6 +7594,7 @@ authors:
     - LOC
     - Adler
     altaffil: []
+    email: null
     initials: Lucianne
     name: Walkowicz
     orcid: 0000-0003-2918-8687
@@ -7060,6 +7602,7 @@ authors:
     affil:
     - BNL
     altaffil: []
+    email: null
     initials: Brian
     name: Walsh
     orcid: 0000-0001-7426-5413
@@ -7067,14 +7610,15 @@ authors:
     affil:
     - Duke
     altaffil: []
+    email: chris.walter
     initials: Christopher W.
     name: Walter
     orcid: 0000-0003-2035-2380
-    email: chris.walter
   wangdl:
     affil:
     - SLAC
     altaffil: []
+    email: null
     initials: Daniel L.
     name: Wang
     orcid: null
@@ -7082,6 +7626,7 @@ authors:
     affil:
     - IPAC
     altaffil: []
+    email: null
     initials: Shin-Yawn
     name: Wang
     orcid: null
@@ -7089,6 +7634,7 @@ authors:
     affil:
     - CTIO
     altaffil: []
+    email: null
     initials: Michael
     name: Warner
     orcid: null
@@ -7096,35 +7642,23 @@ authors:
     affil:
     - Princeton-Astro
     altaffil: []
+    email: czw
     initials: Christopher Z.
     name: Waters
     orcid: 0000-0003-1989-4879
-    email: czw
   weaverb:
     affil:
     - NOIRLab
     altaffil: []
+    email: null
     initials: Benjamin
     name: Weaver
-    orcid: null
-  westfallk:
-    affil:
-    - UCO
-    altaffil: []
-    initials: Kyle
-    name: Westfall
-    orcid: null
-  wiechao:
-    affil:
-    - RubinObs
-    altaffil: []
-    initials: Oliver
-    name: Wiecha
     orcid: null
   weinerb:
     affil:
     - MMTO
     altaffil: []
+    email: null
     initials: Benjamin
     name: Weiner
     orcid: null
@@ -7132,20 +7666,39 @@ authors:
     affil:
     - TMT
     altaffil: []
+    email: null
     initials: Jason
     name: Weiss
+    orcid: null
+  westfallk:
+    affil:
+    - UCO
+    altaffil: []
+    email: null
+    initials: Kyle
+    name: Westfall
     orcid: null
   whitebj:
     affil:
     - Fermilab
     altaffil: []
+    email: null
     initials: Brandon J.D.
     name: White
     orcid: 0000-0002-9906-9037
+  wiechao:
+    affil:
+    - RubinObs
+    altaffil: []
+    email: null
+    initials: Oliver
+    name: Wiecha
+    orcid: null
   williamscc:
     affil:
     - NOIRLab
     altaffil: []
+    email: null
     initials: Christina C.
     name: Williams
     orcid: 0000-0003-2919-7495
@@ -7154,6 +7707,7 @@ authors:
     - RubinObs
     - UA-Steward
     altaffil: []
+    email: null
     initials: Beth
     name: Willman
     orcid: 0000-0003-2892-9906
@@ -7161,14 +7715,15 @@ authors:
     affil:
     - Exeter
     altaffil: []
+    email: t.j.wilson
     initials: Tom J.
     name: Wilson
     orcid: 0000-0001-6352-9735
-    email: t.j.wilson
   wintersse:
     affil:
     - LLNL
     altaffil: []
+    email: null
     initials: Scott E.
     name: Winters
     orcid: null
@@ -7176,6 +7731,7 @@ authors:
     affil:
     - UCDavis
     altaffil: []
+    email: null
     initials: David
     name: Wittman
     orcid: 0000-0002-0813-5888
@@ -7183,13 +7739,15 @@ authors:
     affil:
     - SLAC
     altaffil: []
+    email: null
     initials: Justin
     name: Wolfe
-    orcid:
+    orcid: null
   wolffsc:
     affil:
     - RubinObs
     altaffil: []
+    email: null
     initials: Sidney C.
     name: Wolff
     orcid: null
@@ -7197,14 +7755,15 @@ authors:
     affil:
     - Pitts
     altaffil: []
+    email: wmwv
     initials: W. Michael
     name: Wood-Vasey
     orcid: 0000-0001-7113-1233
-    email: wmwv
   wux:
     affil:
     - IPAC
     altaffil: []
+    email: null
     initials: Xiuqin
     name: Wu
     orcid: null
@@ -7212,6 +7771,7 @@ authors:
     affil:
     - Washington-Dirac
     altaffil: []
+    email: null
     initials: Samuel
     name: Wyatt
     orcid: null
@@ -7219,6 +7779,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
+    email: null
     initials: Bo
     name: Xin
     orcid: 0000-0002-9171-4046
@@ -7226,14 +7787,15 @@ authors:
     affil:
     - SLAC
     altaffil: []
+    email: yangw
     initials: Wei
     name: Yang
     orcid: null
-    email: yangw
   yannyb:
     affil:
     - Fermilab
     altaffil: []
+    email: null
     initials: Brian P.
     name: Yanny
     orcid: 0000-0002-9541-2678
@@ -7241,6 +7803,7 @@ authors:
     affil:
     - Washington
     altaffil: []
+    email: null
     initials: Peter
     name: Yoachim
     orcid: 0000-0003-2874-6464
@@ -7248,6 +7811,7 @@ authors:
     affil:
     - Drexel
     altaffil: []
+    email: null
     initials: Weixiang
     name: Yu
     orcid: null
@@ -7255,6 +7819,7 @@ authors:
     affil:
     - UA-Astro
     altaffil: []
+    email: null
     initials: Ann
     name: Zabludoff
     orcid: 0000-0001-6047-8469
@@ -7262,6 +7827,7 @@ authors:
     affil:
     - KLOA
     altaffil: []
+    email: null
     initials: Hu
     name: Zhan
     orcid: null
@@ -7269,6 +7835,7 @@ authors:
     affil:
     - CCA
     altaffil: []
+    email: null
     initials: Lily
     name: Zhao
     orcid: null
