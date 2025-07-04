@@ -37,6 +37,19 @@ affiliations:
     email: null
     institute: American Museum of Natural History
     ror_id: null
+  ARCSoM:
+    address:
+      city: Sheffield
+      country_code: UK
+      example_expanded: Astrophysics Research Cluster, School of Mathematical and Physical Sciences,
+        University of Sheffield, Sheffield, S3 7RH, United Kingdom
+      postcode: 'S3 7RH'
+      state: ''
+      street: ''
+    department: Astrophysics Research Cluster, School of Mathematical and Physical Sciences
+    email: sheffield.ac.uk
+    institute: University of Sheffield
+    ror_id: null
   ASTRON:
     address:
       city: Dwingeloo
@@ -48,6 +61,27 @@ affiliations:
     department: null
     email: null
     institute: ASTRON
+    ror_id: null
+  AURA-C:
+    address:
+      city: La Serena
+      example_expanded: AURA Observatory, Juan Cisternas 1500, La Serena, Región de Coquimbo, Chile
+      country_code: Chile
+      street: Juan Cisternas 1500
+    department: null
+    email: null
+    institute: AURA Observatory
+    ror_id: null
+  AURA-T:
+    address:
+      city: Tucson
+      example_expanded: AURA, 950 N.\ Cherry Ave., Tucson, AZ  85719, USA
+      country_code: USA
+      street: 950 N. Cherry Ave.
+      postcode: '85719'
+    department: null
+    email: null
+    institute: AURA Observatory
     ror_id: null
   AWSS:
     address:
@@ -510,7 +544,7 @@ affiliations:
       state: IL
       street: 5640 South Ellis Avenue
     department: Department of Astronomy and Astrophysics
-    email: null
+    email: uchicago.edu
     institute: University of Chicago
     ror_id: null
   Cochin:
@@ -1446,6 +1480,19 @@ affiliations:
     email: null
     institute: The LSST Corporation
     ror_id: null
+  LSST-DA:
+    address:
+      city: Tucson
+      country_code: USA
+      example_expanded: LSST Discovery Alliance, 933 N. Cherry Ave., Tucson, AZ
+        85719, USA
+      postcode: '85719'
+      state: AZ
+      street: 933 N. Cherry Ave.
+    department: null
+    email: lsst-da.org
+    institute: LSST Discovery Alliance
+    ror_id: null
   LSST-list:
     address: null
     department: null
@@ -2107,6 +2154,19 @@ affiliations:
     department: Kavli Institute for Particle Astrophysics and Cosmology
     email: slac.stanford.edu
     institute: SLAC National Accelerator Laboratory
+    ror_id: null
+  STFC:
+    address:
+      city: Swindon
+      country_code: UK
+      example_expanded: Science and Technology Facilities Council, UK Research and Innovation,
+        Polaris House, North Star Avenue, Swindon, SN2 1SZ, UK
+      postcode: 'SN2 1SZ'
+      state: ''
+      street: 'Polaris House, North Star Avenue'
+    department:
+    email: stfc.ac.uk
+    institute: Science and Technology Facilities Council, UK Research and Innovation
     ror_id: null
   STFC-RAL:
     address:
@@ -6182,7 +6242,7 @@ authors:
     orcid: null
   russos:
     affil:
-    - SLAC
+    - IN2P3-LPNHE
     altaffil: []
     initials: Stefano
     name: Russo
