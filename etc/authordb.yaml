@@ -307,10 +307,8 @@ affiliations:
   _: Placeholder used for collective author that will not be shown
 emails:
   _: none.com
-  ARCSoM: sheffield.ac.uk
   BNL: bnl.gov
   cern: cern.ch
-  Chicago: uchicago.edu
   Duke: duke.edu
   EdinburghIA: ed.ac.uk
   Exeter: exeter.ac.uk
@@ -329,7 +327,6 @@ emails:
   IN2P3-LUPM: lupm.in2p3.fr
   IPAC: ipac.caltech.edu
   LancasterU: lancaster.ac.uk
-  LSST-DA: lsst-da.org
   LSST-list: lists.lsst.org
   NAOJ: nao.ac.jp
   NCSA: illinois.edu
