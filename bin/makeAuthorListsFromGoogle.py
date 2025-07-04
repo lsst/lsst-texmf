@@ -202,7 +202,7 @@ def genFiles(values: list) -> None:
         authordb = load_authordb()
         authors = authordb.authors
         affils = authordb.affiliations
-        domains = authordb.emails
+        domains = authordb.get_email_domains()
 
         for row in values:
             id = str(row[AUTHORID]).replace(" ", "")

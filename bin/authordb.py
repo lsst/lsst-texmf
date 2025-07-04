@@ -104,6 +104,14 @@ class AuthorDbYaml(BaseModel):
     )
     authors: dict[str, AuthorDbAuthor] = Field(description="Mapping of author IDs to author information")
 
+    def get_email_domains(self) -> dict[str, str]:
+        """Get a dictionary of known email domains."""
+        domains = {}
+        for affilid, affil in self.affiliations.items():
+            if affil.email:
+                domains[affilid] = affil.email
+        return domains
+
 
 if __name__ == "__main__":
     description = __doc__
