@@ -24,7 +24,6 @@ from this machine.
 """
 
 import argparse
-import dataclasses
 import os
 import os.path
 import pickle
@@ -32,11 +31,12 @@ import re
 from typing import Any
 
 import yaml
-from db2authors import AuthorFactory
+from authordb import AuthorDbAuthor, dump_authordb, load_authordb
 from google.auth.transport.requests import Request
 from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 from oauth2client.client import Credentials
+from pydantic import BaseModel, Field
 from pylatexenc.latexencode import unicode_to_latex
 
 # If modifying these scopes, delete your previously saved credentials
@@ -54,20 +54,6 @@ SURNAME = 7
 NAME = 8
 AFFIL = 9
 ORCID = 10
-
-
-@dataclasses.dataclass(frozen=True)
-class AuthorY:
-    """Representation of an author.
-    matching the yaml file authorsdb
-    """
-
-    initials: str
-    name: str
-    email: str
-    orcid: str | None
-    affil: list[str]
-    altaffil: list[str]
 
 
 def get_credentials() -> Credentials:
@@ -101,6 +87,12 @@ def get_credentials() -> Credentials:
     return creds
 
 
+class AuthorYaml(BaseModel):
+    """Model for the author dict temp file."""
+
+    authors: dict[str, AuthorDbAuthor] = Field(description="Mapping of author IDs to author information")
+
+
 def get_initials(names: str, div: str = " ") -> str:
     """Get first letter of word (upto 5) to make an id"""
     all = names.split(div)
@@ -119,6 +111,22 @@ def write_yaml(name: str, values: Any) -> None:
     """Write given dat to  the file name  YAML"""
     with open(name, "w") as file:
         yaml.dump(values, file)
+
+
+def write_model(name: str, authors: dict[str, AuthorDbAuthor]) -> None:
+    """Write given data to  the file name  YAML"""
+    adb = AuthorYaml(authors=authors)
+    with open(name, "w") as file:
+        yaml.dump(adb.model_dump(), file)
+
+
+def load_model(filename: str) -> dict[str, AuthorDbAuthor]:
+    """Read authors  data from the YAML file"""
+    with open(filename) as file:
+        yaml_data = yaml.safe_load(file)
+        print("Parsing into AuthorYaml object...\n")
+        adb = AuthorYaml.model_validate(yaml_data)
+    return adb.authors
 
 
 def handle_email(email: str, domains: dict[str, str], affilid: str, newdomains: dict[str, str]) -> str:
@@ -188,18 +196,13 @@ def genFiles(values: list) -> None:
         clash = []
         toupdate = []
         notfound = []
-        newauthors: dict[str, AuthorY] = {}
+        newauthors: dict[str, AuthorDbAuthor] = {}
         newaffils: dict[str, str] = {}
         newdomains: dict[str, str] = {}
-        exedir = os.path.abspath(os.path.dirname(__file__))
-        dbfile = os.path.normpath(os.path.join(exedir, os.path.pardir, "etc", "authordb.yaml"))
-        with open(dbfile) as fh:
-            authordb = yaml.safe_load(fh)
-
-        factory = AuthorFactory.from_authordb(authordb)
-        authors = factory.get_author_ids()
-        affils = factory.get_affiliation_ids()
-        domains = factory.get_email_domains()
+        authordb = load_authordb()
+        authors = authordb.authors
+        affils = authordb.affiliations
+        domains = authordb.emails
 
         for row in values:
             id = str(row[AUTHORID]).replace(" ", "")
@@ -245,7 +248,7 @@ def genFiles(values: list) -> None:
                 else:
                     orcid = None
                 email: str = handle_email(row[EMAIL], domains, affilid, newdomains)
-                author: AuthorY = AuthorY(
+                author: AuthorDbAuthor = AuthorDbAuthor(
                     initials=unicode_to_latex(row[NAME]),
                     name=unicode_to_latex(row[SURNAME]),
                     orcid=orcid,
@@ -267,7 +270,7 @@ def genFiles(values: list) -> None:
             f" {len(notfound)} author updates wher authorid not found (see above) \n"
         )
         write_yaml("authors.yaml", authorids)
-        write_yaml("new_authors.yaml", newauthors)
+        write_model("new_authors.yaml", newauthors)
         write_yaml("new_affiliations.yaml", newaffils)
         write_yaml("new_domains.yaml", newdomains)
     return
@@ -278,10 +281,10 @@ def get_sheet(sheet_id: str, range: str) -> dict[str, Any]:
 
     Parameters
     ----------
-    sheetId : `str`
+    sheet_id : `str`
         GoogelSheet Id like
         ``1R1h41KVtN2gKXJAVzd4KLlcF-FnNhpt1G06YhzwuWiY``
-    sheets : `str`
+    range : `str`
         List of ``TabName!An:Zn``  ranges
     """
     creds = get_credentials()
@@ -291,33 +294,67 @@ def get_sheet(sheet_id: str, range: str) -> dict[str, Any]:
     return result
 
 
-def main(sheetId: str, sheets: str) -> None:
-    """Grab the googlesheet and process data."""
+def process_google(sheet_id: str, sheets: str) -> None:
+    """Grab the googlesheet and process data.
+    will create new_authos new_afilliations and new_domains
+    """
+    print(f"Processing Google Sheet ID: {sheet_id}")
+    print(f"Sheet ranges: {sheets}")
     for r in sheets:
-        print(f"Google {sheetId} , Sheet {r}")
-        result = get_sheet(sheetId, r)
+        result = get_sheet(sheet_id, r)
         values: list[Any] = result.get("values", [])
         genFiles(values)
 
 
+def merge_authors(author_file: str) -> None:
+    """Take the given author yaml file and merge to authodd
+    this file shold mathc the AuthorYaml class in authodb.py
+    """
+    print(f"Merging authors using file: {author_file}")
+    authors = load_model(author_file)
+    adb = load_authordb()
+    print(f"Have {len(adb.authors)} authors")
+    adb.authors.update(authors)
+    print(f"After update have {len(adb.authors)} authors")
+    dump_authordb(adb, "new_adb.yaml")
+
+
 if __name__ == "__main__":
-    description = __doc__
+    description = __doc__ or "Process Google Sheets and merge authors."
     formatter = argparse.RawDescriptionHelpFormatter
+
     parser = argparse.ArgumentParser(description=description, formatter_class=formatter)
 
+    # Required --process-google with 2+ args: id + sheets
     parser.add_argument(
-        "id",
-        help="""ID of the google sheet like
-                                18wu9f4ov79YDMR1CTEciqAhCawJ7n47C8L9pTAxe""",
-    )
-    parser.add_argument(
-        "sheet",
+        "-p",
+        "--process-google",
         nargs="+",
-        help="""Sheet names  and ranges to process
-                             within the google sheet e.g. Model!A1:H""",
+        metavar=("ID", "SHEET"),
+        help="Process Google Sheet: provide the ID and one or more sheet ranges (e.g. Model!A1:D)",
     )
-    args = parser.parse_args()
-    sheetId = args.id
-    sheets = args.sheet
 
-    main(sheetId, sheets)
+    # Optional --merge-authors with one file
+    parser.add_argument(
+        "-m",
+        "--merge-authors",
+        metavar="AUTHOR_FILE",
+        help="Path to YAML file to use for merging authors",
+    )
+
+    args = parser.parse_args()
+
+    did_something = False
+
+    if args.process_google:
+        sheet_id = args.process_google[0]
+        sheet_ranges = args.process_google[1:]
+        process_google(sheet_id, sheet_ranges)
+        did_something = True
+
+    if args.merge_authors:
+        merge_authors(args.merge_authors)
+        did_something = True
+
+    if not did_something:
+        parser.print_help()

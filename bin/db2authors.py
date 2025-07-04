@@ -158,7 +158,7 @@ class AuthorFactory:
 
         # email is a bit more involved.
         email = author.get("email", "")
-        if "@" in email:
+        if email and "@" in email:
             username, domain = email.split("@", 1)
         else:
             username = email
