@@ -11,6 +11,19 @@ affiliations:
     email: null
     institute: American Astronomical Society
     ror_id: null
+  AEL:
+    address:
+      city: Kiruna
+      country_code: Sweden
+      example_expanded: Asteroid Engineering Laboratory, Lule\xE5 University of
+         Technology, Box 848, SE-981 28 Kiruna, Sweden
+      postcode: 'SE-981 28'
+      state: null
+      street: Lule\o{a} University of Technology, Box 848
+    department: null
+    email: null
+    institute: Asteroid Engineering Laboratory
+    ror_id: null
   ALMA:
     address:
       city: San Pedro de Atacama, Antofagasta
@@ -267,6 +280,9 @@ affiliations:
     email: null
     institute: Flatiron Institute
     ror_id: null
+  CERN:
+    email: cern.ch
+    institute: European Organization for Nuclear Research
   CIEMAT:
     address:
       city: Madrid
@@ -1007,6 +1023,18 @@ affiliations:
       Rechen-Institut
     email: null
     institute: Universit\"at Heidelberg
+    ror_id: null
+  Helsinki:
+    address:
+      city: 'Helsinki'
+      country_code: Finland
+      example_expanded: Department of Physics, P.O. Box 64, 00014 University of Helsinki,
+        Finland
+      postcode: '00014'
+      street: P.O. Box 64
+    department: Department of Physics
+    email: iki.fi
+    institute: University of Helsinki
     ror_id: null
   Herts:
     address:
@@ -2332,6 +2360,15 @@ affiliations:
     email: null
     institute: Texas A\&M University
     ror_id: null
+  Tekniker:
+    email: tekniker.es
+    institute: Tekniker
+    address:
+      example_expanded: C. Iñaki Goenaga, 5, 20600, Guipúzcoa, Spain
+      city: Guipi\'{u}zcoa
+      country_code: Spain
+      postcode: '20600'
+      street: C. I\~{n}aki Goenaga, 5
   TMT:
     address:
       city: null
@@ -2778,7 +2815,7 @@ affiliations:
       state: ''
       street: 50 Yonsei-ro
     department: Department of Astronomy,
-    email: null
+    email: yonsei.ac.kr
     institute: Yonsei University
     ror_id: null
   ZurichPhys:
