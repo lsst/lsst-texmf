@@ -31,7 +31,7 @@ import re
 from typing import Any
 
 import yaml
-from authordb import AuthorDbAuthor, dump_authordb, load_authordb
+from authordb import Address, Affiliation, AuthorDbAuthor, dump_authordb, load_authordb
 from google.auth.transport.requests import Request
 from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
@@ -93,6 +93,12 @@ class AuthorYaml(BaseModel):
     authors: dict[str, AuthorDbAuthor] = Field(description="Mapping of author IDs to author information")
 
 
+class AffilYaml(BaseModel):
+    """Model for the author dict temp file."""
+
+    affiliations: dict[str, Affiliation] = Field(description="Mapping of affil IDs to affil information")
+
+
 def get_initials(names: str, div: str = " ") -> str:
     """Get first letter of word (upto 5) to make an id"""
     all = names.split(div)
@@ -120,6 +126,13 @@ def write_model(name: str, authors: dict[str, AuthorDbAuthor]) -> None:
         yaml.dump(adb.model_dump(), file)
 
 
+def write_affil(name: str, affils: dict[str, Affiliation]) -> None:
+    """Write given data to  the file name  YAML"""
+    adb = AffilYaml(affiliations=affils)
+    with open(name, "w") as file:
+        yaml.dump(adb.model_dump(), file)
+
+
 def load_model(filename: str) -> dict[str, AuthorDbAuthor]:
     """Read authors  data from the YAML file"""
     with open(filename) as file:
@@ -129,7 +142,13 @@ def load_model(filename: str) -> dict[str, AuthorDbAuthor]:
     return adb.authors
 
 
-def handle_email(email: str, domains: dict[str, str], affilid: str, newdomains: dict[str, str]) -> str:
+def handle_email(
+    email: str,
+    affils: dict[str, Affiliation],
+    domains: dict[str, str],
+    affilid: str,
+    newdomains: dict[str, str],
+) -> str:
     """Figure out if we know the domain or if we need a new one"""
     theEmail = email
     if "@" in email:
@@ -153,6 +172,8 @@ def handle_email(email: str, domains: dict[str, str], affilid: str, newdomains: 
         else:  # an afill without a domain .. possibly new
             domainid = affilid
         newdomains[domainid] = domain
+        if domainid in affils and not affils[domainid].email:
+            affils[domainid].email = domain
         return f"{mailid}@{domainid}"
     return theEmail
 
@@ -170,6 +191,30 @@ def make_id(name: str, surname: str) -> str:
     id = strip_utf(f"{surname}{initials}")  # last name initial
     id = id.lower().replace(" ", "")
     return id
+
+
+def parse_affiliation(affil_str: str) -> Affiliation:
+    """Parse an affiliation string into an Affiliation object."""
+    parts = [p.strip() for p in affil_str.split(",")]
+    if len(parts) < 2:
+        raise ValueError("Affiliation string does not have enough parts")
+    name = parts[0]
+    address_str = ", ".join(parts[1:])
+    # Try to extract country (last part)
+    country = parts[-1]
+    # Try to extract postal code (look for 5-digit number)
+    postal_code_match = re.search(r"\b\d{5}\b", address_str)
+    postal_code = postal_code_match.group(0) if postal_code_match else ""
+    # The rest is street and city
+    street_and_city = address_str.replace(country, "").replace(postal_code, "").strip(", ")
+    address = Address(
+        example_expanded=affil_str,
+        street=street_and_city,
+        city="",  # Optionally parse city if possible
+        postcode=postal_code,
+        country_code=country,
+    )
+    return Affiliation(institute=name, address=address)
 
 
 def genFiles(values: list) -> None:
@@ -197,7 +242,7 @@ def genFiles(values: list) -> None:
         toupdate = []
         notfound = []
         newauthors: dict[str, AuthorDbAuthor] = {}
-        newaffils: dict[str, str] = {}
+        newaffils: dict[str, Affiliation] = {}
         newdomains: dict[str, str] = {}
         authordb = load_authordb()
         authors = authordb.authors
@@ -231,7 +276,7 @@ def genFiles(values: list) -> None:
             # next are we updating or creating?
             if len(row) > 6 and len(row[AUTHORIDALT]) > 0:
                 # affiliation is it known
-                affilidForm = str(row[AFFIL]).split("/")
+                affilidForm = str(row[AFFIL]).strip().split("/")
                 affilids = []
                 for affilid in affilidForm:
                     if affilid not in affils:
@@ -240,14 +285,15 @@ def genFiles(values: list) -> None:
                         else:  # assume its new
                             affil = affilid
                             affilid = get_initials(affil)
-                            newaffils[affilid] = affil
+                            newaffils[affilid] = parse_affiliation(affil)
+                            affils[affilid] = newaffils[affilid]
                     affilids.append(affilid)
                     # we have a name so we need to gather the rest.
                 if len(row) > ORCID:
                     orcid = str(row[ORCID]).replace("https://orcid.org/", "")
                 else:
                     orcid = None
-                email: str = handle_email(row[EMAIL], domains, affilid, newdomains)
+                email: str = handle_email(row[EMAIL], affils, domains, affilid, newdomains)
                 author: AuthorDbAuthor = AuthorDbAuthor(
                     given_name=unicode_to_latex(row[NAME]),
                     family_name=unicode_to_latex(row[SURNAME]),
@@ -271,7 +317,7 @@ def genFiles(values: list) -> None:
         )
         write_yaml("authors.yaml", authorids)
         write_model("new_authors.yaml", newauthors)
-        write_yaml("new_affiliations.yaml", newaffils)
+        write_affil("new_affiliations.yaml", newaffils)
         write_yaml("new_domains.yaml", newdomains)
     return
 

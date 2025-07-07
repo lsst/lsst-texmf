@@ -196,7 +196,7 @@ class AuthorFactory:
         raw_affil = self._affiliations.get(affiliationid)
         if not raw_affil:
             raise RuntimeError(f"Affiliation {affiliationid!r} not found in affiliation database")
-        if raw_affil["address"]:
+        if "address" in raw_affil and raw_affil["address"]:
             address = Address(
                 street=raw_affil["address"].get("street"),
                 city=raw_affil["address"].get("city"),
