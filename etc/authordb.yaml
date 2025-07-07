@@ -2056,7 +2056,7 @@ affiliations:
       state: ''
       street: P.O.\ Box 9010
     department: Department of Astrophysics/IMAPP
-    email: null
+    email: astro.ru.nl
     institute: Radboud University Nijmegen
     ror_id: null
   Rider:
@@ -2319,7 +2319,7 @@ affiliations:
     department: Department of Physics and Astronomy
     email: stonybrook.edu
     institute: Stony Brook University
-    ror_id: null
+    ror_id: 05qghxh33
   TACC:
     address:
       city: Austin
@@ -6289,7 +6289,7 @@ authors:
     affil:
     - SLAC
     altaffil: []
-    email: npease
+    email: n8pease@Gmail
     given_name: Nathan M.
     family_name: Pease
     orcid: 0000-0002-9701-5975
@@ -6829,7 +6829,7 @@ authors:
     affil:
     - Princeton-Astro
     altaffil: []
-    email: P.Schellart@Princeton
+    email: P.Schellart@Radboud-Astro
     given_name: Pim
     family_name: Schellart
     orcid: 0000-0002-8324-0880
