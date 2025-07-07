@@ -19,10 +19,10 @@ affiliations:
          Technology, Box 848, SE-981 28 Kiruna, Sweden
       postcode: 'SE-981 28'
       state: null
-      street: Lule\o{a} University of Technology, Box 848
-    department: null
+      street: Box 848
+    department: Asteroid Engineering Laboratory
     email: null
-    institute: Asteroid Engineering Laboratory
+    institute: Lule\o{a} University of Technology
     ror_id: null
   ALMA:
     address:
