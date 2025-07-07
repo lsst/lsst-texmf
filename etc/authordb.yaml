@@ -2056,7 +2056,7 @@ affiliations:
       state: ''
       street: P.O.\ Box 9010
     department: Department of Astrophysics/IMAPP
-    email: null
+    email: astro.ru.nl
     institute: Radboud University Nijmegen
     ror_id: null
   Rider:
@@ -6829,7 +6829,7 @@ authors:
     affil:
     - Princeton-Astro
     altaffil: []
-    email: P.Schellart@Princeton
+    email: P.Schellart@Radboud-Astro
     given_name: Pim
     family_name: Schellart
     orcid: 0000-0002-8324-0880
