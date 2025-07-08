@@ -15,7 +15,7 @@ affiliations:
     address:
       city: Kiruna
       country_code: Sweden
-      example_expanded: Asteroid Engineering Laboratory, Lule\xE5 University of Technology,
+      example_expanded: Asteroid Engineering Laboratory, Lule\o{a} University of Technology,
         Box 848, SE-981 28 Kiruna, Sweden
       postcode: SE-981 28
       state: null
@@ -2093,11 +2093,11 @@ affiliations:
     address:
       city: La Serena
       country_code: Chile
-      example_expanded: 'Vera C.\ Rubin Observatory, Avenida Juan Cisternas #1500,
-        La Serena, Chile'
+      example_expanded: Vera C.\ Rubin Observatory, Avenida Juan Cisternas \#1500,
+        La Serena, Chile
       postcode: ''
       state: ''
-      street: 'Avenida Juan Cisternas #1500'
+      street: Avenida Juan Cisternas \#1500
     department: null
     email: lsst.org
     institute: Vera C.\ Rubin Observatory
