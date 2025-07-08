@@ -106,7 +106,7 @@ def get_initials(names: str, div: str = " ") -> str:
     count = 0
     for n in all:
         count = count + 1
-        if len(n) > 0:
+        if len(n) > 0 and n[0].isalpha():
             initials = f"{initials}{n[0]}"
         if count > 5:
             break
@@ -217,7 +217,7 @@ def parse_affiliation(affil_str: str) -> Affiliation:
     return Affiliation(institute=name, address=address)
 
 
-def genFiles(values: list) -> None:
+def genFiles(values: list, skip: int) -> None:
     """Generate Files.
     authors.yaml - with all authorids
     addupdatelist.yaml - authors that need to be created/updated.
@@ -248,8 +248,9 @@ def genFiles(values: list) -> None:
         authors = authordb.authors
         affils = authordb.affiliations
         domains = authordb.get_email_domains()
+        missing_affils = []  #  for missing affiliations
 
-        for row in values:
+        for idx, row in enumerate(values):
             id = str(row[AUTHORID]).replace(" ", "")
             if len(id) == 0:  # may be an update
                 id = row[AUTHORIDALT]
@@ -257,22 +258,28 @@ def genFiles(values: list) -> None:
                     id = make_id(row[NAME], row[SURNAME])
                 # loaded the authorids from authordb and check ..
                 update = "but" in row[UPDATE]
-                if update:
+                if update and idx > skip:
                     print(f"Update author {id}  ")
                     if id not in authors:
                         print(f"      but  author {id} - NOT FOUND ")
                         notfound.append(id)
                     toupdate.append(id)
                 else:
-                    if id in authors:
+                    if id in authors and idx > skip:
                         print(f"Perhaps check  clash - author {id} - {row[AUTHORID]}, {row[AUTHORIDALT]} ")
                         clash.append(id)
                     else:
-                        print(f"New author {id} - {row[NAME]}, {row[SURNAME]} ")
+                        if idx > skip:
+                            print(f"New author {id} - {row[NAME]}, {row[SURNAME]} ")
             # we have an id or a new id now
+            # we are collecting all the ids - skip is only to not make NEW ones
             if id not in authorids:
                 authorids.append(id)
+            if idx < skip:
+                if id not in authors:
+                    print(f"Skipping author {id} - but that author was not found in authordb")
 
+                continue  # Skip thuis for update/new
             # next are we updating or creating?
             if len(row) > 6 and len(row[AUTHORIDALT]) > 0:
                 # affiliation is it known
@@ -282,6 +289,7 @@ def genFiles(values: list) -> None:
                     if affilid not in affils:
                         if len(affilid) < 10:
                             print(f"Affiliation does not exist :{affilid}")
+                            missing_affils.append(affilid)
                         else:  # assume its new
                             affil = affilid
                             affilid = get_initials(affil)
@@ -308,6 +316,7 @@ def genFiles(values: list) -> None:
             "\n"
             f" Clash: {', '.join(clash)} \n"
             f" Not FOUND: {', '.join(notfound)} \n"
+            f" Missing Affils: {', '.join(missing_affils)} \n"
             f"got {len(authorids)} authors, "
             f"{len(newauthors) - len(toupdate)} new  and {len(toupdate)} to update, author entries.\n"
             f" {len(newdomains)} new email domains. \n"
@@ -340,7 +349,7 @@ def get_sheet(sheet_id: str, range: str) -> dict[str, Any]:
     return result
 
 
-def process_google(sheet_id: str, sheets: str) -> None:
+def process_google(sheet_id: str, sheets: str, skip: int = 0) -> None:
     """Grab the googlesheet and process data.
     will create new_authos new_afilliations and new_domains
     """
@@ -349,7 +358,9 @@ def process_google(sheet_id: str, sheets: str) -> None:
     for r in sheets:
         result = get_sheet(sheet_id, r)
         values: list[Any] = result.get("values", [])
-        genFiles(values)
+        if skip > 0:
+            print(f"Skipping the first {skip} lines of the sheet for new authors.")
+        genFiles(values, skip)
 
 
 def merge_authors(author_file: str) -> None:
@@ -407,6 +418,15 @@ if __name__ == "__main__":
         metavar="AFFIL_FILE",
         help="Path to YAML file to use for merging affiliations",
     )
+
+    parser.add_argument(
+        "-s",
+        "--skip",
+        type=int,
+        default=0,
+        metavar="N",
+        help="Skip the first N lines of the Google Sheet data",
+    )
     args = parser.parse_args()
 
     did_something = False
@@ -414,7 +434,7 @@ if __name__ == "__main__":
     if args.process_google:
         sheet_id = args.process_google[0]
         sheet_ranges = args.process_google[1:]
-        process_google(sheet_id, sheet_ranges)
+        process_google(sheet_id, sheet_ranges, skip=args.skip)
         did_something = True
 
     if args.merge_authors:
