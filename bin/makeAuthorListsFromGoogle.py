@@ -353,8 +353,8 @@ def process_google(sheet_id: str, sheets: str) -> None:
 
 
 def merge_authors(author_file: str) -> None:
-    """Take the given author yaml file and merge to authodd
-    this file shold mathc the AuthorYaml class in authodb.py
+    """Take the given author yaml file and merge to authordd
+    this file shold mathc the AuthorYaml class in authordb.py
     """
     print(f"Merging authors using file: {author_file}")
     authors = load_model(author_file)
@@ -362,7 +362,20 @@ def merge_authors(author_file: str) -> None:
     print(f"Have {len(adb.authors)} authors")
     adb.authors.update(authors)
     print(f"After update have {len(adb.authors)} authors")
-    dump_authordb(adb, "new_adb.yaml")
+    dump_authordb(adb, "authordb.yaml")
+
+
+def merge_affiliations(affil_file: str) -> None:
+    """Merge affiliations from the given YAML file into the authordb."""
+    print(f"Merging affiliations using file: {affil_file}")
+    with open(affil_file) as file:
+        yaml_data = yaml.safe_load(file)
+        adb = load_authordb()
+        affil_yaml = AffilYaml.model_validate(yaml_data)
+        print(f"Have {len(adb.affiliations)} affiliations")
+        adb.affiliations.update(affil_yaml.affiliations)
+        print(f"After update have {len(adb.affiliations)} affiliations")
+        dump_authordb(adb, "authordb.yaml")
 
 
 if __name__ == "__main__":
@@ -388,6 +401,12 @@ if __name__ == "__main__":
         help="Path to YAML file to use for merging authors",
     )
 
+    parser.add_argument(
+        "-a",
+        "--merge-affiliations",
+        metavar="AFFIL_FILE",
+        help="Path to YAML file to use for merging affiliations",
+    )
     args = parser.parse_args()
 
     did_something = False
@@ -400,6 +419,10 @@ if __name__ == "__main__":
 
     if args.merge_authors:
         merge_authors(args.merge_authors)
+        did_something = True
+
+    if args.merge_affiliations:
+        merge_affiliations(args.merge_affiliations)
         did_something = True
 
     if not did_something:
