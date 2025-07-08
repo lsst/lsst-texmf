@@ -157,8 +157,8 @@ def handle_email(
         domain = split[1]
         # check if we have the domain
         # easy if the affil matches
-        if affilid in domains and domains[affilid] == domain:
-            return f"{mailid}@{affilid}"
+        if (affilid in domains and domains[affilid] == domain) or affils[affilid].email == domain:
+            return f"{mailid}"
         # ok perhpas we   know the domain but it is not the affil
         if domain in domains.values():
             domainid = list(domains.keys())[list(domains.values()).index(domain)]
@@ -301,7 +301,7 @@ def genFiles(values: list, skip: int) -> None:
                     orcid = str(row[ORCID]).replace("https://orcid.org/", "")
                 else:
                     orcid = None
-                email: str = handle_email(row[EMAIL], affils, domains, affilid, newdomains)
+                email: str = handle_email(row[EMAIL], affils, domains, affilids[0], newdomains)
                 author: AuthorDbAuthor = AuthorDbAuthor(
                     given_name=unicode_to_latex(row[NAME]),
                     family_name=unicode_to_latex(row[SURNAME]),
