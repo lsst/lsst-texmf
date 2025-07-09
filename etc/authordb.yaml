@@ -15,7 +15,7 @@ affiliations:
     address:
       city: Kiruna
       country_code: Sweden
-      example_expanded: Asteroid Engineering Laboratory, Lule\o{a} University of Technology,
+      example_expanded: Asteroid Engineering Laboratory, Lule\xE5 University of Technology,
         Box 848, SE-981 28 Kiruna, Sweden
       postcode: SE-981 28
       state: null
@@ -2093,11 +2093,11 @@ affiliations:
     address:
       city: La Serena
       country_code: Chile
-      example_expanded: Vera C.\ Rubin Observatory, Avenida Juan Cisternas \#1500,
-        La Serena, Chile
+      example_expanded: 'Vera C.\ Rubin Observatory, Avenida Juan Cisternas #1500,
+        La Serena, Chile'
       postcode: ''
       state: ''
-      street: Avenida Juan Cisternas \#1500
+      street: 'Avenida Juan Cisternas #1500'
     department: null
     email: lsst.org
     institute: Vera C.\ Rubin Observatory
@@ -3258,7 +3258,7 @@ authors:
     email: acbecker@Gmail
     family_name: Becker
     given_name: Andrew C.
-    orcid: null
+    orcid: 0000-0001-6661-3043
   beckettmg:
     affil:
     - EdinburghIA
@@ -3305,7 +3305,7 @@ authors:
     altaffil: []
     email: phbern@Washington
     family_name: Bernardinelli
-    given_name: 'Pedro H. '
+    given_name: Pedro H.
     orcid: 0000-0003-0743-9422
   berukoffs:
     affil:
@@ -3454,19 +3454,11 @@ authors:
     family_name: Bosch
     given_name: James F.
     orcid: 0000-0003-2759-5764
-  bouauda:
-    affil:
-    - IN2P3-APC
-    altaffil: []
-    email: aboucaud
-    family_name: Boucaud
-    given_name: Alexandre
-    orcid: 0000-0001-7387-2633
   boucauda:
     affil:
     - IN2P3-APC
     altaffil: []
-    email: null
+    email: aboucaud
     family_name: Boucaud
     given_name: Alexandre
     orcid: 0000-0001-7387-2633
@@ -4151,7 +4143,7 @@ authors:
     email: peter.doherty@Harvard-CfA
     family_name: Doherty
     given_name: Peter E.
-    orcid: ''
+    orcid: null
   dominguezm:
     affil:
     - IAFE
@@ -4169,7 +4161,7 @@ authors:
     family_name: Drass
     given_name: Holger
     orcid: 0000-0002-7790-9971
-  drlia-wagnera:
+  drlicawagnera:
     affil:
     - Fermilab
     altaffil: []
@@ -4287,7 +4279,7 @@ authors:
     affil:
     - RubinObsC
     altaffil: []
-    email: jfabrega@RubinObs
+    email: jfabrega
     family_name: Fabrega
     given_name: Juan A.
     orcid: null
@@ -4510,7 +4502,7 @@ authors:
     family_name: Garavito Camargo
     given_name: Nicol\'{a}s
     orcid: null
-  gariaj:
+  garciaj:
     affil:
     - Tekniker
     altaffil: []
@@ -4522,9 +4514,9 @@ authors:
     affil:
     - SLAC
     altaffil: []
-    email: null
+    email: jgates
     family_name: Gates
-    given_name: John
+    given_name: John H
     orcid: null
   gawisere:
     affil:
@@ -5608,7 +5600,7 @@ authors:
     email: llg
     family_name: Le Guillou
     given_name: Laurent
-    orcid: ' 0000-0001-7178-8868'
+    orcid: 0000-0001-7178-8868
   levineb:
     affil:
     - StonyBrookU
@@ -6006,6 +5998,14 @@ authors:
     family_name: Menanteau
     given_name: Felipe
     orcid: null
+  mentzerhr:
+    affil:
+    - UCSC
+    altaffil: []
+    email: hmentzer
+    family_name: MENTZER
+    given_name: HEATHER R.
+    orcid: 0000-0002-7169-4850
   meyersj:
     affil:
     - SLAC
@@ -6261,14 +6261,6 @@ authors:
     email: null
     family_name: Neveu
     given_name: Jeremy
-    orcid: null
-  new:
-    affil:
-    - SLAC
-    altaffil: []
-    email: jgates
-    family_name: Gates
-    given_name: John H
     orcid: null
   newbrysp:
     affil:
@@ -6885,7 +6877,7 @@ authors:
     email: sritz
     family_name: Ritz
     given_name: Steven M.
-    orcid: ''
+    orcid: null
   riveram:
     affil:
     - RubinObsC
@@ -6997,7 +6989,7 @@ authors:
     email: srusso
     family_name: russo
     given_name: stefano
-    orcid: ''
+    orcid: null
   rykoffe:
     affil:
     - SLAC-Kavli
@@ -7208,7 +7200,7 @@ authors:
     family_name: Seppala
     given_name: Lynn G.
     orcid: null
-  seriheg:
+  sericheg:
     affil:
     - RubinObsC
     altaffil: []
@@ -7821,7 +7813,7 @@ authors:
     family_name: van Velzen
     given_name: Sjoert
     orcid: null
-  vauherpa:
+  vaucherpa:
     affil:
     - SLAC
     altaffil: []
@@ -8064,7 +8056,7 @@ authors:
     email: bwillman
     family_name: Willman
     given_name: Beth
-    orcid: null
+    orcid: 0000-0003-2892-9906
   wilsontj:
     affil:
     - Exeter

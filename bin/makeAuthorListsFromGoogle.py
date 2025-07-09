@@ -181,7 +181,9 @@ def handle_email(
 def strip_utf(ins: str) -> str:
     """Want simple ids wiht now latex or unicode"""
     outs = unicode_to_latex(ins)
-    outs = re.sub(r"[\\'c}{]", "", outs)
+    outs = re.sub(r"\'", "", outs)
+    outs = re.sub(r"[-'}{]", "", outs)
+    outs = outs.replace("\\", "")
     return outs
 
 
@@ -217,7 +219,7 @@ def parse_affiliation(affil_str: str) -> Affiliation:
     return Affiliation(institute=name, address=address)
 
 
-def genFiles(values: list, skip: int) -> None:
+def genFiles(values: list, skip: int, builder: bool = False) -> None:
     """Generate Files.
     authors.yaml - with all authorids
     addupdatelist.yaml - authors that need to be created/updated.
@@ -254,7 +256,7 @@ def genFiles(values: list, skip: int) -> None:
             id = str(row[AUTHORID]).replace(" ", "")
             if len(id) == 0:  # may be an update
                 id = row[AUTHORIDALT]
-                if len(id) == 0 or id == "NEW":  # no id
+                if len(id) == 0 or id.upper() == "NEW":  # no id
                     id = make_id(row[NAME], row[SURNAME])
                 # loaded the authorids from authordb and check ..
                 update = "but" in row[UPDATE]
@@ -298,13 +300,17 @@ def genFiles(values: list, skip: int) -> None:
                     affilids.append(affilid)
                     # we have a name so we need to gather the rest.
                 if len(row) > ORCID:
-                    orcid = str(row[ORCID]).replace("https://orcid.org/", "")
+                    orc = str(row[ORCID]).strip().replace("https://orcid.org/", "")
+                    if len(orc) < 2:
+                        orcid = None
+                    else:
+                        orcid = orc
                 else:
                     orcid = None
                 email: str = handle_email(row[EMAIL], affils, domains, affilids[0], newdomains)
                 author: AuthorDbAuthor = AuthorDbAuthor(
-                    given_name=unicode_to_latex(row[NAME]),
-                    family_name=unicode_to_latex(row[SURNAME]),
+                    given_name=unicode_to_latex(row[NAME].strip()),
+                    family_name=unicode_to_latex(row[SURNAME].strip()),
                     orcid=orcid,
                     email=email,
                     affil=affilids,
@@ -312,6 +318,8 @@ def genFiles(values: list, skip: int) -> None:
                 )
                 newauthors[id] = author
         authorids = sorted(authorids)
+        if builder and "RubinBuilderPaper" not in authorids:
+            authorids.insert(0, "RubinBuilderPaper")
         print(
             "\n"
             f" Clash: {', '.join(clash)} \n"
@@ -349,9 +357,23 @@ def get_sheet(sheet_id: str, range: str) -> dict[str, Any]:
     return result
 
 
-def process_google(sheet_id: str, sheets: str, skip: int = 0) -> None:
+def process_google(sheet_id: str, sheets: str, skip: int = 0, builder: bool = False) -> None:
     """Grab the googlesheet and process data.
     will create new_authos new_afilliations and new_domains
+
+    Parameters
+    ----------
+    sheet_id : str
+        The Google Sheet ID to process.
+    sheets : str
+        One or more sheet ranges (e.g., 'Sheet1!A1:D').
+    skip : int, optional
+        Number of initial rows to skip when processing (default is 0).
+        they will be adde to the auhots.yaml but not flagged as new/update
+        assumign they were already added to authordb
+    builder : bool, optional
+        If True, add 'RubinBuilderPaper' as the first author ID in the output.
+
     """
     print(f"Processing Google Sheet ID: {sheet_id}")
     print(f"Sheet ranges: {sheets}")
@@ -360,7 +382,22 @@ def process_google(sheet_id: str, sheets: str, skip: int = 0) -> None:
         values: list[Any] = result.get("values", [])
         if skip > 0:
             print(f"Skipping the first {skip} lines of the sheet for new authors.")
-        genFiles(values, skip)
+        genFiles(values, skip, builder=builder)
+
+
+def merge_authors_with_update(adb: dict[str, AuthorDbAuthor], authors: dict[str, AuthorDbAuthor]) -> None:
+    """
+    Merge authors into adb.authors.
+    - If author not in adb, add it.
+    - If author exists and has ORCID in adb but not in new entry,
+      copy ORCID to new entry and replace in adb.
+    """
+    for author_id, new_author in authors.items():
+        if author_id in adb:
+            existing_author = adb[author_id]
+            if existing_author.orcid and not new_author.orcid:
+                new_author.orcid = existing_author.orcid
+        adb[author_id] = new_author
 
 
 def merge_authors(author_file: str) -> None:
@@ -371,7 +408,7 @@ def merge_authors(author_file: str) -> None:
     authors = load_model(author_file)
     adb = load_authordb()
     print(f"Have {len(adb.authors)} authors")
-    adb.authors.update(authors)
+    merge_authors_with_update(adb.authors, authors)
     print(f"After update have {len(adb.authors)} authors")
     dump_authordb(adb, "authordb.yaml")
 
@@ -427,6 +464,12 @@ if __name__ == "__main__":
         metavar="N",
         help="Skip the first N lines of the Google Sheet data",
     )
+    parser.add_argument(
+        "-b",
+        "--builder",
+        action="store_true",
+        help="Add RubinBuilderPaper as the first author id in the generated file",
+    )
     args = parser.parse_args()
 
     did_something = False
@@ -434,7 +477,7 @@ if __name__ == "__main__":
     if args.process_google:
         sheet_id = args.process_google[0]
         sheet_ranges = args.process_google[1:]
-        process_google(sheet_id, sheet_ranges, skip=args.skip)
+        process_google(sheet_id, sheet_ranges, skip=args.skip, builder=args.builder)
         did_something = True
 
     if args.merge_authors:
