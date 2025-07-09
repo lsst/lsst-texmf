@@ -241,6 +241,7 @@ def genFiles(values: list, skip: int, builder: bool = False) -> None:
     else:
         authorids = []
         clash = []
+        check = []
         toupdate = []
         notfound = []
         newauthors: dict[str, AuthorDbAuthor] = {}
@@ -258,6 +259,15 @@ def genFiles(values: list, skip: int, builder: bool = False) -> None:
                 id = row[AUTHORIDALT]
                 if len(id) == 0 or id.upper() == "NEW":  # no id
                     id = make_id(row[NAME], row[SURNAME])
+                if not id.startswith(row[SURNAME].strip()[:2].lower()):
+                    # this can not be
+                    badid = id
+                    id = make_id(row[NAME], row[SURNAME])
+                    check.append(id)
+                    print(
+                        f"Check  - author provided {badid} - assuming {id} - "
+                        f"{row[SURNAME]}, {row[AUTHORIDALT]} "
+                    )
                 # loaded the authorids from authordb and check ..
                 update = "but" in row[UPDATE]
                 if update and idx > skip:
@@ -325,12 +335,13 @@ def genFiles(values: list, skip: int, builder: bool = False) -> None:
             f" Clash: {', '.join(clash)} \n"
             f" Not FOUND: {', '.join(notfound)} \n"
             f" Missing Affils: {', '.join(missing_affils)} \n"
+            f" Check the ids: {', '.join(check)} \n"
             f"got {len(authorids)} authors, "
             f"{len(newauthors) - len(toupdate)} new  and {len(toupdate)} to update, author entries.\n"
             f" {len(newdomains)} new email domains. \n"
             f" {len(newaffils)} new affiliations \n"
             f" {len(clash)} author entries need to be checked (see above) \n"
-            f" {len(notfound)} author updates wher authorid not found (see above) \n"
+            f" {len(notfound)} author updates where authorid not found (see above) \n"
         )
         write_yaml("authors.yaml", authorids)
         write_model("new_authors.yaml", newauthors)
