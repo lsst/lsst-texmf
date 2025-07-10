@@ -646,19 +646,6 @@ affiliations:
     email: null
     institute: California Institute of Technology
     ror_id: null
-  DIRAC:
-    address:
-      city: Seattle
-      country_code: USA
-      example_expanded: Institute for Data-intensive Research in Astrophysics and
-        Cosmology, University of Washington, Seattle, WA
-      postcode: ''
-      state: WA
-      street: ''
-    department: Institute for Data-intensive Research in Astrophysics and Cosmology
-    email: null
-    institute: University of Washington
-    ror_id: null
   DOE:
     address:
       city: SW Washington
@@ -2772,18 +2759,18 @@ affiliations:
     email: uw.edu
     institute: University of Washington
     ror_id: null
-  Washington-Dirac:
+  Washington-DIRAC:
     address:
       city: Seattle
       country_code: USA
-      example_expanded: Department of Astronomy and the DIRAC Institute, University
+      example_expanded: Institute for Data-intensive Research in Astrophysics and Cosmology, University
         of Washington, 3910 15th Avenue NE, Seattle, WA 98195, USA
       postcode: '98195'
       state: WA
       street: 3910 15th Avenue NE
-    department: University of Washington
+    department: Institute for Data-intensive Research in Astrophysics and Cosmology
     email: uw.edu
-    institute: Department of Astronomy and the DIRAC Institute
+    institute: University of Washington
     ror_id: null
   WestWashington:
     address:
@@ -3301,7 +3288,7 @@ authors:
     orcid: 0000-0001-8018-5348
   bernardinelliph:
     affil:
-    - DIRAC
+    - Washington-DIRAC
     altaffil: []
     email: phbern@Washington
     family_name: Bernardinelli
@@ -3875,7 +3862,7 @@ authors:
     orcid: null
   connollyaj:
     affil:
-    - Washington-Dirac
+    - Washington-DIRAC
     altaffil: []
     email: null
     family_name: Connolly
@@ -3947,7 +3934,7 @@ authors:
     orcid: 0000-0001-6914-7797
   crenshawjf:
     affil:
-    - Washington-Dirac
+    - Washington-DIRAC
     altaffil: []
     email: jfc20
     family_name: Crenshaw
@@ -4059,7 +4046,7 @@ authors:
     orcid: null
   davenportj:
     affil:
-    - Washington-Dirac
+    - Washington-DIRAC
     altaffil: []
     email: null
     family_name: Davenport
@@ -4334,7 +4321,7 @@ authors:
     orcid: 0000-0001-7113-2738
   fergusonps:
     affil:
-    - Washington-Dirac
+    - Washington-DIRAC
     - WisconsinMadison
     altaffil: []
     email: pferguso
@@ -4717,7 +4704,7 @@ authors:
   grahamml:
     affil:
     - Washington
-    - DIRAC
+    - Washington-DIRAC
     altaffil: []
     email: mlg3k
     family_name: Graham
@@ -5184,7 +5171,7 @@ authors:
     orcid: null
   juricm:
     affil:
-    - Washington-Dirac
+    - Washington-DIRAC
     altaffil: []
     email: null
     family_name: Juri\'{c}
@@ -5476,7 +5463,7 @@ authors:
     orcid: null
   kurlanderja:
     affil:
-    - Washington-Dirac
+    - Washington-DIRAC
     altaffil: []
     email: jkurla
     family_name: Kurlander
@@ -6081,7 +6068,7 @@ authors:
     orcid: null
   moeyensj:
     affil:
-    - Washington-Dirac
+    - Washington-DIRAC
     altaffil: []
     email: null
     family_name: Moeyens
@@ -6791,7 +6778,7 @@ authors:
   rawlsml:
     affil:
     - Washington
-    - DIRAC
+    - Washington-DIRAC
     altaffil: []
     email: mrawls
     family_name: Rawls
@@ -7356,7 +7343,7 @@ authors:
     orcid: null
   smothermanh:
     affil:
-    - Washington-Dirac
+    - Washington-DIRAC
     altaffil: []
     email: null
     family_name: Smotherman
@@ -7437,7 +7424,7 @@ authors:
     orcid: null
   stetzlers:
     affil:
-    - Washington-Dirac
+    - Washington-DIRAC
     altaffil: []
     email: null
     family_name: Stetzler
@@ -7996,7 +7983,7 @@ authors:
     orcid: null
   wangy:
     affil:
-    - Washington-Dirac
+    - Washington-DIRAC
     altaffil: []
     email: ykwang
     family_name: Wang
@@ -8140,7 +8127,7 @@ authors:
     orcid: null
   wyatts:
     affil:
-    - Washington-Dirac
+    - Washington-DIRAC
     altaffil: []
     email: null
     family_name: Wyatt
