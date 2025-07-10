@@ -2871,7 +2871,7 @@ affiliations:
 authors:
   DMPipelines:
     affil:
-    - _
+    - RubinObs
     altaffil: []
     email: dm-admin@LSST-list
     family_name: Rubin Observatory Science Pipelines Developers
@@ -2879,10 +2879,10 @@ authors:
     orcid: null
   RubinBuilderPaper:
     affil:
-    - _
+    - RubinObs
     altaffil: []
     email: pubboard@LSST-list
-    family_name: Vera C. Rubin Observatory
+    family_name: Vera C. Rubin Observatory Team
     given_name: ''
     orcid: null
   abelb:
