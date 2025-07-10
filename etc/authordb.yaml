@@ -1153,7 +1153,7 @@ affiliations:
       state: ''
       street: ''
     department: Laboratoire de Physique de Clermont Auvergne
-    email: lpca.in2p3.fr
+    email: clermont.in2p3.fr
     institute: Universite Clermont Auvergne
     ror_id: null
   IN2P3-LPNHE:
@@ -3822,9 +3822,9 @@ authors:
     orcid: null
   cohentanugij:
     affil:
-    - IN2P3-LUPM
+    - IN2P3-LPCA
     altaffil: []
-    email: johann.cohentanugi@Gmail
+    email: johann.cohen-tanugi
     family_name: Cohen-Tanugi
     given_name: Johann
     orcid: 0000-0001-9022-4232
