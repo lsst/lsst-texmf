@@ -1386,6 +1386,7 @@ FUNCTION {misc}
   howpublished "howpublished" bibinfo.check output
   format.note output
   format.eprint "eprint" output.check.nocomma
+  format.doi "doi" output.check.nocomma
   format.adsurl output
   fin.entry
 }
@@ -1437,6 +1438,7 @@ FUNCTION {techreport}
   address "address" bibinfo.check output
   format.note output
   format.eprint "eprint" output.check.nocomma
+  format.doi "doi" output.check.nocomma
   format.adsurl output
   fin.entry
 }
