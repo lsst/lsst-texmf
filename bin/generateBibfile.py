@@ -193,7 +193,7 @@ def create_bibentries(res: SearchResponse, dois: dict[str, str] | None = None) -
             d["handle"],
             date.year,
             url=url,
-            publisher="Vera C. Rubin Observatory",
+            publisher="NSF-DOE Vera C. Rubin Observatory",
             doi=doimap.get(d["handle"]),
         )
         entry = be.get_pybtex()
