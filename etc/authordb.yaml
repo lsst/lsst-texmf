@@ -960,7 +960,7 @@ affiliations:
       country_code: USA
       example_expanded: Department of Astronomy, Center for Astrophysics, Harvard
         University, 60 Garden St., Cambridge, MA 02138, USA
-      postcode: 02138
+      postcode: "02138"
       state: MA
       street: 60 Garden St.
     department: Department of Astronomy, Center for Astrophysics
@@ -973,7 +973,7 @@ affiliations:
       country_code: USA
       example_expanded: Center for Astrophysics, Harvard & Smithsonian, 60 Garden
         Street, Cambridge, MA 02138
-      postcode: 02138
+      postcode: "02138"
       state: MA
       street: 60 Garden Street
     department: Center for Astrophysics
@@ -986,7 +986,7 @@ affiliations:
       country_code: USA
       example_expanded: Department of Physics, Harvard University, 17 Oxford St.,
         Cambridge MA 02138, USA
-      postcode: 02138
+      postcode: "02138"
       state: MA
       street: 17 Oxford St.
     department: Department of Physics
@@ -2020,7 +2020,7 @@ affiliations:
       city: Princeton
       country_code: USA
       example_expanded: Princeton University, Princeton, NJ 08544, USA
-      postcode: 08544
+      postcode: '08544'
       state: NJ
       street: ''
     department: null
@@ -2033,7 +2033,7 @@ affiliations:
       country_code: USA
       example_expanded: Department of Astrophysical Sciences, Princeton University,
         Princeton, NJ 08544, USA
-      postcode: 08544
+      postcode: '08544'
       state: NJ
       street: ''
     department: Department of Astrophysical Sciences
@@ -2072,7 +2072,7 @@ affiliations:
       country_code: USA
       example_expanded: Department of Chemistry, Biochemistry, and Physics, Rider
         University, Lawrenceville, NJ 08648, USA
-      postcode: 08648
+      postcode: '08648'
       state: NJ
       street: ''
     department: Department of Chemistry, Biochemistry, and Physics
@@ -2137,7 +2137,7 @@ affiliations:
       country_code: USA
       example_expanded: Department of Physics and Astronomy, Rutgers University, 136
         Frelinghuysen Rd., Piscataway, NJ 08854, USA
-      postcode: 08854
+      postcode: "08854"
       state: NJ
       street: 136 Frelinghuysen Rd.
     department: Department of Physics and Astronomy
@@ -2150,7 +2150,7 @@ affiliations:
       country_code: USA
       example_expanded: Smithsonian Astrophysical Observatory, 60 Garden St., Cambridge
         MA 02138, USA
-      postcode: 02138
+      postcode: "02138"
       state: MA
       street: 60 Garden St.
     department: null
@@ -2627,7 +2627,7 @@ affiliations:
       country_code: Mexico
       example_expanded: Departamento de Fisica, Facultad de Ciencias, Universidad
         Nacional Autonoma de Mexico, Ciudad Universitaria, CDMX, 04510, Mexico
-      postcode: 04519
+      postcode: "04519"
       state: ''
       street: ''
     department: Departamento de Fisica, Facultad de Ciencias
