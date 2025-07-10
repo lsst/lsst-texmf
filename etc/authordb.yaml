@@ -73,7 +73,7 @@ affiliations:
       state: ''
       street: Oude Hoogeveensedijk 4
     department: null
-    email: null
+    email: astron.nl
     institute: ASTRON
     ror_id: null
   Aubourg:
@@ -990,7 +990,7 @@ affiliations:
       state: MA
       street: 17 Oxford St.
     department: Department of Physics
-    email: null
+    email: g.harvard.edu
     institute: Harvard University
     ror_id: null
   Haverford:
@@ -1389,6 +1389,11 @@ affiliations:
     email: null
     institute: The John Hopkins University
     ror_id: null
+  JMatt:
+    address: null
+    institute: Placeholder for jmatt.org email domain
+    ror_id: null
+    email: jmatt.org
   JPL:
     address:
       city: Pasadena
@@ -2045,7 +2050,7 @@ affiliations:
       state: IN
       street: 525 Northwestern Ave.
     department: Department of Physics and Astronomy
-    email: null
+    email: purdue.edu
     institute: Purdue University
     ror_id: null
   Radboud-Astro:
@@ -6066,7 +6071,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
-    email: null
+    email: dmills
     family_name: Mills
     given_name: David J.
     orcid: null
@@ -6130,7 +6135,7 @@ authors:
     affil:
     - soZen
     altaffil: []
-    email: null
+    email: fred.moolekamp@Gmail
     family_name: Moolekamp
     given_name: Fred E.
     orcid: 0000-0003-0093-4279
@@ -6274,7 +6279,7 @@ authors:
     affil:
     - IN2P3-IJCLAB
     altaffil: []
-    email: null
+    email: jeremy.neveu
     family_name: Neveu
     given_name: Jeremy
     orcid: null
@@ -6314,7 +6319,7 @@ authors:
     affil:
     - Washington
     altaffil: []
-    email: null
+    email: nimaseda
     family_name: Sedaghat
     given_name: Nima
     orcid: 0000-0003-4734-2019
@@ -6517,7 +6522,7 @@ authors:
     affil:
     - Duke
     altaffil: []
-    email: null
+    email: hp175
     family_name: Park
     given_name: Hye Yun
     orcid: 0000-0002-7295-2743
@@ -6565,7 +6570,7 @@ authors:
     affil:
     - RubinObsC
     altaffil: []
-    email: null
+    email: kpena
     family_name: Pe\~{n}a Ram\'{i}rez
     given_name: Karla
     orcid: 0000-0002-5855-401X
@@ -6573,7 +6578,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
-    email: null
+    email: jmatt@JMatt
     family_name: Peterson
     given_name: J. Matt
     orcid: 0000-0002-6564-6246
@@ -6581,7 +6586,7 @@ authors:
     affil:
     - Purdue-Astro
     altaffil: []
-    email: null
+    email: peters11
     family_name: Peterson
     given_name: John R.
     orcid: 0000-0001-5471-9609
@@ -6711,7 +6716,7 @@ authors:
     affil:
     - Princeton-Astro
     altaffil: []
-    email: null
+    email: price
     family_name: Price
     given_name: Paul A.
     orcid: null
@@ -6743,7 +6748,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
-    email: null
+    email: bquint
     family_name: Quint
     given_name: Bruno C.
     orcid: 0000-0002-1557-3560
@@ -6751,7 +6756,7 @@ authors:
     affil:
     - BNL
     altaffil: []
-    email: null
+    email: radeka
     family_name: Radeka
     given_name: Veljko
     orcid: null
@@ -6816,7 +6821,7 @@ authors:
     affil:
     - SLAC
     altaffil: []
-    email: null
+    email: reil
     family_name: Reil
     given_name: Kevin A.
     orcid: null
@@ -6832,7 +6837,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
-    email: null
+    email: mareuter
     family_name: Reuter
     given_name: Michael A.
     orcid: 0000-0003-3881-8310
@@ -6882,7 +6887,7 @@ authors:
     affil:
     - LLNL
     altaffil: []
-    email: null
+    email: riot1
     family_name: Riot
     given_name: Vincent J.
     orcid: null
@@ -7042,7 +7047,7 @@ authors:
     affil:
     - IN2P3-CPPM
     altaffil: []
-    email: null
+    email: bsanchez
     family_name: S\'anchez
     given_name: Bruno O.
     orcid: 0000-0002-8687-0669
@@ -7058,7 +7063,7 @@ authors:
     affil:
     - RubinObsC
     altaffil: []
-    email: null
+    email: dsanmartim
     family_name: Sanmartim
     given_name: David
     orcid: 0000-0002-9238-9521
@@ -7082,7 +7087,7 @@ authors:
     affil:
     - Princeton-Astro
     altaffil: []
-    email: null
+    email: cmsaunders@Princeton
     family_name: Saunders
     given_name: Clare
     orcid: 0000-0002-4094-2102
@@ -7196,7 +7201,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
-    email: null
+    email: brianselvy@Gmail
     family_name: Selvy
     given_name: Brian
     orcid: null
@@ -7276,7 +7281,7 @@ authors:
     affil:
     - RubinObsC
     altaffil: []
-    email: null
+    email: alysha.shugart@NOIRLab
     family_name: Shugart
     given_name: Alysha
     orcid: 0009-0000-6778-7168
@@ -7293,7 +7298,7 @@ authors:
     affil:
     - RubinObsC
     altaffil: []
-    email: null
+    email: csilva
     family_name: Silva
     given_name: Cristi\'{a}n
     orcid: null
@@ -7333,7 +7338,7 @@ authors:
     affil:
     - Washington
     altaffil: []
-    email: null
+    email: drbsmart
     family_name: Smart
     given_name: Brianna M.
     orcid: 0000-0002-3677-0571
@@ -7382,7 +7387,7 @@ authors:
     affil:
     - SLAC
     altaffil: []
-    email: null
+    email: csoldahl
     family_name: Soldahl
     given_name: Christine
     orcid: null
@@ -7406,7 +7411,7 @@ authors:
     affil:
     - RubinObsC
     altaffil: []
-    email: null
+    email: isotuela
     family_name: Sotuela Elorriaga
     given_name: Ioana
     orcid: null
@@ -7422,7 +7427,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
-    email: null
+    email: bstalder
     family_name: Stalder
     given_name: Brian
     orcid: null
@@ -7494,7 +7499,7 @@ authors:
     affil:
     - Princeton-Astro
     altaffil: []
-    email: null
+    email: strauss
     family_name: Strauss
     given_name: Michael A.
     orcid: 0000-0002-0106-7755
@@ -7544,7 +7549,7 @@ authors:
     - ASTRON
     - Princeton-Astro
     altaffil: []
-    email: null
+    email: swinbank
     family_name: Swinbank
     given_name: John D.
     orcid: 0000-0001-9445-1846
@@ -7568,7 +7573,7 @@ authors:
     affil:
     - RubinObsC
     altaffil: []
-    email: null
+    email: dtapia
     family_name: Tapia
     given_name: Diego
     orcid: null
@@ -7616,7 +7621,7 @@ authors:
     affil:
     - SLAC
     altaffil: []
-    email: null
+    email: jgt
     family_name: Thayer
     given_name: John Gregg
     orcid: null
@@ -7632,7 +7637,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
-    email: null
+    email: sthomas
     family_name: Thomas
     given_name: Sandrine
     orcid: 0000-0002-9121-3436
@@ -7664,7 +7669,7 @@ authors:
     affil:
     - RubinObsC
     altaffil: []
-    email: null
+    email: rtighe
     family_name: Tighe
     given_name: Roberto
     orcid: null
@@ -7712,7 +7717,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
-    email: null
+    email: ttsai
     family_name: Tsai
     given_name: Te-Wei
     orcid: null
@@ -7752,7 +7757,7 @@ authors:
     affil:
     - SLAC
     altaffil: []
-    email: null
+    email: turri
     family_name: Turri
     given_name: Max
     orcid: null
@@ -7768,7 +7773,7 @@ authors:
     affil:
     - Harvard-Physics
     altaffil: []
-    email: null
+    email: eurbach
     family_name: Urbach
     given_name: Elana K.
     orcid: 0000-0002-3205-2484
@@ -7916,7 +7921,7 @@ authors:
     affil:
     - SLAC
     altaffil: []
-    email: null
+    email: sierrav
     family_name: Villarreal
     given_name: Antonia Sierra
     orcid: 0000-0002-8847-0335
@@ -8173,7 +8178,7 @@ authors:
     affil:
     - Fermilab
     altaffil: []
-    email: null
+    email: yanny
     family_name: Yanny
     given_name: Brian P.
     orcid: 0000-0002-9541-2678
@@ -8181,7 +8186,7 @@ authors:
     affil:
     - Washington
     altaffil: []
-    email: null
+    email: yoachim
     family_name: Yoachim
     given_name: Peter
     orcid: 0000-0003-2874-6464
