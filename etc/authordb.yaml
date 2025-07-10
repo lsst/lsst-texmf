@@ -4673,13 +4673,13 @@ authors:
     family_name: Gonzalez-Morales
     given_name: Alma X.
     orcid: 0000-0003-4089-6924
-  gonzalesi:
+  gonzalezi:
     affil:
     - RubinObsC
     altaffil: []
     email: null
-    family_name: Gonzales
-    given_name: Ivan
+    family_name: Gonz\'{a}lez
+    given_name: Iv\'{a}n
     orcid: null
   goodenowi:
     affil:
