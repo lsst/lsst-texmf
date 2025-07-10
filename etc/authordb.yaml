@@ -296,7 +296,7 @@ affiliations:
       state: ''
       street: Av. Complutense 40
     department: null
-    email: null
+    email: ciemat.es
     institute: Centro de Investigaciones Energeticas, Medioambientales y Tecnologicas
     ror_id: null
   CIERA:
@@ -1478,7 +1478,7 @@ affiliations:
       state: RJ
       street: Rua General Jose Cristino, 77
     department: null
-    email: null
+    email: linea.org.br
     institute: Laboratorio Interinstitucional de e-Astronomia
     ror_id: null
   LLNL:
@@ -1815,7 +1815,7 @@ affiliations:
       state: NY
       street: ''
     department: null
-    email: null
+    email: nyu.edu
     institute: New York University
     ror_id: null
   NYU-CCPP:
@@ -3728,6 +3728,15 @@ authors:
     family_name: Chan
     given_name: James
     orcid: null
+  charlese:
+    affil:
+    - SLAC
+    - SLAC-Kavli
+    altaffil: []
+    email: echarles
+    family_name: Charles
+    given_name: Eric
+    orcid: 0000-0002-3925-7802
   charlesemersong:
     affil:
     - RubinObs
@@ -3940,7 +3949,7 @@ authors:
     affil:
     - Washington-Dirac
     altaffil: []
-    email: null
+    email: jfc20
     family_name: Crenshaw
     given_name: John Franklin
     orcid: 0000-0002-2495-3514
@@ -4710,7 +4719,7 @@ authors:
     - Washington
     - DIRAC
     altaffil: []
-    email: null
+    email: mlg3k
     family_name: Graham
     given_name: Melissa L.
     orcid: 0000-0002-9154-3136
@@ -4759,7 +4768,7 @@ authors:
     affil:
     - LINEA
     altaffil: []
-    email: null
+    email: julia
     family_name: Gschwend
     given_name: Julia
     orcid: 0000-0003-3023-8362
@@ -5814,10 +5823,9 @@ authors:
     orcid: 0000-0003-2384-2377
   malza:
     affil:
-    - GCCL
     - CMU
     altaffil: []
-    email: null
+    email: aimalz@NYU
     family_name: Malz
     given_name: Alex I.
     orcid: 0000-0002-8676-1622
@@ -5918,6 +5926,14 @@ authors:
     family_name: Maulen
     given_name: Guido
     orcid: null
+  maus:
+    affil:
+    - Stanford
+    altaffil: []
+    email: sidneymau@Gmail
+    family_name: Mau
+    given_name: Sidney
+    orcid: 0000-0003-3519-4004
   maym:
     affil:
     - BNL
@@ -7108,7 +7124,7 @@ authors:
     affil:
     - UCDavis
     altaffil: []
-    email: null
+    email: samschmidt
     family_name: Schmidt
     given_name: Samuel
     orcid: null
@@ -7229,7 +7245,7 @@ authors:
     affil:
     - CIEMAT
     altaffil: []
-    email: null
+    email: ignacio.sevilla
     family_name: Sevilla-Noarbe
     given_name: Ignacio
     orcid: 0000-0002-1831-1953
@@ -7370,6 +7386,14 @@ authors:
     email: null
     family_name: Soldahl
     given_name: Christine
+    orcid: null
+  solomonr:
+    affil:
+    - IN2P3-LAPP
+    altaffil: []
+    email: rance.solomon
+    family_name: Solomon
+    given_name: Rance
     orcid: null
   sonaniskarm:
     affil:
