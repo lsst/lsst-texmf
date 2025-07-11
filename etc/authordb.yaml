@@ -76,12 +76,6 @@ affiliations:
     email: astron.nl
     institute: ASTRON
     ror_id: null
-  Aubourg:
-    address: null
-    department: null
-    email: aubourg.net
-    institute: Placeholder for email domain aubourg.net
-    ror_id: null
   AURA-C:
     address:
       city: La Serena
@@ -131,6 +125,12 @@ affiliations:
     department: null
     email: null
     institute: The Adler Planetarium
+    ror_id: null
+  Aubourg:
+    address: null
+    department: null
+    email: aubourg.net
+    institute: Placeholder for email domain aubourg.net
     ror_id: null
   BNL:
     address:
@@ -248,7 +248,11 @@ affiliations:
     institute: University of Bologna
     ror_id: null
   Brown:
+    address: null
+    department: null
+    email: brown.edu
     institute: Brown University
+    ror_id: null
   Burwood:
     address:
       city: Chicago
@@ -962,7 +966,7 @@ affiliations:
       country_code: USA
       example_expanded: Department of Astronomy, Center for Astrophysics, Harvard
         University, 60 Garden St., Cambridge, MA 02138, USA
-      postcode: "02138"
+      postcode: 02138
       state: MA
       street: 60 Garden St.
     department: Department of Astronomy, Center for Astrophysics
@@ -975,7 +979,7 @@ affiliations:
       country_code: USA
       example_expanded: Center for Astrophysics, Harvard & Smithsonian, 60 Garden
         Street, Cambridge, MA 02138
-      postcode: "02138"
+      postcode: 02138
       state: MA
       street: 60 Garden Street
     department: Center for Astrophysics
@@ -988,7 +992,7 @@ affiliations:
       country_code: USA
       example_expanded: Department of Physics, Harvard University, 17 Oxford St.,
         Cambridge MA 02138, USA
-      postcode: "02138"
+      postcode: 02138
       state: MA
       street: 17 Oxford St.
     department: Department of Physics
@@ -1063,9 +1067,10 @@ affiliations:
     ror_id: null
   IN2P3:
     address: null
+    department: null
+    email: in2p3.fr
     institute: Institut National de Physique Nucleaire et de Physique des Particules
     ror_id: null
-    email: in2p3.fr
   IN2P3-APC:
     address:
       city: Paris
@@ -1393,9 +1398,10 @@ affiliations:
     ror_id: null
   JMatt:
     address: null
+    department: null
+    email: jmatt.org
     institute: Placeholder for jmatt.org email domain
     ror_id: null
-    email: jmatt.org
   JPL:
     address:
       city: Pasadena
@@ -2022,7 +2028,7 @@ affiliations:
       city: Princeton
       country_code: USA
       example_expanded: Princeton University, Princeton, NJ 08544, USA
-      postcode: '08544'
+      postcode: 08544
       state: NJ
       street: ''
     department: null
@@ -2035,7 +2041,7 @@ affiliations:
       country_code: USA
       example_expanded: Department of Astrophysical Sciences, Princeton University,
         Princeton, NJ 08544, USA
-      postcode: '08544'
+      postcode: 08544
       state: NJ
       street: ''
     department: Department of Astrophysical Sciences
@@ -2074,7 +2080,7 @@ affiliations:
       country_code: USA
       example_expanded: Department of Chemistry, Biochemistry, and Physics, Rider
         University, Lawrenceville, NJ 08648, USA
-      postcode: '08648'
+      postcode: 08648
       state: NJ
       street: ''
     department: Department of Chemistry, Biochemistry, and Physics
@@ -2139,7 +2145,7 @@ affiliations:
       country_code: USA
       example_expanded: Department of Physics and Astronomy, Rutgers University, 136
         Frelinghuysen Rd., Piscataway, NJ 08854, USA
-      postcode: "08854"
+      postcode: 08854
       state: NJ
       street: 136 Frelinghuysen Rd.
     department: Department of Physics and Astronomy
@@ -2152,7 +2158,7 @@ affiliations:
       country_code: USA
       example_expanded: Smithsonian Astrophysical Observatory, 60 Garden St., Cambridge
         MA 02138, USA
-      postcode: "02138"
+      postcode: 02138
       state: MA
       street: 60 Garden St.
     department: null
@@ -2572,6 +2578,20 @@ affiliations:
     email: null
     institute: UC Santa Cruz
     ror_id: null
+  UCS:
+    address:
+      city: ''
+      country_code: Chile
+      example_expanded: Departamento de Matem\'atica y F{\'\i}sica Aplicadas, Facultad
+        de Ingenier{\'\i}a, Universidad Cat\'olica de la Sant{\'\i}sima Concepci\'on,
+        Alonso de Rivera 2850, Concepci\'on, Chile
+      postcode: ''
+      state: null
+      street: Concepci\'on, Alonso de Rivera 2850, Concepci\'on
+    department: Departamento de Matem\'atica y F{\'\i}sica Aplicadas
+    email: ucsc.cl
+    institute: Universidad Cat\'olica de la Sant{\'\i}sima
+    ror_id: null
   UCSB:
     address:
       city: Santa Barbara
@@ -2629,7 +2649,7 @@ affiliations:
       country_code: Mexico
       example_expanded: Departamento de Fisica, Facultad de Ciencias, Universidad
         Nacional Autonoma de Mexico, Ciudad Universitaria, CDMX, 04510, Mexico
-      postcode: "04519"
+      postcode: 04519
       state: ''
       street: ''
     department: Departamento de Fisica, Facultad de Ciencias
@@ -2674,6 +2694,20 @@ affiliations:
     department: Faculty of Physics
     email: uniri.hr
     institute: University of Rijeka
+    ror_id: null
+  USC:
+    address:
+      city: Concepci\'on
+      country_code: Chile
+      example_expanded: Departamento de Matem\'atica y F{\'\i}sica Aplicadas, Facultad
+        de Ingenier{\'\i}a, Universidad Cat\'olica de la Sant{\'\i}sima Concepci\'on,
+        Alonso de Rivera 2850, Concepci\'on, Chile
+      postcode: ''
+      state: null
+      street: Facultad de Ingenier{\'\i}a,  Alonso de Rivera 2850, Concepci\'on
+    department: Departamento de Matem\'atica y F{\'\i}sica Aplicadas
+    email: ucsc.cl
+    institute: Universidad Cat\'olica de la Sant{\'\i}sima Concepci\'on
     ror_id: null
   USNO:
     address:
@@ -2781,8 +2815,9 @@ affiliations:
     address:
       city: Seattle
       country_code: USA
-      example_expanded: Institute for Data-intensive Research in Astrophysics and Cosmology, University
-        of Washington, 3910 15th Avenue NE, Seattle, WA 98195, USA
+      example_expanded: Institute for Data-intensive Research in Astrophysics and
+        Cosmology, University of Washington, 3910 15th Avenue NE, Seattle, WA 98195,
+        USA
       postcode: '98195'
       state: WA
       street: 3910 15th Avenue NE
@@ -2898,14 +2933,6 @@ authors:
     family_name: Abel
     given_name: Bob
     orcid: null
-  broughtona:
-    affil:
-    - SLAC-Kavli
-    altaffil: []
-    email: abrought
-    family_name: Broughton
-    given_name: Alex
-    orcid: 0000-0001-6966-5316
   accomazzia:
     affil:
     - Harvard-CfA
@@ -3264,6 +3291,14 @@ authors:
     family_name: Becker
     given_name: Andrew C.
     orcid: 0000-0001-6661-3043
+  beckervr:
+    affil:
+    - RubinOps
+    altaffil: []
+    email: vbecker@RubinObs
+    family_name: Becker
+    given_name: Valerie R.
+    orcid: 0000-0002-6005-7346
   beckettmg:
     affil:
     - EdinburghIA
@@ -3548,6 +3583,14 @@ authors:
     family_name: Brondel
     given_name: Brian J.
     orcid: 0009-0005-3510-6248
+  broughtona:
+    affil:
+    - SLAC-Kavli
+    altaffil: []
+    email: abrought
+    family_name: Broughton
+    given_name: Alex
+    orcid: 0000-0001-6966-5316
   brownme:
     affil:
     - DGPS
@@ -4248,6 +4291,14 @@ authors:
     family_name: Emmons
     given_name: Benjamin L.
     orcid: null
+  englerta:
+    affil:
+    - Brown
+    altaffil: []
+    email: anthony_englert
+    family_name: Englert
+    given_name: Anthony
+    orcid: 0000-0003-2314-5336
   eracleousm:
     affil:
     - PSU
@@ -4260,7 +4311,7 @@ authors:
     affil:
     - RubinObsC
     altaffil: []
-    email: null
+    email: berb
     family_name: Erb
     given_name: Baden
     orcid: null
@@ -4691,7 +4742,7 @@ authors:
     affil:
     - RubinObsC
     altaffil: []
-    email: null
+    email: igonzalez
     family_name: Gonz\'{a}lez
     given_name: Iv\'{a}n
     orcid: null
@@ -5124,6 +5175,14 @@ authors:
     family_name: Jennings
     given_name: Toby C.
     orcid: 0009-0000-7029-5690
+  jeremiea:
+    affil:
+    - IN2P3-LAPP
+    altaffil: []
+    email: andrea
+    family_name: JEREMIE
+    given_name: Andrea
+    orcid: 0009-0008-9977-9195
   jernigang:
     affil:
     - Berkeley-Space
@@ -5928,7 +5987,7 @@ authors:
     affil:
     - RubinObsC
     altaffil: []
-    email: null
+    email: gmaulen
     family_name: Maulen
     given_name: Guido
     orcid: null
@@ -6496,6 +6555,14 @@ authors:
     family_name: Padolski
     given_name: Sergey
     orcid: null
+  paia:
+    affil:
+    - Chicago
+    altaffil: []
+    email: pai
+    family_name: Pai
+    given_name: Aashay
+    orcid: 0009-0008-9641-6065
   painr:
     affil:
     - IN2P3-LPNHE
@@ -6754,6 +6821,22 @@ authors:
     family_name: Quint
     given_name: Bruno C.
     orcid: 0000-0002-1557-3560
+  quinteromarinjm:
+    affil:
+    - RubinObsC
+    altaffil: []
+    email: jquintero
+    family_name: Quintero marin
+    given_name: Jos\'e Miguel
+    orcid: null
+  rabusm:
+    affil:
+    - USC
+    altaffil: []
+    email: mrabus
+    family_name: Rabus
+    given_name: Markus
+    orcid: 0000-0003-2935-7196
   radekav:
     affil:
     - BNL
@@ -7223,6 +7306,14 @@ authors:
     family_name: Seppala
     given_name: Lynn G.
     orcid: null
+  sepulvedavalenzuelaee:
+    affil:
+    - RubinObsC
+    altaffil: []
+    email: esepulveda2
+    family_name: Sepulveda valenzuela
+    given_name: Edgard Esteban
+    orcid: null
   sericheg:
     affil:
     - RubinObsC
@@ -7461,7 +7552,7 @@ authors:
     affil:
     - RubinObsC
     altaffil: []
-    email: null
+    email: hstockebrand
     family_name: Stockebrand
     given_name: Hernan
     orcid: null
@@ -7497,6 +7588,14 @@ authors:
     family_name: Stover
     given_name: Edward
     orcid: null
+  straussal:
+    affil:
+    - RubinOps
+    altaffil: []
+    email: alan.strauss
+    family_name: Strauss
+    given_name: Alan L.
+    orcid: 0000-0002-4221-0925
   straussma:
     affil:
     - Princeton-Astro
@@ -8232,3 +8331,11 @@ authors:
     family_name: Zhao
     given_name: Lily
     orcid: null
+  zhouc:
+    affil:
+    - UCSC
+    altaffil: []
+    email: czhou64
+    family_name: Zhou
+    given_name: Conghao
+    orcid: 0000-0002-2897-6326
