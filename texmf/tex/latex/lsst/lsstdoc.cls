@@ -322,6 +322,12 @@
 \newcommand{\docDate}{set the date with {$\backslash$}setDocDate}
 \newcommand{\setDocDate}[1]{\renewcommand{\docDate}{#1}}
 
+\newcommand{\docDOI}{DOI if applicable}
+\newcommand{\setDocDOI}[1]{\def\@docDOI{#1}
+  \renewcommand{\docDOI}{#1}
+}
+\setDocDOI{}
+
 % allow standard \date{} to work as an alias of \setDocDate
 \renewcommand{\date}[1]{\setDocDate{#1}}
 
@@ -492,6 +498,11 @@
     \vspace*{0.5cm}
     \textsf{\Large \bfseries\docRef}\\
     \vspace*{0.5cm}
+    \ifx \@docDOI \@empty
+      \relax
+    \else
+      \Large \bfseries \url{https://doi.org/\docDOI}\\
+    \fi
     \textsf{\Large \bfseries Latest Revision: \docDate}
     \end{center}
    \end{minipage}
