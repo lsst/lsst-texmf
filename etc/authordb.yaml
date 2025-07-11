@@ -2578,20 +2578,6 @@ affiliations:
     email: null
     institute: University of California, Santa Cruz
     ror_id: 03s65by71
-  UCS:
-    address:
-      city: ''
-      country_code: Chile
-      example_expanded: Departamento de Matem\'atica y F{\'\i}sica Aplicadas, Facultad
-        de Ingenier{\'\i}a, Universidad Cat\'olica de la Sant{\'\i}sima Concepci\'on,
-        Alonso de Rivera 2850, Concepci\'on, Chile
-      postcode: ''
-      state: null
-      street: Concepci\'on, Alonso de Rivera 2850, Concepci\'on
-    department: Departamento de Matem\'atica y F{\'\i}sica Aplicadas
-    email: ucsc.cl
-    institute: Universidad Cat\'olica de la Sant{\'\i}sima
-    ror_id: null
   UCSB:
     address:
       city: Santa Barbara
@@ -2695,7 +2681,7 @@ affiliations:
     email: uniri.hr
     institute: University of Rijeka
     ror_id: null
-  USC:
+  UCatolicaSC:
     address:
       city: Concepci\'on
       country_code: Chile
@@ -2708,7 +2694,7 @@ affiliations:
     department: Departamento de Matem\'atica y F{\'\i}sica Aplicadas
     email: ucsc.cl
     institute: Universidad Cat\'olica de la Sant{\'\i}sima Concepci\'on
-    ror_id: null
+    ror_id: 03y6k2j68
   USNO:
     address:
       city: Flagstaff
@@ -6831,7 +6817,7 @@ authors:
     orcid: null
   rabusm:
     affil:
-    - USC
+    - UCatolicaSC
     altaffil: []
     email: mrabus
     family_name: Rabus
