@@ -241,9 +241,9 @@ class AuthorFactory:
             raise RuntimeError(f"Author {authorid!r} not found in author database")
         author = self._authors[authorid]
 
-        affiliations = []
+        affiliations: list[Affiliation] = []
         for affil in author["affil"]:
-            affiliation = self._affiliations.get(affil)
+            affiliation = self.get_affiliation(affil)
             if not affiliation:
                 raise RuntimeError(f"Author {authorid!r} refers to affiliation {affil} that is not known.")
             affiliations.append(affiliation)
