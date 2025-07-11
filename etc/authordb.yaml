@@ -1109,7 +1109,7 @@ affiliations:
     department: null
     email: cc.in2p3.fr
     institute: CC-IN2P3/CNRS
-    ror_id: null
+    ror_id: 04dcc3438
   IN2P3-CPPM:
     address:
       city: Marseille
@@ -1173,7 +1173,7 @@ affiliations:
     department: Laboratoire de Physique de Clermont Auvergne
     email: clermont.in2p3.fr
     institute: Universite Clermont Auvergne
-    ror_id: null
+    ror_id: 0214k6v65
   IN2P3-LPNHE:
     address:
       city: Paris
@@ -5103,10 +5103,10 @@ authors:
     orcid: null
   ivezicv:
     affil:
-    - Washington
     - RubinObs
+    - Washington
     altaffil: []
-    email: zivezic@RubinObs
+    email: zivezic
     family_name: Ivezi\'{c}
     given_name: \v{Z}eljko
     orcid: 0000-0001-5250-2633
@@ -7216,7 +7216,7 @@ authors:
     email: samschmidt
     family_name: Schmidt
     given_name: Samuel
-    orcid: null
+    orcid: 0000-0002-5091-0470
   schneiderdp:
     affil:
     - PSU
