@@ -207,7 +207,7 @@ affiliations:
     department: Astronomy Department,
     email: null
     institute: University of California, Berkeley
-    ror_id: null
+    ror_id: 01an7q238
   Berkeley-LBNL:
     address:
       city: Berkeley
@@ -233,7 +233,7 @@ affiliations:
     department: Space Sciences Lab
     email: null
     institute: University of California, Berkeley
-    ror_id: null
+    ror_id: 01an7q238
   Bologna-Phys:
     address:
       city: Bologna
@@ -1109,7 +1109,7 @@ affiliations:
     department: null
     email: cc.in2p3.fr
     institute: CC-IN2P3/CNRS
-    ror_id: null
+    ror_id: 04dcc3438
   IN2P3-CPPM:
     address:
       city: Marseille
@@ -1173,7 +1173,7 @@ affiliations:
     department: Laboratoire de Physique de Clermont Auvergne
     email: clermont.in2p3.fr
     institute: Universite Clermont Auvergne
-    ror_id: null
+    ror_id: 0214k6v65
   IN2P3-LPNHE:
     address:
       city: Paris
@@ -2538,7 +2538,7 @@ affiliations:
     department: Department of Physics and Astronomy
     email: null
     institute: University of California, Irvine
-    ror_id: null
+    ror_id: 04gyf1771
   UCIrvine-CC:
     address:
       city: Irvine
@@ -2551,7 +2551,7 @@ affiliations:
     department: Center for Cosmology
     email: null
     institute: University of California, Irvine
-    ror_id: null
+    ror_id: 04gyf1771
   UCL:
     address:
       city: London
@@ -2576,22 +2576,8 @@ affiliations:
       street: 1156 High Street
     department: UC Observatories
     email: null
-    institute: UC Santa Cruz
-    ror_id: null
-  UCS:
-    address:
-      city: ''
-      country_code: Chile
-      example_expanded: Departamento de Matem\'atica y F{\'\i}sica Aplicadas, Facultad
-        de Ingenier{\'\i}a, Universidad Cat\'olica de la Sant{\'\i}sima Concepci\'on,
-        Alonso de Rivera 2850, Concepci\'on, Chile
-      postcode: ''
-      state: null
-      street: Concepci\'on, Alonso de Rivera 2850, Concepci\'on
-    department: Departamento de Matem\'atica y F{\'\i}sica Aplicadas
-    email: ucsc.cl
-    institute: Universidad Cat\'olica de la Sant{\'\i}sima
-    ror_id: null
+    institute: University of California, Santa Cruz
+    ror_id: 03s65by71
   UCSB:
     address:
       city: Santa Barbara
@@ -2603,7 +2589,7 @@ affiliations:
     department: null
     email: null
     institute: University of California, Santa Barbara
-    ror_id: null
+    ror_id: 02t274463
   UCSC:
     address:
       city: Santa Cruz
@@ -2617,7 +2603,7 @@ affiliations:
     department: Santa Cruz Institute for Particle Physics and Physics Department,
     email: ucsc.edu
     institute: University of California, Santa Cruz
-    ror_id: null
+    ror_id: 03s65by71
   UNAM:
     address:
       city: null
@@ -2695,7 +2681,7 @@ affiliations:
     email: uniri.hr
     institute: University of Rijeka
     ror_id: null
-  USC:
+  UCatolicaSC:
     address:
       city: Concepci\'on
       country_code: Chile
@@ -2708,7 +2694,7 @@ affiliations:
     department: Departamento de Matem\'atica y F{\'\i}sica Aplicadas
     email: ucsc.cl
     institute: Universidad Cat\'olica de la Sant{\'\i}sima Concepci\'on
-    ror_id: null
+    ror_id: 03y6k2j68
   USNO:
     address:
       city: Flagstaff
@@ -5103,10 +5089,10 @@ authors:
     orcid: null
   ivezicv:
     affil:
-    - Washington
     - RubinObs
+    - Washington
     altaffil: []
-    email: zivezic@RubinObs
+    email: zivezic
     family_name: Ivezi\'{c}
     given_name: \v{Z}eljko
     orcid: 0000-0001-5250-2633
@@ -5180,7 +5166,7 @@ authors:
     - IN2P3-LAPP
     altaffil: []
     email: andrea
-    family_name: JEREMIE
+    family_name: Jeremie
     given_name: Andrea
     orcid: 0009-0008-9977-9195
   jernigang:
@@ -6831,7 +6817,7 @@ authors:
     orcid: null
   rabusm:
     affil:
-    - USC
+    - UCatolicaSC
     altaffil: []
     email: mrabus
     family_name: Rabus
@@ -7216,7 +7202,7 @@ authors:
     email: samschmidt
     family_name: Schmidt
     given_name: Samuel
-    orcid: null
+    orcid: 0000-0002-5091-0470
   schneiderdp:
     affil:
     - PSU
@@ -7491,7 +7477,7 @@ authors:
     email: rance.solomon
     family_name: Solomon
     given_name: Rance
-    orcid: null
+    orcid: 0000-0003-0693-2469
   sonaniskarm:
     affil:
     - RubinObs
