@@ -247,6 +247,8 @@ affiliations:
     email: null
     institute: University of Bologna
     ror_id: null
+  Brown:
+    institute: Brown University
   Burwood:
     address:
       city: Chicago
