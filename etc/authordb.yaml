@@ -304,7 +304,7 @@ affiliations:
     department: null
     email: ciemat.es
     institute: Centro de Investigaciones Energeticas, Medioambientales y Tecnologicas
-    ror_id: null
+    ror_id: 05xx77y52
   CIERA:
     address:
       city: Evanston
@@ -332,7 +332,7 @@ affiliations:
     department: McWilliams Center for Cosmology, Department of Physics
     email: null
     institute: Carnegie Mellon University
-    ror_id: null
+    ror_id: 05x2bcf33
   CNCT:
     address:
       city: Mexico City
@@ -728,7 +728,7 @@ affiliations:
     department: Department of Physics
     email: duke.edu
     institute: Duke University
-    ror_id: null
+    ror_id: 00py81415
   EPFL:
     address:
       city: Versoix
@@ -883,7 +883,7 @@ affiliations:
     department: null
     email: null
     institute: International Gemini Observatory/NSF NOIRLab
-    ror_id: null
+    ror_id: 0141j1w94
   GeminiS:
     address:
       city: La Serena
@@ -896,7 +896,7 @@ affiliations:
     department: null
     email: null
     institute: International Gemini Observatory/NSF NOIRLab
-    ror_id: null
+    ror_id: 02wtj7z45
   GeorgiaState:
     address:
       city: Atlanta
@@ -1153,7 +1153,7 @@ affiliations:
     department: Laboratoire d'Annecy-le-Vieux de Physique des Particules
     email: lapp.in2p3.fr
     institute: Universite Grenoble-Alpes, Universite Savoie Mont Blanc, CNRS/IN2P3
-    ror_id: null
+    ror_id: 049nhh297
   IN2P3-LPCA:
     address:
       city: Clermont-Ferrand
@@ -1483,7 +1483,7 @@ affiliations:
     department: null
     email: linea.org.br
     institute: Laboratorio Interinstitucional de e-Astronomia
-    ror_id: null
+    ror_id: 05b9w0m88
   LLNL:
     address:
       city: Livermore
@@ -1744,7 +1744,7 @@ affiliations:
     department: null
     email: noirlab.edu
     institute: NSF NOIRLab
-    ror_id: null
+    ror_id: 03zmsge54
   NOIRLabC:
     address:
       city: La Serena
@@ -1756,7 +1756,7 @@ affiliations:
     department: null
     email: noirlab.edu
     institute: NSF NOIRLab
-    ror_id: null
+    ror_id: 03zmsge54
   NRAO:
     address:
       city: Charlottesville
@@ -2001,7 +2001,7 @@ affiliations:
     department: Department of Physics and Astronomy
     email: pitt.edu
     institute: University of Pittsburgh
-    ror_id: null
+    ror_id: 01an3r305
   Praha-ASCR:
     address:
       city: Praha 8
@@ -2026,7 +2026,7 @@ affiliations:
     department: null
     email: princeton.edu
     institute: Princeton University
-    ror_id: null
+    ror_id: 00hx57361
   Princeton-Astro:
     address:
       city: Princeton
@@ -2039,7 +2039,7 @@ affiliations:
     department: Department of Astrophysical Sciences
     email: astro.princeton.edu
     institute: Princeton University
-    ror_id: null
+    ror_id: 00hx57361
   Purdue-Astro:
     address:
       city: West Lafayette
@@ -2182,7 +2182,7 @@ affiliations:
     department: null
     email: slac.stanford.edu
     institute: SLAC National Accelerator Laboratory
-    ror_id: null
+    ror_id: 05gzmn429
   SLAC-Kavli:
     address:
       city: Menlo Park
@@ -2196,7 +2196,7 @@ affiliations:
     department: Kavli Institute for Particle Astrophysics and Cosmology
     email: slac.stanford.edu
     institute: SLAC National Accelerator Laboratory
-    ror_id: null
+    ror_id: 00pwqz914
   STFC:
     address:
       city: Swindon
@@ -2774,7 +2774,7 @@ affiliations:
     department: Dept.\ of Astronomy
     email: uw.edu
     institute: University of Washington
-    ror_id: null
+    ror_id: 00cvxb145
   Washington-DIRAC:
     address:
       city: Seattle
@@ -2787,7 +2787,7 @@ affiliations:
     department: Institute for Data-intensive Research in Astrophysics and Cosmology
     email: uw.edu
     institute: University of Washington
-    ror_id: null
+    ror_id: 00cvxb145
   WestWashington:
     address:
       city: Bellingham
