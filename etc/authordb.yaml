@@ -206,7 +206,7 @@ affiliations:
       street: 601 Campbell Hall
     department: Astronomy Department,
     email: null
-    institute: University of California
+    institute: University of California, Berkeley
     ror_id: null
   Berkeley-LBNL:
     address:
@@ -232,7 +232,7 @@ affiliations:
       street: 7 Gauss Way
     department: Space Sciences Lab
     email: null
-    institute: University of California
+    institute: University of California, Berkeley
     ror_id: null
   Bologna-Phys:
     address:
@@ -2516,8 +2516,8 @@ affiliations:
       street: One Shields Avenue
     department: Physics Department
     email: ucdavis.edu
-    institute: University of California
-    ror_id: null
+    institute: University of California, Davis
+    ror_id: 05rrcem69
   UCIrvine-Astro:
     address:
       city: Irvine
@@ -2529,7 +2529,7 @@ affiliations:
       street: 4129 Frederick Reines Hall
     department: Department of Physics and Astronomy
     email: null
-    institute: University of California
+    institute: University of California, Irvine
     ror_id: null
   UCIrvine-CC:
     address:
@@ -2542,7 +2542,7 @@ affiliations:
       street: ''
     department: Center for Cosmology
     email: null
-    institute: University of California
+    institute: University of California, Irvine
     ror_id: null
   UCL:
     address:
@@ -2580,7 +2580,7 @@ affiliations:
       street: ''
     department: null
     email: null
-    institute: University of California
+    institute: University of California, Santa Barbara
     ror_id: null
   UCSC:
     address:
@@ -2594,7 +2594,7 @@ affiliations:
       street: 1156 High St.
     department: Santa Cruz Institute for Particle Physics and Physics Department,
     email: ucsc.edu
-    institute: University of California Santa Cruz
+    institute: University of California, Santa Cruz
     ror_id: null
   UNAM:
     address:
