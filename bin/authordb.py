@@ -23,7 +23,7 @@ def load_authordb(file_name: str | None = None) -> AuthorDbYaml:
     with open(authordb_path) as adbfile:
         authordb_yaml = yaml.safe_load(adbfile)
         print(f"Parsing into AuthorDbYaml object from {authordb_path}")
-        adb = AuthorDbYaml.model_validate(authordb_yaml)
+        adb = AuthorDbYaml.model_validate(authordb_yaml, strict=True)
     return adb
 
 
