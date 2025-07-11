@@ -248,11 +248,18 @@ affiliations:
     institute: University of Bologna
     ror_id: null
   Brown:
-    address: null
-    department: null
+    address:
+      city: Providence
+      country_code: USA
+      example_expanded: Department of Physics, Brown University, 182 Hope Street,
+        Providence, RI 02912, USA
+      postcode: '02912'
+      state: RI
+      street: 182 Hope Street
+    department: Department of Physics
     email: brown.edu
     institute: Brown University
-    ror_id: null
+    ror_id: 05gq02987
   Burwood:
     address:
       city: Chicago
