@@ -201,7 +201,7 @@ def parse_affiliation(affil_str: str) -> Affiliation:
     if len(parts) < 2:
         raise ValueError("Affiliation string does not have enough parts")
     name = parts[0]
-    address_str = ", ".join(parts[1:])
+    address_str = unicode_to_latex(", ".join(parts[1:]))
     # Try to extract country (last part)
     country = parts[-1]
     # Try to extract postal code (look for 5-digit number)
@@ -210,13 +210,13 @@ def parse_affiliation(affil_str: str) -> Affiliation:
     # The rest is street and city
     street_and_city = address_str.replace(country, "").replace(postal_code, "").strip(", ")
     address = Address(
-        example_expanded=affil_str,
+        example_expanded=unicode_to_latex(affil_str),
         street=street_and_city,
         city="",  # Optionally parse city if possible
         postcode=postal_code,
         country_code=country,
     )
-    return Affiliation(institute=name, address=address)
+    return Affiliation(institute=unicode_to_latex(name), address=address)
 
 
 def genFiles(values: list, skip: int, builder: bool = False) -> None:
