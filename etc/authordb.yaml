@@ -207,7 +207,7 @@ affiliations:
     department: Astronomy Department,
     email: null
     institute: University of California, Berkeley
-    ror_id: null
+    ror_id: 01an7q238
   Berkeley-LBNL:
     address:
       city: Berkeley
@@ -233,7 +233,7 @@ affiliations:
     department: Space Sciences Lab
     email: null
     institute: University of California, Berkeley
-    ror_id: null
+    ror_id: 01an7q238
   Bologna-Phys:
     address:
       city: Bologna
@@ -2538,7 +2538,7 @@ affiliations:
     department: Department of Physics and Astronomy
     email: null
     institute: University of California, Irvine
-    ror_id: null
+    ror_id: 04gyf1771
   UCIrvine-CC:
     address:
       city: Irvine
@@ -2551,7 +2551,7 @@ affiliations:
     department: Center for Cosmology
     email: null
     institute: University of California, Irvine
-    ror_id: null
+    ror_id: 04gyf1771
   UCL:
     address:
       city: London
@@ -2576,8 +2576,8 @@ affiliations:
       street: 1156 High Street
     department: UC Observatories
     email: null
-    institute: UC Santa Cruz
-    ror_id: null
+    institute: University of California, Santa Cruz
+    ror_id: 03s65by71
   UCS:
     address:
       city: ''
@@ -2603,7 +2603,7 @@ affiliations:
     department: null
     email: null
     institute: University of California, Santa Barbara
-    ror_id: null
+    ror_id: 02t274463
   UCSC:
     address:
       city: Santa Cruz
@@ -2617,7 +2617,7 @@ affiliations:
     department: Santa Cruz Institute for Particle Physics and Physics Department,
     email: ucsc.edu
     institute: University of California, Santa Cruz
-    ror_id: null
+    ror_id: 03s65by71
   UNAM:
     address:
       city: null
