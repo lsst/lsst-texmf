@@ -234,6 +234,19 @@ affiliations:
     email: null
     institute: University of California, Berkeley
     ror_id: 01an7q238
+  Berkeley-Physics:
+    address:
+      city: Berkeley
+      country_code: USA
+      example_expanded: Physics Department,  University of California, 366 Physics
+        North, MC 7300 Berkeley, CA 94720, USA
+      postcode: '94720'
+      state: CA
+      street: 366 Physics North, MC 7300
+    department: Physics  Department,
+    email: berkeley.edu
+    institute: University of California, Berkeley
+    ror_id: 01an7q238
   Bologna-Phys:
     address:
       city: Bologna
@@ -253,7 +266,7 @@ affiliations:
       country_code: USA
       example_expanded: Department of Physics, Brown University, 182 Hope Street,
         Providence, RI 02912, USA
-      postcode: '02912'
+      postcode: 02912
       state: RI
       street: 182 Hope Street
     department: Department of Physics
@@ -2529,7 +2542,7 @@ affiliations:
       postcode: '95616'
       state: CA
       street: One Shields Avenue
-    department: Physics Department
+    department: Department of Physics \& Astronomy
     email: ucdavis.edu
     institute: University of California, Davis
     ror_id: 05rrcem69
@@ -2611,6 +2624,20 @@ affiliations:
     email: ucsc.edu
     institute: University of California, Santa Cruz
     ror_id: 03s65by71
+  UCatolicaSC:
+    address:
+      city: Concepci\'on
+      country_code: Chile
+      example_expanded: Departamento de Matem\'atica y F{\'\i}sica Aplicadas, Facultad
+        de Ingenier{\'\i}a, Universidad Cat\'olica de la Sant{\'\i}sima Concepci\'on,
+        Alonso de Rivera 2850, Concepci\'on, Chile
+      postcode: ''
+      state: null
+      street: Facultad de Ingenier{\'\i}a,  Alonso de Rivera 2850, Concepci\'on
+    department: Departamento de Matem\'atica y F{\'\i}sica Aplicadas
+    email: ucsc.cl
+    institute: Universidad Cat\'olica de la Sant{\'\i}sima Concepci\'on
+    ror_id: 03y6k2j68
   UNAM:
     address:
       city: null
@@ -2688,20 +2715,6 @@ affiliations:
     email: uniri.hr
     institute: University of Rijeka
     ror_id: null
-  UCatolicaSC:
-    address:
-      city: Concepci\'on
-      country_code: Chile
-      example_expanded: Departamento de Matem\'atica y F{\'\i}sica Aplicadas, Facultad
-        de Ingenier{\'\i}a, Universidad Cat\'olica de la Sant{\'\i}sima Concepci\'on,
-        Alonso de Rivera 2850, Concepci\'on, Chile
-      postcode: ''
-      state: null
-      street: Facultad de Ingenier{\'\i}a,  Alonso de Rivera 2850, Concepci\'on
-    department: Departamento de Matem\'atica y F{\'\i}sica Aplicadas
-    email: ucsc.cl
-    institute: Universidad Cat\'olica de la Sant{\'\i}sima Concepci\'on
-    ror_id: 03y6k2j68
   USNO:
     address:
       city: Flagstaff
@@ -4743,7 +4756,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
-    email: null
+    email: igoodenow
     family_name: Goodenow
     given_name: Iain
     orcid: null
@@ -5258,13 +5271,12 @@ authors:
     orcid: null
   kahnsm:
     affil:
-    - RubinObs
-    - SLAC-Kavli
+    - Berkeley-Physics
     altaffil: []
-    email: null
+    email: stevkahn
     family_name: Kahn
     given_name: Steven M.
-    orcid: null
+    orcid: 0000-0003-4833-9137
   kaliraijs:
     affil:
     - STScI
@@ -7208,7 +7220,7 @@ authors:
     altaffil: []
     email: samschmidt
     family_name: Schmidt
-    given_name: Samuel
+    given_name: Samuel J.
     orcid: 0000-0002-5091-0470
   schneiderdp:
     affil:

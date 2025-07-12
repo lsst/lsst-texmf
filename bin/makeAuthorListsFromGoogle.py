@@ -257,7 +257,7 @@ def genFiles(values: list, skip: int, builder: bool = False) -> None:
             id = str(row[AUTHORID]).replace(" ", "")
             if len(id) == 0:  # may be an update
                 id = row[AUTHORIDALT]
-                if len(id) == 0 or id.upper() == "NEW":  # no id
+                if len(id) == 0 or id.upper() == "NEW" or id.upper() == "NUEVO":  # no id
                     id = make_id(row[NAME], row[SURNAME])
                 if not id.startswith(row[SURNAME].strip()[:2].lower()):
                     # this can not be
@@ -421,7 +421,7 @@ def merge_authors(author_file: str) -> None:
     print(f"Have {len(adb.authors)} authors")
     merge_authors_with_update(adb.authors, authors)
     print(f"After update have {len(adb.authors)} authors")
-    dump_authordb(adb, "authordb.yaml")
+    dump_authordb(adb)
 
 
 def merge_affiliations(affil_file: str) -> None:
@@ -434,7 +434,7 @@ def merge_affiliations(affil_file: str) -> None:
         print(f"Have {len(adb.affiliations)} affiliations")
         adb.affiliations.update(affil_yaml.affiliations)
         print(f"After update have {len(adb.affiliations)} affiliations")
-        dump_authordb(adb, "authordb.yaml")
+        dump_authordb(adb)
 
 
 if __name__ == "__main__":
