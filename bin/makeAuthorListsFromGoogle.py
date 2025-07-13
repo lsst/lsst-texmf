@@ -256,22 +256,23 @@ def genFiles(values: list, skip: int, builder: bool = False) -> None:
         for idx, row in enumerate(values):
             id = str(row[AUTHORID]).replace(" ", "")
             if len(id) == 0:  # may be an update
-                id = row[AUTHORIDALT]
+                id = str(row[AUTHORIDALT]).strip()
                 if len(id) == 0 or id.upper() == "NEW" or id.upper() == "NUEVO":  # no id
                     id = make_id(row[NAME], row[SURNAME])
-                if not id.startswith(row[SURNAME].strip()[:2].lower()):
-                    # this can not be
+                if not id.startswith(row[SURNAME].strip()[:3].lower()):
+                    # this can not be unless its a foreign charecter
                     badid = id
                     id = make_id(row[NAME], row[SURNAME])
-                    check.append(id)
-                    print(
-                        f"Check  - author provided {badid} - assuming {id} - "
-                        f"{row[SURNAME]}, {row[AUTHORIDALT]} "
-                    )
+                    if id != badid:  # really there is a problem
+                        check.append(id)
+                        print(
+                            f"Check  - author provided {badid} - assuming {id} - "
+                            f"{row[SURNAME]}, {row[AUTHORIDALT]} "
+                        )
                 # loaded the authorids from authordb and check ..
                 update = "but" in row[UPDATE]
                 if update and idx > skip:
-                    print(f"Update author {id}  ")
+                    print(f"Update author {id} at index {idx} ")
                     if id not in authors:
                         print(f"      but  author {id} - NOT FOUND ")
                         notfound.append(id)
@@ -287,11 +288,13 @@ def genFiles(values: list, skip: int, builder: bool = False) -> None:
             # we are collecting all the ids - skip is only to not make NEW ones
             if id not in authorids:
                 authorids.append(id)
-            if idx < skip:
+            else:
+                print(f"Duplicate  author {id} at index {idx} ")
+
+            if idx <= skip:
                 if id not in authors:
                     print(f"Skipping author {id} - but that author was not found in authordb")
-
-                continue  # Skip thuis for update/new
+                continue  # Skip this for update/new
             # next are we updating or creating?
             if len(row) > 6 and len(row[AUTHORIDALT]) > 0:
                 # affiliation is it known
@@ -328,20 +331,23 @@ def genFiles(values: list, skip: int, builder: bool = False) -> None:
                 )
                 newauthors[id] = author
         authorids = sorted(authorids)
+        build = ""
         if builder and "RubinBuilderPaper" not in authorids:
             authorids.insert(0, "RubinBuilderPaper")
+            build = "(including RubinBuilderPaper)"
         print(
             "\n"
             f" Clash: {', '.join(clash)} \n"
             f" Not FOUND: {', '.join(notfound)} \n"
             f" Missing Affils: {', '.join(missing_affils)} \n"
             f" Check the ids: {', '.join(check)} \n"
-            f"got {len(authorids)} authors, "
+            f"got {len(authorids)} authors {build}, "
             f"{len(newauthors) - len(toupdate)} new  and {len(toupdate)} to update, author entries.\n"
             f" {len(newdomains)} new email domains. \n"
             f" {len(newaffils)} new affiliations \n"
             f" {len(clash)} author entries need to be checked (see above) \n"
             f" {len(notfound)} author updates where authorid not found (see above) \n"
+            f" Saw: {idx + 1} rows - set skip.count to this number for reprocessing \n"
         )
         write_yaml("authors.yaml", authorids)
         write_model("new_authors.yaml", newauthors)
