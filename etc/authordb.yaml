@@ -1564,11 +1564,11 @@ affiliations:
     email: lsst-da.org
     institute: LSST Discovery Alliance
     ror_id: null
-  LSST-list:
+  LSST-mailman:
     address: null
     department: null
     email: lists.lsst.org
-    institute: Vera C.\ Rubin Observatory Project Office
+    institute: LSST-lists
     ror_id: null
   LSSTC:
     address:
@@ -2932,7 +2932,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
-    email: dm-admin@LSST-list
+    email: dm-admin@LSST-mailman
     family_name: Rubin Observatory Science Pipelines Developers
     given_name: ''
     orcid: null
@@ -2940,7 +2940,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
-    email: pubboard@LSST-list
+    email: pubboard@LSST-mailman
     family_name: Vera C. Rubin Observatory Team
     given_name: ''
     orcid: null
@@ -3876,6 +3876,14 @@ authors:
     email: null
     family_name: Chow
     given_name: Derek
+    orcid: null
+  christensenej:
+    affil:
+    - RubinObsC
+    altaffil: []
+    email: echristensen
+    family_name: Christensen
+    given_name: Eric J.
     orcid: null
   ciardidr:
     affil:
@@ -6657,6 +6665,14 @@ authors:
     family_name: Patterson
     given_name: Maria T.
     orcid: 0000-0002-4753-3387
+  pavlovicms:
+    affil:
+    - RubinObsC
+    altaffil: []
+    email: mpavlovic
+    family_name: Pavlovic
+    given_name: Marina S.
+    orcid: 0000-0001-5560-7051
   pearsons:
     affil:
     - NYU-CCPP
