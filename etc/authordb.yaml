@@ -1624,14 +1624,14 @@ affiliations:
     address:
       city: Tucson
       country_code: USA
-      example_expanded: LSST Interdisciplinary Network for Collaboration and 
+      example_expanded: LSST Interdisciplinary Network for Collaboration and
         Computing, Tucson, USA
       postcode: '85721'
       state: AZ
       street: 933 North Cherry Avenue
     department: null
     email: null
-    institute: LINCC
+    institute: LSST Interdisciplinary Network for Collaboration and Computing
     ror_id: null
   Longhorn:
     address:
@@ -3788,8 +3788,10 @@ authors:
   chandlerc:
     affil:
     - LINCC
-    altaffil: [Washington, NAU]
-    email: coc123@uw.edu
+    - Washington
+    - NAU
+    altaffil: []
+    email: coc123@Washington
     family_name: Chandler
     given_name: Colin Orion
     orcid: 0000-0001-7335-1715
