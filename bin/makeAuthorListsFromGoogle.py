@@ -242,6 +242,7 @@ def genFiles(values: list, skip: int, builder: bool = False) -> None:
         authorids = []
         clash = []
         check = []
+        bad = []
         toupdate = []
         notfound = []
         newauthors: dict[str, AuthorDbAuthor] = {}
@@ -285,11 +286,15 @@ def genFiles(values: list, skip: int, builder: bool = False) -> None:
                         if idx > skip:
                             print(f"New author {id} - {row[NAME]}, {row[SURNAME]} ")
             # we have an id or a new id now
+            # checks
+            if (len(row) >= SURNAME and not id.startswith(row[SURNAME].strip().lower())) or id.lower() != id:
+                bad.append(id)
+                print(f"Check  - author provided or made {id} at index {idx}  ")
             # we are collecting all the ids - skip is only to not make NEW ones
-            if id not in authorids:
+            if id not in authorids and id not in bad:
                 authorids.append(id)
             else:
-                print(f"Duplicate  author {id} at index {idx} ")
+                print(f"Duplicate or bad  author {id} at index {idx} ")
 
             if idx <= skip:
                 if id not in authors:
