@@ -3877,6 +3877,14 @@ authors:
     family_name: Chow
     given_name: Derek
     orcid: null
+  christensenej:
+    affil:
+    - RubinObsC
+    altaffil: []
+    email: echristensen
+    family_name: Christensen
+    given_name: Eric J.
+    orcid: null
   ciardidr:
     affil:
     - IPAC
@@ -6657,6 +6665,14 @@ authors:
     family_name: Patterson
     given_name: Maria T.
     orcid: 0000-0002-4753-3387
+  pavlovicms:
+    affil:
+    - RubinObsC
+    altaffil: []
+    email: mpavlovic
+    family_name: Pavlovic
+    given_name: Marina S.
+    orcid: 0000-0001-5560-7051
   pearsons:
     affil:
     - NYU-CCPP
