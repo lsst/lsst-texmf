@@ -3146,7 +3146,8 @@ authors:
   arndtkt:
     affil:
     - Oxford
-    altaffil: []
+    altaffil:
+    - Author is deceased
     email: null
     family_name: Arndt
     given_name: Kirk T.
@@ -3954,7 +3955,8 @@ authors:
   cookkh:
     affil:
     - COOK
-    altaffil: []
+    altaffil:
+    - Author is deceased
     email: null
     family_name: Cook
     given_name: Kem H.
@@ -5192,7 +5194,8 @@ authors:
   jernigang:
     affil:
     - Berkeley-Space
-    altaffil: []
+    altaffil:
+    - Author is deceased
     email: null
     family_name: Jernigan
     given_name: Garrett
@@ -6603,7 +6606,8 @@ authors:
   parsonsjb:
     affil:
     - NCSA
-    altaffil: []
+    altaffil:
+    - Author is deceased
     email: null
     family_name: Parsons
     given_name: James B.
