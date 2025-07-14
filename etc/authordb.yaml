@@ -221,19 +221,6 @@ affiliations:
     email: null
     institute: Lawrence Berkeley National Laboratory
     ror_id: null
-  Berkeley-Space:
-    address:
-      city: Berkeley
-      country_code: USA
-      example_expanded: Space Sciences Lab, University of California, 7 Gauss Way,
-        Berkeley, CA 94720-7450, USA
-      postcode: 94720-7450
-      state: CA
-      street: 7 Gauss Way
-    department: Space Sciences Lab
-    email: null
-    institute: University of California, Berkeley
-    ror_id: 01an7q238
   Berkeley-Physics:
     address:
       city: Berkeley
@@ -245,6 +232,19 @@ affiliations:
       street: 366 Physics North, MC 7300
     department: Physics  Department,
     email: berkeley.edu
+    institute: University of California, Berkeley
+    ror_id: 01an7q238
+  Berkeley-Space:
+    address:
+      city: Berkeley
+      country_code: USA
+      example_expanded: Space Sciences Lab, University of California, 7 Gauss Way,
+        Berkeley, CA 94720-7450, USA
+      postcode: 94720-7450
+      state: CA
+      street: 7 Gauss Way
+    department: Space Sciences Lab
+    email: null
     institute: University of California, Berkeley
     ror_id: 01an7q238
   Bologna-Phys:
@@ -755,6 +755,19 @@ affiliations:
     email: duke.edu
     institute: Duke University
     ror_id: 00py81415
+  EPCC:
+    address:
+      city: Edinburgh
+      country_code: UK
+      example_expanded: EPCC, University of Edinburgh, 47 Potterrow, Edinburgh, EH8
+        9BT, UK
+      postcode: EH8 9BT
+      state: null
+      street: 47 Potterrow
+    department: EPCC
+    email: epcc.ed.ac.uk
+    institute: University of Edinburgh
+    ror_id: null
   EPFL:
     address:
       city: Versoix
