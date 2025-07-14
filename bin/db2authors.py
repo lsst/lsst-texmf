@@ -333,8 +333,18 @@ class AASTeX(AuthorTextGenerator):
         lines = []
         for author in self.authors:
             lines.append("")
-            orcid = f"[{author.orcid}]" if author.orcid else ""
-            lines.append(rf"\author{orcid}{{{author.full_latex_name}}}")
+            # AASTeX 7 supports
+            #  [orcid]
+            #  [orcid,sname=...,gname=...]
+            parens = []
+            if author.orcid:
+                parens.append(author.orcid)
+            if author.given_name:
+                parens.append(f"gname='{author.given_name}'")
+            if author.family_name:
+                parens.append(f"sname='{author.family_name}'")
+            parentext = "[" + ",".join(parens) + "]" if parens else ""
+            lines.append(rf"\author{parentext}{{{author.full_latex_name}}}")
             for alt in author.altaffil:
                 lines.append(rf"\altaffiliation{{{alt}}}")
             for affil in author.affiliations:
