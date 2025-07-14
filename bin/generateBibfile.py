@@ -299,21 +299,40 @@ def checkFixAuthAndComma(authors: str) -> str:
             author = author[0].capitalize() + author[1:]
             author = "{" + author + "}"
         for known in (
-            r"Plazas Malag\'{o}n",
-            "Fonseca Alvarez",
-            "von der Linden",
-            "Fausti Neto",
             "Araya Cortes",
+            r"Constanzo C\'ordova",
+            "da Costa",
             "de Peyster",
+            "de Val-Borro",
+            "Fausti Neto",
+            "Fonseca Alvarez",
+            "Garavito Camargo",
+            "Gomez Jimenez",
+            "Le Boulc'h",
+            "Le Guillou",
             "Lopez Toro",
+            "Megias Homar",
+            "Narayanan K",
             "Orellana Munoz",
+            r"Plazas Malag\'{o}n",
+            r"Plazas Malag\'on",
+            "Quintero marin",
             "Ribeiro de Souza",
+            "Rodrigues de Campos",
             "Sedaghat Alvar",
-            "van Reeven",
+            "Sepulveda valenzuela",
+            "Sotuela Elorriaga",
+            "Toribio San Cipriano",
+            "Van Berg",
             "van Klaveren",
+            "van Reeven",
+            "van Velzen",
+            "Vanden Berk",
+            "Villicana Pedraza",
+            "von der Linden",
         ):
-            if known in author:
-                author = author.replace(known, f"{{{known}}}")
+            if known.lower() in author.lower():
+                author = re.sub(re.escape(known), f"{{{known}}}", author, flags=re.IGNORECASE)
         author = author.strip()
         if author:
             author_modified.append(author)
