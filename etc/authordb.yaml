@@ -3881,7 +3881,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
-    email: null
+    email: cclaver
     family_name: Claver
     given_name: Charles F.
     orcid: null
@@ -6052,11 +6052,19 @@ authors:
     family_name: McEnery
     given_name: Julie
     orcid: null
+  mckayd:
+    affil:
+    - EPCC
+    altaffil: []
+    email: d.mckay
+    family_name: McKay
+    given_name: David
+    orcid: 0000-0003-0362-7848
   mckercherr:
     affil:
     - RubinObs
     altaffil: []
-    email: null
+    email: rmckercher
     family_name: McKercher
     given_name: Robert
     orcid: null
