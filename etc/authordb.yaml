@@ -3213,6 +3213,14 @@ authors:
     family_name: Banek
     given_name: Christine
     orcid: null
+  banovetzj:
+    affil:
+    - BNL
+    altaffil: []
+    email: jdbanovetz@Berkeley-LBNL
+    family_name: Banovetz
+    given_name: John
+    orcid: 0000-0003-0776-8859
   barddj:
     affil:
     - SLAC
@@ -5672,6 +5680,14 @@ authors:
     email: null
     family_name: Lazar
     given_name: Ilin
+    orcid: null
+  lazartejc:
+    affil:
+    - SLAC
+    altaffil: []
+    email: juanlazarte3msk@Gmail
+    family_name: Lazarte
+    given_name: Juan Carlos
     orcid: null
   leboulchq:
     affil:
