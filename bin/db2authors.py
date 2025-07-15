@@ -324,17 +324,35 @@ class AuthorTextGenerator(ABC):
 
 
 class AASTeX(AuthorTextGenerator):
-    """AASTeX specific generation."""
+    """AASTeX 6 specific generation."""
 
     mode = "aas"
+
+    def _generate_paren_text(self, author: Author) -> str:
+        r"""Return the text in the square brackets in the author string.
+
+        Parameters
+        ----------
+        author : `Author`
+            The author record.
+
+        Returns
+        -------
+        text : `str`
+            The text to be inserted between ``\author`` and ``{Author A}``.
+            For AASTeX7 this can include the ORCiD. Returns "" if there is
+            no ORCiD defined.
+        """
+        return f"[{author.orcid}]" if author.orcid else ""
 
     def generate(self) -> str:
         """Generate AASTeX format."""
         lines = []
         for author in self.authors:
             lines.append("")
-            orcid = f"[{author.orcid}]" if author.orcid else ""
-            lines.append(rf"\author{orcid}{{{author.full_latex_name}}}")
+            # Text depends on aastex 7 vs 6.
+            parentext = self._generate_paren_text(author)
+            lines.append(rf"\author{parentext}{{{author.full_latex_name}}}")
             for alt in author.altaffil:
                 lines.append(rf"\altaffiliation{{{alt}}}")
             for affil in author.affiliations:
@@ -342,6 +360,39 @@ class AASTeX(AuthorTextGenerator):
             lines.append(rf"\email{{{author.email}}}")
 
         return self.get_header() + "\n".join(lines)
+
+
+class AASTeX7(AASTeX):
+    """AASTeX v7 specific generation."""
+
+    mode = "aas7"
+
+    def _generate_paren_text(self, author: Author) -> str:
+        r"""Return the text in the square brackets in the author string.
+
+        Parameters
+        ----------
+        author : `Author`
+            The author record.
+
+        Returns
+        -------
+        text : `str`
+            The text to be inserted between ``\\author`` and ``{Author A}``.
+            For AASTeX7 this can include ORCiD and the sname and gname
+            parameters.
+        """
+        # AASTeX 7 supports
+        #  [orcid]
+        #  [orcid,sname=...,gname=...]
+        parens = []
+        if author.orcid:
+            parens.append(author.orcid)
+        if author.given_name:
+            parens.append(f"gname='{latex2text(author.given_name)}'")
+        if author.family_name:
+            parens.append(f"sname='{latex2text(author.family_name)}'")
+        return "[" + ",".join(parens) + "]" if parens else ""
 
 
 class LsstDoc(AuthorTextGenerator):
@@ -599,7 +650,7 @@ if __name__ == "__main__":
 
     # this should probably be a dict with the value of affil_cmd
     # the keys could then be passed to the arg parser.
-    OUTPUT_MODES = ["aas", "spie", "adass", "arxiv", "ascom", "webofc", "lsstdoc", "csvall"]
+    OUTPUT_MODES = ["aas", "aas7", "spie", "adass", "arxiv", "ascom", "webofc", "lsstdoc", "csvall"]
 
     description = __doc__
     formatter = argparse.RawDescriptionHelpFormatter
@@ -637,6 +688,7 @@ if __name__ == "__main__":
 
     generator_lut: dict[str, type[AuthorTextGenerator]] = {
         "aas": AASTeX,
+        "aas7": AASTeX7,
         "lsstdoc": LsstDoc,
         "arxiv": Arxiv,
         "spie": ProcSpie,

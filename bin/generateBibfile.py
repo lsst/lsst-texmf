@@ -318,6 +318,7 @@ def checkFixAuthAndComma(authors: str) -> str:
             r"Plazas Malag\'on",
             "Quintero marin",
             "Ribeiro de Souza",
+            "Rivera Rivera",
             "Rodrigues de Campos",
             "Sedaghat Alvar",
             "Sepulveda valenzuela",
