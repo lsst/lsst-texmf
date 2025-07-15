@@ -184,14 +184,21 @@ def strip_utf(ins: str) -> str:
     outs = re.sub(r"\'", "", outs)
     outs = re.sub(r"[-'}{]", "", outs)
     outs = outs.replace("\\", "")
+    outs = outs.replace("-", "")
     return outs
+
+
+def lower_strip_utf(s: str) -> str:
+    """Lower case, strip utf chars and other chars and space"""
+    id = strip_utf(s)  # no utf
+    id = id.lower().replace(" ", "")
+    return id
 
 
 def make_id(name: str, surname: str) -> str:
     """Make id form surnameinitials no space lowecase"""
     initials = get_initials(name)
-    id = strip_utf(f"{surname}{initials}")  # last name initial
-    id = id.lower().replace(" ", "")
+    id = lower_strip_utf(f"{surname}{initials}")  # last name initial
     return id
 
 
@@ -260,7 +267,7 @@ def genFiles(values: list, skip: int, builder: bool = False) -> None:
                 id = str(row[AUTHORIDALT]).strip()
                 if len(id) == 0 or id.upper() == "NEW" or id.upper() == "NUEVO":  # no id
                     id = make_id(row[NAME], row[SURNAME])
-                if not id.startswith(row[SURNAME].strip()[:3].lower()):
+                if not id.startswith(lower_strip_utf(row[SURNAME])):
                     # this can not be unless its a foreign charecter
                     badid = id
                     id = make_id(row[NAME], row[SURNAME])
@@ -287,14 +294,21 @@ def genFiles(values: list, skip: int, builder: bool = False) -> None:
                             print(f"New author {id} - {row[NAME]}, {row[SURNAME]} ")
             # we have an id or a new id now
             # checks
-            if (len(row) >= SURNAME and not id.startswith(row[SURNAME].strip().lower())) or id.lower() != id:
+            if len(row) >= SURNAME and not id.startswith(lower_strip_utf(row[SURNAME])):
                 bad.append(id)
-                print(f"Check  - author provided or made {id} at index {idx}  ")
+                print(
+                    f"Check - author id {id} at index {idx}: does not start with "
+                    f"surname '{row[SURNAME].strip().lower()}'"
+                )
+            elif id.lower() != id:
+                bad.append(id)
+                print(f"Check - author id {id} at index {idx}: id is not all lowercase")
             # we are collecting all the ids - skip is only to not make NEW ones
-            if id not in authorids and id not in bad:
-                authorids.append(id)
+            if id in authorids:
+                print(f"Duplicate  {id} at index {idx} ")
             else:
-                print(f"Duplicate or bad  author {id} at index {idx} ")
+                if id not in bad:
+                    authorids.append(id)
 
             if idx <= skip:
                 if id not in authors:

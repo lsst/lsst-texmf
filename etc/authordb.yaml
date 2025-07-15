@@ -2973,6 +2973,14 @@ authors:
     family_name: Accomazzi
     given_name: Alberto
     orcid: null
+  acerocuellart:
+    affil:
+    - Delaware-PhyAst
+    altaffil: []
+    email: taceroc@Delaware-PhyAst
+    family_name: Acero-Cuellar
+    given_name: Tatiana
+    orcid: 0000-0002-5947-2454
   acostae:
     affil:
     - RubinObs
