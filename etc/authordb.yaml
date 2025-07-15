@@ -1512,6 +1512,19 @@ affiliations:
     email: null
     institute: National Astronomical Observatories, Chinese Academy of Sciences
     ror_id: null
+  LINCC:
+    address:
+      city: Tucson
+      country_code: USA
+      example_expanded: LSST Interdisciplinary Network for Collaboration and Computing,
+        Tucson, USA
+      postcode: '85721'
+      state: AZ
+      street: 933 North Cherry Avenue
+    department: null
+    email: null
+    institute: LSST Interdisciplinary Network for Collaboration and Computing
+    ror_id: null
   LINEA:
     address:
       city: Rio de Janeiro
@@ -1619,19 +1632,6 @@ affiliations:
     department: Institut d'Astrophysique et de Geophysique
     email: null
     institute: Universite de Li\`ege
-    ror_id: null
-  LINCC:
-    address:
-      city: Tucson
-      country_code: USA
-      example_expanded: LSST Interdisciplinary Network for Collaboration and
-        Computing, Tucson, USA
-      postcode: '85721'
-      state: AZ
-      street: 933 North Cherry Avenue
-    department: null
-    email: null
-    institute: LSST Interdisciplinary Network for Collaboration and Computing
     ror_id: null
   Longhorn:
     address:
@@ -3022,6 +3022,14 @@ authors:
     family_name: Ahumada
     given_name: Tomas
     orcid: null
+  alexova:
+    affil:
+    - RubinObs
+    altaffil: []
+    email: aalexov
+    family_name: Alexov
+    given_name: Anastasia
+    orcid: null
   allberyr:
     affil:
     - RubinObs
@@ -3160,6 +3168,14 @@ authors:
     email: null
     family_name: Araujo
     given_name: Constanza
+    orcid: null
+  arayacortesch:
+    affil:
+    - RubinObsC
+    altaffil: []
+    email: carayac
+    family_name: Araya Cortes
+    given_name: Claudio H.
     orcid: null
   armstrongr:
     affil:
@@ -3640,6 +3656,14 @@ authors:
     family_name: Brown
     given_name: Michael E.
     orcid: 0000-0002-8255-0545
+  budlonga:
+    affil:
+    - Washington
+    altaffil: []
+    email: abudlong
+    family_name: Budlong
+    given_name: Audrey
+    orcid: null
   bullockjs:
     affil:
     - UCIrvine-CC
@@ -4335,6 +4359,14 @@ authors:
     family_name: Eiger
     given_name: Orion
     orcid: 0000-0003-2933-391X
+  eisneram:
+    affil:
+    - UCSC
+    altaffil: []
+    email: eisner@SLAC
+    family_name: Eisner
+    given_name: Alan M.
+    orcid: 0000-0002-5673-7445
   emmonsbl:
     affil:
     - RubinObs
@@ -4739,6 +4771,14 @@ authors:
     email: null
     family_name: Glick
     given_name: William
+    orcid: null
+  godoyr:
+    affil:
+    - RubinObsC
+    altaffil: []
+    email: RGodoy
+    family_name: Godoy
+    given_name: Robinson
     orcid: null
   goldinat:
     affil:
@@ -5848,6 +5888,14 @@ authors:
     family_name: Lopez
     given_name: Margaux
     orcid: null
+  lopeztorojj:
+    affil:
+    - RubinObsC
+    altaffil: []
+    email: jlopeztoro
+    family_name: Lopez Toro
+    given_name: Juan J.
+    orcid: null
   lotzpj:
     affil:
     - RubinObs
@@ -6829,9 +6877,17 @@ authors:
     affil:
     - Duke
     altaffil: []
-    email: null
+    email: bekah.polen
     family_name: Polen
-    given_name: Bekah
+    given_name: Rebekah
+    orcid: null
+  pollekhmm:
+    affil:
+    - SLAC
+    altaffil: []
+    email: pollek
+    family_name: Pollek
+    given_name: Hannah Mary Margaret
     orcid: null
   popinchalkm:
     affil:
@@ -6948,11 +7004,19 @@ authors:
     orcid: null
   rasmussenap:
     affil:
-    - Purdue-Astro
+    - SLAC-Kavli
     altaffil: []
-    email: null
+    email: arasmus
     family_name: Rasmussen
     given_name: Andrew P.
+    orcid: 0009-0000-3218-9846
+  rathfelderdar:
+    affil:
+    - AURA-T
+    altaffil: []
+    email: drathfelder@RubinObs
+    family_name: Rathfelder
+    given_name: David A. Rathfelder
     orcid: null
   rawlsml:
     affil:
@@ -7068,6 +7132,14 @@ authors:
     email: null
     family_name: Rivera
     given_name: Mario
+    orcid: null
+  riverariveramf:
+    affil:
+    - RubinObsC
+    altaffil: []
+    email: mrivera
+    family_name: Rivera Rivera
+    given_name: Mario F.
     orcid: null
   rizzil:
     affil:
@@ -8280,6 +8352,14 @@ authors:
     family_name: Winters
     given_name: Scott E.
     orcid: null
+  wittgenm:
+    affil:
+    - SLAC
+    altaffil: []
+    email: wittgen
+    family_name: Wittgen
+    given_name: Matthias
+    orcid: 0000-0002-4063-883X
   wittmand:
     affil:
     - UCDavis
