@@ -299,6 +299,7 @@ def checkFixAuthAndComma(authors: str) -> str:
             author = author[0].capitalize() + author[1:]
             author = "{" + author + "}"
         for known in (
+            "Aracena Alcayaga",
             "Araya Cortes",
             r"Constanzo C\'ordova",
             "da Costa",
