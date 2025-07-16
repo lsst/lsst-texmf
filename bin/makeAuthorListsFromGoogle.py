@@ -319,6 +319,9 @@ def genFiles(values: list, skip: int, builder: bool = False) -> None:
                 # affiliation is it known
                 affilidForm = str(row[AFFIL]).strip().split("/")
                 affilids = []
+                if affilidForm[0] == "AURA":
+                    # seesm Chileans like ot put AURA/Rubin ..
+                    affilidForm[0] = "RubinObsC"
                 for affilid in affilidForm:
                     if affilid not in affils:
                         if len(affilid) < 10:
@@ -326,9 +329,13 @@ def genFiles(values: list, skip: int, builder: bool = False) -> None:
                             missing_affils.append(affilid)
                         else:  # assume its new
                             affil = affilid
-                            affilid = get_initials(affil)
-                            newaffils[affilid] = parse_affiliation(affil)
-                            affils[affilid] = newaffils[affilid]
+                            if "rubin" in affil.lower():
+                                # seesm Chileans like ot put AURA/Rubin ..
+                                affilid = "RubinObsC"
+                            else:
+                                affilid = get_initials(affil)
+                                newaffils[affilid] = parse_affiliation(affil)
+                                affils[affilid] = newaffils[affilid]
                     affilids.append(affilid)
                     # we have a name so we need to gather the rest.
                 if len(row) > ORCID:

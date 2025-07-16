@@ -3169,6 +3169,14 @@ authors:
     family_name: Antilogus
     given_name: Pierre
     orcid: null
+  aracenaalcayagaa:
+    affil:
+    - RubinObsC
+    altaffil: []
+    email: aaracena
+    family_name: ARACENA ALCAYAGA
+    given_name: alexis
+    orcid: null
   araujoc:
     affil:
     - RubinObs
@@ -3177,6 +3185,14 @@ authors:
     family_name: Araujo
     given_name: Constanza
     orcid: null
+  aravenarojasg:
+    affil:
+    - RubinObsC
+    altaffil: []
+    email: garavena
+    family_name: Aravena-Rojas
+    given_name: Gonzalo
+    orcid: 0009-0006-5850-4860
   arayacortesch:
     affil:
     - RubinObsC
@@ -4367,6 +4383,14 @@ authors:
     family_name: Eiger
     given_name: Orion
     orcid: 0000-0003-2933-391X
+  eisertl:
+    affil:
+    - SLAC
+    altaffil: []
+    email: eisert
+    family_name: Eisert
+    given_name: Lukas
+    orcid: 0000-0003-3918-7995
   eisneram:
     affil:
     - UCSC
@@ -5008,6 +5032,14 @@ authors:
     family_name: Haupt
     given_name: Justine
     orcid: null
+  heinzean:
+    affil:
+    - Washington-DIRAC
+    altaffil: []
+    email: aheinze
+    family_name: Heinze
+    given_name: Aren Nathaniel
+    orcid: 0000-0003-3313-4921
   hennawij:
     affil:
     - UCSB
@@ -6272,7 +6304,7 @@ authors:
     affil:
     - Washington-DIRAC
     altaffil: []
-    email: null
+    email: moeyensj
     family_name: Moeyens
     given_name: Joachim
     orcid: 0000-0001-5820-3925
