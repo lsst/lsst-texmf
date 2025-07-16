@@ -320,12 +320,12 @@ def genFiles(values: list, skip: int, builder: bool = False) -> None:
                 affilidForm = str(row[AFFIL]).strip().split("/")
                 affilids = []
                 if affilidForm[0] == "AURA":
-                    # seesm Chileans like ot put AURA/Rubin ..
+                    # seems Chileans like ot put AURA/Rubin ..
                     affilidForm[0] = "RubinObsC"
                 for affilid in affilidForm:
                     if affilid not in affils:
                         if len(affilid) < 10:
-                            print(f"Affiliation does not exist :{affilid}")
+                            print(f"Affiliation does not exist :{affilid} - skipping {id} at index {idx}")
                             missing_affils.append(affilid)
                         else:  # assume its new
                             affil = affilid
@@ -338,6 +338,8 @@ def genFiles(values: list, skip: int, builder: bool = False) -> None:
                                 affils[affilid] = newaffils[affilid]
                     affilids.append(affilid)
                     # we have a name so we need to gather the rest.
+                if affilids[0] not in affils:
+                    continue
                 if len(row) > ORCID:
                     orc = str(row[ORCID]).strip().replace("https://orcid.org/", "")
                     if len(orc) < 2:

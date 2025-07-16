@@ -1950,7 +1950,7 @@ affiliations:
       state: OH
       street: ''
     department: Center for Cosmology and Astro-Particle Physics
-    email: null
+    email: osu.edu
     institute: The Ohio State University
     ror_id: null
   Olympic:
@@ -3086,6 +3086,14 @@ authors:
     family_name: Amado
     given_name: Jhonatan
     orcid: 0000-0001-7729-5538
+  amourouxn:
+    affil:
+    - IN2P3-LAPP
+    altaffil: []
+    email: amouroux
+    family_name: Amouroux
+    given_name: Nathan
+    orcid: my-orcid?orcid=0009-0006-8186-0652
   andersonsf:
     affil:
     - Washington
@@ -4960,6 +4968,14 @@ authors:
     family_name: Guan
     given_name: Wen
     orcid: 0000-0002-5548-5194
+  guillemint:
+    affil:
+    - IN2P3-LAPP
+    altaffil: []
+    email: thibault.guillemin
+    family_name: Guillemin
+    given_name: Thibault
+    orcid: 0000-0001-9698-6000
   guylp:
     affil:
     - RubinObsC
@@ -5719,6 +5735,14 @@ authors:
     family_name: Lago
     given_name: P. J. A.
     orcid: 0009-0005-4105-5168
+  laliotisk:
+    affil:
+    - OSU
+    altaffil: []
+    email: laliotis.2@OSU
+    family_name: Laliotis
+    given_name: Katherine
+    orcid: 0000-0002-6111-6061
   lambertr:
     affil:
     - RubinObs
