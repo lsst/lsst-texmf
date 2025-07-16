@@ -1176,14 +1176,14 @@ affiliations:
     address:
       city: Villeurbanne
       country_code: France
-      example_expanded: Univ Lyon, Univ Claude Bernard Lyon 1, CNRS, IP2I Lyon/IN2P3,
-        UMR 5822, F-69622 Villeurbanne, France
+      example_expanded: Universit\'{e} de Lyon, Universit\'{e} Claude Bernard Lyon 1, CNRS,
+        IP2I Lyon/IN2P3, F-69622 Villeurbanne, France
       postcode: F-69622
       state: ''
       street: ''
     department: null
     email: ip2i.in2p3.fr
-    institute: Univ Lyon, Univ Claude Bernard Lyon 1, CNRS, IP2I Lyon/IN2P3, UMR 5822
+    institute: Universit\'{e} de Lyon, Universit\'{e} Claude Bernard Lyon 1, CNRS, IP2I Lyon/IN2P3
     ror_id: 02avf8f85
   IN2P3-LAPP:
     address:
