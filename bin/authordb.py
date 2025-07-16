@@ -4,9 +4,11 @@ from __future__ import annotations
 
 import argparse
 import os
+import re
+from typing import Annotated
 
 import yaml
-from pydantic import BaseModel, Field
+from pydantic import AfterValidator, BaseModel, Field
 
 
 def load_authordb(file_name: str | None = None) -> AuthorDbYaml:
@@ -44,6 +46,38 @@ def dump_authordb(adb: AuthorDbYaml, file_name: str | None = None) -> str:
     return authordb_path
 
 
+def check_orcid(orcid: str | None) -> str | None:
+    """Check that the ORCID field looks like an ORCID."""
+    if orcid is None:
+        return None
+
+    # We could strip https://orcid.org/ prefix easily enough but we want
+    # to use this tooling to check for consistency in the authordb YAML
+    # file and not to work around known issues.
+    if re.match(r"^\d{4}-\d{4}-\d{4}-\d{3}[0-9X]$", orcid):
+        # Looks fine. Return as is.
+        return orcid
+    if re.match(r"^\d{15}[0-9X]$", orcid):
+        return "-".join(orcid[i : i + 4] for i in range(0, len(orcid), 4))
+
+    raise ValueError(f"Given ORCiD does not match standard form: {orcid}")
+
+
+def check_ror(ror_id: str | None) -> str | None:
+    """Check that the ROR looks reasonable."""
+    if ror_id is None:
+        return None
+
+    if ror_id.startswith("http"):
+        raise ValueError(f"ROR ID should not include the domain prefix: {ror_id}")
+
+    if re.match("^0[a-z0-9]{8}$", ror_id):
+        # Looks fine.
+        return ror_id
+
+    raise ValueError(f"The given ROR looks suspect: {ror_id}")
+
+
 class Address(BaseModel):
     """Representation of an address."""
 
@@ -60,7 +94,7 @@ class Affiliation(BaseModel):
 
     institute: str
     department: str | None = None
-    ror_id: str | None = None
+    ror_id: Annotated[str | None, AfterValidator(check_ror)] = None
     email: str | None = None
     address: Address | None = None
 
@@ -76,7 +110,7 @@ class AuthorDbAuthor(BaseModel):
 
     altaffil: list[str] = Field(default_factory=list, description="Alternative affiliations / notes.")
 
-    orcid: str | None = Field(
+    orcid: Annotated[str | None, AfterValidator(check_orcid)] = Field(
         default=None,
         description="Author's ORCiD identifier (optional)",
     )
