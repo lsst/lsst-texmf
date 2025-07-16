@@ -1,16 +1,16 @@
 affiliations:
   AAS:
     address:
-      city: null
+      city: Washington
       country_code: USA
       example_expanded: American Astronomical Society
-      postcode: ''
-      state: ''
-      street: ''
+      postcode: '20006'
+      state: 'DC'
+      street: '1667 K Street NW, Suite 800'
     department: null
-    email: null
+    email: aas.org
     institute: American Astronomical Society
-    ror_id: null
+    ror_id: 00b93bs30
   AEL:
     address:
       city: Kiruna
@@ -36,7 +36,7 @@ affiliations:
     department: null
     email: null
     institute: Atacama Large Millimeter/submillimeter Array
-    ror_id: null
+    ror_id: 01adx8c71
   AMNH:
     address:
       city: New York
@@ -49,7 +49,7 @@ affiliations:
     department: Department of Astrophysics,
     email: null
     institute: American Museum of Natural History
-    ror_id: null
+    ror_id: 03thb3e06
   ARCSoM:
     address:
       city: Sheffield
@@ -63,7 +63,7 @@ affiliations:
       Sciences
     email: sheffield.ac.uk
     institute: University of Sheffield
-    ror_id: null
+    ror_id: 05krs5044
   ASTRON:
     address:
       city: Dwingeloo
@@ -75,7 +75,7 @@ affiliations:
     department: null
     email: astron.nl
     institute: ASTRON
-    ror_id: null
+    ror_id: 000k1q888
   AURA-C:
     address:
       city: La Serena
@@ -88,7 +88,7 @@ affiliations:
     department: null
     email: null
     institute: AURA Observatory
-    ror_id: null
+    ror_id: 02y5f7c97
   AURA-T:
     address:
       city: Tucson
@@ -98,9 +98,9 @@ affiliations:
       state: null
       street: 950 N. Cherry Ave.
     department: null
-    email: null
-    institute: AURA Observatory
-    ror_id: null
+    email: aura-astronomy.org
+    institute: Association of Universities for Research in Astronomy (AURA)
+    ror_id: 02y5f7c97
   AWSS:
     address:
       city: Seattle
@@ -125,7 +125,7 @@ affiliations:
     department: null
     email: null
     institute: The Adler Planetarium
-    ror_id: null
+    ror_id: 0248gc218
   Aubourg:
     address: null
     department: null
@@ -143,7 +143,7 @@ affiliations:
     department: null
     email: bnl.gov
     institute: Brookhaven National Laboratory
-    ror_id: null
+    ror_id: 02ex6cf31
   Belgrade-AO:
     address:
       city: Belgrade
@@ -156,7 +156,7 @@ affiliations:
     department: null
     email: null
     institute: Astronomical Observatory
-    ror_id: null
+    ror_id: 04t4pcw17
   Belgrade-CS:
     address:
       city: Belgrade
@@ -169,7 +169,7 @@ affiliations:
     department: Department of Informatics and Computer Science, Faculty of Mathematics
     email: null
     institute: University of Belgrade
-    ror_id: null
+    ror_id: 02qsmb048
   Belgrade-Uni:
     address:
       city: Belgrade
@@ -182,7 +182,7 @@ affiliations:
     department: Faculty of Mathematics, Department of Astronomy
     email: null
     institute: University of Belgrade
-    ror_id: null
+    ror_id: 03jspcw28
   Belldex:
     address:
       city: Tucson
@@ -220,7 +220,7 @@ affiliations:
     department: null
     email: lbl.gov
     institute: Lawrence Berkeley National Laboratory
-    ror_id: null
+    ror_id: 02jbv0t02
   Berkeley-Physics:
     address:
       city: Berkeley
@@ -259,7 +259,7 @@ affiliations:
     department: Department of Physics and Astronomy (DIFA)
     email: null
     institute: University of Bologna
-    ror_id: null
+    ror_id: 01111rn36
   Brown:
     address:
       city: Providence
@@ -298,7 +298,7 @@ affiliations:
     department: null
     email: null
     institute: Canadian Astronomy Data Centre
-    ror_id: null
+    ror_id: 03z8jm198
   CCA:
     address:
       city: New York
@@ -311,13 +311,18 @@ affiliations:
     department: Center for Computational Astrophysics
     email: null
     institute: Flatiron Institute
-    ror_id: null
+    ror_id: 00sekdz59
   CERN:
-    address: null
+    address:
+      city: Geneva
+      country_code: Switzerland
+      example_expanded: CERN, Esplanade des Particules 1, P.O. Box, 1211 Geneva 23, Switzerland
+      street: Esplanade des Particules 1
+      postcode: "1211"
     department: null
     email: cern.ch
     institute: European Organization for Nuclear Research
-    ror_id: null
+    ror_id: 01ggx4157
   CIEMAT:
     address:
       city: Madrid
@@ -345,7 +350,7 @@ affiliations:
       (CIERA) and Department of Physics and Astronomy
     email: null
     institute: Northwestern University
-    ror_id: null
+    ror_id: 000e0be47
   CMU:
     address:
       city: Pittsburgh
@@ -372,7 +377,7 @@ affiliations:
     department: null
     email: null
     institute: Consejo Nacional de Ciencia y Tecnolog\'{i}a
-    ror_id: null
+    ror_id: 059ex5q34
   CNRS:
     address:
       city: Paris
@@ -385,7 +390,7 @@ affiliations:
     department: null
     email: null
     institute: Centre national de la recherche scientifique
-    ror_id: null
+    ror_id: 02feahw73
   CONICET:
     address:
       city: null
@@ -398,7 +403,7 @@ affiliations:
     department: null
     email: null
     institute: Consejo Nacional de Investigaciones Cient\'{i}ficas y T\'{e}cnicas
-    ror_id: null
+    ror_id: 03cqe8w59
   COOK:
     address:
       city: San Ramon
@@ -423,7 +428,7 @@ affiliations:
     department: null
     email: null
     institute: Cerro Tololo Inter-American Observatory
-    ror_id: null
+    ror_id: 03w6nzd18
   CUMBRES:
     address:
       city: Goleta
@@ -436,7 +441,7 @@ affiliations:
     department: null
     email: null
     institute: Las Cumbres Observatory
-    ror_id: null
+    ror_id: 02ar7h206
   CUNY:
     address:
       city: null
@@ -448,7 +453,7 @@ affiliations:
     department: null
     email: null
     institute: City University of New York
-    ror_id: null
+    ror_id: 00453a208
   CUNY-Grad:
     address:
       city: New York
@@ -461,7 +466,7 @@ affiliations:
     department: The Graduate Center of the City University of New York
     email: null
     institute: City University of New York
-    ror_id: null
+    ror_id: 00awd9g61
   CUNY-Hunter:
     address:
       city: New York
@@ -474,7 +479,7 @@ affiliations:
     department: Hunter College, Hunter North Building
     email: null
     institute: City University of New York
-    ror_id: null
+    ror_id: 00g2xk477
   CUNYAMNH:
     address:
       city: New York
@@ -486,7 +491,7 @@ affiliations:
     department: American Museum of Natural History
     email: null
     institute: City University of New York
-    ror_id: null
+    ror_id: 03thb3e06
   CUNYBM:
     address:
       city: New York
@@ -499,7 +504,7 @@ affiliations:
     department: Department of Science
     email: null
     institute: CUNY Borough of Manhattan Community College
-    ror_id: null
+    ror_id: 040hwr020
   CUNYCT:
     address:
       city: New York
@@ -512,7 +517,7 @@ affiliations:
     department: New York City College of Technology
     email: null
     institute: City University of New York
-    ror_id: null
+    ror_id: 021a7pw18
   CUNYL:
     address:
       city: New York
@@ -525,7 +530,7 @@ affiliations:
     department: Department of Physics and Astronomy, Lehman College
     email: null
     institute: City University of New York
-    ror_id: null
+    ror_id: 03m908832
   Caltech:
     address:
       city: Pasadena
@@ -538,7 +543,7 @@ affiliations:
     department: Division of Physics, Mathematics and Astronomy
     email: null
     institute: California Institute of Technology
-    ror_id: null
+    ror_id: 05dxps055
   Caltech-Astro:
     address:
       city: Pasadena
@@ -548,10 +553,10 @@ affiliations:
       postcode: 91125'
       state: CA
       street: 1200 East California Blvd.
-    department: null
+    department: Astonomy Department
     email: null
-    institute: Astronomy Department, California Institute of Technology
-    ror_id: null
+    institute: California Institute of Technology
+    ror_id: 05dxps055
   Caltech-CDDD:
     address:
       city: Pasadena
@@ -564,7 +569,7 @@ affiliations:
     department: Center for Data Driven Discovery
     email: null
     institute: California Institute of Technology
-    ror_id: null
+    ror_id: 05dxps055
   Cardiff:
     address:
       city: CF24 3AA
@@ -577,7 +582,7 @@ affiliations:
     department: School of Physics and Astronomy
     email: null
     institute: Cardiff University
-    ror_id: null
+    ror_id: 03kk7td41
   ChUniv:
     address:
       city: Praha
@@ -589,7 +594,7 @@ affiliations:
     department: Astronomical Institute
     email: null
     institute: Charles University
-    ror_id: null
+    ror_id: 024d6js02
   Chicago:
     address:
       city: Chicago
@@ -602,7 +607,7 @@ affiliations:
     department: Department of Astronomy and Astrophysics
     email: uchicago.edu
     institute: University of Chicago
-    ror_id: null
+    ror_id: 024mw5h28
   Cochin:
     address:
       city: null
@@ -626,7 +631,7 @@ affiliations:
     department: null
     email: null
     institute: Columbia University
-    ror_id: null
+    ror_id: 00hj8s172
   D4D:
     address:
       city: Bournemouth
@@ -652,7 +657,7 @@ affiliations:
     department: Doña Ana Community College, Central Campus
     email: null
     institute: New Mexico State University
-    ror_id: null
+    ror_id: 00hpz7z43
   DARK:
     address:
       city: null
@@ -664,7 +669,7 @@ affiliations:
     department: DARK, Niels Bohr Institute
     email: null
     institute: University of Copenhagen
-    ror_id: null
+    ror_id: 035b05819
   DGPS:
     address:
       city: Pasadena
@@ -677,7 +682,7 @@ affiliations:
     department: Division of Geological and Planetary Sciences
     email: null
     institute: California Institute of Technology
-    ror_id: null
+    ror_id: 05dxps055
   DOE:
     address:
       city: SW Washington
@@ -690,7 +695,7 @@ affiliations:
     department: null
     email: null
     institute: Office of Science, U.S. Department of Energy
-    ror_id: null
+    ror_id: 00mmn6b08
   Delaware-DataSci:
     address:
       city: Newark
@@ -701,9 +706,9 @@ affiliations:
       state: DE
       street: ''
     department: Data Science Institute
-    email: null
+    email: udel.edu
     institute: University of Delaware
-    ror_id: null
+    ror_id: 01sbq1a82
   Delaware-PhyAst:
     address:
       city: Newark
@@ -716,7 +721,7 @@ affiliations:
     department: Department of Physics and Astronomy
     email: udel.edu
     institute: University of Delaware
-    ror_id: null
+    ror_id: 01sbq1a82
   Delaware-Policy:
     address:
       city: Newark
@@ -727,9 +732,9 @@ affiliations:
       state: DE
       street: ''
     department: Joseph R.\ Biden School of Public Policy and Administration
-    email: null
+    email: udel.edu
     institute: University of Delaware
-    ror_id: null
+    ror_id: 01sbq1a82
   Drexel:
     address:
       city: Philadelphia
@@ -741,7 +746,7 @@ affiliations:
     department: null
     email: null
     institute: Drexel University
-    ror_id: null
+    ror_id: 04bdffz58
   Duke:
     address:
       city: Durham
@@ -767,7 +772,7 @@ affiliations:
     department: EPCC
     email: epcc.ed.ac.uk
     institute: University of Edinburgh
-    ror_id: null
+    ror_id: 01nrxwf90
   EPFL:
     address:
       city: Versoix
@@ -782,7 +787,7 @@ affiliations:
       Fed\`erale de Lausanne (EPFL)
     email: null
     institute: Observatoire de Sauverny
-    ror_id: null
+    ror_id: 02s376052
   ESO:
     address:
       city: Garching bei München
@@ -795,7 +800,7 @@ affiliations:
     department: null
     email: null
     institute: European Southern Observatory
-    ror_id: null
+    ror_id: 01qtasp15
   Edinburgh:
     address:
       city: Edinburgh
@@ -808,7 +813,7 @@ affiliations:
     department: null
     email: null
     institute: University of Edinburgh
-    ror_id: null
+    ror_id: 01nrxwf90
   EdinburghIA:
     address:
       city: Edinburgh
@@ -821,7 +826,7 @@ affiliations:
     department: Institute for Astronomy
     email: ed.ac.uk
     institute: University of Edinburgh
-    ror_id: null
+    ror_id: 01nrxwf90
   Exeter:
     address:
       city: Exeter
@@ -833,7 +838,7 @@ affiliations:
     department: null
     email: exeter.ac.uk
     institute: University of Exeter
-    ror_id: null
+    ror_id: 03yghzc09
   FSU:
     address:
       city: Tallahassee
@@ -845,7 +850,7 @@ affiliations:
     department: null
     email: null
     institute: Florida State University
-    ror_id: null
+    ror_id: 05g3dte14
   FacebookNE:
     address:
       city: Springfield
@@ -870,7 +875,7 @@ affiliations:
     department: null
     email: fnal.gov
     institute: Fermi National Accelerator Laboratory
-    ror_id: null
+    ror_id: 020hgte69
   GCCL:
     address:
       city: Bochum
@@ -883,7 +888,7 @@ affiliations:
     department: German Centre for Cosmological Lensing, Astronomisches Institut,
     email: null
     institute: Ruhr-Universit\"at Bochum
-    ror_id: null
+    ror_id: 04tsk2644
   GMTO:
     address:
       city: Pasadena
@@ -909,7 +914,7 @@ affiliations:
     department: School of Physics, Astronomy and Computational Sciences,
     email: null
     institute: George Mason University
-    ror_id: null
+    ror_id: 02jqj7156
   GeminiN:
     address:
       city: Hilo
@@ -947,7 +952,7 @@ affiliations:
     department: null
     email: null
     institute: Georgia State University
-    ror_id: null
+    ror_id: 03qt6ba18
   Gmail:
     address: null
     department: null
@@ -966,7 +971,7 @@ affiliations:
     department: Astrophysics Science Division
     email: null
     institute: NASA Goddard Space Flight Center
-    ror_id: null
+    ror_id: 0171mag52
   Google:
     address:
       city: Mountain View
@@ -992,7 +997,7 @@ affiliations:
     department: Hamburger Sternwarte
     email: null
     institute: Universitat Hamburg
-    ror_id: null
+    ror_id: 00g30e956
   Harvard-Astro:
     address:
       city: Cambridge
@@ -1005,7 +1010,7 @@ affiliations:
     department: Department of Astronomy, Center for Astrophysics
     email: null
     institute: Harvard University
-    ror_id: null
+    ror_id: 03vek6s52
   Harvard-CfA:
     address:
       city: Cambridge
@@ -1018,7 +1023,7 @@ affiliations:
     department: Center for Astrophysics
     email: cfa.harvard.edu
     institute: Harvard & Smithsonian
-    ror_id: null
+    ror_id: 03c3r2d17
   Harvard-Physics:
     address:
       city: Cambridge
@@ -1031,7 +1036,7 @@ affiliations:
     department: Department of Physics
     email: g.harvard.edu
     institute: Harvard University
-    ror_id: null
+    ror_id: 03vek6s52
   Haverford:
     address:
       city: Haverford
@@ -1044,7 +1049,7 @@ affiliations:
     department: Department of Astronomy
     email: null
     institute: Haverford College
-    ror_id: null
+    ror_id: 04fnrxr62
   Heidelberg:
     address:
       city: Heidelberg
@@ -1058,7 +1063,7 @@ affiliations:
       Rechen-Institut
     email: null
     institute: Universit\"at Heidelberg
-    ror_id: null
+    ror_id: 038t36y30
   Helsinki:
     address:
       city: Helsinki
@@ -1071,7 +1076,7 @@ affiliations:
     department: Department of Physics
     email: iki.fi
     institute: University of Helsinki
-    ror_id: null
+    ror_id: 040af2s02
   Herts:
     address:
       city: Hatfield
@@ -1084,7 +1089,7 @@ affiliations:
     department: Centre for Astrophysics Research
     email: null
     institute: University of Hertfordshire
-    ror_id: null
+    ror_id: 0267vjk41
   IAFE:
     address:
       city: Buenos Aires
@@ -1097,7 +1102,7 @@ affiliations:
     department: null
     email: null
     institute: Instituto de Astronom\'ia y F\'isica del Espacio (IAFE)
-    ror_id: null
+    ror_id: 03rq94151
   IN2P3:
     address: null
     department: null
@@ -1260,7 +1265,7 @@ affiliations:
     department: null
     email: null
     institute: INAF Istituto di Astrofisica Spaziale e Fisica Cosmica di Palermo
-    ror_id: null
+    ror_id: 03qafph14
   INAF-OAC:
     address:
       city: Napoli
@@ -1273,7 +1278,7 @@ affiliations:
     department: null
     email: null
     institute: INAF Osservatorio Astronomico di Capodimonte
-    ror_id: null
+    ror_id: 02fwden70
   INAF-OAS:
     address:
       city: Bologna
@@ -1286,7 +1291,7 @@ affiliations:
     department: null
     email: null
     institute: INAF Osservatorio di Astrofisica e Scienza dello Spazio Bologna
-    ror_id: null
+    ror_id: 00gqsp710
   INAF-OAT:
     address:
       city: Trieste
@@ -1299,7 +1304,7 @@ affiliations:
     department: null
     email: null
     institute: INAF Osservatorio Astronomico di Trieste
-    ror_id: null
+    ror_id: 00c9gth79
   INAF-Palermo:
     address:
       city: Palermo
@@ -1312,7 +1317,7 @@ affiliations:
     department: null
     email: null
     institute: INAF - Osservatorio Astronomico di Palermo
-    ror_id: null
+    ror_id: 02txwfx92
   INAF-Rome:
     address:
       city: Rome
@@ -1325,7 +1330,7 @@ affiliations:
     department: null
     email: null
     institute: Istituto Nazionale di Astrofisica
-    ror_id: null
+    ror_id: 02gh4kt33
   INSU-AIM:
     address:
       city: Gif-sur-Yvette
@@ -1350,7 +1355,7 @@ affiliations:
     department: Caltech/IPAC,
     email: ipac.caltech.edu
     institute: California Institute of Technology
-    ror_id: null
+    ror_id: 05q79g396
   IRAM:
     address:
       city: Granada
@@ -1363,7 +1368,7 @@ affiliations:
     department: null
     email: null
     institute: Instituto de Radioastronom\'ia Milim\'etrica
-    ror_id: null
+    ror_id: 05bt7sv47
   IUPUI:
     address:
       city: Indianapolis
@@ -1375,7 +1380,7 @@ affiliations:
     department: null
     email: null
     institute: Indiana University Indianapolis
-    ror_id: null
+    ror_id: 03eftgw80
   Illinois:
     address:
       city: Urbana
@@ -1388,7 +1393,7 @@ affiliations:
     department: Physics and Astronomy Departments
     email: null
     institute: University of Illinois
-    ror_id: null
+    ror_id: 047426m28
   Illinois-astro:
     address:
       city: Urbana
@@ -1401,7 +1406,7 @@ affiliations:
     department: Department of Astronomy
     email: null
     institute: University of Illinois
-    ror_id: null
+    ror_id: 047426m28
   JHU:
     address:
       city: Baltimore
@@ -1414,7 +1419,7 @@ affiliations:
     department: Department of Physics and Astronomy
     email: null
     institute: The John Hopkins University
-    ror_id: null
+    ror_id: 00za53h95
   JMatt:
     address: null
     department: null
@@ -1433,7 +1438,7 @@ affiliations:
     department: Jet Propulsion Laboratory
     email: null
     institute: California Institute of Technology
-    ror_id: null
+    ror_id: 027k65916
   JPMORGAN:
     address:
       city: New York
@@ -1458,7 +1463,7 @@ affiliations:
     department: Joint Space-Science Institute
     email: null
     institute: University of Maryland
-    ror_id: null
+    ror_id: 01wjew854
   JSickCodes:
     address:
       city: Ontario
@@ -1483,7 +1488,7 @@ affiliations:
     department: null
     email: null
     institute: W. M. Keck Observatory
-    ror_id: null
+    ror_id: 00ab7ks98
   KLOA:
     address:
       city: Beijing
@@ -1497,7 +1502,7 @@ affiliations:
     department: Key Laboratory of Optical Astronomy
     email: null
     institute: National Astronomical Observatories, Chinese Academy of Sciences
-    ror_id: null
+    ror_id: 058pyyv44
   LINCC:
     address:
       city: Tucson
@@ -1536,7 +1541,7 @@ affiliations:
     department: null
     email: llnl.gov
     institute: Lawrence Livermore National Laboratory
-    ror_id: null
+    ror_id: 041nk4h53
   LOC:
     address:
       city: Washington
@@ -1549,7 +1554,7 @@ affiliations:
     department: null
     email: null
     institute: Library of Congress
-    ror_id: null
+    ror_id: 04p405e02
   LSST-DA:
     address:
       city: Tucson
@@ -1562,7 +1567,7 @@ affiliations:
     department: null
     email: lsst-da.org
     institute: LSST Discovery Alliance
-    ror_id: null
+    ror_id: 011494s34
   LSST-mailman:
     address: null
     department: null
@@ -1580,7 +1585,7 @@ affiliations:
     department: null
     email: null
     institute: The LSST Corporation
-    ror_id: null
+    ror_id: 011494s34
   LancasterU:
     address:
       city: Lancaster
@@ -1592,7 +1597,7 @@ affiliations:
     department: null
     email: lancaster.ac.uk
     institute: Lancaster University
-    ror_id: null
+    ror_id: 04f2nsd36
   Leiden:
     address:
       city: Leiden
@@ -1605,7 +1610,7 @@ affiliations:
     department: Leiden Observatory
     email: null
     institute: Leiden University
-    ror_id: null
+    ror_id: 03es66g06
   Liege:
     address:
       city: Li\`ege
@@ -1618,7 +1623,7 @@ affiliations:
     department: Institut d'Astrophysique et de Geophysique
     email: null
     institute: Universite de Li\`ege
-    ror_id: null
+    ror_id: 00afp2z80
   Longhorn:
     address:
       city: Ellensburg
@@ -1643,7 +1648,7 @@ affiliations:
     department: null
     email: null
     institute: Lowell Observatory
-    ror_id: null
+    ror_id: 0209dk158
   MMTO:
     address:
       city: Tucson
@@ -1653,10 +1658,10 @@ affiliations:
       postcode: 85721-0064
       state: AZ
       street: 1540 E. Second Street
-    department: MMT Observatory,
+    department: MMT Observatory
     email: null
     institute: University of Arizona
-    ror_id: null
+    ror_id: 03m2x1q45
   Maryland:
     address:
       city: College Park
@@ -1668,7 +1673,7 @@ affiliations:
     department: null
     email: null
     institute: University of Maryland
-    ror_id: null
+    ror_id: 047s2c258
   Maryland-astro:
     address:
       city: College Park
@@ -1681,7 +1686,7 @@ affiliations:
     department: Department of Astronomy
     email: null
     institute: University of Maryland
-    ror_id: null
+    ror_id: 047s2c258
   NAOChina:
     address:
       city: Beijing
@@ -1694,7 +1699,7 @@ affiliations:
     department: null
     email: null
     institute: National Astronomical Observatories, Chinese Academy of Sciences
-    ror_id: null
+    ror_id: 058pyyv44
   NAOJ:
     address:
       city: Tokyo
@@ -1707,7 +1712,7 @@ affiliations:
     department: null
     email: nao.ac.jp
     institute: National Astronomical Observatory of Japan
-    ror_id: null
+    ror_id: 052rrw050
   NAOJ-Chile:
     address:
       city: Santiago
@@ -1720,8 +1725,8 @@ affiliations:
     department: null
     email: null
     institute: National Astronomical Observatory of Japan
-    ror_id: null
-  NASA:
+    ror_id: 052rrw050
+  NASA-Goddard:
     address:
       city: Greenbelt
       country_code: USA
@@ -1733,7 +1738,7 @@ affiliations:
     department: Goddard Space Flight Center
     email: null
     institute: National Aeronautics and Space Administration
-    ror_id: null
+    ror_id: 0171mag52
   NAU:
     address:
       city: Flagstaff
@@ -1746,7 +1751,7 @@ affiliations:
     department: Department of Astronomy and Planetary Science,
     email: null
     institute: Northern Arizona University
-    ror_id: null
+    ror_id: 0272j5188
   NCNRP:
     address:
       city: Otwock
@@ -1759,7 +1764,7 @@ affiliations:
     department: null
     email: null
     institute: National Centre of Nuclear Research
-    ror_id: null
+    ror_id: 00nzsxq20
   NCSA:
     address:
       city: Urbana
@@ -1772,7 +1777,7 @@ affiliations:
     department: National Center for Supercomputing Applications
     email: illinois.edu
     institute: University of Illinois at Urbana-Champaign
-    ror_id: null
+    ror_id: 03g9ch715
   NOIRLab:
     address:
       city: Tucson
@@ -1809,7 +1814,7 @@ affiliations:
     department: null
     email: null
     institute: National Radio Astronomy Observstory
-    ror_id: null
+    ror_id: 04m24yn62
   NRC:
     address:
       city: Victoria
@@ -1822,7 +1827,7 @@ affiliations:
     department: null
     email: null
     institute: National Research Council Canada
-    ror_id: null
+    ror_id: 04mte1k06
   NSF:
     address:
       city: Alexandria
@@ -1835,7 +1840,7 @@ affiliations:
     department: null
     email: null
     institute: National Science Foundation, 2415 Eisenhower Avenue
-    ror_id: null
+    ror_id: 021nxhr62
   NSO:
     address:
       city: Boulder
@@ -1848,7 +1853,7 @@ affiliations:
     department: null
     email: null
     institute: National Solar Observatory
-    ror_id: null
+    ror_id: 00b9pg524
   NYU:
     address:
       city: New York
@@ -1860,7 +1865,7 @@ affiliations:
     department: null
     email: nyu.edu
     institute: New York University
-    ror_id: null
+    ror_id: 0190ak572
   NYU-CCPP:
     address:
       city: New York
@@ -1873,7 +1878,7 @@ affiliations:
     department: Center for Cosmology \& Particle Physics,
     email: null
     institute: New York University
-    ror_id: null
+    ror_id: 0190ak572
   NYU-CUSP:
     address:
       city: Brooklyn
@@ -1886,7 +1891,7 @@ affiliations:
     department: Center for Urban Science \& Progress
     email: null
     institute: New York University
-    ror_id: null
+    ror_id: 0190ak572
   Napoli:
     address:
       city: Napoli
@@ -1899,7 +1904,7 @@ affiliations:
     department: Department of Physics "E. Pancini"
     email: null
     institute: University Federico II of Napoli
-    ror_id: null
+    ror_id: 05290cv24
   NovaGorica:
     address:
       city: Nova Gorica
@@ -1912,7 +1917,7 @@ affiliations:
     department: Center for Astrophysics and Cosmology
     email: null
     institute: University of Nova Gorica
-    ror_id: null
+    ror_id: 00mw0tw28
   OKC:
     address:
       city: null
@@ -1925,7 +1930,7 @@ affiliations:
     department: Oskar Klein Centre, Department of Physics
     email: null
     institute: Stockholm University
-    ror_id: null
+    ror_id: 05f0yaq80
   OSU:
     address:
       city: Columbus
@@ -1938,7 +1943,7 @@ affiliations:
     department: Center for Cosmology and Astro-Particle Physics
     email: osu.edu
     institute: The Ohio State University
-    ror_id: null
+    ror_id: 00rs6vg23
   Olympic:
     address:
       city: Bremerton
@@ -1951,7 +1956,7 @@ affiliations:
     department: null
     email: null
     institute: Olympic College
-    ror_id: null
+    ror_id: 05pbb8y14
   Oxford:
     address:
       city: Oxford
@@ -1964,7 +1969,7 @@ affiliations:
     department: Department of Physics
     email: null
     institute: University of Oxford
-    ror_id: null
+    ror_id: 052gg0110
   PSI:
     address:
       city: Tucson
@@ -1977,7 +1982,7 @@ affiliations:
     department: null
     email: null
     institute: Planetary Science Institute
-    ror_id: null
+    ror_id: 05vvg9554
   PSU:
     address:
       city: University Park
@@ -1990,7 +1995,7 @@ affiliations:
     department: Department of Astronomy and Astrophysics
     email: null
     institute: The Pennsylvania State University
-    ror_id: null
+    ror_id: 04p491231
   PSUCDS:
     address:
       city: University Park
@@ -2003,7 +2008,7 @@ affiliations:
     department: Institute for Computational \& Data Sciences
     email: null
     institute: The Pennsylvania State University
-    ror_id: null
+    ror_id: 04p491231
   PSUGC:
     address:
       city: University Park
@@ -2016,7 +2021,7 @@ affiliations:
     department: Institute for Gravitation and the Cosmos
     email: null
     institute: The Pennsylvania State University
-    ror_id: null
+    ror_id: 04p491231
   Peay:
     address:
       city: Clarksville
@@ -2028,7 +2033,7 @@ affiliations:
     department: null
     email: null
     institute: Austin Peay State University
-    ror_id: null
+    ror_id: 05tx3bv88
   Pitts:
     address:
       city: Pittsburgh
@@ -2054,7 +2059,7 @@ affiliations:
     department: Institute of Physics
     email: null
     institute: Academy of Sciences of the Czech Republic
-    ror_id: null
+    ror_id: 02yhj4v17
   Princeton:
     address:
       city: Princeton
@@ -2092,7 +2097,7 @@ affiliations:
     department: Department of Physics and Astronomy
     email: purdue.edu
     institute: Purdue University
-    ror_id: null
+    ror_id: 02dqehb95
   Radboud-Astro:
     address:
       city: Nijmegen
@@ -2105,7 +2110,7 @@ affiliations:
     department: Department of Astrophysics/IMAPP
     email: astro.ru.nl
     institute: Radboud University Nijmegen
-    ror_id: null
+    ror_id: 016xsfp80
   Rider:
     address:
       city: Lawrenceville
@@ -2118,7 +2123,7 @@ affiliations:
     department: Department of Chemistry, Biochemistry, and Physics
     email: null
     institute: Rider University
-    ror_id: null
+    ror_id: 01dgn5344
   RubinObs:
     address:
       city: Tucson
@@ -2183,7 +2188,7 @@ affiliations:
     department: Department of Physics and Astronomy
     email: null
     institute: Rutgers University
-    ror_id: null
+    ror_id: 05vt9qd57
   SAO:
     address:
       city: Cambridge
@@ -2196,7 +2201,7 @@ affiliations:
     department: null
     email: null
     institute: Smithsonian Astrophysical Observatory
-    ror_id: null
+    ror_id: 04mh52z70
   SETI:
     address:
       city: Mountain View
@@ -2209,7 +2214,7 @@ affiliations:
     department: null
     email: null
     institute: SETI Institute,
-    ror_id: null
+    ror_id: 02dxgk712
   SLAC:
     address:
       city: Menlo Park
@@ -2262,7 +2267,7 @@ affiliations:
     department: Rutherford Appleton Laboratory
     email: stfc.ac.uk
     institute: Science and Technology Facilities Council
-    ror_id: null
+    ror_id: 03gq8fr08
   STScI:
     address:
       city: Baltimore
@@ -2275,7 +2280,7 @@ affiliations:
     department: null
     email: null
     institute: Space Telescope Science Institute
-    ror_id: null
+    ror_id: 036f5mx38
   SVC:
     address:
       city: Latrobe
@@ -2288,7 +2293,7 @@ affiliations:
     department: Department of Physics
     email: null
     institute: Saint Vincent College
-    ror_id: null
+    ror_id: 00amjd520
   Santiago-Millenium:
     address:
       city: Santiago
@@ -2301,7 +2306,7 @@ affiliations:
     department: null
     email: null
     institute: Millennium Institute of Astrophysics
-    ror_id: null
+    ror_id: 00sgdxg36
   Santiago-dept:
     address:
       city: Santiago
@@ -2314,7 +2319,7 @@ affiliations:
     department: Departamento de Ciencias Fisicas
     email: null
     institute: Universidad Andres Bello Fernandez
-    ror_id: null
+    ror_id: 01qq57711
   Southampton:
     address:
       city: Southampton
@@ -2327,7 +2332,7 @@ affiliations:
     department: Hartley Library B12
     email: null
     institute: University of Southampton
-    ror_id: null
+    ror_id: 01ryk1543
   Stanford:
     address:
       city: Stanford
@@ -2340,7 +2345,7 @@ affiliations:
     department: null
     email: stanford.edu
     institute: Stanford University
-    ror_id: null
+    ror_id: 00f54p054
   Stanford-AeroAstro:
     address:
       city: Stanford
@@ -2353,7 +2358,7 @@ affiliations:
     department: Department of Aeronautics and Astronautics
     email: stanford.edu
     institute: Stanford University
-    ror_id: null
+    ror_id: 00f54p054
   StonyBrookU:
     address:
       city: Stony Brook
@@ -2379,7 +2384,7 @@ affiliations:
     department: Texas Advanced Computing Center
     email: null
     institute: The University of Texas at Austin
-    ror_id: null
+    ror_id: 00xg4bh43
   TAMU:
     address:
       city: College Station
@@ -2392,7 +2397,7 @@ affiliations:
     department: Department of Physics and Astronomy
     email: null
     institute: Texas A\&M University
-    ror_id: null
+    ror_id: 01f5ytq51
   TAMU-inst:
     address:
       city: College Station
@@ -2406,19 +2411,19 @@ affiliations:
       and Astronomy
     email: null
     institute: Texas A\&M University
-    ror_id: null
+    ror_id: 01f5ytq51
   TMT:
     address:
-      city: null
+      city: Pasadena
       country_code: USA
       example_expanded: TMT International Observatory
       postcode: ''
-      state: ''
+      state: 'CA'
       street: ''
     department: null
     email: null
     institute: TMT International Observatory
-    ror_id: null
+    ror_id: 003s9de04
   TTU:
     address:
       city: Lubbock
@@ -2431,7 +2436,7 @@ affiliations:
     department: Department of Physics and Astronomy
     email: null
     institute: Texas Tech University
-    ror_id: null
+    ror_id: 0405mnx93
   TTU-media:
     address:
       city: Lubbock
@@ -2444,7 +2449,7 @@ affiliations:
     department: College of Media and Communication
     email: null
     institute: Texas Tech University
-    ror_id: null
+    ror_id: 0405mnx93
   Tekniker:
     address:
       city: Guipi\'{u}zcoa
@@ -2468,7 +2473,7 @@ affiliations:
     department: null
     email: null
     institute: University of Arizona
-    ror_id: null
+    ror_id: 03m2x1q45
   UA-Astro:
     address:
       city: Tucson
@@ -2481,7 +2486,7 @@ affiliations:
     department: Department of Astronomy and Steward Observatory
     email: null
     institute: University of Arizona
-    ror_id: null
+    ror_id: 03m2x1q45
   UA-CompSci:
     address:
       city: Tucson
@@ -2494,7 +2499,7 @@ affiliations:
     department: Department of Computer Science
     email: null
     institute: University of Arizona
-    ror_id: null
+    ror_id: 03m2x1q45
   UA-Physics:
     address:
       city: Tucson
@@ -2507,7 +2512,7 @@ affiliations:
     department: Department of Physics
     email: null
     institute: University of Arizona
-    ror_id: null
+    ror_id: 03m2x1q45
   UA-Steward:
     address:
       city: Tucson
@@ -2520,7 +2525,7 @@ affiliations:
     department: Steward Observatory
     email: arizona.edu
     institute: University of Arizona
-    ror_id: null
+    ror_id: 03m2x1q45
   UAM:
     address:
       city: Madrid
@@ -2532,7 +2537,7 @@ affiliations:
     department: null
     email: null
     institute: Universidad Aut\'onoma de Madrid
-    ror_id: null
+    ror_id: 01cby8j38
   UCBL:
     address:
       city: Lyon
@@ -2596,7 +2601,7 @@ affiliations:
     department: null
     email: null
     institute: University College London
-    ror_id: null
+    ror_id: 02jx3x895
   UCO:
     address:
       city: Santa Cruz
@@ -2661,7 +2666,7 @@ affiliations:
     department: null
     email: null
     institute: Universidad Nacional Aut\'onoma de M\'{e}xico
-    ror_id: null
+    ror_id: 01tmp8f25
   UNAM-astro:
     address:
       city: Ensenada
@@ -2674,7 +2679,7 @@ affiliations:
     department: Instituto de Astronom\'ia sede Ensenada
     email: null
     institute: Universidad Nacional Aut\'onoma de M\'{e}xico
-    ror_id: null
+    ror_id: 01tmp8f25
   UNAM-physics:
     address:
       city: Ciudad Universitaria, CDMX
@@ -2687,7 +2692,7 @@ affiliations:
     department: Departamento de F\'isica, Facultad de Ciencias
     email: null
     institute: Universidad Nacional Aut\'onoma de M\'{e}xico
-    ror_id: null
+    ror_id: 01tmp8f25
   UNED:
     address:
       city: Madrid
@@ -2700,7 +2705,7 @@ affiliations:
     department: Dpt. of Artificial Intelligence
     email: null
     institute: Universidad Nacional de Educaci\'on a Distancia
-    ror_id: null
+    ror_id: 02msb5n36
   UPenn:
     address:
       city: Philadelphia
@@ -2713,7 +2718,7 @@ affiliations:
     department: Department of Physics \& Astronomy
     email: null
     institute: University of Pennsylvania
-    ror_id: null
+    ror_id: 00b30xv10
   URijeka:
     address:
       city: Rijeka
@@ -2726,7 +2731,7 @@ affiliations:
     department: Faculty of Physics
     email: uniri.hr
     institute: University of Rijeka
-    ror_id: null
+    ror_id: 05r8dqr10
   USNO:
     address:
       city: Flagstaff
@@ -2739,7 +2744,7 @@ affiliations:
     department: null
     email: null
     institute: US Naval Observatory
-    ror_id: null
+    ror_id: 048s2rn92
   UToronto:
     address:
       city: Toronto
@@ -2752,7 +2757,7 @@ affiliations:
     department: null
     email: null
     institute: University of Toronto
-    ror_id: null
+    ror_id: 03dbr7087
   UVa:
     address:
       city: Charlottesville
@@ -2765,7 +2770,7 @@ affiliations:
     department: Department of Astronomy
     email: null
     institute: University of Virginia
-    ror_id: null
+    ror_id: 0153tk833
   UdG:
     address:
       city: Guanajuato
@@ -2778,7 +2783,7 @@ affiliations:
     department: Departamento de F\'isica, DCI, Campus Le\'on
     email: null
     institute: Universidad de Guanajuato
-    ror_id: null
+    ror_id: 058cjye32
   UniAndes:
     address:
       city: Bogota
@@ -2790,7 +2795,7 @@ affiliations:
     department: null
     email: null
     institute: Universidad de los Andes
-    ror_id: null
+    ror_id: 02mhbdp94
   Utah:
     address:
       city: Salt Lake City
@@ -2803,7 +2808,7 @@ affiliations:
     department: Department of Physics and Astronomy
     email: null
     institute: University of Utah
-    ror_id: null
+    ror_id: 03r0ha626
   Vdb:
     address:
       city: Nashville
@@ -2815,7 +2820,7 @@ affiliations:
     department: null
     email: null
     institute: Vanderbilt University
-    ror_id: null
+    ror_id: 02vm5rt34
   Washington:
     address:
       city: Seattle
@@ -2855,7 +2860,7 @@ affiliations:
     department: null
     email: null
     institute: Western Washington University
-    ror_id: null
+    ror_id: 05wn7r715
   WisconsinMadison:
     address:
       city: Madison
@@ -2866,9 +2871,9 @@ affiliations:
       state: WI
       street: ''
     department: Department of Physics
-    email: null
+    email: wisc.edu
     institute: University of Wisconsin-Madison
-    ror_id: null
+    ror_id: 01y2jtd41
   Yale:
     address:
       city: New Haven
@@ -2881,7 +2886,7 @@ affiliations:
     department: Astronomy Department
     email: null
     institute: Yale University
-    ror_id: null
+    ror_id: 03v76x132
   Yonsei:
     address:
       city: Seoul
@@ -2894,7 +2899,7 @@ affiliations:
     department: Department of Astronomy,
     email: yonsei.ac.kr
     institute: Yonsei University
-    ror_id: null
+    ror_id: 01wjejq96
   ZurichPhys:
     address:
       city: Zurich
@@ -2907,7 +2912,7 @@ affiliations:
     department: Physik-Institut
     email: physik.uzh.ch
     institute: University of Zurich
-    ror_id: null
+    ror_id: 02crff812
   _:
     address: null
     department: null
@@ -3149,7 +3154,7 @@ authors:
     orcid: null
   ansdellm:
     affil:
-    - NASA
+    - NASA-Goddard
     altaffil: []
     email: null
     family_name: Ansdell
@@ -5253,7 +5258,7 @@ authors:
     orcid: null
   jaffet:
     affil:
-    - NASA
+    - NASA-Goddard
     altaffil: []
     email: null
     family_name: Jaffe
@@ -6182,7 +6187,7 @@ authors:
     orcid: null
   mceneryj:
     affil:
-    - NASA
+    - NASA-Goddard
     altaffil: []
     email: null
     family_name: McEnery
@@ -6423,7 +6428,7 @@ authors:
     orcid: null
   munad:
     affil:
-    - NASA
+    - NASA-Goddard
     altaffil: []
     email: null
     family_name: Muna
@@ -6617,7 +6622,7 @@ authors:
     orcid: null
   ojhar:
     affil:
-    - NASA
+    - NASA-Goddard
     altaffil: []
     email: null
     family_name: Ojha
