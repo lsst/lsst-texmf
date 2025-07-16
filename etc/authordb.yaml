@@ -322,14 +322,14 @@ affiliations:
     address:
       city: Madrid
       country_code: Spain
-      example_expanded: Centro de Investigaciones Energeticas, Medioambientales y
-        Tecnologicas, Av. Complutense 40, 28040 Madrid, Spain
+      example_expanded: Centro de Investigaciones Energ\'{e}ticas, Medioambientales y
+        Tecnol\'{o}gicas, Av. Complutense 40, 28040 Madrid, Spain
       postcode: '28040'
       state: ''
       street: Av. Complutense 40
     department: null
     email: ciemat.es
-    institute: Centro de Investigaciones Energeticas, Medioambientales y Tecnologicas
+    institute: Centro de Investigaciones Energ\'{e}ticas, Medioambientales y Tecnol\'{o}gicas
     ror_id: 05xx77y52
   CIERA:
     address:
@@ -363,15 +363,15 @@ affiliations:
     address:
       city: Mexico City
       country_code: Mexico
-      example_expanded: Consejo Nacional de Ciencia y Tecnologia, Av. Insurgentes
-        Sur 1582. Colonia Credito Constructor, Del. Benito Juarez C.P. 03940, Mexico
-        D.F. Mexico
+      example_expanded: Consejo Nacional de Ciencia y Tecnolog\'{i}a, Av. Insurgentes
+        Sur 1582. Colonia Cr\'{e}dito Constructor, Del. Benito Ju\'{a}rez C.P. 03940, M\'{e}xico
+        D.F. M\'{e}xico
       postcode: C.P. 03940
       state: ''
-      street: Av. Insurgentes Sur 1582. Colonia Credito Constructor, Del. Benito Juarez
+      street: Av. Insurgentes Sur 1582. Colonia Cr\'{e}dito Constructor, Del. Benito Ju\'{a}rez
     department: null
     email: null
-    institute: Consejo Nacional de Ciencia y Tecnologia
+    institute: Consejo Nacional de Ciencia y Tecnolog\'{i}a
     ror_id: null
   CNRS:
     address:
@@ -390,14 +390,14 @@ affiliations:
     address:
       city: null
       country_code: Argentina
-      example_expanded: Consejo Nacional de Investigaciones Cientificas y Tecnicas,
+      example_expanded: Consejo Nacional de Investigaciones Cient\'{i}ficas y T\'{e}cnicas,
         Argentina
       postcode: ''
       state: ''
       street: ''
     department: null
     email: null
-    institute: Consejo Nacional de Investigaciones Cientificas y Tecnicas
+    institute: Consejo Nacional de Investigaciones Cient\'{i}ficas y T\'{e}cnicas
     ror_id: null
   COOK:
     address:
@@ -1089,14 +1089,14 @@ affiliations:
     address:
       city: Buenos Aires
       country_code: Argentina
-      example_expanded: Instituto de Astronomia y Fisica del Espacio (IAFE), Av. Inte.
+      example_expanded: Instituto de Astronom\'ia y F\'isica del Espacio (IAFE), Av. Inte.
         G\"uiraldes 2620, C1428ZAA, Buenos Aires, Argentina
       postcode: C1428ZAA
       state: ''
       street: Av. Inte. G\"uiraldes 2620
     department: null
     email: null
-    institute: Instituto de Astronomia y Fisica del Espacio (IAFE)
+    institute: Instituto de Astronom\'ia y F\'isica del Espacio (IAFE)
     ror_id: null
   IN2P3:
     address: null
@@ -1355,14 +1355,14 @@ affiliations:
     address:
       city: Granada
       country_code: Spain
-      example_expanded: Instituto de Radioastronomia Milimetrica, Av.\ Divina Pastora
-        7, Nucleo Central, E-18012 Granada, Spain
+      example_expanded: Instituto de Radioastronom\'ia Milim\'etrica, Av.\ Divina Pastora
+        7, N\'ucleo Central, E-18012 Granada, Spain
       postcode: E-18012
       state: ''
-      street: Av.\ Divina Pastora 7, Nucleo Central
+      street: Av.\ Divina Pastora 7, N\'ucleo Central
     department: null
     email: null
-    institute: Instituto de Radioastronomia Milimetrica
+    institute: Instituto de Radioastronom\'ia Milim\'etrica
     ror_id: null
   IUPUI:
     address:
@@ -1751,11 +1751,11 @@ affiliations:
     address:
       city: Otwock
       country_code: Poland
-      example_expanded: National Centre of Nuclear Research, Andrzeja Sotana 7, 05-400
+      example_expanded: National Centre of Nuclear Research, Andrzeja So\l{}tana 7, 05-400
         Otwock, Poland
       postcode: 05-400
       state: ''
-      street: Andrzeja Sotana 7
+      street: Andrzeja So\l{}tana 7
     department: null
     email: null
     institute: National Centre of Nuclear Research
@@ -2293,11 +2293,11 @@ affiliations:
     address:
       city: Santiago
       country_code: Chile
-      example_expanded: Millennium Institute of Astrophysics, Nuncio Monse\~nor Sotero
+      example_expanded: Millennium Institute of Astrophysics, Nuncio Monse\~nor S\'otero
         Sanz 100, Of 104, Providencia, Santiago, Chile
       postcode: ''
       state: ''
-      street: Nuncio Monse\~nor Sotero Sanz 100, Of 104, Providencia
+      street: Nuncio Monse\~nor S\'otero Sanz 100, Of 104, Providencia
     department: null
     email: null
     institute: Millennium Institute of Astrophysics
@@ -2525,13 +2525,13 @@ affiliations:
     address:
       city: Madrid
       country_code: Spain
-      example_expanded: Universidad Autonoma de Madrid, Madrid, Madrid, ES
+      example_expanded: Universidad Aut\'onoma de Madrid, Madrid, Madrid, ES
       postcode: ''
       state: ''
       street: ''
     department: null
     email: null
-    institute: Universidad Autonoma de Madrid
+    institute: Universidad Aut\'onoma de Madrid
     ror_id: null
   UCBL:
     address:
@@ -2654,52 +2654,52 @@ affiliations:
     address:
       city: null
       country_code: Mexico
-      example_expanded: Universidad Nacional Autonoma de Mexico
+      example_expanded: Universidad Nacional Aut\'onoma de M\'{e}xico
       postcode: ''
       state: ''
       street: ''
     department: null
     email: null
-    institute: Universidad Nacional Autonoma de Mexico
+    institute: Universidad Nacional Aut\'onoma de M\'{e}xico
     ror_id: null
   UNAM-astro:
     address:
       city: Ensenada
       country_code: Mexico
-      example_expanded: Instituto de Astronomia sede Ensenada, Universidad Nacional
-        Autonoma de Mexico, Km 107, Carret. Tij.-Ens., Ensenada, 22060, BC, Mexico
+      example_expanded: Instituto de Astronom\'ia sede Ensenada, Universidad Nacional
+        Aut\'onoma de M\'{e}xico, Km 107, Carret. Tij.-Ens., Ensenada, 22060, BC, M\'{e}xico
       postcode: '22060'
       state: BC
       street: Km 107, Carret. Tij.-Ens.
-    department: Instituto de Astronomia sede Ensenada
+    department: Instituto de Astronom\'ia sede Ensenada
     email: null
-    institute: Universidad Nacional Autonoma de Mexico
+    institute: Universidad Nacional Aut\'onoma de M\'{e}xico
     ror_id: null
   UNAM-physics:
     address:
       city: Ciudad Universitaria, CDMX
       country_code: Mexico
-      example_expanded: Departamento de Fisica, Facultad de Ciencias, Universidad
-        Nacional Autonoma de Mexico, Ciudad Universitaria, CDMX, 04510, Mexico
+      example_expanded: Departamento de F\'isica, Facultad de Ciencias, Universidad
+        Nacional Aut\'onoma de M\'{e}xico, Ciudad Universitaria, CDMX, 04510, M\'{e}xico
       postcode: 04519
       state: ''
       street: ''
-    department: Departamento de Fisica, Facultad de Ciencias
+    department: Departamento de F\'isica, Facultad de Ciencias
     email: null
-    institute: Universidad Nacional Autonoma de Mexico
+    institute: Universidad Nacional Aut\'onoma de M\'{e}xico
     ror_id: null
   UNED:
     address:
       city: Madrid
       country_code: Spain
-      example_expanded: Dpt. of Artificial Intelligence, Universidad Nacional de Educacion
+      example_expanded: Dpt. of Artificial Intelligence, Universidad Nacional de Educaci\'on
         a Distancia, Madrid, Madrid, ES
       postcode: ''
       state: ''
       street: ES
     department: Dpt. of Artificial Intelligence
     email: null
-    institute: Universidad Nacional de Educacion a Distancia
+    institute: Universidad Nacional de Educaci\'on a Distancia
     ror_id: null
   UPenn:
     address:
@@ -2718,11 +2718,11 @@ affiliations:
     address:
       city: Rijeka
       country_code: Croatia
-      example_expanded: Faculty of Physics, University of Rijeka, Radmile Matejci\'c
+      example_expanded: Faculty of Physics, University of Rijeka, Radmile Matej\v{c}i\'{c}
         2, Rijeka, Croatia
       postcode: ''
       state: ''
-      street: Radmile Matejci\'c 2
+      street: Radmile Matej\v{c}i\'{c} 2
     department: Faculty of Physics
     email: uniri.hr
     institute: University of Rijeka
@@ -2770,12 +2770,12 @@ affiliations:
     address:
       city: Guanajuato
       country_code: Mexico
-      example_expanded: Departamento de Fisica, DCI, Campus Leon, Universidad de Guanajuato,
-        37150, Leon, Guanajuato, Mexico
+      example_expanded: Departamento de F\'isica, DCI, Campus Le\'on, Universidad de Guanajuato,
+        37150, Le\'on, Guanajuato, M\'{e}xico
       postcode: ''
       state: ''
-      street: 37150, Leon
-    department: Departamento de Fisica, DCI, Campus Leon
+      street: 37150, Le\'on
+    department: Departamento de F\'isica, DCI, Campus Le\'on
     email: null
     institute: Universidad de Guanajuato
     ror_id: null
