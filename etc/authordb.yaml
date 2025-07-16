@@ -714,7 +714,7 @@ affiliations:
       state: DE
       street: ''
     department: Department of Physics and Astronomy
-    email: null
+    email: udel.edu
     institute: University of Delaware
     ror_id: null
   Delaware-Policy:
@@ -2963,7 +2963,7 @@ authors:
     affil:
     - Delaware-PhyAst
     altaffil: []
-    email: taceroc@Delaware-PhyAst
+    email: taceroc
     family_name: Acero-Cuellar
     given_name: Tatiana
     orcid: 0000-0002-5947-2454
