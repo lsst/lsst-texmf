@@ -2538,18 +2538,6 @@ affiliations:
     email: null
     institute: Universidad Aut\'onoma de Madrid
     ror_id: 01cby8j38
-  UCBL:
-    address:
-      city: Lyon
-      country_code: France
-      example_expanded: Univ Lyon, Univ Claude Bernard Lyon 1, CNRS, IP2I Lyon
-      postcode: IP2I
-      state: null
-      street: Universit\'{e} Claude Bernard Lyon 1
-    department: CNRS
-    email: null
-    institute: Universit\'{e} de Lyon
-    ror_id: null
   UCDavis:
     address:
       city: Davis
@@ -7147,7 +7135,6 @@ authors:
     orcid: 0000-0003-2557-7132
   rigaultm:
     affil:
-    - UCBL
     - IN2P3-IP2I
     altaffil: []
     email: m.rigault@IN2P3-IP2I
