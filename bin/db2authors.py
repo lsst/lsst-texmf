@@ -391,7 +391,7 @@ class AASTeX7(AASTeX):
         if author.given_name:
             parens.append(f"gname='{latex2text(author.given_name)}'")
         if author.family_name:
-            parens.append(f"sname='{latex2text(author.family_name)}'")
+            parens.append(f"sname='{latex2text(author.family_name).replace(',', ' ')}'")
         return "[" + ",".join(parens) + "]" if parens else ""
 
 
