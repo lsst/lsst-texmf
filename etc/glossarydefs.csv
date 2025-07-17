@@ -422,7 +422,7 @@ FELTs,Fast-Evolving Luminous Transients,Sci,,,A
 FES,Filter Exchange System,CAM,,,A
 FFRDC,Federally Funded Research and Development Center,Gen OPS,,,A
 FFT,Fast Fourier Transform,Gen,,,A
-FGCM,Forward Global Calibration Model,DM,,,A
+FGCM,Forward Global Calibration Method,DM,,,A
 FGST,Fermi Gamma-ray Space Telescope,Sci OPS,,,A
 FIFO,First In First Out,Gen,,,A
 FIPS,Federal Information Processing Standards,OPS,,,A
@@ -603,7 +603,7 @@ ITO,IT Operations,OPS OIR,,,A
 ITSC,Information Technology Services Committee,Adm,,,A
 ITTN,IT Technote,IT,,,A
 IUSE,Improving Undergraduate STEM Education,Sci,,,A
-IVOA,International Virtual-Observatory Alliance,Gen,,,A
+IVOA,International Virtual Observatory Alliance,Gen,,,A
 JATIS,"Journal of Astronomical Telescopes, Instruments, and Systems",Gen,,,A
 JBOD,Just a Bunch of Disks,OPS,,,A
 JEDI,Job Execution and Definition Interface,OPS,,,A
