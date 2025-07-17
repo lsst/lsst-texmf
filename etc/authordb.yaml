@@ -1,4 +1,17 @@
 affiliations:
+  AAO:
+    address:
+      city: North Ryde
+      country_code: Australia
+      example_expanded: Australian Astronomical Optics, Macquarie University,
+        North Ryde, NSW, Australia
+      postcode: '2113'
+      state: NSW
+      street: '105 Delhi Rd'
+    department: Australian Astronomical Optics
+    email: mq.edu.au
+    institute: Macquarie University
+    ror_id: null
   AAS:
     address:
       city: Washington
@@ -7043,6 +7056,14 @@ authors:
     email: null
     family_name: Rajagopal
     given_name: Jayadev
+    orcid: null
+  ranabhata:
+    affil:
+    - AAO
+    altaffil: []
+    email: arianna.ranabhat
+    family_name: Ranabhat
+    given_name: Arianna
     orcid: null
   rasmussenap:
     affil:
