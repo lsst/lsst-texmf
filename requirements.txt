@@ -1,4 +1,4 @@
-setuptools
+setuptools<81
 algoliasearch<4.4.0
 ook
 pybtex
