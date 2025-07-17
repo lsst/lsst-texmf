@@ -1,0 +1,6 @@
+# Requirements required to use the tooling in lsst-texmf to build
+# latex tech notes. This does not include requirements needed for support
+# programs that generate content in this repository.
+pylatexenc
+pydantic
+pyyaml
