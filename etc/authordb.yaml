@@ -1669,6 +1669,12 @@ affiliations:
     email: null
     institute: Lowell Observatory
     ror_id: 0209dk158
+  LYON-etu:
+    address: null
+    department: null
+    email: etu.univ-lyon1.fr
+    institute: \'ETU Lyon 1
+    ror_id: null
   MMTO:
     address:
       city: Tucson
@@ -3699,7 +3705,7 @@ authors:
     affil:
     - IN2P3-LPSC
     altaffil: []
-    email: dimitri.buffat@etu
+    email: dimitri.buffat@LYON-etu
     family_name: Buffat
     given_name: Dimitri
     orcid: null
@@ -7538,7 +7544,7 @@ authors:
     affil:
     - RubinObsC
     altaffil: []
-    email: null
+    email: jsebag
     family_name: Sebag
     given_name: Jacques
     orcid: null
