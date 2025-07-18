@@ -7946,9 +7946,10 @@ authors:
     orcid: null
   tarantoa:
     affil:
+    - INAF-OAS
     - Bologna-Phys
     altaffil: []
-    email: alessio.taranto@INAF-OAS
+    email: alessio.taranto
     family_name: Taranto
     given_name: Alessio
     orcid: 0009-0009-3271-3498
