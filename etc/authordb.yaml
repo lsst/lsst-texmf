@@ -3,11 +3,11 @@ affiliations:
     address:
       city: North Ryde
       country_code: Australia
-      example_expanded: Australian Astronomical Optics, Macquarie University,
-        North Ryde, NSW, Australia
+      example_expanded: Australian Astronomical Optics, Macquarie University, North
+        Ryde, NSW, Australia
       postcode: '2113'
       state: NSW
-      street: '105 Delhi Rd'
+      street: 105 Delhi Rd
     department: Australian Astronomical Optics
     email: mq.edu.au
     institute: Macquarie University
@@ -18,8 +18,8 @@ affiliations:
       country_code: USA
       example_expanded: American Astronomical Society
       postcode: '20006'
-      state: 'DC'
-      street: '1667 K Street NW, Suite 800'
+      state: DC
+      street: 1667 K Street NW, Suite 800
     department: null
     email: aas.org
     institute: American Astronomical Society
@@ -329,9 +329,11 @@ affiliations:
     address:
       city: Geneva
       country_code: Switzerland
-      example_expanded: CERN, Esplanade des Particules 1, P.O. Box, 1211 Geneva 23, Switzerland
+      example_expanded: CERN, Esplanade des Particules 1, P.O. Box, 1211 Geneva 23,
+        Switzerland
+      postcode: '1211'
+      state: null
       street: Esplanade des Particules 1
-      postcode: "1211"
     department: null
     email: cern.ch
     institute: European Organization for Nuclear Research
@@ -340,8 +342,8 @@ affiliations:
     address:
       city: Madrid
       country_code: Spain
-      example_expanded: Centro de Investigaciones Energ\'{e}ticas, Medioambientales y
-        Tecnol\'{o}gicas, Av. Complutense 40, 28040 Madrid, Spain
+      example_expanded: Centro de Investigaciones Energ\'{e}ticas, Medioambientales
+        y Tecnol\'{o}gicas, Av. Complutense 40, 28040 Madrid, Spain
       postcode: '28040'
       state: ''
       street: Av. Complutense 40
@@ -382,11 +384,12 @@ affiliations:
       city: Mexico City
       country_code: Mexico
       example_expanded: Consejo Nacional de Ciencia y Tecnolog\'{i}a, Av. Insurgentes
-        Sur 1582. Colonia Cr\'{e}dito Constructor, Del. Benito Ju\'{a}rez C.P. 03940, M\'{e}xico
-        D.F. M\'{e}xico
+        Sur 1582. Colonia Cr\'{e}dito Constructor, Del. Benito Ju\'{a}rez C.P. 03940,
+        M\'{e}xico D.F. M\'{e}xico
       postcode: C.P. 03940
       state: ''
-      street: Av. Insurgentes Sur 1582. Colonia Cr\'{e}dito Constructor, Del. Benito Ju\'{a}rez
+      street: Av. Insurgentes Sur 1582. Colonia Cr\'{e}dito Constructor, Del. Benito
+        Ju\'{a}rez
     department: null
     email: null
     institute: Consejo Nacional de Ciencia y Tecnolog\'{i}a
@@ -1107,8 +1110,8 @@ affiliations:
     address:
       city: Buenos Aires
       country_code: Argentina
-      example_expanded: Instituto de Astronom\'ia y F\'isica del Espacio (IAFE), Av. Inte.
-        G\"uiraldes 2620, C1428ZAA, Buenos Aires, Argentina
+      example_expanded: Instituto de Astronom\'ia y F\'isica del Espacio (IAFE), Av.
+        Inte. G\"uiraldes 2620, C1428ZAA, Buenos Aires, Argentina
       postcode: C1428ZAA
       state: ''
       street: Av. Inte. G\"uiraldes 2620
@@ -1139,8 +1142,8 @@ affiliations:
     address:
       city: Paris
       country_code: France
-      example_expanded: Universit\'{e} Paris Cit\'{e}, CNRS, CEA, Astroparticule et Cosmologie,
-        F-75013 Paris, France
+      example_expanded: Universit\'{e} Paris Cit\'{e}, CNRS, CEA, Astroparticule et
+        Cosmologie, F-75013 Paris, France
       postcode: F-75013
       state: ''
       street: ''
@@ -1189,14 +1192,15 @@ affiliations:
     address:
       city: Villeurbanne
       country_code: France
-      example_expanded: Universit\'{e} de Lyon, Universit\'{e} Claude Bernard Lyon 1, CNRS,
-        IP2I Lyon/IN2P3, F-69622 Villeurbanne, France
+      example_expanded: Universit\'{e} de Lyon, Universit\'{e} Claude Bernard Lyon
+        1, CNRS, IP2I Lyon/IN2P3, F-69622 Villeurbanne, France
       postcode: F-69622
       state: ''
       street: ''
     department: null
     email: ip2i.in2p3.fr
-    institute: Universit\'{e} de Lyon, Universit\'{e} Claude Bernard Lyon 1, CNRS, IP2I Lyon/IN2P3
+    institute: Universit\'{e} de Lyon, Universit\'{e} Claude Bernard Lyon 1, CNRS,
+      IP2I Lyon/IN2P3
     ror_id: 02avf8f85
   IN2P3-LAPP:
     address:
@@ -1237,7 +1241,8 @@ affiliations:
       street: ''
     department: null
     email: lpnhe.in2p3.fr
-    institute: Sorbonne Universit\'{e}, Universit\'{e} Paris Cit\'{e}, CNRS/IN2P3, LPNHE
+    institute: Sorbonne Universit\'{e}, Universit\'{e} Paris Cit\'{e}, CNRS/IN2P3,
+      LPNHE
     ror_id: 01hg8p552
   IN2P3-LPSC:
     address:
@@ -1348,13 +1353,15 @@ affiliations:
     address:
       city: Gif-sur-Yvette
       country_code: France
-      example_expanded: Universit\'{e} Paris-Saclay, Universit\'{e} Paris Cit\'{e}, CEA, CNRS, AIM, F-91191 Gif-sur-Yvette, France
+      example_expanded: Universit\'{e} Paris-Saclay, Universit\'{e} Paris Cit\'{e},
+        CEA, CNRS, AIM, F-91191 Gif-sur-Yvette, France
       postcode: F-91191
       state: ''
       street: ''
     department: null
     email: cea.fr
-    institute: Universit\'{e} Paris-Saclay, Universit\'{e} Paris Cit\'{e}, CEA, CNRS, AIM
+    institute: Universit\'{e} Paris-Saclay, Universit\'{e} Paris Cit\'{e}, CEA, CNRS,
+      AIM
     ror_id: 0015h8611
   IPAC:
     address:
@@ -1373,8 +1380,8 @@ affiliations:
     address:
       city: Granada
       country_code: Spain
-      example_expanded: Instituto de Radioastronom\'ia Milim\'etrica, Av.\ Divina Pastora
-        7, N\'ucleo Central, E-18012 Granada, Spain
+      example_expanded: Instituto de Radioastronom\'ia Milim\'etrica, Av.\ Divina
+        Pastora 7, N\'ucleo Central, E-18012 Granada, Spain
       postcode: E-18012
       state: ''
       street: Av.\ Divina Pastora 7, N\'ucleo Central
@@ -1662,6 +1669,12 @@ affiliations:
     email: null
     institute: Lowell Observatory
     ror_id: 0209dk158
+  LYON-etu:
+    address: null
+    department: null
+    email: etu.univ-lyon1.fr
+    institute: \'ETU Lyon 1
+    ror_id: null
   MMTO:
     address:
       city: Tucson
@@ -1769,8 +1782,8 @@ affiliations:
     address:
       city: Otwock
       country_code: Poland
-      example_expanded: National Centre of Nuclear Research, Andrzeja So\l{}tana 7, 05-400
-        Otwock, Poland
+      example_expanded: National Centre of Nuclear Research, Andrzeja So\l{}tana 7,
+        05-400 Otwock, Poland
       postcode: 05-400
       state: ''
       street: Andrzeja So\l{}tana 7
@@ -2431,7 +2444,7 @@ affiliations:
       country_code: USA
       example_expanded: TMT International Observatory
       postcode: ''
-      state: 'CA'
+      state: CA
       street: ''
     department: null
     email: null
@@ -2673,7 +2686,8 @@ affiliations:
       city: Ensenada
       country_code: Mexico
       example_expanded: Instituto de Astronom\'ia sede Ensenada, Universidad Nacional
-        Aut\'onoma de M\'{e}xico, Km 107, Carret. Tij.-Ens., Ensenada, 22060, BC, M\'{e}xico
+        Aut\'onoma de M\'{e}xico, Km 107, Carret. Tij.-Ens., Ensenada, 22060, BC,
+        M\'{e}xico
       postcode: '22060'
       state: BC
       street: Km 107, Carret. Tij.-Ens.
@@ -2776,8 +2790,8 @@ affiliations:
     address:
       city: Guanajuato
       country_code: Mexico
-      example_expanded: Departamento de F\'isica, DCI, Campus Le\'on, Universidad de Guanajuato,
-        37150, Le\'on, Guanajuato, M\'{e}xico
+      example_expanded: Departamento de F\'isica, DCI, Campus Le\'on, Universidad
+        de Guanajuato, 37150, Le\'on, Guanajuato, M\'{e}xico
       postcode: ''
       state: ''
       street: 37150, Le\'on
@@ -3686,6 +3700,14 @@ authors:
     email: abudlong
     family_name: Budlong
     given_name: Audrey
+    orcid: null
+  buffatd:
+    affil:
+    - IN2P3-LPSC
+    altaffil: []
+    email: dimitri.buffat@LYON-etu
+    family_name: Buffat
+    given_name: Dimitri
     orcid: null
   bullockjs:
     affil:
@@ -5289,6 +5311,14 @@ authors:
     family_name: Jammes
     given_name: Fabrice
     orcid: null
+  jarugulas:
+    affil:
+    - Fermilab
+    altaffil: []
+    email: jarugula@Fermilab
+    family_name: Jarugula
+    given_name: Sreevani
+    orcid: 0000-0002-5386-7076
   jeej:
     affil:
     - Yonsei
@@ -6371,6 +6401,14 @@ authors:
     family_name: Moolekamp
     given_name: Fred E.
     orcid: 0000-0003-0093-4279
+  moralesmarincal:
+    affil:
+    - RubinObsC
+    altaffil: []
+    email: cmorales
+    family_name: Morales Mar{\'\i}n
+    given_name: C.A.L.
+    orcid: 0000-0003-0203-3407
   moriartyc:
     affil:
     - Harvard-CfA
@@ -6451,6 +6489,14 @@ authors:
     family_name: Murillo
     given_name: Angela
     orcid: null
+  napierk:
+    affil:
+    - SLAC-Kavli
+    altaffil: []
+    email: kanapier
+    family_name: Napier
+    given_name: Kate
+    orcid: 0000-0003-4470-1696
   narayananks:
     affil:
     - Cochin
@@ -7057,6 +7103,14 @@ authors:
     family_name: Rajagopal
     given_name: Jayadev
     orcid: null
+  ramelm:
+    affil:
+    - IN2P3-LPSC
+    altaffil: []
+    email: manon.ramel
+    family_name: Ramel
+    given_name: Manon
+    orcid: null
   ranabhata:
     affil:
     - AAO
@@ -7490,7 +7544,7 @@ authors:
     affil:
     - RubinObsC
     altaffil: []
-    email: null
+    email: jsebag
     family_name: Sebag
     given_name: Jacques
     orcid: null

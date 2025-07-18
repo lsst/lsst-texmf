@@ -31,6 +31,8 @@
 	     if (gls) {
 		  $('#gls').DataTable( {
 			paging: true,
+			searchable: false,
+			dom: '<"customSearchContainer">rtip', // Place custom container at the top right
 			data: gls,
 			columns: [
 				 { title: "Term" },
@@ -43,6 +45,11 @@
 		    console.log("Wait ..")
 		    setTimeout(setupTable, 300); // try again in 300 milliseconds
 	      }
+
+	      $('#acrSearch').on('keyup change', function() {
+              var table = $('#gls').DataTable();
+              table.column(0).search($(this).val()).draw();
+          });
 	};
 
 
@@ -99,7 +106,12 @@
 </head>
 
 <body>
-<table id="gls" class="display compact" width="100%" data-page-length='10'>
+<! -- only want the top search to search acronyms - but by default it searches all.
+   So replace it with a custom serach-->
+<!-- Add a container for the custom search box -->
+<div id="customSearchContainer" style="float:right; margin-bottom:10px;">
+  <input id="acrSearch" type="text" placeholder="Search Acronym" />
+</div><table id="gls" class="display compact" width="100%" data-page-length='10'>
      <tfoot> <tr> <th></th> <th></th> <th></th>  </tr> </tfoot>
 </table>
 <a href="_static/examples/glossary-table.pdf">Download this PDF of the full table  for offline use</a>
