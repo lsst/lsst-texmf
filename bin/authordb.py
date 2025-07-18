@@ -5,10 +5,10 @@ from __future__ import annotations
 import argparse
 import os
 import re
-from typing import Annotated
+from typing import Annotated, Self
 
 import yaml
-from pydantic import AfterValidator, BaseModel, Field
+from pydantic import AfterValidator, BaseModel, Field, model_validator
 
 
 def load_authordb(file_name: str | None = None) -> AuthorDbYaml:
@@ -145,6 +145,32 @@ class AuthorDbYaml(BaseModel):
             if affil.email:
                 domains[affilid] = affil.email
         return domains
+
+    @model_validator(mode="after")
+    def check_author_emails(self) -> Self:
+        for authorid, author in self.authors.items():
+            if not author.email:
+                continue
+            if "@" in author.email:
+                _, affil_id = author.email.split("@")
+                if "." in affil_id:
+                    # Fully specified email so nothing to check.
+                    continue
+            else:
+                # Using first affiliation.
+                affil_id = author.affil[0]
+
+            affil = self.affiliations.get(affil_id)
+            if not affil:
+                raise ValueError(f"Author {authorid} refers to unknown affiliation of {affil_id} for email")
+
+            if not affil.email:
+                raise ValueError(
+                    f"Author {authorid} has email defined but associated affiliation "
+                    f"{affil_id} has no email defined"
+                )
+
+        return self
 
 
 if __name__ == "__main__":
