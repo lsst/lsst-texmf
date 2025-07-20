@@ -1606,6 +1606,12 @@ affiliations:
     email: null
     institute: The LSST Corporation
     ror_id: 011494s34
+  LYON-etu:
+    address: null
+    department: null
+    email: etu.univ-lyon1.fr
+    institute: \'ETU Lyon 1
+    ror_id: null
   LancasterU:
     address:
       city: Lancaster
@@ -1669,12 +1675,6 @@ affiliations:
     email: null
     institute: Lowell Observatory
     ror_id: 0209dk158
-  LYON-etu:
-    address: null
-    department: null
-    email: etu.univ-lyon1.fr
-    institute: \'ETU Lyon 1
-    ror_id: null
   MMTO:
     address:
       city: Tucson
@@ -4625,6 +4625,14 @@ authors:
     family_name: Foss
     given_name: Michael D.
     orcid: null
+  fouchezd:
+    affil:
+    - IN2P3-CPPM
+    altaffil: []
+    email: fouchez
+    family_name: Fouchez
+    given_name: Dominique
+    orcid: 0000-0002-7496-3796
   frankj:
     affil:
     - BNL
@@ -5109,6 +5117,14 @@ authors:
     family_name: Herrold
     given_name: Ardis
     orcid: null
+  higgscr:
+    affil:
+    - RubinOps
+    altaffil: []
+    email: clare.higgs
+    family_name: Higgs
+    given_name: Clare R.
+    orcid: 0000-0001-8650-9665
   hilemane:
     affil:
     - RubinObs
@@ -5865,10 +5881,10 @@ authors:
     affil:
     - StonyBrookU
     altaffil: []
-    email: null
+    email: benjamin.c.levine
     family_name: Levine
-    given_name: Ben
-    orcid: null
+    given_name: Benjamin
+    orcid: 0000-0001-8000-1959
   levined:
     affil:
     - IPAC
@@ -7071,6 +7087,14 @@ authors:
     family_name: Rabus
     given_name: Markus
     orcid: 0000-0003-2935-7196
+  racineb:
+    affil:
+    - IN2P3-CPPM
+    altaffil: []
+    email: racine
+    family_name: Racine
+    given_name: Benjamin
+    orcid: 0000-0001-8861-3052
   radekav:
     affil:
     - BNL
@@ -7273,6 +7297,14 @@ authors:
     family_name: Roberts
     given_name: Austin
     orcid: null
+  robertsonbe:
+    affil:
+    - UCSC
+    altaffil: []
+    email: brant
+    family_name: Robertson
+    given_name: Brant E.
+    orcid: 0000-0002-4271-0364
   robinsons:
     affil:
     - BNL

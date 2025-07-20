@@ -375,7 +375,7 @@ def genFiles(values: list, skip: int, builder: bool = False) -> None:
             f" {len(newaffils)} new affiliations \n"
             f" {len(clash)} author entries need to be checked (see above) \n"
             f" {len(notfound)} author updates where authorid not found (see above) \n"
-            f" Saw: {idx + 1} rows - set skip.count to this number for reprocessing \n"
+            f" Saw: {idx} rows - set skip.count to this number for reprocessing \n"
         )
         write_yaml("authors.yaml", authorids)
         write_model("new_authors.yaml", newauthors)
