@@ -6537,6 +6537,14 @@ authors:
     family_name: Naylor
     given_name: Tim
     orcid: 0000-0002-0506-8501
+  nealh:
+    affil:
+    - SLAC
+    altaffil: []
+    email: homer
+    family_name: Neal
+    given_name: Homer
+    orcid: null
   neilldr:
     affil:
     - RubinObs
