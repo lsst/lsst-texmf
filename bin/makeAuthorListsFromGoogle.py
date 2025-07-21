@@ -377,10 +377,14 @@ def genFiles(values: list, skip: int, builder: bool = False) -> None:
             f" {len(notfound)} author updates where authorid not found (see above) \n"
             f" Saw: {idx} rows - set skip.count to this number for reprocessing \n"
         )
+        with open("skip", "w") as f:
+            f.write(f"{idx}\n")
+
         write_yaml("authors.yaml", authorids)
         write_model("new_authors.yaml", newauthors)
         write_affil("new_affiliations.yaml", newaffils)
         write_yaml("new_domains.yaml", newdomains)
+
     return
 
 
