@@ -4274,6 +4274,14 @@ authors:
     family_name: de Peyster
     given_name: Robert
     orcid: null
+  deppesj:
+    affil:
+    - RubinOps
+    altaffil: []
+    email: stephanie.deppe
+    family_name: Deppe
+    given_name: Stephanie JH
+    orcid: 0000-0002-6126-8487
   desaiv:
     affil:
     - IPAC
@@ -5237,6 +5245,14 @@ authors:
     family_name: Hundertmark
     given_name: Markus
     orcid: 0000-0003-0961-5231
+  hyunm:
+    affil:
+    - RubinObsC
+    altaffil: []
+    email: minhee51@Stanford
+    family_name: Hyun
+    given_name: Minhee
+    orcid: 0000-0003-4738-4251
   ilicd:
     affil:
     - Belgrade-Uni
@@ -5643,6 +5659,14 @@ authors:
     family_name: Kova{\v{c}}evi{\'c}
     given_name: Andjelka B.
     orcid: 0000-0001-5139-1978
+  kovacsg:
+    affil:
+    - Washington-DIRAC
+    altaffil: []
+    email: kgabor79@Gmail
+    family_name: Kov\'acs
+    given_name: G\'abor
+    orcid: 0000-0003-1779-775X
   kowalikm:
     affil:
     - NCSA
@@ -6120,6 +6144,14 @@ authors:
     family_name: Mao
     given_name: Yao-Yuan
     orcid: 0000-0002-1200-0820
+  margheimsj:
+    affil:
+    - RubinOpsC
+    altaffil: []
+    email: steven.margheim
+    family_name: Margheim
+    given_name: Steven J.
+    orcid: 0000-0001-8205-9441
   marinia:
     affil:
     - IN2P3-CPPM
@@ -6136,6 +6168,14 @@ authors:
     family_name: Markiewicz
     given_name: Thomas W.
     orcid: 0000-0003-3646-8724
+  marshallp:
+    affil:
+    - SLAC
+    altaffil: []
+    email: pjm
+    family_name: Marshall
+    given_name: Phil
+    orcid: 0000-0002-0113-5770
   marshallpj:
     affil:
     - SLAC-Kavli
@@ -7199,7 +7239,7 @@ authors:
     email: reil
     family_name: Reil
     given_name: Kevin A.
-    orcid: null
+    orcid: 0000-0002-2234-749X
   reissdj:
     affil:
     - Washington
@@ -7636,6 +7676,14 @@ authors:
     family_name: Serio
     given_name: Andrew
     orcid: null
+  seronnavarretejc:
+    affil:
+    - RubinObsC
+    altaffil: []
+    email: jseron
+    family_name: Seron-Navarrete
+    given_name: Jacqueline C.
+    orcid: 0000-0002-8303-776X
   serranoe:
     affil:
     - RubinObs
