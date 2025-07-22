@@ -139,12 +139,6 @@ affiliations:
     email: null
     institute: The Adler Planetarium
     ror_id: 0248gc218
-  Aubourg:
-    address: null
-    department: null
-    email: aubourg.net
-    institute: Placeholder for email domain aubourg.net
-    ror_id: null
   BNL:
     address:
       city: Upton
@@ -3276,7 +3270,7 @@ authors:
     affil:
     - IN2P3-APC-CEA
     altaffil: []
-    email: eric@Aubourg
+    email: eric@aubourg.net
     family_name: Aubourg
     given_name: \'{E}ric
     orcid: 0000-0002-5592-023X
