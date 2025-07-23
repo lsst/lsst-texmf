@@ -648,6 +648,19 @@ affiliations:
     email: null
     institute: Columbia University
     ror_id: 00hj8s172
+  Columbia-phys:
+    address:
+      city: New York
+      country_code: USA
+      example_expanded: Department of Physics Columbia University, New York, NY 10027,
+        USA
+      postcode: '10027'
+      state: NY
+      street: 533 W. 218th St.
+    department: Department of Physics
+    email: columbia.edu
+    institute: Columbia University
+    ror_id: 00hj8s172
   D4D:
     address:
       city: Bournemouth
@@ -1993,7 +2006,7 @@ affiliations:
       state: ''
       street: Denys Wilkinson Building, Keble Road
     department: Department of Physics
-    email: null
+    email: physics.ox.ac.uk
     institute: University of Oxford
     ror_id: 052gg0110
   PSI:
@@ -3260,7 +3273,7 @@ authors:
     affil:
     - UA-Steward
     altaffil: []
-    email: null
+    email: taxelrod@Gmail
     family_name: Axelrod
     given_name: Tim S.
     orcid: 0000-0002-5722-7199
@@ -6250,9 +6263,10 @@ authors:
     orcid: 0000-0003-3519-4004
   maym:
     affil:
+    - Columbia-phys
     - BNL
     altaffil: []
-    email: null
+    email: mm21
     family_name: May
     given_name: Morgan
     orcid: null
@@ -6345,6 +6359,14 @@ authors:
     family_name: Mentzer
     given_name: Heather R.
     orcid: 0000-0002-7169-4850
+  metzgerk:
+    affil:
+    - RubinOps
+    altaffil: []
+    email: kristen.metzger
+    family_name: Metzger
+    given_name: Kristen
+    orcid: null
   meyersj:
     affil:
     - SLAC-Kavli
@@ -8331,6 +8353,14 @@ authors:
     family_name: Venuti
     given_name: Laura
     orcid: 0000-0002-4115-0318
+  vermaa:
+    affil:
+    - Oxford
+    altaffil: []
+    email: aprajita.verma
+    family_name: Verma
+    given_name: Aprajita
+    orcid: 0000-0002-0730-0781
   vetterk:
     affil:
     - BNL
