@@ -4263,6 +4263,14 @@ authors:
     family_name: Delgado
     given_name: Francisco
     orcid: null
+  dellantonioi:
+    affil:
+    - Brown
+    altaffil: []
+    email: null
+    family_name: Dell'Antonio
+    given_name: Ian
+    orcid: 0000-0003-0751-7312
   dellapennaa:
     affil:
     - BNL
@@ -6939,6 +6947,15 @@ authors:
     family_name: Pease
     given_name: Nathan M.
     orcid: 0000-0002-9701-5975
+  pedersone:
+    affil:
+    - Harvard-Physics
+    - Harvard-Astro
+    altaffil: []
+    email: null
+    family_name: Pederson
+    given_name: Eske
+    orcid: 
   pedrazaiv:
     affil:
     - DACC
@@ -8716,6 +8733,14 @@ authors:
     family_name: Zhang
     given_name: Tianqing
     orcid: 0000-0002-5596-198X
+  zhangy:
+    affil:
+    - NOIRLab
+    altaffil: []
+    email: null
+    family_name: Zhang
+    given_name: Yuanyuan
+    orcid: null 
   zhanh:
     affil:
     - KLOA
