@@ -6947,15 +6947,14 @@ authors:
     family_name: Pease
     given_name: Nathan M.
     orcid: 0000-0002-9701-5975
-  pedersone:
+  pedersene:
     affil:
     - Harvard-Physics
-    - Harvard-Astro
     altaffil: []
     email: null
-    family_name: Pederson
-    given_name: Eske
-    orcid: 
+    family_name: Pedersen
+    given_name: Eske M.
+    orcid: 0000-0002-8883-2172
   pedrazaiv:
     affil:
     - DACC
