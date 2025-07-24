@@ -6042,6 +6042,14 @@ authors:
     family_name: Lopez Toro
     given_name: Juan J.
     orcid: null
+  lorenzon:
+    affil:
+    - IN2P3-LAPP
+    altaffil: []
+    email: null
+    family_name: Lorenzo Martinez
+    given_name: Narei
+    orcid: null
   lotzpj:
     affil:
     - RubinObs
