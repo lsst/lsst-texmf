@@ -2876,6 +2876,19 @@ affiliations:
     email: uw.edu
     institute: University of Washington
     ror_id: 00cvxb145
+  Washington-phys:
+    address:
+      city: Seattle
+      country_code: USA
+      example_expanded: University of Washington, Dept.\ of Astronomy, Box 351580,
+        Seattle, WA 98195, USA
+      postcode: '98195'
+      state: WA
+      street: P.O. Box 351580
+    department: Dept.\ of Physics
+    email: uw.edu
+    institute: University of Washington
+    ror_id: 00cvxb145
   WestWashington:
     address:
       city: Bellingham
@@ -3708,7 +3721,7 @@ authors:
     orcid: 0000-0002-8255-0545
   budlonga:
     affil:
-    - Washington
+    - Washington-phys
     altaffil: []
     email: abudlong
     family_name: Budlong
