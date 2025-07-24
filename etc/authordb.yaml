@@ -7618,6 +7618,14 @@ authors:
     family_name: Schumacher
     given_name: German
     orcid: null
+  schuttt:
+    affil:
+    - SLAC-Kavli
+    altaffil: []
+    email: schutt20
+    family_name: Schutt
+    given_name: Theo
+    orcid: 0000-0002-7187-9628
   schwambme:
     affil:
     - GeminiN
