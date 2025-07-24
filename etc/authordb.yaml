@@ -7827,6 +7827,14 @@ authors:
     family_name: Singhal
     given_name: Jaladh
     orcid: 0000-0002-8310-0829
+  sirunokb:
+    affil:
+    - RubinObsC
+    altaffil: []
+    email: ksiruno
+    family_name: Siruno
+    given_name: Kevin Benjamin
+    orcid: null
   slaterct:
     affil:
     - Washington
@@ -7867,6 +7875,14 @@ authors:
     family_name: Smotherman
     given_name: Hayden R.
     orcid: 0000-0002-7895-4344
+  snydera:
+    affil:
+    - UCDavis
+    altaffil: []
+    email: aksnyder@UCDavis
+    family_name: Snyder
+    given_name: Adam
+    orcid: 0000-0002-2343-0949
   sobhanis:
     affil:
     - Belldex
