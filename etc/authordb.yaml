@@ -2880,7 +2880,7 @@ affiliations:
     address:
       city: Seattle
       country_code: USA
-      example_expanded: University of Washington, Dept.\ of Astronomy, Box 351580,
+      example_expanded: University of Washington, Dept.\ of Physics, Box 351580,
         Seattle, WA 98195, USA
       postcode: '98195'
       state: WA

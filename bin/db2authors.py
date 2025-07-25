@@ -16,6 +16,7 @@ This program requires the "yaml" package to be installed.
 """
 
 import argparse
+import csv
 import os.path
 import re
 import string
@@ -357,8 +358,8 @@ class AASTeX(AuthorTextGenerator):
     def generate(self, header: bool = True) -> str:
         """Generate AASTeX format."""
         lines = []
-        lines.append("")
         for author in self.authors:
+            lines.append("")
             # Text depends on aastex 7 vs 6.
             parentext = self._generate_paren_text(author)
             lines.append(rf"\author{parentext}{{{author.full_latex_name}}}")
@@ -632,8 +633,9 @@ def dump_csvall(factory: AuthorFactory) -> None:
     put this in authors.csv
     """
     author_ids = factory.get_author_ids()
-    with open("authors.csv", "w") as outf:
-        print("Rubin AuthorID, Name, Affiliation ID(s), AASTEX", file=outf)
+    with open("authors.csv", "w", newline="") as outf:
+        writer = csv.writer(outf)
+        writer.writerow(["Rubin AuthorID", "Name", "Affiliation ID(s)", "AASTEX"])
         for authorid in author_ids:
             author = factory.get_author(authorid)
             aas7_generator = AASTeX7([author])
@@ -643,15 +645,14 @@ def dump_csvall(factory: AuthorFactory) -> None:
             aas7_text = aas7_generator.generate(header=False)
             # the email should not be plain ..
             aas7_text = aas7_text.replace("@", " AT ")
-            line = f'{authorid},{latex2text(author.full_name)},{affils},"{aas7_text}"'
-            print(line, file=outf)
+            writer.writerow([authorid, latex2text(author.full_name), affils, aas7_text])
     affil_ids = factory.get_affiliation_ids()
     with open("affiliations.csv", "w") as outf:
-        print("ID, Affiliation", file=outf)
+        writer = csv.writer(outf)
+        writer.writerow(["ID", "Affiliation"])
         for id in affil_ids:
             affil = factory.get_affiliation(id)
-            line = f'{id},"{latex2text(affil.get_full_address_with_institute())}"'
-            print(line, file=outf)
+            writer.writerow([id, latex2text(affil.get_full_address_with_institute())])
 
 
 if __name__ == "__main__":
