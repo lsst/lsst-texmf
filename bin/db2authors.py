@@ -16,6 +16,7 @@ This program requires the "yaml" package to be installed.
 """
 
 import argparse
+import csv
 import os.path
 import re
 import string
@@ -178,6 +179,7 @@ class AuthorFactory:
     def __init__(self, affiliations: dict[str, Any], authors: dict[str, Any]) -> None:
         self._affiliations = affiliations
         self._authors = authors
+        self._reverse_affil = {self.get_affiliation(aid): aid for aid in self._affiliations}
 
     @classmethod
     def from_authordb(cls, authordb: dict[str, Any]) -> Self:
@@ -191,6 +193,9 @@ class AuthorFactory:
 
     def get_affiliation_ids(self) -> dict_keys:
         return self._affiliations.keys()
+
+    def get_affiliation_id(self, affil: Affiliation) -> str:
+        return self._reverse_affil[affil]
 
     def get_affiliation(self, affiliationid: str) -> Affiliation:
         raw_affil = self._affiliations.get(affiliationid)
@@ -312,8 +317,13 @@ class AuthorTextGenerator(ABC):
         return affil_to_number
 
     @abstractmethod
-    def generate(self) -> str:
+    def generate(self, header: bool = True) -> str:
         """Generate the author text.
+
+        Parameters
+        ----------
+        header : bool, optional
+            If True, include the header in the generated text. Default is True.
 
         Returns
         -------
@@ -345,7 +355,7 @@ class AASTeX(AuthorTextGenerator):
         """
         return f"[{author.orcid}]" if author.orcid else ""
 
-    def generate(self) -> str:
+    def generate(self, header: bool = True) -> str:
         """Generate AASTeX format."""
         lines = []
         for author in self.authors:
@@ -359,7 +369,7 @@ class AASTeX(AuthorTextGenerator):
                 lines.append(rf"\affiliation{{{affil.get_full_address_with_institute()}}}")
             lines.append(rf"\email{{{author.email}}}")
 
-        return self.get_header() + "\n".join(lines)
+        return (self.get_header() if header else "") + "\n".join(lines)
 
 
 class AASTeX7(AASTeX):
@@ -400,7 +410,7 @@ class LsstDoc(AuthorTextGenerator):
 
     mode = "lsstdoc"
 
-    def generate(self) -> str:
+    def generate(self, header: bool = True) -> str:
         authors = list(self.authors)
         last = authors.pop()
 
@@ -410,7 +420,7 @@ class LsstDoc(AuthorTextGenerator):
             lines.append("and")
         lines.append(last.full_latex_name)
 
-        return self.get_header() + "\\author{\n" + "\n".join(lines) + "\n}"
+        return (self.get_header() if header else "") + "\\author{\n" + "\n".join(lines) + "\n}"
 
 
 class Arxiv(AuthorTextGenerator):
@@ -422,7 +432,7 @@ class Arxiv(AuthorTextGenerator):
 
     mode = "arxiv"
 
-    def generate(self) -> str:
+    def generate(self, header: bool = True) -> str:
         """Generate ArXiv format."""
         affil_to_number = self.number_affiliations()
 
@@ -450,7 +460,7 @@ class ProcSpie(AuthorTextGenerator):
 
     mode = "spie"
 
-    def generate(self) -> str:
+    def generate(self, header: bool = True) -> str:
         affil_to_number = self.number_affiliations()
         chars = string.ascii_lowercase + string.ascii_uppercase
 
@@ -478,7 +488,7 @@ class ProcSpie(AuthorTextGenerator):
         for affil, label in affil_to_label.items():
             affiliations.append(rf"\affil[{label}]{{{affil.get_full_address_with_institute()}}}")
 
-        return self.get_header() + "\n".join(authors + affiliations)
+        return (self.get_header() if header else "") + "\n".join(authors + affiliations)
 
 
 class WebOfC(AuthorTextGenerator):
@@ -486,7 +496,7 @@ class WebOfC(AuthorTextGenerator):
 
     mode = "webofc"
 
-    def generate(self) -> str:
+    def generate(self, header: bool = True) -> str:
         affil_to_number = self.number_affiliations()
 
         authors = []
@@ -502,7 +512,7 @@ class WebOfC(AuthorTextGenerator):
         affiliations = " \\and\n".join(a.get_full_address_with_institute() for a in affil_to_number)
 
         return (
-            self.get_header()
+            (self.get_header() if header else "")
             + "\\author{\n"
             + " \\and\n".join(authors)
             + "\n}\n\\institute{\n"
@@ -516,7 +526,7 @@ class ASCOM(AuthorTextGenerator):
 
     mode = "ascom"
 
-    def generate(self) -> str:
+    def generate(self, header: bool = True) -> str:
         """Generate A&C format."""
         affil_to_number = self.number_affiliations()
 
@@ -537,7 +547,7 @@ class ASCOM(AuthorTextGenerator):
 organization={{{affil.get_department_and_institute()}}}{country}}}"""
             affiliations.append(affil_text)
 
-        return self.get_header() + "\n".join(authors) + "\n" + "\n".join(affiliations)
+        return (self.get_header() if header else "") + "\n".join(authors) + "\n" + "\n".join(affiliations)
 
 
 class ADASS(AuthorTextGenerator):
@@ -551,7 +561,7 @@ class ADASS(AuthorTextGenerator):
         affil_text = " ".join(f"$^{n}$" for n in affil_numbers)
         return affil_text
 
-    def generate(self) -> str:
+    def generate(self, header: bool = True) -> str:
         affil_to_number = self.number_affiliations()
 
         authors = list(self.authors)
@@ -605,7 +615,7 @@ class ADASS(AuthorTextGenerator):
             aindexes.append(f"%\\aindex{{{author.latex_name_then_initials}}}")
 
         return (
-            self.get_header()
+            (self.get_header() if header else "")
             + "\\author{"
             + " ".join(author_lines)
             + "}\n"
@@ -623,20 +633,26 @@ def dump_csvall(factory: AuthorFactory) -> None:
     put this in authors.csv
     """
     author_ids = factory.get_author_ids()
-    with open("authors.csv", "w") as outf:
-        print("Rubin ID, Name, Affiliation(s)", file=outf)
+    with open("authors.csv", "w", newline="") as outf:
+        writer = csv.writer(outf)
+        writer.writerow(["Rubin AuthorID", "Name", "Affiliation ID(s)", "AASTEX"])
         for authorid in author_ids:
             author = factory.get_author(authorid)
-            affils = " | ".join(a.get_full_address_with_institute() for a in author.affiliations)
-            line = f'{authorid},{latex2text(author.full_name)},"{latex2text(affils)}"'
-            print(line, file=outf)
+            aas7_generator = AASTeX7([author])
+            # people seeing the full affiliation copied it so putting IDs
+            affils = " / ".join(factory.get_affiliation_id(a) for a in author.affiliations)
+            # Generate aas7 string using the AASTeX7 generator
+            aas7_text = aas7_generator.generate(header=False)
+            # the email should not be plain ..
+            aas7_text = aas7_text.replace("@", " AT ")
+            writer.writerow([authorid, latex2text(author.full_name), affils, aas7_text])
     affil_ids = factory.get_affiliation_ids()
     with open("affiliations.csv", "w") as outf:
-        print("ID, Affiliation", file=outf)
+        writer = csv.writer(outf)
+        writer.writerow(["ID", "Affiliation"])
         for id in affil_ids:
             affil = factory.get_affiliation(id)
-            line = f'{id},"{latex2text(affil.get_full_address_with_institute())}"'
-            print(line, file=outf)
+            writer.writerow([id, latex2text(affil.get_full_address_with_institute())])
 
 
 if __name__ == "__main__":
