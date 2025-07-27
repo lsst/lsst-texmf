@@ -4299,7 +4299,7 @@ authors:
     email: edennihy
     family_name: Dennihy
     given_name: Erik
-    orcid: null
+    orcid: 0000-0003-2852-268X
   depeysterr:
     affil:
     - SLAC
@@ -5821,7 +5821,7 @@ authors:
     email: cslage
     family_name: Lage
     given_name: Craig S.
-    orcid: null
+    orcid: 0000-0002-9601-345X
   lagopja:
     affil:
     - RubinOpsC
@@ -7944,7 +7944,7 @@ authors:
     email: isotuela
     family_name: Sotuela Elorriaga
     given_name: Ioana
-    orcid: null
+    orcid: 0009-0001-6379-3365
   speckd:
     affil:
     - Burwood
@@ -7960,7 +7960,7 @@ authors:
     email: bstalder
     family_name: Stalder
     given_name: Brian
-    orcid: null
+    orcid: 0000-0003-0973-4900
   starkmann:
     affil:
     - UToronto
@@ -8064,8 +8064,8 @@ authors:
     altaffil: []
     email: suberlak
     family_name: Suberlak
-    given_name: Chris
-    orcid: null
+    given_name: Krzysztof
+    orcid: 0000-0002-9589-1306
   sullivanis:
     affil:
     - Washington
@@ -8372,7 +8372,7 @@ authors:
     email: wvanreeven
     family_name: van Reeven
     given_name: Wouter
-    orcid: null
+    orcid: 0000-0002-1431-9245
   vanvelzens:
     affil:
     - Leiden
@@ -8720,7 +8720,7 @@ authors:
     email: yangw
     family_name: Yang
     given_name: Wei
-    orcid: null
+    orcid: 0009-0004-7733-8568
   yangz:
     affil:
     - BNL
