@@ -7363,7 +7363,7 @@ authors:
     email: riot1
     family_name: Riot
     given_name: Vincent J.
-    orcid: null
+    orcid: 0000-0001-8239-3079
   ritzs:
     affil:
     - UCSC
@@ -7724,7 +7724,7 @@ authors:
     - RubinObsC
     altaffil: []
     email: esepulveda2
-    family_name: Sepulveda valenzuela
+    family_name: Sepulveda Valenzuela
     given_name: Edgard Esteban
     orcid: null
   sericheg:
@@ -7830,7 +7830,7 @@ authors:
     altaffil: []
     email: mathew.sims
     family_name: Sims
-    given_name: Mathew C
+    given_name: Mathew C.
     orcid: 0009-0005-2484-6603
   singhalj:
     affil:
@@ -8259,7 +8259,7 @@ authors:
     email: ttsai
     family_name: Tsai
     given_name: Te-Wei
-    orcid: null
+    orcid: 0009-0007-5732-4160
   tsaprasy:
     affil:
     - Heidelberg
