@@ -3931,7 +3931,7 @@ authors:
     orcid: 0000-0002-3925-7802
   charlesemersong:
     affil:
-    - AURA-T
+    - RubinObs
     altaffil: []
     email: glenaver@RubinObs
     family_name: Charles-Emerson
@@ -4848,7 +4848,7 @@ authors:
     email: rgill@RubinObs
     family_name: Gill
     given_name: Ranpal K.
-    orcid: null
+    orcid: 0009-0004-8826-1148
   gilmoredk:
     affil:
     - SLAC-Kavli
