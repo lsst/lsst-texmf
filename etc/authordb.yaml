@@ -1726,6 +1726,12 @@ affiliations:
     email: null
     institute: University of Maryland
     ror_id: 047s2c258
+  Me:
+    address: null
+    department: null
+    email: me.com
+    institute: Placeholder for me.com email domain
+    ror_id: null
   NAOChina:
     address:
       city: Beijing
@@ -3082,7 +3088,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
-    email: null
+    email: robynallsman@Gmail
     family_name: Allsman
     given_name: Robyn
     orcid: null
@@ -3489,7 +3495,7 @@ authors:
     - Delaware-Policy
     - Delaware-DataSci
     altaffil: []
-    email: null
+    email: fedhere@Gmail
     family_name: Bianco
     given_name: Federica B.
     orcid: 0000-0003-1953-8727
@@ -3546,7 +3552,7 @@ authors:
     affil:
     - SLAC-Kavli
     altaffil: []
-    email: null
+    email: jrb
     family_name: Bogart
     given_name: Joanne
     orcid: null
@@ -3667,7 +3673,7 @@ authors:
     affil:
     - IN2P3-LPSC
     altaffil: []
-    email: null
+    email: bregeon@IN2P3
     family_name: Bregeon
     given_name: Johan
     orcid: 0000-0002-6790-5328
@@ -4224,7 +4230,7 @@ authors:
     affil:
     - Washington
     altaffil: []
-    email: null
+    email: scottvalscott@Gmail
     family_name: Daniel
     given_name: Scott F.
     orcid: null
@@ -4344,7 +4350,7 @@ authors:
     affil:
     - SLAC
     altaffil: []
-    email: null
+    email: digel
     family_name: Digel
     given_name: Seth W.
     orcid: null
@@ -4628,7 +4634,7 @@ authors:
     affil:
     - NOIRLab
     altaffil: []
-    email: null
+    email: GFonsecaAlvarez@RubinObs
     family_name: Fonseca Alvarez
     given_name: Gloria
     orcid: 0000-0003-0042-6936
@@ -5341,7 +5347,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
-    email: null
+    email: sjacobygm@Gmail
     family_name: Jacoby
     given_name: Suzanne H.
     orcid: null
@@ -5553,7 +5559,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
-    email: null
+    email: jeffkant@Me
     family_name: Kantor
     given_name: Jeffrey P.
     orcid: null
@@ -6432,7 +6438,7 @@ authors:
     affil:
     - NOIRLab
     altaffil: []
-    email: null
+    email: michellemiller.miller@Gmail
     family_name: Miller
     given_name: Michelle
     orcid: null
@@ -6584,7 +6590,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
-    email: null
+    email: fmunoz
     family_name: Mu\~noz Arancibia
     given_name: Freddy
     orcid: null
@@ -6819,7 +6825,7 @@ authors:
     affil:
     - NOIRLab
     altaffil: []
-    email: null
+    email: knut.olsen
     family_name: Olsen
     given_name: Knut
     orcid: 0000-0002-7134-8296
@@ -7303,7 +7309,7 @@ authors:
     affil:
     - Washington
     altaffil: []
-    email: null
+    email: reiss
     family_name: Reiss
     given_name: David J.
     orcid: null
@@ -8232,7 +8238,7 @@ authors:
     affil:
     - CIEMAT
     altaffil: []
-    email: null
+    email: laura.toribio
     family_name: Toribio San Cipriano
     given_name: Laura
     orcid: null
