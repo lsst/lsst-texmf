@@ -2886,8 +2886,8 @@ affiliations:
     address:
       city: Seattle
       country_code: USA
-      example_expanded: University of Washington, Dept.\ of Physics, Box 351580,
-        Seattle, WA 98195, USA
+      example_expanded: University of Washington, Dept.\ of Physics, Box 351580, Seattle,
+        WA 98195, USA
       postcode: '98195'
       state: WA
       street: P.O. Box 351580
@@ -3023,7 +3023,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
-    email: null
+    email: eacosta
     family_name: Acosta
     given_name: Emily
     orcid: 0009-0006-1601-3246
@@ -3396,7 +3396,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
-    email: null
+    email: ebechtol
     family_name: Bechtol
     given_name: Ellen
     orcid: null
@@ -3931,9 +3931,9 @@ authors:
     orcid: 0000-0002-3925-7802
   charlesemersong:
     affil:
-    - RubinObs
+    - AURA-T
     altaffil: []
-    email: null
+    email: glenaver@RubinObs
     family_name: Charles-Emerson
     given_name: Glenaver
     orcid: null
@@ -5185,7 +5185,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
-    email: null
+    email: jhoblitt
     family_name: Hoblitt
     given_name: Joshua
     orcid: 0000-0002-5292-5879
