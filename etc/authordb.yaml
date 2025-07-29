@@ -370,12 +370,12 @@ affiliations:
     address:
       city: Pittsburgh
       country_code: USA
-      example_expanded: McWilliams Center for Cosmology, Department of Physics, Carnegie
+      example_expanded: McWilliams Center for Cosmology \& Astrophysics, Department of Physics, Carnegie
         Mellon University, Pittsburgh, PA 15213, USA
       postcode: '15213'
       state: PA
       street: ''
-    department: McWilliams Center for Cosmology, Department of Physics
+    department: McWilliams Center for Cosmology \& Astrophysics, Department of Physics
     email: null
     institute: Carnegie Mellon University
     ror_id: 05x2bcf33
