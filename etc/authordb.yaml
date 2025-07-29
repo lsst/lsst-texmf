@@ -309,6 +309,7 @@ emails:
   gmail: gmail.com
   Harvard-CfA: cfa.harvard.edu
   IN2P3-APC: apc.in2p3.fr
+  IN2P3-APC-CEA: apc.in2p3.fr  
   IN2P3-CC: in2p3.fr
   IN2P3-CPPM: cppm.in2p3.fr
   IN2P3-IJCLAB: ijclab.in2p3.fr
@@ -318,6 +319,7 @@ emails:
   IN2P3-LPNHE: lpnhe.in2p3.fr
   IN2P3-LPSC: lpsc.in2p3.fr
   IN2P3-LUPM: lupm.in2p3.fr
+  INSU-AIM: cea.fr
   IPAC: ipac.caltech.edu
   LancasterU: lancaster.ac.uk
   LSST-list: lists.lsst.org
