@@ -903,7 +903,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "-t",
         "--tags",
-        help="""Space separated list of tags between quotes
+        help="""Space or comma-separated list of tags between quotes
                                 to use in selecting definitions.""",
     )
     parser.add_argument(
@@ -952,7 +952,7 @@ if __name__ == "__main__":
         exit(0)
 
     if tagstr:
-        utags.update(tagstr.split())
+        utags.update(re.split(r"[\s,]", tagstr))
 
     if doCheck:
         # For now load the glossary .. see if we get an excpetion
