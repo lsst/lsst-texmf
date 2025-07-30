@@ -361,6 +361,7 @@ def find_matches_combo(
                     line.startswith(r"\def")
                     or line.startswith(r"\newcommand")
                     or line.startswith(r"\renewcommand")
+                    or line.startswith(r"\documentclass")
                     or line.startswith("%")
                 ):
                     continue
