@@ -390,6 +390,13 @@ def find_matches_combo(
 
     matches = set(regex.findall(text))
 
+    # To prevent double matches where "LSST-DA" matches "LSST-DA" and then
+    # matches LSST and DA separately. Complication is that this code
+    # also receives glossary entries so "metric" and "metric value"
+    # so sort in reverse order by length.
+    for m in sorted(matches, key=len, reverse=True):
+        text = re.sub(rf"\b{re.escape(m)}\b", "", text)
+
     # Now look for all acronym-like strings in the text, defined as a
     # collection of 2 or more upper case characters with word boundaries
     # either side.
