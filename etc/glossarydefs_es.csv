@@ -264,7 +264,8 @@ DDN,Red de distribución de datos,
 DDOS,Denegación de servicio distribuido,
 DDP,"Productos de datos derivados (por ej., Rubin/Euclid)",
 DDS,Sistema de distribución de datos,
-DE,energía oscura,
+DE,energía oscura,Sci
+DE-AC02,Prefijo del número de contrato del Departamento de Energía,Gen
 DEC,Declinación,
 DECam,Cámara de energía oscura,
 DECaLS,Dark Energy Camera Legacy Survey [Estudio histórico con cámara de energía oscura],
