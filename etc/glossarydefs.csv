@@ -272,7 +272,8 @@ DDN,Data Delivery Network,Gen,,,A
 DDOS,Distributed Denial Of Service,IT Gen,,,A
 DDP,Derived Data Products (e.g. Rubin/Euclid),OPS,,,A
 DDS,Data Distribution System,TSSW,,,A
-DE,dark energy,TS,Document-12028,,A
+DE,dark energy,Sci,,,A
+DE-AC02,Department of Energy contract number prefix,Gen,,,A
 DEC,Declination,Gen,,,A
 DECam,Dark Energy Camera,Sci,,,A
 DECaLS,The Dark Energy Camera Legacy Survey,Sci,,,A
@@ -314,6 +315,7 @@ DNN,Deep Neural Network,Sci,,,A
 DNS,Domain Name Service,OPS,,,A
 DOE,Department of Energy,Gen,,,A
 DoF,Degree(s) of Freedom (also known as DOF),Gen,,,A
+DOF,Degree(s) of Freedom (also known as DoF),Gen,,,A
 DOI,Digital Object Identifier,DM OPS,,,A
 DOM,Document Object Model,Gen,,,A
 DoNM,Date of Next Meeting,Gen,,,A
@@ -344,7 +346,7 @@ DREAM,Dutch Rubin Enhanced Atmospheric Monitor,OPS,,,A
 DRP,Data Release Processing,LSST DM,,,A
 DRW,Damped Random Walk,Sci,,,A
 DS9,Deep Space 9 (specific astronomical data visualisation application; SAOImage),Gen,,,A
-DSFP,LSSTDA Data Science Fellowship Program,Gen,,,A
+DSFP,LSST-DA Data Science Fellowship Program,Gen,,,A
 DTN,Data Transfer Node,LSST DM,,,A
 DUNE,Deep Underground Neutrino Experiment,Sci,,,A
 Duo,2 factor authentication system,LSST DM,,,A
@@ -693,6 +695,7 @@ LSS,Large Scale Structure,Sci,,,A
 LSST,Legacy Survey of Space and Time (formerly Large Synoptic Survey Telescope),Gen,,,A
 LSSTC,LSST Discovery Alliance (formerly LSST Corporation),Adm,,,A
 LSSTDA,LSST Discovery Alliance,Adm,,,A
+LSST-DA,LSST Discovery Alliance,Adm,,,A
 LSSTCam,LSST Science Camera,CAM,,,A
 LSSTComCam,Rubin Commissioning Camera,CAM,,,A
 LSSTPO,LSST Project Office,Adm,,,A
@@ -1370,7 +1373,7 @@ Broker,"Software which receives and redistributes Alerts, and may also perform p
 Builder,Individuals who have accumulated 2 FTE years worth of employment/contributions to the LSST Project,Adm,,,G
 Business Manager,"The person responsible for all business activities of the LSST Project and the LSST Corporation; he or she serves as liaison to AURA CAS, develops and monitors contracts, and serves as the LSST Corporation Secretary",Adm,,,G
 Butler,"A middleware component for persisting and retrieving image datasets (raw or processed), calibration reference data, and catalogs",DM,"LDM-152, https://ldm-463.lsst.io/v/draft/index.html#id1",,G
-Buyer,"Includes the terms 'Buyer' 'subcontract administrator or officer' 'contracts administrator or officer' sub-award administrator, or any other LSSTDA authorized procurement official as used herein are inter-changeable",Adm,,,G
+Buyer,"Includes the terms 'Buyer' 'subcontract administrator or officer' 'contracts administrator or officer' sub-award administrator, or any other LSST-DA authorized procurement official as used herein are inter-changeable",Adm,,,G
 CA-FACTS,NSF Cooperative Agreement Financial & Administrative Terms and Conditions,Gen,,,G
 cadence,"The sequence of pointings, visit exposures, and exposure durations performed over the course of a survey",Sims Sci,,,G
 CalExp,"A particular type of Butler dataset that consists of an image corresponding to a single CCD, which has been characterized and calibrated. (A Butler term.)",DM,LDM-151,Calexp,G
@@ -1451,7 +1454,7 @@ DIASource,A DIASource is a detection with signal-to-noise ratio greater than 5 i
 Difference Image,"Refers to the result formed from the pixel-by-pixel difference of two images of the sky, after warping to the same pixel grid, scaling to the same photometric response, matching to the same PSF shape, and applying a correction for Differential Chromatic Refraction. The pixels in a difference thus formed should be zero (apart from noise) except for sources that are new, or have changed in brightness or position. In the LSST context, the difference is generally taken between a visit image and template. ",DM,"LDM-151, LSE-163",DiffIm,G
 Difference Image Analysis,"The detection and characterization of sources in the Difference Image that are above a configurable threshold, done as part of Alert Generation Pipeline",DM,"LDM-151, LSE-163","DIA, Difference Image Processing",G
 Differential Chromatic Refraction,"The refraction of incident light by Earth's atmosphere causes the apparent position of objects to be shifted, and the size of this shift depends on both the wavelength of the source and its airmass at the time of observation. DCR corrections are done as a part of DIA",DM,DMTN-017,DCR,G
-Director,"The person responsible for the overall conduct of the project; the LSST director is charged with ensuring that both the scientific goals and management constraints on the project are met. S/he is the principal public spokesperson for the project in all matters and represents the project to the scientific community, AURA, the member institutions of LSSTDA, and the funding agencies",Adm,,,G
+Director,"The person responsible for the overall conduct of the project; the LSST director is charged with ensuring that both the scientific goals and management constraints on the project are met. S/he is the principal public spokesperson for the project in all matters and represents the project to the scientific community, AURA, the member institutions of LSST-DA, and the funding agencies",Adm,,,G
 Docker,A system for packaging and distributing software using self-contained containers which may be run on any Linux system; \url{https://www.docker.com/},DM,,,G
 Document,Any object (in any application supported by DocuShare or design archives such as PDMWorks or GIT) that supports project management or records milestones and deliverables of the LSST Project,Adm,,,G
 Document Specialist,The person responsible for maintaining the Project's document archive (DocuShare) as well as providing editing and technical writing services. He or she also coordinates administrative support to the Project Management Office and the distributed Project team,Adm,,,G
@@ -1504,7 +1507,7 @@ Information Technology Services Committee,"Internal LSST Project Office committe
 Information Technology Systems Administrator,"The person responsible for maintaining the Project Office's servers, networks, and computing hardware; he or she also provides technical support to the Project Management Office and the distributed Project team",Adm,,,G
 Instance Catalog,"A catalog of astronomical sources containing source type, coordinates, brightnesses, and SEDs for use in creating simulated LSST images with PhoSim. Synonym with trim file",Sims,,,G
 interoperability,"the ability of systems or software to exchange and make use of information between them.",DM,,,G
-Institutional Member,"An organization such as an institute, observatory, university, or company committed to making an intellectual, financial, or other significant contribution to LSST operations or to preparing the scientific community to use the LSST dataset. They are members of the LSST Corporation and pay an annual membership fee in an amount established by the LSSTDA Board of Directors",Adm,,,G
+Institutional Member,"An organization such as an institute, observatory, university, or company committed to making an intellectual, financial, or other significant contribution to LSST operations or to preparing the scientific community to use the LSST dataset. They are members of the LSST Corporation and pay an annual membership fee in an amount established by the LSST-DA Board of Directors",Adm,,,G
 Interactive Data Language,"a programming language used for data analysis. Harris Geospatial \url{https://www.harrisgeospatial.com/Software-Technology/IDL}",DM,,IDL,G
 Instrument Signature Removal,"Instrument Signature Removal is a pipeline that applies calibration reference data in the course of raw data processing, to remove artifacts of the instrument or detector electronics, such as removal of overscan pixels, bias correction, and the application of a flat-field to correct for pixel-to-pixel variations in sensitivity",DM,LDM-151,ISR,G
 instrumental footprint,"The size and shape of a region on the sky that is covered by the field of view of an instrument, or part of an instrument, e.g., the LSST Camera, or ComCam, or a single LSST CCD.  Often represented by a geometric region defined in field-angle space",DM,,,G
@@ -1528,7 +1531,7 @@ Level 3 Data Product,Deprecated term; see User Generated Data Product,DM,LPM-231
 Level 3 Processing,Deprecated term; see User Generated Processing,DM,LPM-231,User Generated Processing,G
 LSST Camera,"3.2 Gigapixel camera and lens system build by SLAC to perform the Legacy Survey of Space and Time.",,,,G
 LSST Change Request,"document that proposes a change to a configuration item; after evaluation by the CCB and decision by the Project Manager, the change request is updated with the outcome, action items, and necessary notification",Adm,,,G
-LSST Corporation,"An Arizona 501(c)3 not-for-profit corporation formed in 2003 for the purpose of designing, constructing, and operating the LSST System. During design and development, the Corporation stewarded private funding used for such essential contributions as early site preparation, mirror construction, and early data management system development. During construction, LSSTDA will secure private operations funding from international affiliates and play a key role in preparing the scientific community to use the LSST dataset",Adm,,,G
+LSST Corporation,"An Arizona 501(c)3 not-for-profit corporation formed in 2003 for the purpose of designing, constructing, and operating the LSST System. During design and development, the Corporation stewarded private funding used for such essential contributions as early site preparation, mirror construction, and early data management system development. During construction, LSST-DA will secure private operations funding from international affiliates and play a key role in preparing the scientific community to use the LSST dataset",Adm,,,G
 LSST Project Office,Official name of the stand-alone AURA operating center responsible for execution of the LSST construction project under the NSF MREFC account,Adm,,,G
 LSST Science Pipelines,software used to perform the LSST data reduction pipelines.lsst.io,Adm,,,G
 "magnitude, Petrosian",A magnitude determined from a fit to a Petrosian brightness profile: Rp(r) = stuf f Appropriate for galaxies,Sci,,,G
@@ -1655,7 +1658,7 @@ seeing,"An astronomical term for characterizing the stability of the atmosphere,
 Sensor,"A sensor is a generic term for a light-sensitive detector, such as a CCD. For LSST, sensors consist of a 2-D array of roughly 4K x 4K pixels, which are mounted on a raft in a 3x3 mosaic. Each sensor is divided into 16 channels or amplifiers. The 9 sensors that make up a raft are numbered from ""0,0"" through ""2,2""",CAM,,,G
 shape,"In reference to a Source or Object, the shape is a functional characterization of its spatial intensity distribution, and the integral of the shape is the flux. Shape characterizations are a data product in the DIASource, DIAObject, Source, and Object catalogs",DM,,,G
 SHE Plans,"SHE plans are site-specific guidelines for safe working conditions. LSST expects that each collaborating organization and contractor has established safety programs to govern the specific activities at that location. LSST has a minimum expectation for the criteria established in these plans and expects all staff, permanent to the location or visiting, to follow these local procedures. When LSST specific sites are established the project will issue specific SHE plans for those locations",Adm,,,G
-Signature Authority,The individual designated by the LSSTDA policy as authorized to approve the use of funds from a specific account; he or she must approve each Purchase Requisition for the account listed on the Purchase Requisition,Adm,,,G
+Signature Authority,The individual designated by the LSST-DA policy as authorized to approve the use of funds from a specific account; he or she must approve each Purchase Requisition for the account listed on the Purchase Requisition,Adm,,,G
 Simonyi Survey Telescope,"The telescope at the Rubin Observatory that will perform the LSST (this refers to all physical components: the mirror, the mount assembly, etc.).",,,SST,G
 Simulations Lead,"The person who oversees the activities of the LSST simulations efforts (ImSim, OpSim, PhoSim, etc.). The Simulations Lead is part of the Systems Engineering group and reports to the Systems Engineering Manager",Sims Adm,,,G
 Single Visit Image,See CalExp,DM,,"SVI, CalExp",G

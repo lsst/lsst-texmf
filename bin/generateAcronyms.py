@@ -361,6 +361,7 @@ def find_matches_combo(
                     line.startswith(r"\def")
                     or line.startswith(r"\newcommand")
                     or line.startswith(r"\renewcommand")
+                    or line.startswith(r"\documentclass")
                     or line.startswith("%")
                 ):
                     continue
@@ -389,6 +390,13 @@ def find_matches_combo(
     regex = re.compile(pattern)
 
     matches = set(regex.findall(text))
+
+    # To prevent double matches where "LSST-DA" matches "LSST-DA" and then
+    # matches LSST and DA separately. Complication is that this code
+    # also receives glossary entries so "metric" and "metric value"
+    # so sort in reverse order by length.
+    for m in sorted(matches, key=len, reverse=True):
+        text = re.sub(rf"\b{re.escape(m)}\b", "", text)
 
     # Now look for all acronym-like strings in the text, defined as a
     # collection of 2 or more upper case characters with word boundaries
@@ -896,7 +904,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "-t",
         "--tags",
-        help="""Space separated list of tags between quotes
+        help="""Space or comma-separated list of tags between quotes
                                 to use in selecting definitions.""",
     )
     parser.add_argument(
@@ -945,7 +953,7 @@ if __name__ == "__main__":
         exit(0)
 
     if tagstr:
-        utags.update(tagstr.split())
+        utags.update(re.split(r"[\s,]", tagstr))
 
     if doCheck:
         # For now load the glossary .. see if we get an excpetion
