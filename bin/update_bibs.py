@@ -130,7 +130,7 @@ if __name__ == "__main__":
     # them. It probably shouldn't do that.
     lines = output.split("\n")
     for i, line in enumerate(lines):
-        if re.match(r"^\s*(url|doi) =", line):
+        if re.match(r"^\s*(adsurl|url|doi) =", line):
             lines[i] = line.replace("\\", "")
 
     print("\n".join(lines))
