@@ -75,16 +75,29 @@ def process_bib(bibdata: BibliographyData, token: str) -> BibliographyData:
 
     # ADS return all the bib entries as a single string.
     updated_bibdata = BibliographyData.from_string(data["export"], "bibtex")
+    retrieved = set(updated_bibdata.entries.keys())
 
     # Now re-attach these to the original.
+    missed: set[str] = set()
     for bibkey, bibcode in to_update.items():
         print(f"Replacing bibkey {bibkey} with data from {bibcode} ...", end="", file=sys.stderr)
         if updated := updated_bibdata.entries.get(bibcode):
             updated.key = bibkey  # Consistency.
             bibdata.entries[bibkey] = updated
             print("updated", file=sys.stderr)
+            retrieved.remove(bibcode)
         else:
             print("not found", file=sys.stderr)
+            missed.add(bibcode)
+
+    if retrieved:
+        print("The following bibcodes were retrieved but not associated:", file=sys.stderr)
+        for bibcode in sorted(retrieved):
+            print(f"- {bibcode}", file=sys.stderr)
+    if missed:
+        print("The following bibcodes were requested but not found in results:", file=sys.stderr)
+        for bibcode in sorted(missed):
+            print(f"- {bibcode}", file=sys.stderr)
 
     return bibdata
 
