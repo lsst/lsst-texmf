@@ -1148,6 +1148,7 @@ No actions have been identified.}
 \def\nat{Nature}           % Nature
 \def\apjl{ApJ}             % Astrophysical Journal, Letters
 \def\icarus{Icarus}        % Icarus
+\def\apss{Ap\&SS}          % Astrophysics and Space Science
 \def\prd{Phys.~Rev.~D}     % Physical Review D
 \def\physrep{Phys.~Rep.}   % Physics Reports
 \def\pasp{PASP}            % Publications of the Astronomical Society of the Pacific
