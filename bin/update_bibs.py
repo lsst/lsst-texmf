@@ -13,6 +13,7 @@ entries, and re-requests them from ADS.
 import argparse
 import json
 import posixpath
+import re
 import sys
 import urllib.parse
 
@@ -104,4 +105,19 @@ if __name__ == "__main__":
     token = args.token.strip()
     updated = process_bib(this_bib, token)
 
-    print(updated.to_string("bibtex"))
+    output = updated.to_string("bibtex")
+
+    # pybtex is currently broken such that it escapes escapes:
+    # https://bitbucket.org/pybtex-devs/pybtex/issues/153/backslashes-accumulate-when-saving-loading
+    # Remove all the escaped \ characters (and assume that no titles have
+    # them).
+    output = output.replace("\\\\", "\\")
+
+    # URL and DOI fields sometimes have % or _ and pybtex escapes
+    # them. It probably shouldn't do that.
+    lines = output.split("\n")
+    for i, line in enumerate(lines):
+        if re.match(r"^\s*(url|doi) =", line):
+            lines[i] = line.replace("\\", "")
+
+    print("\n".join(lines))
