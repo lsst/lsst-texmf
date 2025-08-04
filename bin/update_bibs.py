@@ -79,20 +79,23 @@ def process_bib(bibdata: BibliographyData, token: str) -> BibliographyData:
 
     # Now re-attach these to the original.
     missed: set[str] = set()
+    handled: set[str] = set()
     for bibkey, bibcode in to_update.items():
         print(f"Replacing bibkey {bibkey} with data from {bibcode} ...", end="", file=sys.stderr)
         if updated := updated_bibdata.entries.get(bibcode):
             updated.key = bibkey  # Consistency.
             bibdata.entries[bibkey] = updated
             print("updated", file=sys.stderr)
-            retrieved.remove(bibcode)
+            # A single bibcode may be used multiple times with different
+            # bibkeys, so we need to track that.
+            handled.add(bibcode)
         else:
             print("not found", file=sys.stderr)
             missed.add(bibcode)
 
-    if retrieved:
+    if unhandled := (retrieved - handled):
         print("The following bibcodes were retrieved but not associated:", file=sys.stderr)
-        for bibcode in sorted(retrieved):
+        for bibcode in sorted(unhandled):
             print(f"- {bibcode}", file=sys.stderr)
     if missed:
         print("The following bibcodes were requested but not found in results:", file=sys.stderr)
@@ -108,17 +111,38 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=description, formatter_class=formatter)
 
     parser.add_argument("bibfile", help="Name of file bib file to read", nargs="?")
-    parser.add_argument("-t", "--token", default="", help="""Token for accessing ADS API""")
+    parser.add_argument(
+        "-t",
+        "--token",
+        default="",
+        help="""Token for accessing ADS API. Without a token the bib content is
+        output without querying ADS but is sorted. You can get your token from
+        ADS at https://ui.adsabs.harvard.edu/user/settings/token""",
+    )
     args = parser.parse_args()
 
     with open(args.bibfile) as fd:
+        # Read any prologue comments. Pybtex will ignore them but we want
+        # to include them in the output.
+        prologue = []
+        for line in fd:
+            if line.startswith("@"):
+                # This is the start of the first real entry, so stop reading
+                # comments.
+                break
+            prologue.append(line.strip())
+        # Rewind the file to the start of the first non-comment line.
+        fd.seek(0)
         this_bib = BibliographyData.from_string(fd.read(), "bibtex")
 
     # If no token is given, assume dry-run.
     token = args.token.strip()
     updated = process_bib(this_bib, token)
 
-    output = updated.to_string("bibtex")
+    # Sort the entries by bibkey.
+    updated = BibliographyData(entries=sorted(updated.entries.items()))
+
+    output = "\n".join(prologue) + "\n\n" + updated.to_string("bibtex")
 
     # pybtex is currently broken such that it escapes escapes:
     # https://bitbucket.org/pybtex-devs/pybtex/issues/153/backslashes-accumulate-when-saving-loading
