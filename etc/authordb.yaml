@@ -2921,6 +2921,19 @@ affiliations:
     email: wisc.edu
     institute: University of Wisconsin-Madison
     ror_id: 01y2jtd41
+  WisconsinMadisonIceCube:
+    address:
+      city: Madison
+      country_code: USA
+      example_expanded: Wisconsin IceCube Particle Astrophysics Center, University of Wisconsin—Madison,
+        Madison, WI 53706, USA
+      postcode: '53706'
+      state: WI
+      street: ''
+    department: Wisconsin IceCube Particle Astrophysics Center
+    email: wisc.edu
+    institute: University of Wisconsin-Madison
+    ror_id: 01y2jtd41
   Yale:
     address:
       city: New Haven
@@ -3394,12 +3407,12 @@ authors:
     orcid: null
   bechtole:
     affil:
-    - RubinObs
+    - WisconsinMadisonIceCube
     altaffil: []
-    email: ebechtol@WisconsinMadison
+    email: ebechtol
     family_name: Bechtol
     given_name: Ellen
-    orcid: null
+    orcid: 0009-0001-6159-2930
   bechtolk:
     affil:
     - RubinObs
