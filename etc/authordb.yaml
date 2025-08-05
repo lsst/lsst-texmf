@@ -2469,6 +2469,18 @@ affiliations:
     email: null
     institute: TMT International Observatory
     ror_id: 003s9de04
+  TorVergata:
+    address:
+      city: Rome
+      country_code: Italy
+      example_expanded: Universitá degli Studi di Roma Tor Vergata. Rome, Italy.
+      postcode: null
+      state: null
+      street: null
+    department: null
+    email: null
+    institute: Universitá degli Studi di Roma Tor Vergata
+    ror_id: null
   TTU:
     address:
       city: Lubbock
@@ -2583,6 +2595,18 @@ affiliations:
     email: null
     institute: Universidad Aut\'onoma de Madrid
     ror_id: 01cby8j38
+  UCA:
+    address:
+      city: Nice
+      country_code: France
+      example_expanded: Université Côte d'Azur, Laboratoire Lagrange, Observatoire de la Côte d'Azur. Nice, France.
+      postcode: null
+      state: null
+      street: null
+    department: Laboratoire Lagrange, Observatoire de la Côte d'Azur
+    email: etu.univ-cotedazur.fr
+    institute: Université Côte d'Azur
+    ror_id: null
   UCDavis:
     address:
       city: Davis
@@ -3832,12 +3856,14 @@ authors:
     orcid: null
   calderonj:
     affil:
-    - UdeA
+    - TorVergata
+    - UCA 
+    - UdeA 
     altaffil: []
-    email: null
+    email: jeronimo.calderon-gomez@etu.univ-cotedazur.fr
     family_name: Calderon
     given_name: Jer\'onimo
-    orcid: null
+    orcid: 0000-0002-2831-8497
   callahann:
     affil:
     - Oxford
@@ -4913,7 +4939,7 @@ authors:
     email: lina.giraldom
     family_name: Giraldo Murillo
     given_name: Lina M.
-    orcid: null
+    orcid: 0009-0008-8128-9665
   giroe:
     affil:
     - INAF-OAT
