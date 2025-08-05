@@ -627,6 +627,59 @@ class ADASS(AuthorTextGenerator):
         )
 
 
+class MNRAS(AuthorTextGenerator):
+    r"""Generate MNRAS format.
+
+    Complication for MNRAS is that it expects the author to be responsible
+    for spreading the authors across multiple lines.
+
+    Example output:
+
+    \author[K. T. Smith et al.]{
+    Keith T. Smith,$^{1}$
+    A. N. Other,$^{2}$
+    and Third Author$^{2,3}$
+    \\
+    $^{1}$Affiliation 1\\
+    $^{2}$Affiliation 2\\
+    $^{3}$Affiliation 3}
+    """
+
+    mode = "mnras"
+
+    def generate(self, header: bool = True) -> str:
+        affil_to_number = self.number_affiliations()
+        n_authors = len(self.authors)
+        authors = []
+        for i, author in enumerate(self.authors):
+            final_author = i == len(self.authors) - 1
+            sep = "," if not final_author else ""
+
+            affil_numbers = [str(affil_to_number[affil]) for affil in author.affiliations]
+            author_text = f"{author.full_latex_name}{sep}$^{{{','.join(affil_numbers)}}}$"
+            if n_authors > 1 and final_author:
+                author_text = "and " + author_text
+            authors.append(author_text)
+
+        short_author = self.authors[0].initials_latex_name
+        if len(self.authors) == 2:
+            short_author = self.authors[0].family_name + " and " + self.authors[1].family_name
+        elif len(self.authors) > 2:
+            short_author += " et al."
+
+        affiliations = []
+        for affil, number in affil_to_number.items():
+            affiliations.append(f"$^{number}${affil.get_full_address_with_institute()}")
+        affil_text = "\\\\\n".join(affiliations)
+
+        return f"""{self.get_header() if header else ""}\\author[{short_author}]{{
+{"\n".join(authors)}
+\\\\
+{affil_text}
+}}
+"""
+
+
 def dump_csvall(factory: AuthorFactory) -> None:
     """Generate CSV of ALL authors for easier lookup of ID .
     Authorid, Name, Institution id
@@ -666,7 +719,7 @@ if __name__ == "__main__":
 
     # this should probably be a dict with the value of affil_cmd
     # the keys could then be passed to the arg parser.
-    OUTPUT_MODES = ["aas", "aas7", "spie", "adass", "arxiv", "ascom", "webofc", "lsstdoc", "csvall"]
+    OUTPUT_MODES = ["aas", "aas7", "spie", "adass", "arxiv", "ascom", "webofc", "lsstdoc", "csvall", "mnras"]
 
     description = __doc__
     formatter = argparse.RawDescriptionHelpFormatter
@@ -711,6 +764,7 @@ if __name__ == "__main__":
         "webofc": WebOfC,
         "ascom": ASCOM,
         "adass": ADASS,
+        "mnras": MNRAS,
     }
     if args.mode not in generator_lut:
         raise RuntimeError(f"Unknown generator mode: {args.mode}")

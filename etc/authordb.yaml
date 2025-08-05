@@ -3520,6 +3520,14 @@ authors:
     family_name: Biswas
     given_name: Rahul
     orcid: null
+  blancg:
+    affil:
+    - IN2P3-IJCLAB
+    altaffil: []
+    email: guillaume.blanc
+    family_name: Blanc
+    given_name: Guillaume
+    orcid: null
   blandfordrd:
     affil:
     - SLAC-Kavli
@@ -4230,6 +4238,14 @@ authors:
     email: null
     family_name: Dalcanton
     given_name: Julianne
+    orcid: null
+  dalypn:
+    affil:
+    - RubinObs
+    altaffil: []
+    email: null
+    family_name: Daly
+    given_name: Phil N.
     orcid: null
   danielis:
     affil:
