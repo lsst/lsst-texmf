@@ -2480,7 +2480,7 @@ affiliations:
     department: null
     email: null
     institute: Universitá degli Studi di Roma Tor Vergata
-    ror_id: null
+    ror_id: 02p77k626
   TTU:
     address:
       city: Lubbock
@@ -2606,7 +2606,7 @@ affiliations:
     department: Laboratoire Lagrange, Observatoire de la Côte d'Azur
     email: etu.univ-cotedazur.fr
     institute: Université Côte d'Azur
-    ror_id: null
+    ror_id: 019tgvf94
   UCDavis:
     address:
       city: Davis
@@ -2723,7 +2723,7 @@ affiliations:
     department: Instituto de F\'isica
     email: udea.edu.co
     institute: Universidad de Antioquia
-    ror_id: null
+    ror_id: 03bp5hc83
   UNAM:
     address:
       city: null
