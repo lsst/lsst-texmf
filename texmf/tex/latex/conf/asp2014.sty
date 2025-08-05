@@ -116,10 +116,10 @@
 \newcommand{\aspcoverinfo}[1]{\gdef\@aspcoverinfo{#1}}
 \newcommand{\blurb}{\@aspcoverinfo}
 % Usage in main file:
-%\aspcoverinfo{\emph{Celestial Tryst:}  The moon, Venus, and Jupiter 
-%   in the evening sky from the coastline south of Pacifica, California 
-%   on November 30, 2008.\\\mbox{}\\Photographed by James Manning, the 
-%   Executive Director of the Astronomical Society of the Pacific.} % In 
+%\aspcoverinfo{\emph{Celestial Tryst:}  The moon, Venus, and Jupiter
+%   in the evening sky from the coastline south of Pacifica, California
+%   on November 30, 2008.\\\mbox{}\\Photographed by James Manning, the
+%   Executive Director of the Astronomical Society of the Pacific.} % In
 %   Mixed Case (Initial Caps)
 
 % Editors:  Please be sure to obtain permission from the author and from the publisher if previously published.
@@ -239,8 +239,8 @@
 % Define the organization (ASP), genre (conference proceedings),
 % version number (version 1.0) and date of version (1 January 2004) - all of
 % which will appear in the .log file:
-\def\revtex@ver{2.0}		
-\def\revtex@date{1 March 2009}	
+\def\revtex@ver{2.0}
+\def\revtex@date{1 March 2009}
 \def\revtex@org{ASP}
 \def\revtex@jnl{}
 \def\revtex@genre{conference proceedings}
@@ -303,7 +303,7 @@
 \providecommand{\mainmatter}{%
   \cleardoublepage
   \@mainmattertrue
-  %\label{aspendfrontmatter} 
+  %\label{aspendfrontmatter}
   \typeout{(ASP) Front Matter End: \arabic{page}}
   \pagenumbering{arabic}
   \parindent=2em
@@ -350,10 +350,10 @@
 
 % Order of information in slug:
 \def\@slug{{\tabcolsep\z@\begin{tabular}[t]{l}\voltitle\\
-%\@journalname, Vol.\ \@jourvol, \cpr@year\\ 
+%\@journalname, Vol.\ \@jourvol, \cpr@year\\
 %LR: 4/13/07 changed to insert copyright symbol
-%\@journalname, Vol.\ \@jourvol\\ \vol@author , eds.\\ {\raisebox{1.5pt}{\tiny\copyright}}\hspace{-1pt}\ \cpr@year\ Astronomical Society of the Pacific 
-\@journalname, Vol.\ \volume\\ \volauthor\\ {\raisebox{1.5pt}{\tiny\copyright}}\hspace{-1pt}\ \cpryear\ Astronomical Society of the Pacific 
+%\@journalname, Vol.\ \@jourvol\\ \vol@author , eds.\\ {\raisebox{1.5pt}{\tiny\copyright}}\hspace{-1pt}\ \cpr@year\ Astronomical Society of the Pacific
+\@journalname, Vol.\ \volume\\ \volauthor\\ {\raisebox{1.5pt}{\tiny\copyright}}\hspace{-1pt}\ \cpryear\ Astronomical Society of the Pacific
 \end{tabular}}
 }
 
@@ -481,12 +481,12 @@
   \@tempskipa #3\relax
   \ifdim \@tempskipa>\z@
     \begingroup #4\@hangfrom{\hskip #1}{\interlinepenalty \@M \sec@upcase{#5}\par}\endgroup
-  \else 
+  \else
     \def\@svsechd{#4\hskip #1\relax #5.}
   \fi
   \@xsect{#3}
 }%
-  
+
 \def\acknowledgments{%
   \@startsection{paragraph}{4}{1em}{1ex plus .5ex minus .5ex}{-1em}{\bf}{\sec@upcase{Acknowledgments}}
 }%
@@ -494,7 +494,7 @@
 \usepackage{natbib}
 \bibpunct[, ]{(}{)}{;}{u}{}{,}
 
-\let\acknowledgements=\acknowledgments			
+\let\acknowledgements=\acknowledgments
 \def\qanda@heading{Discussion}
 \newif\if@firstquestion \@firstquestiontrue
 \newenvironment{question}[1]{\if@firstquestion
@@ -531,39 +531,39 @@
 {\csname b@\@citeb\endcsname}}}{#1}}
 \let\jnl@style=\rm
 \def\ref@jnl#1{{\jnl@style#1\/}}
-\def\aj{\ref@jnl{AJ}}			
-\def\araa{\ref@jnl{ARA\&A}}		
-\def\apj{\ref@jnl{ApJ}}			
-\def\apjl{\ref@jnl{ApJ}}		
-\def\apjs{\ref@jnl{ApJS}}		
-\def\ao{\ref@jnl{Appl.Optics}}		
-\def\apss{\ref@jnl{Ap\&SS}}		
-\def\aap{\ref@jnl{A\&A}}		
-\def\aapr{\ref@jnl{A\&A~Rev.}}		
-\def\aaps{\ref@jnl{A\&AS}}		
+\def\aj{\ref@jnl{AJ}}
+\def\araa{\ref@jnl{ARA\&A}}
+\def\apj{\ref@jnl{ApJ}}
+\def\apjl{\ref@jnl{ApJ}}
+\def\apjs{\ref@jnl{ApJS}}
+\def\ao{\ref@jnl{Appl.Optics}}
+\def\apss{\ref@jnl{Ap\&SS}}
+\def\aap{\ref@jnl{A\&A}}
+\def\aapr{\ref@jnl{A\&A~Rev.}}
+\def\aaps{\ref@jnl{A\&AS}}
 %LR: 4/13/07 added defintion for ASP Conf. Ser. citation
 \def\aspcs{\ref@jnl{ASP Conf.~Ser.}}
-\def\azh{\ref@jnl{AZh}}			
-\def\baas{\ref@jnl{BAAS}}		
+\def\azh{\ref@jnl{AZh}}
+\def\baas{\ref@jnl{BAAS}}
 \def\ion#1#2{{\rm #1}~{\sc #2}}
-\def\jrasc{\ref@jnl{JRASC}}		
-\def\memras{\ref@jnl{MmRAS}}		
+\def\jrasc{\ref@jnl{JRASC}}
+\def\memras{\ref@jnl{MmRAS}}
 \def\mnras{\ref@jnl{MNRAS}}
-\def\nat{\ref@jnl{Nat}}		
-\def\pra{\ref@jnl{Phys.Rev.A}}		
-\def\prb{\ref@jnl{Phys.Rev.B}}		
-\def\prc{\ref@jnl{Phys.Rev.C}}		
-\def\prd{\ref@jnl{Phys.Rev.D}}		
-\def\prl{\ref@jnl{Phys.Rev.Lett}}	
-\def\pasp{\ref@jnl{PASP}}		
-\def\pasj{\ref@jnl{PASJ}}		
+\def\nat{\ref@jnl{Nat}}
+\def\pra{\ref@jnl{Phys.Rev.A}}
+\def\prb{\ref@jnl{Phys.Rev.B}}
+\def\prc{\ref@jnl{Phys.Rev.C}}
+\def\prd{\ref@jnl{Phys.Rev.D}}
+\def\prl{\ref@jnl{Phys.Rev.Lett}}
+\def\pasp{\ref@jnl{PASP}}
+\def\pasj{\ref@jnl{PASJ}}
 \def\qjras{\ref@jnl{QJRAS}}
-\def\science{\ref@jnl{Sci}}		
-\def\skytel{\ref@jnl{S\&T}}		
-\def\solphys{\ref@jnl{Solar~Phys.}}	
-\def\sovast{\ref@jnl{Soviet~Ast.}}	
-\def\ssr{\ref@jnl{Space~Sci.Rev.}}	
-\def\zap{\ref@jnl{ZAp}}			
+\def\science{\ref@jnl{Sci}}
+\def\skytel{\ref@jnl{S\&T}}
+\def\solphys{\ref@jnl{Solar~Phys.}}
+\def\sovast{\ref@jnl{Soviet~Ast.}}
+\def\ssr{\ref@jnl{Space~Sci.Rev.}}
+\def\zap{\ref@jnl{ZAp}}
 \let\astap=\aap
 \let\apjlett=\apjl
 \let\apjsupp=\apjs
@@ -584,29 +584,29 @@
 \def\farcs{\hbox{$.\!\!^{\prime\prime}$}}
 \def\fp{\hbox{$.\!\!^{\scriptscriptstyle\rm p}$}}
 \def\micron{\hbox{$\mu$m}}
-\def\onehalf{\hbox{$\,^1\!/_2$}}	
+\def\onehalf{\hbox{$\,^1\!/_2$}}
 \def\onethird{\hbox{$\,^1\!/_3$}}
 \def\twothirds{\hbox{$\,^2\!/_3$}}
 \def\onequarter{\hbox{$\,^1\!/_4$}}
 \def\threequarters{\hbox{$\,^3\!/_4$}}
-\def\ubv{\hbox{$U\!BV$}}		
-\def\ubvr{\hbox{$U\!BV\!R$}}		
-\def\ubvri{\hbox{$U\!BV\!RI$}}		
-\def\ubvrij{\hbox{$U\!BV\!RI\!J$}}		
-\def\ubvrijh{\hbox{$U\!BV\!RI\!J\!H$}}		
-\def\ubvrijhk{\hbox{$U\!BV\!RI\!J\!H\!K$}}		
-\def\ub{\hbox{$U\!-\!B$}}		
-\def\bv{\hbox{$B\!-\!V$}}		
-\def\vr{\hbox{$V\!-\!R$}}		
-\def\ur{\hbox{$U\!-\!R$}}		
+\def\ubv{\hbox{$U\!BV$}}
+\def\ubvr{\hbox{$U\!BV\!R$}}
+\def\ubvri{\hbox{$U\!BV\!RI$}}
+\def\ubvrij{\hbox{$U\!BV\!RI\!J$}}
+\def\ubvrijh{\hbox{$U\!BV\!RI\!J\!H$}}
+\def\ubvrijhk{\hbox{$U\!BV\!RI\!J\!H\!K$}}
+\def\ub{\hbox{$U\!-\!B$}}
+\def\bv{\hbox{$B\!-\!V$}}
+\def\vr{\hbox{$V\!-\!R$}}
+\def\ur{\hbox{$U\!-\!R$}}
 \newcount\lecurrentfam
 \def\LaTeX{\lecurrentfam=\the\fam \leavevmode L\raise.42ex
 \hbox{$\fam\lecurrentfam\scriptstyle\kern-.3em A$}\kern-.15em\TeX}
 %\def\plotone#1{\centering \leavevmode
 %\epsfxsize=.95\textwidth \epsfbox{#1}}
-%%NEXT 6 LINES ADDED BY LISA ROPER 1/1/08, TAKEN FROM ADASS V ADAPTATION BY J. BARNES, 7/30/95 
+%%NEXT 6 LINES ADDED BY LISA ROPER 1/1/08, TAKEN FROM ADASS V ADAPTATION BY J. BARNES, 7/30/95
 %%found at iraf.noao.edu/iraf/ftp/iraf/conf/adass-95/proc/aspconf.doc,
-%%modified in adassconf2006.sty in ASPCS Vol. 376 
+%%modified in adassconf2006.sty in ASPCS Vol. 376
 \@ifundefined{epsfbox}{\@input{epsf.sty}}{\relax}
 \def\eps@scaling{.95}
 
@@ -615,13 +615,13 @@
 }%
 
 \newcommand{\plotone}[2][width=.95\textwidth]{%
-  \centering 
-  \leavevmode  
+  \centering
+  \leavevmode
   \includegraphics[#1]{#2}
 }%
 
 \newcommand{\plottwo}[2]{%
-  \centering 
+  \centering
   \leavevmode
   \includegraphics[width=.45\textwidth]{#1}%
   \hfil
@@ -629,17 +629,17 @@
 }%
 
 \newcommand{\plotthree}[3]{%3
-  \centering 
-  \leavevmode  
-  \includegraphics[width=0.3\textwidth]{#1}% 
+  \centering
+  \leavevmode
+  \includegraphics[width=0.3\textwidth]{#1}%
   \hfil
   \includegraphics[width=0.3\textwidth]{#2}%
-  \hfil 
-  \includegraphics[width=0.3\textwidth]{#3}% 
+  \hfil
+  \includegraphics[width=0.3\textwidth]{#3}%
 }%
 
 \newcommand{\plotfour}[4]{%
-  \centering 
+  \centering
   \leavevmode
   \includegraphics[width=.45\textwidth]{#1}%
   \hfil
@@ -659,22 +659,22 @@
 
 \newif\if@finalstyle \@finalstyletrue
 \if@finalstyle
-  \ps@myheadings		
-  \let\ps@title=\ps@paspcstitle	
+  \ps@myheadings
+  \let\ps@title=\ps@paspcstitle
 \else
-  \ps@plain			
-  \let\ps@title=\ps@plain	
+  \ps@plain
+  \let\ps@title=\ps@plain
 \fi%
 \ds@twoside
 
 %\renewcommand{\cleardoublepage}{%
 %  \clearpage
-%  \if@twoside 
+%  \if@twoside
 %  \ifodd \c@page
-%  \else% 
-%    \hbox{}% 
-%    \thispagestyle{empty} 
-%    \newpage% 
+%  \else%
+%    \hbox{}%
+%    \thispagestyle{empty}
+%    \newpage%
 %    \if@twocolumn
 %      \hbox{}
 %      \newpage
@@ -758,11 +758,11 @@
   {\leftskip #2\relax \rightskip \@tocrmarg
    \parindent\z@\relax\@afterindenttrue
    \interlinepenalty\@M
-   \leavevmode 
+   \leavevmode
    \@tempdimb\textwidth \advance\@tempdimb by-#2
    \advance\@tempdimb by-\@tocrmarg
    \parbox{\@tempdimb}{\pretolerance=10000\raggedright\small\sl#3}\par}}
-   
+
 \newcounter{tocpart}
 \newcounter{tocsect}[tocpart]
 \def\sectline#1{\stepcounter{tocsect}\vskip 3.5ex
@@ -1021,11 +1021,11 @@
 
 % Convenient macro for preparing main matter
 \newcommand{\preparemainmatter}{%
-  \textwidth=5.25in 
-  \textheight=8.3in 
-  \headheight=18pt 
-  \headsep=18pt 
-  \topmargin=0in 
+  \textwidth=5.25in
+  \textheight=8.3in
+  \headheight=18pt
+  \headsep=18pt
+  \topmargin=0in
   \footskip=.25in
 }%
 
@@ -1167,8 +1167,8 @@
         \fi%
       \end{figure}
     \end{landscape}
-  \end{center} 
-  \vfill 
+  \end{center}
+  \vfill
   \pagebreak
 }%
 
@@ -1205,8 +1205,8 @@
       \fi%
     \end{figure}
     \end{landscape}
-  \end{center} 
-  \vfill 
+  \end{center}
+  \vfill
   \pagebreak
 }%
 
@@ -1218,7 +1218,7 @@
   \end{figure}
   \begin{center}
     \small{#2}%
-  \end{center} 
+  \end{center}
 }%
 
 % For including a full page image
@@ -1233,9 +1233,9 @@
     \plotone[#1]{#2}%
   \end{figure}
   \begin{center}
-    \small{#3}% 
-  \end{center} 
-  \vfill 
+    \small{#3}%
+  \end{center}
+  \vfill
   \pagebreak
 }%
 
@@ -1253,8 +1253,8 @@
       \noindent
       \small{#3}%
     \end{landscape}
-  \end{center} 
-  \vfill 
+  \end{center}
+  \vfill
   \pagebreak
 }%
 
@@ -1268,9 +1268,9 @@
     \plotone[#1]{#2}
   \begin{center}
     \small{#3}%
-  \end{center} 
+  \end{center}
   \end{figure}
-  \vfill 
+  \vfill
 }%
 
 % For simplifying table of contents and file include
@@ -1292,7 +1292,7 @@
 		\typeout{(ASP) Missing file: #1}
 	\else
 		\include{#4}\last
-		\typeout{(ASP) Entry End: #1|#2|\arabic{page}|\jobname}		
+		\typeout{(ASP) Entry End: #1|#2|\arabic{page}|\jobname}
 	\fi%
 }%
 
@@ -1315,12 +1315,12 @@
 % For simplifying table of contents and including unnumbered labels
 % Syntax:  \tocinsertlabel{vspace}{Label}
 \newcommand{\tocinsertlabel}[2][0in]{%
-	  \addtocontents{toc}{\vspace{#1}}	
+	  \addtocontents{toc}{\vspace{#1}}
 		\addtocontents{toc}{\protect\unpartline{#2}}
 }%
 
 \newcommand{\tocinsertvspace}[1]{%
-	  \addtocontents{toc}{\vspace{#1}}	
+	  \addtocontents{toc}{\vspace{#1}}
 }%
 
 % For simplifying table of contents and including page breaks

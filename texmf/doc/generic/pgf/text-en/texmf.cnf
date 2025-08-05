@@ -1,31 +1,31 @@
 % Part 3: Array and other sizes for TeX (and Metafont and MetaPost).
-% 
+%
 % If you want to change some of these sizes only for a certain TeX
 % variant, the usual dot notation works, e.g.,
 % main_memory.hugetex = 20000000
-% 
+%
 % If a change here appears to be ignored, try redumping the format file
 % with fmtutil-sys.
 
 % Memory. Must be less than 8,000,000 total.
-% 
+%
 % main_memory is relevant only to initex, extra_mem_* only to non-ini.
 % Thus, have to redump the .fmt file after changing main_memory; to add
 % to existing fmt files, increase extra_mem_*.  (To get an idea of how
 % much, try \tracingstats=2 in your TeX source file;
 % web2c/tests/memtest.tex might also be interesting.)
-% 
+%
 % To increase space for boxes (as might be needed by, e.g., PiCTeX),
 % increase extra_mem_bot.
-% 
+%
 % For some xy-pic samples, you may need as much as 700000 words of memory.
 % For the vast majority of documents, 60000 or less will do.
-% 
+%
 main_memory = 9000000 % words of inimemory available; also applies to inimf&mp
 extra_mem_top = 6000000     % extra high memory for chars, tokens, etc.
 extra_mem_bot = 6000000     % extra low memory for boxes, glue, breakpoints, etc.
 
-% Words of font info for TeX (total size of all TFM files, approximately). 
+% Words of font info for TeX (total size of all TFM files, approximately).
 % Must be >= 20000 and <= 4000000 (without tex.ch changes).
 %font_mem_size = 1200000
 
@@ -57,7 +57,7 @@ pool_size = 3850000
 % the sources), but we don't need that much.  The value here suffices
 % for all known free hyphenation patterns to be loaded simultaneously
 % (as TeX Live does).
-% 
+%
 %trie_size = 400000
 
 %hyph_size = 8191        % prime number of hyphenation exceptions, >610, <32767.

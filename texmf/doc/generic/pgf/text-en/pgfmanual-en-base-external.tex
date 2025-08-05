@@ -42,7 +42,7 @@ employ the first method of image-inclusion, nevertheless:
 \item Some users, especially journal editors, may not be able to
   process files that contain \pgfname\ commands -- for the simple
   reason that the systems of many publishing houses do not have
-  \pgfname\ installed. 
+  \pgfname\ installed.
 \end{enumerate}
 
 In both cases, the solution is to ``extract'' or ``externalize''
@@ -54,7 +54,7 @@ first method.
 Extracting a graphic from a file is not as easy as it may sound at
 first since \TeX\ cannot write parts of its output into different
 files and a bit of trickery is needed. The following macros
-simplify the workflow: 
+simplify the workflow:
 
 \begin{enumerate}
 \item You have to tell \pgfname\ which files will be used for which
@@ -119,7 +119,7 @@ As we see in Figure~\ref{fig1}, the world is flat.
     current backend driver (so |pdf| or |jpg| if you use |pdftex|,
     |eps| if you use |dvips|, and so on). In this case, both this
     command and the |\endpgfgraphicnamed| command simply have no
-    effect. 
+    effect.
   \item A more complex situation arises when a graphic file named
     \meta{file name  prefix}|.|\meta{suffix} \emph{does} exist. In
     this case, this graphic file is included using the
@@ -200,13 +200,13 @@ The following things will now happen:
   Note that, typically, \meta{everything} will contain just a single
   |{tikzpicture}| or |{pgfpicture}| environment. However, this need
   not be the case, you use, say, a |{pspicture}| environment as
-  \meta{everything} or even just some normal \TeX-text.  
+  \meta{everything} or even just some normal \TeX-text.
 \item At the |\endpgfgraphicnamed|, the box \emph{is} shipped out
   using the original |\shipout| command. Thus, unlike everything else,
   the contents of the graphic is made part of the output.
 \item When the box containing the graphic is shipped out, the paper
   size is modified such that it exactly equal to the height and width
-  of the box. 
+  of the box.
 \end{enumerate}
 
 The net effect of everything described above is that the two
@@ -255,7 +255,7 @@ way: You input the file |pgfexternal.tex|.
 
   Since |\beginpgfgraphicnamed| does not do macro expansion as it
   searches for |\endpgfgraphicnamed|, it is not necessary to actually
-  include the packages necessary for \emph{creating} the graphics. 
+  include the packages necessary for \emph{creating} the graphics.
   So the idea is that you comment out things like |\usepackage{tikz}|
   and instead say |\input pgfexternal.tex|.
 
@@ -265,7 +265,7 @@ way: You input the file |pgfexternal.tex|.
 \end{codeexample}
 
   Instead of |\input pgfexternal.tex| you could also include this line
-  in your main file. 
+  in your main file.
 \end{filedescription}
 
 As a final remark, note that the |baseline| option does not work directly
@@ -292,8 +292,8 @@ but it can be used in the same way as |pgfexternal.tex|.
 \end{codeexample}
 	Do not forget the |.code| here which redefines the command.
 
-	One application could be image externalization and bounding box restrictions: 
-	As far as I know, a |.pdf| graphics with restricted bounding box 
+	One application could be image externalization and bounding box restrictions:
+	As far as I know, a |.pdf| graphics with restricted bounding box
 	is always cropped (which is not always desired). One solution could be to use |latex| and |dvips|
 	which doesn't have this restriction. Another is to manually provide the |viewport| option as shown above.
 
@@ -326,7 +326,7 @@ By comparison, in this figure we see a rectangle:
 \end{codeexample}
 
 Now our editor tells us that the publisher will need all figures to be
-provided in separate PostScript or |.pdf|-files. For this, we 
+provided in separate PostScript or |.pdf|-files. For this, we
 enclose all figures in |...graphicnamed|-pairs and we add a call to
 the |\pgfrealjobname| macro:
 \begin{codeexample}[code only]
@@ -461,7 +461,7 @@ In case we have used the |baseline| option, we also need to include any |.dpth| 
     \begingroup
     \setbox1=\hbox{\includegraphics{#1}}%
     \openin1=#1.dpth
-    \ifeof1 \box1 
+    \ifeof1 \box1
     \else
         \read1 to\pgfincludeexternalgraphicsdp\closein1
         \dimen0=\pgfincludeexternalgraphicsdp\relax
@@ -473,7 +473,7 @@ In case we have used the |baseline| option, we also need to include any |.dpth| 
 Again, we could simply copy these lines to our |survey.tex| file.
 
 
-%%% Local Variables: 
+%%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "pgfmanual"
-%%% End: 
+%%% End:

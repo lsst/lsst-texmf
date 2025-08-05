@@ -503,7 +503,7 @@ the paths.
 	for each \emph{type} of input segment (i.e., moveto, lineto,
 	curveto or closepath). Typically, each segment will be replaced
 	with another path, but this need not necessarily be the case.
-	
+
 \begin{codeexample}[]
 \begin{tikzpicture}[>=stealth, every node/.style={midway, sloped, font=\tiny},
   decoration={show path construction,
@@ -1143,7 +1143,7 @@ reasons, using the |markings| library is usually preferable.
   A shape background path is added at the start point of the path and,
   if the distance between the shapes is appropriate, at the end point
   of the path.
-	
+
 \begin{codeexample}[]
 \begin{tikzpicture}[decoration={
       shape backgrounds,shape=regular polygon,shape size=4mm}]
@@ -1193,7 +1193,7 @@ reasons, using the |markings| library is usually preferable.
     comma), specify that the distance	is between the center anchors of
     the shapes or between the edges of the \emph{boundaries} of
     the shape borders.
-	
+
 \begin{codeexample}[]
 \begin{tikzpicture}[
     decoration={shape backgrounds,shape size=.5cm,shape=signal},
@@ -1267,7 +1267,7 @@ reasons, using the |markings| library is usually preferable.
   length of the decorations path. The shapes are scaled between the starting
   size and the ending size. The following keys customize the way the
   decoration shapes are scaled:
-	
+
   \begin{key}{/pgf/decoration/shape scaled=\meta{boolean} (initially false)}
 \begin{codeexample}[]
 \tikzset{
@@ -1353,7 +1353,7 @@ reasons, using the |markings| library is usually preferable.
   path is only used to determine where the characters should be put
   and it is thrown away after the decoration is done. This is why in
   the following example no line is shown.
-	
+
 \begin{codeexample}[]
 \catcode`\|12
 \begin{tikzpicture}[decoration={text along path,
@@ -1382,9 +1382,9 @@ reasons, using the |markings| library is usually preferable.
     overhead). In general this should not be too much of a problem,
     but, once again, kerning can be used in most cases to overcome
     any undesirable effects.
-  \item			
+  \item
     It is only possible to typeset text in math mode under considerable
-    restrictions. Math mode is entered and exited using any character	
+    restrictions. Math mode is entered and exited using any character
     of category code 3 (e.g., in plain \TeX{} this is |$|). %$
     Math subscripts and superscripts need to be	contained within braces
     (e.g., |{^y_i}|) as do commands like |\times| or |\cdot|.
@@ -1433,7 +1433,7 @@ reasons, using the |markings| library is usually preferable.
 \end{tikzpicture}
 \end{codeexample}
 }
-	
+
     Internally, the text is stored in the macro |\pgfdecorationtext|.
     Any characters that have not been typeset when the end of the
     path has been reached will be stored in |\pgfdecorationrestoftext|.
@@ -1444,7 +1444,7 @@ reasons, using the |markings| library is usually preferable.
   \begin{key}{/pgf/decoration/text format delimiters=\marg{before}\marg{after} (initially \char`\{|\char`\}\char`\{\char`\})}
 
     \catcode`\|13
-	
+
     Set the characters that the text decoration will use to parse
     formatting commands.
     If \meta{after} is empty, then \meta{before} will be used for both

@@ -389,7 +389,7 @@ shapes:
 Some shapes (but not all), support a special kind of rotation. This
 rotation affects only the border of a shape and is independent of the
 node contents, but \emph{in addition} to any other transformations.
-	
+
 \begin{codeexample}[]
 \tikzstyle{every node}=[dart, shape border uses incircle,
   inner sep=1pt, draw]
@@ -415,7 +415,7 @@ this tight fit, the border rotation must be restricted to integer
 multiples of 90 degrees. By using an incircle, unrestricted rotation
 is possible, but the border will not make a very tight fit to the
 node contents.
-	
+
 \begin{codeexample}[]
 \tikzstyle{every node}=[isosceles triangle, draw]
 \begin{tikzpicture}
@@ -429,7 +429,7 @@ constructed, and to specify its rotation.
 It should be noted that not all shapes support these keys, so
 reference should be made to the documentation for individual
 shapes.
-	
+
 \begin{key}{/pgf/shape border uses incircle=\opt{\meta{boolean}}
     (default true)}
   \keyalias{tikz}
@@ -452,7 +452,7 @@ Note that if the border of the shape is rotated,
 the compass point anchors, and `text box' anchors (including
 |mid east|, |base west|, and so on), \emph{do not rotate}, but the
 other anchors do:
-	
+
 \begin{codeexample}[]
 \tikzstyle{every node}=[shape=trapezium, draw, shape border uses incircle]
 \begin{tikzpicture}
@@ -2229,7 +2229,7 @@ after the node has already been constructed.
   and, then, the \meta{options} are executed in a local scope. Most of
   these options will have no effect since you \emph{cannot change the
     appearance of the node,} that is, you cannot change a red node
-  into a green node using late options. However, giving 
+  into a green node using late options. However, giving
   the |append after command| and |prefix after command| options inside
   the \meta{options} (directly or indirectly) does have the desired
   effect: The given path gets executed with the |\tikzlastnode|

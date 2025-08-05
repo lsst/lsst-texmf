@@ -69,7 +69,7 @@ actually used.
   an example:
 \begin{codeexample}[code only]
 \pgfdeclarelayer{background}
-\pgfdeclarelayer{foreground}  
+\pgfdeclarelayer{foreground}
 \pgfsetlayers{background,main,foreground}
 \end{codeexample}
 \end{command}
@@ -94,7 +94,7 @@ the given layer.
   \emph{Note:} You can \emph{not} add anything to the |main| layer
   using this environment. The only way to add anything to the main
   layer is to give graphic commands outside all |{pgfonlayer}|
-  environments. 
+  environments.
 
 \begin{codeexample}[]
 \pgfdeclarelayer{background layer}
@@ -103,15 +103,15 @@ the given layer.
 \begin{tikzpicture}
   % On main layer:
   \fill[blue] (0,0) circle (1cm);
-  
+
   \begin{pgfonlayer}{background layer}
     \fill[yellow] (-1,-1) rectangle (1,1);
   \end{pgfonlayer}
-  
+
   \begin{pgfonlayer}{foreground layer}
     \node[white] {foreground};
   \end{pgfonlayer}
-  
+
   \begin{pgfonlayer}{background layer}
     \fill[black] (-.8,-.8) rectangle (.8,.8);
   \end{pgfonlayer}
@@ -135,7 +135,7 @@ the given layer.
 
 
 
-%%% Local Variables: 
+%%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "pgfmanual"
-%%% End: 
+%%% End:

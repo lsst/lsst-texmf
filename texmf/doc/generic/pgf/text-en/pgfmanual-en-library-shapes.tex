@@ -158,7 +158,7 @@ shapes define a standard set of anchors.
   be specified independently, and the resulting extensions are in
   addition to the natural dimensions of the node contents (which
   includes any |inner sep|.
-	
+
 \begin{codeexample}[]
 \begin{tikzpicture}
    \tikzstyle{every node}=[trapezium, draw]
@@ -174,7 +174,7 @@ shapes define a standard set of anchors.
   The \pgfname{} keys to set the lower internal angles of the trapezium
   are shown below.
   To use these keys in \tikzname, simply remove the \declare{|/pgf/|} path.
-	
+
   \begin{key}{/pgf/trapezium left angle=\meta{angle} (initially 60)}
     Set the lower internal angle of the left side.
   \end{key}
@@ -283,7 +283,7 @@ shapes define a standard set of anchors.
   Section~\ref{section-rotating-shape-borders}.
   The anchors for the |semicircle| shape are shown below.
   Anchor |30| is an example of a border anchor.
-	
+
 \begin{codeexample}[]
 \Huge
 \begin{tikzpicture}
@@ -323,8 +323,8 @@ shapes define a standard set of anchors.
      inner sep=0.3535cm] at (\a*2,0) {};
    }
 \end{tikzpicture}
-\end{codeexample}	
-	
+\end{codeexample}
+
   If the node is enlarged to any specified minimum size,
   this is interpreted as the diameter of the
   circumcircle, that is, the circle that passes through all the
@@ -337,12 +337,12 @@ shapes define a standard set of anchors.
     \node[regular polygon, regular polygon sides=\a, minimum size=1cm, draw] at (\a*2,0) {};
    }
 \end{tikzpicture}
-\end{codeexample}	
+\end{codeexample}
 
   There is a \pgfname{} key to set the number of sides for the regular
   polygon.
   To use this key in \tikzname, simply remove the \declare{|/pgf/|} path.
-	
+
   \begin{key}{/pgf/regular polygon sides=\meta{integer} (initially 5)}
   \end{key}
 
@@ -405,13 +405,13 @@ shapes define a standard set of anchors.
     Sets the height of the star points. This is the distance between the
     inner point and outer point radii. If the star is enlarged to some
     specified minimum size, the inner radius is increased to maintain
-    the point height.	
+    the point height.
   \end{key}
 
   \begin{key}{/pgf/star point ratio=\meta{number} (initially 1.5)}
-    Sets the ratio between the inner point and outer point radii.		
+    Sets the ratio between the inner point and outer point radii.
     If the star is enlarged to some specified minimum size, the
-    inner radius is increased to maintain the ratio.	
+    inner radius is increased to maintain the ratio.
   \end{key}
 
 	The inner and outer points form the principle anchors for the star,
@@ -447,7 +447,7 @@ shapes define a standard set of anchors.
   (provided no other transformations are applied). However, regardless
   of the rotation of the shape border, the width and height are
   always considered as follows:
-	
+
 \begin{codeexample}[]
 \begin{tikzpicture}[>=stealth, every node/.style={text=black},
     shape border uses incircle, shape border rotate=-30]
@@ -484,11 +484,11 @@ shapes define a standard set of anchors.
     \node[paint=\c, minimum width=\a cm] at (2,0) {};
   }
 \end{tikzpicture}
-\end{codeexample}	
+\end{codeexample}
 
 	However, by setting \meta{boolean} to |true|, minimum width and
 	height can be applied	independently.
-	
+
 \begin{codeexample}[]
 \begin{tikzpicture}[paint/.style={draw=#1!75, fill=#1!20}]
   \tikzset{every node/.style={isosceles triangle, draw, inner sep=0pt,
@@ -499,16 +499,16 @@ shapes define a standard set of anchors.
     \node[paint=\c, minimum width=\a cm, minimum height=1.5cm] at (3,0)    {};
   }
 \end{tikzpicture}
-\end{codeexample}	
+\end{codeexample}
 \end{key}
-	
+
    The anchors for the |isosceles triangle| are shown below
    (anchor |150| is an	example of a border anchor). Note that,
    somewhat confusingly, the anchor names such as |left side| and
    |right corner| are named as if the triangle is rotated to
    90 degrees. Note also that the |center| anchor
    does not	necessarily correspond to any kind of geometric center.
-	
+
 \begin{codeexample}[]
 \Huge
 \begin{tikzpicture}
@@ -543,15 +543,15 @@ shapes define a standard set of anchors.
 	of the kite.
 	To use these keys in \tikzname, simply remove the \declare{|/pgf/|}
 	path.
-	
+
 	\begin{key}{/pgf/kite upper vertex angle=\meta{angle} (initially 120)}
 	Set the upper internal angle of the kite.
 	\end{key}
-	
+
 	\begin{key}{/pgf/kite lower vertex angle=\meta{angle} (initially 60)}
 	Set the lower internal angle of the kite.
 	\end{key}
-	
+
 	\begin{key}{/pgf/kite vertex angles=\meta{angle specification}}
 		This key sets the keys for both the upper and lower vertex angles
 		(it stores no value itself).
@@ -573,7 +573,7 @@ shapes define a standard set of anchors.
 
 	The anchors for the |kite| are shown below. Anchor |110| is an
 	example of a border anchor.
-	
+
 \begin{codeexample}[]
 \Huge
 \begin{tikzpicture}
@@ -603,7 +603,7 @@ shapes define a standard set of anchors.
 	as described in Section~\ref{section-rotating-shape-borders}.
 	The angle of the border rotation determines the direction in which
 	the dart points (unless other transformations have been applied).
-	
+
 	There are \pgfname{} keys to set the
 	angle for the `tip' of the dart and the angle between the `tails'
 	of the dart.
@@ -624,11 +624,11 @@ shapes define a standard set of anchors.
 	\begin{key}{/pgf/dart tip angle=\meta{angle} (initially 45)}
 		Set the angle at the tip of the dart.
 	\end{key}
-	
+
 	\begin{key}{/pgf/dart tail angle=\meta{angle} (initially 135)}
 		Set the angle between the tails of the dart.
 	\end{key}
-		
+
 	The anchors for the |dart| shape are shown below (note that the
 	shape is rotated 90 degrees anti-clockwise). Anchor |110| is an
 	example of a border anchor.
@@ -663,7 +663,7 @@ shapes define a standard set of anchors.
 	The angle of the border rotation determines the direction in which
 	the `apex' of the sector points (unless other transformations have
 	been applied).
-	
+
 \begin{codeexample}[]
 \begin{tikzpicture}
 	\tikzstyle{every node}=[circular sector, shape border uses incircle, draw];
@@ -676,14 +676,14 @@ shapes define a standard set of anchors.
 	which is expected to be less than 180 degrees.
 	To use this key in \tikzname,	simply remove the \declare{|/pgf/|}
 	path.
-	
+
 	\begin{key}{/pgf/circular sector angle=\meta{angle} (initially 60)}
 		Set the central angle of the sector.
 	\end{key}
-	
+
 	The anchors for the circular sector shape are shown below.
 	Anchor |30| is an example of a border anchor.
-	
+
 \begin{codeexample}[]
 \Huge
 \begin{tikzpicture}
@@ -714,9 +714,9 @@ shapes define a standard set of anchors.
   \node[cylinder, draw, shape aspect=.5] {ABC};
 \end{tikzpicture}
 \end{codeexample}
-		
+
 	Regardless the rotation of the shape border, the height is always the
-	distance between the curved ends, and the width is always the	
+	distance between the curved ends, and the width is always the
 	distance between the straight sides.
 
 \begin{codeexample}[]
@@ -733,7 +733,7 @@ shapes define a standard set of anchors.
 	Enlarging the shape to some minimum height will stretch only the body
 	of the cylinder. By contrast, enlarging the shape to some minimum
 	width will stretch the curved ends.
-	
+
 \begin{codeexample}[]
 \begin{tikzpicture}[>=stealth, shape aspect=.5]
   \tikzset{every node/.style={cylinder, shape border rotate=90, draw}}
@@ -792,8 +792,8 @@ shapes define a standard set of anchors.
 	between the |center| and |shape center| anchors: |center| is the
 	center of the cylinder body and also the center of rotation.
 	The |shape center| is the center of the shape which includes the
-	2-dimensional representation of the cylinder top.	
-	
+	2-dimensional representation of the cylinder top.
+
 
 \begin{codeexample}[]
 \Huge
@@ -874,7 +874,7 @@ shapes define a standard set of anchors.
 	This shape is a cloud, drawn to tightly fit the node contents
 	(strictly speaking, using an ellipse which tightly fits the node
 	contents -- including any |inner sep|).
-	
+
 \begin{codeexample}[]
 \begin{tikzpicture}
   \node[cloud, draw, fill=gray!20, aspect=2] {ABC};
@@ -886,22 +886,22 @@ shapes define a standard set of anchors.
 	are the individual arcs drawn around the border. There are \pgfname{}
 	keys to specify how the cloud is drawn (to use these keys in
 	\tikzname{}, simply remove the \declare{|/pgf/|} path).
-	
+
 	\begin{key}{/pgf/cloud puffs=\meta{integer} (initially 10)}
 	  Set the number of puffs for the cloud.
 	\end{key}
-	
+
 	\begin{key}{/pgf/cloud puff arc=\meta{angle} (initially 135)}
 	  Set the length of the puff arc (in degrees). A shorter arc can
 	  produce better looking joins between puffs for larger line widths.
 	\end{key}
-	
+
 	Like the diamond shape, the cloud shape also uses the
 	\declare{|aspect|} key, to determine the ratio of the width and the
 	height of the cloud. However there may be circumstances where it may
 	be undesirable to continually specify the |aspect| for the cloud.
 	Therefore, the following key is implemented:
-	
+
 	\begin{key}{/pgf/cloud ignores aspect=\meta{boolean} (default true)}
 		Instruct \pgfname{} to ignore the |aspect| key. Internally, the
 		\TeX-if |\ifpgfcloudignoresaspect| is set appropriately. The initial
@@ -912,16 +912,16 @@ shapes define a standard set of anchors.
   \node [fill=gray!20]                                {rain};
   \node [cloud ignores aspect, fill=white] at (1.5,0) {snow};
 \end{tikzpicture}
-\end{codeexample}	
-	
+\end{codeexample}
+
 	\end{key}
-	
-	
+
+
 	Any minimum size requirements are applied to the ``circum-ellipse'',
 	which is the ellipse which passes through all the midpoints of the
 	puff arcs. These requirements are considered \emph{after} any
 	aspect specification is applied.
-	
+
 \begin{codeexample}[]
 \begin{tikzpicture}
   \draw [help lines] grid (3,2);
@@ -930,7 +930,7 @@ shapes define a standard set of anchors.
     at (1.5, 1) {};
 \end{tikzpicture}
 \end{codeexample}
-	
+
   The anchors for the cloud shape are shown below for a cloud with
   eleven puffs. Anchor 70 is an example of a border anchor.
 
@@ -967,22 +967,22 @@ shapes define a standard set of anchors.
 \begin{tikzpicture}
   \node[starburst, fill=yellow, draw=red, line width=2pt] {\bf BANG!};
 \end{tikzpicture}
-\end{codeexample}	
+\end{codeexample}
 	Like the |star| shape, the starburst should be thought of as having a set
 	of inner points and outer points. The inner points lie on the ellipse
 	which tightly fits the node contents (including any |inner sep|).
-	
+
 	Using a specified `starburst point height' value, the outer points
 	are generated randomly between this value and one quarter of this
 	value. For a given starburst shape the angle between each point is
 	fixed, and is determined by the number of points specified for
 	the starburst.
-	
+
 	It is important to note that, whilst the maximum possible point
 	height is used to calculate minimum width or height requirements,
 	the outer points are randomly generated, so there is (unfortunately)
 	no guarantee that any such requirements will be fully met.
-	
+
 \begin{codeexample}[]
 \begin{tikzpicture}
   \draw[help lines] grid(3,2);
@@ -1002,7 +1002,7 @@ shapes define a standard set of anchors.
       Set the \emph{maximum} distance between the inner point radius
       and the outer point radius.
 	\end{key}
-	
+
 	\begin{key}{/pgf/random starburst=\meta{integer} (initially 100)}
       Set the seed for the random number generator for creating the
       starburst.  The maximum value for \meta{integer} is |16383|.
@@ -1011,7 +1011,7 @@ shapes define a standard set of anchors.
       points. If \meta{integer} is omitted, a seed will be randomly
       chosen.
 	\end{key}
-	
+
 	The basic anchors for a nine point |starburst| shape are shown below.
 	Anchor |80| is an example of a border anchor.
 \begin{codeexample}[]
@@ -1043,7 +1043,7 @@ shapes define a standard set of anchors.
 	outward points in that direction. It can also be ``from''
 	somewhere, with inward points from that direction. The resulting
 	points extend the node contents (which include the |inner sep|).
-	
+
 \begin{codeexample}[]
 \begin{tikzpicture}
   [every node/.style={signal, draw,  text=white, signal to=nowhere}]
@@ -1054,13 +1054,13 @@ shapes define a standard set of anchors.
 
 	There are \pgfname{} keys for drawing the signal shape (to use these
 	keys in \tikzname{}, simply remove the \declare{|/pgf/|} path):
-	
+
 	\begin{key}{/pgf/signal pointer angle=\meta{angle} (initially 90)}
 		Set the angle for the pointed sides of the shape. This angle is
 		maintained when enforcing any minimum size requirements, so
 		any adjustment to the width will affect the height, and vice versa.
 	\end{key}
-	
+
 	\begin{key}{/pgf/signal from=\meta{direction}\space\opt{and \meta{opposite direction}} (initially nowhere)}
 		Set which sides take an inward pointer (i.e., that points towards the
 		center of the shape). The possible values for \meta{direction} and
@@ -1070,14 +1070,14 @@ shapes define a standard set of anchors.
 		they have no pointers. When used with |signal from| key, this only
 		resets inward pointers;	used with the |signal to| key, it only
 		resets outward pointers.
-		
+
 	\end{key}
-	
+
 	\begin{key}{/pgf/signal to=\meta{direction}\space\opt{and \meta{opposite direction}} (initially east)}
 		Set which sides take an outward pointer (i.e., that points away from
 		the	the shape).
 	\end{key}
-	
+
 	Note that \pgfname{} will ignore any instruction to use directions
 	that are not opposites (so using the value |east and north|, will
 	result in only |north| being assigned a pointer). This is also
@@ -1085,7 +1085,7 @@ shapes define a standard set of anchors.
 	|signal from| keys at the same time. So, for example, it is not
 	possible for a signal to have an outward point to the left, and also
 	have an inward point from below.
-	
+
 	The anchors for the signal shape are shown below. Anchor |70| is an
 	example of a border anchor.
 
@@ -1117,7 +1117,7 @@ shapes define a standard set of anchors.
 	This shape is a rectangle with optional, ``bendy'' top and bottom
 	sides, which tightly fits the node contents (including the
 	|inner sep|).
-	
+
 \begin{codeexample}[]
 \begin{tikzpicture}
   \node[tape, draw]{ABCD};
@@ -1136,7 +1136,7 @@ shapes define a standard set of anchors.
   	clockwise direction, and using the bend style |in and out| will mean
   	the side will first	bend inwards and then bend outwards.
   	The opposite holds true for	|out and in|.
-  	
+
 \begin{codeexample}[]
 \begin{tikzpicture}[-stealth]
   \node[tape, draw, gray, minimum width=2cm](t){Tape};
@@ -1162,14 +1162,14 @@ shapes define a standard set of anchors.
 \end{codeexample}
 
 	\end{key}
-	
+
 	\begin{key}{/pgf/tape bend bottom=\meta{bend style} (initially in and out)}
 		Specify how the bottom side bends.
 	\end{key}%
-	
+
 	\begin{key}{/pgf/tape bend height=\meta{length} (initially 5pt)}
 		Set the total height for a side with a bend.
-		
+
 \begin{codeexample}[]
 \begin{tikzpicture}[>=stealth]
   \draw [help lines] grid(3,2);
@@ -1181,11 +1181,11 @@ shapes define a standard set of anchors.
 \end{codeexample}
 
 	\end{key}
-	
+
 	The anchors for the tape shape are shown below. Anchor |60| is an
 	example of a border anchor. Note that border anchors will snap to
 	the center of convex curves (i.e. when bending in).
-	
+
 \begin{codeexample}[]
 \Huge
 \begin{tikzpicture}
@@ -1223,7 +1223,7 @@ shapes define a standard set of anchors.
 	described in Section~\ref{section-rotating-shape-borders}.
 	The angle of rotation determines which direction the arrow
 	points (provided no other rotational transformations are applied).
-	
+
 \begin{codeexample}[]
 \begin{tikzpicture}[every node/.style={single arrow, draw},
     rotate border/.style={shape border uses incircle, shape border rotate=#1}]
@@ -1253,7 +1253,7 @@ shapes define a standard set of anchors.
 	There are \pgfname{} keys that can be used to customize this shape (to
 	use these keys in \tikzname{}, simply remove the \declare{|/pgf/|}
 	path).
-	
+
 \begin{key}{/pgf/single arrow tip angle=\meta{angle} (initially 90)}
   Set the angle for the arrow tip. Enlarging the arrow to some
   minimum width may increase the height of the shape to maintain
@@ -1318,8 +1318,8 @@ shapes define a standard set of anchors.
   This shape is a double arrow, which tightly fits the note contents
 	(including any |inner sep|), and supports the rotation of the shape
 	 border, as described in Section~\ref{section-rotating-shape-borders}.
-	
-	
+
+
 \begin{codeexample}[]
 \begin{tikzpicture}[every node/.style={double arrow, draw}]
   \node [double arrow, draw] {Left or Right};
@@ -1618,7 +1618,7 @@ to the center of the appropriate side.
 \begin{shape}{rectangle split}
   This shape is a rectangle which can be either split horizontally
   or vertically into several parts.
-	
+
 \begin{codeexample}[]
 \begin{tikzpicture}[my shape/.style={
   rectangle split, rectangle split parts=#1, draw, anchor=center}]
@@ -1660,7 +1660,7 @@ these extra boxes, the following key is provided:
 	When split vertically, the rectangle split will observe any
 	|minimum width| requirements but any |minimum height| will be ignored.
 	Conversely when split horizontally, |minimum height| requirements
-	will be observed, but any |minimum width| will be ignored.	
+	will be observed, but any |minimum width| will be ignored.
 	In addition, |inner sep| is applied
   to every part that is used, so it cannot be specified
   independently for a particular part.
@@ -1730,7 +1730,7 @@ these extra boxes, the following key is provided:
   	Each item in \meta{list} should be
   	separated by commas (so if there is more than one item in
   	\meta{list} it must be surrounded by braces).
-  	
+
   	When the rectangle is split vertically, the entries in \meta{list}
   	must be one of |left|, |right|, or |center|. If \meta{list} has less
   	entries than node parts then the remaining boxes are aligned
@@ -1810,7 +1810,7 @@ these extra boxes, the following key is provided:
 \end{codeexample}
 
 \end{key}
-	
+
   The anchors for the |rectangle split| shape split vertically into four,
   are shown below (anchor |70| is an example of a border angle). When a
   node part is missing, the anchors prefixed with name of that node part
@@ -1930,11 +1930,11 @@ on whether they are being used in \pgfname{} or \tikzname{}.
 
 	It is also possible to shorten the pointer by some distance, using
 	the following key:
-	
+
 \begin{key}{/pgf/callout pointer shorten=\meta{distance} (initially 0cm)}
 	Move the callout pointer towards the center of the callouts main
 	shape by \meta{distance}.
-	
+
 \begin{codeexample}[]
 \begin{tikzpicture}
 	\tikzset{callout/.style={ellipse callout, callout pointer arc=30,
@@ -1946,10 +1946,10 @@ on whether they are being used in \pgfname{} or \tikzname{}.
 \end{tikzpicture}
 \end{codeexample}
 \end{key}
-	
+
 
 \begin{shape}{rectangle callout}%
-	
+
   This shape is a callout whose main shape is a rectangle, which
   tightly fits the node contents (including any |inner sep|).
   It  supports the keys described above and also the following
@@ -1959,14 +1959,14 @@ on whether they are being used in \pgfname{} or \tikzname{}.
 \begin{key}{/pgf/callout pointer width=\meta{length} (initially .25cm)}
   Set the width of the pointer at the border of the rectangle.
 \end{key}
-		
+
 	The anchors for this shape are shown below (anchor |60| is an
 	example of a border anchor). The pointer direction is ignored when
 	placing anchors.
 	Additionally, when using an absolute pointer, the |pointer|
 	anchor should not be used to used to position the shape as it is
 	calculated whilst the shape is being drawn.
-	
+
 \begin{codeexample}[]
 \Huge
 \begin{tikzpicture}
@@ -1990,7 +1990,7 @@ on whether they are being used in \pgfname{} or \tikzname{}.
 
 
 \begin{shape}{ellipse callout}%
-	
+
   This shape is a callout whose main shape is a ellipse, which
   tightly fits the node contents (including any |inner sep|).
   It uses the |absolute callout pointer|,
@@ -2002,14 +2002,14 @@ on whether they are being used in \pgfname{} or \tikzname{}.
   Set the width of pointer at the border of the ellipse according
   to an arc of length \meta{angle}.
 \end{key}
-	
-	
+
+
 	The anchors for this shape are shown below (anchor |60| is an
 	example of a border anchor). The pointer direction is ignored
 	when placing anchors and the |pointer| anchor can only be
 	used to position the shape when the relative anchor is
 	specified.
-	
+
 \begin{codeexample}[]
 \Huge
 \begin{tikzpicture}
@@ -2067,7 +2067,7 @@ shape. The following keys are also supported:
 			A decimal fraction (e.g., |.2 of callout|), in which case
 			the $x$ and $y$ diameters of the first ellipse will be set as
 			fractions of the width and height of the main shape. The keyword
-			|of callout| cannot be omitted.	
+			|of callout| cannot be omitted.
 	\end{itemize}
 \end{key}
 
@@ -2188,7 +2188,7 @@ Strike \tikz[baseline] \node [strike out,draw,anchor=text] {me}; out!
 
 	Set the length of the arcs for the rounded ends. Recommended values
 	for	\meta{angle} are between |90| and |180|.
-	
+
 \begin{codeexample}[]
 \begin{tikzpicture}
   \matrix[row sep=5pt, every node/.style={draw, rounded rectangle}]{
@@ -2229,7 +2229,7 @@ Strike \tikz[baseline] \node [strike out,draw,anchor=text] {me}; out!
 	The anchors for this shape are shown below (anchor |10| is an example
 	of a border angle). Note that if only one side is rounded, the
 	|center| anchor will not be the precise center of the shape.
-	
+
 \begin{codeexample}[]
 \Huge
 \begin{tikzpicture}
@@ -2253,7 +2253,7 @@ Strike \tikz[baseline] \node [strike out,draw,anchor=text] {me}; out!
 \begin{shape}{chamfered rectangle}
 
 	This shape is a rectangle with optionally chamfered corners.
-	
+
 \begin{codeexample}[]
 \begin{tikzpicture}
   \node[chamfered rectangle, white, fill=red, double=red, draw, very thick]
@@ -2266,7 +2266,7 @@ Strike \tikz[baseline] \node [strike out,draw,anchor=text] {me}; out!
 
 \begin{key}{/pgf/chamfered rectangle angle=\meta{angle} (initially 45)}
 	Set the angle \emph{from the vertical} for the chamfer.
-	
+
 \begin{codeexample}[]
 \begin{tikzpicture}
   \tikzset{every node/.style={chamfered rectangle, draw}}
@@ -2291,7 +2291,7 @@ Strike \tikz[baseline] \node [strike out,draw,anchor=text] {me}; out!
   \node[chamfered rectangle xsep=2cm] at (1.5,0) {456};
 \end{tikzpicture}
 \end{codeexample}
-	
+
 \end{key}
 
 \begin{key}{/pgf/chamfered rectangle ysep=\meta{length} (initially .666ex)}
@@ -2327,7 +2327,7 @@ Strike \tikz[baseline] \node [strike out,draw,anchor=text] {me}; out!
 
 	The anchors for this shape are shown below (anchor |60| is an example
 	of a border angle.
-	
+
 \begin{codeexample}[]
 \Huge
 \begin{tikzpicture}

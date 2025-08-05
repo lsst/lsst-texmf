@@ -447,7 +447,7 @@ this command describes the decoration automaton.
       input segment''  refers to the input segment on which the current point
       lies.
     \end{command}
-		
+
     \begin{command}{\pgfpointdecoratedpathlast}
       The final point of the input path.
     \end{command}
@@ -455,21 +455,21 @@ this command describes the decoration automaton.
     \begin{command}{\pgfpointdecoratedinputsegmentlast}
       The final point of the current input segment of the input path.
     \end{command}
-		
+
     \begin{command}{\pgfdecoratedangle}
       The angle of the tangent to the decorated path at the \emph{origin}
       of the current segment. The transformation matrix applied at
       the beginning of a state includes a rotation equivalent to
       this angle.
     \end{command}
-		
+
     The following \TeX\ dimension registers are also available inside the
     automaton:
 
     \begin{command}{\pgfdecoratedremainingdistance}
       The remaining distance on the input path.
     \end{command}
-		
+
     \begin{command}{\pgfdecoratedcompleteddistance}
       The completed distance on the input path.
     \end{command}
@@ -590,7 +590,7 @@ Once a decoration has been declared, it can be used.
     (and  possibly using) the output paths. These output paths extend
     (unless they are used) the current path.
   \end{enumerate}
-	
+
   Some important points should be noted regarding the use of this
   environment:
 
@@ -677,7 +677,7 @@ Once a decoration has been declared, it can be used.
   This means that if decorations do not use their own path, it is
   possible to do something with them and continue from the
   correct place.
-	
+
 \begin{codeexample}[]
 \begin{tikzpicture}
   \draw [help lines] grid (3,2);
@@ -707,23 +707,23 @@ Once a decoration has been declared, it can be used.
   \pgfusepath{stroke}
 \end{tikzpicture}
 \end{codeexample}
-	
+
   After the |{decoration}| environment has finished, the following
   macros are available:
-	
+
   \begin{command}{\pgfdecorateexistingpath}
     The preexisting path before the environment was entered.
   \end{command}
-	
+
   \begin{command}{\pgfdecoratedpath}
     The (total) input path (that is, the path created by the environment contents).
   \end{command}
-	
+
   \begin{command}{\pgfdecorationpath}
     The output path. If the path is used, this macro contains only the
     last unused part of the output path.
   \end{command}
-	
+
   \begin{command}{\pgfpointdecoratedpathlast}
     The final point of the input path.
   \end{command}
@@ -943,7 +943,7 @@ meta-decoration can be used it must be declared.
 \begin{codeexample}[]
 \pgfdeclaremetadecoration{arrows}{initial}{
   \state{initial}[width=0pt, next state=arrow]
-  {	
+  {
     \pgfmathdivide{100}{\pgfmetadecoratedpathlength}
     \let\factor\pgfmathresult
     \pgfsetlinewidth{1pt}
@@ -960,7 +960,7 @@ meta-decoration can be used it must be declared.
       \pgfmathparse{\pgfmetadecoratedcompleteddistance*\factor}
       \pgfsetcolor{red!\pgfmathresult!yellow}
       \pgfpathmoveto{\pgfpointmetadecoratedpathfirst}
-    }	
+    }
   }
   \state{zigzag}[width=\pgfmetadecorationsegmentlength/3, next state=end arrow]
   {
@@ -971,9 +971,9 @@ meta-decoration can be used it must be declared.
     \decoration{curveto}
     \beforedecoration{\pgfpathmoveto{\pgfpointmetadecoratedpathfirst}}
     \afterdecoration
-    {	
+    {
       \pgfsetarrowsend{to}
-      \pgfusepath{stroke}	
+      \pgfusepath{stroke}
     }
   }
   \state{move}[width=\pgfmetadecorationsegmentlength/2, next state=arrow]{}

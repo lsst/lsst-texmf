@@ -16,13 +16,13 @@ dist: FORCE
 	makeindex $(doc).idx
 	@echo "$(doc).pdf remade with auto-xref support. Check if auto-xrefs work and rerun make dist if not."
 
-pgfmanual.idx: 
+pgfmanual.idx:
 	touch pgfmanual.idx
 
-pgfmanual.ind: pgfmanual.idx 
+pgfmanual.ind: pgfmanual.idx
 	makeindex $(doc).idx
 
-pgfmanual.pdf: $(doc).tex $(doc).ind 
+pgfmanual.pdf: $(doc).tex $(doc).ind
 	TEXINPUTS="$(TEXINPUTS)" $(latex) $(doc).tex
 	(egrep -q $(rerun) $(doc).log && TEXINPUTS="$(TEXINPUTS)" $(latex) $(doc).tex) || true
 	@echo "Use 'make dist' to generate auto-xrefs."
@@ -43,4 +43,4 @@ clean:
 		pgfmanual.blg \
 		pgfmanual.ps \
 		pgfmanual.dvi \
-		pgfmanual*.aux 
+		pgfmanual*.aux

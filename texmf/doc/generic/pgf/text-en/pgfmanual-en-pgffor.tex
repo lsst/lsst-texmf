@@ -32,7 +32,7 @@ automatically by \tikzname, but not by \pgfname:
 
 	Still in the easiest case, \meta{options} will be omitted. The keys
 	for customizing this command will be discussed below.
-	
+
   Again, in the easiest case, \meta{list} is either a comma-separated
   list of values surrounded by curly braces or it is the name of a
   macro that contain such a list of values. Anything can be used as a
@@ -147,26 +147,26 @@ automatically by \tikzname, but not by \pgfname:
 
   |\foreach \x in {9,...,3.5} {\x, }| yields \foreach \x in {9,...,3.5} {\x, }
 
-	
+
 	There is a yet a further special case for the |...| statement, in that
 	it can indicate an alphabetic character sequence:
-	
+
 	|\foreach \x in {a,...,m} {\x, }| yields \foreach \x in {a,...,m} {\x, }
-	
+
 	|\foreach \x in {Z,X,...,M} {\x, }| yields \foreach \x in {Z,X,...,M} {\x, }
-	
+
 	A final special case for the |...| statement is contextual replacement.
 	If the |...| is used in some context, for example, |sin(...)|, this
 	context will be interpreted correctly, provided that the list items
 	prior to the |...| statement have \emph{exactly} the same pattern,
 	except that, instead of dots, they have a number or a character:
-	
+
 	|\foreach \x in {2^1,2^...,2^7} {$\x$, }| yields \foreach \x in {2^1,2^...,2^7} {$\x$, }
-	
+
 	|\foreach \x in {0\pi,0.5\pi,...\pi,3\pi} {$\x$, }| yields \foreach \x in {0\pi,0.5\pi,...\pi,3\pi} {$\x$, }
-	
+
 	|\foreach \x in {A_1,..._1,H_1} {$\x$, }| yields \foreach \x in {A_1,..._1,H_1} {$\x$, }
-	
+
   \textbf{Special handling of pairs.}
   Different list items are separated by commas. However, this causes a
   problem when the list items contain commas themselves as pairs like
@@ -330,19 +330,19 @@ automatically by \tikzname, but not by \pgfname:
 \tikz\foreach \x [evaluate=\x as \shade using \x*10] in {0,1,...,10}
   \node [fill=red!\shade!yellow, minimum size=0.65cm] at (\x,0) {\x};
 \end{codeexample}
-	
+
 \end{key}
 
 \begin{key}{/pgf/foreach/remember=\meta{variable}| as |\meta{macro}| |\opt{|(initially |\meta{value}|)|}}
 	This key allows the item value stored in \meta{variable} to be
 	remembered during the next iteration, stored in \meta{macro}.
 	If a variable is evaluated, the result of this evaluation is
-	remembered.	
+	remembered.
 	By default the value of \meta{variable} is zero for the first
 	iteration, however, the optional |(initially |\meta{value}|)|
 	statement, allows the \meta{macro} to be initially defined
 	as \meta{value}.
-	
+
 \begin{codeexample}[]
 \foreach \x [remember=\x as \lastx (initially A)] in {B,...,H}{$\overrightarrow{\lastx\x}$, }
 \end{codeexample}
