@@ -19,13 +19,13 @@ title will convey the message of the series to future generations
 correctly, but he intends to change the title before it goes to the
 publisher). Up to know, he wrote down his text and graphics on
 papyrus, but his publisher suddenly insists that he must submit in
-electronic form. Euclid tries to argue with the publisher that 
+electronic form. Euclid tries to argue with the publisher that
 electronics will only be discovered thousands of years later, but the
 publisher informs him that the use of papyrus is no longer cutting edge
 technology and Euclid will just have to keep up with modern tools.
 
 Slightly disgruntled, Euclid starts converting his papyrus
-entitled ``Book I, Proposition I'' to an amber version.  
+entitled ``Book I, Proposition I'' to an amber version.
 
 \subsection{Book I, Proposition I}
 
@@ -41,21 +41,21 @@ E. Joyce, to be found on his website at Clark University.}
   \def\C{\textcolor{output}{$C$}}
   \def\D{$D$}
   \def\E{$E$}
-  
+
   \colorlet{input}{blue!80!black}
   \colorlet{output}{red!70!black}
   \colorlet{triangle}{orange}
-  
+
   \coordinate [label=left:\A]
     (A) at ($ (0,0) + .1*(rand,rand) $);
   \coordinate [label=right:\B]
     (B) at ($ (1.25,0.25) + .1*(rand,rand) $);
 
   \draw [input] (A) -- (B);
-  
+
   \node [name path=D,help lines,draw,label=left:\D] (D) at (A) [circle through=(B)] {};
   \node [name path=E,help lines,draw,label=right:\E] (E) at (B) [circle through=(A)] {};
-  
+
   \path [name intersections={of=D and E,by={[label=above:\C]C}}];
 
   \draw [output] (A) -- (C);
@@ -67,7 +67,7 @@ E. Joyce, to be found on his website at Clark University.}
   \begin{pgfonlayer}{background}
     \fill[triangle!80] (A) -- (C) -- (B) -- cycle;
   \end{pgfonlayer}
-  
+
   \node [below right,text width=10cm,align=justify] at (4,3)
   {
     \small
@@ -78,7 +78,7 @@ E. Joyce, to be found on his website at Clark University.}
     \vskip1em
     Let \A\B\ be the given \textcolor{input}{finite straight line}. It
     is required to construct an \textcolor{triangle}{equilateral
-      triangle} on the \textcolor{input}{straight line}~\A\B. 
+      triangle} on the \textcolor{input}{straight line}~\A\B.
 
     Describe the circle \B\C\D\ with center~\A\ and radius \A\B. Again
     describe the circle \A\C\E\ with center~\B\ and radius \B\A. Join the
@@ -89,13 +89,13 @@ E. Joyce, to be found on his website at Clark University.}
     therefore \A\C\ equals \A\B. Again, since the point \B\ is the
     center of the circle \C\A\E, therefore \B\C\ equals \B\A. But
     \A\C\ was proved equal to \A\B, therefore each of the straight
-    lines \A\C\ and \B\C\ equals \A\B. And 
+    lines \A\C\ and \B\C\ equals \A\B. And
     things which equal the same thing also equal one another,
     therefore \A\C\ also equals \B\C. Therefore the three straight
-    lines \A\C, \A\B, and \B\C\ equal one another. 
+    lines \A\C, \A\B, and \B\C\ equal one another.
     Therefore the \textcolor{triangle}{triangle} \A\B\C\ is
     equilateral, and it has been  constructed on the given finite
-    \textcolor{input}{straight line}~\A\B.  
+    \textcolor{input}{straight line}~\A\B.
   };
 \end{tikzpicture}
 \bigskip
@@ -247,7 +247,7 @@ Euclid would write the following:
 Each assignment in a let operation starts with |\p|, usually followed
 by a \meta{digit}. Then comes an equal sign and a coordinate. The
 coordinate is evaluated and the result is stored internally. From
-then on you can use the following expressions: 
+then on you can use the following expressions:
 \begin{enumerate}
 \item |\x|\meta{digit} yields the $x$-coordinate of the resulting point.
 \item |\y|\meta{digit} yields the $y$-coordinate of the resulting
@@ -342,7 +342,7 @@ The idea is simple: First, you ``name'' two paths using the
 the paths. Euclid assigns the names |D| and |E| to the paths of the
 two circles (which happen to be the same names as the nodes
 themselves, but nodes and their paths live in different
-``namespaces''). 
+``namespaces'').
 \begin{codeexample}[]
 \begin{tikzpicture}
   \coordinate [label=left:$A$]  (A) at (0,0);
@@ -354,7 +354,7 @@ themselves, but nodes and their paths live in different
 
   % Name the coordinates, but do not draw anything:
   \path [name intersections={of=D and E}];
-  
+
   \coordinate [label=above:$C$] (C) at (intersection-1);
 
   \draw [red] (A) -- (C);
@@ -393,25 +393,25 @@ picture, it is just a small step to computing the bisection of the line $AB$:
 Back to Euclid's code. He introduces a few macros to make life
 simpler, like a |\A| macro for typesetting a blue $A$. He also uses the
 |background| layer for drawing the triangle behind everything at the
-end. 
+end.
 
 \begin{codeexample}[]
 \begin{tikzpicture}[thick,help lines/.style={thin,draw=black!50}]
   \def\A{\textcolor{input}{$A$}}     \def\B{\textcolor{input}{$B$}}
   \def\C{\textcolor{output}{$C$}}    \def\D{$D$}
   \def\E{$E$}
-  
+
   \colorlet{input}{blue!80!black}    \colorlet{output}{red!70!black}
   \colorlet{triangle}{orange}
-  
+
   \coordinate [label=left:\A]  (A) at ($ (0,0) + .1*(rand,rand) $);
   \coordinate [label=right:\B] (B) at ($ (1.25,0.25) + .1*(rand,rand) $);
 
   \draw [input] (A) -- (B);
-  
+
   \node [name path=D,help lines,draw,label=left:\D]   (D) at (A) [circle through=(B)] {};
   \node [name path=E,help lines,draw,label=right:\E]  (E) at (B) [circle through=(A)] {};
-  
+
   \path [name intersections={of=D and E,by={[label=above:\C]C}}];
 
   \draw [output] (A) -- (C) -- (B);
@@ -422,7 +422,7 @@ end.
   \begin{pgfonlayer}{background}
     \fill[triangle!80] (A) -- (C) -- (B) -- cycle;
   \end{pgfonlayer}
-  
+
   \node [below right, text width=10cm,align=justify] at (4,3) {
     \small\textbf{Proposition I}\par
     \emph{To construct an \textcolor{triangle}{equilateral triangle}
@@ -445,9 +445,9 @@ The second proposition in the Elements is the following:
   \def\E{$E$}                       \def\F{$F$}
   \def\G{$G$}                       \def\H{$H$}
   \def\K{$K$}                       \def\L{\textcolor{output}{$L$}}
-  
+
   \colorlet{input}{blue!80!black}    \colorlet{output}{red!70!black}
-  
+
   \coordinate [label=left:\A]  (A) at ($ (0,0) + .1*(rand,rand) $);
   \coordinate [label=right:\B] (B) at ($ (1,0.2) + .1*(rand,rand) $);
   \coordinate [label=above:\C] (C) at ($ (1,2) + .1*(rand,rand) $);
@@ -475,26 +475,26 @@ The second proposition in the Elements is the following:
 
   \foreach \point in {A,B,C,D,G,L}
     \fill [black,opacity=.5] (\point) circle (2pt);
-  
+
   \node [below right, text width=9cm,align=justify] at (4,4) {
     \small\textbf{Proposition II}\par
     \emph{To place a \textcolor{output}{straight line} equal to a
-      given \textcolor{input}{straight line} with 
-      one end at a \textcolor{orange}{given point}.} 
+      given \textcolor{input}{straight line} with
+      one end at a \textcolor{orange}{given point}.}
     \par\vskip1em
     Let \A\ be the given point, and \B\C\ the given
-    \textcolor{input}{straight line}. 
+    \textcolor{input}{straight line}.
     It is required to place a \textcolor{output}{straight line} equal
     to the given \textcolor{input}{straight line} \B\C\ with one end
-    at the point~\A.  
+    at the point~\A.
 
     Join the straight line \A\B\ from the point \A\ to the point \B, and
     construct the equilateral triangle \D\A\B\ on it.
-    
+
     Produce the straight lines \A\E\ and \B\F\ in a straight line with
     \D\A\ and \D\B. Describe the circle \C\G\H\ with center \B\ and
     radius \B\C, and  again, describe the circle \G\K\L\ with center
-    \D\ and radius \D\G. 	
+    \D\ and radius \D\G.
 
     Since the point \B\ is the center of the circle \C\G\H, therefore
     \B\C\ equals \B\G. Again, since the point \D\ is the center of the
@@ -503,11 +503,11 @@ The second proposition in the Elements is the following:
     \B\G. But \B\C\ was also proved  equal to \B\G, therefore each of
     the straight lines \A\L\ and \B\C\ equals \B\G. And things which
     equal the same thing also equal one another, therefore \A\L\ also
-    equals \B\C. 
-    
+    equals \B\C.
+
     Therefore the \textcolor{output}{straight line} \A\L\ equal to the
     given \textcolor{input}{straight line} \B\C\  has been placed with
-    one end at the \textcolor{orange}{given point}~\A.  
+    one end at the \textcolor{orange}{given point}~\A.
   };
 \end{tikzpicture}
 
@@ -543,7 +543,7 @@ Here is the computation of the point in the middle of the line $AB$:
 
 The computation of the point $D$ in Euclid's second proposition is a
 bit more complicated. It can be expressed as follows: Consider the
-line from $X$ to $B$. Suppose we 
+line from $X$ to $B$. Suppose we
 rotate this line around $X$ for 90$^\circ$ and then stretch it by a
 factor of $\sin(60^\circ)/2$. This yields the desired point~$D$. We
 can do the stretching using the partway modifier above, for the
@@ -551,7 +551,7 @@ rotation we need a new modifier: the rotation modifier. The idea is
 that the second coordinate in a partway computation can be prefixed by
 an angle. Then the partway point is computed normally (as if no angle
 were given), but the resulting point is rotated by this angle around
-the first point.  
+the first point.
 
 \begin{codeexample}[]
 \begin{tikzpicture}
@@ -587,7 +587,7 @@ The next step in the construction is to draw a circle around $B$
 through $C$, which is easy enough to do using the |circle through|
 option. Extending the lines $DA$ and $DB$ can be done using partway
 calculations, but this time with a part value outside the range
-$[0,1]$: 
+$[0,1]$:
 
 \begin{codeexample}[]
 \begin{tikzpicture}
@@ -665,9 +665,9 @@ to compute the intersections.
   \def\E{$E$}                       \def\F{$F$}
   \def\G{$G$}                       \def\H{$H$}
   \def\K{$K$}                       \def\L{\textcolor{output}{$L$}}
-  
+
   \colorlet{input}{blue!80!black}    \colorlet{output}{red!70!black}
-  
+
   \coordinate [label=left:\A]  (A) at ($ (0,0) + .1*(rand,rand) $);
   \coordinate [label=right:\B] (B) at ($ (1,0.2) + .1*(rand,rand) $);
   \coordinate [label=above:\C] (C) at ($ (1,2) + .1*(rand,rand) $);

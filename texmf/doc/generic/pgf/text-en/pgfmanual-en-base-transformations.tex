@@ -17,7 +17,7 @@ graphics: You can apply \emph{coordinate transformations} to all
 coordinates and you can apply \emph{canvas transformations} to the
 canvas on which you draw. (The names ``coordinate'' and ``canvas''
 transformations are not standard, I introduce them only for the
-purposes of this manual.) 
+purposes of this manual.)
 
 The difference is the following:
 
@@ -32,7 +32,7 @@ The difference is the following:
   coordinate. Continuing the example, if the current coordinate
   transformation is ``scale by a factor of two,'' the coordinate
   |\pgfpoint{1cm}{2cm}| actually designates the point
-  $(2\mathrm{cm},4\mathrm{cm})$. 
+  $(2\mathrm{cm},4\mathrm{cm})$.
 
   Note that coordinate transformations apply \emph{only} to
   coordinates. They do not apply to, say, line width or shadings or
@@ -185,7 +185,7 @@ coordinate transformations.
 \end{codeexample}
 \end{command}
 
-  
+
 
 \begin{command}{\pgftransformrotate\marg{degrees}}
   Rotates coordinates counterclockwise by \meta{degrees}.
@@ -199,13 +199,13 @@ coordinate transformations.
 \end{codeexample}
 \end{command}
 
-  
+
 
 \begin{command}{\pgftransformtriangle\marg{a}\marg{b}\marg{c}}
   This command transforms the coordinate system in such a way that the
   triangle given by the points \meta{a}, \meta{b} and \meta{c} lies at
   the coordinates $(0,0)$, $(1\mathrm{pt},0\mathrm{pt})$ and
-  $(0\mathrm{pt},1\mathrm{pt})$. 
+  $(0\mathrm{pt},1\mathrm{pt})$.
 \begin{codeexample}[]
 \begin{tikzpicture}
   \draw[help lines] (0,0) grid (3,2);
@@ -213,13 +213,13 @@ coordinate transformations.
   {\pgfpoint{1cm}{0cm}}
   {\pgfpoint{0cm}{2cm}}
   {\pgfpoint{3cm}{1cm}}
-  
+
   \draw (0,0) -- (1pt,0pt) -- (0pt,1pt) -- cycle;
 \end{tikzpicture}
 \end{codeexample}
 \end{command}
 
-  
+
 \begin{command}{\pgftransformcm\marg{a}\marg{b}\marg{c}\marg{d}\marg{point}}
   Applies the transformation matrix given by $a$, $b$, $c$, and $d$
   and the shift \meta{point} to coordinates (in addition to any
@@ -234,10 +234,10 @@ coordinate transformations.
 \end{codeexample}
 \end{command}
 
-  
+
 \begin{command}{\pgftransformarrow\marg{start}\marg{end}}
-  Shift coordinates to the end of the line going from \meta{start} 
-  to \meta{end} with the correct rotation. 
+  Shift coordinates to the end of the line going from \meta{start}
+  to \meta{end} with the correct rotation.
 \begin{codeexample}[]
 \begin{tikzpicture}
   \draw[help lines] (0,0) grid (3,2);
@@ -248,7 +248,7 @@ coordinate transformations.
 \end{codeexample}
 \end{command}
 
-  
+
 \begin{command}{\pgftransformlineattime\marg{time}\marg{start}\marg{end}}
   Shifts coordinates by a specific point on a line at a specific
   time. The point by which the coordinate is shifted is calculated by
@@ -317,7 +317,7 @@ coordinate transformations.
 
   As for the line-at-time transformation command, |\ifpgfslopedattime|
   decides whether an additional rotation should be applied. Again, the
-  value of |\ifpgfallowupsidedowattime| is also considered. 
+  value of |\ifpgfallowupsidedowattime| is also considered.
 \begin{codeexample}[]
 \begin{tikzpicture}
   \draw[help lines] (0,0) grid (3,2);
@@ -540,7 +540,7 @@ a coordinate transformation, see the previous section).
 \begin{command}{\pgflowlevelobj\marg{transformation code}\marg{code}}
   This command creates a local |{pgfscope}|. Inside this scope,
   |\pgflowlevel| is first called with the argument
-  \meta{transformation code}, then the \meta{code} is inserted. 
+  \meta{transformation code}, then the \meta{code} is inserted.
 
 \begin{codeexample}[]
 \begin{tikzpicture}
@@ -584,7 +584,7 @@ a coordinate transformation, see the previous section).
 
 
 
-%%% Local Variables: 
+%%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "pgfmanual"
-%%% End: 
+%%% End:

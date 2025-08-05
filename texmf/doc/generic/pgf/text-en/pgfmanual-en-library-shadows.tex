@@ -62,22 +62,22 @@ circumstances.
     options} have been setup, the following extra canvas
   transformations are applied to the path: It is scaled by
   |shadow scale| (with the origin of scaling at the path's center) and
-  it is shifted by |shadow xshift| and |shadow yshift|. 
+  it is shifted by |shadow xshift| and |shadow yshift|.
 
   Note that since scaling and shifting is done using canvas
   transformations, shadows are not taken into account when the
   picture's bounding box is computed.
 \begin{codeexample}[]
 \tikz [even odd rule]
-  \draw [general shadow={fill=red}] (0,0) circle (.5) (0.5,0) circle (.5);  
+  \draw [general shadow={fill=red}] (0,0) circle (.5) (0.5,0) circle (.5);
 \end{codeexample}
-  
+
   \begin{key}{/tikz/shadow scale=\meta{factor} (initially 1)}
     Shadows are scaled by this amount.
 \begin{codeexample}[]
 \tikz [even odd rule]
   \draw [general shadow={fill=red,shadow scale=1.25}]
-    (0,0) circle (.5) (0.5,0) circle (.5);  
+    (0,0) circle (.5) (0.5,0) circle (.5);
 \end{codeexample}
   \end{key}
   \begin{key}{/tikz/shadow xshift=\meta{factor} (initially 0pt)}
@@ -85,7 +85,7 @@ circumstances.
 \begin{codeexample}[]
 \tikz [even odd rule]
   \draw [general shadow={fill=red,shadow xshift=-5pt}]
-    (0,0) circle (.5) (0.5,0) circle (.5);  
+    (0,0) circle (.5) (0.5,0) circle (.5);
 \end{codeexample}
   \end{key}
   \begin{key}{/tikz/shadow yshift=\meta{factor} (initially 0pt)}
@@ -110,7 +110,7 @@ circumstances.
 
 \begin{codeexample}[]
 \tikz [even odd rule]
-  \filldraw [drop shadow,fill=white] (0,0) circle (.5) (0.5,0) circle (.5);  
+  \filldraw [drop shadow,fill=white] (0,0) circle (.5) (0.5,0) circle (.5);
 \end{codeexample}
 \begin{codeexample}[]
 \begin{tikzpicture}
@@ -123,10 +123,10 @@ circumstances.
 \begin{tikzpicture}
   \draw [help lines] (0,0) grid (3,2);
   \filldraw [drop shadow={opacity=0.25},fill=white]
-    (1,.5) circle (.5) (1.5,.5) circle (.5);  
+    (1,.5) circle (.5) (1.5,.5) circle (.5);
 
   \filldraw [drop shadow={opacity=1},fill=white]
-    (1,2)  circle (.5) (1.5,2)  circle (.5);  
+    (1,2)  circle (.5) (1.5,2)  circle (.5);
 \end{tikzpicture}
 \end{codeexample}
 \end{key}
@@ -136,8 +136,8 @@ circumstances.
   each shadow. Use this style to reconfigure the way shadows are
   drawn.
 \begin{codeexample}[]
-\begin{tikzpicture}[every shadow/.style={opacity=.8,fill=blue!50!black}]    
-  \filldraw [drop shadow,fill=white] (0,0) circle (.5) (0.5,0) circle (.5);  
+\begin{tikzpicture}[every shadow/.style={opacity=.8,fill=blue!50!black}]
+  \filldraw [drop shadow,fill=white] (0,0) circle (.5) (0.5,0) circle (.5);
 \end{tikzpicture}
 \end{codeexample}
 \end{stylekey}
@@ -158,8 +158,8 @@ of the path/object present.
 \end{codeexample}
   Furthermore, the options |fill=|\meta{fill color} and
   |draw=|\meta{draw color} are also set, where the \meta{fill color}
-  and \meta{draw color} are the fill and draw colors used for the main 
-  path. 
+  and \meta{draw color} are the fill and draw colors used for the main
+  path.
 \begin{codeexample}[]
 \begin{tikzpicture}
   \node [copy shadow,fill=blue!20,draw=blue,thick] {Hello World!};
@@ -272,7 +272,7 @@ that have a special shape. They will look strange with other shapes.
 \end{key}
 
 
-%%% Local Variables: 
+%%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "pgfmanual-pdftex-version"
-%%% End: 
+%%% End:

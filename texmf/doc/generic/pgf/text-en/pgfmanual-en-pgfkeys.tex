@@ -637,7 +637,7 @@ There are some parameters for handled keys which prove to be useful in some (pos
 
     can only be redefined: it doesn't have a full path, so the
     |only existing| mechanism applies. But the style
-	
+
     |\pgfkeys{/my path/key/.style={|$\dotsc$|}}|
 
     will still work. This allows users to override the |only existing|
@@ -838,7 +838,7 @@ also define new ones as described in Section~\ref{section-key-handlers}.
   the first example provided in section~\ref{sec:pgf:unknown:keys}
   ``Unknown Keys'' because |/.search also| only applies only for keys
   which are not fully qualified.
-	
+
 
   For those who are familiar with |\pgfkeys|, the actual
   implementation of |/.search also| might be interesting:
@@ -1026,7 +1026,7 @@ A number of handlers exist for defining the code of keys.
 \pgfkeys{/page size/.code args={#1 and #2}{\paperheight=#2\paperwidth=#1}}
 \pgfkeys{/page size=30cm and 20cm}
 \end{codeexample}
-	
+
   Note that |/.code n args| should be preferred in case you need just a number
   of arguments (when the resulting keys are used, |/.code n args|
   gobbles spaces between the arguments whereas |/.code args| considers

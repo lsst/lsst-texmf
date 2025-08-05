@@ -3,13 +3,13 @@ TEXINPUTS := ../../text-en:$(TEXINPUTS)
 
 all: $(doc).html
 
-pgfmanual.idx: 
+pgfmanual.idx:
 	touch pgfmanual.idx
 
-pgfmanual.ind: pgfmanual.idx 
+pgfmanual.ind: pgfmanual.idx
 	makeindex $(doc).idx
 
-pgfmanual.html: $(doc).tex $(doc).ind 
+pgfmanual.html: $(doc).tex $(doc).ind
 	TEXINPUTS="$(TEXINPUTS)" htlatex $(doc).tex
 
 clean:

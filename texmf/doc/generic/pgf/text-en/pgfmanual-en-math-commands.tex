@@ -13,31 +13,31 @@
 
 Instead of parsing and evaluating complex expressions, you can also
 use the mathematical engine to evaluate a single mathematical
-operation. The macros used for many of these computations are listed 
-above in Section~\ref{pgfmath-functions}. \pgfname{} also provides 
+operation. The macros used for many of these computations are listed
+above in Section~\ref{pgfmath-functions}. \pgfname{} also provides
 some additional commands which are shown below:
 
 \subsection{Basic arithmetic functions}
 
 \label{pgfmath-commands-basic}
 
-In addition to the commands described in 
+In addition to the commands described in
 Section~\ref{pgfmath-functions-basic}, the following command is
 provided:
 
-\begin{command}{\pgfmathreciprocal\marg{x}}         
-	Defines |\pgfmathresult| as $1\div\meta{x}$. This is provides 
-	greatest accuracy when \mvar{x} is small.                  
+\begin{command}{\pgfmathreciprocal\marg{x}}
+	Defines |\pgfmathresult| as $1\div\meta{x}$. This is provides
+	greatest accuracy when \mvar{x} is small.
 \end{command}
 
 \subsection{Comparison and logical functions}
 
-In addition to the commands described in 
-Section~\ref{pgfmath-functions-comparison}, 
+In addition to the commands described in
+Section~\ref{pgfmath-functions-comparison},
 the following command was provided by Christian Feuers\"anger:
 
-\begin{command}{\pgfmathapproxequalto\marg{x}\marg{y}}       
-	Defines |\pgfmathresult| 1.0 if $ \rvert \meta{x} - \meta{y} \lvert < 0.0001$, but 0.0 otherwise.                    
+\begin{command}{\pgfmathapproxequalto\marg{x}\marg{y}}
+	Defines |\pgfmathresult| 1.0 if $ \rvert \meta{x} - \meta{y} \lvert < 0.0001$, but 0.0 otherwise.
 	As a side-effect, the global boolean |\ifpgfmathcomparison| will be set accordingly.
 \end{command}
 
@@ -45,20 +45,20 @@ the following command was provided by Christian Feuers\"anger:
 
 \label{pgfmath-random}
 
-In addition to the commands described in 
-Section~\ref{pgfmath-functions-random}, 
+In addition to the commands described in
+Section~\ref{pgfmath-functions-random},
 the following commands are provided:
 
 \begin{command}{\pgfmathgeneratepseudorandomnumber}
-	Defines |\pgfmathresult| as a pseudo-random integer between 1 and 
+	Defines |\pgfmathresult| as a pseudo-random integer between 1 and
 	$2^{31}-1$. This uses a linear congruency generator, based on ideas
 	due to Erich Janka.
 \end{command}
 
 \begin{command}{\pgfmathrandominteger\marg{macro}\marg{maximum}\marg{minimum}}
-	This defines \meta{macro} as a pseudo-randomly generated integer from 
+	This defines \meta{macro} as a pseudo-randomly generated integer from
 	the range \meta{maximum} to \meta{minimum} (inclusive).
-	
+
 \begin{codeexample}[]
 \begin{pgfpicture}
    \foreach \x in {1,...,50}{
@@ -68,7 +68,7 @@ the following commands are provided:
       \color{blue!40!white}
       \pgfsetstrokecolor{blue!80!black}
       \pgfusepath{stroke, fill}
-   }	  
+   }
 \end{pgfpicture}
 \end{codeexample}
 \end{command}
@@ -94,7 +94,7 @@ the following commands are provided:
       \color{\c!40!white}
       \pgfsetstrokecolor{\c!80!black}
       \pgfusepath{stroke, fill}
-   }	  
+   }
 \end{pgfpicture}
 \end{codeexample}
 
@@ -104,19 +104,19 @@ the following commands are provided:
 \end{command}
 
 
-      
+
 \subsection{Base Conversion}
-	
+
 \label{pgfmath-bases}
 
-\pgfname{} provides limited support for conversion between 
+\pgfname{} provides limited support for conversion between
 \emph{representations} of numbers. Currently the numbers must be
 positive integers in the range $0$ to $2^{31}-1$, and the bases in the
 range $2$ to $36$. All digits representing numbers greater than 9 (in
-base ten), are alphabetic, but may be upper or lower case. 
+base ten), are alphabetic, but may be upper or lower case.
 
-In addition to the commands described in 
-Section~\ref{pgfmath-functions-base}, 
+In addition to the commands described in
+Section~\ref{pgfmath-functions-base},
 the following commands are provided:
 
 \begin{command}{\pgfmathbasetodec\marg{macro}\marg{number}\marg{base}}
@@ -143,7 +143,7 @@ the following commands are provided:
 	Defines \meta{macro} as the result of converting \meta{number} from
 	base 10 to base \meta{base}. Any resulting alphabetic digits are in
 	\emph{lower case}.
-	
+
 \begin{codeexample}[]
 \pgfmathdectobase\mynumber{65535}{16} \mynumber
 \end{codeexample}
@@ -154,7 +154,7 @@ the following commands are provided:
 	Defines \meta{macro} as the result of converting \meta{number} from
 	base 10 to base \meta{base}. Any resulting alphabetic digits are in
 	\emph{upper case}.
-	
+
 \begin{codeexample}[]
 \pgfmathdectoBase\mynumber{65535}{16} \mynumber
 \end{codeexample}
@@ -163,10 +163,10 @@ the following commands are provided:
 
 \begin{command}{\pgfmathbasetobase\marg{macro}\marg{number}\marg{base-1}\marg{base-2}}
 	Defines \meta{macro} as the result of converting \meta{number} from
-	base \meta{base-1} to base \meta{base-2}. Alphabetic digits in 
-	\meta{number} can be upper or lower case, but any resulting 
+	base \meta{base-1} to base \meta{base-2}. Alphabetic digits in
+	\meta{number} can be upper or lower case, but any resulting
 	alphabetic digits are in \emph{lower case}.
-	
+
 \begin{codeexample}[]
 \pgfmathbasetobase\mynumber{11011011}{2}{16} \mynumber
 \end{codeexample}
@@ -175,10 +175,10 @@ the following commands are provided:
 
 \begin{command}{\pgfmathbasetoBase\marg{macro}\marg{number}\marg{base-1}\marg{base-2}}
 	Defines \meta{macro} as the result of converting \meta{number} from
-	base \meta{base-1} to base \meta{base-2}. Alphabetic digits in 
-	\meta{number} can be upper or lower case, but any resulting 
+	base \meta{base-1} to base \meta{base-2}. Alphabetic digits in
+	\meta{number} can be upper or lower case, but any resulting
 	alphabetic digits are in \emph{upper case}.
-	
+
 \begin{codeexample}[]
 \pgfmathbasetoBase\mynumber{121212}{3}{12} \mynumber
 \end{codeexample}
@@ -187,7 +187,7 @@ the following commands are provided:
 
 
 \begin{command}{\pgfmathsetbasenumberlength\marg{integer}}
-	Set the number of digits in the result of a base conversion to 
+	Set the number of digits in the result of a base conversion to
 	\meta{integer}. If the result of a conversion has less digits
 	than this number it is prefixed with zeros.
 

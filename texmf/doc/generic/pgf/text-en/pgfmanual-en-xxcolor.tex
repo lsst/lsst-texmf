@@ -28,7 +28,7 @@ in a roundabout manner if such an environment is not available.
   applied to the current color, i.\,e., the color that was in effect
   before the environment started. A mix-in specification is a number
   between 0 and 100 followed by an exclamation mark and a color
-  name. When a |\color| command is 
+  name. When a |\color| command is
   encountered inside a mix-in environment, the number states what
   percentage of the desired color should be used. The rest is
   ``filled up'' with the color given in the mix-in
@@ -57,14 +57,14 @@ Note that the environment only changes colors that have been installed
 using the standard \LaTeX\ |\color| command. In particular,
 the colors in images are not changed. There is, however, some support
 offered by the commands |\pgfuseimage| and
-|\pgfuseshading|. If the first command is invoked 
+|\pgfuseshading|. If the first command is invoked
 inside a |colormixin| environment with the parameter, say,
 |50!black| on an image with the name |foo|, the command
 will first check whether there is also a defined image with the name
 |foo.!50!black|. If so, this image is used instead. This allows
 you to provide a different image for this case. If you nest
 |colormixin| environments, the different mix-ins are all appended. For
-example, inside the inner environment of 
+example, inside the inner environment of
 the above example, |\pgfuseimage{foo}| would first check whether
 there exists an image named |foo.!50!white!25!black|.
 

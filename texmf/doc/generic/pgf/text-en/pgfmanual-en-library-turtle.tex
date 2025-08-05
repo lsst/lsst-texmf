@@ -39,7 +39,7 @@ independently of other path commands.
 
 \begin{key}{/tikz/turtle=\meta{keys}}
   This key executes the \meta{keys} with the current key path set to
-  |/tikz/turtle|. 
+  |/tikz/turtle|.
 \begin{codeexample}[]
 \tikz[turtle/distance=2mm]
   \draw [turtle={home,fd,rt,fd,lt,fd,lt,fd}];
@@ -47,7 +47,7 @@ independently of other path commands.
 \end{key}
 
 \begin{key}{/tikz/turtle/home}
-  Places the turtle at the origin and lets it head upward. 
+  Places the turtle at the origin and lets it head upward.
 \end{key}
 
 \begin{key}{/tikz/turtle/forward=\meta{distance} (default \normalfont see text)}
@@ -61,13 +61,13 @@ independently of other path commands.
   current last point on the path, a point at the given \meta{distance}
   in the direction the turtle is currently heading is computed. Then,
   the operation |to[turtle/how]| is used to extend the path to this
-  point. 
+  point.
   \begin{stylekey}{/tikz/turtle/how (initially \normalfont empty)}
     This style can setup the |to path| used by turtles. By setting
-    this style you can change the to-path: 
+    this style you can change the to-path:
 \begin{codeexample}[]
 \tikz \draw [turtle={how/.style={bend left},home,forward,right,forward}];
-\end{codeexample}    
+\end{codeexample}
   \end{stylekey}
 \end{key}
 
@@ -85,7 +85,7 @@ independently of other path commands.
 \end{key}
 
 \begin{key}{/tikz/turtle/left=\meta{angle} (default 90)}
-  Turns the turtle left by the given angle. 
+  Turns the turtle left by the given angle.
 \end{key}
 
 \begin{key}{/tikz/turtle/lt}
@@ -93,7 +93,7 @@ independently of other path commands.
 \end{key}
 
 \begin{key}{/tikz/turtle/right=\meta{angle} (default 90)}
-  Turns the turtle right by the given angle. 
+  Turns the turtle right by the given angle.
 \end{key}
 
 \begin{key}{/tikz/turtle/rt}

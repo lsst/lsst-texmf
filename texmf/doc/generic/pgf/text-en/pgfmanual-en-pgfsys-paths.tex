@@ -29,7 +29,7 @@ directly by the \pgfname-system layer. For this reason, the commands for
 creating soft paths do not start with |\pgfsys@|, but rather with
 |\pgfsyssoftpath@|. On the other hand, as a user you will never use
 these commands directly, so they are described as part of the
-low-level interface. 
+low-level interface.
 
 
 
@@ -51,12 +51,12 @@ quite a lot happens behind the scenes:
   The |\pgfpathxxxx| command do \emph{not} directly call ``hard''
   commands like |\pgfsys@xxxx|. Instead, the command |\pgfpathmoveto|
   invokes a special command called |\pgfsyssoftpath@moveto| and
-  |\pgfpathlineto| invokes |\pgfsyssoftpath@lineto|. 
+  |\pgfpathlineto| invokes |\pgfsyssoftpath@lineto|.
 
   The |\pgfsyssoftpath@xxxx| commands, which are described below,
   construct a soft path. Each time such a command is used, special
   tokens are added to the end of an internal macro that stores the
-  soft path currently being constructed. 
+  soft path currently being constructed.
 \item
   When the |\pgfusepath| is encountered, the soft path stored in
   the internal macro is ``invoked.'' Only now does a special macro
@@ -127,7 +127,7 @@ it.
 
 \begin{command}{\pgfsyssoftpath@flushcurrentpath}
   This command will invoke the current soft path and then set it to be
-  empty. 
+  empty.
 \end{command}
 
 
@@ -149,7 +149,7 @@ it.
 \end{command}
 
 \begin{command}{\pgfsyssoftpath@lineto\marg{x}\marg{y}}
-  Appends a ``line-to'' segment to the current soft path. 
+  Appends a ``line-to'' segment to the current soft path.
 \end{command}
 
 \begin{command}{\pgfsyssoftpath@curveto\marg{a}\marg{b}\marg{c}\marg{d}\marg{x}\marg{y}}
@@ -158,11 +158,11 @@ it.
 \end{command}
 
 \begin{command}{\pgfsyssoftpath@rect\marg{lower left x}\marg{lower left y}\marg{width}\marg{height}}
-  Appends a rectangle segment to the current soft path. 
+  Appends a rectangle segment to the current soft path.
 \end{command}
 
 \begin{command}{\pgfsyssoftpath@closepath}
-  Appends a ``close-path'' segment to the current soft path. 
+  Appends a ``close-path'' segment to the current soft path.
 \end{command}
 
 
@@ -208,7 +208,7 @@ In details, the following tokens exist:
   the current point should be moved.
 \item
   \declare{|\pgfsyssoftpath@linetotoken|} indicates a line-to
-  operation. 
+  operation.
 \item
   \declare{|\pgfsyssoftpath@curvetosupportatoken|} indicates the first
   control point of a curve-to operation. The triple must be followed

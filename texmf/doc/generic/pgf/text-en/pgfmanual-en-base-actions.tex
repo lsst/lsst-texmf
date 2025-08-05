@@ -90,7 +90,7 @@ following command:
   When more than one of the first three actions are given, they are
   applied in the above ordering, regardless of their ordering in
   \meta{actions}. Thus, |{stroke,fill}| and |{fill,stroke}| have the
-  same effect. 
+  same effect.
 \end{command}
 
 To shade a path, use the |\pgfshadepath| command, which is explained
@@ -111,7 +111,7 @@ only to a part of it.
 All graphic parameters are local to the current |{pgfscope}|, but they
 persists past \TeX\ groups, \emph{except} for the interior rule
 (even-odd or nonzero) and the arrow tip kinds. The latter graphic
-parameters only persist till the end of the current \TeX\ group, but 
+parameters only persist till the end of the current \TeX\ group, but
 this may change in the future, so do not count on this.
 
 \subsubsection{Graphic Parameter: Line Width}
@@ -156,23 +156,23 @@ this may change in the future, so do not count on this.
 \end{command}
 \begin{command}{\pgfsetrectcap}
   Sets the line cap to a square cap. See again
-  Section~\ref{section-cap-joins}. 
+  Section~\ref{section-cap-joins}.
 \end{command}
 \begin{command}{\pgfsetroundjoin}
   Sets the line join to a round join. See again
-  Section~\ref{section-cap-joins}. 
+  Section~\ref{section-cap-joins}.
 \end{command}
 \begin{command}{\pgfsetbeveljoin}
   Sets the line join to a bevel join. See again
-  Section~\ref{section-cap-joins}. 
+  Section~\ref{section-cap-joins}.
 \end{command}
 \begin{command}{\pgfsetmiterjoin}
   Sets the line join to a miter join. See again
-  Section~\ref{section-cap-joins}. 
+  Section~\ref{section-cap-joins}.
 \end{command}
 \begin{command}{\pgfsetmiterlimit\marg{miter limit factor}}
-  Sets the miter limit to  \meta{miter limit factor}. See again 
-  Section~\ref{section-cap-joins}. 
+  Sets the miter limit to  \meta{miter limit factor}. See again
+  Section~\ref{section-cap-joins}.
 \end{command}
 
 \subsubsection{Graphic Parameter: Dashing}
@@ -242,7 +242,7 @@ this may change in the future, so do not count on this.
   Sets both the stroke and fill color. The difference to the normal
   |\color| command is that the effect lasts till the end of the
   current |{pgfscope}|, not only till the end of the current \TeX\
-  group. 
+  group.
 \end{command}
 
 
@@ -256,7 +256,7 @@ command is described in Section~\ref{section-transparency}.
 After a path has been drawn, \pgfname\ can add arrow tips at the
 ends. It will only add arrows at the beginning of the first subpath
 and at the end of the last subpath. For closed paths the result is not
-defined, that is, it may change without notice in the future. 
+defined, that is, it may change without notice in the future.
 
 \begin{command}{\pgfsetarrowsstart\marg{arrow kind}}
   Sets the arrow tip kind used at the start of a (possibly curved)
@@ -282,7 +282,7 @@ defined, that is, it may change without notice in the future.
   \TeX\ scope.
 
   The different possible arrow kinds are explained in
-  Section~\ref{section-arrows}.  
+  Section~\ref{section-arrows}.
 \end{command}
 
 \begin{command}{\pgfsetarrowsend\marg{arrow kind}}
@@ -331,7 +331,7 @@ defined, that is, it may change without notice in the future.
 \end{pgfpicture}
 \end{codeexample}
 \end{command}
-  
+
 \begin{command}{\pgfsetshortenend\marg{dimension}}
   Works like |\pgfsetshortenstart|.
 \end{command}
@@ -393,7 +393,7 @@ Two commands are used to set the inner line width and color.
   \pgfsetinnerlinewidth{1pt}
   \pgfusepath{stroke}
 \end{pgfpicture}
-\end{codeexample}  
+\end{codeexample}
 \end{command}
 
 
@@ -412,7 +412,7 @@ Two commands are used to set the inner line width and color.
   \pgfsetinnerstrokecolor{red!50}
   \pgfusepath{stroke}
 \end{pgfpicture}
-\end{codeexample}  
+\end{codeexample}
 \end{command}
 
 
@@ -425,7 +425,7 @@ the current fill color. It is not always obvious whether a point is
 or multiple parts. In this case either the nonzero winding number rule
 or the even-odd crossing number rule is used to decide, which points
 lie ``inside.'' These rules are explained in
-Section~\ref{section-rules}. 
+Section~\ref{section-rules}.
 
 \subsubsection{Graphic Parameter: Interior Rule}
 
@@ -464,7 +464,7 @@ You can set which rule is used using the following commands:
 
 \begin{command}{\pgfsetfillcolor\marg{color}}
   Sets the color used for filling paths to \meta{color}. Like the
-  stroke color, the effect lasts only till the next use of |\color|. 
+  stroke color, the effect lasts only till the next use of |\color|.
 \end{command}
 
 
@@ -488,7 +488,7 @@ against the intersection of both.
 The only way to enlarge the clipping path is to end the |{pgfscope}|
 in which the clipping was done. At the end of a |{pgfscope}| the
 clipping path that was in force at the beginning of the scope is
-reinstalled. 
+reinstalled.
 
 \subsection{Using a Path as a Bounding Box}
 \label{section-using-bb}

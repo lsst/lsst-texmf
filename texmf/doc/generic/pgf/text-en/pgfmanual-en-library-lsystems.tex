@@ -23,7 +23,7 @@ several times and the when resulting string is processed the action
 associated with each symbol is executed.
 
 In \pgfname, L-systems can be used to create simple 2-dimensional
-fractal patterns\ldots	
+fractal patterns\ldots
 \begin{codeexample}[pre={\expandafter\let\csname pgf@lsystem@Koch curve\endcsname=\relax}]
 \begin{tikzpicture}
 \pgfdeclarelindenmayersystem{Koch curve}{
@@ -100,27 +100,27 @@ only defined when the \meta{specification} argument is executed.
   	\item
   	|F| move forward a certain distance, drawing a line. Uses
   	|\pgflsystemdrawforward|.
-  	
+
   	\item
   	|f| move forward a certain distance, without drawing a line.
   	Uses |\pgflsystemmoveforward|.
-  	
+
   	\item
   	|+| turn left by some angle.
   	Uses |\pgflsystemturnleft|.
-  	
+
   	\item
   	|-| turn right by some angle.
   	Uses |\pgflsystemturnright|.
-  	
+
   	\item
   	|[| save the current state (i.e., the position and direction).
   	Uses |\pgflsystemsavestate|.
-  	
+
   	\item
   	|]| restore the last saved state.
   	Uses |\pgflsystemrestorestate|.
-  	
+
   \end{itemize}
 
   The symbols |[| and |]| act like a stack: |[| pushes the state of the
@@ -255,7 +255,7 @@ symbols.
   system).
  	\meta{body} consists of a string of symbols, which again need not
  	necessarily have any code associated with them.
- 	
+
 \end{command}
 
   As an example, the following shows an L-system that uses

@@ -46,7 +46,7 @@
 %% merlin.mbs  (with options: `tail,ay,nat,nm-rev,jnrlst,nmdash,keyxyr,blkyear,dt-beg,yr-blk,jtit-x,jttl-rm,thtit-x,trtit-b,vnum-x,volp-com,jpg-1,pp-last,num-xser,btit-rm,bt-rm,bkpg-x,add-pub,pub-par,pre-pub,edparxc,edby,blk-com,blknt,fin-bare,ppx,ed,abr,ednx,ord,jabr,jaa,amper,and-com,and-com-ed,revdata,eprint,url,url-blk,em-x,nfss,{}')
 %% ----------------------------------------
 %% *** Astronomical Journal by the AAS ***
-%% 
+%%
 %% Copyright 1994-2002 Patrick W Daly
  % ===============================================================
  % IMPORTANT NOTICE:

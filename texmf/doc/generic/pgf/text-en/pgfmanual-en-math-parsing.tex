@@ -120,7 +120,7 @@ engine is the following:
   which greatly simplifies the problem of parsing real numbers.
   As a result of these restrictions |\pgfmathqparse|
   is about twice as fast as |\pgfmathparse|. Note that the result
-  will still be a number without units.	
+  will still be a number without units.
 \end{command}
 
 \begin{command}{\pgfmathpostparse}
@@ -446,7 +446,7 @@ example, |\pgfmathadd|, but there are some notable exceptions.
 \mathcommand
 
 	This returns $-\mvar{x}$.
-	
+
 \begin{codeexample}[]
 \pgfmathparse{neg(50)} \pgfmathresult
 \end{codeexample}
@@ -544,7 +544,7 @@ example, |\pgfmathadd|, but there are some notable exceptions.
 \catcode`\^=7
 
 	Maclaurin series for $e^x$.
-}	
+}
 \begin{codeexample}[]
 \pgfmathparse{exp(1)} \pgfmathresult
 \end{codeexample}
@@ -565,7 +565,7 @@ example, |\pgfmathadd|, but there are some notable exceptions.
 	An approximation for $\ln(\textrm{\mvar{x}})$.
 	This uses an algorithm due to Rouben Rostamian, and coefficients
 	suggested by Alain Matthes.
-}	
+}
 \begin{codeexample}[]
 \pgfmathparse{ln(10)} \pgfmathresult
 \end{codeexample}
@@ -602,7 +602,7 @@ example, |\pgfmathadd|, but there are some notable exceptions.
 \mathcommand
 
 	Evaluates the absolute value of $x$.
-	
+
 \begin{codeexample}[]
 \pgfmathparse{abs(-5)} \pgfmathresult
 \end{codeexample}
@@ -670,7 +670,7 @@ example, |\pgfmathadd|, but there are some notable exceptions.
 \mathcommand
 
 	Rounds \mvar{x} down to the nearest integer.
-	
+
 \begin{codeexample}[]
 \pgfmathparse{floor(32.5/17)} \pgfmathresult
 \end{codeexample}
@@ -740,7 +740,7 @@ example, |\pgfmathadd|, but there are some notable exceptions.
 \mathcommand
 
 	Returns the value $\pi=3.141592654$.
-	
+
 \begin{codeexample}[]
 \pgfmathparse{pi} \pgfmathresult
 \end{codeexample}
@@ -755,7 +755,7 @@ example, |\pgfmathadd|, but there are some notable exceptions.
 \mathcommand
 
 	Convert \mvar{x} to radians. \mvar{x} is assumed to be in degrees.
-	
+
 \begin{codeexample}[]
 \pgfmathparse{rad(90)} \pgfmathresult
 \end{codeexample}
@@ -766,7 +766,7 @@ example, |\pgfmathadd|, but there are some notable exceptions.
 \mathcommand
 
 	Convert \mvar{x} to degrees. \mvar{x} is assumed to be in radians.
-	
+
 \begin{codeexample}[]
 \pgfmathparse{deg(3*pi/2)} \pgfmathresult
 \end{codeexample}
@@ -778,7 +778,7 @@ example, |\pgfmathadd|, but there are some notable exceptions.
 
 	Sine of \mvar{x}. By employing the |r| operator, \mvar{x} can be in
 	radians.
-	
+
 \begin{codeexample}[]
 \pgfmathparse{sin(60)} \pgfmathresult
 \end{codeexample}
@@ -810,7 +810,7 @@ example, |\pgfmathadd|, but there are some notable exceptions.
 
 	Tangent of \mvar{x}. By employing the |r| operator, \mvar{x} can be in
 	radians.
-	
+
 \begin{codeexample}[]
 \pgfmathparse{tan(45)} \pgfmathresult
 \end{codeexample}
@@ -839,7 +839,7 @@ example, |\pgfmathadd|, but there are some notable exceptions.
 
 	Cosecant of \mvar{x}. By employing the |r| operator, \mvar{x} can be in
 	radians.
-	
+
 \begin{codeexample}[]
 \pgfmathparse{cosec(30)} \pgfmathresult
 \end{codeexample}
@@ -851,7 +851,7 @@ example, |\pgfmathadd|, but there are some notable exceptions.
 
 	Cotangent of \mvar{x}. By employing the |r| operator, \mvar{x} can be in
 	radians.
-	
+
 \begin{codeexample}[]
 \pgfmathparse{cot(15)} \pgfmathresult
 \end{codeexample}
@@ -911,7 +911,7 @@ example, |\pgfmathadd|, but there are some notable exceptions.
 \mathcommand
 
 	This returns |1| if $\mvar{x}=\mvar{y}$ and |0| otherwise.
-	
+
 \begin{codeexample}[]
 \pgfmathparse{equal(20,20)} \pgfmathresult
 \end{codeexample}
@@ -922,7 +922,7 @@ example, |\pgfmathadd|, but there are some notable exceptions.
 \mathcommand
 
 	This returns |1| if $\mvar{x}>\mvar{y}$ and |0| otherwise.
-	
+
 \begin{codeexample}[]
 \pgfmathparse{greater(20,25)} \pgfmathresult
 \end{codeexample}
@@ -933,7 +933,7 @@ example, |\pgfmathadd|, but there are some notable exceptions.
 \mathcommand
 
 	This returns |1| if $\mvar{x}<\mvar{y}$ and |0| otherwise.
-	
+
 \begin{codeexample}[]
 \pgfmathparse{greater(20,25)} \pgfmathresult
 \end{codeexample}
@@ -943,7 +943,7 @@ example, |\pgfmathadd|, but there are some notable exceptions.
 \mathcommand
 
 	This returns |0| if $\mvar{x}=\mvar{y}$ and |1| otherwise.
-	
+
 \begin{codeexample}[]
 \pgfmathparse{notequal(20,25)} \pgfmathresult
 \end{codeexample}
@@ -954,7 +954,7 @@ example, |\pgfmathadd|, but there are some notable exceptions.
 \mathcommand
 
 	This returns |1| if $\mvar{x}\leq\mvar{y}$ and |0| otherwise.
-	
+
 \begin{codeexample}[]
 \pgfmathparse{notgreater(20,25)} \pgfmathresult
 \end{codeexample}
@@ -964,7 +964,7 @@ example, |\pgfmathadd|, but there are some notable exceptions.
 \mathcommand
 
 	This returns |1| if $\mvar{x}\geq\mvar{y}$ and |0| otherwise.
-	
+
 \begin{codeexample}[]
 \pgfmathparse{notless(20,25)} \pgfmathresult
 \end{codeexample}
@@ -976,7 +976,7 @@ example, |\pgfmathadd|, but there are some notable exceptions.
 
 	This returns |1| if \mvar{x} and \mvar{y} both evaluate to
 	non-zero values. Otherwise |0| is returned.
-	
+
 \begin{codeexample}[]
 \pgfmathparse{and(5>4,6>7)} \pgfmathresult
 \end{codeexample}
@@ -988,7 +988,7 @@ example, |\pgfmathadd|, but there are some notable exceptions.
 
 	This returns |1| if either \mvar{x} or \mvar{y} evaluate to
 	non-zero values. Otherwise |0| is returned.
-	
+
 \begin{codeexample}[]
 \pgfmathparse{and(5>4,6>7)} \pgfmathresult
 \end{codeexample}
@@ -999,7 +999,7 @@ example, |\pgfmathadd|, but there are some notable exceptions.
 \mathcommand
 
 	This returns |1| if $\mvar{x}=0$, otherwise |0|.
-	
+
 \begin{codeexample}[]
 \pgfmathparse{not(true)} \pgfmathresult
 \end{codeexample}
@@ -1012,7 +1012,7 @@ example, |\pgfmathadd|, but there are some notable exceptions.
 
 	This returns \mvar{y} if \mvar{x} evaluates to some non-zero value,
 	otherwise \mvar{z} is returned.
-	
+
 \begin{codeexample}[]
 \pgfmathparse{ifthenelse(5==4,"yes","no")} \pgfmathresult
 \end{codeexample}
@@ -1023,7 +1023,7 @@ example, |\pgfmathadd|, but there are some notable exceptions.
 \mathcommand
 
 	This evaluates to |1|.
-	
+
 \begin{codeexample}[]
 \pgfmathparse{true ? "yes" : "no"} \pgfmathresult
 \end{codeexample}
@@ -1034,7 +1034,7 @@ example, |\pgfmathadd|, but there are some notable exceptions.
 \mathcommand
 
 	This evaluates to |0|.
-	
+
 \begin{codeexample}[]
 \pgfmathparse{false ? "yes" : "no"} \pgfmathresult
 \end{codeexample}
@@ -1102,7 +1102,7 @@ example, |\pgfmathadd|, but there are some notable exceptions.
   Convert \mvar{x}{} (assumed to be an integer in base 10) to a
   hexadecimal representation, using lower case alphabetic digits.
 	No further calculation will be possible with the result.
-	
+
 \begin{codeexample}[]
 \pgfmathparse{hex(65535)} \pgfmathresult
 \end{codeexample}
@@ -1201,7 +1201,7 @@ example, |\pgfmathadd|, but there are some notable exceptions.
 	This accesses the array \mvar{x} at the index \mvar{y}. The
 	array must begin and end with braces (e.g., |{1,2,3,4}|) and
 	array indexing starts at |0|.
-	
+
 \begin{codeexample}[]
 \pgfmathparse{array({9,13,17,21},2)} \pgfmathresult
 \end{codeexample}
@@ -1216,7 +1216,7 @@ suggested by Martin Heller:
 \mathcommand
 
 	The hyperbolic sine of \mvar{x}%
-	
+
 \begin{codeexample}[]
 \pgfmathparse{sinh(0.5)} \pgfmathresult
 \end{codeexample}
@@ -1227,7 +1227,7 @@ suggested by Martin Heller:
 \mathcommand
 
 	The hyperbolic cosine of \mvar{x}%
-	
+
 \begin{codeexample}[]
 \pgfmathparse{cosh(0.5)} \pgfmathresult
 \end{codeexample}
@@ -1238,7 +1238,7 @@ suggested by Martin Heller:
 \mathcommand
 
 	The hyperbolic tangent of \mvar{x}%
-	
+
 \begin{codeexample}[]
 \pgfmathparse{tanh(0.5)} \pgfmathresult
 \end{codeexample}

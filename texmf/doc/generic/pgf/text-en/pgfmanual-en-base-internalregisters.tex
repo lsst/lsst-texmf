@@ -32,7 +32,7 @@ A part of these internals are already mentioned in section~\ref{section-internal
 	\pgf@ya,
 	\pgf@yb,
 	\pgf@yc}
-	Temporary registers for \TeX\ dimensions which can be modified freely. Just make sure changes occur only within \TeX\ groups. 
+	Temporary registers for \TeX\ dimensions which can be modified freely. Just make sure changes occur only within \TeX\ groups.
 
 	\paragraph{Attention:}
 	\pgfname\ uses these registers to perform path operations. For reasons of efficiency, path commands do not always guard them. As a consequence, the code
@@ -40,11 +40,11 @@ A part of these internals are already mentioned in section~\ref{section-internal
 \pgfpointadd{\pgfpoint{\pgf@xa}{\pgf@ya}}{\pgfpoint{\pgf@xb}{\pgf@yb}}
 \end{codeexample}
 \noindent
-may fail: Inside |\pgfpointadd|, the |\pgf@xa| and friend registers might be  
-modified. In particular, it might happen that |\pgf@xb| is changed  
-before |\pgfpoint{\pgf@xb}{\pgf@yb}| is evaluated. The right thing to do  
+may fail: Inside |\pgfpointadd|, the |\pgf@xa| and friend registers might be
+modified. In particular, it might happen that |\pgf@xb| is changed
+before |\pgfpoint{\pgf@xb}{\pgf@yb}| is evaluated. The right thing to do
 would be to first expand everything using |\edef| and process the values afterwards,
-resulting in unnecessary expensive operations. Of course, one can avoid this by simply 
+resulting in unnecessary expensive operations. Of course, one can avoid this by simply
 looking into the source code of |\pgfpointadd| to see which registers are used.
 \end{internallist}
 

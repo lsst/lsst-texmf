@@ -30,7 +30,7 @@ even when this library is not used.
   between three horizontal lines. The top line is at the top
   (uppermost) point of the path, the middle is in the middle, the
   bottom line is at the bottom of the path.
-  
+
   \begin{key}{/tikz/top color=\meta{color}}
     This option prescribes the color to be used at the top in an |axis|
     shading. When this option is given, several things happen:
@@ -50,7 +50,7 @@ even when this library is not used.
 \begin{codeexample}[]
 \tikz \draw[top color=red] (0,0) rectangle (2,1);
 \end{codeexample}
-  \end{key}  
+  \end{key}
 
   \begin{key}{/tikz/bottom color=\meta{color}}
     This option works like |top color|, only for the bottom color.
@@ -60,22 +60,22 @@ even when this library is not used.
     This option specifies the color for the middle of an axis
     shading. It also sets the |shade| and |shading=axis| options, but it
     does not change the rotation angle.
-    
+
     \emph{Note:} Since both |top color| and |bottom color| change the
     middle color, this option should be given \emph{last} if all of
     these options need to be given:
-    
+
 \begin{codeexample}[]
 \tikz \draw[top color=white,bottom color=black,middle color=red]
   (0,0) rectangle (2,1);
-\end{codeexample}  
+\end{codeexample}
   \end{key}
 
   \begin{key}{/tikz/left color=\meta{color}}
     This option does exactly the same as |top color|, except that the
     shading angle is set to $90^\circ$.
   \end{key}
-  
+
   \begin{key}{/tikz/right color=\meta{color}}
     Works like |left color|.
   \end{key}
@@ -86,7 +86,7 @@ even when this library is not used.
   This always-defined shading fills the path with a shading that ``looks like a
   ball.'' The default ``color'' of the ball is blue (for no
   particular reason).
-  
+
   \begin{key}{/tikz/ball color=\meta{color}}
     This option sets the color used for the ball shading. It sets the
     |shade| and |shading=ball| options. Note that the ball will never
@@ -94,7 +94,7 @@ even when this library is not used.
     a certain amount of white is mixed in, at the border a certain
     amount of black. Because of this, it also makes sense to say
     |ball color=white| or |ball color=black|
-    
+
 \begin{codeexample}[]
 \begin{tikzpicture}
   \shade[ball color=white] (0,0) circle (2ex);
@@ -196,12 +196,12 @@ even when this library is not used.
   border. If the shading is not a circle, the outer color will
   continue a bit towards the corners. The default inner color is
   gray, the default outer color is white.
-  
+
   \begin{key}{/tikz/inner color=\meta{color}}
     This option sets the color used at the center of a |radial|
     shading. When this option is used, the |shade| and |shading=radial|
     options are set.
-  
+
 \begin{codeexample}[]
 \tikz \draw[inner color=red] (0,0) rectangle (2,1);
 \end{codeexample}
@@ -210,7 +210,7 @@ even when this library is not used.
   \begin{key}{/tikz/outer color=\meta{color}}
     This option sets the color used at the border and outside of a
     |radial| shading.
-  
+
 \begin{codeexample}[]
 \tikz \draw[outer color=red,inner color=white]
   (0,0) rectangle (2,1);
@@ -219,7 +219,7 @@ even when this library is not used.
 \end{shading}
 
 
-%%% Local Variables: 
+%%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "pgfmanual-pdftex-version"
-%%% End: 
+%%% End:

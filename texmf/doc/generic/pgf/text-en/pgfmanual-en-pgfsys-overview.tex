@@ -23,7 +23,7 @@ commands starting with |\pgfsys@|. These commands will be called
 ``interface'' with the system layer by calling these commands. The
 higher layers should never use |\special| commands directly or even
 check whether |\pdfoutput| is defined. Instead, all drawing requests
-should be ``channeled'' through the system commands. 
+should be ``channeled'' through the system commands.
 
 The system layer is loaded and setup by the following package:
 
@@ -38,7 +38,7 @@ The system layer is loaded and setup by the following package:
   When |pgfsys.sty| is loaded, it will try to determine which driver
   is used by loading |pgf.cfg|. This file should setup the macro
   |\pgfsysdriver| appropriately. The, |pgfsys.sty| will input the
-  appropriate |pgfsys-|\meta{drivername}|.sty|. 
+  appropriate |pgfsys-|\meta{drivername}|.sty|.
 \end{package}
 
 \begin{command}{\pgfsysdriver}
@@ -58,7 +58,7 @@ The system layer is loaded and setup by the following package:
 
 
 The currently supported backend drivers are discussed in
-Section~\ref{section-drivers}. 
+Section~\ref{section-drivers}.
 
 
 \subsection{Common Definition Files}
@@ -78,7 +78,7 @@ defining these ``common'' commands are available. These files are
 \end{filedescription}
 
 
-%%% Local Variables: 
+%%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "pgfmanual"
-%%% End: 
+%%% End:

@@ -119,7 +119,7 @@ From this point on, successive runs of \LaTeX\ will use the final graphics files
     -interaction=batchmode -jobname "\image" "\texsource";
     dvips -o "\image".ps "\image".dvi}}
 \end{codeexample}
-	
+
 	The argument \marg{template} will be expanded using |\edef|, so any control sequences will be expanded. During this evaluation, `|\\|' will result in a normal backslash, `|\|'. Furthermore, double quotes `|"|', single quotes `|'|', semicolons and dashes `|-|' will be made to normal characters if any package uses them as macros. This ensures compatibility with the |german| package, for example.
 \end{key}
 
@@ -264,7 +264,7 @@ pdflatex -shell-escape main
 \subsubsection{Remaking Figures or Skipping Figures}
 \begin{command}{\tikzpicturedependsonfile\marg{file name}}
 	Adds a dependency for the \emph{next} picture which is about to be externalized. If the command is invoked within a picture environment, it adds a dependency for the surrounding picture. Dependencies are written into \meta{target file}|.dep| in the format
-	
+
 	\meta{target file}|.\tikzexternalimgextension: |\meta{file name}.
 
 	The effect is that if \meta{file name} changes, the external graphics associated with the picture shall be remade.
@@ -407,7 +407,7 @@ figures/main-figure0
 pdflatex -shell-escape
 \end{codeexample}
 	while other \TeX\ variants may need other switches. The feature is sometimes called |\write18|.
-	
+
 	The choice |only graphics| always tries to replace pictures with external graphics. It is an error if the graphics file does not exist.
 
 	The choice |no graphics| (or, equivalently, |only pictures|) typesets \tikzname\ pictures without checking for external graphics.
@@ -529,7 +529,7 @@ And this here: \myExpensiveMacro{Argument} also.
 \pgfkeys{/pgf/images/include external/.code={\href{file:#1}{\pgfimage{#1}}}}
 \end{codeexample}
 	\noindent which will generate a clickable hyperlink around the image. Clicking on it opens the single exported file\footnote{This requires all external graphics files in the same base directory as the main |.pdf| file.}.
-	
+
 	If you want to limit the effects of this key to just one externalized figure, use
 \begin{codeexample}[code only]
 {

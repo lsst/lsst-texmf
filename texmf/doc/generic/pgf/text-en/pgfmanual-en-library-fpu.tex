@@ -219,7 +219,7 @@ $\to$
 \begin{command}{\pgfmathfloatcreate{\marg{flags}}{\marg{mantissa}}{\marg{exponent}}}
 	Defines |\pgfmathresult| as the floating point number encoded by
 	\marg{flags}, \marg{mantissa} and \marg{exponent}.
-	
+
 	All arguments are characters and will be expanded using |\edef|.
 \begin{codeexample}[]
 \pgfmathfloatcreate{1}{1.0}{327}
@@ -242,7 +242,7 @@ Flags: \F; Mantissa \M; Exponent \E
 		\item[4] for $+\infty$,
 		\item[5] for $-\infty$.
 	\end{description}
-	
+
 \begin{codeexample}[]
 \pgfmathfloatparsenumber{42}
 \pgfmathfloatifflags{\pgfmathresult}{0}{It's zero!}{It's not zero!}
@@ -297,7 +297,7 @@ Commands in this section constitute the basic level implementations of the round
 	Rounds a fixed point number to prescribed precision and writes the result to |\pgfmathresult|.
 
 	The desired precision can be configured with |/pgf/number format/precision|, see section~\ref{pgfmath-numberprinting}. This section does also contain application examples.
-	
+
 	Any trailing zeros after the period are discarded. The algorithm is purely text based and allows to deal with precisions beyond \TeX's fixed point support.
 
 	As a side effect, the global boolean |\ifpgfmathfloatroundhasperiod| will be set to true if and only if the resulting mantissa has a period. Furthermore, |\ifpgfmathfloatroundmayneedrenormalize| will be set to true if and only if the rounding result's floating point representation would have a larger exponent than \marg{x}.
@@ -335,7 +335,7 @@ Commands in this section constitute the basic level implementations of the round
 	Rounds a normalized floating point number to a prescribed precision and writes the result to |\pgfmathresult|.
 
 	The desired precision can be configured with |/pgf/number format/precision|, see section~\ref{pgfmath-numberprinting}.
-	
+
 	This method employs |\pgfmathroundto| to round the mantissa and applies renormalization if necessary.
 
 	As a side effect, the global boolean |\ifpgfmathfloatroundhasperiod| will be set to true if and only if the resulting mantissa has a period.
@@ -395,7 +395,7 @@ The operation is supposed to be very fast.
 	Sets the precision used inside of |\pgfmathfloattoextentedprecision| to \marg{shift}.
 
 	The different choices are
-	
+
 	\begin{tabular}{llrll}
 	0 & normalization to &    $0$ & $\le m < 1$ 	& (disable extended precision)\\
 	1 & normalization to &   $10$ & $\le m < 100$	\\

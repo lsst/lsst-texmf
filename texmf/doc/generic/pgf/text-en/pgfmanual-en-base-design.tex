@@ -38,7 +38,7 @@ The following basic design principles underlie the basic layer:
 The basic layer consists of a \emph{core package}, called |pgfcore|,
 which provides the most basic commands, and several
 \emph{modules} like commands for plotting (in the |plot| module).
-Modules are loaded using the |\usepgfmodule| command. 
+Modules are loaded using the |\usepgfmodule| command.
 
 If you say |\usepackage{pgf}| or |\input pgf.tex| or
 |\usemodule[pgf]|, the |plot| and |shapes| modules are preloaded (as
@@ -56,7 +56,7 @@ mix \pgfname\ commands and \tikzname\ commands inside a
 |{tikzpicture}|.) It is possible to ``do other things'' between the
 commands. For example, you might use one command to move to a certain
 point, then have a complicated computation of the next point, and then
-move there. 
+move there.
 
 \begin{codeexample}[]
 \newdimen\myypos
@@ -86,7 +86,7 @@ The following naming conventions are used in the basic layer:
   image or shading) start with |\pgfuse|.
 \item
   All commands having to do with coordinate transformations start with
-  |\pgftransform|. 
+  |\pgftransform|.
 \item
   All commands having to do with arrow tips start with |\pgfarrows|.
 \item
@@ -126,7 +126,7 @@ drawings will be clipped against this path.
 \emph{canvas} transformation matrix. These two systems are quite
 different. Whereas a scaling by a factor of, say, $2$ of the canvas
 causes \emph{everything} to be scaled by this factor (including
-the thickness of lines and text), a scaling of two in the coordinate 
+the thickness of lines and text), a scaling of two in the coordinate
 system causes only the \emph{coordinates} to be scaled, but not the
 line width nor text.
 
@@ -135,8 +135,8 @@ transformation system. However, using the command |\pgflowlevel|
 it is possible to apply a transformation to the canvas.
 
 Coordinate transformations are often preferable over canvas
-transformations. Text and lines that are transformed using canvas 
-transformations suffer from differing sizes and lines whose thickness 
+transformations. Text and lines that are transformed using canvas
+transformations suffer from differing sizes and lines whose thickness
 differs depending on whether the line is horizontal or vertical. To
 appreciate the difference, consider the following two ``circles'' both
 of which have been scaled in the $x$-direction by a factor of $3$ and
@@ -144,11 +144,11 @@ by a factor of $0.5$ in the $y$-direction. The left circle uses a
 canvas transformation, the right uses \pgfname's coordinate
 transformation (some viewers will render the left graphic incorrectly
 since they do no apply the low-level transformation the way they
-should):  
+should):
 
 \begin{tikzpicture}[line width=5pt]
   \useasboundingbox (-1.75,-1) rectangle (14,1);
-  
+
   \begin{scope}
     \pgflowlevel{\pgftransformxscale{3}}
     \pgflowlevel{\pgftransformyscale{.5}}

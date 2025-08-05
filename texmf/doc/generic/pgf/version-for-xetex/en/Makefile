@@ -5,13 +5,13 @@ TEXINPUTS := ../../text-en:$(TEXINPUTS)
 
 all: $(doc).pdf
 
-pgfmanual.idx: 
+pgfmanual.idx:
 	touch pgfmanual.idx
 
-pgfmanual.ind: pgfmanual.idx 
+pgfmanual.ind: pgfmanual.idx
 	makeindex $(doc).idx
 
-pgfmanual.pdf: $(doc).tex $(doc).ind 
+pgfmanual.pdf: $(doc).tex $(doc).ind
 	(TEXINPUTS="$(TEXINPUTS)" $(latex) $(doc).tex) || true
 	(egrep -q $(rerun) $(doc).log && TEXINPUTS="$(TEXINPUTS)" $(latex) $(doc).tex) || true
 	xdvipdfmx -p a4 $(doc)
@@ -30,4 +30,4 @@ clean:
 		pgfmanual.blg \
 		pgfmanual.ps \
 		pgfmanual.dvi \
-		pgfmanual*.aux 
+		pgfmanual*.aux
