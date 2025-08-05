@@ -2469,6 +2469,18 @@ affiliations:
     email: null
     institute: TMT International Observatory
     ror_id: 003s9de04
+  TorVergata:
+    address:
+      city: Rome
+      country_code: Italy
+      example_expanded: Universit\'a degli Studi di Roma Tor Vergata. Rome, Italy.
+      postcode: null
+      state: null
+      street: null
+    department: null
+    email: null
+    institute: Universit\'a degli Studi di Roma Tor Vergata
+    ror_id: 02p77k626
   TTU:
     address:
       city: Lubbock
@@ -2583,6 +2595,18 @@ affiliations:
     email: null
     institute: Universidad Aut\'onoma de Madrid
     ror_id: 01cby8j38
+  UCA:
+    address:
+      city: Nice
+      country_code: France
+      example_expanded: Universit\'e C\^ote d'Azur, Laboratoire Lagrange, Observatoire de la C\^ote d'Azur. Nice, France.
+      postcode: null
+      state: null
+      street: null
+    department: Laboratoire Lagrange, Observatoire de la C\^ote d'Azur
+    email: etu.univ-cotedazur.fr
+    institute: Universit\'e C\^ote d'Azur
+    ror_id: 039fj2469
   UCDavis:
     address:
       city: Davis
@@ -2688,6 +2712,18 @@ affiliations:
     email: ucsc.cl
     institute: Universidad Cat\'olica de la Sant{\'\i}sima Concepci\'on
     ror_id: 03y6k2j68
+  UdeA:
+    address:
+      city: Medell\'in
+      country_code: Colombia
+      example_expanded: Instituto de F\'isica, Universidad de Antioquia, Calle. 67 No. 53-108, C\'odigo 050010, Medell\'n, Colombia
+      postcode: '050010'
+      state: 'Antioquia'
+      street: 'Calle. 67 No. 53-108'
+    department: Instituto de F\'isica
+    email: udea.edu.co
+    institute: Universidad de Antioquia
+    ror_id: 03bp5hc83
   UNAM:
     address:
       city: null
@@ -3818,6 +3854,16 @@ authors:
     family_name: Calabrese
     given_name: Daniel
     orcid: null
+  calderonj:
+    affil:
+    - TorVergata
+    - UCA 
+    - UdeA 
+    altaffil: []
+    email: jeronimo.calderon-gomez@UCA
+    family_name: Calderon
+    given_name: Jer\'onimo
+    orcid: 0000-0002-2831-8497
   callahann:
     affil:
     - Oxford
@@ -4886,6 +4932,14 @@ authors:
     family_name: Gilmore
     given_name: D. Kirk
     orcid: null
+  giraldoml:
+    affil:
+    - UdeA
+    altaffil: []
+    email: lina.giraldom
+    family_name: Giraldo Murillo
+    given_name: Lina M.
+    orcid: 0009-0008-8128-9665
   giroe:
     affil:
     - INAF-OAT
