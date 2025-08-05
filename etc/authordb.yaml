@@ -2688,6 +2688,18 @@ affiliations:
     email: ucsc.cl
     institute: Universidad Cat\'olica de la Sant{\'\i}sima Concepci\'on
     ror_id: 03y6k2j68
+  UdeA:
+    address:
+      city: Medell\'in
+      country_code: Colombia
+      example_expanded: Instituto de F\'isica, Universidad de Antioquia, Calle. 67 No. 53-108, C\'odigo 050010, Medell\'n, Colombia
+      postcode: '050010'
+      state: 'Antioquia'
+      street: 'Calle. 67 No. 53-108'
+    department: Instituto de F\'isica
+    email: udea.edu.co
+    institute: Universidad de Antioquia
+    ror_id: null
   UNAM:
     address:
       city: null
