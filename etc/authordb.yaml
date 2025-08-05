@@ -2606,7 +2606,7 @@ affiliations:
     department: Laboratoire Lagrange, Observatoire de la C\^ote d'Azur
     email: etu.univ-cotedazur.fr
     institute: Universit\'e C\^ote d'Azur
-    ror_id: 019tgvf94
+    ror_id: 039fj2469
   UCDavis:
     address:
       city: Davis
@@ -3860,7 +3860,7 @@ authors:
     - UCA 
     - UdeA 
     altaffil: []
-    email: jeronimo.calderon-gomez@etu.univ-cotedazur.fr
+    email: jeronimo.calderon-gomez@UCA
     family_name: Calderon
     given_name: Jer\'onimo
     orcid: 0000-0002-2831-8497
