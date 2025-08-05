@@ -3818,6 +3818,14 @@ authors:
     family_name: Calabrese
     given_name: Daniel
     orcid: null
+  calderonj:
+    affil:
+    - UdeA
+    altaffil: []
+    email: null
+    family_name: Calderon
+    given_name: Jer\'onimo
+    orcid: null
   callahann:
     affil:
     - Oxford
@@ -4885,6 +4893,14 @@ authors:
     email: null
     family_name: Gilmore
     given_name: D. Kirk
+    orcid: null
+  giraldoml:
+    affil:
+    - UdeA
+    altaffil: []
+    email: lina.giraldom
+    family_name: Giraldo Murillo
+    given_name: Lina M.
     orcid: null
   giroe:
     affil:
