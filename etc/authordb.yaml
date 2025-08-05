@@ -2473,13 +2473,13 @@ affiliations:
     address:
       city: Rome
       country_code: Italy
-      example_expanded: Universitá degli Studi di Roma Tor Vergata. Rome, Italy.
+      example_expanded: Universit\'a degli Studi di Roma Tor Vergata. Rome, Italy.
       postcode: null
       state: null
       street: null
     department: null
     email: null
-    institute: Universitá degli Studi di Roma Tor Vergata
+    institute: Universit\'a degli Studi di Roma Tor Vergata
     ror_id: 02p77k626
   TTU:
     address:
@@ -2599,13 +2599,13 @@ affiliations:
     address:
       city: Nice
       country_code: France
-      example_expanded: Université Côte d'Azur, Laboratoire Lagrange, Observatoire de la Côte d'Azur. Nice, France.
+      example_expanded: Universit\'e C\^ote d'Azur, Laboratoire Lagrange, Observatoire de la C\^ote d'Azur. Nice, France.
       postcode: null
       state: null
       street: null
-    department: Laboratoire Lagrange, Observatoire de la Côte d'Azur
+    department: Laboratoire Lagrange, Observatoire de la C\^ote d'Azur
     email: etu.univ-cotedazur.fr
-    institute: Université Côte d'Azur
+    institute: Universit\'e C\^ote d'Azur
     ror_id: 019tgvf94
   UCDavis:
     address:
