@@ -3028,6 +3028,14 @@ affiliations:
     institute: soZen Inc.
     ror_id: null
 authors:
+  CameraTeam:
+    affil:
+    - SLAC
+    altaffil: []
+    email: null
+    family_name: LSST Camera Team
+    given_name: ''
+    orcid: null
   DMPipelines:
     affil:
     - RubinObs

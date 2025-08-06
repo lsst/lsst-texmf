@@ -249,6 +249,10 @@
    \renewcommand{\CU}{DM}
    \renewcommand{\docType}{Data Management}
 }
+\DeclareOption{CTN}{
+   \renewcommand{\CU}{CTN}
+   \renewcommand{\docType}{Camera Technical Note}
+}
 \DeclareOption{TS}{
    \renewcommand{\CU}{TS}
    \renewcommand{\docType}{Telescope \& Site}
