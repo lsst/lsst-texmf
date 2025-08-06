@@ -308,6 +308,7 @@ def checkFixAuthAndComma(authors: str) -> str:
             "Fausti Neto",
             "Fonseca Alvarez",
             "Garavito Camargo",
+            "Giraldo Murillo",
             "Gomez Jimenez",
             "Le Boulc'h",
             "Le Guillou",
