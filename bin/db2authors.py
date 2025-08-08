@@ -680,6 +680,48 @@ class MNRAS(AuthorTextGenerator):
 """
 
 
+class AAP(AuthorTextGenerator):
+    r"""Generate A&A format.
+
+    Example output:
+
+    \author{Daniel J. Pierce\inst{1,3}
+      \and Apostolos Hadjidimios\inst{2}
+      \and Robert J. Plemmons\inst{3}}
+
+    \institute{Boeing Computer Service, P.O. Box 24346,
+               MS 7L-21, Seattle, WA 98124-0346, USA
+      \and Department of Mathematics, University of Ioannina,
+           GR-45 1210, Ioannina, Greece
+      \and Department of Computer Science and Mathematics,
+           North Carolina State University, Raleigh, NC 27695-8205, USA
+    }
+    """
+
+    mode = "aap"
+
+    def generate(self, header: bool = True) -> str:
+        affil_to_number = self.number_affiliations()
+        authors = []
+        for author in self.authors:
+            affil_numbers = [str(affil_to_number[affil]) for affil in author.affiliations]
+            author_text = rf"{author.full_latex_name}\inst{{{','.join(affil_numbers)}}}"
+            authors.append(author_text)
+
+        affiliations = []
+        for affil in affil_to_number:
+            affiliations.append(f"{affil.get_full_address_with_institute()}")
+        affil_text = "\n\\and ".join(affiliations)
+
+        return f"""{self.get_header() if header else ""}\\author{{
+{"\n\\and ".join(authors)}
+}}
+\\institute{{
+{affil_text}
+}}
+"""
+
+
 def dump_csvall(factory: AuthorFactory) -> None:
     """Generate CSV of ALL authors for easier lookup of ID .
     Authorid, Name, Institution id
@@ -719,7 +761,19 @@ if __name__ == "__main__":
 
     # this should probably be a dict with the value of affil_cmd
     # the keys could then be passed to the arg parser.
-    OUTPUT_MODES = ["aas", "aas7", "spie", "adass", "arxiv", "ascom", "webofc", "lsstdoc", "csvall", "mnras"]
+    OUTPUT_MODES = [
+        "aas",
+        "aas7",
+        "spie",
+        "adass",
+        "arxiv",
+        "ascom",
+        "webofc",
+        "lsstdoc",
+        "csvall",
+        "mnras",
+        "aap",
+    ]
 
     description = __doc__
     formatter = argparse.RawDescriptionHelpFormatter
@@ -765,6 +819,7 @@ if __name__ == "__main__":
         "ascom": ASCOM,
         "adass": ADASS,
         "mnras": MNRAS,
+        "aap": AAP,
     }
     if args.mode not in generator_lut:
         raise RuntimeError(f"Unknown generator mode: {args.mode}")
