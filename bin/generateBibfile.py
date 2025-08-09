@@ -20,8 +20,26 @@ import yaml
 from algoliasearch.search.client import SearchClient, SearchResponse
 from bibtools import BibDict, BibEntry
 from pybtex.database import BibliographyData
+from pylatexenc.latex2text import LatexNodes2Text
+from pylatexenc.latexencode import unicode_to_latex
 
 MAXREC = 2000
+
+
+def latex2text(latex: str) -> str:
+    """Convert a LaTeX string into a plain text string.
+
+    Parameters
+    ----------
+    latex : `str`
+        Latex string to convert.
+
+    Returns
+    -------
+    plain : `str`
+        The plain text version.
+    """
+    return LatexNodes2Text().latex_to_text(latex)
 
 
 def isCommittee(author: str) -> bool:
@@ -298,10 +316,11 @@ def checkFixAuthAndComma(authors: str) -> str:
             # Sometimes they start with "the" so capitalize the first.
             author = author[0].capitalize() + author[1:]
             author = "{" + author + "}"
+        # Use unicode here, not latex.
         for known in (
             "Aracena Alcayaga",
             "Araya Cortes",
-            r"Constanzo C\'ordova",
+            "Constanzo Córdova",
             "da Costa",
             "de Peyster",
             "de Val-Borro",
@@ -315,11 +334,10 @@ def checkFixAuthAndComma(authors: str) -> str:
             "Lopez Toro",
             "Lorenzo Martinez",
             "Megias Homar",
-            r"Morales Mar{\'\i}n",
+            "Morales Marín",
             "Narayanan K",
             "Orellana Munoz",
-            r"Plazas Malag\'{o}n",
-            r"Plazas Malag\'on",
+            "Plazas Malagón",
             "Quintero Marin",
             "Ribeiro de Souza",
             "Rivera Rivera",
@@ -336,8 +354,19 @@ def checkFixAuthAndComma(authors: str) -> str:
             "Villicana Pedraza",
             "von der Linden",
         ):
-            if known.lower() in author.lower():
-                author = re.sub(re.escape(known), f"{{{known}}}", author, flags=re.IGNORECASE)
+            # Sphinx technotes can generate author names with braces around
+            # unicode characters that are in a different form to those in the
+            # latex author db. We need to normalize to unicode here and then
+            # convert back to latex.
+            bib_author = author
+            if "\\" in bib_author:
+                bib_author = latex2text(bib_author)
+            if known.lower() in bib_author.lower():
+                author = re.sub(re.escape(known), f"{{{known}}}", bib_author, flags=re.IGNORECASE)
+                # Convert back to latex, which will escape the braces so we
+                # need to unescape them.
+                author = unicode_to_latex(author)
+                author = author.replace("\\{", "{").replace("\\}", "}")
         author = author.strip()
         if author:
             author_modified.append(author)
