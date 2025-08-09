@@ -2983,6 +2983,18 @@ affiliations:
     email: null
     institute: Yale University
     ror_id: 03v76x132
+  Yerkes:
+    address:
+      city: Williams Bay
+      country_code: USA
+      example_expanded: Yerkes Observatory, 373 W. Geneva St., Williams Bay, WI 53191, USA
+      postcode: '53191'
+      state: WI
+      street: 373 W. Geneva St.
+    department: null
+    email: yerkesobservatory.org
+    institute: Yerkes Observatory
+    ror_id: null
   Yonsei:
     address:
       city: Seoul
@@ -3427,9 +3439,9 @@ authors:
     orcid: null
   bauerae:
     affil:
-    - RubinObs
+    - Yerkes
     altaffil: []
-    email: null
+    email: abauer
     family_name: Bauer
     given_name: Amanda E.
     orcid: 0000-0001-9037-6981
