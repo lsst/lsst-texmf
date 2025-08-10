@@ -27,13 +27,21 @@ def process_bib(bibdata: BibliographyData, token: str) -> BibliographyData:
     # It is possible that the bibkey is not the ADS bibcode, so we need to
     # map the bib key to bibcode.
     to_update: dict[str, str] = {}
+    non_ads = set()
     for bibkey, entry in bibdata.entries.items():
         if bibcode := get_ads_bibcode(entry):
             to_update[str(bibkey)] = bibcode
         elif adsurl := entry.fields.get("adsurl"):
             print("Failed to extract bibcode from ", adsurl, file=sys.stderr)
+        else:
+            non_ads.add(bibkey)
 
-    print(f"Found {len(to_update)} ADS entries.", file=sys.stderr)
+    print(f"Found {len(to_update)} ADS entries out of {len(bibdata.entries)}.", file=sys.stderr)
+
+    if non_ads:
+        print("The following bibkeys are not ADS entries:", file=sys.stderr)
+        for bibkey in sorted(non_ads):
+            print(f"- {bibkey}", file=sys.stderr)
 
     if not token:
         if to_update:
