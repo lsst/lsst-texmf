@@ -5,7 +5,9 @@ It is comparable hence sortable.
 """
 
 import collections.abc
+import posixpath
 import sys
+import urllib.parse
 from typing import IO, Any, NamedTuple
 
 import pybtex.database
@@ -34,6 +36,28 @@ TN_SERIES = {
     "Publication": "LSST Construction Publication",
     "Report": "Construction Report",
 }
+
+
+def get_ads_bibcode(entry: pybtex.database.Entry) -> str | None:
+    """Extract the ADS bibcode from the entry."""
+    adsurl = entry.fields.get("adsurl")
+    if not adsurl:
+        return None
+
+    parsed = urllib.parse.urlparse(adsurl)
+    # Old URLs put bibcode in the query params.
+    if parsed.query:
+        # Sometimes a bib file latex escapes the &.
+        qs = parsed.query.replace("\\&", "&")
+        parsed_query = urllib.parse.parse_qs(qs)
+        bibcode = parsed_query.get("bibcode", [None])[0]
+    else:
+        bibcode = posixpath.basename(parsed.path)
+
+    # Some old bib files try to escape the % or &
+    bibcode = bibcode.replace("\\%", "%")
+    bibcode = bibcode.replace("\\&", "&")
+    return urllib.parse.unquote(bibcode) if bibcode else None
 
 
 class BibEntry:

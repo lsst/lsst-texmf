@@ -12,12 +12,11 @@ entries, and re-requests them from ADS.
 
 import argparse
 import json
-import posixpath
 import re
 import sys
-import urllib.parse
 
 import requests
+from bibtools import get_ads_bibcode
 from pybtex.database import BibliographyData
 
 
@@ -28,28 +27,21 @@ def process_bib(bibdata: BibliographyData, token: str) -> BibliographyData:
     # It is possible that the bibkey is not the ADS bibcode, so we need to
     # map the bib key to bibcode.
     to_update: dict[str, str] = {}
+    non_ads = set()
     for bibkey, entry in bibdata.entries.items():
-        if adsurl := entry.fields.get("adsurl"):
-            parsed = urllib.parse.urlparse(adsurl)
-            # Old URLs put bibcode in the query params.
-            if parsed.query:
-                # Sometimes a bib file latex escapes the &.
-                qs = parsed.query.replace("\\&", "&")
-                parsed_query = urllib.parse.parse_qs(qs)
-                bibcode = parsed_query["bibcode"][0]
-            else:
-                bibcode = posixpath.basename(parsed.path)
-            # Some old bib files try to escape the % or &
-            bibcode = bibcode.replace("\\%", "%")
-            bibcode = bibcode.replace("\\&", "&")
-            bibcode = urllib.parse.unquote(bibcode)
-
-            if not bibcode:
-                print("Failed to extract bibcode from ", adsurl, file=sys.stderr)
-                continue
+        if bibcode := get_ads_bibcode(entry):
             to_update[str(bibkey)] = bibcode
+        elif adsurl := entry.fields.get("adsurl"):
+            print("Failed to extract bibcode from ", adsurl, file=sys.stderr)
+        else:
+            non_ads.add(bibkey)
 
-    print(f"Found {len(to_update)} ADS entries.", file=sys.stderr)
+    print(f"Found {len(to_update)} ADS entries out of {len(bibdata.entries)}.", file=sys.stderr)
+
+    if non_ads:
+        print("The following bibkeys are not ADS entries:", file=sys.stderr)
+        for bibkey in sorted(non_ads):
+            print(f"- {bibkey}", file=sys.stderr)
 
     if not token:
         if to_update:
