@@ -2541,7 +2541,7 @@ affiliations:
       state: AZ
       street: 933 N.\ Cherry Ave
     department: Department of Astronomy and Steward Observatory
-    email: null
+    email: arizona.edu
     institute: University of Arizona
     ror_id: 03m2x1q45
   UA-CompSci:
@@ -5494,6 +5494,14 @@ authors:
     family_name: Jammes
     given_name: Fabrice
     orcid: null
+  jannuzibt:
+    affil:
+    - UA-Astro
+    altaffil: []
+    email: buelljannuzi
+    family_name: Jannuzi
+    given_name: Buell T.
+    orcid: 0000-0002-1578-6582
   jarugulas:
     affil:
     - Fermilab
