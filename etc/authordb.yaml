@@ -5519,6 +5519,14 @@ authors:
     family_name: Jee
     given_name: M. James
     orcid: 0000-0002-5751-3697
+  jeltemat:
+    affil:
+    - UCSC
+    altaffil: []
+    email: tesla
+    family_name: Jeltema
+    given_name: Tesla
+    orcid: 0000-0001-6089-0365
   jennesst:
     affil:
     - RubinObs
@@ -6036,6 +6044,14 @@ authors:
     family_name: Lazarte
     given_name: Juan Carlos
     orcid: null
+  leauthauda:
+    affil:
+    - UCSC
+    altaffil: []
+    email: alexie
+    family_name: Leauthaud
+    given_name: Alexie
+    orcid: 0000-0002-3677-3617
   leboulchq:
     affil:
     - IN2P3-CC
