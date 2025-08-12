@@ -1761,18 +1761,61 @@ FUNCTION {initialize.extra.label.stuff}
   #0 'last.extra.num :=
   #0 'number.label :=
 }
-FUNCTION {forward.pass}
-{ last.label label =
-    { last.extra.num #1 + 'last.extra.num :=
-      last.extra.num int.to.chr$ 'extra.label :=
+% Extra-label incrementer using string ops only (BibTeX 0.99d-safe).
+% Produces a..z, aa, ab, ..., az, ba, ...
+INTEGERS { alphaLen alphaCarry alphaCode }
+STRINGS  { alphaStr alphaNewCh }
+FUNCTION {alphalabel.next}
+{ 'alphaStr :=
+  alphaStr text.length$ 'alphaLen :=
+  alphaLen #0 =
+    { "a" }
+    {
+      #1 'alphaCarry :=
+      { alphaCarry #0 > }
+      {
+        alphaStr alphaLen alphaLen substring$ chr.to.int$ 'alphaCode :=
+        alphaCode "z" chr.to.int$ =
+          { alphaStr #1 alphaLen #1 - substring$ "a" * 'alphaStr :=
+            alphaLen #1 - 'alphaLen :=
+            alphaLen #0 =
+              { "a" alphaStr * 'alphaStr :=
+                #0 'alphaCarry :=
+              }
+              { #1 'alphaCarry := }
+            if$
+          }
+          { alphaCode #1 + int.to.chr$ 'alphaNewCh :=
+            alphaStr #1 alphaLen #1 - substring$ alphaNewCh * 'alphaStr :=
+            #0 'alphaCarry :=
+          }
+        if$
+      }
+      while$
+      alphaStr
     }
-    { "a" chr.to.int$ 'last.extra.num :=
+  if$
+}
+FUNCTION {forward.pass}
+{
+  last.label label =
+    { % same author+year group: assign next suffix and advance it
+      next.extra empty$
+        { "b" 'next.extra := }
+        'skip$
+      if$
+      next.extra 'extra.label :=
+      next.extra alphalabel.next 'next.extra :=
+    }
+    { % new group starts here
       "" 'extra.label :=
+      "b" 'next.extra :=
       label 'last.label :=
     }
   if$
   number.label #1 + 'number.label :=
 }
+
 FUNCTION {reverse.pass}
 { next.extra "b" =
     { "a" 'extra.label := }
