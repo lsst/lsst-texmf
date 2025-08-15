@@ -71,6 +71,7 @@ ENTRY
     edition
     editor
     eprint
+    eid
     howpublished
     institution
     journal
@@ -732,6 +733,24 @@ FUNCTION {format.eprint}
       * "} {" * eprint * "})" * }
     if$
 }
+FUNCTION {format.ascl.eid}
+{ eid empty$
+    { "" }
+    {
+      % if eid starts with "ascl:"
+      eid #1 #5 substring$ "ascl:" =
+        {
+          % extract the part after the colon
+          eid #6 eid text.length$ #5 - substring$
+          % wrap like eprint style
+          " (\mn@eprint {ascl} {" swap$ * "})" *
+        }
+        { "" }
+      if$
+    }
+  if$
+}
+
 
 FUNCTION {format.doi}
 { doi empty$
@@ -1210,6 +1229,7 @@ FUNCTION {article}
   if$
   format.note output
   format.eprint "eprint" output.check.nocomma
+  format.ascl.eid output
   format.doi "doi" output.check.nocomma
   format.adsurl output
   fin.entry
@@ -1290,6 +1310,7 @@ FUNCTION {inbook}
   format.edition output
   format.note output
   format.eprint "eprint" output.check.nocomma
+  format.ascl.eid output
   format.doi "doi" output.check.nocomma
   fin.entry
 }
@@ -1314,6 +1335,7 @@ FUNCTION {incollection}
   if$
   format.note output
   format.eprint "eprint" output.check.nocomma
+  format.ascl.eid output
   format.doi "doi" output.check.nocomma
   fin.entry
 }
@@ -1342,6 +1364,7 @@ FUNCTION {inproceedings}
   if$
   format.note output
   format.eprint "eprint" output.check.nocomma
+  format.ascl.eid output
   format.doi "doi" output.check.nocomma
   format.adsurl output
   fin.entry
@@ -1386,6 +1409,22 @@ FUNCTION {misc}
   howpublished "howpublished" bibinfo.check output
   format.note output
   format.eprint "eprint" output.check.nocomma
+  format.ascl.eid output
+  format.doi "doi" output.check.nocomma
+  format.adsurl output
+  fin.entry
+}
+FUNCTION {software}
+{ output.bibitem
+  format.authors output
+  author format.key output
+  format.date output
+  date.block
+  format.title output
+  howpublished "howpublished" bibinfo.check output
+  format.note output
+  format.eprint "eprint" output.check.nocomma
+  format.ascl.eid output
   format.doi "doi" output.check.nocomma
   format.adsurl output
   fin.entry
@@ -1438,6 +1477,7 @@ FUNCTION {techreport}
   address "address" bibinfo.check output
   format.note output
   format.eprint "eprint" output.check.nocomma
+  format.ascl.eid output
   format.doi "doi" output.check.nocomma
   format.adsurl output
   fin.entry
