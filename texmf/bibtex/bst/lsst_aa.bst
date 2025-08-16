@@ -1872,6 +1872,7 @@ FUNCTION {reverse.pass}
 }
 EXECUTE {initialize.extra.label.stuff}
 ITERATE {forward.pass}
+EXECUTE {initialize.extra.label.stuff}
 REVERSE {reverse.pass}
 FUNCTION {bib.sort.order}
 { sort.label
