@@ -59,7 +59,7 @@ affiliations:
       postcode: '10028'
       state: NY
       street: ''
-    department: Department of Astrophysics,
+    department: Department of Astrophysics
     email: null
     institute: American Museum of Natural History
     ror_id: 03thb3e06
@@ -217,7 +217,7 @@ affiliations:
       postcode: '94720'
       state: CA
       street: 601 Campbell Hall
-    department: Astronomy Department,
+    department: Astronomy Department
     email: null
     institute: University of California, Berkeley
     ror_id: 01an7q238
@@ -243,7 +243,7 @@ affiliations:
       postcode: '94720'
       state: CA
       street: 366 Physics North, MC 7300
-    department: Physics  Department,
+    department: Physics  Department
     email: berkeley.edu
     institute: University of California, Berkeley
     ror_id: 01an7q238
@@ -914,7 +914,7 @@ affiliations:
       postcode: '44801'
       state: ''
       street: Universit\"atsstr. 150
-    department: German Centre for Cosmological Lensing, Astronomisches Institut,
+    department: German Centre for Cosmological Lensing, Astronomisches Institut
     email: null
     institute: Ruhr-Universit\"at Bochum
     ror_id: 04tsk2644
@@ -940,7 +940,7 @@ affiliations:
       postcode: '22030'
       state: VA
       street: 4400 University Drive
-    department: School of Physics, Astronomy and Computational Sciences,
+    department: School of Physics, Astronomy and Computational Sciences
     email: null
     institute: George Mason University
     ror_id: 02jqj7156
@@ -1385,7 +1385,7 @@ affiliations:
       postcode: 91125-2200
       state: CA
       street: MS 100-22
-    department: Caltech/IPAC,
+    department: Caltech/IPAC
     email: ipac.caltech.edu
     institute: California Institute of Technology
     ror_id: 05q79g396
@@ -1793,7 +1793,7 @@ affiliations:
       postcode: '86011'
       state: AZ
       street: P.O.\ Box 6010
-    department: Department of Astronomy and Planetary Science,
+    department: Department of Astronomy and Planetary Science
     email: null
     institute: Northern Arizona University
     ror_id: 0272j5188
@@ -1920,7 +1920,7 @@ affiliations:
       postcode: '10003'
       state: NY
       street: 726 Broadway
-    department: Center for Cosmology \& Particle Physics,
+    department: Center for Cosmology \& Particle Physics
     email: null
     institute: New York University
     ror_id: 0190ak572
@@ -2694,7 +2694,7 @@ affiliations:
       postcode: '95064'
       state: CA
       street: 1156 High St.
-    department: Santa Cruz Institute for Particle Physics and Physics Department,
+    department: Santa Cruz Institute for Particle Physics and Physics Department
     email: ucsc.edu
     institute: University of California, Santa Cruz
     ror_id: 03s65by71
@@ -3004,7 +3004,7 @@ affiliations:
       postcode: '03722'
       state: ''
       street: 50 Yonsei-ro
-    department: Department of Astronomy,
+    department: Department of Astronomy
     email: yonsei.ac.kr
     institute: Yonsei University
     ror_id: 01wjejq96
