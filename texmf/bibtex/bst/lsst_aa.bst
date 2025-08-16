@@ -1862,6 +1862,10 @@ FUNCTION {reverse.pass}
     'skip$
   if$
   extra.label 'next.extra :=
+  handle empty$ not number empty$ not or
+    { "" 'extra.label := }
+    'skip$
+  if$
   extra.label
   duplicate$ empty$
     'skip$
