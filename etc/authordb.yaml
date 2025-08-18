@@ -3337,7 +3337,7 @@ authors:
     affil:
     - IN2P3-LPNHE
     altaffil: []
-    email: null
+    email: pierre.astier@IN2P3
     family_name: Astier
     given_name: Pierre
     orcid: null
@@ -4660,6 +4660,14 @@ authors:
     family_name: Fanning
     given_name: Kevin
     orcid: 0000-0003-2371-3356
+  farisy:
+    affil:
+    - IN2P3-LPNHE
+    altaffil: []
+    email: yassine.faris
+    family_name: Faris
+    given_name: Yassine
+    orcid: null
   faustinetoa:
     affil:
     - RubinObs
@@ -7246,6 +7254,14 @@ authors:
     family_name: Polen
     given_name: Rebekah
     orcid: null
+  polind:
+    affil:
+    - UCDavis
+    altaffil: []
+    email: dapolin
+    family_name: Polin
+    given_name: Daniel
+    orcid: 0000-0001-7445-4724
   pollekhmm:
     affil:
     - SLAC
@@ -8312,7 +8328,7 @@ authors:
     email: jgt
     family_name: Thayer
     given_name: John Gregg
-    orcid: null
+    orcid: 0000-0003-1295-5253
   theboa:
     affil:
     - RubinObs
@@ -8925,6 +8941,14 @@ authors:
     email: null
     family_name: Zhang
     given_name: Yuanyuan
+    orcid: null
+  zhangz:
+    affil:
+    - SLAC
+    altaffil: []
+    email: zhzhuoqi
+    family_name: Zhang
+    given_name: Zhuoqi
     orcid: null
   zhanh:
     affil:
