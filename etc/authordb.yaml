@@ -370,8 +370,8 @@ affiliations:
     address:
       city: Pittsburgh
       country_code: USA
-      example_expanded: McWilliams Center for Cosmology \& Astrophysics, Department of Physics, Carnegie
-        Mellon University, Pittsburgh, PA 15213, USA
+      example_expanded: McWilliams Center for Cosmology \& Astrophysics, Department
+        of Physics, Carnegie Mellon University, Pittsburgh, PA 15213, USA
       postcode: '15213'
       state: PA
       street: ''
@@ -2469,18 +2469,6 @@ affiliations:
     email: null
     institute: TMT International Observatory
     ror_id: 003s9de04
-  TorVergata:
-    address:
-      city: Rome
-      country_code: Italy
-      example_expanded: Universit\'a degli Studi di Roma Tor Vergata. Rome, Italy.
-      postcode: null
-      state: null
-      street: null
-    department: null
-    email: null
-    institute: Universit\'a degli Studi di Roma Tor Vergata
-    ror_id: 02p77k626
   TTU:
     address:
       city: Lubbock
@@ -2519,6 +2507,18 @@ affiliations:
     email: tekniker.es
     institute: Tekniker
     ror_id: null
+  TorVergata:
+    address:
+      city: Rome
+      country_code: Italy
+      example_expanded: Universit\'a degli Studi di Roma Tor Vergata. Rome, Italy.
+      postcode: null
+      state: null
+      street: null
+    department: null
+    email: null
+    institute: Universit\'a degli Studi di Roma Tor Vergata
+    ror_id: 02p77k626
   UA:
     address:
       city: Tucson
@@ -2599,7 +2599,8 @@ affiliations:
     address:
       city: Nice
       country_code: France
-      example_expanded: Universit\'e C\^ote d'Azur, Laboratoire Lagrange, Observatoire de la C\^ote d'Azur. Nice, France.
+      example_expanded: Universit\'e C\^ote d'Azur, Laboratoire Lagrange, Observatoire
+        de la C\^ote d'Azur. Nice, France.
       postcode: null
       state: null
       street: null
@@ -2712,18 +2713,6 @@ affiliations:
     email: ucsc.cl
     institute: Universidad Cat\'olica de la Sant{\'\i}sima Concepci\'on
     ror_id: 03y6k2j68
-  UdeA:
-    address:
-      city: Medell\'in
-      country_code: Colombia
-      example_expanded: Instituto de F\'isica, Universidad de Antioquia, Calle. 67 No. 53-108, C\'odigo 050010, Medell\'n, Colombia
-      postcode: '050010'
-      state: 'Antioquia'
-      street: 'Calle. 67 No. 53-108'
-    department: Instituto de F\'isica
-    email: udea.edu.co
-    institute: Universidad de Antioquia
-    ror_id: 03bp5hc83
   UNAM:
     address:
       city: null
@@ -2854,6 +2843,19 @@ affiliations:
     email: null
     institute: Universidad de Guanajuato
     ror_id: 058cjye32
+  UdeA:
+    address:
+      city: Medell\'in
+      country_code: Colombia
+      example_expanded: Instituto de F\'isica, Universidad de Antioquia, Calle. 67
+        No. 53-108, C\'odigo 050010, Medell\'n, Colombia
+      postcode: '050010'
+      state: Antioquia
+      street: Calle. 67 No. 53-108
+    department: Instituto de F\'isica
+    email: udea.edu.co
+    institute: Universidad de Antioquia
+    ror_id: 03bp5hc83
   UniAndes:
     address:
       city: Bogota
@@ -2961,8 +2963,8 @@ affiliations:
     address:
       city: Madison
       country_code: USA
-      example_expanded: Wisconsin IceCube Particle Astrophysics Center, University of Wisconsin—Madison,
-        Madison, WI 53706, USA
+      example_expanded: Wisconsin IceCube Particle Astrophysics Center, University
+        of Wisconsin—Madison, Madison, WI 53706, USA
       postcode: '53706'
       state: WI
       street: ''
@@ -2987,7 +2989,8 @@ affiliations:
     address:
       city: Williams Bay
       country_code: USA
-      example_expanded: Yerkes Observatory, 373 W. Geneva St., Williams Bay, WI 53191, USA
+      example_expanded: Yerkes Observatory, 373 W. Geneva St., Williams Bay, WI 53191,
+        USA
       postcode: '53191'
       state: WI
       street: 373 W. Geneva St.
@@ -3262,7 +3265,7 @@ authors:
     orcid: 0000-0003-0930-5815
   ansarir:
     affil:
-    - IN2P3-IJCLAB
+    - INSU-AIM
     altaffil: []
     email: null
     family_name: Ansari
@@ -5575,6 +5578,14 @@ authors:
     email: null
     family_name: Jevremovi\'{c}
     given_name: Darko
+    orcid: null
+  jimenezmejiasd:
+    affil:
+    - RubinObsC
+    altaffil: []
+    email: djimenez
+    family_name: Jim\'enez Mej{\'\i}as
+    given_name: David
     orcid: null
   johnsk:
     affil:
