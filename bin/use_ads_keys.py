@@ -12,6 +12,7 @@ to rewrite with the new bib keys.
 import argparse
 import re
 import sys
+from collections import Counter
 
 from bibtools import get_ads_bibcode
 from pybtex.database import BibliographyData
@@ -24,6 +25,54 @@ def process_bib(bibdata: BibliographyData) -> dict[str, str]:
         if bibcode := get_ads_bibcode(entry):
             bibcode_map[bibkey] = bibcode
     return bibcode_map
+
+
+# Keep track of what was replaced.
+REPLACED: Counter[str] = Counter()
+
+# Match \cite…{<keys>} where <keys> is anything up to the next }
+# Also allows `\citep[][]{key}`
+cite_cmd = re.compile(r"(\\cite[a-zA-Z]*(?:\[[^\]]*\])*)\{([^}]*)\}")
+
+
+def _replace_keys(keys_str: str, bibkey_map: dict[str, str]) -> str:
+    # Split on commas but KEEP the separators (and their spaces) to preserve
+    # formatting.
+    global REPLACED
+
+    parts = re.split(r"(\s*,\s*)", keys_str)
+    out = []
+    for part in parts:
+        # If it's a comma (with whatever spaces), keep as-is
+        if re.fullmatch(r"\s*,\s*", part):
+            out.append(part)
+            continue
+
+        # It's a key (with possible leading/trailing spaces) — preserve those
+        # spaces.
+        leading = part[: len(part) - len(part.lstrip())]
+        trailing = part[len(part.rstrip()) :]
+        key = part.strip()
+
+        # Replace if we have a mapping; otherwise leave the key untouched.
+        new_key = bibkey_map.get(key, key)
+        if new_key != key:
+            REPLACED[new_key] += 1
+        out.append(f"{leading}{new_key}{trailing}")
+
+    return "".join(out)
+
+
+def replace_citation_keys(latex_text: str, bibkey_map: dict[str, str]) -> str:
+    """Replace any bib keys in the text with new values."""
+
+    def repl(m: re.Match) -> str:
+        prefix = m.group(1)
+        keys = m.group(2)
+        modified = _replace_keys(keys, bibkey_map)
+        return f"{prefix}{{{modified}}}"
+
+    return cite_cmd.sub(repl, latex_text)
 
 
 if __name__ == "__main__":
@@ -43,25 +92,19 @@ if __name__ == "__main__":
     # Map old bib keys to new bibcodes.
     bibkey_map = process_bib(local_bib)
 
-    # Create a regex that matches any of the keys
-    pattern = re.compile(r"\{(" + "|".join(re.escape(k) for k in bibkey_map) + r")\}")
-    print(pattern)
-
-    def cite_replacer(match: re.Match) -> str:  # noqa: D103
-        return "{" + bibkey_map[match.group(1)] + "}"
-
     # Process each tex file and replace the bib keys.
     for texfile in args.texfiles:
+        REPLACED = Counter()  # Reset the counter.
         with open(texfile) as fd:
             text = fd.read()
 
         # Replace the bib keys in the text.
-        new_text = pattern.sub(cite_replacer, text)
+        new_text = replace_citation_keys(text, bibkey_map)
 
         # Write the modified text back to the file.
         with open(texfile, "w") as fd:
             fd.write(new_text)
-        print(f"Updated {texfile} with new bib keys.", file=sys.stderr)
+        print(f"Updated {texfile} with {len(REPLACED)} new bib keys.", file=sys.stderr)
 
     # Now update the local.bib file with the new bibcodes but do it without
     # using pybtex to avoid confusingly large diffs.
