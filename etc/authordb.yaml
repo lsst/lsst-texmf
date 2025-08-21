@@ -2179,9 +2179,10 @@ affiliations:
       postcode: BT7 1NN
       state: null
       street: null
-    department: Astrophyscis Research Centre
+    department: Astrophysics Research Centre
     email: qub.ac.uk
     institute: Queen's University Belfast
+    ror_id: 00hswnk62
   Radboud-Astro:
     address:
       city: Nijmegen
