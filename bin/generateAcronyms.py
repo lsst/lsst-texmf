@@ -32,7 +32,7 @@ from collections.abc import Iterable
 from typing import IO
 
 glsFile = "aglossary.tex"
-OUTPUT_MODES = ["txt", "rst", "tex"]
+OUTPUT_MODES = ["txt", "rst", "tex", "aastex"]
 specialChars = "_$&%^#"
 specialCharsRe = re.compile(r"[_$&%^#]")
 
@@ -475,6 +475,7 @@ def write_latex_table(
     acronyms: list[tuple[str, tuple[str, str]]],
     dotex: bool = True,
     dorst: bool = False,
+    doaastex: bool = False,
     fd: IO | None = sys.stdout,
 ) -> None:
     """Write latex table to supplied file descriptor.
@@ -499,6 +500,19 @@ def write_latex_table(
 """,
             file=fd,
         )
+    elif doaastex:
+        print(
+            r"""\addtocounter{table}{-1}
+\startlongtable
+\begin{deluxetable*}{l l}
+\tabletypesize{\footnotesize} % adjust if you need smaller text
+\tablewidth{0pt}
+\tablehead{
+\colhead{Acronym} & \colhead{Description}
+}
+\startdata""",
+            file=fd,
+        )
     else:
         print("Acronym\tDescription", file=fd)
         if dorst:
@@ -510,6 +524,13 @@ def write_latex_table(
         print(f"{acr}{sep}{defn}{end}", file=fd)
     if dotex:
         print(r"\end{longtable}", file=fd)
+    elif doaastex:
+        print(
+            r"""\enddata
+\end{deluxetable*}
+""",
+            file=fd,
+        )
     if dorst:
         print(r"""======= ===========""", file=fd)
 
@@ -519,7 +540,7 @@ def forceConverge(prevCount: int, utags: set[str], noadorn: bool, writeallacrony
     no more are added.
     """
     while True:
-        count = main({glsFile}, True, utags, True, False, "tex", noadorn, writeallacronyms)
+        count = main({glsFile}, True, utags, True, False, False, "tex", noadorn, writeallacronyms)
         # If no glossary items are added we are done
         if count == prevCount:
             break
@@ -540,6 +561,7 @@ def main(
     utags: set[str],
     dotex: bool,
     dorst: bool,
+    doaastex: bool,
     mode: str,
     noadorn: bool,
     writeallacronyms: bool = False,
@@ -623,15 +645,18 @@ def main(
         else:
             raise RuntimeError(f"Internal error handling {acr}")
 
-    acrFile = f"acronyms.{mode}"
-    if doGlossary and dotex:  # otherwise its just a table
+    suffix = mode
+    if mode == "aastex":
+        suffix = "tex"
+    acrFile = f"acronyms.{suffix}"
+    if doGlossary and (dotex or doaastex):  # otherwise its just a table
         if not noadorn:
             results = update_gls_entries(results, lsst_definitions)
         with open(glsFile, "w") as gfd:
             write_latex_glossary(results, fd=gfd)
     else:
         with open(acrFile, "w") as fd:
-            write_latex_table(results, dotex, dorst, fd=fd)
+            write_latex_table(results, dotex, dorst, doaastex, fd=fd)
     return len(results)
 
 
@@ -944,6 +969,7 @@ if __name__ == "__main__":
     utags = set()
     dotex = args.mode == "tex"
     dorst = args.mode == "rst"
+    doaastex = args.mode == "aastex"
     noadorn = args.noadorn
 
     if args.dump:
@@ -976,11 +1002,12 @@ if __name__ == "__main__":
             utags,
             dotex,
             dorst,
+            doaastex,
             args.mode,
             noadorn,
             writeallacronyms,
         )
-        if doGlossary and dotex:
+        if doGlossary and (dotex or doaastex):
             forceConverge(count, utags, noadorn, writeallacronyms)
     # Go through files on second pass  or on demand and \gls  or not (-u)
     if args.update:
