@@ -570,7 +570,7 @@ affiliations:
       state: CA
       street: 1200 East California Blvd.
     department: Astonomy Department
-    email: null
+    email: astro.caltech.edu
     institute: California Institute of Technology
     ror_id: 05dxps055
   Caltech-CDDD:
@@ -586,6 +586,19 @@ affiliations:
     email: null
     institute: California Institute of Technology
     ror_id: 05dxps055
+  CambridgeIoA:
+    address:
+      city: Cambridge
+      country_code: UK
+      example_expanded: Institute of Astronomy and Kavli Institute for Cosmology,
+        University of Cambridge, Madingley Road, Cambridge, CB3 0HA, UK
+      postcode: CB3 0HA
+      street: Madingley Road
+      state: null
+    department: Institute of Astronomy and Kavli Institute for Cosmology
+    email: astro.cam.ac.uk
+    institute: University of Cambridge
+    ror_id: 013meh722
   Cardiff:
     address:
       city: CF24 3AA
@@ -1732,6 +1745,20 @@ affiliations:
     email: me.com
     institute: Placeholder for me.com email domain
     ror_id: null
+  MichiganAstro:
+    address:
+      city: East Lansing
+      country_code: USA
+      example_expanded: Center for Data Intensive and Time Domain Astronomy,
+        Department of Physics and Astronomy, Michigan State University,
+        East Lansing, MI 48824, USA
+      postcode: '48824'
+      state: MI
+      street: null
+    department: Center for Data Intensive and Time Domain Astronomy
+    email: pa.msu.edu
+    institute: Michigan State University
+    ror_id: 05hs6h993
   NAOChina:
     address:
       city: Beijing
@@ -2143,6 +2170,18 @@ affiliations:
     email: purdue.edu
     institute: Purdue University
     ror_id: 02dqehb95
+  QUBelfast:
+    address:
+      city: Belfast
+      country_code: UK
+      example_expanded: Astrophysics Research Centre, Queen's University
+        Belfast, Belfast BT7 1NN, UK
+      postcode: BT7 1NN
+      state: null
+      street: null
+    department: Astrophyscis Research Centre
+    email: qub.ac.uk
+    institute: Queen's University Belfast
   Radboud-Astro:
     address:
       city: Nijmegen
@@ -2699,6 +2738,19 @@ affiliations:
     email: ucsc.edu
     institute: University of California, Santa Cruz
     ror_id: 03s65by71
+  UCatolicaPAstro:
+    address:
+      city: Santiago
+      example_expanded: Instituto de Astrof\'isica, Facultad de F\'isica,
+        Pontificia Universidad Cat\'olica de Chile, Vicuna Mackenna 4860,
+        7820436 Macul, Santiago, Chile
+      postcode: 7820436 Macul
+      country_code: Chile
+      street: Vicuna Mackenna 4860
+    department: Instituto de Astrof\'isica, Facultad de F\'isica
+    email: astro.puc.cl
+    institute: Pontificia Universidad Cat\'olica de Chile
+    ror_id: 04teye511
   UCatolicaSC:
     address:
       city: Concepci\'on
@@ -2765,6 +2817,18 @@ affiliations:
     email: null
     institute: Universidad Nacional de Educaci\'on a Distancia
     ror_id: 02msb5n36
+  UNSW:
+    address:
+      city: Kensington
+      example_expanded: School of Physics, University of New South Wales, Kensington,
+        NSW, 2032, Australia
+      state: New South Wales
+      postcode: "2032"
+      country_code: Australia
+    department: School of Physics
+    email: unsw.edu.au
+    institute: University of New South Wales
+    ror_id: 03r8z3t63
   UPenn:
     address:
       city: Philadelphia
@@ -2815,6 +2879,20 @@ affiliations:
       street: 27 King's College Circle
     department: null
     email: null
+    institute: University of Toronto
+    ror_id: 03dbr7087
+  UTorontoDunlap:
+    address:
+      city: Toronto
+      country_code: Canada
+      example_expanded: Dunlap Institute for Astronomy \& Astrophysics,
+        University of Toronto, 50 St George Street, Toronto,
+        Ontario M5S 3H4 Canada
+      postcode: M5S 3H4
+      state: Ontario
+      street: 50 St George St
+    department: Dunlap Institute for Astronomy & Astrophysics
+    email: dunlap.utoronto.ca
     institute: University of Toronto
     ror_id: 03dbr7087
   UVa:
@@ -3057,6 +3135,14 @@ authors:
     altaffil: []
     email: dm-admin@LSST-mailman
     family_name: Rubin Observatory Science Pipelines Developers
+    given_name: ''
+    orcid: null
+  SCOC:
+    affil:
+    - RubinObs
+    altaffil: []
+    email: null
+    family_name: Rubin's Survey Cadence Optimization Committee
     given_name: ''
     orcid: null
   RubinBuilderPaper:
@@ -3448,6 +3534,14 @@ authors:
     family_name: Bauer
     given_name: Amanda E.
     orcid: 0000-0001-9037-6981
+  bauerfe:
+    affil:
+    - UCatolicaPAstro
+    altaffil: []
+    email: fbauer
+    family_name: Bauer
+    given_name: Franz E.
+    orcid: 0000-0002-8686-8737
   baumanbj:
     affil:
     - LLNL
@@ -3789,6 +3883,14 @@ authors:
     family_name: Brondel
     given_name: Brian J.
     orcid: 0009-0005-3510-6248
+  broughs:
+    affil:
+    - UNSW
+    altaffil: []
+    email: s.brough
+    family_name: Brough
+    given_name: Sarah
+    orcid: 0000-0002-9796-1363
   broughtona:
     affil:
     - SLAC-Kavli
@@ -5303,6 +5405,14 @@ authors:
     family_name: Hileman
     given_name: Edward
     orcid: null
+  hlozekr:
+    affil:
+    - UTorontoDunlap
+    altaffil: []
+    email: hlozek
+    family_name: Hlo\v{z}ek
+    given_name: Ren\'ee
+    orcid: 0000-0002-0965-7864
   hoblittj:
     affil:
     - RubinObs
@@ -5729,7 +5839,7 @@ authors:
     affil:
     - Caltech-Astro
     altaffil: []
-    email: null
+    email: mansi
     family_name: Kasliwal
     given_name: Mansi M.
     orcid: 0000-0002-5619-4938
@@ -7144,6 +7254,15 @@ authors:
     family_name: Villicana Pedraza
     given_name: Ilhuiyolitzin
     orcid: 0000-0002-9632-3132
+  peirish:
+    affil:
+    - OKC
+    - CambridgeIoA
+    altaffil: []
+    email: hiranya.peiris@CambridgeIoA
+    family_name: Peiris
+    given_name: Hiranya V.
+    orcid: 0000-0002-2519-584X
   penak:
     affil:
     - RubinObsC
@@ -7833,12 +7952,20 @@ authors:
     orcid: 0000-0002-7187-9628
   schwambme:
     affil:
-    - GeminiN
+    - QUBelfast
     altaffil: []
-    email: null
+    email: m.schwamb
     family_name: Schwamb
     given_name: Megan E.
     orcid: 0000-0003-4365-1455
+  scolnicd:
+    affil:
+    - Duke
+    altaffil: []
+    email: daniel.scolnic
+    family_name: Scolnic
+    given_name: Daniel
+    orcid: 0000-0002-4934-5849
   scotta:
     affil:
     - NOIRLab
@@ -8201,6 +8328,14 @@ authors:
     family_name: Stover
     given_name: Edward
     orcid: null
+  straderj:
+    affil:
+    - MichiganAstro
+    altaffil: []
+    email: strader
+    family_name: Strader
+    given_name: Jay
+    orcid: 0000-0002-1468-9668
   straussal:
     affil:
     - RubinOps
