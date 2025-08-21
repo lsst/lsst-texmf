@@ -504,7 +504,7 @@ def write_latex_table(
         print(
             r"""\addtocounter{table}{-1}
 \startlongtable
-\begin{deluxetable}{l l}
+\begin{deluxetable*}{l l}
 \tabletypesize{\footnotesize} % adjust if you need smaller text
 \tablewidth{0pt}
 \tablehead{
@@ -527,7 +527,7 @@ def write_latex_table(
     elif doaastex:
         print(
             r"""\enddata
-\end{deluxetable}
+\end{deluxetable*}
 """,
             file=fd,
         )
