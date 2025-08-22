@@ -3138,6 +3138,14 @@ authors:
     family_name: Rubin Observatory Science Pipelines Developers
     given_name: ''
     orcid: null
+  PST:
+    affil:
+    - RubinObs
+    altaffil: []
+    email: null
+    family_name: Rubin Observatory Project Science Team
+    given_name: ''
+    orcid: null
   SCOC:
     affil:
     - RubinObs
