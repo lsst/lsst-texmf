@@ -1828,7 +1828,7 @@ affiliations:
     address:
       city: Gaithersburg
       country_code: USA
-      exampled_expanded: National Institute of Standards and Technology,
+      example_expanded: National Institute of Standards and Technology,
         Material Measurement Laboratory, Office of Data and Informatics,
         Gaithersburg, MD, USA
       postcode: "20899"
