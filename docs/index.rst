@@ -16,6 +16,7 @@ lsst-texmf is on GitHub at https://github.com/lsst/lsst-texmf.
    submodule
    docker
    overleaf
+   authordb
    examples/index
    templates/index
    lsstdoc

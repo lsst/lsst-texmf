@@ -103,15 +103,13 @@ The following tags are generated through Travis:
 - Tags also correspond to git branches and tags on GitHub.
   The build system converts forward slashes in branch names to dashes in tags.
   For example, the ``tickets/DM-10642`` Git branch is published on Docker Hub as ``tickets-DM-10642``.
-- ``travis-N`` tags correspond to individual Travis CI builds.
 
 The following components are involved in the Docker toolchain:
 
 - The ``Dockerfile`` defines the container.
   Note that ``lsst-texmf``\ ’s :file:`Dockerfile` is only concerned with installing ``lsst-texmf`` and setting :envvar:`TEXMFHOME`.
   The `lsstsqre/lsst-texlive`_ base image provides `TeX Live`_ and tools like :command:`make` and :command:`git`.
-- The ``.travis.yml`` file runs the Docker image build and push in the Travis CI environment.
-- The ``bin/travis-docker-deploy.sh`` script tags the images according to the above scheme and pushes those images to Docker Hub.
+- The  CI gihub action builds the the Docker image build and pushes it to Docker HUB .
 
 .. _`lsstsqre/lsst-texmf`: https://hub.docker.com/r/lsstsqre/lsst-texmf/
 .. _`lsstsqre/lsst-texlive`: https://hub.docker.com/r/lsstsqre/lsst-texlive/

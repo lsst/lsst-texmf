@@ -78,6 +78,11 @@ docs: $(PDF) $(TESTS) glstab.tex authors.csv
 lsst.bib:
 	bin/generateBibfile.py --external texmf/bibtex/bib/lsst.bib --external etc/static_entries.bib --dois etc/dois.yaml texmf/bibtex/bib/lsst.bib
 
+processadbform:
+	python3 $(TEXMFHOME)/../bin/makeAuthorListsFromGoogle.py --adb -p 1CGxjpPuyNJ_gXRHTvkEF0qeI0XedQ-GQgbmyzWFLSUE "A2:I1000"
+
+processsignup:
+	python3 $(TEXMFHOME)/../bin/makeAuthorListsFromGoogle.py --signup -p 1CGxjpPuyNJ_gXRHTvkEF0qeI0XedQ-GQgbmyzWFLSUE "GenPaper!A2:I1000"
 
 .PHONY: clean
 clean:
