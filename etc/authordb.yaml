@@ -1824,6 +1824,21 @@ affiliations:
     email: null
     institute: Northern Arizona University
     ror_id: 0272j5188
+  NIST-ODI:
+    address:
+      city: Gaithersburg
+      country_code: USA
+      exampled_expanded: National Institute of Standards and Technology,
+        Material Measurement Laboratory, Office of Data and Informatics,
+        Gaithersburg, MD, USA
+      postcode: "20899"
+      state: MD
+      street: 100 Bureau Drive
+    department: Material Measurement Laboratory, Office of Data and Informatics,
+      Office of Data and Informatics
+    email: nist.gov
+    institute: National Institute of Standards and Technology
+    ror_id: 05xpvk416
   NCNRP:
     address:
       city: Otwock
@@ -7354,12 +7369,12 @@ authors:
     orcid: null
   planter:
     affil:
-    - NCSA
+    - NIST-ODI
     altaffil: []
-    email: null
+    email: raymond.plante
     family_name: Plante
     given_name: Raymond
-    orcid: null
+    orcid: 0000-0002-9279-4877
   plates:
     affil:
     - BNL
