@@ -547,6 +547,19 @@ affiliations:
     email: null
     institute: City University of New York
     ror_id: 03m908832
+  CalPolySLO:
+    address:
+      city: San Luis Obispo
+      country_code: USA
+      example_expanded: Department of Physics, California Polytechnic State
+        University, 1 Grand Avenue, San Luis Obispo, CA 93405, USA
+      postcode: "93405"
+      state: CA
+      street: 1 Grand Avenue
+    department: Department of Physics
+    email: calpoly.edu
+    institute: California Polytechnic State University
+    ror: 001gpfp45
   Caltech:
     address:
       city: Pasadena
@@ -2061,7 +2074,7 @@ affiliations:
       state: AZ
       street: 1700 East Fort Lowell Road, Suite 106
     department: null
-    email: null
+    email: psi.edu
     institute: Planetary Science Institute
     ror_id: 05vvg9554
   PSU:
@@ -2280,7 +2293,7 @@ affiliations:
       state: NJ
       street: 136 Frelinghuysen Rd.
     department: Department of Physics and Astronomy
-    email: null
+    email: physics.rutgers.edu
     institute: Rutgers University
     ror_id: 05vt9qd57
   SAO:
@@ -4653,6 +4666,14 @@ authors:
     family_name: Economou
     given_name: Frossie
     orcid: 0000-0002-8333-7615
+  edwardsl:
+    affil:
+    - CalPolySLO
+    altaffil: []
+    email: ledwar04
+    family_name: Edwards
+    given_name: Louise O. V.
+    orcid: 0000-0002-9135-997X
   eggls:
     affil:
     - Washington
@@ -5707,6 +5728,14 @@ authors:
     family_name: Jevremovi\'{c}
     given_name: Darko
     orcid: null
+  jhasw:
+    affil:
+    - Rutgers
+    altaffil: []
+    email: saurabh
+    family_name: Jha
+    given_name: Saurabh W.
+    orcid: 0000-0001-8738-6011
   jimenezmejiasd:
     affil:
     - RubinObsC
@@ -8185,6 +8214,14 @@ authors:
     family_name: Smart
     given_name: Brianna M.
     orcid: 0000-0002-3677-0571
+  smarttsj:
+    affil:
+    - Oxford
+    altaffil: []
+    email: stephen.smartt
+    family_name: Smartt
+    given_name: Stephen J.
+    orcid: 0000-0002-8229-1731
   smithja:
     affil:
     - Peay
@@ -8809,6 +8846,14 @@ authors:
     family_name: Virieux
     given_name: Fran\c{c}oise
     orcid: null
+  volkk:
+    affil:
+    - PSI
+    altaffil: []
+    email: kvolk
+    family_name: Volk
+    given_name: Kathryn
+    orcid: 0000-0001-8736-236X
   voutsinass:
     affil:
     - RubinObs
