@@ -402,7 +402,7 @@ def genFiles(values: list, skip: int, builder: bool = False, adb: bool = False) 
             f" Saw: {idx + 1} rows - skip file contains the number for reprocessing \n"
         )
         with open("skip", "w") as f:
-            f.write(f"{idx}\n")
+            f.write(f"{idx + 1}\n")
 
         if not adb:
             write_yaml("authors.yaml", authorids)
@@ -641,7 +641,7 @@ if __name__ == "__main__":
     if args.process_google:
         sheet_id = args.process_google[0]
         sheet_ranges = args.process_google[1:]
-        if args.builder and args.pdb:
+        if args.builder and args.adb:
             print("Builder makes no sense with AuthorDB update - ignored please remove the flag.")
         if args.signup is not None:
             process_signup(

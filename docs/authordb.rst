@@ -12,27 +12,114 @@ Google‑Form → YAML workflow is used to create and maintain author lists in
 ``lsst-texmf``. It is based on:
 
 * ``etc/authordb.yaml`` — the canonical author + affiliation registry
-  in the **lsst/lsst‑texmf** repository. :contentReference[oaicite:0]{index=0}
+  in the **lsst/lsst‑texmf** repository.
 * ``bin/makeAuthorListsFromGoogle.py`` — helper to pull sign‑ups from a Google Sheet
-  and prepare YAMLs for review. :contentReference[oaicite:1]{index=1}
+  and prepare YAMLs for review.
 * ``bin/db2authors.py`` — utilities to assemble author lists during builds and
-  to help merge curated updates. :contentReference[oaicite:2]{index=2}
+  to help merge curated updates.
 
 Why this matters
 ================
 
 Technotes and other Rubin documents obtain *consistent* author identity data
 from ``authordb.yaml``. Document tooling (Documenteer) resolves author
-identifiers in project docs to the canonical entries in this database. :contentReference[oaicite:3]{index=3}
+identifiers in project docs to the canonical entries in this database.
 
 I am not in the AuthorDB
 ========================
 `This convenient sheet <https://docs.google.com/spreadsheets/d/1_zXLp7GaIJnzihKsyEAz298_xdbrgxRgZ1_86kwhGPY/edit?gid=0#gid=0>`_
-lets you search easiy for your name in the Author DB.
+lets you search easily for your name in the Author DB.
 Your author id is int he left column.
 
 If you are not in the list sign up using `this google form <https://forms.gle/KerayScYggLf2od3A>`_.
-It will take 24 hours to process.
+It will take 24 hours to process via the github nightly action.
+
+I want a paper signup sheet
+===========================
+If you want an author acknowledgement/signup sheet `copy this google form <https://docs.google.com/forms/d/1bTj04U2Np4w3hF96jvrGzxlJMDfV2gtMj-b2Rnhu17c/edit>`_.
+You can collect any information you wish as long as one field is the AuthorID.
+We suggest you take the description pointing authors at the signup form if they do not yet have a Rubin AuthorID.
+
+Have the form put results in a google sheet.
+Check which column contains the AuthorID and use that in the call to the script.
+0 is the firs column so column E is 4 for example  which is the default.
+The parameter after signup in the call allows you specify a different column.
+
+Then you may use:
+
+  $ bin/makeAuthorListsFromGoogle.py --signup 4 -p --sheet SHEET_ID "FormResponses!A1:Z"
+
+The SHEET_ID is the long string before ? in your google sheet it looks like
+
+   1CGxjpPuyNJ_gXRHTvkEF0qeI0XedQ-GQgbmyzWFLSUE
+
+The string after that gives the sheet(tab) and range to access.
+
+When you run this script you need a client file in your directory client_secret.json.
+You can ask wil for one or follow the instructions below to create one.
+
+Google Sheets Access: client_secret.json
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This project reads data directly from a Google Sheet using the
+`Google Sheets API <https://developers.google.com/sheets/api>`_.
+
+Because the API requires authentication, **each user must create their own
+OAuth client secrets file** called ``client_secret.json``. This file is used
+to perform the one-time sign-in that grants the script access to your
+Google account.
+
+.. important::
+
+   Do **not** commit ``client_secret.json`` or ``token.pickle`` to Git.
+   Both files are personal credentials and should be listed in ``.gitignore``.
+
+Step-by-step setup
+^^^^^^^^^^^^^^^^^^
+
+1. Go to the `Google Cloud Console <https://console.cloud.google.com/>`_.
+
+2. If you don’t already have a project:
+
+   * Click the project drop-down → **New Project**.
+   * Give it a name (for example, ``Rubin Authors``), and create it.
+
+3. Enable the **Google Sheets API** for your project:
+
+   * From the left menu, go to **APIs & Services → Library**.
+   * Search for "Google Sheets API" and click **Enable**.
+
+4. Create OAuth client credentials:
+
+   * From the left menu, go to **APIs & Services → Credentials**.
+   * Click **Create credentials → OAuth client ID**.
+   * For **Application type**, choose **Desktop app**.
+   * Give it a name (for example, ``Rubin Authors Desktop``), then click **Create**.
+
+5. Download the client secrets file:
+
+   * After creation, you will see your new OAuth client in the list.
+   * Click the download icon (⭳) to get a JSON file.
+   * Rename it to ``client_secret.json``.
+
+6. Place ``client_secret.json`` in the root of this repository
+   (next to the scripts that use it).
+
+First run
+^^^^^^^^^
+
+When you run a script that accesses the Google Sheet, it will:
+
+* Detect ``client_secret.json`` and launch a browser window for you to sign in.
+* Ask you to allow access to your Google account for reading Sheets.
+* Save a local token cache in ``token.pickle`` so you won’t need to log in again.
+
+Both ``client_secret.json`` and ``token.pickle`` are ignored by ``.gitignore``.
+
+Troubleshooting
+^^^^^^^^^^^^^^^
+
+* If you see ``FileNotFoundE*
 
 
 Overview of components
@@ -49,7 +136,7 @@ A single YAML file that stores:
   used to shorthand author emails.
 
 Documenteer and downstream tools read this file to render author lists,
-affiliations, and metadata consistently across documents. :contentReference[oaicite:4]{index=4}
+affiliations, and metadata consistently across documents.
 
 Typical author entry (illustrative)::
 
@@ -59,8 +146,17 @@ Typical author entry (illustrative)::
       family_name: Doe
       orcid: 0000-0000-0000-0000
       email: jdoe@RubinObsC        # “local@affilid” shorthand
-      affil: [RubinObsC]           # primary affiliations (IDs)
-      altaffil: []                 # optional additional affiliations
+      affil: [RubinObsC]           # primary affiliations (IDs), specify more than one as needed
+      altaffil: []                 # Authors often have additional information that needs to be noted
+                                   # (e.g. Hubble Fellow, author is deceased, etc.) in addition to their
+                                   # affiliation information.
+                                   # Do not put actual affiliation here
+
+
+
+
+
+
 
 Typical affiliation entry (illustrative)::
 
@@ -70,7 +166,7 @@ Typical affiliation entry (illustrative)::
       address:
         example_expanded: Vera C. Rubin Observatory, Cerro Pachón, Chile
         street: Cerro Pachón
-        city: Vicuña
+        city: Vicu\~na
         postcode: ""
         country_code: CL
       email: rubinobservatory.org   # optional domain for email shorthands
@@ -89,11 +185,11 @@ A script that connects to a Google Sheet where contributors submit sign‑ups.
 It selects relevant columns (author ID, names, affiliations, ORCID, email),
 derives normalized author IDs, and emits small YAML files for review (for
 example, a set of *new authors* and *new affiliations* to be merged into
-``authordb.yaml``). :contentReference[oaicite:5]{index=5}
+``authordb.yaml``).
 
 Google API access is required (OAuth client, token cache); see Google’s Python
 Sheets quickstart for one‑time setup. The ``lsst-texmf`` docs also describe
-running helper scripts (including this one) inside the project Docker image. :contentReference[oaicite:6]{index=6}
+running helper scripts (including this one) inside the project Docker image.
 
 
 ``db2authors.py``
@@ -101,7 +197,7 @@ running helper scripts (including this one) inside the project Docker image. :co
 A companion utility used in build pipelines to turn the curated database into
 LaTeX author/affiliation blocks and/or to help merge reviewed YAML deltas back
 into the database. It is commonly available in the project Docker image used
-by document builds. :contentReference[oaicite:7]{index=7}
+by document builds.
 
 
 End‑to‑end workflow
@@ -121,24 +217,24 @@ End‑to‑end workflow
    * ``new_affiliations.yaml`` — mapping of *only* new or changed affiliations.
 
    You then review/edit these YAMLs, commit them to a PR, or hand them to the
-   database maintainer for merging. :contentReference[oaicite:8]{index=8}
+   database maintainer for merging.
 
 3. **Curate and merge**
    Use helper scripts (for example, functions in ``db2authors.py``) to validate
    the staged YAMLs and merge them into ``etc/authordb.yaml`` when approved.
    Keep IDs stable; fix typos or ORCID changes at the source (the database)
-   rather than in individual documents. :contentReference[oaicite:9]{index=9}
+   rather than in individual documents.
 
 4. **Consume in documents**
    Document builds pick up ``authordb.yaml`` (directly or via the Docker image)
-   so author lists appear consistent across technotes and other series. :contentReference[oaicite:10]{index=10}
+   so author lists appear consistent across technotes and other series.
 
 
 Command‑line usage (patterns)
 =============================
 
 The exact options vary by revision; consult ``-h``. The following patterns are
-commonly used in Rubin pipelines: :contentReference[oaicite:11]{index=11}
+commonly used in Rubin pipelines:
 
 Pull sign‑ups from Google and stage YAMLs::
 
@@ -153,7 +249,7 @@ Merge reviewed affiliations::
   $ bin/db2authors.py --merge-affiliations new_affiliations.yaml
 
 Build‑time author list generation (driven by your doc’s Makefile) typically
-invokes ``db2authors.py`` inside the standard Docker image. :contentReference[oaicite:12]{index=12}
+invokes ``db2authors.py`` inside the standard Docker image.
 
 
 Data model details
@@ -168,7 +264,14 @@ Author entries (canonical)
 * ``email``: either ``local`` (uses primary affiliation’s domain) **or**
   ``local@affilid`` (explicit cross‑affiliation domain).
 * ``affil``: list of affiliation IDs (primary first).
-* ``altaffil``: list of additional affiliation IDs (optional).
+* ``altaffil``: additional information that needs to be noted (e.g. Hubble Fellow, author is deceased, etc.). NOT actual affiliation. (optional)/
+
+
+
+
+
+
+(optional).
 
 Affiliation entries
 -------------------
@@ -180,7 +283,7 @@ Affiliation entries
 * ``email``: optional domain used for email shorthand resolution.
 
 These conventions align with how technote metadata is resolved from the
-database. :contentReference[oaicite:13]{index=13}
+database.
 
 
 Operational tips
@@ -200,30 +303,5 @@ Operational tips
 * **Review new affiliations carefully.** The postal address and public
   institute name are used in rendered front‑matter; get them right before
   merging.
-
-
-Troubleshooting
-===============
-
-* **Document build can’t find authors.** Ensure the document build environment
-  (often a Docker image) is using a version of ``lsst-texmf`` that includes
-  your updated ``authordb.yaml``. :contentReference[oaicite:14]{index=14}
-
-* **Inconsistent names across docs.** Update the canonical entry in
-  ``authordb.yaml`` rather than patching per‑document metadata; Documenteer
-  pulls the canonical record at render time. :contentReference[oaicite:15]{index=15}
-
-* **Google API authentication.** For first‑time runs of the Google importer,
-  complete the OAuth flow and preserve the token cache as instructed by the
-  Google Sheets API quickstart; subsequent runs are non‑interactive.
-
-
-References
-==========
-
-* lsst‑texmf documentation home. :contentReference[oaicite:16]{index=16}
-* How technotes resolve authors from ``authordb.yaml`` (Documenteer docs). :contentReference[oaicite:17]{index=17}
-* Docker usage notes (scripts available in the image). :contentReference[oaicite:18]{index=18}
-* Background discussions and usage in Rubin community posts. :contentReference[oaicite:19]{index=19}
 
 
