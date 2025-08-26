@@ -1155,61 +1155,61 @@ affiliations:
     address:
       city: Paris
       country_code: France
-      example_expanded: Universit\'{e} Paris Cit\'{e}, CNRS, Astroparticule et Cosmologie,
-        F-75013 Paris, France
+      example_expanded: Universit\'{e} Paris Cit\'{e}, CNRS/IN2P3, APC, 4 rue Elsa Morante, F-75013 Paris, France
       postcode: F-75013
       state: ''
-      street: ''
+      street: 4 rue Elsa Morante
     department: null
     email: apc.in2p3.fr
-    institute: Universit\'{e} Paris Cit\'{e}, CNRS, Astroparticule et Cosmologie
+    institute: Universit\'{e} Paris Cit\'{e}, CNRS/IN2P3, APC
     ror_id: 03tnjrr49
   IN2P3-APC-CEA:
     address:
       city: Paris
       country_code: France
-      example_expanded: Universit\'{e} Paris Cit\'{e}, CNRS, CEA, Astroparticule et
-        Cosmologie, F-75013 Paris, France
+      example_expanded: Universit\'{e} Paris Cit\'{e}, CNRS/IN2P3, CEA, APC, 4 rue Elsa Morante,
+        F-75013 Paris, France
       postcode: F-75013
       state: ''
-      street: ''
+      street: 4 rue Elsa Morante
     department: null
     email: apc.in2p3.fr
-    institute: Universit\'{e} Paris Cit\'{e}, CNRS, CEA, Astroparticule et Cosmologie
+    institute: Universit\'{e} Paris Cit\'{e}, CNRS/IN2P3, CEA, APC
     ror_id: 03tnjrr49
   IN2P3-CC:
     address:
       city: Villeurbanne
       country_code: France
-      example_expanded: CNRS, CC-IN2P3, 21 avenue Pierre de Coubertin, CS70202, F-69627
-        Villeurbanne cedex, France
+      example_expanded: CNRS/IN2P3, CC-IN2P3, 21 avenue Pierre de Coubertin, F-69627 Villeurbanne, France
       postcode: F-69627
       state: ''
-      street: 21 avenue Pierre de Coubertin, CS70202
+      street: 21 avenue Pierre de Coubertin
     department: null
     email: cc.in2p3.fr
-    institute: CNRS, CC-IN2P3
+    institute: CNRS/IN2P3, CC-IN2P3
     ror_id: 04dcc3438
   IN2P3-CPPM:
     address:
       city: Marseille
       country_code: France
-      example_expanded: Aix Marseille Univ, CNRS/IN2P3, CPPM, Marseille, France
+      example_expanded: Aix Marseille Universit\'{e}, CNRS/IN2P3, CPPM, 163 avenue de Luminy,
+        F-13288 Marseille, France
       postcode: F-13288
       state: ''
-      street: ''
+      street: 163 avenue de Luminy
     department: null
     email: cppm.in2p3.fr
-    institute: Aix Marseille Univ, CNRS/IN2P3, CPPM
+    institute: Aix Marseille Universit\'{e}, CNRS/IN2P3, CPPM
     ror_id: 00fw8bp86
   IN2P3-IJCLAB:
     address:
       city: Orsay
       country_code: France
-      example_expanded: Universit\'{e} Paris-Saclay, CNRS/IN2P3, IJCLab, Orsay, France
+      example_expanded: Universit\'{e} Paris-Saclay, CNRS/IN2P3, IJCLab, 15 Rue Georges Clemenceau,
+        F-91405 Orsay, France
       postcode: F-91405
       state: ''
-      street: ''
+      street: 15 Rue Georges Clemenceau
     department: null
     email: ijclab.in2p3.fr
     institute: Universit\'{e} Paris-Saclay, CNRS/IN2P3, IJCLab
@@ -1218,81 +1218,76 @@ affiliations:
     address:
       city: Villeurbanne
       country_code: France
-      example_expanded: Universit\'{e} de Lyon, Universit\'{e} Claude Bernard Lyon
-        1, CNRS, IP2I Lyon/IN2P3, F-69622 Villeurbanne, France
+      example_expanded: Universit\'{e} Claude Bernard Lyon 1, CNRS/IN2P3, IP2I, 4 Rue Enrico Fermi,
+        F-69622 Villeurbanne, France
       postcode: F-69622
       state: ''
-      street: ''
+      street: 4 Rue Enrico Fermi
     department: null
     email: ip2i.in2p3.fr
-    institute: Universit\'{e} de Lyon, Universit\'{e} Claude Bernard Lyon 1, CNRS,
-      IP2I Lyon/IN2P3
+    institute: Universit\'{e} Claude Bernard Lyon 1, CNRS/IN2P3, IP2I
     ror_id: 02avf8f85
   IN2P3-LAPP:
     address:
       city: Annecy
       country_code: France
-      example_expanded: Universite Grenoble-Alpes, Universite Savoie Mont Blanc, CNRS/IN2P3
-        Laboratoire d'Annecy-le-Vieux de Physique des Particules, 9 Chemin de Bellevue
-        -- BP 110, F-74940 Annecy-le-Vieux Cedex, France
+      example_expanded: Universit\'{e} Savoie Mont-Blanc, CNRS/IN2P3, LAPP, 9 Chemin de Bellevue,
+        F-74940 Annecy-le-Vieux, France
       postcode: F-74940
       state: ''
-      street: ''
+      street: 9 Chemin de Bellevue
     department: null
     email: lapp.in2p3.fr
-    institute: Universit\'{e} Savoie Mont-Blanc, CNRS, IN2P3-LAPP
+    institute: Universit\'{e} Savoie Mont-Blanc, CNRS/IN2P3, LAPP
     ror_id: 049nhh297
   IN2P3-LPCA:
     address:
       city: Clermont-Ferrand
       country_code: France
-      example_expanded: Universite Clermont Auvergne, CNRS/IN2P3, Laboratoire de Physique
-        de Clermont Auvergne, F-63000 Clermont-Ferrand, France
+      example_expanded: Universit\'{e} Clermont Auvergne, CNRS/IN2P3, LPCA, 4 Avenue Blaise Pascal,
+        F-63000 Clermont-Ferrand, France
       postcode: F-63000
       state: ''
-      street: ''
+      street: 4 Avenue Blaise Pascal
     department: null
     email: clermont.in2p3.fr
-    institute: Universit\'{e} Clermont-Auvergne, CNRS, LPCA
+    institute: Universit\'{e} Clermont-Auvergne, CNRS/IN2P3, LPCA
     ror_id: 0214k6v65
   IN2P3-LPNHE:
     address:
       city: Paris
       country_code: France
-      example_expanded: Laboratoire de Physique Nucleaire et des Hautes Energies,
-        Universite Pierre et Marie Curie, Universite Paris Cite, CNRS/IN2P3, 4 place
-        Jussieu, 75005 Paris, France
+      example_expanded: Sorbonne Universit\'{e}, Universit\'{e} Paris Cit\'{e}, CNRS/IN2P3,
+        LPNHE, 4 place Jussieu, F-75005 Paris, France
       postcode: F-75005
       state: ''
-      street: ''
+      street: 4 place Jussieu
     department: null
     email: lpnhe.in2p3.fr
-    institute: Sorbonne Universit\'{e}, Universit\'{e} Paris Cit\'{e}, CNRS/IN2P3,
-      LPNHE
+    institute: Sorbonne Universit\'{e}, Universit\'{e} Paris Cit\'{e}, CNRS/IN2P3, LPNHE
     ror_id: 01hg8p552
   IN2P3-LPSC:
     address:
       city: Grenoble
       country_code: France
-      example_expanded: Laboratoire de Physique Subatomique et de Cosmologie, Universite
-        Grenoble-Alpes, CNRS/IN2P3, 53 av.\ des Martyrs, 38026 Grenoble cedex, France
-      postcode: F-38000
+      example_expanded: Universit\'{e} Grenoble Alpes, CNRS/IN2P3, LPSC, 53 avenue des Martyrs,
+        F-38026 Grenoble, France
+      postcode: F-38026
       state: ''
-      street: ''
+      street: 53 avenue des Martyrs
     department: null
     email: lpsc.in2p3.fr
-    institute: Universit\'{e} Grenoble Alpes, CNRS, LPSC-IN2P3
+    institute: Universit\'{e} Grenoble Alpes, CNRS/IN2P3, LPSC
     ror_id: 03f0apy98
   IN2P3-LUPM:
     address:
       city: Montpellier
       country_code: France
-      example_expanded: Laboratoire Univers et Particules de Montpellier (LUPM), Universite
-        de Montpellier, CNRS/IN2P3, Place Eug\`ene Bataillon, F-34095 Montpellier,
-        France
+      example_expanded: Universit\'{e} de Montpellier, CNRS/IN2P3, Place Eug\`ene Bataillon,
+        F-34095 Montpellier, France
       postcode: F-34095
       state: ''
-      street: ''
+      street: Place Eug\`ene Bataillon
     department: null
     email: lupm.in2p3.fr
     institute: Universit\'{e} de Montpellier, CNRS/IN2P3, LUPM
@@ -1380,14 +1375,13 @@ affiliations:
       city: Gif-sur-Yvette
       country_code: France
       example_expanded: Universit\'{e} Paris-Saclay, Universit\'{e} Paris Cit\'{e},
-        CEA, CNRS, AIM, F-91191 Gif-sur-Yvette, France
+        CEA, CNRS/INSU, AIM, F-91191 Gif-sur-Yvette, France
       postcode: F-91191
       state: ''
-      street: ''
+      street: Site de Saclay
     department: null
     email: cea.fr
-    institute: Universit\'{e} Paris-Saclay, Universit\'{e} Paris Cit\'{e}, CEA, CNRS,
-      AIM
+    institute: Universit\'{e} Paris-Saclay, Universit\'{e} Paris Cit\'{e}, CEA, CNRS/INSU, AIM
     ror_id: 0015h8611
   IPAC:
     address:
