@@ -311,7 +311,12 @@ def checkFixAuthAndComma(authors: str) -> str:
         author = author.removesuffix(" and")
         if author.lower() == "{On behalf of Rubin Observatory Project}".lower():
             author = "Vera C. Rubin Observatory"
-        if "Rubin Observatory" in author or "Team" in author or "Collaboration" in author:
+        if (
+            "Rubin Observatory" in author
+            or "Team" in author
+            or "Collaboration" in author
+            or "Committee" in author
+        ):
             # Organizational author. Need to quote the entire author.
             # Sometimes they start with "the" so capitalize the first.
             author = author[0].capitalize() + author[1:]
