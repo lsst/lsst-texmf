@@ -31,8 +31,9 @@ I am not in the AuthorDB
 lets you search easily for your name in the Author DB.
 Your author id is int he left column.
 
-If you are not in the list sign up using `this google form <https://forms.gle/KerayScYggLf2od3A>`_.
-It will take 24 hours to process via the github nightly action.
+If you are not in the list sign up using  the google form
+which is bookmarked in Slack `#all-users <https://rubin-obs.slack.com/archives/C02SVMGUC>`_.
+It will take at least 24 hours to process via the github nightly action.
 
 I want a paper signup sheet
 ===========================
@@ -116,11 +117,6 @@ When you run a script that accesses the Google Sheet, it will:
 
 Both ``client_secret.json`` and ``token.pickle`` are ignored by ``.gitignore``.
 
-Troubleshooting
-^^^^^^^^^^^^^^^
-
-* If you see ``FileNotFoundE*
-
 
 Overview of components
 ======================
@@ -131,6 +127,8 @@ A single YAML file that stores:
 
 * **Authors**: keyed by a stable *author ID* (usually ``surname`` + initials,
   lowercase). Each entry carries canonical names and identifiers.
+  Upper case author IDs are reserved for "collaboration" authors.
+
 * **Affiliations**: keyed by short IDs (e.g., ``RubinObsC``), including the
   public institute name, a postal address, and (optionally) the email domain
   used to shorthand author emails.
@@ -145,7 +143,7 @@ Typical author entry (illustrative)::
       given_name: John
       family_name: Doe
       orcid: 0000-0000-0000-0000
-      email: jdoe@RubinObsC        # “local@affilid” shorthand
+      email: jdoe@RubinObsC        # “local@AffilID” shorthand - we try to not store full emails
       affil: [RubinObsC]           # primary affiliations (IDs), specify more than one as needed
       altaffil: []                 # Authors often have additional information that needs to be noted
                                    # (e.g. Hubble Fellow, author is deceased, etc.) in addition to their
@@ -175,8 +173,9 @@ Typical affiliation entry (illustrative)::
 
    The “email shorthand” convention lets an author’s email be stored as either
    ``local`` (when the primary affiliation’s domain applies) or
-   ``local@affilid`` when the domain belongs to a *different* affiliation.
+   ``local@AffilID`` when the domain belongs to a *different* affiliation.
    During rendering, the domain is substituted from the affiliation record.
+   We discourage the use of full email addressed in this file as it is public.
 
 
 ``makeAuthorListsFromGoogle.py``
@@ -198,36 +197,76 @@ A companion utility used in build pipelines to turn the curated database into
 LaTeX author/affiliation blocks and/or to help merge reviewed YAML deltas back
 into the database. It is commonly available in the project Docker image used
 by document builds.
+The main use of this is to read an authors.yaml file containing authorids and
+turn that into appropriate latex for a given publication.
 
+You can maintain an authors.yaml file directly but for publications where
+authors need to actively sign up you will need a sign up form.
 
-End‑to‑end workflow
-===================
+End‑to‑end workflow for sign up form
+=====================================
 
 1. **Collect sign‑ups**
-   Maintain a Google Form + Sheet with the columns your team uses (author ID,
-   surname, given names, primary affiliation ID(s), ORCID, email, etc.).
+   Maintain a Google Form + Sheet with the columns your team uses but
+   at least AuthorID
 
 2. **Fetch and stage updates**
    Run ``makeAuthorListsFromGoogle.py`` to read the Sheet ranges you care about
-   and produce small YAMLs for review, such as:
+   and produce authors.yaml for your publication.
 
-   * ``authors.yaml`` — a flat list of normalized author IDs (useful for
+   * ``authors.yaml`` — is a flat list of normalized author IDs (useful for
      order management and “builders” lists).
-   * ``new_authors.yaml`` — mapping of *only* new or changed authors.
-   * ``new_affiliations.yaml`` — mapping of *only* new or changed affiliations.
 
-   You then review/edit these YAMLs, commit them to a PR, or hand them to the
-   database maintainer for merging.
-
-3. **Curate and merge**
-   Use helper scripts (for example, functions in ``db2authors.py``) to validate
-   the staged YAMLs and merge them into ``etc/authordb.yaml`` when approved.
-   Keep IDs stable; fix typos or ORCID changes at the source (the database)
-   rather than in individual documents.
-
-4. **Consume in documents**
+3. **Consume in documents**
    Document builds pick up ``authordb.yaml`` (directly or via the Docker image)
    so author lists appear consistent across technotes and other series.
+   Usually with:
+
+   	db2authors.py -m aas7 > authors.tex
+
+Supported db2authors output modes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+``db2authors.py`` can generate author lists in several formats, depending on
+the target document class or publication. Select the mode appropriate for your
+build:
+
+- ``aas``
+  Generate an author list formatted for *AAS Journals* (ApJ, AJ, ApJS, ApJL).
+  Uses the AAS LaTeX macros for authors and affiliations.
+
+- ``aas7``
+  Support for the newer *AAS v7* style. Similar to ``aas`` but
+  has a few new things.
+
+- ``spie``
+  Author list formatted for *SPIE conference proceedings* style.
+
+- ``adass``
+  Author list formatted for *ADASS conference proceedings* style.
+
+- ``arxiv``
+  A simplified text author block suitable for *arXiv* preprints.
+
+- ``ascom``
+  Output formatted for *Astronomy and Computing* (Elsevier).
+
+- ``webofc``
+  Output formatted for *Web of Conferences* proceedings style.
+
+- ``lsstdoc``
+  Native format used by Rubin’s ``lsstdoc`` LaTeX class, for technotes and
+  other Rubin project documents.
+
+- ``csvall``
+  Dump all authors into a simple CSV file (one row per author, with metadata).
+
+- ``mnras``
+  Author list formatted for *Monthly Notices of the Royal Astronomical Society*
+  (MNRAS).
+
+- ``aap``
+  Author list formatted for *Astronomy & Astrophysics* (A&A).
 
 
 Command‑line usage (patterns)
@@ -238,15 +277,19 @@ commonly used in Rubin pipelines:
 
 Pull sign‑ups from Google and stage YAMLs::
 
-  $ bin/makeAuthorListsFromGoogle.py -p --sheet SHEET_ID "FormResponses!A1:Z"
+  $ bin/makeAuthorListsFromGoogle.py --signup -p --sheet SHEET_ID "FormResponses!A1:Z"
 
-Merge reviewed authors into the database::
+Pull new authors from AuthorDB new/update Google form and stage YAMLs::
 
-  $ bin/db2authors.py --merge-authors new_authors.yaml
+  $ bin/makeAuthorListsFromGoogle.py -skip `cat skip` --adb -p --sheet SHEET_ID "FormResponses!A1:Z"
 
-Merge reviewed affiliations::
+Merge reviewed authors into the database (this will update authordb.yaml - you need to PR it)::
 
-  $ bin/db2authors.py --merge-affiliations new_affiliations.yaml
+  $ bin/db2authors.py -m new_authors.yaml
+
+Merge reviewed affiliations (this will update authordb.yaml - you need to PR it)::
+
+  $ bin/db2authors.py -a new_affiliations.yaml
 
 Build‑time author list generation (driven by your doc’s Makefile) typically
 invokes ``db2authors.py`` inside the standard Docker image.
@@ -260,18 +303,12 @@ Author entries (canonical)
 
 * ``given_name``: string with LaTeX‑safe accents/macros.
 * ``family_name``: string with LaTeX‑safe accents/macros.
-* ``orcid``: 16‑digit ORCID iD (optional).
+* ``orcid``: 16‑digit ORCID iD, 4 groups of 4 numbers separated  by``-`` chars (optional).
 * ``email``: either ``local`` (uses primary affiliation’s domain) **or**
-  ``local@affilid`` (explicit cross‑affiliation domain).
+  ``local@AffilID`` (explicit cross‑affiliation domain).
 * ``affil``: list of affiliation IDs (primary first).
 * ``altaffil``: additional information that needs to be noted (e.g. Hubble Fellow, author is deceased, etc.). NOT actual affiliation. (optional)/
 
-
-
-
-
-
-(optional).
 
 Affiliation entries
 -------------------
@@ -298,7 +335,7 @@ Operational tips
 
 * **Email shorthand.** If an email domain is unique to an affiliation, prefer
   ``local`` for authors whose primary affiliation carries that domain; otherwise
-  use ``local@affilid``.
+  use ``local@AffilID``.
 
 * **Review new affiliations carefully.** The postal address and public
   institute name are used in rendered front‑matter; get them right before
