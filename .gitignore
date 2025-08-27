@@ -35,3 +35,5 @@ bin/.idea/
 .idea/
 client_secret.json
 token.pickle
+new_authors.yaml
+new_affiliations.yaml

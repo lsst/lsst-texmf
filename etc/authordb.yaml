@@ -559,7 +559,7 @@ affiliations:
     department: Department of Physics
     email: calpoly.edu
     institute: California Polytechnic State University
-    ror: 001gpfp45
+    ror_id: 001gpfp45
   Caltech:
     address:
       city: Pasadena
