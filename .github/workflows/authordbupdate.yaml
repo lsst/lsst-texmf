@@ -1,4 +1,4 @@
-name: generatebib
+name: adbformprocessor
 
 on:
   workflow_dispatch:
