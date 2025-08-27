@@ -8,7 +8,7 @@ import re
 from typing import Annotated, Self
 
 import yaml
-from pydantic import AfterValidator, BaseModel, Field, model_validator
+from pydantic import AfterValidator, BaseModel, ConfigDict, Field, model_validator
 
 
 def load_authordb(file_name: str | None = None) -> AuthorDbYaml:
@@ -97,24 +97,20 @@ class Affiliation(BaseModel):
     ror_id: Annotated[str | None, AfterValidator(check_ror)] = None
     email: str | None = None
     address: Address | None = None
+    model_config = ConfigDict(extra="forbid")
 
 
 class AuthorDbAuthor(BaseModel):
     """Model for an author entry in the authordb.yaml file."""
 
     family_name: str = Field(description="Author's surname.")
-
     given_name: str = Field(description="Author's given name or names.")
-
     affil: list[str] = Field(default_factory=list, description="Affiliation IDs")
-
     altaffil: list[str] = Field(default_factory=list, description="Alternative affiliations / notes.")
-
     orcid: Annotated[str | None, AfterValidator(check_orcid)] = Field(
         default=None,
         description="Author's ORCiD identifier (optional)",
     )
-
     email: str | None = Field(
         default=None,
         description=(
@@ -123,6 +119,7 @@ class AuthorDbAuthor(BaseModel):
             "provider)."
         ),
     )
+    model_config = ConfigDict(extra="forbid")
 
     @property
     def is_collaboration(self) -> bool:

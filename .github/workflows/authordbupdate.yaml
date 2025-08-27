@@ -1,4 +1,4 @@
-name: generatebib
+name: Process AuthorDB form
 
 on:
   workflow_dispatch:
@@ -46,6 +46,8 @@ jobs:
            else
               echo "CHANGED=true" >> ${GITHUB_ENV}
               echo "Git changes - should make PR"
+              cat new_authors.yaml
+              cat new_affiliations.yaml
            fi
 
       - name: Commit new authordb.yaml
@@ -61,7 +63,7 @@ jobs:
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.WOM_UPDATEBIB_PAT }}
-          branch: update-authordb-fromform
+          branch: update-authordb-from-form
           branch-suffix: short-commit-hash
           title: Automatic authordb  update
           commit-message: authordb update from google form
