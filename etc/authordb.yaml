@@ -551,15 +551,15 @@ affiliations:
     address:
       city: San Luis Obispo
       country_code: USA
-      example_expanded: Department of Physics, California Polytechnic State
-        University, 1 Grand Avenue, San Luis Obispo, CA 93405, USA
-      postcode: "93405"
+      example_expanded: Department of Physics, California Polytechnic State University,
+        1 Grand Avenue, San Luis Obispo, CA 93405, USA
+      postcode: '93405'
       state: CA
       street: 1 Grand Avenue
     department: Department of Physics
     email: calpoly.edu
     institute: California Polytechnic State University
-    ror: 001gpfp45
+    ror_id: 001gpfp45
   Caltech:
     address:
       city: Pasadena
@@ -606,8 +606,8 @@ affiliations:
       example_expanded: Institute of Astronomy and Kavli Institute for Cosmology,
         University of Cambridge, Madingley Road, Cambridge, CB3 0HA, UK
       postcode: CB3 0HA
-      street: Madingley Road
       state: null
+      street: Madingley Road
     department: Institute of Astronomy and Kavli Institute for Cosmology
     email: astro.cam.ac.uk
     institute: University of Cambridge
@@ -1168,7 +1168,8 @@ affiliations:
     address:
       city: Paris
       country_code: France
-      example_expanded: Universit\'{e} Paris Cit\'{e}, CNRS/IN2P3, APC, 4 rue Elsa Morante, F-75013 Paris, France
+      example_expanded: Universit\'{e} Paris Cit\'{e}, CNRS/IN2P3, APC, 4 rue Elsa
+        Morante, F-75013 Paris, France
       postcode: F-75013
       state: ''
       street: 4 rue Elsa Morante
@@ -1180,8 +1181,8 @@ affiliations:
     address:
       city: Paris
       country_code: France
-      example_expanded: Universit\'{e} Paris Cit\'{e}, CNRS/IN2P3, CEA, APC, 4 rue Elsa Morante,
-        F-75013 Paris, France
+      example_expanded: Universit\'{e} Paris Cit\'{e}, CNRS/IN2P3, CEA, APC, 4 rue
+        Elsa Morante, F-75013 Paris, France
       postcode: F-75013
       state: ''
       street: 4 rue Elsa Morante
@@ -1193,7 +1194,8 @@ affiliations:
     address:
       city: Villeurbanne
       country_code: France
-      example_expanded: CNRS/IN2P3, CC-IN2P3, 21 avenue Pierre de Coubertin, F-69627 Villeurbanne, France
+      example_expanded: CNRS/IN2P3, CC-IN2P3, 21 avenue Pierre de Coubertin, F-69627
+        Villeurbanne, France
       postcode: F-69627
       state: ''
       street: 21 avenue Pierre de Coubertin
@@ -1205,8 +1207,8 @@ affiliations:
     address:
       city: Marseille
       country_code: France
-      example_expanded: Aix Marseille Universit\'{e}, CNRS/IN2P3, CPPM, 163 avenue de Luminy,
-        F-13288 Marseille, France
+      example_expanded: Aix Marseille Universit\'{e}, CNRS/IN2P3, CPPM, 163 avenue
+        de Luminy, F-13288 Marseille, France
       postcode: F-13288
       state: ''
       street: 163 avenue de Luminy
@@ -1218,8 +1220,8 @@ affiliations:
     address:
       city: Orsay
       country_code: France
-      example_expanded: Universit\'{e} Paris-Saclay, CNRS/IN2P3, IJCLab, 15 Rue Georges Clemenceau,
-        F-91405 Orsay, France
+      example_expanded: Universit\'{e} Paris-Saclay, CNRS/IN2P3, IJCLab, 15 Rue Georges
+        Clemenceau, F-91405 Orsay, France
       postcode: F-91405
       state: ''
       street: 15 Rue Georges Clemenceau
@@ -1231,8 +1233,8 @@ affiliations:
     address:
       city: Villeurbanne
       country_code: France
-      example_expanded: Universit\'{e} Claude Bernard Lyon 1, CNRS/IN2P3, IP2I, 4 Rue Enrico Fermi,
-        F-69622 Villeurbanne, France
+      example_expanded: Universit\'{e} Claude Bernard Lyon 1, CNRS/IN2P3, IP2I, 4
+        Rue Enrico Fermi, F-69622 Villeurbanne, France
       postcode: F-69622
       state: ''
       street: 4 Rue Enrico Fermi
@@ -1244,8 +1246,8 @@ affiliations:
     address:
       city: Annecy
       country_code: France
-      example_expanded: Universit\'{e} Savoie Mont-Blanc, CNRS/IN2P3, LAPP, 9 Chemin de Bellevue,
-        F-74940 Annecy-le-Vieux, France
+      example_expanded: Universit\'{e} Savoie Mont-Blanc, CNRS/IN2P3, LAPP, 9 Chemin
+        de Bellevue, F-74940 Annecy-le-Vieux, France
       postcode: F-74940
       state: ''
       street: 9 Chemin de Bellevue
@@ -1257,8 +1259,8 @@ affiliations:
     address:
       city: Clermont-Ferrand
       country_code: France
-      example_expanded: Universit\'{e} Clermont Auvergne, CNRS/IN2P3, LPCA, 4 Avenue Blaise Pascal,
-        F-63000 Clermont-Ferrand, France
+      example_expanded: Universit\'{e} Clermont Auvergne, CNRS/IN2P3, LPCA, 4 Avenue
+        Blaise Pascal, F-63000 Clermont-Ferrand, France
       postcode: F-63000
       state: ''
       street: 4 Avenue Blaise Pascal
@@ -1277,14 +1279,15 @@ affiliations:
       street: 4 place Jussieu
     department: null
     email: lpnhe.in2p3.fr
-    institute: Sorbonne Universit\'{e}, Universit\'{e} Paris Cit\'{e}, CNRS/IN2P3, LPNHE
+    institute: Sorbonne Universit\'{e}, Universit\'{e} Paris Cit\'{e}, CNRS/IN2P3,
+      LPNHE
     ror_id: 01hg8p552
   IN2P3-LPSC:
     address:
       city: Grenoble
       country_code: France
-      example_expanded: Universit\'{e} Grenoble Alpes, CNRS/IN2P3, LPSC, 53 avenue des Martyrs,
-        F-38026 Grenoble, France
+      example_expanded: Universit\'{e} Grenoble Alpes, CNRS/IN2P3, LPSC, 53 avenue
+        des Martyrs, F-38026 Grenoble, France
       postcode: F-38026
       state: ''
       street: 53 avenue des Martyrs
@@ -1296,8 +1299,8 @@ affiliations:
     address:
       city: Montpellier
       country_code: France
-      example_expanded: Universit\'{e} de Montpellier, CNRS/IN2P3, Place Eug\`ene Bataillon,
-        F-34095 Montpellier, France
+      example_expanded: Universit\'{e} de Montpellier, CNRS/IN2P3, Place Eug\`ene
+        Bataillon, F-34095 Montpellier, France
       postcode: F-34095
       state: ''
       street: Place Eug\`ene Bataillon
@@ -1394,7 +1397,8 @@ affiliations:
       street: Site de Saclay
     department: null
     email: cea.fr
-    institute: Universit\'{e} Paris-Saclay, Universit\'{e} Paris Cit\'{e}, CEA, CNRS/INSU, AIM
+    institute: Universit\'{e} Paris-Saclay, Universit\'{e} Paris Cit\'{e}, CEA, CNRS/INSU,
+      AIM
     ror_id: 0015h8611
   IPAC:
     address:
@@ -1756,9 +1760,9 @@ affiliations:
     address:
       city: East Lansing
       country_code: USA
-      example_expanded: Center for Data Intensive and Time Domain Astronomy,
-        Department of Physics and Astronomy, Michigan State University,
-        East Lansing, MI 48824, USA
+      example_expanded: Center for Data Intensive and Time Domain Astronomy, Department
+        of Physics and Astronomy, Michigan State University, East Lansing, MI 48824,
+        USA
       postcode: '48824'
       state: MI
       street: null
@@ -1831,21 +1835,6 @@ affiliations:
     email: null
     institute: Northern Arizona University
     ror_id: 0272j5188
-  NIST-ODI:
-    address:
-      city: Gaithersburg
-      country_code: USA
-      example_expanded: National Institute of Standards and Technology,
-        Material Measurement Laboratory, Office of Data and Informatics,
-        Gaithersburg, MD, USA
-      postcode: "20899"
-      state: MD
-      street: 100 Bureau Drive
-    department: Material Measurement Laboratory, Office of Data and Informatics,
-      Office of Data and Informatics
-    email: nist.gov
-    institute: National Institute of Standards and Technology
-    ror_id: 05xpvk416
   NCNRP:
     address:
       city: Otwock
@@ -1872,6 +1861,20 @@ affiliations:
     email: illinois.edu
     institute: University of Illinois at Urbana-Champaign
     ror_id: 03g9ch715
+  NIST-ODI:
+    address:
+      city: Gaithersburg
+      country_code: USA
+      example_expanded: National Institute of Standards and Technology, Material Measurement
+        Laboratory, Office of Data and Informatics, Gaithersburg, MD, USA
+      postcode: '20899'
+      state: MD
+      street: 100 Bureau Drive
+    department: Material Measurement Laboratory, Office of Data and Informatics, Office
+      of Data and Informatics
+    email: nist.gov
+    institute: National Institute of Standards and Technology
+    ror_id: 05xpvk416
   NOIRLab:
     address:
       city: Tucson
@@ -2196,8 +2199,8 @@ affiliations:
     address:
       city: Belfast
       country_code: UK
-      example_expanded: Astrophysics Research Centre, Queen's University
-        Belfast, Belfast BT7 1NN, UK
+      example_expanded: Astrophysics Research Centre, Queen's University Belfast,
+        Belfast BT7 1NN, UK
       postcode: BT7 1NN
       state: null
       street: null
@@ -2764,11 +2767,12 @@ affiliations:
   UCatolicaPAstro:
     address:
       city: Santiago
-      example_expanded: Instituto de Astrof\'isica, Facultad de F\'isica,
-        Pontificia Universidad Cat\'olica de Chile, Vicuna Mackenna 4860,
-        7820436 Macul, Santiago, Chile
-      postcode: 7820436 Macul
       country_code: Chile
+      example_expanded: Instituto de Astrof\'isica, Facultad de F\'isica, Pontificia
+        Universidad Cat\'olica de Chile, Vicuna Mackenna 4860, 7820436 Macul, Santiago,
+        Chile
+      postcode: 7820436 Macul
+      state: null
       street: Vicuna Mackenna 4860
     department: Instituto de Astrof\'isica, Facultad de F\'isica
     email: astro.puc.cl
@@ -2843,11 +2847,12 @@ affiliations:
   UNSW:
     address:
       city: Kensington
+      country_code: Australia
       example_expanded: School of Physics, University of New South Wales, Kensington,
         NSW, 2032, Australia
+      postcode: '2032'
       state: New South Wales
-      postcode: "2032"
-      country_code: Australia
+      street: null
     department: School of Physics
     email: unsw.edu.au
     institute: University of New South Wales
@@ -2908,9 +2913,8 @@ affiliations:
     address:
       city: Toronto
       country_code: Canada
-      example_expanded: Dunlap Institute for Astronomy \& Astrophysics,
-        University of Toronto, 50 St George Street, Toronto,
-        Ontario M5S 3H4 Canada
+      example_expanded: Dunlap Institute for Astronomy \& Astrophysics, University
+        of Toronto, 50 St George Street, Toronto, Ontario M5S 3H4 Canada
       postcode: M5S 3H4
       state: Ontario
       street: 50 St George St
@@ -3168,20 +3172,20 @@ authors:
     family_name: Rubin Observatory Project Science Team
     given_name: ''
     orcid: null
-  SCOC:
-    affil:
-    - RubinObs
-    altaffil: []
-    email: null
-    family_name: Rubin's Survey Cadence Optimization Committee
-    given_name: ''
-    orcid: null
   RubinBuilderPaper:
     affil:
     - RubinObs
     altaffil: []
     email: pubboard@LSST-mailman
     family_name: Vera C. Rubin Observatory Team
+    given_name: ''
+    orcid: null
+  SCOC:
+    affil:
+    - RubinObs
+    altaffil: []
+    email: null
+    family_name: Rubin's Survey Cadence Optimization Committee
     given_name: ''
     orcid: null
   abelb:
