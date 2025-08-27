@@ -45,15 +45,29 @@ SCOPES = ["https://www.googleapis.com/auth/spreadsheets.readonly"]
 CLIENT_SECRET_FILE = "client_secret.json"
 APPLICATION_NAME = "Process Authors Google Sheet"
 script_name = os.path.basename(__file__)
-# Fields in the form we care about
-EMAIL = 1
-UPDATE = 4
-AUTHORID = 5
-AUTHORIDALT = 6
-SURNAME = 7
-NAME = 8
-AFFIL = 9
-ORCID = 10
+
+
+# Load column index map from YAML if available, else use defaults
+try:
+    with open("column_map.yaml") as f:
+        column_map = yaml.safe_load(f) or {}
+except FileNotFoundError:
+    column_map = {}
+except Exception as e:
+    print(f"Warning: could not load column_map.yaml ({e}), using defaults.")
+    column_map = {}
+
+print(f"Using colum_map:{column_map}")
+
+# default matches the AUTHORDB update form
+EMAIL = column_map.get("EMAIL", 1)
+UPDATE = column_map.get("UPDATE", 3)
+AUTHORID = column_map.get("AUTHORID", 4)
+AUTHORIDALT = column_map.get("AUTHORIDALT", 6)
+SURNAME = column_map.get("SURNAME", 5)
+NAME = column_map.get("NAME", 6)
+AFFIL = column_map.get("AFFIL", 7)
+ORCID = column_map.get("ORCID", 8)
 
 
 def get_credentials() -> Credentials:
@@ -80,7 +94,7 @@ def get_credentials() -> Credentials:
             creds.refresh(Request())
         else:
             flow = InstalledAppFlow.from_client_secrets_file(CLIENT_SECRET_FILE, SCOPES)
-            creds = flow.run_local_server(port=0)
+            creds = flow.run_local_server(port=0, access_type="offline", prompt="consent")
         # Save the credentials for the next run
         with open("token.pickle", "wb") as token:
             pickle.dump(creds, token)
@@ -146,37 +160,42 @@ def load_model(filename: str) -> dict[str, AuthorDbAuthor]:
 def handle_email(
     email: str,
     affils: dict[str, Affiliation],
-    domains: dict[str, str],
     affilid: str,
-    newdomains: dict[str, str],
+    newaffils: dict[str, Affiliation],
 ) -> str:
-    """Figure out if we know the domain or if we need a new one"""
+    """Return local-part or local-part@affilid, updating new_affiliations
+    when we discover a new email domain. We do not maintain a domains dict.
+    """
     theEmail = email
-    if "@" in email:
-        split = email.split("@")
-        mailid = split[0]
-        domain = split[1]
-        # check if we have the domain
-        # easy if the affil matches
-        if (affilid in domains and domains[affilid] == domain) or affils[affilid].email == domain:
-            return f"{mailid}"
-        # ok perhpas we   know the domain but it is not the affil
-        if domain in domains.values():
-            domainid = list(domains.keys())[list(domains.values()).index(domain)]
-            return f"{mailid}@{domainid}"
-        # right then - we need a new one
-        if affilid in domains:
-            # can not use the affilid so try to make an id
-            domainid = domain.split(".")[0]
-            while domainid in domains:  # hopefully not ever
-                domainid = f"{domainid}Z"
-        else:  # an afill without a domain .. possibly new
-            domainid = affilid
-        newdomains[domainid] = domain
-        if domainid in affils and not affils[domainid].email:
-            affils[domainid].email = domain
-        return f"{mailid}@{domainid}"
-    return theEmail
+    if "@" not in email:
+        return theEmail
+
+    mailid, domain = email.split("@", 1)
+
+    # 1) If the given affil already has this domain, return just local-part.
+    if affilid in affils and affils[affilid].email == domain:
+        return f"{mailid}"
+
+    # 2) If any *other* affiliation owns this domain, encode as @that_affilid.
+    for aid, a in affils.items():
+        if a.email == domain:
+            return f"{mailid}@{aid}"
+
+    # 3) New domain: attach it to the provided affilid  if staged,
+    if affilid in newaffils:
+        newaffils[affilid].email = domain
+        return f"{mailid}"
+    else:
+        # Create a minimal placeholder affiliation carrying just the email.
+        # Adjust required fields if your Affiliation model is stricter.
+        daffil = domain.split(".")[0]
+        newaffils[daffil] = Affiliation(
+            institute=f"Email only for {domain}",
+            address=None,
+            email=domain,
+        )
+        # Now that this domain is associated to affilid, encode as @affilid
+        return f"{mailid}@{daffil}"
 
 
 def strip_utf(ins: str) -> str:
@@ -227,22 +246,21 @@ def parse_affiliation(affil_str: str) -> Affiliation:
     return Affiliation(institute=unicode_to_latex(name), address=address)
 
 
-def genFiles(values: list, skip: int, builder: bool = False) -> None:
+def genFiles(values: list, skip: int, builder: bool = False, adb: bool = False) -> None:
     """Generate Files.
-    authors.yaml - with all authorids
-    addupdatelist.yaml - authors that need to be created/updated.
+    authors.yaml - with all authorids (if not adb)
+    new_authors.yaml - authors that need to be created/updated.
+    new_affiliations.yaml - with new affilliations inc new emails
 
     values contains the selected cells from a google sheet with format
-    timestamp
+    with cells mapping set up in the start of the routine but containitns
     Email Address
     Affirmation
-    Are you a Rubin Observatory Builder?
-    If you found your entry, please enter your authorid here, (May be NEW)
-    Please enter your surname (aka family name or last name)
-    Please enter your full name, without your surname,
-    Please enter your affilid
+    authorid (May be blank)
+    surname (aka family name or last name)
+    First names,
+    affilid
     ORCID (optional)
-    Any comments, questions, or concerns?
     """
     if not values:
         print("No data found.")
@@ -255,44 +273,46 @@ def genFiles(values: list, skip: int, builder: bool = False) -> None:
         notfound = []
         newauthors: dict[str, AuthorDbAuthor] = {}
         newaffils: dict[str, Affiliation] = {}
-        newdomains: dict[str, str] = {}
         authordb = load_authordb()
         authors = authordb.authors
         affils = authordb.affiliations
-        domains = authordb.get_email_domains()
         missing_affils = []  #  for missing affiliations
 
         for idx, row in enumerate(values):
             id = str(row[AUTHORID]).replace(" ", "")
+            newid = False
             if len(id) == 0:  # may be an update
-                id = str(row[AUTHORIDALT]).strip()
-                if len(id) == 0 or id.upper() == "NEW" or id.upper() == "NUEVO":  # no id
-                    id = make_id(row[NAME], row[SURNAME])
-                if not id.startswith(lower_strip_utf(row[SURNAME])):
-                    # this can not be unless its a foreign charecter
-                    badid = id
-                    id = make_id(row[NAME], row[SURNAME])
-                    if id != badid:  # really there is a problem
-                        check.append(id)
-                        print(
-                            f"Check  - author provided {badid} - assuming {id} - "
-                            f"{row[SURNAME]}, {row[AUTHORIDALT]} "
-                        )
-                # loaded the authorids from authordb and check ..
-                update = "but" in row[UPDATE]
-                if update and idx > skip:
-                    print(f"Update author {id} at index {idx} ")
-                    if id not in authors:
-                        print(f"      but  author {id} - NOT FOUND ")
-                        notfound.append(id)
-                    toupdate.append(id)
+                if adb:  # adb we know its new and there is no ALTID
+                    newid = True
                 else:
-                    if id in authors and idx > skip:
-                        print(f"Perhaps check  clash - author {id} - {row[AUTHORID]}, {row[AUTHORIDALT]} ")
-                        clash.append(id)
-                    else:
-                        if idx > skip:
-                            print(f"New author {id} - {row[NAME]}, {row[SURNAME]} ")
+                    id = str(row[AUTHORIDALT]).strip()
+                    newid = len(id) == 0 or id.upper() == "NEW" or id.upper() == "NUEVO"
+                if newid:
+                    id = make_id(row[NAME], row[SURNAME])
+            if len(row) >= SURNAME and not id.startswith(lower_strip_utf(row[SURNAME])):
+                # this can be a foreign charecter
+                badid = id
+                id = make_id(row[NAME], row[SURNAME])
+                if id != badid:  # really there is a problem
+                    check.append(id)
+                    print(
+                        f"Check  - author provided {badid}  at {idx}- assuming {id} - "
+                        f"{row[SURNAME]}, {row[AUTHORIDALT]} "
+                    )
+            update = (adb and not newid) or "but" in row[UPDATE]
+            if update and idx >= skip:
+                print(f"Update author {id} at index {idx} ")
+                if id not in authors:
+                    print(f"      but  author {id} - NOT FOUND ")
+                    notfound.append(id)
+                toupdate.append(id)
+            else:
+                if id in authors and idx >= skip:
+                    print(f"Perhaps check  clash - author {id} - {row[AUTHORID]}, @{idx} ")
+                    clash.append(id)
+                else:
+                    if idx >= skip:
+                        print(f"New author {id} - {row[NAME]}, {row[SURNAME]} ")
             # we have an id or a new id now
             # checks
             if len(row) >= SURNAME and not id.startswith(lower_strip_utf(row[SURNAME])):
@@ -311,12 +331,12 @@ def genFiles(values: list, skip: int, builder: bool = False) -> None:
                 if id not in bad:
                     authorids.append(id)
 
-            if idx <= skip:
+            if idx < skip:
                 if id not in authors:
                     print(f"Skipping author {id} - but that author was not found in authordb")
                 continue  # Skip this for update/new
             # next are we updating or creating?
-            if len(row) > 6 and len(row[AUTHORIDALT]) > 0:
+            if len(row) > AFFIL and len(row[AFFIL]) > 0:
                 # affiliation is it known
                 affilidForm = str(row[AFFIL]).strip().split("/")
                 affilids = []
@@ -349,7 +369,11 @@ def genFiles(values: list, skip: int, builder: bool = False) -> None:
                         orcid = orc
                 else:
                     orcid = None
-                email: str = handle_email(row[EMAIL], affils, domains, affilids[0], newdomains)
+                email: str = handle_email(row[EMAIL], affils, affilids[0], newaffils)
+                if id in authors and not newid:
+                    oauthor = authors[id]
+                    if orcid is None:  # dont clobber
+                        orcid = oauthor.orcid
                 author: AuthorDbAuthor = AuthorDbAuthor(
                     given_name=unicode_to_latex(row[NAME].strip()),
                     family_name=unicode_to_latex(row[SURNAME].strip()),
@@ -372,19 +396,18 @@ def genFiles(values: list, skip: int, builder: bool = False) -> None:
             f" Check the ids: {', '.join(check)} \n"
             f"got {len(authorids)} authors {build}, "
             f"{len(newauthors) - len(toupdate)} new  and {len(toupdate)} to update, author entries.\n"
-            f" {len(newdomains)} new email domains. \n"
-            f" {len(newaffils)} new affiliations \n"
+            f" {len(newaffils)} new affiliations (inc. any email domains) \n"
             f" {len(clash)} author entries need to be checked (see above) \n"
             f" {len(notfound)} author updates where authorid not found (see above) \n"
-            f" Saw: {idx} rows - set skip.count to this number for reprocessing \n"
+            f" Saw: {idx + 1} rows - skip file contains the number for reprocessing \n"
         )
         with open("skip", "w") as f:
-            f.write(f"{idx}\n")
+            f.write(f"{idx + 1}\n")
 
-        write_yaml("authors.yaml", authorids)
+        if not adb:
+            write_yaml("authors.yaml", authorids)
         write_model("new_authors.yaml", newauthors)
         write_affil("new_affiliations.yaml", newaffils)
-        write_yaml("new_domains.yaml", newdomains)
 
     return
 
@@ -407,9 +430,11 @@ def get_sheet(sheet_id: str, range: str) -> dict[str, Any]:
     return result
 
 
-def process_google(sheet_id: str, sheets: str, skip: int = 0, builder: bool = False) -> None:
+def process_google(
+    sheet_id: str, sheets: str, skip: int = 0, builder: bool = False, adb: bool = False
+) -> None:
     """Grab the googlesheet and process data.
-    will create new_authos new_afilliations and new_domains
+    will create new_authors and new_afilliations
 
     Parameters
     ----------
@@ -423,6 +448,8 @@ def process_google(sheet_id: str, sheets: str, skip: int = 0, builder: bool = Fa
         assumign they were already added to authordb
     builder : bool, optional
         If True, add 'RubinBuilderPaper' as the first author ID in the output.
+    adb: bool, optional
+        If true we are processing the ADB update form - so e.g. no authors.yaml
 
     """
     print(f"Processing Google Sheet ID: {sheet_id}")
@@ -432,7 +459,74 @@ def process_google(sheet_id: str, sheets: str, skip: int = 0, builder: bool = Fa
         values: list[Any] = result.get("values", [])
         if skip > 0:
             print(f"Skipping the first {skip} lines of the sheet for new authors.")
-        genFiles(values, skip, builder=builder)
+        genFiles(values, skip, builder=builder, adb=adb)
+
+
+def process_signup(
+    sheet_id: str,
+    sheets: list[str],
+    authorid_col: int = 4,
+    skip: int = 0,
+    builder: bool = False,
+) -> None:
+    """Simplified signup processor:
+    - Reads only the AuthorID column (authorid_col) from the given sheets.
+    - Produces authors.yaml (sorted, de-duplicated).
+    - Optional: insert RubinBuilderPaper as the first entry when builder=True.
+    """
+    print(f"[signup] Processing Google Sheet ID: {sheet_id}")
+    print(f"[signup] Sheet ranges: {sheets}")
+    print(f"[signup] Using AuthorID column index: {authorid_col}")
+    authordb = load_authordb()
+    authors = authordb.authors
+
+    authorids_set: set[str] = set()
+    last_idx = -1
+
+    for r in sheets:
+        result = get_sheet(sheet_id, r)
+        values: list[Any] = result.get("values", [])
+        if not values:
+            print(f"[signup] No data found for range {r}")
+            continue
+
+        if skip > 0:
+            print(f"[signup] Skipping the first {skip} rows")
+
+        for idx, row in enumerate(values):
+            last_idx = idx
+            if idx <= skip:
+                continue
+            raw = str(row[authorid_col]).strip()
+            if not raw:
+                print(f"Signup problem at idx {idx}")
+                continue
+            # normalize similar : remove spaces, lower-case
+            aid = raw.replace(" ", "").lower()
+            if aid in authors:
+                authorids_set.add(aid)
+            else:
+                print(f"Invalid authorid {aid} - will not be added")
+
+    # prepare ordered list
+    authorids = sorted(authorids_set)
+
+    if builder and "rubinbuilderpaper" not in authorids_set:
+        # keep legacy case for output id
+        authorids.insert(0, "RubinBuilderPaper")
+
+    # brief summary
+    print(
+        "\n"
+        f"[signup] collected {len(authorids)} author ids\n"
+        f"[signup] last processed row index: {last_idx} - written to signup_skip\n"
+    )
+
+    # write skip file
+    with open("signup_skip", "w") as f:
+        f.write(f"{last_idx}\n")
+
+    write_yaml("authors.yaml", authorids)
 
 
 def merge_authors_with_update(adb: dict[str, AuthorDbAuthor], authors: dict[str, AuthorDbAuthor]) -> None:
@@ -520,6 +614,26 @@ if __name__ == "__main__":
         action="store_true",
         help="Add RubinBuilderPaper as the first author id in the generated file",
     )
+
+    parser.add_argument(  # can not have -a used for affil
+        "--adb",
+        action="store_true",
+        help="Process Google Sheet assuming is the new author form no "
+        "authors.yaml (only new_authors, new_affiliations)"
+        "expects -p sheet range",
+    )
+
+    parser.add_argument(
+        "-S",
+        "--signup",
+        nargs="?",  # optional argument
+        const=4,  # default if used without a value
+        type=int,
+        metavar="AUTHORID_COL",
+        help="Signup mode: process the Google Sheet write authors.yaml "
+        "The integer argument specifies the column number of the AuthorID.",
+    )
+
     args = parser.parse_args()
 
     did_something = False
@@ -527,7 +641,14 @@ if __name__ == "__main__":
     if args.process_google:
         sheet_id = args.process_google[0]
         sheet_ranges = args.process_google[1:]
-        process_google(sheet_id, sheet_ranges, skip=args.skip, builder=args.builder)
+        if args.builder and args.adb:
+            print("Builder makes no sense with AuthorDB update - ignored please remove the flag.")
+        if args.signup is not None:
+            process_signup(
+                sheet_id, sheet_ranges, skip=args.skip, builder=args.builder, authorid_col=args.signup
+            )
+        else:
+            process_google(sheet_id, sheet_ranges, skip=args.skip, builder=args.builder, adb=args.adb)
         did_something = True
 
     if args.merge_authors:

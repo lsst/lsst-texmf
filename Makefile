@@ -78,6 +78,18 @@ docs: $(PDF) $(TESTS) glstab.tex authors.csv
 lsst.bib:
 	bin/generateBibfile.py --external texmf/bibtex/bib/lsst.bib --external etc/static_entries.bib --dois etc/dois.yaml texmf/bibtex/bib/lsst.bib
 
+processadbform:
+	python3 $(TEXMFHOME)/../bin/makeAuthorListsFromGoogle.py -s `cat skip` --adb -p 1CGxjpPuyNJ_gXRHTvkEF0qeI0XedQ-GQgbmyzWFLSUE "A2:I1000"
+
+# skip here is how far down the sheet we already processed - do not want to reprocess
+processsignup:
+	python3 $(TEXMFHOME)/../bin/makeAuthorListsFromGoogle.py --signup -p 1CGxjpPuyNJ_gXRHTvkEF0qeI0XedQ-GQgbmyzWFLSUE "GenPaper!A2:I1000"
+
+merge_authors: new_authors.yaml
+	python3 $(TEXMFHOME)/../bin/makeAuthorListsFromGoogle.py -m new_authors.yaml
+
+merge_affil: new_affiliations.yaml
+	python3 $(TEXMFHOME)/../bin/makeAuthorListsFromGoogle.py -a new_affiliations.yaml
 
 .PHONY: clean
 clean:
@@ -92,6 +104,8 @@ clean:
 	rm -f *.snm
 	rm -f *.bbl
 	rm -f *.bbg
+	rm -f *.blg
 	rm -f *.xdv
+	rm -f testbibfile.bib
 	make -C docs clean
 	rm -f docs/_static/examples/*.pdf

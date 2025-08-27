@@ -33,3 +33,5 @@ docs/glo*
 pythonProject
 bin/.idea/
 .idea/
+client_secret.json
+token.pickle
