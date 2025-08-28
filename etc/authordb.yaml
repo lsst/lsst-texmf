@@ -77,6 +77,17 @@ affiliations:
     email: sheffield.ac.uk
     institute: University of Sheffield
     ror_id: 05krs5044
+  ASTROMAN:
+    address:
+      city: Hilo
+      country_code: USA
+      example_expanded: Astromanager LLC, 63 Halai St, Hilo, 96720 Hawaii, USA
+      postcode: 96720 HI
+      state: Hawaii
+      street: 63 Halai St
+    institute: Astromanager LLC
+    department: null
+    email: astron.nl
   ASTRON:
     address:
       city: Dwingeloo
