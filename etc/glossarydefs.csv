@@ -704,6 +704,7 @@ LUT,Look-Up Table,Gen,,,A
 LV,Local Volume,Sci,,,A
 LVK,LIGO-Virgo-KAGRA,Sci,,,A
 LVV,LSST Verification and Validation,Gen,,,A
+LWS,"Light-Wind Screen",TS,,,A
 LZ,LUX-ZEPELIN (Dark Matter Mission),Sci,,,A
 M1,primary mirror,TS,Document-12017,,A
 M1M3,Single piece of glass for Primary Mirror/Tertiary Mirror,LSST,,,A
