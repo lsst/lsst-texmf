@@ -85,9 +85,10 @@ affiliations:
       postcode: 96720 HI
       state: Hawaii
       street: 63 Halai St
-    institute: Astromanager LLC
     department: null
     email: astromanager.net
+    institute: Astromanager LLC
+    ror_id: null
   ASTRON:
     address:
       city: Dwingeloo
@@ -387,7 +388,7 @@ affiliations:
       state: PA
       street: ''
     department: McWilliams Center for Cosmology \& Astrophysics, Department of Physics
-    email: null
+    email: cmu.edu
     institute: Carnegie Mellon University
     ror_id: 05x2bcf33
   CNCT:
@@ -2101,7 +2102,7 @@ affiliations:
       state: PA
       street: 525 Davey Lab
     department: Department of Astronomy and Astrophysics
-    email: null
+    email: psu.edu
     institute: The Pennsylvania State University
     ror_id: 04p491231
   PSUCDS:
@@ -3427,6 +3428,14 @@ authors:
     family_name: Aracena Alcayaga
     given_name: alexis
     orcid: null
+  arandas:
+    affil:
+    - RubinOps
+    altaffil: []
+    email: saranda@RubinObs
+    family_name: Aranda
+    given_name: Sebastian
+    orcid: 0009-0003-0627-9604
   araujoc:
     affil:
     - RubinObs
@@ -5985,6 +5994,14 @@ authors:
     family_name: Kirkby
     given_name: David
     orcid: 0000-0002-8828-5463
+  kleinmansj:
+    affil:
+    - ASTROMAN
+    altaffil: []
+    email: sjkleinman
+    family_name: Kleinman
+    given_name: Scot J.
+    orcid: null
   knoxl:
     affil:
     - UCDavis
@@ -6493,6 +6510,14 @@ authors:
     family_name: Mainetti
     given_name: Gabriele
     orcid: 0000-0003-2384-2377
+  malanchevk:
+    affil:
+    - CMU
+    altaffil: []
+    email: malanchev
+    family_name: Malanchev
+    given_name: Konstantin
+    orcid: 0000-0001-7179-7406
   malza:
     affil:
     - CMU
@@ -8942,6 +8967,14 @@ authors:
     family_name: Wang
     given_name: Yuankun (David)
     orcid: 0000-0001-5538-0395
+  wardc:
+    affil:
+    - PSU
+    altaffil: []
+    email: cvw5890
+    family_name: Ward
+    given_name: Charlotte
+    orcid: 0000-0002-4557-6682
   warnerm:
     affil:
     - CTIO

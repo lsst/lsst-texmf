@@ -35,7 +35,7 @@ jobs:
           make processadbform
           SKIP2=$(cat skip)
           if [ "$SKIP2" -gt "$SKIP" ]; then
-              make merge_authors merge_affil
+              make merge_affil merge_authors
           fi
 
       - name: Check diff
@@ -46,8 +46,8 @@ jobs:
            else
               echo "CHANGED=true" >> ${GITHUB_ENV}
               echo "Git changes - should make PR"
-              cat new_authors.yaml
               cat new_affiliations.yaml
+              cat new_authors.yaml
            fi
 
       - name: Commit new authordb.yaml
