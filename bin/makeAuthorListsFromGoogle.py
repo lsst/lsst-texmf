@@ -252,7 +252,13 @@ def parse_affiliation(affil_str: str) -> Affiliation:
     return Affiliation(institute=unicode_to_latex(name), address=address)
 
 
-def process_affiliations(row, idx, id, affils, newaffils, missing_affils):
+def process_affiliations(
+    row: list[Any],
+    idx: int,
+    affils: dict[str, Affiliation],
+    newaffils: dict[str, Affiliation],
+    missing_affils: list[str],
+) -> list[str]:
     """
     Process the AFFIL column from a row and update affiliations.
 
@@ -340,7 +346,7 @@ def genFilesADB(values: list, skip: int) -> None:
         authordb = load_authordb()
         authors = authordb.authors
         affils = authordb.affiliations
-        missing_affils = []  #  for missing affiliations
+        missing_affils: list[str] = []  #  for missing affiliations
 
         for idx, row in enumerate(values):
             id = str(row[AUTHORID]).replace(" ", "")
@@ -378,7 +384,7 @@ def genFilesADB(values: list, skip: int) -> None:
             # update or new - get the other fields
 
             if len(row) > AFFIL and len(row[AFFIL]) > 0:
-                affilids = process_affiliations(row, idx, id, affils, newaffils, missing_affils)
+                affilids = process_affiliations(row, idx, affils, newaffils, missing_affils)
                 if len(row) > ORCID:
                     orc = str(row[ORCID]).strip().replace("https://orcid.org/", "")
                     if len(orc) < 2:
@@ -452,7 +458,7 @@ def genFiles(values: list, skip: int, builder: bool = False, adb: bool = False) 
         authordb = load_authordb()
         authors = authordb.authors
         affils = authordb.affiliations
-        missing_affils = []  #  for missing affiliations
+        missing_affils: list[str] = []  #  for missing affiliations
 
         for idx, row in enumerate(values):
             id = str(row[AUTHORID]).replace(" ", "")
@@ -513,7 +519,7 @@ def genFiles(values: list, skip: int, builder: bool = False, adb: bool = False) 
                 continue  # Skip this for update/new
             # next are we updating or creating?
             if len(row) > AFFIL and len(row[AFFIL]) > 0:
-                affilids = process_affiliations(row, idx, id, affils, newaffils, missing_affils)
+                affilids = process_affiliations(row, idx, affils, newaffils, missing_affils)
                 if len(row) > ORCID:
                     orc = str(row[ORCID]).strip().replace("https://orcid.org/", "")
                     if len(orc) < 2:
