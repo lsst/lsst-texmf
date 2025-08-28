@@ -1948,7 +1948,7 @@ affiliations:
       street: 2415 Eisenhower Avenue
     department: null
     email: null
-    institute: National Science Foundation, 2415 Eisenhower Avenue
+    institute: U. S. National Science Foundation
     ror_id: 021nxhr62
   NSO:
     address:
@@ -6599,6 +6599,14 @@ authors:
     family_name: Marsh
     given_name: Darren S.
     orcid: null
+  marsiskeh:
+    affil:
+    - DOE
+    altaffil: []
+    email: null
+    family_name: Marsiske
+    given_name: Helmut
+    orcid: null
   martinezm:
     affil:
     - WisconsinMadison
@@ -9183,6 +9191,14 @@ authors:
     family_name: Zabludoff
     given_name: Ann
     orcid: 0000-0001-6047-8469
+  zauderervanderleya:
+    affil:
+    - NSF
+    altaffil: []
+    email: null
+    family_name: Zauderer-Vanderley
+    given_name: Ashley
+    orcid: null
   zhangt:
     affil:
     - Pitts
