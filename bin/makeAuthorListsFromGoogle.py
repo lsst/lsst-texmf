@@ -173,8 +173,14 @@ def handle_email(
     mailid, domain = email.split("@", 1)
 
     # 1) If the given affil already has this domain, return just local-part.
-    if affilid in affils and affils[affilid].email == domain:
-        return f"{mailid}"
+    if affilid in affils:
+        if affils[affilid].email == domain:
+            return f"{mailid}"
+        if not affils[affilid].email or affils[affilid].email == "null":
+            # we have an institue with an empty email
+            newaffils[affilid] = affils[affilid]
+            newaffils[affilid].email = domain
+            return f"{mailid}"
 
     # 2) If any *other* affiliation owns this domain, encode as @that_affilid.
     for aid, a in affils.items():
@@ -246,8 +252,178 @@ def parse_affiliation(affil_str: str) -> Affiliation:
     return Affiliation(institute=unicode_to_latex(name), address=address)
 
 
+def process_affiliations(row, idx, id, affils, newaffils, missing_affils):
+    """
+    Process the AFFIL column from a row and update affiliations.
+
+    Parameters
+    ----------
+    row : list
+        A row of data from the Google Sheet.
+    idx : int
+        Row index (for logging).
+    id : str
+        Author ID (for logging).
+    affils : dict[str, Affiliation]
+        Known affiliations (global database).
+    newaffils : dict[str, Affiliation]
+        Newly discovered affiliations (staged).
+    missing_affils : list[str]
+        List to append missing affiliation IDs.
+
+    Returns
+    -------
+    affilids : list[str]
+        List of affiliation IDs found/created for this row.
+    """
+    affilids = []
+
+    if len(row) > AFFIL and len(row[AFFIL]) > 0:
+        affilidForm = str(row[AFFIL]).strip().split("/")
+
+        if affilidForm[0] == "AURA":
+            # Chilean quirk: AURA/Rubin gets normalized
+            affilidForm[0] = "RubinObsC"
+
+        for affilid in affilidForm:
+            if affilid not in affils:
+                if len(affilid) < 10:
+                    print(f"Affiliation does not exist: {affilid} - skipping {id} at index {idx}")
+                    missing_affils.append(affilid)
+                else:  # assume it's a new affiliation string
+                    affil = affilid
+                    if "rubin" in affil.lower():
+                        affilid = "RubinObsC"
+                    else:
+                        affilid = get_initials(affil)
+                        try:
+                            newaffils[affilid] = parse_affiliation(affil)
+                            affils[affilid] = newaffils[affilid]
+                        except Exception:
+                            print(f"Affiliation parse failed: {affilid} - skipping {id} at index {idx}")
+                            missing_affils.append(affilid)
+            affilids.append(affilid)
+
+        if affilids and affilids[0] not in affils:
+            return []  # skip this row, primary affiliation missing
+
+    return affilids
+
+
+def genFilesADB(values: list, skip: int) -> None:
+    """Assumes we are procsssing the AuthordDB update form.
+    It will produce:
+        new_authors.yaml - authors that need to be created/updated.
+        new_affiliations.yaml - new affilliations inc new emails
+        No authors.yaml
+
+    values contains the selected cells from a google sheet with format
+    with cells mapping set up in the start of the routine but contains
+    Email Address
+    Affirmation
+    authorid (May be blank)
+    surname (aka family name or last name)
+    First names,
+    affilid
+    ORCID (optional)
+    """
+    if not values:
+        print("No data found.")
+    else:
+        clash = []
+        check = []
+        bad = []
+        toupdate = []
+        notfound = []
+        newauthors: dict[str, AuthorDbAuthor] = {}
+        newaffils: dict[str, Affiliation] = {}
+        authordb = load_authordb()
+        authors = authordb.authors
+        affils = authordb.affiliations
+        missing_affils = []  #  for missing affiliations
+
+        for idx, row in enumerate(values):
+            id = str(row[AUTHORID]).replace(" ", "")
+            newid = len(id) == 0 or id.upper() == "NEW" or id.upper() == "NUEVO"
+            if idx < skip:
+                if id not in authors:
+                    print(f"Skipping author {id} - but that author was not found in authordb")
+                continue  # Skip this for update/new
+
+            if newid:
+                id = make_id(row[NAME], row[SURNAME])
+                if id in authors and idx >= skip:
+                    print(f"Perhaps check  clash - author {id} - {row[AUTHORID]}, @{idx} ")
+                    clash.append(id)
+                elif idx >= skip:
+                    print(f"New author {id} - {row[NAME]}, {row[SURNAME]} ")
+            else:
+                print(f"Update author {id} at index {idx} ")
+                if id not in authors:
+                    print(f"      but  author {id} - NOT FOUND ")
+                    notfound.append(id)
+                toupdate.append(id)
+            # we have an id or a new id now check it
+            if len(row) >= SURNAME and not id.startswith(lower_strip_utf(row[SURNAME])):
+                # this can be a foreign charecter
+                badid = id
+                id = make_id(row[NAME], row[SURNAME])
+                if id != badid:  # really there is a problem
+                    check.append(id)
+                    print(f"Check  - author provided {badid}  at {idx}- assuming {id} - {row[SURNAME]}")
+            elif id.lower() != id:
+                bad.append(id)
+                print(f"Check - author id {id} at index {idx}: id is not all lowercase")
+
+            # update or new - get the other fields
+
+            if len(row) > AFFIL and len(row[AFFIL]) > 0:
+                affilids = process_affiliations(row, idx, id, affils, newaffils, missing_affils)
+                if len(row) > ORCID:
+                    orc = str(row[ORCID]).strip().replace("https://orcid.org/", "")
+                    if len(orc) < 2:
+                        orcid = None
+                    else:
+                        orcid = orc
+                else:
+                    orcid = None
+                email: str = handle_email(row[EMAIL], affils, affilids[0], newaffils)
+                if id in authors and not newid:
+                    oauthor = authors[id]
+                    if orcid is None:  # dont clobber
+                        orcid = oauthor.orcid
+                author: AuthorDbAuthor = AuthorDbAuthor(
+                    given_name=unicode_to_latex(row[NAME].strip()),
+                    family_name=unicode_to_latex(row[SURNAME].strip()),
+                    orcid=orcid,
+                    email=email,
+                    affil=affilids,
+                    altaffil=[],
+                )
+                newauthors[id] = author
+        print(
+            "\n"
+            f" Clash: {', '.join(clash)} \n"
+            f" Not FOUND: {', '.join(notfound)} \n"
+            f" Missing Affils: {', '.join(missing_affils)} \n"
+            f" Check the ids: {', '.join(check)} \n"
+            f"{len(newauthors) - len(toupdate)} new  and {len(toupdate)} to update, author entries.\n"
+            f"{len(newaffils)} new affiliations (inc. any email domains) \n"
+            f"{len(clash)} author entries need to be checked (see above) \n"
+            f"{len(notfound)} author updates where authorid not found (see above) \n"
+            f" Saw: {idx + 1} rows - skip file contains the number for reprocessing \n"
+        )
+        with open("skip", "w") as f:
+            f.write(f"{idx + 1}\n")
+
+        write_model("new_authors.yaml", newauthors)
+        write_affil("new_affiliations.yaml", newaffils)
+
+    return
+
+
 def genFiles(values: list, skip: int, builder: bool = False, adb: bool = False) -> None:
-    """Generate Files.
+    """** Delete this when we are done with DP1 paper Generate Files.
     authors.yaml - with all authorids (if not adb)
     new_authors.yaml - authors that need to be created/updated.
     new_affiliations.yaml - with new affilliations inc new emails
@@ -337,30 +513,7 @@ def genFiles(values: list, skip: int, builder: bool = False, adb: bool = False) 
                 continue  # Skip this for update/new
             # next are we updating or creating?
             if len(row) > AFFIL and len(row[AFFIL]) > 0:
-                # affiliation is it known
-                affilidForm = str(row[AFFIL]).strip().split("/")
-                affilids = []
-                if affilidForm[0] == "AURA":
-                    # seems Chileans like ot put AURA/Rubin ..
-                    affilidForm[0] = "RubinObsC"
-                for affilid in affilidForm:
-                    if affilid not in affils:
-                        if len(affilid) < 10:
-                            print(f"Affiliation does not exist :{affilid} - skipping {id} at index {idx}")
-                            missing_affils.append(affilid)
-                        else:  # assume its new
-                            affil = affilid
-                            if "rubin" in affil.lower():
-                                # seesm Chileans like ot put AURA/Rubin ..
-                                affilid = "RubinObsC"
-                            else:
-                                affilid = get_initials(affil)
-                                newaffils[affilid] = parse_affiliation(affil)
-                                affils[affilid] = newaffils[affilid]
-                    affilids.append(affilid)
-                    # we have a name so we need to gather the rest.
-                if affilids[0] not in affils:
-                    continue
+                affilids = process_affiliations(row, idx, id, affils, newaffils, missing_affils)
                 if len(row) > ORCID:
                     orc = str(row[ORCID]).strip().replace("https://orcid.org/", "")
                     if len(orc) < 2:
@@ -459,7 +612,11 @@ def process_google(
         values: list[Any] = result.get("values", [])
         if skip > 0:
             print(f"Skipping the first {skip} lines of the sheet for new authors.")
-        genFiles(values, skip, builder=builder, adb=adb)
+        if adb:
+            print(f"Doing ADB {adb}")
+            genFilesADB(values, skip)
+        else:  # this will go away after DP1
+            genFiles(values, skip, builder=builder)
 
 
 def process_signup(
