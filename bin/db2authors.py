@@ -533,11 +533,11 @@ class ASCOM(AuthorTextGenerator):
         authors = []
         for author in self.authors:
             affil_numbers = [str(affil_to_number[affil]) for affil in author.affiliations]
-            author_text = f"\\author[{','.join(affil_numbers)}]{{{author.full_latex_name}}}"
+            orclink = ""
             if author.orcid:
-                author_text += f"[orcid={author.orcid}]"
+                orclink = f"\\orcidlink{{{author.orcid}}}"
+            author_text = f"\\author[{','.join(affil_numbers)}]{{{author.full_latex_name}{orclink}}}"
             authors.append(author_text)
-
         affiliations = []
         for affil, number in affil_to_number.items():
             country = ""
