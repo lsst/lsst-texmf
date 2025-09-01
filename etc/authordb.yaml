@@ -2400,7 +2400,7 @@ affiliations:
       state: MD
       street: 3700 San Martin Drive
     department: null
-    email: null
+    email: stsci.edu
     institute: Space Telescope Science Institute
     ror_id: 036f5mx38
   SVC:
@@ -3359,7 +3359,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
-    email: null
+    email: jandrew
     family_name: Andrew
     given_name: John
     orcid: null
@@ -4006,7 +4006,7 @@ authors:
     affil:
     - SLAC-Kavli
     altaffil: []
-    email: null
+    email: daveb
     family_name: Burke
     given_name: David L.
     orcid: 0000-0003-1866-1950
@@ -4646,7 +4646,7 @@ authors:
     affil:
     - RubinObsC
     altaffil: []
-    email: null
+    email: hdrass
     family_name: Drass
     given_name: Holger
     orcid: 0000-0002-7790-9971
@@ -5674,7 +5674,7 @@ authors:
     affil:
     - IN2P3-LPCA
     altaffil: []
-    email: null
+    email: fabrice.jammes@Gmail
     family_name: Jammes
     given_name: Fabrice
     orcid: null
@@ -6465,7 +6465,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
-    email: null
+    email: mlutfi
     family_name: Lutfi
     given_name: Mostafa
     orcid: 0000-0003-2866-3802
@@ -8161,7 +8161,7 @@ authors:
     affil:
     - STScI
     altaffil: []
-    email: null
+    email: shaw
     family_name: Shaw
     given_name: Richard A.
     orcid: null
@@ -8816,7 +8816,7 @@ authors:
     affil:
     - RubinObsC
     altaffil: []
-    email: pvenegas@lsst.org
+    email: pvenegas
     family_name: Venegas
     given_name: Paulina
     orcid: null
