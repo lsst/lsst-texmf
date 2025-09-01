@@ -713,7 +713,7 @@ class AAP(AuthorTextGenerator):
             affiliations.append(f"{affil.get_full_address_with_institute()}")
         affil_text = "\n\\and ".join(affiliations)
 
-        authors_block = "\n\\and".join(authors)
+        authors_block = "\n\\and ".join(authors)
         return f"""{self.get_header() if header else ""}\\author{{
 {authors_block}
 }}
