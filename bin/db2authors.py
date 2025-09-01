@@ -759,7 +759,7 @@ def load_dni(donotinclude: str) -> list[str]:
 
     Parameters
     ----------
-    donotinclude : str
+    donotinclude : `str`
         Path to the file containing one author ID per line YAML format.
         Same format as authors.yaml
 
