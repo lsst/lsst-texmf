@@ -55,8 +55,8 @@ def get_ads_bibcode(entry: pybtex.database.Entry) -> str | None:
         bibcode = posixpath.basename(parsed.path)
 
     # Some old bib files try to escape the % or &
-    bibcode = bibcode.replace("\\%", "%")
-    bibcode = bibcode.replace("\\&", "&")
+    bibcode = str(bibcode).replace("\\%", "%")
+    bibcode = str(bibcode).replace("\\&", "&")
     return urllib.parse.unquote(bibcode) if bibcode else None
 
 
