@@ -1782,6 +1782,19 @@ affiliations:
     email: pa.msu.edu
     institute: Michigan State University
     ror_id: 05hs6h993
+  MontanaStateU:
+    address:
+      city: Bozeman
+      country_code: USA
+      example_expanded: Department of Physics, Montana State University,
+        P.O. Box 173840, Bozeman, MT 59717
+      postcode: '59717'
+      state: MT
+      street: P.O. Box 173840
+    department: Department of Physics
+    email: montana.edu
+    institute: Montana State University
+    ror_id: 02w0trx84
   NAOChina:
     address:
       city: Beijing
@@ -5570,7 +5583,7 @@ authors:
     altaffil: []
     email: null
     family_name: Hughes
-    given_name: Anna L.H.
+    given_name: Anna L. H.
     orcid: null
   hundertmarkm:
     affil:
@@ -5790,7 +5803,7 @@ authors:
     altaffil: []
     email: null
     family_name: Johnson
-    given_name: Margaret W.G.
+    given_name: Margaret W. G.
     orcid: null
   jonesrl:
     affil:
@@ -6879,7 +6892,7 @@ authors:
     altaffil: []
     email: cmorales
     family_name: Morales Mar{\'\i}n
-    given_name: C.A.L.
+    given_name: C. A. L.
     orcid: 0000-0003-0203-3407
   moriartyc:
     affil:
@@ -7049,6 +7062,14 @@ authors:
     family_name: Newbry
     given_name: Scott P.
     orcid: null
+  nideverdl:
+    affil:
+    - MontanaStateU
+    altaffil: []
+    email: dnidever
+    family_name: Nidever
+    given_name: David L.
+    orcid: 0000-0002-1793-3689
   niefj:
     affil:
     - IN2P3-CC
@@ -7396,7 +7417,7 @@ authors:
     altaffil: []
     email: null
     family_name: Petrick
-    given_name: M.E. Libby
+    given_name: M. E. Libby
     orcid: null
   petryce:
     affil:
@@ -9037,7 +9058,7 @@ authors:
     altaffil: []
     email: null
     family_name: White
-    given_name: Brandon J.D.
+    given_name: Brandon J. D.
     orcid: 0000-0002-9906-9037
   wiechao:
     affil:
