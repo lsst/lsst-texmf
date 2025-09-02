@@ -4255,7 +4255,7 @@ authors:
     email: null
     family_name: Ciardi
     given_name: David R.
-    orcid: null
+    orcid: 0000-0002-5741-3047
   clavercf:
     affil:
     - RubinObs
@@ -7389,7 +7389,7 @@ authors:
     email: null
     family_name: Petravick
     given_name: Donald L.
-    orcid: null
+    orcid: 0000-0002-3685-2497
   petrickml:
     affil:
     - RubinObs
@@ -8164,7 +8164,7 @@ authors:
     email: shaw
     family_name: Shaw
     given_name: Richard A.
-    orcid: null
+    orcid: 0000-0003-4058-5202
   shipseyi:
     affil:
     - Oxford
@@ -9126,7 +9126,7 @@ authors:
     email: null
     family_name: Wu
     given_name: Xiuqin
-    orcid: null
+    orcid: 0000-0002-4788-9236
   wyatts:
     affil:
     - Washington-DIRAC
