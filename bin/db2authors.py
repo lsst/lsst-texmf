@@ -768,16 +768,14 @@ def load_dni(donotinclude: str) -> list[str]:
     list[str]
         A list of author IDs (strings)
     """
+    authorids: set[str] = set()
     with open(donotinclude, encoding="utf-8") as f:
-        authorids = yaml.safe_load(f)
+        authorids = set(yaml.safe_load(f) or [])
     dnip = Path("dni.yaml")
     if dnip.exists():  # local per doc
         with dnip.open(encoding="utf-8") as f:
             dni_local: set[str] = yaml.safe_load(f)
-            if authorids:
-                authorids.update(dni_local)
-            else:
-                authorids = dni_local
+            authorids.update(dni_local)
 
     if len(authorids) > 0:
         print(f"WARNING: Not including {authorids}", file=sys.stderr)
