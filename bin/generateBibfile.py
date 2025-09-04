@@ -204,6 +204,35 @@ def create_bibentries(res: SearchResponse, dois: dict[str, str] | None = None) -
                     "Wei Yang",
                 ]
             )
+        elif d["handle"] == "PSTN-051":
+            authors = " and ".join(
+                [
+                    "R. Lynne Jones",
+                    "Peter Yoachim",
+                    "Željko Ivezić",
+                    "Eric H. {Neilsen Jr.}",
+                    "Tiago Ribeiro",
+                ]
+            )
+        elif d["handle"] == "PSTN-053":
+            authors = " and ".join(
+                [
+                    "Rubin's Survey Cadence Optimization Committee",
+                    "Franz E. Bauer",
+                    "Sarah Brough",
+                    "Renée Hložek",
+                    "Željko Ivezić",
+                    "R. Lynne Jones",
+                    "Mansi M. Kasliwal",
+                    "Knut Olsen",
+                    "Hiranya V. Peiris",
+                    "Megan E. Schwamb",
+                    "Daniel Scolnic",
+                    "Colin T. Slater",
+                    "Jay Strader",
+                    "Peter Yoachim",
+                ]
+            )
         be = BibEntry(
             checkFixAuthAndComma(fixTexSS(authors)),
             fixTex(d["h1"]),
