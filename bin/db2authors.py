@@ -17,12 +17,14 @@ This program requires the "yaml" package to be installed.
 
 import argparse
 import csv
+import io
 import os.path
 import re
 import string
 import sys
 from _collections_abc import dict_keys
 from abc import ABC, abstractmethod
+from dataclasses import asdict as dataclass_asdict
 from pathlib import Path
 from typing import Any, Self
 
@@ -724,6 +726,124 @@ class AAP(AuthorTextGenerator):
 """
 
 
+@dataclasses.dataclass
+class AASAuthorRow:
+    """Representation of a row in the AAS author CSV file."""
+
+    is_corresponding: str = ""
+    author_order: int = 0
+    title: str = ""
+    given_name: str = ""
+    middle_name: str = ""
+    family_name: str = ""
+    email: str = ""
+    telephone: str = ""
+    institution: str = ""
+    department: str = ""
+    address1: str = ""
+    address2: str = ""
+    city: str = ""
+    state: str = ""
+    postcode: str = ""
+    country: str = ""
+
+
+class AASCSV(AuthorTextGenerator):
+    """Generate CSV format for AAS journals.
+
+    The template XLSX file is at
+    https://aas.msubmit.net/html/Authors_Template.xls
+
+    The columns are:
+
+    * Is Corresponding Author (enter Yes)
+    * Author Order
+    * Title
+    * Given Name/First Name
+    * Middle Initial(s) or Name
+    * Family Name/Surname
+    * Email
+    * Telephone
+    * Institution
+    * Department
+    * Address Line 1
+    * Address Line 2
+    * City
+    * State/Province
+    * Zip/Postal Code
+    * Country
+
+    No attempt is made to fill in the "Is Corresponding Author", Title, or
+    Telephone fields.
+    """
+
+    mode = "aascsv"
+
+    def generate(self, header: bool = True) -> str:
+        # Declare the field names from the dataclass but do not use them
+        # to write the header since we want to match the template exactly.
+        # Need to write to a string buffer since csv.writer needs a file-like
+        # object.
+        output = io.StringIO()
+        writer = csv.writer(output, dialect=csv.excel)
+
+        # Not sure how critical it is to match the names exactly with the
+        # template.
+        writer.writerow(
+            [
+                "Is Corresponding Author (enter Yes)",
+                "Author Order",
+                "Title",
+                "Given Name/First Name",
+                "Middle Initial(s) or Name",
+                "Family Name/Surname",
+                "Email",
+                "Telephone",
+                "Institution",
+                "Department",
+                "Address Line 1",
+                "Address Line 2",
+                "City",
+                "State/Province",
+                "Zip/Postal Code",
+                "Country",
+            ]
+        )
+
+        author_order = 0
+        for author in self.authors:
+            author_order += 1
+            # Only use information from the first affiliation.
+            affil = author.affiliations[0] if author.affiliations else None
+            if affil is None:
+                raise RuntimeError(f"Author {author.full_name} has no affiliation")
+            # Require an affiliation with an address.
+            if affil.address is None:
+                raise RuntimeError(
+                    f"Author {author.full_name} has no address in their first affiliation {affil}"
+                )
+
+            # We do not track middle name separately so hope that given name
+            # is allowed to have middle names. In some cases like "K. Simon"
+            # it's not even clear what the middle name is for their purposes.
+            row = AASAuthorRow(
+                author_order=author_order,
+                given_name=latex2text(author.given_name),
+                family_name=latex2text(author.family_name),
+                email=author.email,
+                address1=latex2text(affil.address.street) if affil.address.street else "",
+                city=latex2text(affil.address.city) if affil.address.city else "",
+                state=latex2text(affil.address.state) if affil.address.state else "",
+                postcode=affil.address.postcode if affil.address.postcode else "",
+                country=affil.address.country_code if affil.address.country_code else "",
+                institution=latex2text(affil.institute),
+                department=latex2text(affil.department or ""),
+            )
+            writer.writerow(dataclass_asdict(row).values())
+
+        return output.getvalue()
+
+
 def dump_csvall(factory: AuthorFactory) -> None:
     """Generate CSV of ALL authors for easier lookup of ID .
     Authorid, Name, Institution id
@@ -805,6 +925,7 @@ if __name__ == "__main__":
         "csvall",
         "mnras",
         "aap",
+        "aascsv",
     ]
 
     description = __doc__
@@ -855,6 +976,7 @@ if __name__ == "__main__":
         "adass": ADASS,
         "mnras": MNRAS,
         "aap": AAP,
+        "aascsv": AASCSV,
     }
     if args.mode not in generator_lut:
         raise RuntimeError(f"Unknown generator mode: {args.mode}")
