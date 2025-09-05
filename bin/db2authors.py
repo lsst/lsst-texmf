@@ -207,8 +207,8 @@ class AuthorFactory:
                 street=raw_affil["address"].get("street"),
                 city=raw_affil["address"].get("city"),
                 state=raw_affil["address"].get("state"),
-                postcode=raw_affil["address"].get("postal_code"),
-                country_code=raw_affil["address"].get("country"),
+                postcode=raw_affil["address"].get("postcode"),
+                country_code=raw_affil["address"].get("country_code"),
                 example_expanded=raw_affil["address"]["example_expanded"],
             )
         else:
