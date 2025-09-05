@@ -2812,7 +2812,7 @@ affiliations:
         Alonso de Rivera 2850, Concepci\'on, Chile
       postcode: ''
       state: null
-      street: Facultad de Ingenier{\'\i}a,  Alonso de Rivera 2850, Concepci\'on
+      street: Facultad de Ingenier{\'\i}a, Alonso de Rivera 2850, Concepci\'on
     department: Departamento de Matem\'atica y F{\'\i}sica Aplicadas
     email: ucsc.cl
     institute: Universidad Cat\'olica de la Sant{\'\i}sima Concepci\'on
@@ -3439,7 +3439,7 @@ authors:
     altaffil: []
     email: aaracena
     family_name: Aracena Alcayaga
-    given_name: alexis
+    given_name: Alexis
     orcid: null
   arandas:
     affil:
@@ -7901,8 +7901,8 @@ authors:
     - IN2P3-LPNHE
     altaffil: []
     email: srusso
-    family_name: russo
-    given_name: stefano
+    family_name: Russo
+    given_name: Stefano
     orcid: null
   rykoffe:
     affil:
