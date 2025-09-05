@@ -823,12 +823,19 @@ class AASCSV(AuthorTextGenerator):
                     f"Author {author.full_name} has no address in their first affiliation {affil}"
                 )
 
-            # We do not track middle name separately so hope that given name
-            # is allowed to have middle names. In some cases like "K. Simon"
-            # it's not even clear what the middle name is for their purposes.
+            # Middle name is not really tracked in our database but is
+            # requested for the AAS CSV format. Split on space and assume the
+            # first part is the given name and the rest is middle name.
+            # This will not work for all names but it's the best we can do.
+            # This means that "K. Simon Krughoff" becomes "K." for given name.
+            parts = latex2text(author.given_name).split()
+            given_name = parts.pop(0) if parts else ""
+            middle_name = " ".join(parts) if parts else ""
+
             row = AASAuthorRow(
                 author_order=author_order,
-                given_name=latex2text(author.given_name),
+                given_name=given_name,
+                middle_name=middle_name,
                 family_name=latex2text(author.family_name),
                 email=author.email,
                 address1=latex2text(affil.address.street) if affil.address.street else "",
