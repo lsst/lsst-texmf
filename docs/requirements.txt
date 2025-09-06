@@ -1,6 +1,5 @@
-documenteer>=0.6,<1.0
+documenteer[guide]
 sphinx-rtd-theme==0.2.4
-sphinx-prompt<1.10.0
-pylatexenc
-sphinx <7
+sphinx-prompt
 setuptools
+pylatexenc
