@@ -2812,7 +2812,7 @@ affiliations:
         Alonso de Rivera 2850, Concepci\'on, Chile
       postcode: ''
       state: null
-      street: Facultad de Ingenier{\'\i}a,  Alonso de Rivera 2850, Concepci\'on
+      street: Facultad de Ingenier{\'\i}a, Alonso de Rivera 2850, Concepci\'on
     department: Departamento de Matem\'atica y F{\'\i}sica Aplicadas
     email: ucsc.cl
     institute: Universidad Cat\'olica de la Sant{\'\i}sima Concepci\'on
@@ -3439,7 +3439,7 @@ authors:
     altaffil: []
     email: aaracena
     family_name: Aracena Alcayaga
-    given_name: alexis
+    given_name: Alexis
     orcid: null
   arandas:
     affil:
@@ -4588,7 +4588,7 @@ authors:
     altaffil: []
     email: stephanie.deppe
     family_name: Deppe
-    given_name: Stephanie JH
+    given_name: Stephanie J. H.
     orcid: 0000-0002-6126-8487
   desaiv:
     affil:
@@ -5933,7 +5933,7 @@ authors:
     altaffil: []
     email: null
     family_name: Kavelaars
-    given_name: JJ
+    given_name: J. J.
     orcid: null
   keek:
     affil:
@@ -6182,7 +6182,7 @@ authors:
     altaffil: []
     email: plago@RubinObs
     family_name: Lago
-    given_name: P. J. A.
+    given_name: Paulo J. A.
     orcid: 0009-0005-4105-5168
   laliotisk:
     affil:
@@ -7318,7 +7318,7 @@ authors:
     - NCSA
     altaffil:
     - Author is deceased
-    email: null
+    email: parsons-deceased@RubinObs
     family_name: Parsons
     given_name: James B.
     orcid: null
@@ -7884,7 +7884,7 @@ authors:
     affil:
     - BNL
     altaffil: []
-    email: null
+    email: mrumore
     family_name: Rumore
     given_name: Matthew R.
     orcid: 0009-0006-4475-3196
@@ -7901,8 +7901,8 @@ authors:
     - IN2P3-LPNHE
     altaffil: []
     email: srusso
-    family_name: russo
-    given_name: stefano
+    family_name: Russo
+    given_name: Stefano
     orcid: null
   rykoffe:
     affil:
