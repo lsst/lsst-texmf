@@ -487,14 +487,12 @@ def genFiles(values: list, skip: int, builder: bool = False, adb: bool = False) 
                 if id not in authors:
                     print(f"      but  author {id} - NOT FOUND ")
                     notfound.append(id)
-                toupdate.append(id)
-            else:
-                if id in authors and idx >= skip:
+                else:
                     print(f"Perhaps check  clash - author {id} - {row[AUTHORID]}, @{idx} ")
                     clash.append(id)
-                else:
-                    if idx >= skip:
-                        print(f"New author {id} - {row[NAME]}, {row[SURNAME]} ")
+                toupdate.append(id)
+            if newid and idx >= skip:
+                print(f"New author {id} - {row[NAME]}, {row[SURNAME]} ")
             # we have an id or a new id now
             # checks
             if len(row) >= SURNAME and not id.startswith(lower_strip_utf(row[SURNAME])):
