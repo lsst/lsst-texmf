@@ -391,6 +391,12 @@ affiliations:
     email: cmu.edu
     institute: Carnegie Mellon University
     ror_id: 05x2bcf33
+  CMU-Andrew:
+    address: null
+    department: null
+    email: andrew.cmu.edu
+    institute: Carnegie Mellon University
+    ror_id: 05x2bcf33
   CNCT:
     address:
       city: Mexico City
@@ -982,6 +988,19 @@ affiliations:
     email: null
     institute: George Mason University
     ror_id: 02jqj7156
+  Galileo:
+    address:
+      city: Padova
+      country_code: Italy
+      example_expanded: Department of Physics and Astronomy G. Galilei, University
+        of Padova, Vicolo dell'Osservatorio 3, I-35122, Padova, Italy
+      postcode: I-35122
+      state: ''
+      street: Vicolo dell'Osservatorio 3
+    department: Department of Physics and Astronomy G. Galilei
+    email: unipd.it
+    institute: University of Padova
+    ror_id: null
   GeminiN:
     address:
       city: Hilo
@@ -1170,6 +1189,12 @@ affiliations:
     email: null
     institute: Instituto de Astronom\'ia y F\'isica del Espacio (IAFE)
     ror_id: 03rq94151
+  ICloud:
+    address: null
+    department: null
+    email: icloud.com
+    institute: iCloud Mail email domain Placeholder
+    ror_id: null
   IN2P3:
     address: null
     department: null
@@ -1346,6 +1371,19 @@ affiliations:
     email: inaf.it
     institute: INAF Osservatorio Astronomico di Capodimonte
     ror_id: 02fwden70
+  INAF-OAP:
+    address:
+      city: Padova
+      country_code: Italy
+      example_expanded: Osservatorio Astronomico di Padova -- INAF, Vicolo dell`{O}sservatorio
+        5, I-35122 Padova
+      postcode: I-35122
+      state: ''
+      street: Vicolo dell`{O}sservatorio 5
+    department: ''
+    email: inaf.it
+    institute: Osservatorio Astronomico di Padova
+    ror_id: null
   INAF-OAS:
     address:
       city: Bologna
@@ -1724,6 +1762,18 @@ affiliations:
     email: null
     institute: Lowell Observatory
     ror_id: 0209dk158
+  MIOC:
+    address:
+      city: Zagreb
+      country_code: Croatia
+      example_expanded: XV. Gymnasium (MIOC), Jordanovac 8, 10000, Zagreb, Croatia
+      postcode: '10000'
+      state: null
+      street: Jordanovac 8
+    department: Center for Data Intensive and Time Domain Astronomy
+    email: null
+    institute: XV. Gymnasium (MIOC)
+    ror_id: null
   MMTO:
     address:
       city: Tucson
@@ -1786,8 +1836,8 @@ affiliations:
     address:
       city: Bozeman
       country_code: USA
-      example_expanded: Department of Physics, Montana State University,
-        P.O. Box 173840, Bozeman, MT 59717
+      example_expanded: Department of Physics, Montana State University, P.O. Box
+        173840, Bozeman, MT 59717
       postcode: '59717'
       state: MT
       street: P.O. Box 173840
@@ -2076,7 +2126,7 @@ affiliations:
       state: WA
       street: 1600 Chester Ave.
     department: null
-    email: null
+    email: olympic.edu
     institute: Olympic College
     ror_id: 05pbb8y14
   Oxford:
@@ -2153,7 +2203,7 @@ affiliations:
       state: TN
       street: ''
     department: null
-    email: null
+    email: apsu.edu
     institute: Austin Peay State University
     ror_id: 05tx3bv88
   Pitts:
@@ -2233,6 +2283,20 @@ affiliations:
     email: qub.ac.uk
     institute: Queen's University Belfast
     ror_id: 00hswnk62
+  RBI:
+    address:
+      city: Zagreb
+      country_code: Croatia
+      example_expanded: Ru{\dj}er Bo{\v{s}}kovi{\'c} Institute, Bijeni{\v{c}}ka cesta
+        54, 10000 Zagreb, Croatia
+      postcode: '10000'
+      state: null
+      street: Bijeni{\v{c}}ka cesta 54
+    department: Experimental Physics Department, Laboratory for Astrophysics and Astroparticle
+      Physics
+    email: irb.hr
+    institute: Ru{\dj}er Bo{\v{s}}kovi{\'c} Institute
+    ror_id: 02mw21745
   Radboud-Astro:
     address:
       city: Nijmegen
@@ -3217,7 +3281,7 @@ authors:
     affil:
     - Olympic
     altaffil: []
-    email: null
+    email: babel
     family_name: Abel
     given_name: Bob
     orcid: null
@@ -3675,6 +3739,14 @@ authors:
     family_name: Becla
     given_name: Jacek
     orcid: null
+  beebew:
+    affil:
+    - Washington-DIRAC
+    altaffil: []
+    email: wbeebe
+    family_name: Beebe
+    given_name: Wilson
+    orcid: null
   beldicac:
     affil:
     - NCSA
@@ -3911,6 +3983,14 @@ authors:
     family_name: Brandt
     given_name: William Nielsen
     orcid: 0000-0002-0167-2453
+  brantond:
+    affil:
+    - Washington-DIRAC
+    altaffil: []
+    email: brantd
+    family_name: Branton
+    given_name: Douglas
+    orcid: null
   bregeonj:
     affil:
     - IN2P3-LPSC
@@ -4089,6 +4169,14 @@ authors:
     family_name: Rodrigues de Campos
     given_name: Andresa
     orcid: 0000-0002-5124-0771
+  camposs:
+    affil:
+    - CMU
+    altaffil: []
+    email: scampos@CMU-Andrew
+    family_name: Campos
+    given_name: Sandro
+    orcid: null
   cancinob:
     affil:
     - NOIRLabC
@@ -4566,6 +4654,14 @@ authors:
     family_name: Dellapenna
     given_name: Alfred
     orcid: null
+  delucchim:
+    affil:
+    - CMU
+    altaffil: []
+    email: delucchi@CMU-Andrew
+    family_name: DeLucchi
+    given_name: Melissa
+    orcid: null
   dennihye:
     affil:
     - RubinObs
@@ -4654,6 +4750,14 @@ authors:
     email: null
     family_name: Dominguez
     given_name: Mariano
+    orcid: null
+  doneve:
+    affil:
+    - MIOC
+    altaffil: []
+    email: emadonev@ICloud
+    family_name: Donev
+    given_name: Ema
     orcid: null
   drassh:
     affil:
@@ -5157,6 +5261,14 @@ authors:
     family_name: Giraldo Murillo
     given_name: Lina M.
     orcid: 0009-0008-8128-9665
+  girardil:
+    affil:
+    - INAF-OAP
+    altaffil: []
+    email: leo.girardi
+    family_name: Girardi
+    given_name: L\'{e}o
+    orcid: null
   giroe:
     affil:
     - INAF-OAT
@@ -5805,6 +5917,14 @@ authors:
     family_name: Johnson
     given_name: Margaret W. G.
     orcid: null
+  jonesd:
+    affil:
+    - Washington-DIRAC
+    altaffil: []
+    email: dtj@ICloud
+    family_name: Jones
+    given_name: Derek
+    orcid: null
   jonesrl:
     affil:
     - Washington
@@ -5841,7 +5961,7 @@ authors:
     affil:
     - URijeka
     altaffil: []
-    email: null
+    email: tjurkic
     family_name: Jurki\'{c}
     given_name: Tomislav
     orcid: null
@@ -6482,6 +6602,14 @@ authors:
     family_name: Lutfi
     given_name: Mostafa
     orcid: 0000-0003-2866-3802
+  lynno:
+    affil:
+    - CMU
+    altaffil: []
+    email: olynn@CMU-Andrew
+    family_name: Lynn
+    given_name: Olivia
+    orcid: null
   macarthurla:
     affil:
     - Princeton-Astro
@@ -6700,6 +6828,14 @@ authors:
     email: null
     family_name: McEnery
     given_name: Julie
+    orcid: null
+  mcguires:
+    affil:
+    - CMU
+    altaffil: []
+    email: seanmcgu@CMU-Andrew
+    family_name: McGuire
+    given_name: Sean
     orcid: null
   mckayd:
     affil:
@@ -7289,6 +7425,14 @@ authors:
     family_name: Pain
     given_name: Reynald
     orcid: null
+  palaversal:
+    affil:
+    - RBI
+    altaffil: []
+    email: lp
+    family_name: Palaversa
+    given_name: Lovro
+    orcid: 0000-0003-3710-0331
   palecekpe:
     affil:
     - BNL
@@ -7321,6 +7465,15 @@ authors:
     email: parsons-deceased@RubinObs
     family_name: Parsons
     given_name: James B.
+    orcid: null
+  pastorellig:
+    affil:
+    - INAF-OAP
+    - Galileo
+    altaffil: []
+    email: giada.pastorelli
+    family_name: Pastorelli
+    given_name: Giada
     orcid: null
   pattersonmt:
     affil:
@@ -8295,7 +8448,7 @@ authors:
     affil:
     - Peay
     altaffil: []
-    email: null
+    email: smithj
     family_name: Smith
     given_name: J. Allyn
     orcid: 0000-0002-6261-4601
@@ -8678,6 +8831,14 @@ authors:
     email: null
     family_name: Torres
     given_name: Nathalia
+    orcid: null
+  trabucchim:
+    affil:
+    - Galileo
+    altaffil: []
+    email: michele.trabucchi
+    family_name: Trabucchi
+    given_name: Michele
     orcid: null
   trillingde:
     affil:
@@ -9212,6 +9373,14 @@ authors:
     family_name: Zabludoff
     given_name: Ann
     orcid: 0000-0001-6047-8469
+  zaggias:
+    affil:
+    - INAF-OAP
+    altaffil: []
+    email: simone.zaggia
+    family_name: Zaggia
+    given_name: Simone
+    orcid: null
   zauderervanderleya:
     affil:
     - NSF
