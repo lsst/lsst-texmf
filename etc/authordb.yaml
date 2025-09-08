@@ -5828,6 +5828,14 @@ authors:
     family_name: Jee
     given_name: M. James
     orcid: 0000-0002-5751-3697
+  jeglotj:
+    affil:
+    - IN2P3-IJCLAB
+    altaffil: []
+    email: jimmy.jeglot
+    family_name: Jeglot
+    given_name: Jimmy
+    orcid: null
   jeltemat:
     affil:
     - UCSC
