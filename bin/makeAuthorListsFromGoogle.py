@@ -97,6 +97,7 @@ def get_credentials() -> Credentials:
             creds = flow.run_local_server(port=0, access_type="offline", prompt="consent")
         # Save the credentials for the next run
         with open("token.pickle", "wb") as token:
+            # noinspection PyTypeChecker
             pickle.dump(creds, token)
     return creds
 
@@ -268,8 +269,6 @@ def process_affiliations(
         A row of data from the Google Sheet.
     idx : int
         Row index (for logging).
-    id : str
-        Author ID (for logging).
     affils : dict[str, Affiliation]
         Known affiliations (global database).
     newaffils : dict[str, Affiliation]
@@ -707,7 +706,7 @@ def merge_authors_with_update(adb: dict[str, AuthorDbAuthor], authors: dict[str,
 
 def merge_authors(author_file: str) -> None:
     """Take the given author yaml file and merge to authordd
-    this file shold mathc the AuthorYaml class in authordb.py
+    this file should mathc the AuthorYaml class in authordb.py
     """
     print(f"Merging authors using file: {author_file}")
     authors = load_model(author_file)
