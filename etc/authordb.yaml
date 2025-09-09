@@ -3245,6 +3245,14 @@ authors:
     family_name: LSST Camera Team
     given_name: ''
     orcid: null
+  DMLT:
+    affil:
+    - RubinObs
+    altaffil: []
+    email: null
+    family_name: Rubin Observatory Data Management Leadership Team
+    given_name: ''
+    orcid: null
   DMPipelines:
     affil:
     - RubinObs
