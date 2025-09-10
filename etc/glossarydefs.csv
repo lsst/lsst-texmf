@@ -953,6 +953,7 @@ PTF,Palomar Transient Factory,Sci,,,A
 PTP,Precision Time Protocol,DM,,,A
 PVI,Processed Visit Image,DM,,,A
 PWI,Predominantly White Institution,Gen,,,A
+PXE,Preboot eXecution Environment,IT,,,A
 PXI,PCI eXtensions for Instrumentation,Gen,,,A
 PZ,"photo-z",Sci,,,A
 Q1,Quarter one,Gen,,,A
