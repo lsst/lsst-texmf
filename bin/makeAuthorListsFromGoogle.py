@@ -626,7 +626,6 @@ def process_signup(
     sheet_id: str,
     sheets: list[str],
     authorid_col: int = 4,
-    skip: int = 0,
     builder: bool = False,
 ) -> None:
     """Simplified signup processor:
@@ -641,7 +640,7 @@ def process_signup(
     authors = authordb.authors
 
     authorids_set: set[str] = set()
-    last_idx = -1
+    last_idx = 0
 
     for r in sheets:
         result = get_sheet(sheet_id, r)
@@ -650,13 +649,8 @@ def process_signup(
             print(f"[signup] No data found for range {r}")
             continue
 
-        if skip > 0:
-            print(f"[signup] Skipping the first {skip} rows")
-
         for idx, row in enumerate(values):
             last_idx = idx
-            if idx <= skip:
-                continue
             raw = str(row[authorid_col]).strip()
             if not raw:
                 print(f"Signup problem at idx {idx}")
@@ -681,10 +675,6 @@ def process_signup(
         f"[signup] collected {len(authorids)} author ids\n"
         f"[signup] last processed row index: {last_idx} - written to signup_skip\n"
     )
-
-    # write skip file
-    with open("signup_skip", "w") as f:
-        f.write(f"{last_idx}\n")
 
     write_yaml("authors.yaml", authorids)
 
@@ -764,9 +754,9 @@ if __name__ == "__main__":
         "-s",
         "--skip",
         type=int,
-        default=0,
+        default=-1,
         metavar="N",
-        help="Skip the first N lines of the Google Sheet data",
+        help="Skip the first N lines of the Google Sheet data only ADB",
     )
     parser.add_argument(
         "-b",
@@ -804,9 +794,9 @@ if __name__ == "__main__":
         if args.builder and args.adb:
             print("Builder makes no sense with AuthorDB update - ignored please remove the flag.")
         if args.signup is not None:
-            process_signup(
-                sheet_id, sheet_ranges, skip=args.skip, builder=args.builder, authorid_col=args.signup
-            )
+            if args.skip:
+                print("Skip is not available with signup- ignored please remove the flag.")
+            process_signup(sheet_id, sheet_ranges, builder=args.builder, authorid_col=args.signup)
         else:
             process_google(sheet_id, sheet_ranges, skip=args.skip, builder=args.builder, adb=args.adb)
         did_something = True
