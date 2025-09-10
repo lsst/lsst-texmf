@@ -286,6 +286,7 @@ DESC,Dark Energy Science Collaboration,LSST DM OPS,,,A
 DESI,Dark Energy Spectroscopic Instrument,LSST DM OPS,,,A
 DETF,Dark Energy Task Force (AAAC/HEPAP joint advisory sub-committee),TS,Document-12018,,A
 DF,Data Facility,OPS DF DM,,,A
+DHCP,Dynamic Host Configuration Protocol,IT,,,A
 DHO,Damped Harmonic Oscillator,Sci,,,A
 DIA,Difference Image Analysis,DM,,,A
 DID,Data Identifier (Rucio),DM,,,A
