@@ -315,7 +315,7 @@ def process_affiliations(
     return affilids
 
 
-def genFilesADB(values: list, skip: int) -> None:
+def genFilesADB(values: list, skip: int) -> int:
     """Assumes we are procsssing the AuthordDB update form.
     It will produce:
         new_authors.yaml - authors that need to be created/updated.
@@ -369,7 +369,13 @@ def genFilesADB(values: list, skip: int) -> None:
                     notfound.append(id)
                 toupdate.append(id)
             # we have an id or a new id now check it
-            if len(row) >= SURNAME and not id.startswith(lower_strip_utf(row[SURNAME])):
+            if len(row) >= SURNAME:
+                # some people put their full name in surname .
+                snames = row[SURNAME].split(" ")
+                if "," in row[SURNAME] or len(snames) >= 3:  # highly suspect
+                    print(f"Check Surname for {id} at  {idx} - {row[SURNAME]}")
+                check.append(id)
+            if len(row) >= SURNAME and not id.startswith(lower_strip_utf(row[SURNAME])) and id not in authors:
                 # this can be a foreign charecter
                 badid = id
                 id = make_id(row[NAME], row[SURNAME])
@@ -418,13 +424,14 @@ def genFilesADB(values: list, skip: int) -> None:
             f"{len(notfound)} author updates where authorid not found (see above) \n"
             f" Saw: {idx + 1} rows - skip file contains the number for reprocessing \n"
         )
+        exitval = len(missing_affils) + len(check) + len(notfound) + len(clash)
         with open("skip", "w") as f:
             f.write(f"{idx + 1}\n")
 
         write_model("new_authors.yaml", newauthors)
         write_affil("new_affiliations.yaml", newaffils)
 
-    return
+    return exitval
 
 
 def genFiles(values: list, skip: int, builder: bool = False, adb: bool = False) -> None:
@@ -588,7 +595,7 @@ def get_sheet(sheet_id: str, range: str) -> dict[str, Any]:
 
 def process_google(
     sheet_id: str, sheets: str, skip: int = 0, builder: bool = False, adb: bool = False
-) -> None:
+) -> int:
     """Grab the googlesheet and process data.
     will create new_authors and new_afilliations
 
@@ -610,6 +617,7 @@ def process_google(
     """
     print(f"Processing Google Sheet ID: {sheet_id}")
     print(f"Sheet ranges: {sheets}")
+    exitval = 0
     for r in sheets:
         result = get_sheet(sheet_id, r)
         values: list[Any] = result.get("values", [])
@@ -617,9 +625,10 @@ def process_google(
             print(f"Skipping the first {skip} lines of the sheet for new authors.")
         if adb:
             print(f"Doing ADB {adb}")
-            genFilesADB(values, skip)
+            exitval = genFilesADB(values, skip)
         else:  # this will go away after DP1
             genFiles(values, skip, builder=builder)
+    return exitval
 
 
 def process_signup(
@@ -787,7 +796,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     did_something = False
-
+    exitval = 0
     if args.process_google:
         sheet_id = args.process_google[0]
         sheet_ranges = args.process_google[1:]
@@ -798,7 +807,9 @@ if __name__ == "__main__":
                 print("Skip is not available with signup- ignored please remove the flag.")
             process_signup(sheet_id, sheet_ranges, builder=args.builder, authorid_col=args.signup)
         else:
-            process_google(sheet_id, sheet_ranges, skip=args.skip, builder=args.builder, adb=args.adb)
+            exitval = process_google(
+                sheet_id, sheet_ranges, skip=args.skip, builder=args.builder, adb=args.adb
+            )
         did_something = True
 
     if args.merge_authors:
@@ -811,3 +822,5 @@ if __name__ == "__main__":
 
     if not did_something:
         parser.print_help()
+    else:
+        exit(exitval)
