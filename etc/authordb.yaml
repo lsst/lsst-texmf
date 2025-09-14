@@ -4389,6 +4389,14 @@ authors:
     family_name: Cockrum
     given_name: Joseph J.
     orcid: null
+  cohentanugi,johanncj:
+    affil:
+    - IN2P3-LPCA
+    altaffil: []
+    email: johann.cohentanugi@Gmail
+    family_name: Cohen-Tanugi, Johann
+    given_name: Cohen-Tanugi, J.
+    orcid: 0000-0001-9022-4232
   cohentanugij:
     affil:
     - IN2P3-LPCA
