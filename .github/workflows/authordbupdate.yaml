@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   schedule:
     #  UTC min hour day month dayOfWeek
-    - cron: '07 6 * * *'
+    - cron: '43 6 * * *'
 
 jobs:
   adb:
