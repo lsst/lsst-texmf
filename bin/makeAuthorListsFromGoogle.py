@@ -507,7 +507,7 @@ def genFiles(values: list, skip: int, builder: bool = False, adb: bool = False) 
                     f"Check - author id {id} at index {idx}: does not start with "
                     f"surname '{row[SURNAME].strip().lower()}'"
                 )
-            elif id.lower() != id:
+            elif id.lower() != id or not re.match("^[a-z]+$", id):
                 bad.append(id)
                 print(f"Check - author id {id} at index {idx}: id is not all lowercase")
             # we are collecting all the ids - skip is only to not make NEW ones
