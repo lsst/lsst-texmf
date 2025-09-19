@@ -194,6 +194,7 @@ CMOS,Semiconductor complementario de óxido metálico,
 CMR,Informe métrico de caracterización,
 CMS,Solenoide compacto de muones,Sci
 CMS,Sistema centralizado de monitoreo,IT DM
+CMS,Servicio de gestión de cámaras,CAM
 CNN,Red neuronal convolucional,
 CNP,Procesos neuronales condicionales,
 CNPG,Postgres nativo de la nube,
@@ -323,6 +324,7 @@ DPAC,Consorcio de Procesamiento y Análisis de Datos (Gaia),
 DPC,Comité de Políticas de Datos,
 DPDD,Documento de definición de productos de datos,
 DPLT,Equipo directivo de DP,
+DPM,módulo de procesamiento de datos,CAM
 DPP,Procesamiento de productos de datos,
 DPRPT,Herramienta para planificación de vista previa y divulgación de datos,
 DQ,calidad de los datos,
@@ -340,6 +342,7 @@ DRP,Producción para Divulgación de Datos,
 DRW,Camino aleatorio amortiguado,
 DS9,Deep Space 9 (aplicación específica para visualización de datos astronómicos; SAOImage),
 DSFP,Programa de Becas en Ciencia de Datos de la LSST-DA,
+DTM,módulo de transporte de datos,CAM
 DTN,Nodo de transferencia de datos,
 DUNE,Experimento de neutrinos subterráneos profundos,
 Duo,Sistema de autenticación de 2 factores,
@@ -498,6 +501,7 @@ GPU,Unidad de procesamiento gráfico,
 GR,Relatividad general,
 GRB,Estallido de rayos gamma,
 GRE,protocolo de encapsulación para enrutamiento,
+GREB,placa electrónica de lectura del guía,CAM
 GSE,Gaia Sausage-Enceladus [«Salchicha Gaia»],
 GST,Tiempo sidéreo de Greenwich,
 GUI,Interfaz gráfica de usuario,
@@ -506,6 +510,7 @@ GZ,Galaxy Zoo [proyecto de clasificación de galaxias],
 HB,Rama horizontal,
 HBCU,Colegios universitarios y universidades históricamente negros,
 HBS,Soporte de cojinetes hidráulicos,
+HCU,Unidad de control de hardware,CAM
 HD,datos históricos,
 HDD, Unidad de disco duro,
 HDU,Header Data Unit [componente de la estructura de archivos FITS],
@@ -556,7 +561,8 @@ IIP,ingestión y procesamiento de imágenes,
 ILC,Controlador de bucle interno,
 IMBH,Agujero negro de masa intermedia,
 IMF,Función de masa inicial,
-IMS,Cronograma maestro integrado,
+IMS,Cronograma maestro integrado,PSE
+IMS,Servicio de gestión de imágenes,CAM
 ImSim,Simulación de imágenes,
 INAF,Instituto Nacional de Astrofísica [Italia],
 IN2P3,Instituto Nacional de Física Nuclear y Física de Partículas [Francia],
@@ -566,6 +572,7 @@ IPA,"FreeIPA - Identidad, política y auditoría",
 IPC,Coordinador del programa de contribuciones en especie,
 IPAC,Ya no es un acrónimo; centro de ciencia y datos en Caltech,
 IPEDS,Sistema Integrado de Datos de Educación Postsecundaria,
+IPMI,Interfaz de gestión inteligente de plataformas,CAM
 IPS,Cronograma integrado del proyecto,
 IPsec,Internet Protocol Security [conjunto de protocolos para asegurar comunicaciones de IP],
 IR,infrarrojo,
@@ -851,7 +858,8 @@ OSPL,OpenSplice DDS - sistema de mensajería subyacente para SAL,
 OSS,Especificaciones del sistema de observatorios; LSE-30,Gen
 OSS,Sistema de suministro de aceite,TS
 OSX,Sistema operativo Macintosh (obsoleto; actualmente macOS),
-OTB,Reajuste de presupuesto base [«over-target baseline»],
+OTB,Reajuste de presupuesto base,
+OTM,Módulo de transición óptica,CAM
 OTS,sistema de telemetría del observatorio,
 P5," El Panel de Priorización de Proyectos de Física de Partículas es un panel científico asesor cuya tarea es recomendar la priorización para la inversión de EE. UU. en investigación en física de partículas, sobre la base de diversos escenarios de financiación.",
 P6,"Primavera, una herramienta integral de gestión de proyectos",
@@ -883,6 +891,7 @@ PE,Protección física y ambiental,IT
 PEN,Pruebas de penetración,IT
 PEP,Plan de ejecución del proyecto,
 PFS,Espectrógrafo de foco primario,
+PGP,Protocolo bastante bueno,CAM
 PHA,asteroides potencialmente peligrosos,
 photo-z,corrimiento al rojo fotométrico,
 PI,Investigador principal,
@@ -956,14 +965,16 @@ RBSE,Educación científica basada en la investigación (AURA),
 RBT,Solicitudes más allá del objetivo,
 RC,Candidato para lanzamiento,
 RCC,Tasa de control de rafts,
+RCE,elemento de clúster reconfigurable,CAM
 RCEC,Comité Ejecutivo de Construcción de Rubin,
-RCI,Interfaz de comunicación de raft,
+RCI,Interfaz de c úster reconfigurablee raft,
 RCM,Módulo de comunicación de raft,
 RCOC,Comité de Organización de Celebración de Rubin,
 RDBMS,Sistema de gestión de bases de datos relacionales,
 RDO,Oficina de Directores de Rubin,
 RDM,Gestión de datos de Rubin,
 RDP,Producción de datos de Rubin (obsoleto; usar RDM),
+RDS,servicio de datos Raft,CAM
 REB,Placa de electrónica del raft,
 REN,Red de Investigación y Educación,
 RENATER,"Red Nacional de Telecomunicaciones para la Tecnología, la Enseñanza y la Investigación [Francia]",
@@ -976,7 +987,8 @@ RFQ,Solicitud de cotizaciones,
 RGB,Rama gigante roja,
 RM,Gerente de Divulgación,
 RMA,Autorización de devolución de producto,
-RMS,Media cuadrática,
+RMS,Media cuadrática,Gen
+RMS,Servicio de gestión de balsas,CAM
 RNADE,Estimación de distribución con redes neuronales autorregresivas con valores reales,
 RNN,Red neuronal recurrente,
 RNP,Rede Nacional de Ensino e Pesquisa (Red Nacional de Educación e Investigación de Brasil),
@@ -1000,7 +1012,8 @@ RTA,Análisis en tiempo real,Sci
 RTA,autoridad técnica responsable,TS
 RTD,Detector de temperatura resistivo,
 RTI,invariabilidad del tiempo de subida,
-RTM,Módulo torre de raft,
+RTM,Módulo torre de raft,CAM
+RTM,Módulo de transición trasero,DAQ
 RTN,Nota técnica de Rubin,
 RTV,ráster a vector,
 RU,Unidad rack,
@@ -1266,11 +1279,13 @@ WLMS,servicio de gestión de cargas de trabajo,
 WMS,Sistema de gestión de trabajo,
 WOUCAO,Centro de Extensión en Astronomía «Windows on the Universe»,
 WP,Paquete de trabajo,
+WREB,placa electrónica de lectura del sensor de frente de onda,CAM
 WRHEN,Redes de Investigación y Educación del Hemisferio Occidental,
 WSDL,Web Services Description Language [formato de XML que se utiliza para describir servicios web],
 WWT,"World Wide Telescope [software; conjunto de aplicaciones, datos y servicios en nube de código abierto]",
-XHTML,eXtensible HyperText Markup Language [lenguaje de marcado para páginas web],
-XML,eXtensible Markup Language [lenguaje extensible de marcado],
+XDS,Servicio de datos ampliados,CAM
+XHTML,lenguaje de marcado para páginas web,
+XML,lenguaje extensible de marcado,
 XMM,Misión de espejos múltiples para detección de rayos X de la ESA,
 XMM-Newton, Misión de espejos múltiples para detección de rayos X  de la ESA,
 XRAC,Comité de Asignación de Recursos de XSEDE,
@@ -1370,6 +1385,7 @@ Chi-squared Coadd Image,"[Imagen coagregada con cálculo de chi-cuadrado] Una Im
 Chief Scientist,"[Científico en Jefe] El principal asesor científico del Director de LSST; actúa como interfaz con la comunidad científica a fin de asegurar que el programa LSST esté científica y tecnológicamente bien fundamentado, y que las especificaciones sean adecuadas para alcanzar las metas científicas del proyecto.",
 Citizen Science,"[Ciencia ciudadana] La recolección y análisis de datos relativos al mundo natural por parte de miembros del público en general, típicamente como parte de un proyecto colaborativo con científicos profesionales.",
 cloud,"[nube] Una masa visible de vapor de agua condensado que flota en la atmósfera, típicamente a gran altura sobre el suelo o en el espacio interestelar que actúa como lugar de nacimiento de estrellas.  También una forma de computación (en computadoras de terceros aprovechando sus servicios y disponibilidad).",
+Cluster On Board,"Placa de adquisición de datos de cámara que contiene 8 elementos de clúster reconfigurables.",CAM
 CMASS,"[CMASS] Masa constante, una muestra espectroscópica de galaxias como parte de la exploración BOSS.",
 CmdLineTask,"[CmdLineTask] Un tipo especial de tarea que puede leer sus entradas y escribir sus salidas utilizando un Butler, y puede ejecutarse fácilmente desde la línea de comandos. CmdLineTask es una implementación específica del concepto de tarea de línea de comandos. Las CmdLineTasks se están eliminado gradualmente en favor de las PipelineTasks. ",
 Coadd Image,"[Imagen coagregada] Una imagen que es la combinación de múltiples imágenes de entrada. Las entradas se alinean con respecto a una proyección y grilla de píxeles común, se corrigen a la misma escala fotométrica y punto cero, y se rechazan los malos píxeles y los artefactos. (También se pueden equiparar las PSF de las imágenes antes de la co-adición) A las imágenes agregadas se les ha eliminado el fondo no astrofísico.",
@@ -1555,6 +1571,7 @@ postage stamp,"[estampilla] Cortes de imagen de ~30x30 arcosegundos, centrados e
 precovery,"[recuperación predescubrimiento («precovery»)] El proceso de encontrar, o poner límites superiores a detecciones de un DIAObject recién descubierto en imágenes obtenidas previamente, típicamente utilizando fotometría forzada. Los Paquetes de Alertas contendrán datos de precovery derivados de los últimos 30 días de imágenes que incluyen la ubicación de un nuevo DIAObject.",
 Preferred Version,"[Versión preferida] La versión por defecto de un documento entregado a un usuario de DocuShare. Para documentos con control de cambios, la versión preferida representa la línea de base aprobada actual del documento. Para otros documentos, la versión preferida representa la repetición más actual.",
 Predominantly Black Institution,"[Institución predominantemente negra] Colegio universitario o universidad con un mínimo de 1000 estudiantes inscriptos, de los cuales por lo menos el 40% son negros o afroEstadounidenses, y al menos un 50% son de bajos ingresos o la primera generación en cursar estudios universitarios.",
+Pretty Good Protocol,El protocolo serie de alta velocidad que utilizan los REB para comunicarse con el DAQ a través de las fibras ópticas que bajan por el conjunto del montaje del telescopio,CAM
 Primavera,[Primavera] Nombre comercial de la suite de software de gestión de proyectos utilizada por LSST para mantener su plan y cronograma de programa.,
 Processed Visit Image,"[Imagen de visita procesada] Una imagen totalmente calificada del LSST de una visita única que incluye la matriz de píxeles científica y los datos concomitantes, incluyendo una máscara de calidad y una matriz de varianzas, además de una caracterización de PSF y metadatos (que incluye metadatos de calibración) sobre la imagen. Se almacena con el fondo ya restado.",
 Procurement,"[Adquisición] Las actividades involucradas con la compra, o la compra en concreto, subcontrato, alquiler con opción de compra, alquiler o la adquisición de otra índole de insumos o servicios, y las acciones asociadas con los mismos.",
@@ -1575,6 +1592,7 @@ Qserv,"[Qserv] Base de datos distribuida y paralela de LSST Este sistema de base
 Quality Assurance,"[Aseguramiento de la calidad] Todas las actividades, entregables, servicios, documentos, procedimientos o artefactos que se diseñan para asegurar la calidad de los entregables de DM. Esto puede incluir los sistemas de QC, en la medida en que están cubiertos en la obligación descripta en LDM-622. Adviértase que contrasta con la definición de LDM-522 de «QA» como «Quality Analysis» (Análisis de calidad), un proceso manual que solo ocurre durante la puesta a punto y las operaciones. Ver también: Control de calidad",
 Quality Control,"[Control de calidad] Servicios y procesos que apuntan a medir y monitorear un sistema para verificar y caracterizar su desempeño (como en LDM-522). Los sistemas de Control de Calidad se ejecutan en forma autónoma, y solo notifican a las personas cuando se detecta una anomalía. Ver también Aseguramiento de la Calidad.",
 Raft,"[Raft] Los sensores de la cámara del LSST están ensamblados en conjuntos electrónicos reemplazables, llamados rafts, compuestos por 9 sensores encastrados (CCD) en un mosaico de 3x3. Cada raft es una unidad reemplazable en la cámara del LSST. En la cámara hay 21 rafts científicos, más 4 rafts de esquina adicionales con sensores especializados, no científicos, que conforman un total de 189 CCD por imagen de plano focal. Los 21 rafts científicos están numerados del «0,1» al «0,3», «1,0» al «3,4», y «4,1» al «4,3».  (Vale decir, las 25 combinaciones de «0,0» a «4,4», menos las cuatro esquinas que son no científicas.)",
+Raft Data Service,"El software que recibe los metadatos en cada lectura RCE antes de recibir los datos de píxeles del REB. Estos metadatos se ponen en cola y, si el REB no produce datos que coincidan, los metadatos se adjuntarán a los datos de píxeles incorrectos cuando lleguen. Vaciar RDS es una forma abreviada de borrar esta cola de metadatos.",CAM
 Raw Image,"[Imagen cruda] La salida de una cámara, compuesta por un conjunto de secciones de imagen de cada amplificador en cada sensor sobre la matriz del plano focal, incluyendo el overscan.",
 releasable product,[producto divulgable] Un paquete de software u otro componente del sistema de DM que se espera que será incluido en la siguiente divulgación etiquetada del sistema. Esto implica la inclusión en un paquete estándar de máximo nivel. Ver también release-tag.,
 Release,"[Divulgación] Publicación de una nueva versión de un documento, software o producto de datos. Dependiendo del contexto, las divulgaciones pueden requerir aprobación de los comités de control de cambios a nivel de Proyecto o DM, y luego forman parte de la línea de base formal del proyecto.",
