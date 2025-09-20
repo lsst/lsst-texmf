@@ -86,7 +86,7 @@ AST,NSF Division of Astronomical Sciences,TS,Document-11935,,A
 ASTRON,Netherlands Institute for Radio Astronomy,Gen,,,A
 AT,Auxiliary Telescope,TS,,,A
 AT,Awareness and Training,IT,,,A
-ATCA,Advanced Telecommunications Architecture,TS,Document-11936,,A
+ATCA,Advanced Telecommunications Architecture,CAM TS,Document-11936,,A
 ATCS,Auxiliary Telescope Control System,TSSW,,,A
 ATLAS,A Toroidal LHC Apparatus,Gen,,,A
 ATLAS,Asteroid Terrestrial-impact Last Alert System,Sci,,,A
@@ -201,11 +201,13 @@ CMOS,complementary metal-oxide semiconductor,TS,Document-11961,,A
 CMR,Characterization Metric Report,DM,,,A
 CMS,Compact Muon Solenoid,Sci,,,A
 CMS,Centralized Monitoring System),IT DM,,,A
+CMS,Camera Management Service,CAM,,,A
 CNN,Convolutional Neural Network,Sci,,,A
 CNP,Conditional Neural Processes,Sci,,,A
 CNPG,Cloud Native Postgres,DM,,,A
 CNRS,Centre national de la recherche scientifique,Gen,,,A
 CO,Carbon Monoxide,Sci,,,A
+COB,Cluster On Board,CAM,,,A
 COMP,Complete,PMO,,,A
 COMPASS,Catalogues of Objects and Measured Parameters from All Sky Surveys,Gen,,,A
 CORBA,Common Object Request Broker Architecture,Gen,,,A
@@ -331,6 +333,7 @@ DPAC,Data Processing and Analysis Consortium (Gaia),Gen,,,A
 DPC,Data Policy Committee,OPS,,,A
 DPDD,Data Product Definition Document,LSST DM,,,A
 DPLT,DP Leadership Team,OPS,,,A
+DPM,Data Processing Module,CAM,,,A
 DPP,Data Products Processing,TS,Document-11940,,A
 DPRPT,Data Preview and Release Planning Tool,OPS,RTN-005,,A
 DQ,data quality,TS,Document-12020,,A
@@ -348,6 +351,7 @@ DRP,Data Release Processing,LSST DM,,,A
 DRW,Damped Random Walk,Sci,,,A
 DS9,Deep Space 9 (specific astronomical data visualisation application; SAOImage),Gen,,,A
 DSFP,LSST-DA Data Science Fellowship Program,Gen,,,A
+DTM,Data Transport Module,CAM,,,A
 DTN,Data Transfer Node,LSST DM,,,A
 DUNE,Deep Underground Neutrino Experiment,Sci,,,A
 Duo,2 factor authentication system,LSST DM,,,A
@@ -494,6 +498,7 @@ GLADE,Galaxy List for the Advanced Detector Era,Sci,https://arxiv.org/abs/1804.0
 GLAST,Gamma-Ray Large Area Space Telescope,TS,Document-11965,,A
 GLONASS,GLObal NAvigation Satellite System,Gen,,,A
 GMT,Giant Magellan Telescope,OPS,,,A
+GMTO,Giant Magellan Telescope Organization,OPS,,,A
 GMU,George Mason University,TS,Document-11944,,A
 GNU,GNU's Not Unix! An operating system and an extensive collection of free computer software,OPS DM,,,A
 GOA,Government Office of Accounting,Gen,,,A
@@ -508,6 +513,7 @@ GPU,Graphics Processing Unit,Gen,,,A
 GR,General Relativity,Gen,,,A
 GRB,Gamma-Ray Burst,Gen,,,A
 GRE,Generic Routing Encapsulation,IT,,,A
+GREB,Guider Readout Electronics Board,CAM,,,A
 GSC,Galaxies Science Collaboration,Sci,,,A
 GSE,Gaia Sausage-Enceladus,Sci,,,A
 GST,Greenwich Sidereal Time,Gen,,,A
@@ -517,6 +523,7 @@ GZ,Galaxy Zoo,Sci OPS,,,A
 HB,Horizontal Branch,Sci,,,A
 HBCU,Historically Black Colleges and Universities,Gen,,,A
 HBS,Hydraulic Bearing Support,TS,,,A
+HCU,Hardware Control Unit,CAM,,,A
 HD,historical data,TS,Document-12003,,A
 HDD, Hard Disk Drive,DM Gen,,,A
 HDU,Header Data Unit,DM,,,A
@@ -569,6 +576,7 @@ ILC,Inner Loop Controller,PSE,,,A
 IMBH,Intermediate Mass Black Hole,Sci,,,A
 IMF,Initial Mass Function,DM,,,A
 IMS,Integrated Master Schedule,PSE,,,A
+IMS,Image Management Service,CAM,,,A
 ImSim,Image Simulation,Sims,,,A
 INAF,Istituto Nazionale di Astrofisica,Gen,,,A
 IN2P3,Institut National de Physique Nucléaire et de Physique des Particules,Gen,,,A
@@ -578,6 +586,7 @@ IPA,"FreeIPA - Identity, Policy, Audit",DM,,,A
 IPC,In-kind Program Coordinator,OPS,,,A
 IPAC,No longer an acronym; science and data center at Caltech,Gen,,,A
 IPEDS,Integrated Postsecondary Educational Data System,Gen,,,A
+IPMI,Intelligent Platform Management Interface,CAM,,,A
 IPS,Integrated Project Schedule,Adm,,,A
 IPsec,Internet Protocol Security,DM,,,A
 IR,infrared,Gen,Document-11949,,A
@@ -878,6 +887,7 @@ OSS,Observatory System Specifications; LSE-30,Gen,,,A
 OSS,Oil Supply System,TS,,,A
 OSX,Macintosh Operating System (obsolete; now macOS),Gen,,,A
 OTB,Over Target Baseline,Gen,,,A
+OTM,Optical Transition Module,CAM,,,A
 OTS,observatory telemetry system,TS,Document-12015,,A
 OUO,Official Use Only,OPS,,,A
 P5,"The Particle Physics Project Prioritization Panel is a scientific advisory panel tasked with recommending prioritization for U.S. investment in particle physics research, on the basis of various funding scenarios",Adm,,,A
@@ -910,6 +920,7 @@ PE,Physical and Environmental Protection,IT,,,A
 PEN,Penetration testing,IT,,,A
 PEP,Project Execution Plan,Adm,,,A
 PFS,Prime Focus Spectrograph,Gen,,,A
+PGP,Pretty Good Protocol,CAM,,,A
 PHA,potentially hazardous asteroids,TS,Document-11971,,A
 photo-z,"photometric redshift",Sci,,,A
 PI,Principle Investigator,Sci OPS,,,A
@@ -986,6 +997,7 @@ RBSE,Research-Based Science Education (AURA),OPS,,,A
 RBT,Requests Beyond Target,OPS,,,A
 RC,Release Candidate,Gen,,,A
 RCC,Raft Control Rate,CAM,,,A
+RCE,Reconfigurable Cluster Element,CAM,,,A
 RCEC,Rubin Construction Executive Committee,Gen,,,A
 RCI,Raft Communication Interface,CAM,,,A
 RCM,Raft Communication Module,CAM,,,A
@@ -994,7 +1006,8 @@ RDBMS,Relational Database Management System,Gen,,,A
 RDO,Rubin Directors Office,OPS,,,A
 RDM,Rubin Data Management,OPS,,,A
 RDP,Rubin Data Production (Obsolete use RDM),OPS,,,A
-REB,Readout Electronics Board,LSST DM,,,A
+RDS,Raft Data Service,CAM,,,A
+REB,Readout Electronics Board,CAM,,,A
 REN,Research and Education Network,OPS,,,A
 RENATER,Réseau National de télécommunications pour la Technologie l’Enseignement et la Recherche,OPS,,,A
 REO,Rubin Education and Outreach,OPS,,,A
@@ -1009,6 +1022,7 @@ RINGSS,Ring-Image Next Generation Scintillation Sensor,Sci,,,A
 RM,Release Manager,LSST DM,,,A
 RMA,Return Merchandise Authorization,IT,,,A
 RMS,Root-Mean-Square,Gen,,,A
+RMS,Raft Management Service,CAM,,,A
 RNADE,Real-valued Neural Autoregressive Distribution Estimation,Sci,,,A
 RNN,Recurrent Neural Network,Sci,,,A
 RNP,Rede Nacional de Ensino e Pesquisa (National Education and Research Network Brazil),IT,,,A
@@ -1033,6 +1047,7 @@ RTA,responsible technical authority,TS,Document-12013,,A
 RTD,Resistance Temperature Detector,OPS,,,A
 RTI,rise time invariance,TS,Document-12037,,A
 RTM,Raft Tower Module,CAM,,,A
+RTM,Rear Transition Module,DAQ,,,A
 RTN,Rubin Technical Note,LSST DM,,,A
 RTV,raster to vector,TS,Document-11984,,A
 RU,Rack Unit,IT,,,A
@@ -1300,9 +1315,11 @@ WLMS,work load management service,TS,Document-11982,,A
 WMS,Work Management System,OPS,,,A
 WOUCAO,Windows on the Universe Center for Astronomy Outreach,OPS,,,A
 WP,Work Package,OPS,,,A
+WREB,Wavefront sensor Readout Electronics Board,CAM,,,A
 WRHEN,Western Hemisphere Research & Education Networks,TS,Document-12033,,A
 WSDL,Web Services Description Language,Gen,,,A
 WWT,World Wide Telescope,TS,Document-11978,,A
+XDS,eXtended Data Services,CAM,,,A
 XHTML,eXtensible HyperText Markup Language,Gen,,,A
 XML,eXtensible Markup Language,Gen,,,A
 XMM,ESA X-ray Multi-mirror Mission,Gen,,,A
@@ -1405,6 +1422,7 @@ Chi-squared Coadd Image,"A Coadd Image that is the weighted sum of multiple inpu
 Chief Scientist,The principal scientific advisor  to the LSST Director; he or she acts as an interface to the science community in order to ensure that the LSST program is scientifically and technologically well founded and that the specifications are appropriate for achieving the scientific goals of the project,Adm,,,G
 Citizen Science,"the collection and analysis of data relating to the natural world by members of the general public, typically as part of a collaborative project with professional scientists",Sci,,,G
 cloud,"A visible mass of condensed water vapor floating in the atmosphere, typically high above the ground or in interstellar space acting as the birthplace for stars.  Also a way of computing (on other peoples computers leveraging their services and availability)",DM,,,G
+Cluster On Board,"Camera Data Acquisition board containing 8 Reconfigurable Cluster Elements",CAM,,,G
 CMASS,"constant mass, a spectroscopic galaxy sample as part of the BOSS survey",Sci,,,G
 CmdLineTask,"A special kind of Task that can read its inputs and write its outputs using a Butler, and can run easily from the command-line. CmdLineTask is a specific implementation of the concept of a command-line task. CmdLineTasks are being phased out in favor of PipelineTasks. ",DM,,PipelineTask,G
 Coadd Image,"An image that is the combination of multiple input images. The inputs are aligned to a common projection and pixel grid, corrected to the same photometric scale and zero-point, with bad pixels and artifacts rejected. (Image PSFs may also be matched prior to co-addition.) Coadd Images have had non-astrophysical background removed",DM,,"Co-Add, CoAdd, co-add, coadd",G
@@ -1592,6 +1610,7 @@ postage stamp,"Image cutouts that are ~30x30 arcseconds, centered on an Object, 
 precovery,"The process of finding, or putting upper limits on, detections of a newly discovered DIAObject in previously obtained images, typically using forced photometry. Alert Packets will contain precovery data derived from the past 30 days of images that include the location of a new DIAObject",DM,LSE-163,,G
 Preferred Version,"The default version of a document served to a DocuShare user. For change controlled documents, the preferred version represents the document's current, approved baseline. For other documents, the preferred version represents the most current iteration",Adm,,,G
 Predominantly Black Institution,"A college or university with at least 1,000 enrolled students, of whom at least 40% are Black or African American and at least 50% are low income or first generation to college",Gen,,,G
+Pretty Good Protocol,"The high speed serial protocol the REBs use to talk to the DAQ over the fibers down the Telescope Mount Assembly",CAM,,,G
 Primavera,The trade name for the project management software suite used by LSST to maintain its program plan and schedule,Adm,,,G
 Processed Visit Image,"A calibrated, background-subtracted image from a single visit, packaged with quality mask and variance arrays, as well as a PSF characterization, detailed calibration data, and other metadata about the image",DM,"LDM-151, LSE-163",PVI,G
 Procurement,"The activities involved with or the actual purchase, subcontract, lease, rent, or otherwise acquire supplies or services, and actions associated therewith",Adm,,,G
@@ -1612,6 +1631,7 @@ Qserv,"LSST's distributed parallel database. This database system is used for co
 Quality Assurance,"All activities, deliverables, services, documents, procedures or artifacts which are designed to ensure the quality of DM deliverables. This may include QC systems, in so far as they are covered in the charge described in LDM-622. Note that contrasts with the LDM-522 definition of “QA” as “Quality Analysis”, a manual process which occurs only during commissioning and operations. See also: Quality Control",DM QA,"DMTN-085, LDM-622",QA,G
 Quality Control,"Services and processes which are aimed at measuring and monitoring a system to verify and characterize its performance (as in LDM-522). Quality Control systems run autonomously, only notifying people when an anomaly has been detected. See also Quality Assurance",DM QA,"DMTN-085, LDM-522",QC,G
 Raft,"The sensors in the LSST camera are packaged into replaceable electronic assemblies, called rafts, consisting of 9 butted sensors (CCDs) in a 3x3 mosaic. Each raft is a replaceable unit in the LSST camera. There are 21 science rafts in the camera plus 4 additional corner rafts with specialized, non-science sensors, making for a total of 189 CCDs per focal plane image. The 21 science rafts are numbered from ""0,1"" through ""0,3"", ""1,0"" through ""3,4"", and ""4,1"" through ""4,3"". (In other words, the 25 combinations from ""0,0"" through ""4,4"" minus the four corners which are non-science.)",CAM,,,G
+Raft Data Service,"The software that receives the metadata in each readout RCE prior to receiving the pixel data from the REB. These metadata are queued, and if the REB doesn't produce data to match, the metadata will be attached to the wrong pixel data when some does arrive. Flushing RDS is shorthand for clearing this queue of metadata.",CAM,ref: Gregg Thayer,,G
 Raw Image,"The output from a camera, consisting of a set of image sections from each amplifier on each sensor on the focal plane array, including overscan",DM,LDM-151,"C3 Image, Raw Camera Image, Raw Exposure",G
 releasable product,A software package or other component of the DM system which is expected to be included in the next tagged release of the system. This implies inclusion in a standard top-level package. See also release-tag,DM QA,DMTN-085,,G
 Release,"Publication of a new version of a document, software, or data product. Depending on context, releases may require approval from Project- or DM-level change control boards, at which point they then form part of the formal baseline",DM Adm,,,G
