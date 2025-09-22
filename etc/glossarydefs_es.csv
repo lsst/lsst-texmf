@@ -509,7 +509,8 @@ GCE,Google Compute Engine [componente de infraestructura],
 GCN,Red de Coordenadas Generales (anteriormente Red de coordenadas de brotes de rayos gamma),
 GCP,Plataforma en la nube de Google [plataforma de desarrollo web de Google],
 GCS,Sistema de controles genéricos,
-GDS,Sistema de datos guía,
+GDR,guía,CAM
+GDS,Sistema de datos guía,CAM
 GEANT4,Kit de herramientas de simulación de partículas ,CAM
 GEIA,Asociación Gubernamental de Electrónica e Información,CAM
 GEO,Órbita geosincrónica,
@@ -601,6 +602,7 @@ IGWN,Red internacional de ondas gravitacionales,
 IIP,ingestión y procesamiento de imágenes,
 ILC,Controlador de bucle interno,
 IMBH,Agujero negro de masa intermedia,
+IMC,Controlador de gestión integrada,CAM
 IMF,Función de masa inicial,
 IMS,Cronograma maestro integrado,PSE
 IMS,Servicio de gestión de imágenes,CAM
@@ -655,7 +657,7 @@ JPEG,Grupo Conjunto de Expertos en Fotografía,
 JPG,Grupo Conjunto de Expertos en Fotografía,
 JPL,Laboratorio de Propulsión a Chorro (Efemérides de desarrollo),
 JRE,Java Runtime Environment [Entorno de ejecución en Java],
-JSON,JavaScript Object Notation [formato de texto para intercambio de datos],
+JSON,formato de texto para intercambio de datos,
 JSR,Revisión conjunta de estado,
 JTM,Reunión técnica conjunta,
 JVM,Máquina virtual Java,
@@ -994,6 +996,7 @@ PSTN,Nota técnica científica del proyecto,
 PTC,photon transfer curve,
 PTF,Fábrica de transitorios de Palomar,
 PTP,Protocolo de tiempo de precisión,DM
+PV,Pico a Valle,CAM
 PVI,Imagen procesada de visita,
 PWI,Institución predominantemente blanca,
 PXE,Entorno de ejecución previo al arranque,IT

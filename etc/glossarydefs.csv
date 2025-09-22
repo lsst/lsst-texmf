@@ -1,4 +1,4 @@
-Term,Description,Subsystem Tags,Documentation Tags,Associated Acronyms and Alternative Terms,Type
+﻿Term,Description,Subsystem Tags,Documentation Tags,Associated Acronyms and Alternative Terms,Type
 1D,One-dimensional,Gen,,,A
 2D,Two-dimensional,Gen,,,A
 2MASS,Two-Micron All Sky Survey,Gen,,,A
@@ -387,6 +387,8 @@ EAS,Environmental Awareness System,TS,,,A
 EB,ExaByte,Gen,,,A
 EC2,Amazon Elastic Compute Cloud,DM,,,A
 ECDFS,Extended Chandra Deep Field-South Survey,Sci,,,A
+ECDM,Einstein-Cartan-Dirac-Maxwell cosmological model,Sci,,,A
+MECM,Engineered Ceramic Materials,CAM,LCA-11591-B_REVIEW_(Camera_Final_Design_Report),https://www.cesic.de/en,A
 EDC,EPO Data Center,OPS EPO,,,A
 EDFS,Euclid Deep Field South,Sci,,,A
 EDR,early data release,TS,Document-11972,,A
@@ -472,7 +474,7 @@ FNAL,Fermi National Accelerator Lab,OPS,,,A
 FOA,Funding Opportunity Announcement,Sci,,,A
 FOA,Facilities Operations in Arizona,OPS,,,A
 FOC,Facilities Operations in Chile,OPS,,,A
-FOH,Facilities Operations in Hawai‘i,OPS,,,A
+FOH,Facilities Operations in Hawai‚Äòi,OPS,,,A
 FOIA,Freedom Of Information Act,OPS,,,A
 FoM,Figure of Merit,Gen,,,A
 FoV,Field of View (also denoted FOV),Gen,,,A
@@ -520,7 +522,8 @@ GCE,Google Compute Engine,IT,,,A
 GCN,General Coordinates Network,Gen,,,A
 GCP,Google Cloud Platform,IT,,,A
 GCS,Generic Control System,TSSW,,,A
-GDS,Guider Data System,TS,,,A
+GDR,Guider,CAM,,,A
+GDS,Guider Data System,CAM,,,A
 GEIA,Government Electronics and Information Association,CAM,LCA-11591-B_REVIEW_(Camera_Final_Design_Report),,A
 GEO,Geosynchronous Earth Orbit,Gen,,,A
 GFLOP,Giga FLOP,Gen,,,A
@@ -614,11 +617,12 @@ IGWN,International Gravitational Wave Network,Sci,,,A
 IIP,image ingest and processing,TS,Document-12029,,A
 ILC,Inner Loop Controller,PSE,,,A
 IMBH,Intermediate Mass Black Hole,Sci,,,A
+IMC,Integrated Management Controller,CAM,LCA-11591-B_REVIEW_(Camera_Final_Design_Report),,A
 IMF,Initial Mass Function,DM,,,A
 IMS,Integrated Master Schedule,PSE,,,A
 IMS,Image Management Service,CAM,,,A
 ImSim,Image Simulation,Sims,,,A
-IN2P3,Institut National de Physique Nucléaire et de Physique des Particules,Gen,,,A
+IN2P3,Institut National de Physique Nucl√©aire et de Physique des Particules,Gen,,,A
 INAF,Istituto Nazionale di Astrofisica,Gen,,,A
 IO,Input/Output,CAM,LCA-11591-B_REVIEW_(Camera_Final_Design_Report),,A
 IoA,Institute of Astronomy (Cambridge; also denoted IOA),Gen,,,A
@@ -732,7 +736,7 @@ LILA,Links Interconnecting Latin America,TS,Document-12008,,A
 LINCC,LSST Interdisciplinary Network for Collaboration and Computing,OPS,,,A
 LISA,Laser Interferometer Space Antenna,TS,Document-11983,,A
 LLNL,Lawrence Livermore National Laboratory,Gen,,,A
-LMA,Laboratoire des Mat�riaux Avanc�s,CAM,LCA-11591-B_REVIEW_(Camera_Final_Design_Report),,A
+LMA,Laboratoire des Matériaux Avancés,CAM,LCA-11591-B_REVIEW_(Camera_Final_Design_Report),,A
 LMC,Large Magellanic Cloud,Sci,,,A
 LOE,Level of Effort,Gen,,,A
 LOP,LSST Operations Plan,TS,Document-11950,,A
@@ -741,7 +745,7 @@ LOVE,LSST Operators Visualization Environment,LSST DM,,,A
 LOY,LSST Operations Year,OPS,,,A
 LPGL,Lesser Public GNU general License,Gen,,,A
 LPM,LSST Project Management (Document Handle),LSST DM,,,A
-LPNHE,Laboratoire de Physique Nucl�aire et de Hautes �nergies,CAM,LCA-11591-B_REVIEW_(Camera_Final_Design_Report),,A
+LPNHE,Laboratoire de Physique Nucléaire et de Hautes Énergies,CAM,LCA-11591-B_REVIEW_(Camera_Final_Design_Report),,A
 LRG,Luminous Red Galaxies,Sci,,,A
 LSB,Low Surface Brightness,Sci,,,A
 LSB,La Serena Base,PMO,,,A
@@ -796,6 +800,7 @@ MLAG,Multi-chassis Link Aggregation,IT,,,A
 MLP,Multi-Layer Perceptron,Sci,,,A
 MMA,Multi Messenger Astronomy,OPS,,,A
 MMB,Morning Mini Bus,TS,,,A
+MMR,"Micro Minature Refrigeration, Inc.",CAM,LCA-11591-B_REVIEW_(Camera_Final_Design_Report),,A
 MMT,Multiple Mirror Telescope,OPS,,,A
 MNRAS,Monthly Notices of the Royal Astronomical Society,TS,Document-12016,,A
 MOA,Memo Of Agreement,OPS,,,A
@@ -816,7 +821,7 @@ MPM,Master Protection Module,CAM,LCA-11591-B_REVIEW_(Camera_Final_Design_Report)
 MPO,Memorandum Purchase Order,OPS DOE,,,A
 MPP,Massively Parallel Process,DM,,,A
 MPS,NSF Mathematical and Physical Sciences directorate,OPS,,,A
-MPS/AST,NSF Mathematical and Physical Sciences directorate’s Division of Astronomical Sciences,OPS,,,A
+MPS/AST,NSF Mathematical and Physical Sciences directorate‚Äôs Division of Astronomical Sciences,OPS,,,A
 MREFC,Major Research Equipment and Facility Construction,Gen,,NSF,A
 MREN,Montenegrin Research and Education Network,Gen,,,A
 MS,Mega Sample,CAM,LCA-11591-B_REVIEW_(Camera_Final_Design_Report),,A
@@ -926,7 +931,7 @@ OLPA,Office of Legislative and Public Affairs,Gen,,,A
 OMB,Office of Management and Budget,OPS,,,A
 OOB,Out Of Bound (Alternative network access),IT,,,A
 OODS,Observatory Operations Data Service,DM,,,A
-OPCC,Oficina de Protección de la Calidad del Cielo,OPS,,,A
+OPCC,Oficina de Protecci√≥n de la Calidad del Cielo,OPS,,,A
 OPD,optical path difference,TS,Document-12036,,A
 OPS,Operations,LSST DM,,,A
 OpSim,Operations Simulation,Sims,,,A
@@ -967,7 +972,7 @@ PDAC,Prototype Data Access Center,LSST DM,,,A
 PDF,Portable Document Format,Gen,,,A
 PDF,Probability Density Function,Sci,,,A
 PDM,Phase Dispersion Minimization,OPS,,,A
-PDM,SOLIDWORKS® Product Data Management,TS,,,A
+PDM,SOLIDWORKS¬Æ Product Data Management,TS,,,A
 PDN,Packet Data Network,IT,,,A
 PDR,Preliminary Design Review,LSST DM,,,A
 PDR1,Public Data Release 1 (HSC),OPS,,,A
@@ -1023,6 +1028,7 @@ PSTN,Project Science Technical Note,LSST DM,,,A
 PTC,Photon Transfer Curve,CAM,,,A
 PTF,Palomar Transient Factory,Sci,,,A
 PTP,Precision Time Protocol,DM,,,A
+PV,Peak to Valley,CAM,LCA-11591-B_REVIEW_(Camera_Final_Design_Report),,A
 PVI,Processed Visit Image,DM,,,A
 PWI,Predominantly White Institution,Gen,,,A
 PXE,Preboot eXecution Environment,IT,,,A
@@ -1422,12 +1428,12 @@ accruals,"Accounts on a balance sheet that represent liabilities and non-cash-ba
 active asteroid,small Solar System bodies that have asteroid-like orbits but show comet-like visual characteristics,Sci,,,G
 adaptive moments,"The second moments of the source intensity distribution, which are used for measuring source shapes. This approach is close to optimal for measuring the shapes of faint galaxies",Sci,,,G
 afw,LSST's pipeline library code and primitives including images and tables,DM,https://github.com/lsst/afw,,G
-aggregate metric,"An aggregation of multiple point metrics. For example, the overall photometric repeatability for a particular tract given given the repeatability of multiple individual stars in the tract. See also: “metric”",DM QA,DMTN-085,,G
-aggregation,"The process of reducing multiple input values to a single output, e.g., a metric value, computed from a collection of input values. For example, a sum or average of a metric computed over patches to produce an aggregate metric at tract level. See also: “metric”, “aggregate metric”",DM QA,DMTN-085,,G
+aggregate metric,"An aggregation of multiple point metrics. For example, the overall photometric repeatability for a particular tract given given the repeatability of multiple individual stars in the tract. See also: metric",DM QA,DMTN-085,,G
+aggregation,"The process of reducing multiple input values to a single output, e.g., a metric value, computed from a collection of input values. For example, a sum or average of a metric computed over patches to produce an aggregate metric at tract level. See also: metric, aggregate metric",DM QA,DMTN-085,,G
 airmass,"The pathlength of light from an astrophysical source through the Earth's atmosphere. It is given approximately by sec z, where z is the angular distance from the zenith (the point directly overhead, where airmass = 1.0) to the source",Sci,,,G
 Akaike Information Criterion,an estimator of prediction error and thereby relative quality of statistical models for a given set of data,Sci,,,G
 Alert,"A packet of information for each source detected with signal-to-noise ratio > 5 in a difference image by Alert Production, containing measurement and characterization parameters based on the past 12 months of LSST observations plus small cutouts of the single-visit, template, and difference images, distributed via the internet",DM,LSE-163,,G
-"Alert Management, Photometry, and Evaluation of Light curves","AMPEL (Broker) is a modular and scalable platform with explicit provenance tracking, suited for systematically processing large — possibly complex and heterogeneous — datasets either in real time or offline.\url{https://ampelproject.github.io/} ",OPS,,,G
+"Alert Management, Photometry, and Evaluation of Light curves","AMPEL (Broker) is a modular and scalable platform with explicit provenance tracking, suited for systematically processing large - possibly complex and heterogeneous  datasets either in real time or offline.\url{https://ampelproject.github.io/} ",OPS,,,G
 Alert Production,"Executing on the Prompt Processing system, the Alert Production payload processes and calibrates incoming images, performs Difference Image Analysis to identify DIASources and DIAObjects, and then packages the resulting alerts for distribution",DM,LDM-151,AP,G
 Alert Production DataBase,"A dedicated, internal database system used to support LSST Alert Production.  Does not support end-user access",DM,,,G
 algorithm,A computational implementation of a calculation or some method of processing,Sci,,,G
@@ -1455,7 +1461,7 @@ Authentication,"The action of demonstrating who you are and an person, mission, 
 Authorization,The action of allowing an authorized or anonymous entity access to data or services,DM,,,G
 Automatic Learning for the Rapid Classification of Events,"The ALeRCE broker is a Chilean-led broker which is processing the alert stream from the ZTF and a Community Broker for the Vera C. Rubin Observatory and its LSST, as well as other large etendue survey telescopes. \url{http://alerce.science/}",OPS,,,G
 AuxTel,LSST’s 1.2-meter Auxiliary Telescope will measure atmospheric transmission and will be used to calibrate LSST images,Gen,,,G
-Babamul,Caltech’s event broker,OPS,,,G
+Babamul,Caltech's event broker,OPS,,,G
 background,"In an image, the background consists of contributions from the sky (e.g., clouds or scattered moonlight), and from the telescope and camera optics, which must be distinguished from the astrophysical background. The sky and instrumental backgrounds are characterized and removed by the LSST processing software using a low-order spatial function whose coefficients are recorded in the image metadata",DM,,,G
 Base Facility,"The data center located at the Base Site in La Serena, Chile. The Base Facility is composed of Base Test Stand an Archive Zone holding data products, and the Chilean Data Access Center",DM,LDM-148,,G
 Base Year Cost,"The cost of a particular project element as of a year chosen to represent an arbitrary cost level of 100, usually the year the project plan was created or refreshed. New, up-to-date base years are periodically introduced to keep data current",Adm,,,G
@@ -1469,7 +1475,7 @@ Baseline,The point at which project designs or requirements are considered to be
 Basis of Estimate,"justification for arriving at a particular cost estimate, including estimating methods, approach taken, prices used, assumptions made; an analyzed and carefully calculated number",Adm,,,G
 Batch Production,"Computational processing that is executed as inputs become available, in a distributed way across multiple enclaves when needed, while tracking status and outputs. Examples of Batch Production include offline processing for Prompt Data Products, calibration products, template images, and Special Programs data products. Prioritization protocols for the various types of batch production are given in LDM-148",DM,LDM-148,,G
 BEAMS,Bayesian Estimation Applied to Multiple Species (software for classification of light curves based on photometry),Sci,,,G
-BlackGEM,is a wide-field array of optical telescopes to be located at ESO’s La Silla Observatory in Chile’s Atacama desert. ,Sci,,,G
+BlackGEM,is a wide-field array of optical telescopes to be located at ESO's La Silla Observatory in Chile's Atacama desert. ,Sci,,,G
 Blazhko,the phenomenon of amplitude or phase modulation. Associated with some RRL,Sci,,,G
 brighter-fatter effect,The common term used to refer to one of the photometric qualities of the LSST camera: sources with a higher flux have a broader PSF. This is accounted for during calibration,DM,"LDM-151, https://arxiv.org/pdf/1402.0725v1.pdf",,G
 Broker,"Software which receives and redistributes Alerts, and may also perform processing such as filtering for certain characteristics, cross-matching with non-LSST catalogs, and/or light-curve classification, in order to identify and prioritize targets for follow-up and/or make scientific analyses. ",DM,LDM-612,,G
@@ -1595,7 +1601,7 @@ GalSim,"GalSim is open-source software for simulating images of astronomical obj
 Gaussian Aperture and PSF," involves Gaussianizing the PSFs and then using a Gaussian aperture (instead of top-hat) for measuring photometry. The aperture+PSF is designed to be the same across all bands, so that one measures consistent colors",DM,,,G
 GEANT,pan-European data network for the research and education community,Gen,,,G
 GEANT4,A particle simulation toolkit ,CAM,LCA-11591-B_REVIEW_(Camera_Final_Design_Report),,G
-General Parallel File System,The bulk data storage provided through a POSIX filesystem interface at the LSST Data Facility. Refers specifically to IBM’s General Parallel File System; also known as IBM Spectrum Scale,DM QA,DMTN-085,GBFS,G
+General Parallel File System,The bulk data storage provided through a POSIX filesystem interface at the LSST Data Facility. Refers specifically to IBM's General Parallel File System; also known as IBM Spectrum Scale,DM QA,DMTN-085,GBFS,G
 git,"A distributed revision control system, often used for software source code. See the Git User Manual for details. Not developed by LSST DM",DM,https://git-scm.com/,,G
 git-tag,The tag assigned to a particular SHA-1 identifier which associates the git source with an eups-tag of the build product,DM,https://git-scm.com/,git,G
 Global Interlock System,"A safety system that makes mechanisms or functions of the observatory system mutually dependent in order to prevent equipment from harming people or equipment by preventing  one element from changing state due to the state of another element, and vice versa",TS,,,G
@@ -1711,7 +1717,7 @@ provenance,"Information about how LSST images, Sources, and Objects were created
 PSF match,"To convolve an image to obtain a desired point spread function (PSF), typically in order to match it to another image. For example, Template Images are PSF matched to the new image before image subtraction when Difference Images are created",DM,LDM-151,PSFMatch,G
 QAWG,QA Strategy Working Group,DM QA,DMTN-085,,G
 Qserv,"LSST's distributed parallel database. This database system is used for collecting, storing, and serving LSST Data Release Catalogs and Project metadata, and is part of the Software Stack",LSST DM,LDM-135,QSERV,G
-Quality Assurance,"All activities, deliverables, services, documents, procedures or artifacts which are designed to ensure the quality of DM deliverables. This may include QC systems, in so far as they are covered in the charge described in LDM-622. Note that contrasts with the LDM-522 definition of “QA” as “Quality Analysis”, a manual process which occurs only during commissioning and operations. See also: Quality Control",DM QA,"DMTN-085, LDM-622",QA,G
+Quality Assurance,"All activities, deliverables, services, documents, procedures or artifacts which are designed to ensure the quality of DM deliverables. This may include QC systems, in so far as they are covered in the charge described in LDM-622. Note that contrasts with the LDM-522 definition of ‚'QA' as ‚'Quality Analysis', a manual process which occurs only during commissioning and operations. See also: Quality Control",DM QA,"DMTN-085, LDM-622",QA,G
 Quality Control,"Services and processes which are aimed at measuring and monitoring a system to verify and characterize its performance (as in LDM-522). Quality Control systems run autonomously, only notifying people when an anomaly has been detected. See also Quality Assurance",DM QA,"DMTN-085, LDM-522",QC,G
 Raft,"The sensors in the LSST camera are packaged into replaceable electronic assemblies, called rafts, consisting of 9 butted sensors (CCDs) in a 3x3 mosaic. Each raft is a replaceable unit in the LSST camera. There are 21 science rafts in the camera plus 4 additional corner rafts with specialized, non-science sensors, making for a total of 189 CCDs per focal plane image. The 21 science rafts are numbered from ""0,1"" through ""0,3"", ""1,0"" through ""3,4"", and ""4,1"" through ""4,3"". (In other words, the 25 combinations from ""0,0"" through ""4,4"" minus the four corners which are non-science.)",CAM,,,G
 Raft Data Service,"The software that receives the metadata in each readout RCE prior to receiving the pixel data from the REB. These metadata are queued, and if the REB doesn't produce data to match, the metadata will be attached to the wrong pixel data when some does arrive. Flushing RDS is shorthand for clearing this queue of metadata.",CAM,ref: Gregg Thayer,,G
@@ -1772,7 +1778,7 @@ Single Visit Image,See CalExp,DM,,"SVI, CalExp",G
 Singularity,A software containerization system; an alternative to Docker; \url{https://sylabs.io},DM,,,G
 Site Manager,"The LSST-delegated representative at the Cerro Pach\'{o}n, Chile Summit site who is authorized to approve and accept work, provide technical liaison, monitor safety, and interpret LSST plans and specifications on behalf of AURA/LSST",Adm,,,G
 sky map,"A sky tessellation for LSST. The Stack includes software to define a geometric mapping from the representation of World Coordinates in input images to the LSST sky map. This tessellation is comprised of individual tracts which are, in turn, comprised of patches",DM,LDM-151,,G
-SLAC National Accelerator Laboratory,"A national laboratory funded by the US Department of Energy (DOE); SLAC leads a consortium of DOE laboratories that has assumed responsibility for providing the LSST camera. Although the Camera project manages its own schedule and budget, including contingency, the Camera team’s schedule and requirements are integrated with the larger Project.  The camera effort is accountable to the LSSTPO",TS,,,G
+SLAC National Accelerator Laboratory,"A national laboratory funded by the US Department of Energy (DOE); SLAC leads a consortium of DOE laboratories that has assumed responsibility for providing the LSST camera. Although the Camera project manages its own schedule and budget, including contingency, the Camera team's schedule and requirements are integrated with the larger Project.  The camera effort is accountable to the LSSTPO",TS,,,G
 Sloan Digital Sky Survey,"is a digital survey of roughly 19,000 square degrees of sky around the north Galactic pole, plus a ~300 square degree stripe along the celestial equator",Sci,,,G
 Snap,One 15 second exposure within a Standard Visit in the LSST cadence,DM,,,G
 software,The programs and other operating information used by a computer,DM,,,G

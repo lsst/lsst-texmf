@@ -27,6 +27,7 @@ import csv
 import os.path
 import re
 import sys
+import traceback
 import warnings
 from collections.abc import Iterable
 from typing import IO
@@ -835,7 +836,7 @@ def dump_gls(filename: str, out_file: str) -> int:
     translate = load_translation("es", filename)
     gfile = "htmlglossary.csv"
     fullgloss = "fullgls.tex"
-    with open(filename) as fd:
+    with open(filename, encoding="utf-8") as fd:
         reader = csv.reader(fd, delimiter=",", quotechar='"')
         with open(out_file, "w") as ofd, open(gfile, "w") as ogfile, open(fullgloss, "w") as fg:
             print(
@@ -845,8 +846,8 @@ def dump_gls(filename: str, out_file: str) -> int:
             """,
                 file=ofd,
             )
-            for row in reader:
-                try:
+            try:
+                for row in reader:
                     lc = lc + 1
                     if len(row) < 6:  # now strict no blanks and 6 cols
                         raise ValueError("Too few columns.")
@@ -891,9 +892,9 @@ def dump_gls(filename: str, out_file: str) -> int:
                     else:
                         print(f"Missing translation for: {acr}:{defn}")
                     print(sep.join([acr, defn, tags]) + end, file=ofd)
-                except BaseException as ex:
-                    print(f"Error reading {filename} on line {lc} - {row}")
-                    raise ex
+            except BaseException:
+                print(f"Error reading {filename} on line {lc} - {row}")
+                raise
             print(r"\end{longtable}", file=ofd)
     return lc
 
@@ -991,6 +992,7 @@ if __name__ == "__main__":
         except BaseException as ex:
             status = 1
             print(f"Exception:{ex}")
+            traceback.print_exc()
         exit(status)
 
     if doGlossary or (not args.update):
