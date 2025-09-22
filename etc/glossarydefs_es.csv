@@ -1,4 +1,4 @@
-English,Español,Subsystem Tags
+﻿English,Español,Subsystem Tags
 1D,Unidimensional,
 2D,Bidimensional,
 2MASS,Two-Micron All Sky Survey [Reconocimiento en dos micrómetros de todo el cielo],
@@ -24,7 +24,7 @@ ACP,Plan de control de acceso,
 ACWP,Costo real de trabajo realizado,
 AD,Director asociado,
 ADAM,"Descubrimiento, análisis y mapeo de asteroides",Sci
-Adam,"Estimación adaptativa de momentos",DM
+Adam,Estimación adaptativa de momentos,DM
 ADASS,Software y Sistemas de Análisis de Datos Astronómicos,
 ADC,corrector de dispersión atmosférica,TS
 ADC,Conversor analógico a digital,Gen
@@ -38,16 +38,16 @@ AES,Advanced Encryption Standard [Estándar de cifrado por bloques],
 AGN,Núcleos activos de galaxia,
 AGU,Unión Estadounidense de Geofísica,
 AI,Inteligencia artificial,
+AI&T,"Ensamblaje, integración y prueba",
 AIC,Criterio de información de Akaike,
 AIP,Instituto Estadounidense de Física,
 AISES,Sociedad Indígeno-Estadounidense de Ciencia e Ingeniería,
 AIT,"Ensamblaje, integración y prueba",
-AI&T,"Ensamblaje, integración y prueba",
 AIV,"Ensamblaje, integración y verificación",
 AJ,The Astronomical Journal [La Revista de Astronomía],
 AJO,Trabajos académicos en línea,
-ALeRCE,Aprendizaje automático para la clasificación rápida de eventos,
 ALD,Director asociado de laboratorio,
+ALeRCE,Aprendizaje automático para la clasificación rápida de eventos,
 ALICE,Experimento de colisiones de iones pesados,
 ALMA,Atacama Large Millimeter Array [Gran Conjunto Milimétrico/submilimétrico de Atacama](ESO),
 AMB,Pequeño Autobus de la Tarde,
@@ -56,6 +56,7 @@ AMCR,Consejo de Administración de AURA para el Observatorio Rubin,
 AMD,"Advanced Micro Devices, Inc.",
 AMPATH,"Americas Pathway [Punto de conexión de investigación de alto rendimiento en Miami, Florida.]",
 AMPEL,"Gestión de alertas, fotometría y evaluación de curvas de luz",
+AMU,Unidad de masa atómica ,CAM
 ANSI,Instituto Estadounidense de Normas Nacionales,
 ANTARES,Sistema de análisis temporal y respuesta a eventos de Arizona-NOIRLab,
 AOB,Cualquier otro tema,
@@ -63,12 +64,12 @@ AOC, Consejo de Supervisión de AURA,
 AOS,Sistema de óptica activa,
 AOSS,Servicios de soporte del Observatorio AURA,
 AP,Producción de alertas,
-APN,nombre del punto de acceso,
-APL,Licencia pública Apache,
-APT,Herramienta para propuestas de astrónomos,
 APDB,Base de datos de producción de alertas,
 API,Interfaz de programación de aplicaciones,
+APL,Licencia pública Apache,
+APN,nombre del punto de acceso,
 APS,Sociedad Estadounidense de Física,
+APT,Herramienta para propuestas de astrónomos,
 ARAS,Círculo Astronómico para el Acceso a la Espectroscopia,
 ARC,Advanced Resource Connector [middleware],
 ARP,Protocolo de resolución de direcciones,
@@ -77,6 +78,7 @@ ASAS-SN,All-Sky Automated Survey for Supernovae [Sondeo automatizado de búsqued
 ASCII,Código Estándar Estadounidense para el Intercambio de Información,
 ASDC,Centro de Datos Científicos de la ASI (Italia),
 ASI,Agencia Espacial Italiana,
+ASIC,Circuito integrado específico para una aplicación,CAM
 ASP,Sociedad Astronómica del Pacífico,
 ASPIC,Circuito integrado de procesamiento de señales analógicas,
 AST,División de Ciencias Astronómicas de la Fundación Nacional de Ciencias de los EE. UU.,
@@ -106,8 +108,8 @@ BCR,Solicitud de cambio de línea de base,
 BCWP,Costo presupuestado de trabajo realizado,
 BCWS,Costo presupuestado de trabajo programado,
 BDC,Centro de datos de la base,
-BEE,electrónica de back-end (back-end: arquitectura interna),
 BDFL,Dictador benévolo vitalicio,
+BEE,electrónica de back-end (back-end: arquitectura interna),
 BFD,Detección de reenvío bidireccional,DM
 BGP,Border Gateway Protocol [protocolo de comunicaciones],
 BH,Agujero negro,
@@ -125,17 +127,22 @@ BPM,Mapa de píxeles defectuoso,DM
 BPS,Servicio de producción en lotes,
 Bps,Bytes por segundo,
 bps,bit(s) por segundo,
+BRDF,Función de distribución de reflectancia bidireccional,CAM
 BSR,Revisión de sistemas empresariales,
 BTS,Puesto de pruebas base (La Serena),
 BTU,Unidad térmica británica,
 CA,Cuenta de control (o costo),
 CAA,Comité de Astronomía y Astrofísica (NSF),
+CACS,Sistema de calibración/control auxiliar,CAM
+CAD,Diseño asistido por ordenador,CAM
 CADC,Centro Canadiense de Datos Astronómicos,
 CALTECH,Instituto Tecnológico de California,
 CAM,CÁMara,DM
 CAM,Gerente de Cuentas de Control (o Costo),Gen
+CAN,Red de área de controlador,CAM
 CANFAR,Red Canadiense Avanzada para la Investigación Astronómica,
 CAOM,Modelo común de observación de archivos [Common Archive Observation Model: modelo de datos],
+CAR,Comando/Acción/Respuesta,CAM
 CARMENES,Calar Alto high-Resolution search for M dwarfs with Exoearths with Near-infrared and optical Echelle Spectrographs [Búsqueda de alta resolución en Calar Alto de enanas M con exotierras con espectrógrafos Echelle ópticos y del infrarrojo cercano],
 CARTA,Herramienta de análisis de cubos y representación para astronomía,
 CAS,Servicios administrativos centrales,
@@ -144,18 +151,19 @@ CASNET,Base de datos de informes financieros de AURA,
 CB,Línea de base de configuración,
 CBP,Proyector de haces colimados,
 CC,Control de cambios,
-CCW,Envoltura de cable de cámara,
 CC-IN2P3,Centro de Cálculo del IN2P3 (Instituto Nacional Francés de Física Nuclear y de Partículas),
 CCB,Junta de control de cambios,
 CCD,Dispositivo de carga acoplada,
 CCOB,Banco óptico para calibración de cámaras,
 CCP,Proceso de control de cambios,
 CCS,Sistema de control de cámaras,
+CCW,Envoltura de cable de cámara,
+CD,Diseño crítico,CAM
+CD-4,Decisión crítica 4,
 CDF,Función de distribución acumulada,
 CDM,(Lambda) materia oscura fría,
 CDMX,Ciudad de México,
 CDN,Red de distribución de contenidos,
-CD-4,Decisión crítica 4,
 CDS,Centro de Datos Astronómicos de Estrasburgo,
 CE,Interacción de comunicaciones,OPS
 CE,Elemento de computación,DM
@@ -166,13 +174,16 @@ CEPP,Plan de prevención de la exposición al COVID-19,
 CERN,Organización Europea para la Investigación Nuclear,
 CET,Equipo de interacción comunitaria,
 CfA,Centro de Astrofísica (Harvard-Smithsonian),
+CFC,Compuesto de fibra de carbono,CAM
 CFD,mecánica de fluidos computacional,
+CFHEX,Intercambiador de calor de flujo inverso,CAM
 CFHT,Telescopio Canadá-Francia-Hawái,
 CFHT-LS,Investigación de imágenes históricas con 5 bandas de paso realizada en el Telescopio Canadá-Francia-Hawái de 2003 a 2008,
-CFO,Director Financiero,
 CFHTLS,Investigación histórica del telescopio Canadá-Francia-Hawái,
+CFO,Director Financiero,
 CFR,Código de Regulaciones Federales,
 CFS,sistema de archivos comunitario,
+CGH,Holograma generado por ordenador,CAM
 CHEP,Computación en Física Nuclear y de Altas Energías,
 CHIME,Experimento Canadiense de Mapeo de la Intensidad del Hidrógeno,
 CI,Integración continua,DM
@@ -182,6 +193,7 @@ CIGALE,Código de investigación de la emisión de galaxias,
 CIS,Soporte de infraestructura informática,
 CL,Lenguaje de comandos,
 CLI,Interfaz de línea de comandos,
+CLK,Reloj,CAM
 CLO,community.lsst.org - se desaconseja el uso de este acrónimo. El término que debe utilizarse en los documentos oficiales es «Foro Comunitario» o «Foro Comunitario Vera C. Rubin».,
 CLP,Peso chileno,
 CLT,Hora estándar de Chile (UTC -4),
@@ -194,6 +206,7 @@ CMOS,Semiconductor complementario de óxido metálico,
 CMR,Informe métrico de caracterización,
 CMS,Solenoide compacto de muones,Sci
 CMS,Sistema centralizado de monitoreo,IT DM
+CMS,Servicio de gestión de cámaras,CAM
 CNN,Red neuronal convolucional,
 CNP,Procesos neuronales condicionales,
 CNPG,Postgres nativo de la nube,
@@ -210,9 +223,11 @@ COTS,Comercial listo para usar,
 COVID,Enfermedad por coronavirus,
 COVID19,Enfermedad por coronavirus 2019,
 CP,Precios de catálogo,
+CPDS,Sistema de distribución de energía de la cámara,CAM
 CPI,Índice de desempeño del costo,
 CPP,Producción de Productos para Calibración,
 CPR,Resucitación cardiopulmonar,
+CPS,Sistema de protección de la cámara (confirmado en el informe),CAM
 CPU,Unidad central de procesamiento,
 CQA,Administrador de Cumplimiento y Calidad,
 CR,Solicitud de cambio,LSST DM
@@ -220,8 +235,12 @@ CR,Radiación cósmica,Sci
 CRAC,aire acondicionado para sala de computadores,
 CRAH,tratamiento del aire para sala de computadores,
 CRB,►cluster reference boards◄,
+CREC,Caja electrónica Corner Raft,CAM
 CRIC,Catálogo de información de recursos de computación,
 CRIO,CompactRIO National Instruments [Controlador],
+CRSA,Conjunto de sensores Corner Raft,CAM
+CRT,Torre Corner Raft,CAM
+CRTM,Módulo de torre Corner Raft,CAM
 CRTS,Catalina Real-Time Transient Survey [Investigación de la Estación Catalina del Observatorio Steward sobre Transitorios en Tiempo Real],
 CRTS3,Catalina Real-Time Transient Survey [Investigación de la Estación Catalina del Observatorio Steward sobre Transitorios en Tiempo Real ],
 CS,ciencia ciudadana,
@@ -231,6 +250,7 @@ CSDC,Centro de Datos de Ciencia Comunitaria,
 CSM,Material circunestelar,
 CSV,Valores separados por coma,
 CTA,Red de Telescopios Cherenkov  \url{https://www.cta-observatory.org/},
+CTE,Eficiencia de transferencia de carga,CAM
 CTI,Ineficiencia de transferencia de carga,CAM
 CTIO,Observatorio InterEstadounidense Cerro Tololo,
 CTN,Nota técnica de Cámera,CAM
@@ -254,12 +274,14 @@ DBBBM,Gestor de búferes de la red troncal de datos,
 DBMS,Sistema de gestión de bases de datos,
 DC,Centro de datos,
 DC2,Desafío de datos 2 (DESC) [modelo de simulación de relevamiento del cielo],
+DCBS,Reloj digital y fuente de alimentación de polarización,CAM
+DCI,Interfaz de control DAQ ,CAM
 DCM,Gerente de Comunicaciones de la Junta Directiva,
 DCR,Refracción cromática diferencial,
 DCT,Telescopio Discovery Channel (Observatorio Lowell),
 DDF,Campo de perforación profunda,
-DDMPM,Subgerente de Proyecto de Gestión de Datos,
 DDM,Gestión de datos distribuidos,
+DDMPM,Subgerente de Proyecto de Gestión de Datos,
 DDN,Red de distribución de datos,
 DDOS,Denegación de servicio distribuido,
 DDP,"Productos de datos derivados (por ej., Rubin/Euclid)",
@@ -267,12 +289,12 @@ DDS,Sistema de distribución de datos,
 DE,energía oscura,Sci
 DE-AC02,Prefijo del número de contrato del Departamento de Energía,Gen
 DEC,Declinación,
-DECam,Cámara de energía oscura,
 DECaLS,Dark Energy Camera Legacy Survey [Estudio histórico con cámara de energía oscura],
+DECam,Cámara de energía oscura,
 DECAT,Alianza DECam para transitorios,
 DEEP,Deep Extragalactic Evolutionary Probe [proyecto de exploración de galaxias distantes],
-DELVE,DECam Local Volume Exploration Survey [Exploración de volumen local con DECam],
 DEI,"Diversidad, equidad e inclusión",
+DELVE,DECam Local Volume Exploration Survey [Exploración de volumen local con DECam],
 DES,Dark Energy Survey [Estudio de la energía oscura],
 DESC,Colaboración Científica en Energía Oscura,
 DESI,Instrumento espectroscópico de energía oscura,
@@ -323,23 +345,28 @@ DPAC,Consorcio de Procesamiento y Análisis de Datos (Gaia),
 DPC,Comité de Políticas de Datos,
 DPDD,Documento de definición de productos de datos,
 DPLT,Equipo directivo de DP,
+DPM,módulo de procesamiento de datos,CAM
 DPP,Procesamiento de productos de datos,
 DPRPT,Herramienta para planificación de vista previa y divulgación de datos,
 DQ,calidad de los datos,
 DQA,aseguramiento de la calidad de los datos,
 DR,Divulgación de datos,
 DR1,Divulgación de datos 1,
-DR2,Divulgación de datos 2,
-DR3,Divulgación de datos 3,
 DR10,Divulgación de datos 10,
 DR11,Divulgación de datos 11,
+DR2,Divulgación de datos 2,
+DR3,Divulgación de datos 3,
 DRAGONS,Reducción de datos para astronomía del Observatorio Gemini Norte y Sur,
 DRB,Junta de Divulgación de Datos,
 DREAM,Monitor Atmosférico Holandés Mejorado de Rubin,
+DREB,Placa electrónica de lectura secundaria,CAM
+DRI,Interfaz DAQ/Raft,CAM
 DRP,Producción para Divulgación de Datos,
 DRW,Camino aleatorio amortiguado,
 DS9,Deep Space 9 (aplicación específica para visualización de datos astronómicos; SAOImage),
 DSFP,Programa de Becas en Ciencia de Datos de la LSST-DA,
+DSI,Integrador de doble pendiente ,CAM
+DTM,módulo de transporte de datos,CAM
 DTN,Nodo de transferencia de datos,
 DUNE,Experimento de neutrinos subterráneos profundos,
 Duo,Sistema de autenticación de 2 factores,
@@ -350,8 +377,8 @@ EAC,Estimado hasta la conclusión,
 EAS,Sistema de conciencia ambiental,
 EB,Exabyte,
 EC2,Elastic Compute Cloud [plataforma de cómputo en nube de Amazon],
-EDFS,Campo profundo Euclid Sur,
 EDC,Centro de datos de EPO,
+EDFS,Campo profundo Euclid Sur,
 EDR,divulgación de datos preliminares,
 EE,estimación de ingeniería,
 EEPROM,Memoria de solo lectura programable-borrable en forma electrónica,
@@ -364,6 +391,7 @@ ELM,Masa extremadamente baja (Exploración),
 ELT,Telescopio Extremadamente Grande,
 ELTP,Programa Telescopio Extremadamente Grande,
 EM,Electromagnético,
+EMI,Interferencia electromagnética,CAM
 EO,Electroóptico,
 EOL,Fin de la vida,
 EOS,Servicios de Operaciones de Ingeniería,
@@ -393,6 +421,7 @@ EUPS,Extended Unix Product System [herramienta para gestión de paquetes de soft
 eV,electrón voltio,
 EVM,Gestión del valor ganado,
 EVMS,Sistema de gestión del valor ganado,
+EXCH,Subsistema de intercambio de filtros,CAM
 EXIST,Energetic X-ray Imaging Survey Telescope [Telescopio para obtención de imágenes por rayos X energéticos],
 F2F,"""Cara a cara"" (reunión)",
 FACTS,Sistema centralizado de seguimiento del acceso de extranjeros,DM
@@ -403,17 +432,19 @@ FAR,Regulación Federal de Adquisiciones,
 FATC,Condiciones financieras y administrativas,
 FBOT,Transitorio óptico azul rápido,
 FBOTs,Transitorios ópticos azules rápidos,
-FCU,unidad fan coil,
+FBS,Planificador basado en características,
 FCS,sistema de control de filtros,
+FCU,unidad fan coil,
 FDP,producto de datos federados,
 FDQN,Nombre de dominio totalmente cualificado,DM
 FDR,Revisión final del diseño,
-FBS,Planificador basado en características,
 FEA,Análisis de elementos finitos,
 FEC,Jaula frontal,
+FED,Controlador frontal ,CAM
 FEE,Electrónica frontal,
 FELTs,Transitorios luminosos de evolución rápida,
 FES,Sistema de intercambio de filtros,CAM
+FET,Transistor de efecto de campo,CAM
 FFRDC,Centro de Investigación y Desarrollo Financiado con Fondos Federales,
 FFT,Transformada rápida de Fourier,
 FGCM,Método global directo de calibración,
@@ -436,6 +467,7 @@ FOIA,Ley sobre Libertad de Información,
 FoM,Cifra de mérito,
 FoV,Campo de visión (también expresado como FOV),
 FOV,campo de visión,
+FP,Plano focal,CAM
 FPA,Matriz de plano focal,
 FPD,Directorio de Física Fundamental,
 FPGA,Matriz de puertas programables en campo,
@@ -444,6 +476,7 @@ FPSL,Límite de sensibilidad en fotometría forzada,
 FRACAS,"Sistema de notificación, análisis y acciones correctivas de fallas",
 FrDF,Centro francés de datos,
 FRDF,Centro francés de datos,
+FRED,Software de simulación óptica,CAM
 FS,Sistema de archivos,
 FSAAS,Sistema de archivos como servicio,
 FTE,Equivalente a tiempo completo,
@@ -465,6 +498,7 @@ GALAH,GALactic Archaeology with HERMES [Estudio de arqueología galáctica con e
 GALEX,Galaxy Evolution Explorer [Explorador de la evolución de galaxias],
 GAMA,Galaxy And Mass Assembly (estudio [de formación y evolución de galaxias]),
 GAR,Registro de archivos de Google,
+GAS,Subsistema de matriz guía,CAM
 GAVO,Observatorio Astronómico Virtual Alemán,
 GB,Gigabyte,
 Gb,Gigabit,
@@ -475,7 +509,10 @@ GCE,Google Compute Engine [componente de infraestructura],
 GCN,Red de Coordenadas Generales (anteriormente Red de coordenadas de brotes de rayos gamma),
 GCP,Plataforma en la nube de Google [plataforma de desarrollo web de Google],
 GCS,Sistema de controles genéricos,
-GDS,Sistema de datos guía,
+GDR,guía,CAM
+GDS,Sistema de datos guía,CAM
+GEANT4,Kit de herramientas de simulación de partículas ,CAM
+GEIA,Asociación Gubernamental de Electrónica e Información,CAM
 GEO,Órbita geosincrónica,
 GFLOP,Gigaflop,
 GFLOPS,Gigaflops por segundo,
@@ -498,14 +535,17 @@ GPU,Unidad de procesamiento gráfico,
 GR,Relatividad general,
 GRB,Estallido de rayos gamma,
 GRE,protocolo de encapsulación para enrutamiento,
+GREB,placa electrónica de lectura del guía,CAM
 GSE,Gaia Sausage-Enceladus [«Salchicha Gaia»],
 GST,Tiempo sidéreo de Greenwich,
 GUI,Interfaz gráfica de usuario,
 GW,Onda gravitacional,
 GZ,Galaxy Zoo [proyecto de clasificación de galaxias],
+HAR,Informe de análisis de riesgos,CAM
 HB,Rama horizontal,
 HBCU,Colegios universitarios y universidades históricamente negros,
 HBS,Soporte de cojinetes hidráulicos,
+HCU,Unidad de control de hardware,CAM
 HD,datos históricos,
 HDD, Unidad de disco duro,
 HDU,Header Data Unit [componente de la estructura de archivos FITS],
@@ -514,13 +554,16 @@ HEASARC,Archivo de Datos sobre Fenómenos Energéticos de la NASA,
 HELP, Herschel Extragalactic Legacy Project [Proyecto Herschel histórico extragaláctico],
 HEP, Física de altas energías,
 HEP-CEC,Centro de Física de Altas Energías para la Excelencia Computacional (Argonne),
+HEPA,Aire particulado de alta eficiencia,CAM
 HEPAP,Panel Asesor de HEP,
 HERMES,espectrógrafo alimentado por fibra de alta resolución para el telescopio de 1.2 m Mercator,
 HI,Yoduro de hidrógeno,
 HIPS,Hierarchical Progressive Survey [método de visualización de imágenes astronómicas],
 HITS,Sondeo de transitorios de alta cadencia,
+HM,Monitor de humedad,CAM
 HPC,Computación de alto rendimiento,
 HPO,Director de Operaciones de Programa,
+HPU,Unidad de protección de hardware,CAM
 HQ,Sede central,
 HR,Recursos Humanos,
 HSC,Hyper Suprime-Cam [cámara del telescopio Subaru],
@@ -531,23 +574,27 @@ HST,Telescopio espacial Hubble,
 HTC,Computación de alta productividad,
 HTM,Malla triangular jerárquica,
 HTML,HyperText Markup Language [lenguaje de marcado para páginas web],
+HTP,Placa de transferencia de calor,CAM
 HTTP,Protocolo de transferencia de hipertexto,
 HV,alto voltaje,
 HVAC,"Calefacción, ventilación y aire acondicionado",
 HW,Hardware,
+HZ,Hertz,CAM
 I&T,Integración y prueba,
-IaC,Infraestructura como código,
 IA,Identificación y autenticación,IT
+IaC,Infraestructura como código,
 IAM,Gestión de identidad y acceso,
 IaS,Infraestructura como servicio,
 IAU,Unión Astronómica Internacional,
 IBM,International Business Machines,
+IC,Circuito integrado,CAM
 ICBS,Comunicaciones internacionales y sitio base,
-ICRS,Marco de Referencia Celeste Internacional,
 ICD,Documento de control de interfaces,
 ICoD,Documento de cumplimiento de interfaces,
+ICRS,Marco de Referencia Celeste Internacional,
 IDA,Artefacto de diseño de interfaz,
 IDAC,Centro independiente de acceso a datos,
+IDD,Documento de diseño de interfaz,CAM
 IDF,Centro interino de datos,
 IDL,Interactive Data Language [lenguaje de programación],
 IDS,Sistema de detección de intrusos,
@@ -555,35 +602,41 @@ IGWN,Red internacional de ondas gravitacionales,
 IIP,ingestión y procesamiento de imágenes,
 ILC,Controlador de bucle interno,
 IMBH,Agujero negro de masa intermedia,
+IMC,Controlador de gestión integrada,CAM
 IMF,Función de masa inicial,
-IMS,Cronograma maestro integrado,
+IMS,Cronograma maestro integrado,PSE
+IMS,Servicio de gestión de imágenes,CAM
 ImSim,Simulación de imágenes,
-INAF,Instituto Nacional de Astrofísica [Italia],
 IN2P3,Instituto Nacional de Física Nuclear y Física de Partículas [Francia],
+INAF,Instituto Nacional de Astrofísica [Italia],
+IO,Entrada/salida,CAM
 IoA,Instituto de Astronomía (Cambridge; también expresado como IOA),
 IP,Protocolo de Internet,
 IPA,"FreeIPA - Identidad, política y auditoría",
-IPC,Coordinador del programa de contribuciones en especie,
 IPAC,Ya no es un acrónimo; centro de ciencia y datos en Caltech,
+IPC,Coordinador del programa de contribuciones en especie,
 IPEDS,Sistema Integrado de Datos de Educación Postsecundaria,
+IPMI,Interfaz de gestión inteligente de plataformas,CAM
 IPS,Cronograma integrado del proyecto,
 IPsec,Internet Protocol Security [conjunto de protocolos para asegurar comunicaciones de IP],
 IR,infrarrojo,
+IR2,región de interacción 2 (en donde LSSTCam fue construída),
 IRAF,Centro de reducción y análisis de imágenes,
 IRIS,Infraestructura electrónica para la Investigación y la Innovación para el STFC,
 IRNC,Conexiones de Redes Internacionales de Investigación,
 IRSA,Archivo de Ciencias Infrarrojas,
 IRU, Derecho ►irrevocable◄ de uso,
-IR2,región de interacción 2 (en donde LSSTCam fue construída),
 IS,Científico de interfaz o sistema de integración,
 ISD,Documento de soporte de interfaz,
 ISM,Medio interestelar,
 ISO,Oficial de seguridad de la información,LSST
 ISO,Organización Internacional de Normalización,Gen
 ISR,Eliminación de señal de instrumentos,
+ISW,Efecto Sachs-Wolfe integrado,CAM
 IT,Tecnología de la información,
 ITAR,Reglamento sobre tráfico internacional de armas,
 ITC,Centro de tecnología de la información,
+ITEM,Modelo integrado de prueba y evaluación,CAM
 ITIL,Biblioteca de Infraestructura de Tecnología de la Información,
 ITO,Operaciones de IT,
 ITSC,Comité de Servicios de Tecnología de la Información,
@@ -591,26 +644,27 @@ ITTN,Nota técnica de IT,
 IUSE,Improving Undergraduate STEM Education [programa de promoción de la educación en STEM para estudiantes de grado],
 IVOA,Alianza Internacional de Observatorios Virtuales,
 JBOD,"""Sólo un montón de discos"" [sistema de almacenamiento en múltiples discos duros]",
-JEDI,Interfaz de definición y ejecución de trabajo,
 JD,Fecha juliana,
 JDBC,Java DataBase Connectivity [API],
 JDR,Revisión conjunta de directores,
+JEDI,Interfaz de definición y ejecución de trabajo,
 JHU,Universidad Johns Hopkins,
 JIT,Justo a tiempo,
+JMS,Servicio de mensajes Java,CAM
 JOG,Grupo Supervisor Conjunto,
 JOR,Revisión conjunta de estado de operaciones,
 JPEG,Grupo Conjunto de Expertos en Fotografía,
 JPG,Grupo Conjunto de Expertos en Fotografía,
 JPL,Laboratorio de Propulsión a Chorro (Efemérides de desarrollo),
 JRE,Java Runtime Environment [Entorno de ejecución en Java],
-JSON,JavaScript Object Notation [formato de texto para intercambio de datos],
+JSON,formato de texto para intercambio de datos,
 JSR,Revisión conjunta de estado,
 JTM,Reunión técnica conjunta,
 JVM,Máquina virtual Java,
 JWST,Telescopio espacial James Webb (antes conocido como NGST),
 JWT,JSON Web Token [estándar abierto para creación de tokens],
-KASI,Instituto Coreano de Astronomía y Ciencias del Espacio,
 K8S,Sistema de aprovisionamiento Kubernetes,
+KASI,Instituto Coreano de Astronomía y Ciencias del Espacio,
 KB,Kilobyte,
 KBO,Objeto del Cinturón de Kuiper,
 kbps,kilobits por segundo,
@@ -642,8 +696,8 @@ LCO,Observatorios Las Cumbres,
 LCR,Solicitud de cambio en LSST,
 LCURM,Comité de enlace sobre minorías subrepresentadas del AIP,
 LDAP,Protocolo ligero de acceso a directorios,
+LDC,Controlador de dispositivo local ,CAM
 LDF,Centro de datos de LSST,
-LMC,Gran nube de Magallanes,
 LDM,Gestión de datos de LSST (Código identificador de documento),
 LDO,Operaciones de documentos de LSST (Código identificador de documento),
 LED,Diodo emisor de luz,
@@ -658,6 +712,8 @@ LILA,Enlaces de interconexión de Latinoamérica,
 LINCC,Red Interdisciplinaria para Colaboración y Computación de LSST,
 LISA,Antena espacial de interferometría láser,
 LLNL,Laboratorio Nacional Lawrence Livermore,
+LMA,Laboratorio de Materiales Avanzados,CAM
+LMC,Gran nube de Magallanes,
 LOE,Nivel de esfuerzo,
 LOP,Plan de operaciones de LSST,
 LOTO,"Bloqueo y etiquetado [Lock Out, Tag Out]",
@@ -665,6 +721,7 @@ LOVE,Entorno de Operadores y Visualización de LSST,
 LOY,Año de operaciones de LSST,
 LPGL,Licencia Pública General Reducida de GNU,
 LPM,Gestión del proyecto de LSST (Código identificador de documento),
+LPNHE,Laboratorio de Física Nuclear y Altas Energías,CAM
 LRG,Galaxias rojas luminosas,
 LSB,Bajo brillo superficial,Sci
 LSB,Base La Serena,PMO
@@ -673,14 +730,15 @@ LSP,Plataforma científica de LSST (actualmente Plataforma científica de Rubin)
 LSR,Requisitos del sistema de LSST; LSE-29,
 LSS,Estructura de gran escala,
 LSST,Investigación del Espacio-Tiempo como Legado para la Posteridad (antes Gran Telescopio para Rastreos Sinópticos),
-LSSTDA,Discovery Alliance LSST,
 LSST-DA,Discovery Alliance LSST,
+LSSTDA,Discovery Alliance LSST,
 LSSTPO,Oficina del Proyecto LSST,
 LTS,Telescopio y sitio LSST (Código identificador de documento),
 LUT,Tabla de consulta,
 LV,Volumen local,
+LVDS,Señalización diferencial de bajo voltaje,CAM
 LVV,Verificación y validación de LSST,
-LWS,"Pantalla protectora contra el viento y luz ",TS
+LWS,Pantalla protectora contra el viento y luz ,TS
 LZ,LUX-ZEPLIN (Misión de detección de materia oscura),
 M1,espejo primario,
 M1M3,Espejo primario Espejo terciario,
@@ -689,8 +747,8 @@ M3,Espejo terciario,
 MA,Mantenimiento,IT
 MAC,Control de acceso a medios,
 MACHO,Objeto astrofísico masivo de halo compacto,
-MASCARA,Cámara multicéntrica para cielo completo,
 MAF,Marco de análisis de métricas,
+MASCARA,Cámara multicéntrica para cielo completo,
 MASS,Sensor de centelleo multiapertura,
 MAST,Archivo Mikulski para telescopios espaciales,
 MB,Megabyte,
@@ -720,6 +778,7 @@ MOA,Memorándum de acuerdo,
 MOC,Cobertura multidimensional https://ivoa.net/documents/MOC,
 MODTRAN,Modelo de transmisión de resolución moderada,
 MOF,Ajuste multiobjeto y multibanda,
+MOLFLOW,Software de simulación de vacío ,CAM
 MOOC,Cursos en línea masivos y abiertos,
 MOPS,Sistema de procesamiento de objetos en movimiento (obsoleto; ver SSP),
 MOSFET,Transistor de efecto de campo metal-óxido-semiconductor,
@@ -729,28 +788,31 @@ MP,Protección de los medios,IT
 MPA,Instituto Max Planck de Astrofísica,
 MPC,Centro de Planetas Menores,
 MPCORB,Base de datos de órbitas centrales de planetas menores,
+MPM,Módulo de protección maestro,CAM
 MPO,Memorándum de orden de compra,
 MPP,Procesamiento masivamente paralelo,
 MPS,Directorio de Ciencias Matemáticas y Físicas de la NSF,
 MPS/AST,División de Ciencias Astronómicas del Directorio de Ciencias Matemáticas y Físicas de la NSF,
 MREFC,Equipos principales de investigación y construcción de instalaciones,
 MREN,Red Montenegrina de Investigación y Educación,
+MS,Mega muestra,CAM
 MSB,Bit más significativo,
 MSE,Explorador espectroscópico de Maunakea,
 MSO,Observatorios de escala media,
 MT,Telescopio principal,
 MTAOS,Sistema de óptica activa de Telescopio principal,
-MTCamera,cámara del telescopio principal,
-MTPtg,apuntado del telescopio principal,
-MTQueue,cola del telescopio principal,
-MTU,Unidad máxima de transmisión,
 MTBF,Tiempo medio entre fallos,
+MTCamera,cámara del telescopio principal,
 MTDC,Costos directos totales modificados,
-MTMount,montura del telescopio principal,
 MTM1M3,M1M3 del telescopio principal,
 MTM2,Espejo secundario del telescopio principal,
+MTMount,montura del telescopio principal,
 MTOFC,Control con retroalimentación del sistema óptico del telescopio principal,
+MTPtg,apuntado del telescopio principal,
+MTQueue,cola del telescopio principal,
 MTTR,Tiempo medio de reparación,
+MTU,Unidad máxima de transmisión,
+MUF,Factor de incertidumbre del modelo,CAM
 MW,Vía Láctea,
 MYDB,Mi base de datos,
 N9K,Cisco Nexus Serie 9000,
@@ -768,6 +830,7 @@ NCOIRA,"(Obsoleto, actualmente NOIRLab) Laboratorio Nacional de Investigación e
 NCR,Informe de no conformidad,
 NCSA,Centro Nacional de Aplicaciones de Supercomputación,
 NCW,Dispensa de no conformidad,
+ND,Densidad neutra,CAM
 NDA,Acuerdo de confidencialidad,
 NDAA,Ley de Autorización de la Defensa Nacional,
 NEA,Asteroide próximo a la Tierra,
@@ -803,7 +866,6 @@ NSB,Junta Nacional de Ciencias de los EE. UU.,
 NSBP,Sociedad Nacional de Estados Unidos  de Físicos Negros,
 NSF,Fundación Nacional de Estados Unidos  de Ciencias,
 NSF's OIR Lab,Laboratorio Nacional de Investigación en Astronomía Óptica e Infrarroja de la NSF,
-OUO,Uso oficial exclusivamente,OPS
 NSO,Observatorio Solar Nacional de los EE. UU.,
 NSS,Servicios de soporte de los NOAO,
 NSTA,Asociación Nacional de Profesores de Ciencias,
@@ -813,6 +875,7 @@ NTT,Nippon Telegraph and Telephone Corporation,
 NUMA,Acceso no uniforme a la memoria,IT
 NUV,Ultravioleta cercano,
 NVMe,Non Volatile Memory Express [protocolo de software],
+NVR,Residuo no volátil,CAM
 NXOS,Sistema operativo Nexus,
 NYT,New York Times,
 OAB,Comité Asesor de Extensión,
@@ -825,18 +888,20 @@ OC,Consejo del Observatorio AURA,
 OCDD,Documento de definiciones de conceptos de las operaciones,
 OCPS,Sistema de pipelines controladas del OCS,
 OCS,Sistema de control del observatorio,
+OD,Diámetro exterior,CAM
 ODBC,"Open DataBase Connectivity, una API estándar para bases de datos SQL.",
-ODI,"Obligacion De Informar",PMO
-ODI,"Corriente de drenaje de salida (i)",CAM
+ODI,Obligacion De Informar,PMO
+ODI,Corriente de drenaje de salida (i),CAM
+OFE,Electrónica libre de oxígeno,CAM
 OGA,Otras agencias gubernamentales,
 OHEP,Oficina de Física de Altas Energías,
 OI,Organización internacional,
 OIR,astronomía óptica e infrarroja,
 OLE,Ecosistema de registro [«logging»] del observatorio,
+OLPA,Oficina de Asuntos Legislativos y Públicos,Gen
 OMB,Oficina de Gestión y Presupuesto,
 OOB,Out Of Bound (acceso alternativo a redes),
 OODS,Servicios de datos de operaciones del observatorio,
-OLPA,Oficina de Asuntos Legislativos y Públicos,Gen
 OPCC,Oficina de Protección de la Calidad del Cielo,
 OPD,diferencia de camino óptico,
 OPS,Operaciones,
@@ -851,16 +916,20 @@ OSPL,OpenSplice DDS - sistema de mensajería subyacente para SAL,
 OSS,Especificaciones del sistema de observatorios; LSE-30,Gen
 OSS,Sistema de suministro de aceite,TS
 OSX,Sistema operativo Macintosh (obsoleto; actualmente macOS),
-OTB,Reajuste de presupuesto base [«over-target baseline»],
+OTB,Reajuste de presupuesto base,
+OTM,Módulo de transición óptica,CAM
 OTS,sistema de telemetría del observatorio,
+OUO,Uso oficial exclusivamente,OPS
 P5," El Panel de Priorización de Proyectos de Física de Partículas es un panel científico asesor cuya tarea es recomendar la priorización para la inversión de EE. UU. en investigación en física de partículas, sobre la base de diversos escenarios de financiación.",
 P6,"Primavera, una herramienta integral de gestión de proyectos",
-PanDA, Sistema de Producción y Análisis Distribuido,
+PAL,Lógica de matriz programable.,CAM
 Pan-STARRS,Telescopio de exploración panorámica y sistema de respuesta rápida,
+PanDA, Sistema de Producción y Análisis Distribuido,
 Parsl,Biblioteca de programación en paralelo \url{http://parsl-project.org/},
 PASP,Publicaciones de la Sociedad Astronómica del Pacífico,
 PB,Petabyte,
 PBI,Institución predominantemente negra,
+PC,Controlador de potencia.,CAM
 PCA,Análisis de componentes principales,
 PCB,placas de circuitos impresos,
 PCI,Interconexión de componentes periféricos,
@@ -871,26 +940,29 @@ PD,Desarrollo de programas,
 PDAC,Centro de acceso a datos de prototipos,
 PDF,Formato de documento portable,Gen
 PDF,Función de densidad de probabilidad,Sci
-PDR,Revisión del diseño preliminar,
-PDR1,Divulgación de datos al público 1 (HSC),
-PDR2,Publicación de datos al público 2 (HSC),
 PDM,Minimización de dispersión de fase,OPS
 PDM,Gestión de datos de productos SOLIDWORKS,TS
 PDN,Red de paquetes de datos,IT
+PDR,Revisión del diseño preliminar,
+PDR1,Divulgación de datos al público 1 (HSC),
+PDR2,Publicación de datos al público 2 (HSC),
 PDS,Sistema de datos planetarios,
 PDU,Unidad de distribución de energía,
 PE,Protección física y ambiental,IT
 PEN,Pruebas de penetración,IT
 PEP,Plan de ejecución del proyecto,
 PFS,Espectrógrafo de foco primario,
+PGP,Protocolo bastante bueno,CAM
 PHA,asteroides potencialmente peligrosos,
 photo-z,corrimiento al rojo fotométrico,
 PI,Investigador principal,
+PID,Proporcional-integral-derivativo.,CAM
 PIFF,PSF en el FOV completo,
 PII,información personalmente identificable,
 PIM,Protocol Independent Multicast [protocolo de enrutamiento],
 PL,Planificación,IT
 PLATO,Tránsitos planetarios y oscilaciones de estrellas,
+PLC,Controlador lógico programable.,CAM
 PLL,Bucle de fase bloqueada,
 PM,Gerente del Proyecto,
 PMCS,Sistema de controles de gestión del proyecto,
@@ -924,6 +996,7 @@ PSTN,Nota técnica científica del proyecto,
 PTC,photon transfer curve,
 PTF,Fábrica de transitorios de Palomar,
 PTP,Protocolo de tiempo de precisión,DM
+PV,Pico a Valle,CAM
 PVI,Imagen procesada de visita,
 PWI,Institución predominantemente blanca,
 PXE,Entorno de ejecución previo al arranque,IT
@@ -956,37 +1029,47 @@ RBSE,Educación científica basada en la investigación (AURA),
 RBT,Solicitudes más allá del objetivo,
 RC,Candidato para lanzamiento,
 RCC,Tasa de control de rafts,
+RCE,elemento de clúster reconfigurable,CAM
 RCEC,Comité Ejecutivo de Construcción de Rubin,
-RCI,Interfaz de comunicación de raft,
+RCI,Interfaz de c úster reconfigurablee raft,
 RCM,Módulo de comunicación de raft,
 RCOC,Comité de Organización de Celebración de Rubin,
 RDBMS,Sistema de gestión de bases de datos relacionales,
-RDO,Oficina de Directores de Rubin,
 RDM,Gestión de datos de Rubin,
+RDO,Oficina de Directores de Rubin,
 RDP,Producción de datos de Rubin (obsoleto; usar RDM),
+RDS,servicio de datos Raft,CAM
 REB,Placa de electrónica del raft,
+REC,Caja electrónica Raft.,CAM
 REN,Red de Investigación y Educación,
 RENATER,"Red Nacional de Telecomunicaciones para la Tecnología, la Enseñanza y la Investigación [Francia]",
 REO,Educación y Extensión de Rubin,
 REST,Transferencia de estado representacional,
 REUNA,Red Universitaria Nacional,
+RF,Radiofrecuencia.,CAM
 RFC,Solicitud de comentario,
 RFP,Solicitud de propuestas,
 RFQ,Solicitud de cotizaciones,
+RG,Junta tórica.,CAM
+RGA,Analizador de gases residuales.,CAM
 RGB,Rama gigante roja,
 RM,Gerente de Divulgación,
 RMA,Autorización de devolución de producto,
-RMS,Media cuadrática,
+RMS,Media cuadrática,Gen
+RMS,Servicio de gestión de balsas,CAM
 RNADE,Estimación de distribución con redes neuronales autorregresivas con valores reales,
 RNN,Red neuronal recurrente,
 RNP,Rede Nacional de Ensino e Pesquisa (Red Nacional de Educación e Investigación de Brasil),
 ROE,Real Observatorio de Edimburgo,
 ROI,región de interés,
+ROIC,Circuito integrado de lectura.,CAM
+RON,Ruido de lectura.,CAM
 ROO,Operaciones del Observatorio Rubin,
 ROOT,Marco de análisis de datos orientado a objetos desarrollado en CERN,
 ROP,Plan de operaciones de Rubin,
 ROSAT,Telescopio de rayos X Röntgensatellit,
 RP,Punto de encuentro,
+RPC,Tarjeta de alimentación Raft.,CAM
 RPF,Desempeño de sistemas de Rubin,
 RPM,RPM Package Manager (originalmente Red Hat Package Manager; actualmente un acrónimo recursivo) [herramienta de administración de paquetes],
 RRL,Estrellas de tipo RR Lyrae,
@@ -1000,7 +1083,8 @@ RTA,Análisis en tiempo real,Sci
 RTA,autoridad técnica responsable,TS
 RTD,Detector de temperatura resistivo,
 RTI,invariabilidad del tiempo de subida,
-RTM,Módulo torre de raft,
+RTM,Módulo torre de raft,CAM
+RTM,Módulo de transición trasero,DAQ
 RTN,Nota técnica de Rubin,
 RTV,ráster a vector,
 RU,Unidad rack,
@@ -1019,6 +1103,7 @@ SAL,Capa de abstracción entre servicios,
 SAMP,Simple Application Messaging Protocol [protocolo de comunicación],
 SAO,Observatorio Astrofísico Smithsoniano,
 SAPP,"Algoritmos, pipelines y productos científicos",
+SAS,Subsistema de montaje del obturador.,CAM
 SATA,Serial Advanced Technology Attachment [interfaz de transferencia de datos],
 SB,Brillo superficial,
 SBS,Servicios empresariales compartidos,
@@ -1026,10 +1111,12 @@ SC,Protección del sistema y las comunicaciones,IT
 SC,Puesta a punto del sistema,PMO
 SC,Colaboración científica,DM
 SCADA,"Supervisión , control y adquisición de datos [Sistema] ",
+SCI,Sensor científico,CAM
 SCIDAR,Detección y medición de centelleo,
 SCOC,Comité de Optimización de la Cadencia de la Investigación,
 SCOSC,Comité de Estrategias de Optimización de la Cadencia de la Investigación,
 SCP,Polo Celeste Sur,Sci
+SCR,Rectificador controlado por silicio (componente electrónico),CAM
 SCS,Búsqueda simple de conos (parte del estándar de la Alianza Internacional de Observatorios Virtuales),
 SCTI,Serie Ineficiencia de transferencia de carga,CAM
 SDQA,Evaluación de la calidad de datos científicos,
@@ -1045,12 +1132,14 @@ SF,Función de estructura,
 SFP,procesamiento de una sola trama,DM
 SFR,Ritmo de formación de estrellas,Sci
 SFR,Solicitud de financiamiento suplementario,Adm
+SHA,Análisis de riesgos de soporte ,CAM
 SHA-1,Algoritmo de Hash seguro 1,
 SHE,"Seguridad, salud y medio ambiente",
 SHPE,Sociedad de Ingenieros Profesionales Hispanos,
 SI,Sistema Internacional (Sistema internacional de unidades definido por ISO),
 SIA,protocolo para manejo de imágenes,
 SIAP,protocolo para manejo de imágenes multidimensionales,
+SIPIN,Diodo PIN de silicio (tipo detector/sensor),CAM
 SIT,Integración y prueba de sistemas,
 SIT-Com,"Integración, prueba y puesta a punto de sistemas ",
 SITCOM,"Integración, prueba y puesta a punto de sistemas ",
@@ -1059,9 +1148,11 @@ SKF,Svenska Kullagerfabriken,
 SKU,Unidad de mantenimiento de inventarios [código alfanumérico de referencia] (Google),
 SLA,Acuerdo de nivel de servicio,
 SLAC,Laboratorio Nacional de Aceleradores SLAC,
+SLI,Infraestructura de laboratorios científicos (dentro del DOE),CAM
 SLR,Réflex de objetivo único,Gen
 SLR,Regresión de locus estelar,Sci
 SLSN,Supernova(s) súper luminosa(s),
+SM,Modo disperso,
 SMARTS,Sistema de telescopios de investigación de apertura pequeña y moderada,
 SMBH,Agujero negro supermasivo,
 SMC,Pequeña nube de Magallanes,
@@ -1094,10 +1185,9 @@ SP,Punto de historia,DM
 SPI,Índice de desempeño del cronograma,
 SPIE,Sociedad Internacional de Óptica y Fotónica,
 SPL,Pipelines científicas,
+SPT,Telescopio Polo Sur,
 SQL,Structured Query Language [lenguaje de programación],
 SQR,Código identificador de documento de SQuARE,
-SM,Modo disperso,
-SPT,Telescopio Polo Sur,
 SQuaRE,Ingeniería de calidad y confiabilidad científicas,
 SQuaSH,Science Quality Analysis Harness [arquitectura para control de calidad],
 SRCF,Centro de Computación para la Investigación de Stanford,
@@ -1114,11 +1204,12 @@ SSM,Gerente de Subsistema,
 SSO,Objeto del sistema solar,
 SSOIS,Búsqueda de imágenes de objetos del sistema solar,
 SSP,Procesamiento del sistema solar,
+SSPP,Plan del programa de seguridad del sistema,CAM
 SST,Telescopio de rastreo Simonyi,Gen
 SST,Equipo Científico de Subsistema,LSST DM
+STAC,Comité Asesor Científico y Tecnológico de Gemini,
 stdin,entrada estándar,
 stdout,salida estándar,
-STAC,"Comité Asesor Científico y Tecnológico de Gemini",
 STEM,"Ciencia, Tecnología, Ingeniería y Matemáticas",
 STFC,Consejo de Centros de Ciencia y Tecnología del Reino Unido,
 STO,desconexión segura de torque,
@@ -1160,10 +1251,12 @@ TGAS,Solución astrométrica Tycho-Gaia,
 TLD,Dominio de nivel superior,
 TLS,Seguridad de la capa de transporte,
 TMA,Conunto de la montura del telescopio,
+TMP,Temperatura,CAM
 TMT,Telescopio de Treinta Metros,
 TN,nota técnica,Gen
 TNO,objeto transneptuniano,
 TNS,Servidor de nombres de transitorios,
+TOD,Hora del día,CAM
 TOM,Gerente de Objetivos y Observaciones,
 TOO,Objetivo de oportunidad,
 ToO,Objetivo de oportunidad,
@@ -1172,14 +1265,16 @@ TOWG,Grupo de Trabajo de Operaciones Técnicas,
 TPC,Costo total de proyecto,
 TPU,Unidad de procesamiento tensorial,
 TS,Especificación de prueba,
+TS5,Banco de pruebas 5,CAM
 TS7,banco de pruebas 7 (en SLAC),
+TS8,Banco de pruebas 8 ,CAM
 TSIP, Programa de instrumentación del sistema de telescopios,
 TSS,Software del telescopio y sitio,
 TTS,Puesto de pruebas de Tucson,
 TU,Tucson,
 TVS,Colaboración científica en transitorios y estrellas variables,
-TVSSC,Transitorios y estrellas variables,
 TVSS,supresor de sobretensiones transitorias,
+TVSSC,Transitorios y estrellas variables,
 UA,Universidad de Arizona,
 UAP,Fenómeno aéreo no identificado,
 UCD,Descriptor de contenido unificado (parte del estándar de la Alianza Internacional de Observatorios Virtuales),
@@ -1247,12 +1342,15 @@ VXLAN,Red de área local virtual extensible,
 W3C,Consorcio World Wide Web,
 WAL,registro de escritura anticipada,
 WAN,Red de área amplia,
+WAS,Subsistema de matriz de frente de onda,CAM
 WBS,Estructura de desglose del trabajo,
 WCA,Defensor de la cultura del lugar de trabajo,
 WCAG,Directrices de Accesibilidad para el Contenido en Web,
 WCS,Sistema de coordenadas mundiales,
+WDS,Sistema de datos de frente de onda,CAM
 WebDav,Creación y versionado distribuidos en la Web,DM
 WEPAN,Red proactiva de mujeres en ingeniería,
+WF,Frente de onda ,CAM
 WFD,"Ancho, rápido, profundo",
 WFIRST,Telescopio de sondeo infrarrojo de campo ancho,
 WFM,Gestión del flujo de trabajo,
@@ -1266,11 +1364,14 @@ WLMS,servicio de gestión de cargas de trabajo,
 WMS,Sistema de gestión de trabajo,
 WOUCAO,Centro de Extensión en Astronomía «Windows on the Universe»,
 WP,Paquete de trabajo,
+WPC,Planificación y control del trabajo,CAM
+WREB,placa electrónica de lectura del sensor de frente de onda,CAM
 WRHEN,Redes de Investigación y Educación del Hemisferio Occidental,
 WSDL,Web Services Description Language [formato de XML que se utiliza para describir servicios web],
 WWT,"World Wide Telescope [software; conjunto de aplicaciones, datos y servicios en nube de código abierto]",
-XHTML,eXtensible HyperText Markup Language [lenguaje de marcado para páginas web],
-XML,eXtensible Markup Language [lenguaje extensible de marcado],
+XDS,Servicio de datos ampliados,CAM
+XHTML,lenguaje de marcado para páginas web,
+XML,lenguaje extensible de marcado,
 XMM,Misión de espejos múltiples para detección de rayos X de la ESA,
 XMM-Newton, Misión de espejos múltiples para detección de rayos X  de la ESA,
 XRAC,Comité de Asignación de Recursos de XSEDE,
@@ -1334,7 +1435,7 @@ Baseline,"[Línea de base/inicio] El punto en el cual se consideran «congelados
 "Baseline, Technical","[Línea de base técnica] Los requisitos, especificaciones, diseños y asignaciones «congelados» requeridos para la finalización del proyecto en función de los recursos conocidos (personal, activos físicos, conocimientos, etc.) que se van a necesitar.",
 Basis of Estimate,"[Base de estimación] Justificación para llegar a una estimación de costos en particular, incluidos los métodos de estimación, el enfoque adoptado, los precios utilizados y los supuestos formulados; un número analizado y cuidadosamente calculado.",
 Batch Production,"[Producción en lotes] Procesamiento computacional que se ejecuta a medida que se va disponiendo de entradas, en un modo distribuido a través de múltiples enclaves cuando se necesita, mientras se hace el seguimiento de estado y resultados de salida. Entre los ejemplos de producción en lotes se incluye el procesamiento offline de Productos de Datos Rápidos, productos de calibración, imágenes de referencia y productos de datos de Programas Especiales.  Los protocolos de priorización para los diversos tipos de producción en lotes se proporcionan en LDM-148",
-BEAMS,"[BEAMS] Estimación bayesiana aplicada a múltiples especies (software para la clasificación de curvas de luz sobre la base de la fotometría)",
+BEAMS,[BEAMS] Estimación bayesiana aplicada a múltiples especies (software para la clasificación de curvas de luz sobre la base de la fotometría),
 BlackGEM,"[BlackGEM] Matriz de campo ancho de telescopios ópticos que estará localizado en el Observatorio La Silla de ESO, en el desierto de Atacama, en Chile. ",
 Blazhko,[Blazhko] El fenómeno de modulación de amplitud o fase Se asocia con algunas RRL.,
 brighter-fatter effect,[Efecto de más brillo-más grosor] Término común utilizado para referirse a una de las cualidades fotométricas de la cámara del LSST; las fuentes con mayor flujo tienen una PSF más ancha. Esto se contempla durante la calibración.,
@@ -1370,6 +1471,7 @@ Chi-squared Coadd Image,"[Imagen coagregada con cálculo de chi-cuadrado] Una Im
 Chief Scientist,"[Científico en Jefe] El principal asesor científico del Director de LSST; actúa como interfaz con la comunidad científica a fin de asegurar que el programa LSST esté científica y tecnológicamente bien fundamentado, y que las especificaciones sean adecuadas para alcanzar las metas científicas del proyecto.",
 Citizen Science,"[Ciencia ciudadana] La recolección y análisis de datos relativos al mundo natural por parte de miembros del público en general, típicamente como parte de un proyecto colaborativo con científicos profesionales.",
 cloud,"[nube] Una masa visible de vapor de agua condensado que flota en la atmósfera, típicamente a gran altura sobre el suelo o en el espacio interestelar que actúa como lugar de nacimiento de estrellas.  También una forma de computación (en computadoras de terceros aprovechando sus servicios y disponibilidad).",
+Cluster On Board,Placa de adquisición de datos de cámara que contiene 8 elementos de clúster reconfigurables.,CAM
 CMASS,"[CMASS] Masa constante, una muestra espectroscópica de galaxias como parte de la exploración BOSS.",
 CmdLineTask,"[CmdLineTask] Un tipo especial de tarea que puede leer sus entradas y escribir sus salidas utilizando un Butler, y puede ejecutarse fácilmente desde la línea de comandos. CmdLineTask es una implementación específica del concepto de tarea de línea de comandos. Las CmdLineTasks se están eliminado gradualmente en favor de las PipelineTasks. ",
 Coadd Image,"[Imagen coagregada] Una imagen que es la combinación de múltiples imágenes de entrada. Las entradas se alinean con respecto a una proyección y grilla de píxeles común, se corrigen a la misma escala fotométrica y punto cero, y se rechazan los malos píxeles y los artefactos. (También se pueden equiparar las PSF de las imágenes antes de la co-adición) A las imágenes agregadas se les ha eliminado el fondo no astrofísico.",
@@ -1555,6 +1657,7 @@ postage stamp,"[estampilla] Cortes de imagen de ~30x30 arcosegundos, centrados e
 precovery,"[recuperación predescubrimiento («precovery»)] El proceso de encontrar, o poner límites superiores a detecciones de un DIAObject recién descubierto en imágenes obtenidas previamente, típicamente utilizando fotometría forzada. Los Paquetes de Alertas contendrán datos de precovery derivados de los últimos 30 días de imágenes que incluyen la ubicación de un nuevo DIAObject.",
 Preferred Version,"[Versión preferida] La versión por defecto de un documento entregado a un usuario de DocuShare. Para documentos con control de cambios, la versión preferida representa la línea de base aprobada actual del documento. Para otros documentos, la versión preferida representa la repetición más actual.",
 Predominantly Black Institution,"[Institución predominantemente negra] Colegio universitario o universidad con un mínimo de 1000 estudiantes inscriptos, de los cuales por lo menos el 40% son negros o afroEstadounidenses, y al menos un 50% son de bajos ingresos o la primera generación en cursar estudios universitarios.",
+Pretty Good Protocol,El protocolo serie de alta velocidad que utilizan los REB para comunicarse con el DAQ a través de las fibras ópticas que bajan por el conjunto del montaje del telescopio,CAM
 Primavera,[Primavera] Nombre comercial de la suite de software de gestión de proyectos utilizada por LSST para mantener su plan y cronograma de programa.,
 Processed Visit Image,"[Imagen de visita procesada] Una imagen totalmente calificada del LSST de una visita única que incluye la matriz de píxeles científica y los datos concomitantes, incluyendo una máscara de calidad y una matriz de varianzas, además de una caracterización de PSF y metadatos (que incluye metadatos de calibración) sobre la imagen. Se almacena con el fondo ya restado.",
 Procurement,"[Adquisición] Las actividades involucradas con la compra, o la compra en concreto, subcontrato, alquiler con opción de compra, alquiler o la adquisición de otra índole de insumos o servicios, y las acciones asociadas con los mismos.",
@@ -1575,6 +1678,7 @@ Qserv,"[Qserv] Base de datos distribuida y paralela de LSST Este sistema de base
 Quality Assurance,"[Aseguramiento de la calidad] Todas las actividades, entregables, servicios, documentos, procedimientos o artefactos que se diseñan para asegurar la calidad de los entregables de DM. Esto puede incluir los sistemas de QC, en la medida en que están cubiertos en la obligación descripta en LDM-622. Adviértase que contrasta con la definición de LDM-522 de «QA» como «Quality Analysis» (Análisis de calidad), un proceso manual que solo ocurre durante la puesta a punto y las operaciones. Ver también: Control de calidad",
 Quality Control,"[Control de calidad] Servicios y procesos que apuntan a medir y monitorear un sistema para verificar y caracterizar su desempeño (como en LDM-522). Los sistemas de Control de Calidad se ejecutan en forma autónoma, y solo notifican a las personas cuando se detecta una anomalía. Ver también Aseguramiento de la Calidad.",
 Raft,"[Raft] Los sensores de la cámara del LSST están ensamblados en conjuntos electrónicos reemplazables, llamados rafts, compuestos por 9 sensores encastrados (CCD) en un mosaico de 3x3. Cada raft es una unidad reemplazable en la cámara del LSST. En la cámara hay 21 rafts científicos, más 4 rafts de esquina adicionales con sensores especializados, no científicos, que conforman un total de 189 CCD por imagen de plano focal. Los 21 rafts científicos están numerados del «0,1» al «0,3», «1,0» al «3,4», y «4,1» al «4,3».  (Vale decir, las 25 combinaciones de «0,0» a «4,4», menos las cuatro esquinas que son no científicas.)",
+Raft Data Service,"El software que recibe los metadatos en cada lectura RCE antes de recibir los datos de píxeles del REB. Estos metadatos se ponen en cola y, si el REB no produce datos que coincidan, los metadatos se adjuntarán a los datos de píxeles incorrectos cuando lleguen. Vaciar RDS es una forma abreviada de borrar esta cola de metadatos.",CAM
 Raw Image,"[Imagen cruda] La salida de una cámara, compuesta por un conjunto de secciones de imagen de cada amplificador en cada sensor sobre la matriz del plano focal, incluyendo el overscan.",
 releasable product,[producto divulgable] Un paquete de software u otro componente del sistema de DM que se espera que será incluido en la siguiente divulgación etiquetada del sistema. Esto implica la inclusión en un paquete estándar de máximo nivel. Ver también release-tag.,
 Release,"[Divulgación] Publicación de una nueva versión de un documento, software o producto de datos. Dependiendo del contexto, las divulgaciones pueden requerir aprobación de los comités de control de cambios a nivel de Proyecto o DM, y luego forman parte de la línea de base formal del proyecto.",
