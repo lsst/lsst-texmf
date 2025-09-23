@@ -33,6 +33,7 @@ ignore = [
     "D205",
     "D400",
     "UP007",  # Allow UNION in type annotation
+    "UP040",  # Allow TypeAlias (until we can safely drop python < 3.12)
 ]
 select = [
     "E",  # pycodestyle

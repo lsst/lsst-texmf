@@ -26,14 +26,27 @@ from _collections_abc import dict_keys
 from abc import ABC, abstractmethod
 from dataclasses import asdict as dataclass_asdict
 from pathlib import Path
-from typing import Any, Self
+from typing import Any, Self, TypeAlias
 
 import yaml
 
 try:
-    from pydantic import dataclasses
+    from typing import Annotated
+
+    from pydantic import BeforeValidator, dataclasses
+
+    def _coerce_str(v: Any) -> str | None:
+        if v is None or isinstance(v, str):
+            return v
+        return str(v)
+
+    # Allow zipcode to be int or str or None.
+    OptStr: TypeAlias = Annotated[str | None, BeforeValidator(_coerce_str)]
+
 except ImportError:
     import dataclasses  # type: ignore[no-redef]
+
+    OptStr: TypeAlias = str | None  # type: ignore[no-redef,misc]
 
 
 def latex2text(latex: str) -> str:
@@ -62,7 +75,7 @@ class Address:
     street: str | None = None
     city: str | None = None
     state: str | None = None
-    postcode: str | None = None
+    postcode: OptStr = None
     country_code: str | None = None
 
 

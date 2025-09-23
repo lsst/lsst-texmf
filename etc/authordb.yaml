@@ -597,7 +597,7 @@ affiliations:
       country_code: USA
       example_expanded: Astronomy Department, California Institute of Technology,
         1200 East California Blvd., Pasadena CA 91125, USA
-      postcode: 91125'
+      postcode: '91125'
       state: CA
       street: 1200 East California Blvd.
     department: Astonomy Department
