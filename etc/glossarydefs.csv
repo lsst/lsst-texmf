@@ -55,7 +55,7 @@ ALICE,A Large Ion Collider Experiment,Gen,,,A
 ALMA,Atacama Large Millimeter Array (ESO),Gen,,,A
 AMB,Afternoon Mini Bus,TS,,,A
 AMCL,AURA Management Council for LSST,LSST,,,A
-AMCR,AURA management Council for Rubin Observatory,OPS Rubin,,,A
+AMCR,AURA management Council for Rubin Observatory,OPS,,,A
 AMD,Advanced Micro Devices,OPS,,,A
 AMPATH,Americas Pathway (Network),Gen,,,A
 AMPEL,"Alert Management, Photometry, and Evaluation of Light curves",OPS,doi:10.1051/0004-6361/201935634,,A
@@ -75,7 +75,7 @@ APS,American Physical Society,TS,Document-11933,,A
 APT,Astronomer's Proposal Tool,Sci,,,A
 ARAS,Astronomical Ring for Access to Spectroscopy,Sci,,,A
 ARC,Advanced Resource Connector,DM,http://www.nordugrid.org/documents/arc6/,,A
-ARP,Address Resolution Protocol,IP,,,A
+ARP,Address Resolution Protocol,IT,,,A
 ASAP,As Soon As Possible,Gen,,,A
 ASAS-SN,All-Sky Automated Survey for Supernovae,Sci,,,A
 ASCII,American Standard Code for Information Interchange,Gen,,,A
@@ -129,7 +129,7 @@ BOF,Birds of a Feather (Sessions at ADASS),Gen,,,A
 BOSS,Baryon Oscillation Spectroscopic Survey,Sci,,,A
 BOT,Bench for Optical Testing,CAM,,,A
 BPM,Bad pixel mask,DM,,,A
-BPS,Batch Production Service,DF LDF DM,,,A
+BPS,Batch Production Service,DM,,,A
 Bps,Bytes per second,Gen,,,A
 bps,bit(s) per second,Gen,,,A
 BRDF,Bidirectional Reflectance Distribution Function,CAM,LCA-11591-B_REVIEW_(Camera_Final_Design_Report),,A
@@ -175,11 +175,11 @@ CDS,Centre de Donnes astronomiques de Strasbourg,Gen,,,A
 CE,Communications Engagement,OPS,,,A
 CE,Computing Element,DM,,,A
 CEC,International in-kind Contribution Evaluation Committee,LSST,,,A
-CEE,"Communications, Education, and Engagement",OPS OIR,,,A
+CEE,"Communications, Education, and Engagement",OPS,,,A
 CEP,Cost Estimating Plan,OPS,,,A
 CEPP,COVID-19 Exposure Prevention Plan,OPS,,,A
 CERN,European Organization for Nuclear Research,Gen,,,A
-CET,Community Engagement Team,OPS OIR,,,A
+CET,Community Engagement Team,OPS,,,A
 CfA,(Harvard-Smithsonian) Center for Astrophysics,Gen,,,A
 CFC,Carbon Fiber Composite,CAM,LCA-11591-B_REVIEW_(Camera_Final_Design_Report),,A
 CFD,computational fluid dynamics,TS,Document-12005,,A
@@ -238,7 +238,7 @@ CPR,Cardiopulmonary resuscitation,Gen,,,A
 CPS,Camera Protection System (confirmed in report),CAM,LCA-11591-B_REVIEW_(Camera_Final_Design_Report),,A
 CPU,Central Processing Unit,Gen,,,A
 CQA,Compliance and Quality Administrator,,,,A
-CR,Change Request,LSST DM,,,A
+CR,Change Request,LSST,,,A
 CR,Cosmic Ray,Sci,,,A
 CRAC,Computer Room Air Conditioner,Gen,,,A
 CRAH,Computer Room Air Handling,Gen,,,A
@@ -254,9 +254,9 @@ CRTS3,Catalina Real-Time Transient Survey,TS,Document-12006,,A
 CS,citizen science,TS,Document-11955,,A
 CSA,Cooperative Support Agreement,Gen,,,A
 CSC,Commandable SAL Component,TS,,SAL,A
-CSDC,Community Science Data Center,OPS OIR,,,A
+CSDC,Community Science Data Center,OPS,,,A
 CSM,Circum-Stellar Material,Sci,,,A
-CST,Community Science Team,OPS OIR,,,A
+CST,Community Science Team,OPS,,,A
 CSV,Comma Separated Values,Gen,,,A
 CTA,Cherenkov Telescope Array \url{https://www.cta-observatory.org/},Gen,,,A
 CTE,Charge Transfer Efficiency,CAM,LCA-11591-B_REVIEW_(Camera_Final_Design_Report),,A
@@ -343,7 +343,7 @@ DOF,Degree(s) of Freedom (also known as DoF),Gen,,,A
 DOI,Digital Object Identifier,DM OPS,,,A
 DOM,Document Object Model,Gen,,,A
 DoNM,Date of Next Meeting,Gen,,,A
-DOS,Data Operations Services,OPS OIR,,,A
+DOS,Data Operations Services,OPS,,,A
 DOT,U.S. Department of Transportation,OPS,,,A
 DP,Data Production,OPS,,,A
 DP0,Data Preview 0,OPS,,,A
@@ -469,7 +469,7 @@ FK5,Fifth Fundamental Catalogue,Gen,,,A
 FLOP,FLoating point Operation,IT,,,A
 FLOPS,FLoating point Operation per Second,IT,,,A
 FMEA,failure modes and effect analysis,TS,Document-11942,,A
-FMECA,"Failure Modes, Effects, and Causality Analysis",OPS OIR,,,A
+FMECA,"Failure Modes, Effects, and Causality Analysis",OPS,,,A
 FNAL,Fermi National Accelerator Lab,OPS,,,A
 FOA,Funding Opportunity Announcement,Sci,,,A
 FOA,Facilities Operations in Arizona,OPS,,,A
@@ -658,7 +658,7 @@ ITC,Information Technology Center,LSST DM,,,A
 ITEM,Integrated Test \& Evaluation Model,CAM,LCA-11591-B_REVIEW_(Camera_Final_Design_Report),,A
 ITIL,Information Technology Infrastructure Library,Gen,,,A
 ITL,Imaging Technology Laboratory (UA),Sci,,,A
-ITO,IT Operations,OPS OIR,,,A
+ITO,IT Operations,OPS,,,A
 ITSC,Information Technology Services Committee,Adm,,,A
 ITTN,IT Technote,IT,,,A
 IUSE,Improving Undergraduate STEM Education,Sci,,,A
@@ -721,7 +721,7 @@ LCR,LSST Change Request,LSST DM,,,A
 LCURM,AIP Liaison Committee on Underrepresented Minorities,Gen,https://www.aip.org/member-benefits/liaison-committees/,,A
 LDAP,Lightweight Directory Access Protocol,IT,,,A
 LDC,Local Device Controller ,CAM,LCA-11591-B_REVIEW_(Camera_Final_Design_Report),,A
-LDF,LSST Data Facility,LSST DM,,,A
+LDF,LSST Data Facility,DM,,,A
 LDM,LSST Data Management (Document Handle),LSST DM,,,A
 LDO,LSST Document Operations (Document Handle),LSST OPS,,,A
 LED,Light-Emitting Diode,Gen,,,A
@@ -791,7 +791,7 @@ MC,Monte-Carlo (simulation/process),Gen,,,A
 MCM,Master Control Module,TS,,,A
 MCMC,Monte Carlo Markov Chain,Gen,,,A
 MEMS,micro-electronic mechanical systems,TS,Document-11995,,A
-MERRA,Modern-Era Retrospective analysis for Research and Applications,NASA,,,A
+MERRA,Modern-Era Retrospective analysis for Research and Applications,Sci,,,A
 MIDAS,Munich Image Data Analysis System (ESO),Gen,,,A
 MIE,Major Item of Equipment,OPS,,,A
 MJD,Modified Julian Date (to be avoided; see also JD),Gen,,,A
@@ -827,7 +827,7 @@ MREN,Montenegrin Research and Education Network,Gen,,,A
 MS,Mega Sample,CAM,LCA-11591-B_REVIEW_(Camera_Final_Design_Report),,A
 MSB,Most Significant Bit,Gen,,,A
 MSE,Maunakea Spectroscopic Explorer,Sci,,,A
-MSO,Mid-Scale Observatories,OPS OIR,,,A
+MSO,Mid-Scale Observatories,OPS,,,A
 MT,Main Telescope,TS,,,A
 MTAOS,Main Telescope Active Optics System,TS,,,A
 MTBF,Mean Time Between Failures,OPS,,,A
@@ -883,12 +883,12 @@ NMOC,NSF's OIR Lab Management Oversight Council,Gen,,,A
 NNSA,National Nuclear Security Administration,OPS,,,A
 NOAA,National Oceanic and Atmospheric Administration,Gen,,,A
 NOAO,National Optical Astronomy Observatories now NOIRLab,Gen,,,A
-NOC,Network Operations Center,NET,,,A
+NOC,Network Operations Center,IT,,,A
 NOGLSTP,National Organization of Gay and Lesbian Scientists and Technical Professionals,Gen,,,A
 NOIR,NSF's National Optical-Infrared Astronomy Research Laboratory; \url{https://noirlab.edu},Gen,,,A
 NOIRLab,NSF's National Optical-Infrared Astronomy Research Laboratory; \url{https://noirlab.edu},Gen,,,A
-NOS,NSF's OIR Lab Operations Services,OPS OIR,,,A
-NPCF,National Petascale Computing Facility,OPS OIR,,,A
+NOS,NSF's OIR Lab Operations Services,OPS,,,A
+NPCF,National Petascale Computing Facility,OPS,,,A
 NRAO,National Radio Astronomy Observatory,Gen,,,A
 NRC,National Research Council,OPS,,,A
 NSB,National Science Board,TS,Document-11963,,A
@@ -1142,7 +1142,7 @@ SAPP,"Science Algorithms, Pipelines, and Products",TS,Document-11953,,A
 SAS,Shutter Assembly Subsystem,CAM,LCA-11591-B_REVIEW_(Camera_Final_Design_Report),,A
 SATA,Serial Advanced Technology Attachment,IT DM,,,A
 SB,Surface Brightness,Sci,,,A
-SBS,Shared Business Services,OPS OIR,,,A
+SBS,Shared Business Services,OPS,,,A
 SC,System Commissioning,PMO,,,A
 SC,System and Communications Protection,IT,,,A
 SC,Science Collaboration,DM,,,A
@@ -1155,10 +1155,10 @@ SCP,South Celestial Pole,Sci,,,A
 SCR,Silicon Controlled Rectifier (electronic component),CAM,LCA-11591-B_REVIEW_(Camera_Final_Design_Report),,A
 SCS,Simple Cone Search (IVOA standard),VO,,,A
 SCTI,Serial Charge Transfer Inefficiency,CAM,,,A
-SDQA,Science Data Quality Assessment,DM LSST,,,A
+SDQA,Science Data Quality Assessment,DM,,,A
 SDS,Science array Data acquisition Subsystem,TS,,,A
 SDSS,Sloan Digital Sky Survey,Gen,,,A
-SE,System Engineering,Rubin,,,A
+SE,System Engineering,LSST,,,A
 SED,Spectral Energy Distribution,Sci,,,A
 SEM,Scanning Electron Microscope,CAM,,,A
 SEM,Systems Engineering Manager,Adm,,,A
@@ -1207,8 +1207,8 @@ SO,Simons Observatory,Sci,,,A
 SO,scientific operations,TS,Document-12011,,A
 SOAP,Simple Object Access Protocol,Gen,,,A
 SOAR,Southern Astrophysical Research Telescope,Gen,,,A
-SOC,Security Operations Centre,OPS IT,,,A
-SOC,Science Operations Centre,Gaia,,,A
+SOC,Security Operations Centre,IT,,,A
+SOC,Science Operations Centre,Gen,,,A
 SODA,Server-side Operations for Data Access (IVOA standard),VO,,,A
 SODAR,sonic detection and ranging,TS,Document-11997,,A
 SOF,Single-Object Fitting,OPS,,,A
@@ -1224,7 +1224,7 @@ SPIE,The international society for optics and photonics,Gen,,,A
 SPL,Science PipeLines,DM,,,A
 SPT,South Pole Telescope,Sci,,,A
 SQL,Structured Query Language,Gen,,,A
-SQR,SQuARE document handle,LSST DM,,,A
+SQR,SQuARE document handle,LSST,,,A
 SQuaRE,Science Quality and Reliability Engineering,LSST DM,LDM-204,,A
 SQuaSH,Science Quality Analysis Harness,DM,https://squash.lsst.codes/,,A
 SRCF,Stanford Research Computing Facility,OPS,,,A
@@ -1244,7 +1244,7 @@ SSP,Solar System Processing,LSST DM,,,A
 SSPP,System Safety Program Plan,CAM,LCA-11591-B_REVIEW_(Camera_Final_Design_Report),,A
 SSSC,Solar System Science Collaboration,Sci,,,A
 SST,Simonyi Survey Telescope (SST not to be used),Gen,,,A
-SST,Subsystem Science Team,LSST DM,,,A
+SST,Subsystem Science Team,LSST,,,A
 STAC,Gemini Science and Technology Advisory Committee,Gen,,,A
 stdin,standard input,Gen,,,A
 stdout,standard output,Gen,,,A
@@ -1341,7 +1341,7 @@ USA,United States of America,Gen,,,A
 USB,Universal Serial Bus,IT,,,A
 USD,United States dollar,TS,Document-11967,,A
 USDAC,United States Data Access Center,DM,,,A
-USDF,United States Data Facility,OPS DF DM,,,A
+USDF,United States Data Facility,DM,,,A
 USNO,United States Naval Observatory,Gen,,,A
 UT,Universal Time,Gen,,,A
 UT1,Universal Time 1,Gen,,,A
@@ -1365,7 +1365,7 @@ VLTI,Very Large Telescope Interferometer (ESO),Gen,,,A
 VM,Virtual Machine,IT,,,A
 VME,Virtual Machine Environment,IT,,,A
 VMS,Vibration Monitoring System,TS,,,A
-VNOC,Virtual Network Operations Center,NET,,,A
+VNOC,Virtual Network Operations Center,IT,,,A
 VO,Virtual Observatory,Gen,,,A
 VOIP,Voice Over Internet Protocol,IT DM,,,A
 VOMS,VO Management Service,DM,,,A
@@ -1504,7 +1504,7 @@ Change Control Board,"Advisory board to the Project Manager; composed of technic
 Change Control Board Chair,"The person responsible for CCB administration and implementation of approved changes to the project technical, cost, and schedule baselines; the CCB Chair is also the Systems Engineering Manager (SEM)",Adm,,,G
 Change Control Process,"collection of formal documented procedures used to apply technical and administrative direction and monitoring processes to the Project. Proposed changes to items under change control must undergo impact analysis to assess their effect(s) on project cost, schedule and performance capabilities. All changes to items under change control must be approved by the Project Manager, or if certain thresholds apply, by the LSST Director and/or the NSF. See LPM-19",Adm,,,G
 Change Controlled Documents,Those documents which have been designated by the project as under formal configuration control,Adm,,,G
-Channel,"An amplifier on an LSST camera CCD (see sensor). For LSST there are 16 amplifiers for each science sensor, resulting in 16 parallel data channels from each device. The 16 channels comprising a sensor are numbered from ""0,0"" through '1,7'.  This term may also refer to the raw data from a read-out amplifier of a sensor",CAM,,,G
+Channel,"An amplifier on an LSST camera CCD (see sensor). For LSST there are 16 amplifiers for each science sensor, resulting in 16 parallel data channels from each device. The 16 channels comprising a sensor are numbered from '0,0' through '1,7'.  This term may also refer to the raw data from a read-out amplifier of a sensor",CAM,,,G
 Charge-Coupled Device,"a particular kind of solid-state sensor for detecting optical-band photons. It is composed of a 2-D array of pixels, and one or more read-out amplifiers",CAM Sci,,,G
 Chi-squared Coadd Image,"A Coadd Image that is the weighted sum of multiple input images, where for each input: coadd.image += image.image**2 / image.variance coadd.mask |= image.weightMap += weight For bad pixels, coadd and weightMap are not altered. Note that the inputs must be aligned to a common projection and pixel grid and corrected to the same photometric scale and zero-point",DM,,Coadd Image,G
 Chief Scientist,The principal scientific advisor  to the LSST Director; he or she acts as an interface to the science community in order to ensure that the LSST program is scientifically and technologically well founded and that the specifications are appropriate for achieving the scientific goals of the project,Adm,,,G
@@ -1719,7 +1719,7 @@ QAWG,QA Strategy Working Group,DM QA,DMTN-085,,G
 Qserv,"LSST's distributed parallel database. This database system is used for collecting, storing, and serving LSST Data Release Catalogs and Project metadata, and is part of the Software Stack",LSST DM,LDM-135,QSERV,G
 Quality Assurance,"All activities, deliverables, services, documents, procedures or artifacts which are designed to ensure the quality of DM deliverables. This may include QC systems, in so far as they are covered in the charge described in LDM-622. Note that contrasts with the LDM-522 definition of ‚'QA' as ‚'Quality Analysis', a manual process which occurs only during commissioning and operations. See also: Quality Control",DM QA,"DMTN-085, LDM-622",QA,G
 Quality Control,"Services and processes which are aimed at measuring and monitoring a system to verify and characterize its performance (as in LDM-522). Quality Control systems run autonomously, only notifying people when an anomaly has been detected. See also Quality Assurance",DM QA,"DMTN-085, LDM-522",QC,G
-Raft,"The sensors in the LSST camera are packaged into replaceable electronic assemblies, called rafts, consisting of 9 butted sensors (CCDs) in a 3x3 mosaic. Each raft is a replaceable unit in the LSST camera. There are 21 science rafts in the camera plus 4 additional corner rafts with specialized, non-science sensors, making for a total of 189 CCDs per focal plane image. The 21 science rafts are numbered from ""0,1"" through ""0,3"", ""1,0"" through ""3,4"", and ""4,1"" through ""4,3"". (In other words, the 25 combinations from ""0,0"" through ""4,4"" minus the four corners which are non-science.)",CAM,,,G
+Raft,"The sensors in the LSST camera are packaged into replaceable electronic assemblies, called rafts, consisting of 9 butted sensors (CCDs) in a 3x3 mosaic. Each raft is a replaceable unit in the LSST camera. There are 21 science rafts in the camera plus 4 additional corner rafts with specialized, non-science sensors, making for a total of 189 CCDs per focal plane image. The 21 science rafts are numbered from '0,1' through '0,3' '1,0' through '3,4' and '4,1' through '4,3' (In other words, the 25 combinations from '0,0' through '4,4' minus the four corners which are non-science.)",CAM,,,G
 Raft Data Service,"The software that receives the metadata in each readout RCE prior to receiving the pixel data from the REB. These metadata are queued, and if the REB doesn't produce data to match, the metadata will be attached to the wrong pixel data when some does arrive. Flushing RDS is shorthand for clearing this queue of metadata.",CAM,ref: Gregg Thayer,,G
 Raw Image,"The output from a camera, consisting of a set of image sections from each amplifier on each sensor on the focal plane array, including overscan",DM,LDM-151,"C3 Image, Raw Camera Image, Raw Exposure",G
 releasable product,A software package or other component of the DM system which is expected to be included in the next tagged release of the system. This implies inclusion in a standard top-level package. See also release-tag,DM QA,DMTN-085,,G
@@ -1768,7 +1768,7 @@ SDQA Rating,The value and error associated with an SDQA metric. An image can hav
 SDQA Status,"The status assigned to an image by the SDQA subsystem (e.g., pass, fail, unknown, etc.). Database tables that store image metadata will include a field containing an ID number that corresponds to an SDQA status",DM,,,G
 SDQA Threshold,"The set of lower and upper thresholds associated with an SDQA Metric. Some metrics have only either a lower or upper threshold. In general, the thresholds depend on observing conditions (e.g., atmospheric seeing, filter, etc.)",DM,,,G
 seeing,"An astronomical term for characterizing the stability of the atmosphere, as measured by the width of the point-spread function on images. The PSF width is also affected by a number of other factors, including the airmass, passband, and the telescope and camera optics",Sci,,,G
-Sensor,"A sensor is a generic term for a light-sensitive detector, such as a CCD. For LSST, sensors consist of a 2-D array of roughly 4K$\times$4K pixels, which are mounted on a raft in a 3$\times$3 mosaic. Each sensor is divided into 16 channels or amplifiers. The 9 sensors that make up a raft are numbered from ""0,0"" through ""2,2""",CAM,,,G
+Sensor,"A sensor is a generic term for a light-sensitive detector, such as a CCD. For LSST, sensors consist of a 2-D array of roughly 4K$\times$4K pixels, which are mounted on a raft in a 3$\times$3 mosaic. Each sensor is divided into 16 channels or amplifiers. The 9 sensors that make up a raft are numbered from '0,0' through '2,2'",CAM,,,G
 shape,"In reference to a Source or Object, the shape is a functional characterization of its spatial intensity distribution, and the integral of the shape is the flux. Shape characterizations are a data product in the DIASource, DIAObject, Source, and Object catalogs",DM,,,G
 SHE Plans,"SHE plans are site-specific guidelines for safe working conditions. LSST expects that each collaborating organization and contractor has established safety programs to govern the specific activities at that location. LSST has a minimum expectation for the criteria established in these plans and expects all staff, permanent to the location or visiting, to follow these local procedures. When LSST specific sites are established the project will issue specific SHE plans for those locations",Adm,,,G
 Signature Authority,The individual designated by the LSST-DA policy as authorized to approve the use of funds from a specific account; he or she must approve each Purchase Requisition for the account listed on the Purchase Requisition,Adm,,,G
@@ -1787,7 +1787,7 @@ Solar System Object,"A solar system object is an astrophysical object that is id
 Solar System Processing,"A component of the Prompt Processing system, Solar System Processing identifies new SSObjects using unassociated DIASources",DM,"Jones et al. (2016), IAUS,318, 282.",SSP,G
 Sole Source,"A purchase of a commodity or a service that is noncompetitive in price, specifications, or use; or is 'only source' and must be accompanied by a sole source justification",Adm,,,G
 Sole Source Justification,A document accompanying a Purchase Requisition that provides the justification(s) for procuring the items must be from the single vendor listed on the Purchase Requisition,Adm,,,G
-Source,"A single detection of an astrophysical object in an image, the characteristics for which are stored in the Source Catalog of the DRP database. The association of Sources that are non-moving lead to Objects; the association of moving Sources leads to Solar System Objects. (Note that in non-LSST usage ""source"" is often used for what LSST calls an Object.)",DM,"LSE-163, LDM-151",,G
+Source,"A single detection of an astrophysical object in an image, the characteristics for which are stored in the Source Catalog of the DRP database. The association of Sources that are non-moving lead to Objects; the association of moving Sources leads to Solar System Objects. (Note that in non-LSST usage 'source' is often used for what LSST calls an Object.)",DM,"LSE-163, LDM-151",,G
 Source Association,"The process of associating source detections on multiple images taken at different epochs, or in multiple passbands, with a single astronomical Object",DM,LDM-151,,G
 source footprint,"A set of pixels that are determined to be part of a Source (or DIASource). It is implemented as a list of spans. A span contains coordinates of a stripe of pixels: row (y) given span belongs to, and a section of a column (xStart, xEnd). In DM code, the term 'footprint' refers to a 'source footprint'",DM,LDM-151,,G
 Speakers Bureau,"A volunteer body promoting LSST's visibility by identifying, initiating, and coordinating opportunities for LSST-related talks, especially at large conferences",Adm,,,G

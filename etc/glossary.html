@@ -20,11 +20,11 @@
 <script type="text/javascript"charset="utf-8">
         var gls;
 	var acrCol;
-	d3.text("htmlglossary.csv", function(error, data) {
+	d3.csv("htmlglossary.csv", function(error, data) {
 	    if (error) console.log("Failed: ", error);
-		    gls = d3.csv.parseRows(data, function(d, i) {
-		          return d.slice(0,3)
-	        });
+        gls = data.map(function(d) {
+            return [d[Object.keys(d)[0]], d[Object.keys(d)[1]], d[Object.keys(d)[2]]];
+        });
 	});
 
         function setupTable() {
