@@ -789,15 +789,18 @@ def load_translation(locale: str, filename: str) -> dict[str, str | dict[str, st
         _ = next(reader)  # This is the header
         for lc, row in enumerate(reader):
             try:
+                if len(row) > 3:  # no more than 3 cols
+                    raise ValueError("Too many columns")
+                if len(row) < 3:  # exactly 3 cols
+                    raise ValueError("Too few columns")
                 ind = 0
                 acr = escape_for_tex(row[ind])
                 defn = escape_for_tex(row[ind + 1])
-                tag = ""
+                tag = row[ind + 2]
                 # If there is a tag its overloaded - so make a map of
-                # tags to defns.
-                if len(row) > 2:
-                    tag = row[ind + 2]
-                if tag:
+                if len(tag) > 5:
+                    raise ValueError("Tag too long ")
+                if len(tag) > 0:
                     trans: dict[str, str] = {}
                     if acr in translation:
                         existing = translation[acr]
@@ -819,9 +822,9 @@ def load_translation(locale: str, filename: str) -> dict[str, str | dict[str, st
                             f"Duplicate translation for {acr} in {transfile} line {lc} without tag"
                         )
                     translation[acr] = defn
-            except BaseException as ex:
+            except BaseException:
                 print(f"Error reading {transfile} on line {lc} - {row}")
-                raise ex
+                raise
     return translation
 
 
@@ -880,15 +883,11 @@ def dump_gls(filename: str, out_file: str) -> int:
                                 exit(2)
                         else:  # it is a simple string
                             trans = transm
-                    if "," in acr:
-                        csv_acr = f'"{acr}"'
-                    else:
-                        csv_acr = acr
-                    print(",".join([csv_acr, f'"{defn}"', tags]), file=ogfile)
+                    print(",".join([f'"{acr}"', f'"{defn}"', tags]), file=ogfile)
                     if trans:
+                        print(",".join([f'"{acr}"', f'"{trans}"', tags]), file=ogfile)
                         trans = escape_for_tex(trans)
-                        print(",".join([acr, f'"{trans}"', f"{tags}"]), file=ogfile)
-                        defn = defn + "\n\n" + escape_for_tex(trans)
+                        defn = defn + "\n\n" + trans
                     else:
                         print(f"Missing translation for: {acr}:{defn}")
                     print(sep.join([acr, defn, tags]) + end, file=ofd)
