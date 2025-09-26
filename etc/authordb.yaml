@@ -588,7 +588,7 @@ affiliations:
       state: CA
       street: null
     department: Division of Physics, Mathematics and Astronomy
-    email: null
+    email: caltech.edu
     institute: California Institute of Technology
     ror_id: 05dxps055
   Caltech-Astro:
@@ -6888,6 +6888,7 @@ authors:
   megiasg:
     affil:
     - Caltech
+    - Caltech-Astro
     altaffil: []
     email: gmegias
     family_name: Megias Homar
