@@ -768,10 +768,10 @@ LVK,LIGO-Virgo-KAGRA,Sci,,,A
 LVV,LSST Verification and Validation,Gen,,,A
 LWS,Light-Wind Screen,TS,,,A
 LZ,LUX-ZEPELIN (Dark Matter Mission),Sci,,,A
-M1,primary mirror,TS,Document-12017,,A
+M1,Primary Mirror,TS,Document-12017,,A
 M1M3,Single piece of glass for Primary Mirror/Tertiary Mirror,LSST,,,A
 M2,Secondary Mirror,LSST,,,A
-M3,tertiary mirror,TS,Document-12023,,A
+M3,Tertiary Mirror,TS,Document-12023,,A
 MA,Maintenance,IT,,,A
 MAC,Media Access Control,IT,,,A
 MACHO,massive compact halo object,TS,Document-11962,,A
