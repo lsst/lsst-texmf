@@ -1173,7 +1173,7 @@ affiliations:
       state: ''
       street: ''
     department: Centre for Astrophysics Research
-    email: null
+    email: herts.ac.uk
     institute: University of Hertfordshire
     ror_id: 0267vjk41
   IAFE:
@@ -9196,6 +9196,14 @@ authors:
     family_name: Waters
     given_name: Christopher Z.
     orcid: 0000-0003-1989-4879
+  watkinsa:
+    affil:
+    - Herts
+    altaffil: []
+    email: a.watkins
+    family_name: Watkins
+    given_name: Aaron E.
+    orcid: 0000-0003-4859-3290
   weaverb:
     affil:
     - NOIRLab
