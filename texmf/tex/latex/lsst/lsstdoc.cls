@@ -1156,6 +1156,7 @@ No actions have been identified.}
 \def\actaa{Acta Astron.}   % Acta Astronomica
 \def\memsai{Mem. Soc. Ast. Italiana} % Memorie della Società Astronomica Italiana
 \def\prd{Phys.~Rev.~D}     % Physical Review D
+\def\prl{Phys.~Rev.~Lett.} % Physical Review Letters
 \def\physrep{Phys.~Rep.}   % Physics Reports
 \def\pasp{PASP}            % Publications of the Astronomical Society of the Pacific
 \def\procspie{Proc.\ SPIE} % Proceedings of the SPIE
