@@ -374,7 +374,7 @@ def genFilesADB(values: list, skip: int) -> int:
                 snames = row[SURNAME].split(" ")
                 if "," in row[SURNAME] or len(snames) >= 3:  # highly suspect
                     print(f"Check Surname for {id} at  {idx} - {row[SURNAME]}")
-                check.append(id)
+                    check.append(id)
             if len(row) >= SURNAME and not id.startswith(lower_strip_utf(row[SURNAME])) and id not in authors:
                 # this can be a foreign charecter
                 badid = id
@@ -382,7 +382,7 @@ def genFilesADB(values: list, skip: int) -> int:
                 if id != badid:  # really there is a problem
                     check.append(id)
                     print(f"Check  - author provided {badid}  at {idx}- assuming {id} - {row[SURNAME]}")
-            elif id.lower() != id:
+            elif not re.match("^[a-z]+$", id):
                 bad.append(id)
                 print(f"Check - author id {id} at index {idx}: id is not all lowercase")
 
