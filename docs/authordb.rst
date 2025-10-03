@@ -29,7 +29,7 @@ I am not in the AuthorDB
 ========================
 `This convenient sheet <https://docs.google.com/spreadsheets/d/1_zXLp7GaIJnzihKsyEAz298_xdbrgxRgZ1_86kwhGPY/edit?gid=0#gid=0>`_
 lets you search easily for your name in the Author DB.
-Your author id is int he left column.
+Your author id is in the left column.
 
 If you are not in the list sign up using  the google form
 which is bookmarked in Slack `#all-users <https://rubin-obs.slack.com/archives/C02SVMGUC>`_.
@@ -43,7 +43,7 @@ We suggest you take the description pointing authors at the signup form if they 
 
 Have the form put results in a google sheet.
 Check which column contains the AuthorID and use that in the call to the script.
-0 is the firs column so column E is 4 for example  which is the default.
+0 is the first column so column E is 4 for example  which is the default.
 The parameter after signup in the call allows you specify a different column.
 
 Then you may use:
