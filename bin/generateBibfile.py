@@ -12,12 +12,11 @@ import asyncio
 import calendar
 import re
 from datetime import UTC, datetime
-from typing import cast
 
 import latexcodec  # noqa provides the latex+latin codec
 import pybtex.database
 import yaml
-from algoliasearch.search.client import SearchClient, SearchResponse
+from algoliasearch.search.client import SearchClientSync, SearchResponse
 from bibtools import BibDict, BibEntry
 from pybtex.database import BibliographyData
 from pylatexenc.latex2text import LatexNodes2Text
@@ -106,10 +105,11 @@ async def generate_bibfile(
     """
     if not query:
         query = ""  # Algolia take None as string literal None
-    async with SearchClient(app_id="0OJETYIVL5", api_key="b7bd2f1080a5c4fe5eee502462bcc9d3") as client:
-        index_name = "document_dev"
 
-        params = {
+    client = SearchClientSync(app_id="0OJETYIVL5", api_key="b7bd2f1080a5c4fe5eee502462bcc9d3")
+    res = client.search_single_index(
+        index_name="document_dev",
+        search_params={
             "attributesToRetrieve": [
                 "handle",
                 "series",
@@ -121,15 +121,12 @@ async def generate_bibfile(
             ],
             "hitsPerPage": MAXREC,
             "query": query,
-        }
+        },
+    )
+    print(f"Total hits: {len(res.hits)}, Query:'{query}'")
 
-        # "index_name": index_name,
-        client = cast(SearchClient, client)
-        res = await client.search_single_index(index_name=index_name, search_params=params)  # type: ignore
-        print(f"Total hits: {len(res.hits)}, Query:'{query}'")
-
-        search_data = create_bibentries(res, dois)
-        print(f"Got {len(res.hits)} records max:{MAXREC} produced {len(search_data.entries)} bibentries.")
+    search_data = create_bibentries(res, dois)
+    print(f"Got {len(res.hits)} records max:{MAXREC} produced {len(search_data.entries)} bibentries.")
 
     # Read the external files that will be merged with the search results.
     # Do not use a BilbiographyData because duplicate key overwriting is
@@ -170,7 +167,7 @@ def create_bibentries(res: SearchResponse, dois: dict[str, str] | None = None) -
     entries: dict[str, pybtex.database.Entry] = {}
     doimap = dois if dois else {}
     for hit in res.hits:
-        d = hit.additional_properties
+        d = hit.model_dump()
         if "series" in d.keys() and d["series"] == "TESTN":
             continue
         if len(d["authorNames"]) == 1 and isCommittee(d["authorNames"][0]):
