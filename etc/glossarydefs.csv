@@ -388,7 +388,7 @@ EB,ExaByte,Gen,,,A
 EC2,Amazon Elastic Compute Cloud,DM,,,A
 ECDFS,Extended Chandra Deep Field-South Survey,Sci,,,A
 ECDM,Einstein-Cartan-Dirac-Maxwell cosmological model,Sci,,,A
-MECM,Engineered Ceramic Materials,CAM,LCA-11591-B_REVIEW_(Camera_Final_Design_Report),https://www.cesic.de/en,A
+ECM,Engineered Ceramic Materials,CAM,LCA-11591-B_REVIEW_(Camera_Final_Design_Report),https://www.cesic.de/en,A
 EDC,EPO Data Center,OPS EPO,,,A
 EDFS,Euclid Deep Field South,Sci,,,A
 EDR,early data release,TS,Document-11972,,A
@@ -790,6 +790,7 @@ MBTU,Mega British Thermal Unit,OPS,,,A
 MC,Monte-Carlo (simulation/process),Gen,,,A
 MCM,Master Control Module,TS,,,A
 MCMC,Monte Carlo Markov Chain,Gen,,,A
+MDP,Main Dome Platform,Gen,,,A
 MEMS,micro-electronic mechanical systems,TS,Document-11995,,A
 MERRA,Modern-Era Retrospective analysis for Research and Applications,Sci,,,A
 MIDAS,Munich Image Data Analysis System (ESO),Gen,,,A
