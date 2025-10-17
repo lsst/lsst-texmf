@@ -169,6 +169,37 @@ class AuthorDbYaml(BaseModel):
 
         return self
 
+    @model_validator(mode="after")
+    def check_author_id(self) -> Self:
+        incorrect_ids = set()
+        prefix_chars = 2  # Some family names are two characters
+        for authorid, author in self.authors.items():
+            # Check that first two characters of family_name match the
+            # first two characters of the author ID.
+            # Teams do not follow the convention.
+            if not author.given_name:
+                continue
+
+            # de X and van Y sometimes drop the prefix in the author ID.
+            # For some names there are multiple family names and the first
+            # one is not always used.
+            lower = author.family_name.lower()
+            lower = re.sub("[^a-zA-Z ]+", "", lower)
+            comparisons = {lower[:prefix_chars]}
+            for prefix in ("van ", "de ", "von der ", "rodrigues de ", "villicana "):
+                if lower.startswith(prefix):
+                    modified = lower.removeprefix(prefix)
+                    comparisons.add(modified[:prefix_chars])
+                    break
+
+            if authorid[:prefix_chars].lower() not in comparisons:
+                print(comparisons, authorid)
+                incorrect_ids.add(f"{authorid} vs {author.family_name!r}")
+
+        if incorrect_ids:
+            raise ValueError(f"Author IDs that do not seem to be related to family name: {incorrect_ids}")
+        return self
+
 
 if __name__ == "__main__":
     description = __doc__
