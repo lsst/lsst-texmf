@@ -3771,6 +3771,14 @@ authors:
     family_name: Beebe
     given_name: Wilson
     orcid: null
+  bektesevicd:
+    affil:
+    - Washington
+    altaffil: []
+    email: null
+    family_name: Bektesevic
+    given_name: Dino
+    orcid: null
   beldicac:
     affil:
     - NCSA
@@ -4742,14 +4750,6 @@ authors:
     family_name: Digel
     given_name: Seth W.
     orcid: 0000-0002-5296-4720
-  dinob:
-    affil:
-    - Washington
-    altaffil: []
-    email: null
-    family_name: Bektesevic
-    given_name: Dino
-    orcid: null
   dohertyp:
     affil:
     - SAO
@@ -7261,14 +7261,6 @@ authors:
     family_name: Nikutta
     given_name: Robert
     orcid: 0000-0002-7052-6900
-  nima:
-    affil:
-    - Washington
-    altaffil: []
-    email: nimaseda
-    family_name: Sedaghat
-    given_name: Nima
-    orcid: 0000-0003-4734-2019
   noblet:
     affil:
     - STFC-RAL
@@ -8290,6 +8282,14 @@ authors:
     family_name: Sebag
     given_name: Jacques
     orcid: null
+  sedaghatn:
+    affil:
+    - Washington
+    altaffil: []
+    email: nimaseda
+    family_name: Sedaghat
+    given_name: Nima
+    orcid: 0000-0003-4734-2019
   selvyb:
     affil:
     - RubinObs
@@ -8788,8 +8788,8 @@ authors:
     - RubinObs
     altaffil: []
     email: null
-    family_name: Adrein
-    given_name: Thebo
+    family_name: Thebo
+    given_name: Adrein
     orcid: null
   thomass:
     affil:
