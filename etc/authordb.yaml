@@ -5481,6 +5481,14 @@ authors:
     family_name: Guillemin
     given_name: Thibault
     orcid: 0000-0001-9698-6000
+  guinota:
+    affil:
+    - CMU
+    altaffil: []
+    email: aguinot@CMU-Andrew
+    family_name: Guinot
+    given_name: Axel
+    orcid: 0000-0002-5068-7918
   guylp:
     affil:
     - RubinObsC
