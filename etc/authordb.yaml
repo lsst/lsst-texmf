@@ -63,6 +63,19 @@ affiliations:
     email: null
     institute: American Museum of Natural History
     ror_id: 03thb3e06
+  ANL-HEP:
+    address:
+      city: Lemont
+      country_code: USA
+      example_expanded: High Energy Physics Division, Argonne National Laboratory,
+        9700 South Cass Avenue, Lemont, IL 60439, USA
+      postcode: '60439'
+      state: IL
+      street: 9700 South Cass Avenue
+    department: High Energy Physics Division
+    email: anl.gov
+    institute: Argonne National Laboratory
+    ror_id: 05gvnxz63
   ARCSoM:
     address:
       city: Sheffield
@@ -3739,6 +3752,14 @@ authors:
     family_name: Becker
     given_name: Andrew C.
     orcid: 0000-0001-6661-3043
+  beckermr:
+    affil:
+    - ANL-HEP
+    altaffil: []
+    email: mrbecker
+    family_name: Becker
+    given_name: Matthew R.
+    orcid: 0000-0001-7774-2246
   beckervr:
     affil:
     - RubinOps
