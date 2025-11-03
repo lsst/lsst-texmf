@@ -474,7 +474,7 @@ FNAL,Fermi National Accelerator Lab,OPS,,,A
 FOA,Funding Opportunity Announcement,Sci,,,A
 FOA,Facilities Operations in Arizona,OPS,,,A
 FOC,Facilities Operations in Chile,OPS,,,A
-FOH,Facilities Operations in Hawai‚Äòi,OPS,,,A
+FOH,Facilities Operations in Hawai,OPS,,,A
 FOIA,Freedom Of Information Act,OPS,,,A
 FoM,Figure of Merit,Gen,,,A
 FoV,Field of View (also denoted FOV),Gen,,,A
@@ -763,7 +763,7 @@ LSSTPO,LSST Project Office,Adm,,,A
 LTS,LSST Telescope and Site (Document Handle),TS,,,A
 LUT,Look-Up Table,Gen,,,A
 LV,Local Volume,Sci,,,A
-LVDS,Low Voltage Differential Signalling,CAM,LCA-11591-B_REVIEW_(Camera_Final_Design_Report),,A
+LVDS,Low Voltage Differential Signaling,CAM,LCA-11591-B_REVIEW_(Camera_Final_Design_Report),,A
 LVK,LIGO-Virgo-KAGRA,Sci,,,A
 LVV,LSST Verification and Validation,Gen,,,A
 LWS,Light-Wind Screen,TS,,,A
@@ -801,7 +801,7 @@ MLAG,Multi-chassis Link Aggregation,IT,,,A
 MLP,Multi-Layer Perceptron,Sci,,,A
 MMA,Multi Messenger Astronomy,OPS,,,A
 MMB,Morning Mini Bus,TS,,,A
-MMR,"Micro Minature Refrigeration, Inc.",CAM,LCA-11591-B_REVIEW_(Camera_Final_Design_Report),,A
+MMR,"Micro Miniature Refrigeration, Inc.",CAM,LCA-11591-B_REVIEW_(Camera_Final_Design_Report),,A
 MMT,Multiple Mirror Telescope,OPS,,,A
 MNRAS,Monthly Notices of the Royal Astronomical Society,TS,Document-12016,,A
 MOA,Memo Of Agreement,OPS,,,A
@@ -822,7 +822,7 @@ MPM,Master Protection Module,CAM,LCA-11591-B_REVIEW_(Camera_Final_Design_Report)
 MPO,Memorandum Purchase Order,OPS DOE,,,A
 MPP,Massively Parallel Process,DM,,,A
 MPS,NSF Mathematical and Physical Sciences directorate,OPS,,,A
-MPS/AST,NSF Mathematical and Physical Sciences directorate‚Äôs Division of Astronomical Sciences,OPS,,,A
+MPS/AST,"NSF Mathematical and Physical Sciences directorate‚ Division of Astronomical Sciences",OPS,,,A
 MREFC,Major Research Equipment and Facility Construction,Gen,,NSF,A
 MREN,Montenegrin Research and Education Network,Gen,,,A
 MS,Mega Sample,CAM,LCA-11591-B_REVIEW_(Camera_Final_Design_Report),,A
@@ -932,7 +932,7 @@ OLPA,Office of Legislative and Public Affairs,Gen,,,A
 OMB,Office of Management and Budget,OPS,,,A
 OOB,Out Of Bound (Alternative network access),IT,,,A
 OODS,Observatory Operations Data Service,DM,,,A
-OPCC,Oficina de Protecci√≥n de la Calidad del Cielo,OPS,,,A
+OPCC,Oficina de Protección de la Calidad del Cielo,OPS,,,A
 OPD,optical path difference,TS,Document-12036,,A
 OPS,Operations,LSST DM,,,A
 OpSim,Operations Simulation,Sims,,,A
@@ -1113,6 +1113,7 @@ RRL,RR Lyrae stars,Sci,,,A
 RS232C,Standard 25-pin serial connection between computers and modems,Gen,,,A
 RSA,Raft Sensor Array,CAM,,,A
 RSE,Rucio Storage Element,OPS,,,A
+RSO,Rubin Summit Operations,OPS,,,A
 RSP,Rubin Science Platform,DM,,,A
 RSS,square root of the sum of the squares,TS,Document-11939,,A
 RSS,Resident Set Size,DM,,,A
