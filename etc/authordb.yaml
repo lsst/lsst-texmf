@@ -3525,7 +3525,7 @@ authors:
     email: p.antilogus@IN2P3
     family_name: Antilogus
     given_name: Pierre
-    orcid: null
+    orcid: 0000-0002-0389-5706
   aracenaalcayagaa:
     affil:
     - RubinObsC
@@ -3824,6 +3824,14 @@ authors:
     family_name: Bellm
     given_name: Eric C.
     orcid: 0000-0001-8018-5348
+  bernarda:
+    affil:
+    - IN2P3-LPSC
+    altaffil: []
+    email: antoine.bernard
+    family_name: Bernard
+    given_name: Antoine
+    orcid: null
   bernardinelliph:
     affil:
     - Washington-DIRAC
