@@ -313,13 +313,13 @@ affiliations:
     ror_id: 05gq02987
   Burwood:
     address:
-      city: Chicago
+      city: Oak Brook
       country_code: USA
-      example_expanded: Burwood Group, 125 South Wacker Drive Suite 2950, Chicago,
-        IL 60606, USA
-      postcode: '60606'
+      example_expanded: Burwood Group, 1515 W. 22nd Street Suite 200W, Oak Brook,
+        IL 60523, USA
+      postcode: '60523'
       state: IL
-      street: 125 South Wacker Drive Suite 2950
+      street: 1515 W. 22nd Street Suite 200W
     department: null
     email: null
     institute: Burwood Group
