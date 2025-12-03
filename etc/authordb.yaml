@@ -7786,6 +7786,14 @@ authors:
     family_name: Prouza
     given_name: Michael
     orcid: null
+  qiuy:
+    affil:
+    - SLAC
+    altaffil: []
+    email: qiu@slac.stanford.edu
+    family_name: Qiu
+    given_name: Yongqiang (Brian)
+    orcid: null
   quintb:
     affil:
     - RubinObs
