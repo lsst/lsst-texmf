@@ -1586,12 +1586,12 @@ affiliations:
     ror_id: 01wjew854
   JSickCodes:
     address:
-      city: Ontario
+      city: Penetanguishene
       country_code: Canada
       example_expanded: J.Sick Codes Inc., Penetanguishene, Ontario, Canada
       postcode: ''
-      state: ''
-      street: Penetanguishene
+      state: Ontario
+      street: ''
     department: null
     email: null
     institute: J.Sick Codes Inc.
