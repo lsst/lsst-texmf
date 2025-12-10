@@ -595,6 +595,7 @@ class ADASS(AuthorTextGenerator):
         affil_to_number = self.number_affiliations()
 
         authors = list(self.authors)
+        lead_email = authors[0].email
         last = authors.pop()
         author_lines = []
         for author in authors:
@@ -611,7 +612,11 @@ class ADASS(AuthorTextGenerator):
 
         affiliations = []
         for affil, number in affil_to_number.items():
-            affiliations.append(f"\\affil{{$^{number}${affil.get_city_with_institute()}}}")
+            if number > 1:
+                email = ""
+            else:
+                email = rf"; \email{{{lead_email}}}"
+            affiliations.append(f"\\affil{{$^{number}${affil.get_city_with_institute()}{email}}}")
 
         paperauthors = []
         for author in self.authors:
