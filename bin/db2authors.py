@@ -614,7 +614,8 @@ class ADASS(AuthorTextGenerator):
                 parsed["state"] = ""
                 parsed["postcode"] = ""
                 parsed["country"] = ""
-            parsed["institute"] = affil.get_department_and_institute()
+            parsed["institute"] = affil.institute or ""
+            parsed["department"] = affil.department or ""
             parsed["full_name"] = author.full_latex_name
             parsed["email"] = author.email
             parsed["orcid"] = author.orcid or ""
@@ -622,7 +623,7 @@ class ADASS(AuthorTextGenerator):
                 (
                     r"\paperauthor"
                     "{{{full_name}}}{{{email}}}{{{orcid}}}"
-                    "{{{institute}}}{{}}{{{city}}}{{{state}}}{{{postcode}}}{{{country}}}"
+                    "{{{institute}}}{{{department}}}{{{city}}}{{{state}}}{{{postcode}}}{{{country}}}"
                 ).format(**parsed)
             )
 
