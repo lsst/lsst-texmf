@@ -599,7 +599,7 @@ class ADASS(AuthorTextGenerator):
         last = authors.pop()
         author_lines = []
         for author in authors:
-            author_text = author.full_latex_name + ","
+            author_text = author.full_latex_name.replace("-", r"\nobreakdashes-") + ","
             affil_text = self._to_affil_text(affil_to_number, author.affiliations)
             author_lines.append(author_text + affil_text)
 
@@ -607,7 +607,9 @@ class ADASS(AuthorTextGenerator):
         if author_lines:
             final_and = "and "
         author_lines.append(
-            final_and + last.full_latex_name + self._to_affil_text(affil_to_number, last.affiliations)
+            final_and
+            + last.full_latex_name.replace("-", r"\nobreakdashes-")
+            + self._to_affil_text(affil_to_number, last.affiliations)
         )
 
         affiliations = []
@@ -635,7 +637,7 @@ class ADASS(AuthorTextGenerator):
                 parsed["country"] = ""
             parsed["institute"] = affil.institute or ""
             parsed["department"] = affil.department or ""
-            parsed["full_name"] = author.full_latex_name
+            parsed["full_name"] = author.full_latex_name.replace("-", r"\nobreakdashes-")
             parsed["email"] = author.email
             parsed["orcid"] = author.orcid or ""
             paperauthors.append(
