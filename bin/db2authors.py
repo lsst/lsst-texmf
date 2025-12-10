@@ -120,6 +120,20 @@ class Affiliation:
             parts.append(self.address.country_code)
         return ", ".join(parts)
 
+    def get_city_with_institute(self) -> str:
+        """Return institute, city, and country as a string."""
+        if not self.address:
+            return self.get_department_and_institute()
+
+        parts = [self.get_department_and_institute()]
+        if self.address.city:
+            parts.append(self.address.city)
+        if self.address.state:
+            parts.append(self.address.state)
+        if self.address.country_code:
+            parts.append(self.address.country_code)
+        return ", ".join(parts)
+
 
 @dataclasses.dataclass(frozen=True)
 class Author:
@@ -597,7 +611,7 @@ class ADASS(AuthorTextGenerator):
 
         affiliations = []
         for affil, number in affil_to_number.items():
-            affiliations.append(f"\\affil{{$^{number}${affil.get_full_address_with_institute()}}}")
+            affiliations.append(f"\\affil{{$^{number}${affil.get_city_with_institute()}}}")
 
         paperauthors = []
         for author in self.authors:
