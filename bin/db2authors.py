@@ -154,7 +154,7 @@ class Author:
 
     @property
     def full_latex_name(self) -> str:
-        """Return full name with latex spaces."""
+        """Return full name with latex non-breaking spaces."""
         if not self.given_name:
             full = self.family_name
         else:
@@ -192,7 +192,7 @@ class Author:
             # Non-human collaboration.
             return ""
         initials = []
-        # Split on whitespace, latex space ~.
+        # Split on whitespace, non-breaking space ~.
         for name in re.split(r"[\s\~]", self.given_name):
             if "-" in name:
                 parts = name.split("-")
