@@ -120,6 +120,20 @@ class Affiliation:
             parts.append(self.address.country_code)
         return ", ".join(parts)
 
+    def get_city_with_institute(self) -> str:
+        """Return institute, city, and country as a string."""
+        if not self.address:
+            return self.get_department_and_institute()
+
+        parts = [self.get_department_and_institute()]
+        if self.address.city:
+            parts.append(self.address.city)
+        if self.address.state:
+            parts.append(self.address.state)
+        if self.address.country_code:
+            parts.append(self.address.country_code)
+        return ", ".join(parts)
+
 
 @dataclasses.dataclass(frozen=True)
 class Author:
@@ -140,7 +154,7 @@ class Author:
 
     @property
     def full_latex_name(self) -> str:
-        """Return full name with latex spaces."""
+        """Return full name with latex non-breaking spaces."""
         if not self.given_name:
             full = self.family_name
         else:
@@ -178,7 +192,7 @@ class Author:
             # Non-human collaboration.
             return ""
         initials = []
-        # Split on whitespace, latex space ~.
+        # Split on whitespace, non-breaking space ~.
         for name in re.split(r"[\s\~]", self.given_name):
             if "-" in name:
                 parts = name.split("-")
@@ -581,10 +595,11 @@ class ADASS(AuthorTextGenerator):
         affil_to_number = self.number_affiliations()
 
         authors = list(self.authors)
+        lead_email = authors[0].email
         last = authors.pop()
         author_lines = []
         for author in authors:
-            author_text = author.full_latex_name + ","
+            author_text = author.full_latex_name.replace("-", r"\nobreakdashes-") + ","
             affil_text = self._to_affil_text(affil_to_number, author.affiliations)
             author_lines.append(author_text + affil_text)
 
@@ -592,12 +607,18 @@ class ADASS(AuthorTextGenerator):
         if author_lines:
             final_and = "and "
         author_lines.append(
-            final_and + last.full_latex_name + self._to_affil_text(affil_to_number, last.affiliations)
+            final_and
+            + last.full_latex_name.replace("-", r"\nobreakdashes-")
+            + self._to_affil_text(affil_to_number, last.affiliations)
         )
 
         affiliations = []
         for affil, number in affil_to_number.items():
-            affiliations.append(f"\\affil{{$^{number}${affil.get_full_address_with_institute()}}}")
+            if number > 1:
+                email = ""
+            else:
+                email = rf"; \email{{{lead_email}}}"
+            affiliations.append(f"\\affil{{$^{number}${affil.get_city_with_institute()}{email}}}")
 
         paperauthors = []
         for author in self.authors:
@@ -614,15 +635,16 @@ class ADASS(AuthorTextGenerator):
                 parsed["state"] = ""
                 parsed["postcode"] = ""
                 parsed["country"] = ""
-            parsed["institute"] = affil.get_department_and_institute()
-            parsed["full_name"] = author.full_latex_name
+            parsed["institute"] = affil.institute or ""
+            parsed["department"] = affil.department or ""
+            parsed["full_name"] = author.full_latex_name.replace("-", r"\nobreakdashes-")
             parsed["email"] = author.email
             parsed["orcid"] = author.orcid or ""
             paperauthors.append(
                 (
                     r"\paperauthor"
                     "{{{full_name}}}{{{email}}}{{{orcid}}}"
-                    "{{{institute}}}{{}}{{{city}}}{{{state}}}{{{postcode}}}{{{country}}}"
+                    "{{{institute}}}{{{department}}}{{{city}}}{{{state}}}{{{postcode}}}{{{country}}}"
                 ).format(**parsed)
             )
 
