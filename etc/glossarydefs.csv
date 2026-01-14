@@ -436,6 +436,7 @@ EVMS,Earned Value Management System,Adm Gen,,,A
 EXCH,Filter Exchange subsystem,CAM,LCA-11591-B_REVIEW_(Camera_Final_Design_Report),,A
 EXIST,Energetic X-ray Imaging Survey Telescope,TS,Document-12026,,A
 F2F,Face 2 Face (meeting),DM,,,A
+FAA,U.S. Federal Aviation Administration,,,,A
 FACTS,Foreign Access Central Tracking System,DM,,,A
 FAFF,First-Look Analysis and Feedback Functionality,TS,,,A
 FAIR,"Findable, Accessible, Interoperable and Reusable",DM,,,A
@@ -1381,6 +1382,7 @@ VST,VLT Survey Telescope,Gen,,,A
 VXLAN,Virtual Extensible LAN,IT,,,A
 W3C,World Wide Web Consortium,Gen,,,A
 WAL,Write Ahead Log,DM,,,A
+WAAS,Wide Area Augmentation System,,,,A
 WAN,Wide Area Network,Gen,,,A
 WAS,Wave Front Array Subsystem,CAM,LCA-11591-B_REVIEW_(Camera_Final_Design_Report),,A
 WBS,Work Breakdown Structure,Gen,,,A
