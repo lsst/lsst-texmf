@@ -425,6 +425,7 @@ EVMS,Sistema de gestión del valor ganado,
 EXCH,Subsistema de intercambio de filtros,CAM
 EXIST,Energetic X-ray Imaging Survey Telescope [Telescopio para obtención de imágenes por rayos X energéticos],
 F2F,"Cara a cara (reunión)",
+FAA,E.U,Administración Federal de Aviación,,,,A
 FACTS,Sistema centralizado de seguimiento del acceso de extranjeros,DM
 FAFF,Funcionalidad de análisis y retroalimentación en primera observación,
 FAIR,"Encontrable, accesible, interoperable y reutilizable",
@@ -1343,6 +1344,7 @@ VRO,(no usar) Observatorio Vera C. Rubin,
 VST,Telescopio de rastreo VLT,
 VXLAN,Red de área local virtual extensible,
 W3C,Consorcio World Wide Web,
+WAAS,Sistema de Aumentación Basado en Satélites,,,,A
 WAL,registro de escritura anticipada,
 WAN,Red de área amplia,
 WAS,Subsistema de matriz de frente de onda,CAM
