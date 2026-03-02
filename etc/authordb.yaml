@@ -2852,6 +2852,20 @@ affiliations:
     email: null
     institute: University of California, Santa Barbara
     ror_id: 02t274463
+  UCSCAA:
+    address:
+      city: Santa Cruz
+      country_code: USA
+      example_expanded: Department of Astronomy and Astrophysics,
+        University of California--Santa Cruz, 1156 High St., Santa Cruz, CA 95064,
+        USA
+      postcode: '95064'
+      state: CA
+      street: 1156 High St.
+    department: Department of Astronomy and Astrophysics
+    email: ucsc.edu
+    institute: University of California, Santa Cruz
+    ror_id: 03s65by71
   UCSC:
     address:
       city: Santa Cruz
@@ -8038,7 +8052,7 @@ authors:
     orcid: null
   robertsonbe:
     affil:
-    - UCSC
+    - UCSCAA
     altaffil: []
     email: brant
     family_name: Robertson
