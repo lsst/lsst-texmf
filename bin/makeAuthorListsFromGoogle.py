@@ -291,6 +291,7 @@ def process_affiliations(
             affilidForm[0] = "RubinObsC"
 
         for affilid in affilidForm:
+            affilid = affilid.strip()
             if affilid not in affils:
                 if len(affilid) < 10:
                     print(f"Affiliation does not exist: {affilid} - skipping {id} at index {idx}")

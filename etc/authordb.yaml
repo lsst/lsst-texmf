@@ -12,6 +12,19 @@ affiliations:
     email: mq.edu.au
     institute: Macquarie University
     ror_id: 03nw31086
+  AAOMUN:
+    address:
+      city: ''
+      country_code: Australia
+      example_expanded: Australian Astronomical Optics, Macquarie University, North
+        Ryde, NSW, Australia
+      postcode: ''
+      state: null
+      street: Macquarie University, North Ryde, NSW
+    department: null
+    email: mq.edu.au
+    institute: Australian Astronomical Optics
+    ror_id: null
   AAS:
     address:
       city: Washington
@@ -124,7 +137,7 @@ affiliations:
       state: null
       street: Juan Cisternas 1500
     department: null
-    email: null
+    email: noirlab.edu
     institute: AURA Observatory
     ror_id: 02y5f7c97
   AURA-T:
@@ -2852,20 +2865,6 @@ affiliations:
     email: null
     institute: University of California, Santa Barbara
     ror_id: 02t274463
-  UCSCAA:
-    address:
-      city: Santa Cruz
-      country_code: USA
-      example_expanded: Department of Astronomy and Astrophysics,
-        University of California--Santa Cruz, 1156 High St., Santa Cruz, CA 95064,
-        USA
-      postcode: '95064'
-      state: CA
-      street: 1156 High St.
-    department: Department of Astronomy and Astrophysics
-    email: ucsc.edu
-    institute: University of California, Santa Cruz
-    ror_id: 03s65by71
   UCSC:
     address:
       city: Santa Cruz
@@ -2877,6 +2876,19 @@ affiliations:
       state: CA
       street: 1156 High St.
     department: Santa Cruz Institute for Particle Physics and Physics Department
+    email: ucsc.edu
+    institute: University of California, Santa Cruz
+    ror_id: 03s65by71
+  UCSCAA:
+    address:
+      city: Santa Cruz
+      country_code: USA
+      example_expanded: Department of Astronomy and Astrophysics, University of California--Santa
+        Cruz, 1156 High St., Santa Cruz, CA 95064, USA
+      postcode: '95064'
+      state: CA
+      street: 1156 High St.
+    department: Department of Astronomy and Astrophysics
     email: ucsc.edu
     institute: University of California, Santa Cruz
     ror_id: 03s65by71
@@ -3873,12 +3885,12 @@ authors:
   biancofb:
     affil:
     - Delaware-PhyAst
-    - Delaware-Policy
     - Delaware-DataSci
+    - Delaware-Policy
     altaffil: []
-    email: fedhere@Gmail
+    email: Fbianco
     family_name: Bianco
-    given_name: Federica B.
+    given_name: Federica Bettina
     orcid: 0000-0003-1953-8727
   biswasr:
     affil:
@@ -4416,14 +4428,23 @@ authors:
     family_name: Chow
     given_name: Derek
     orcid: null
+  chowi:
+    affil:
+    - Washington
+    - Washington-DIRAC
+    altaffil: []
+    email: chowian
+    family_name: Chow
+    given_name: Ian
+    orcid: 0009-0005-9428-9590
   christensenej:
     affil:
     - RubinObsC
     altaffil: []
-    email: echristensen
+    email: eric.christensen@NOIRLab
     family_name: Christensen
     given_name: Eric J.
-    orcid: null
+    orcid: 0009-0001-9424-2291
   ciardidr:
     affil:
     - IPAC
@@ -4866,6 +4887,14 @@ authors:
     family_name: Durech
     given_name: Josef
     orcid: null
+  e.bazkiaeia:
+    affil:
+    - AAOMUN
+    altaffil: []
+    email: amir.ebadati-bazkiaei
+    family_name: E. Bazkiaei
+    given_name: Amir
+    orcid: 0000-0001-6306-6099
   economouf:
     affil:
     - RubinObs
@@ -5712,10 +5741,10 @@ authors:
     affil:
     - Harvard-CfA
     altaffil: []
-    email: null
+    email: mholman
     family_name: Holman
     given_name: Matthew J.
-    orcid: null
+    orcid: 0000-0002-1139-4880
   howardel:
     affil:
     - Washington
@@ -6883,7 +6912,7 @@ authors:
     affil:
     - Duke
     altaffil: []
-    email: sidney.mau@Duke
+    email: sidney.mau
     family_name: Mau
     given_name: Sidney
     orcid: 0000-0003-3519-4004
@@ -6983,6 +7012,14 @@ authors:
     email: felipe
     family_name: Menanteau
     given_name: Felipe
+    orcid: null
+  menesessotoga:
+    affil:
+    - RubinObsC
+    altaffil: []
+    email: gonzalo.meneses@AURA-C
+    family_name: Meneses Soto
+    given_name: Gonzalo Antonio
     orcid: null
   mentzerhr:
     affil:
@@ -7136,6 +7173,14 @@ authors:
     family_name: Morrison
     given_name: Christopher B.
     orcid: null
+  mortensenk:
+    affil:
+    - RubinObsC
+    altaffil: []
+    email: kristopher.mortensen@NOIRLab
+    family_name: Mortensen
+    given_name: Kris
+    orcid: 0000-0001-9676-5005
   mrakovcick:
     affil:
     - URijeka
@@ -7288,6 +7333,14 @@ authors:
     family_name: Newbry
     given_name: Scott P.
     orcid: null
+  nicholsr:
+    affil:
+    - UCSC
+    altaffil: []
+    email: rejnicho
+    family_name: Nichols
+    given_name: Renee
+    orcid: 0009-0007-0654-0840
   nideverdl:
     affil:
     - MontanaStateU
@@ -8445,6 +8498,14 @@ authors:
     family_name: Shaw
     given_name: Richard A.
     orcid: 0000-0003-4058-5202
+  shestakova:
+    affil:
+    - UCSC
+    altaffil: []
+    email: ashestak
+    family_name: Shestakov
+    given_name: Adrian
+    orcid: null
   shipseyi:
     affil:
     - Oxford
@@ -8745,10 +8806,11 @@ authors:
     orcid: 0000-0001-6279-0552
   stubbscw:
     affil:
-    - Harvard-Physics
     - Harvard-Astro
+    - Harvard-CfA
+    - Harvard-Physics
     altaffil: []
-    email: null
+    email: stubbs
     family_name: Stubbs
     given_name: Christopher W.
     orcid: 0000-0003-0347-1724
@@ -8868,9 +8930,9 @@ authors:
     orcid: null
   thomass:
     affil:
-    - RubinObs
+    - RubinOps
     altaffil: []
-    email: sthomas
+    email: sandrine.thomas
     family_name: Thomas
     given_name: Sandrine
     orcid: 0000-0002-9121-3436
@@ -9112,10 +9174,10 @@ authors:
     affil:
     - RubinObsC
     altaffil: []
-    email: pvenegas
+    email: paulina.venegas@AURA-C
     family_name: Venegas
     given_name: Paulina
-    orcid: null
+    orcid: 0009-0001-3922-9588
   venutil:
     affil:
     - SETI
@@ -9415,6 +9477,14 @@ authors:
     family_name: Wolff
     given_name: Sidney C.
     orcid: null
+  woodd:
+    affil:
+    - UCSC
+    altaffil: []
+    email: duncangwood@Gmail
+    family_name: Wood
+    given_name: Duncan
+    orcid: 0000-0003-4627-590X
   woodvaseywm:
     affil:
     - Pitts
