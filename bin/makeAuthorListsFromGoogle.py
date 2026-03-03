@@ -219,6 +219,7 @@ def lower_strip_utf(s: str) -> str:
     """Lower case, strip utf chars and other chars and space"""
     id = strip_utf(s)  # no utf
     id = id.lower().replace(" ", "")
+    id = id.replace(".", "")
     return id
 
 

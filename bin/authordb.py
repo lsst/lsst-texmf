@@ -184,12 +184,18 @@ class AuthorDbYaml(BaseModel):
             # For some names there are multiple family names and the first
             # one is not always used.
             lower = author.family_name.lower()
-            lower = re.sub("[^a-zA-Z ]+", "", lower)
-            comparisons = {lower[:prefix_chars]}
+            cleaned_with_spaces = re.sub("[^a-zA-Z ]+", "", lower)
+
+            # Also create an alpha-only version (no spaces/punctuation) to
+            #  Deal with e.g. "E.  Bazkiaei" -> "ebazkiaei".
+            alpha_only = re.sub("[^a-zA-Z]+", "", cleaned_with_spaces)
+
+            comparisons = {alpha_only[:prefix_chars]}
             for prefix in ("van ", "de ", "von der ", "rodrigues de ", "villicana "):
-                if lower.startswith(prefix):
-                    modified = lower.removeprefix(prefix)
-                    comparisons.add(modified[:prefix_chars])
+                if cleaned_with_spaces.startswith(prefix):
+                    modified = cleaned_with_spaces.removeprefix(prefix)
+                    mod_alpha = re.sub("[^a-zA-Z]+", "", modified)
+                    comparisons.add(mod_alpha[:prefix_chars])
                     break
 
             if authorid[:prefix_chars].lower() not in comparisons:

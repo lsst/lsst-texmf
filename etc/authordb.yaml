@@ -12,19 +12,6 @@ affiliations:
     email: mq.edu.au
     institute: Macquarie University
     ror_id: 03nw31086
-  AAOMUN:
-    address:
-      city: ''
-      country_code: Australia
-      example_expanded: Australian Astronomical Optics, Macquarie University, North
-        Ryde, NSW, Australia
-      postcode: ''
-      state: null
-      street: Macquarie University, North Ryde, NSW
-    department: null
-    email: mq.edu.au
-    institute: Australian Astronomical Optics
-    ror_id: null
   AAS:
     address:
       city: Washington
@@ -1120,7 +1107,7 @@ affiliations:
       state: MA
       street: 60 Garden St.
     department: Department of Astronomy, Center for Astrophysics
-    email: null
+    email: g.harvard.edu
     institute: Harvard University
     ror_id: 03vek6s52
   Harvard-CfA:
@@ -4887,9 +4874,9 @@ authors:
     family_name: Durech
     given_name: Josef
     orcid: null
-  e.bazkiaeia:
+  ebazkiaeia:
     affil:
-    - AAOMUN
+    - AAO
     altaffil: []
     email: amir.ebadati-bazkiaei
     family_name: E. Bazkiaei
@@ -7015,9 +7002,9 @@ authors:
     orcid: null
   menesessotoga:
     affil:
-    - RubinObsC
+    - RubinOpsC
     altaffil: []
-    email: gonzalo.meneses@AURA-C
+    email: gonzalo.meneses
     family_name: Meneses Soto
     given_name: Gonzalo Antonio
     orcid: null
@@ -7175,9 +7162,9 @@ authors:
     orcid: null
   mortensenk:
     affil:
-    - RubinObsC
+    - RubinOpsC
     altaffil: []
-    email: kristopher.mortensen@NOIRLab
+    email: kristopher.mortensen
     family_name: Mortensen
     given_name: Kris
     orcid: 0000-0001-9676-5005
@@ -9172,9 +9159,9 @@ authors:
     orcid: 0000-0001-8694-1204
   venegasp:
     affil:
-    - RubinObsC
+    - RubinOpsC
     altaffil: []
-    email: paulina.venegas@AURA-C
+    email: paulina.venegas
     family_name: Venegas
     given_name: Paulina
     orcid: 0009-0001-3922-9588
