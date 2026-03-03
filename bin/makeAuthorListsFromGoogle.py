@@ -31,7 +31,7 @@ import re
 from typing import Any
 
 import yaml
-from authordb import Address, Affiliation, AuthorDbAuthor, dump_authordb, load_authordb
+from authordb import Address, Affiliation, AuthorDbAuthor, dump_authordb, load_authordb, strip_utf
 from google.auth.transport.requests import Request
 from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
@@ -205,16 +205,6 @@ def handle_email(
         return f"{mailid}@{daffil}"
 
 
-def strip_utf(ins: str) -> str:
-    """Want simple ids wiht now latex or unicode"""
-    outs = unicode_to_latex(ins)
-    outs = re.sub(r"\'", "", outs)
-    outs = re.sub(r"[-'}{]", "", outs)
-    outs = outs.replace("\\", "")
-    outs = outs.replace("-", "")
-    return outs
-
-
 def lower_strip_utf(s: str) -> str:
     """Lower case, strip utf chars and other chars and space"""
     id = strip_utf(s)  # no utf
@@ -291,6 +281,7 @@ def process_affiliations(
             affilidForm[0] = "RubinObsC"
 
         for affilid in affilidForm:
+            affilid = affilid.strip()
             if affilid not in affils:
                 if len(affilid) < 10:
                     print(f"Affiliation does not exist: {affilid} - skipping {id} at index {idx}")
