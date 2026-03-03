@@ -114,19 +114,6 @@ affiliations:
     email: astron.nl
     institute: ASTRON
     ror_id: 000k1q888
-  AURA-C:
-    address:
-      city: La Serena
-      country_code: Chile
-      example_expanded: AURA Observatory, Juan Cisternas 1500, La Serena, Región de
-        Coquimbo, Chile
-      postcode: null
-      state: null
-      street: Juan Cisternas 1500
-    department: null
-    email: noirlab.edu
-    institute: AURA Observatory
-    ror_id: 02y5f7c97
   AURA-T:
     address:
       city: Tucson
@@ -9263,6 +9250,14 @@ authors:
     family_name: Vucina
     given_name: Tomislav
     orcid: null
+  vzilkovad:
+    affil:
+    - RubinOpsC
+    altaffil: []
+    email: danica.zilkova
+    family_name: \v{Z}ilkov\'a
+    given_name: Danica
+    orcid: 0000-0002-5726-3640
   wahlw:
     affil:
     - BNL
