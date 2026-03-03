@@ -2366,11 +2366,11 @@ affiliations:
     address:
       city: La Serena
       country_code: Chile
-      example_expanded: Vera C.\ Rubin Observatory/NSF NOIRLab, Casilla 603, La Serena,
+      example_expanded: Vera C.\ Rubin Observatory/NSF NOIRLab, Avenida Juan Cisternas \#1500, La Serena,
         Chile
       postcode: ''
       state: ''
-      street: Casilla 603
+      street: Avenida Juan Cisternas \#1500
     department: null
     email: noirlab.edu
     institute: Vera C.\ Rubin Observatory/NSF NOIRLab
@@ -9250,7 +9250,7 @@ authors:
     family_name: Vucina
     given_name: Tomislav
     orcid: null
-  vzilkovad:
+  zilkovad:
     affil:
     - RubinOpsC
     altaffil: []
