@@ -5,10 +5,27 @@ from __future__ import annotations
 import argparse
 import os
 import re
+import unicodedata
 from typing import Annotated, Self
 
 import yaml
+from db2authors import latex2text
 from pydantic import AfterValidator, BaseModel, ConfigDict, Field, model_validator
+
+
+def strip_utf(ins: str) -> str:
+    """Want simple ids wihout now latex or unicode"""
+    # Decompose Unicode characters into base + combining marks
+    str = latex2text(ins)
+    outs = unicodedata.normalize("NFKD", str)
+    # ncode to ASCII, ignoring non-ASCII characters
+    outs = outs.encode("ascii", "ignore").decode("ascii")
+    outs = re.sub(r"\.'", "", outs)
+    outs = re.sub(r"[-'}{]", "", outs)
+    outs = outs.replace("\\", "")
+    outs = outs.replace("-", "")
+    outs = outs.replace(".", "")
+    return outs
 
 
 def load_authordb(file_name: str | None = None) -> AuthorDbYaml:
@@ -184,10 +201,11 @@ class AuthorDbYaml(BaseModel):
             # For some names there are multiple family names and the first
             # one is not always used.
             lower = author.family_name.lower()
+            lower = strip_utf(lower)
             cleaned_with_spaces = re.sub("[^a-zA-Z ]+", "", lower)
 
             # Also create an alpha-only version (no spaces/punctuation) to
-            #  Deal with e.g. "E.  Bazkiaei" -> "ebazkiaei".
+            #  Deal with e.g. "E.  Bazkiaei" -> "ebazkiaei" and Unicode.
             alpha_only = re.sub("[^a-zA-Z]+", "", cleaned_with_spaces)
 
             comparisons = {alpha_only[:prefix_chars]}
