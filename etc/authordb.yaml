@@ -2366,8 +2366,8 @@ affiliations:
     address:
       city: La Serena
       country_code: Chile
-      example_expanded: Vera C.\ Rubin Observatory/NSF NOIRLab, Avenida Juan Cisternas \#1500, La Serena,
-        Chile
+      example_expanded: Vera C.\ Rubin Observatory/NSF NOIRLab, Avenida Juan Cisternas
+        \#1500, La Serena, Chile
       postcode: ''
       state: ''
       street: Avenida Juan Cisternas \#1500
@@ -8502,7 +8502,7 @@ authors:
     altaffil: []
     email: alysha.shugart@NOIRLab
     family_name: Shugart
-    given_name: Alysha
+    given_name: Alysha B.
     orcid: 0009-0000-6778-7168
   sickj:
     affil:
@@ -9250,14 +9250,6 @@ authors:
     family_name: Vucina
     given_name: Tomislav
     orcid: null
-  zilkovad:
-    affil:
-    - RubinOpsC
-    altaffil: []
-    email: danica.zilkova
-    family_name: \v{Z}ilkov\'a
-    given_name: Danica
-    orcid: 0000-0002-5726-3640
   wahlw:
     affil:
     - BNL
@@ -9611,3 +9603,11 @@ authors:
     family_name: Zhou
     given_name: Conghao
     orcid: 0000-0002-2897-6326
+  zilkovad:
+    affil:
+    - RubinOpsC
+    altaffil: []
+    email: danica.zilkova
+    family_name: \v{Z}ilkov\'a
+    given_name: Danica
+    orcid: 0000-0002-5726-3640
