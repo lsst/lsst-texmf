@@ -4821,6 +4821,14 @@ authors:
     family_name: Donev
     given_name: Ema
     orcid: null
+  douxc:
+    affil:
+    - IN2P3-LPSC
+    altaffil: []
+    email: doux
+    family_name: Doux
+    given_name: Cyrille
+    orcid: 0000-0003-4480-0096
   drassh:
     affil:
     - RubinObsC
