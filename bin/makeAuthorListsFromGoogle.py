@@ -327,7 +327,7 @@ def genFilesADB(values: list, skip: int) -> int:
         print("No data found.")
     else:
         clash = []
-        check = []
+        check: list[str] = []
         bad = []
         toupdate = []
         notfound = []
@@ -368,11 +368,9 @@ def genFilesADB(values: list, skip: int) -> int:
                     check.append(id)
             if len(row) >= SURNAME and not id.startswith(lower_strip_utf(row[SURNAME])) and id not in authors:
                 # this can be a foreign charecter
-                badid = id
-                id = make_id(row[NAME], row[SURNAME])
-                if id != badid:  # really there is a problem
-                    check.append(id)
-                    print(f"Check  - author provided {badid}  at {idx}- assuming {id} - {row[SURNAME]}")
+                pid = make_id(row[NAME], row[SURNAME])
+                print(f"Check  - author provided {id}  at {idx}- might {pid} - {row[SURNAME]}")
+                bad.append(id)
             elif not re.match("^[a-z]+$", id):
                 bad.append(id)
                 print(f"Check - author id {id} at index {idx}: id is not all lowercase")
@@ -446,7 +444,7 @@ def genFiles(values: list, skip: int, builder: bool = False, adb: bool = False) 
     else:
         authorids = []
         clash = []
-        check = []
+        check: list[str] = []
         bad = []
         toupdate = []
         notfound = []
@@ -470,12 +468,11 @@ def genFiles(values: list, skip: int, builder: bool = False, adb: bool = False) 
                     id = make_id(row[NAME], row[SURNAME])
             if len(row) >= SURNAME and not id.startswith(lower_strip_utf(row[SURNAME])):
                 # this can be a foreign charecter
-                badid = id
-                id = make_id(row[NAME], row[SURNAME])
-                if id != badid:  # really there is a problem
-                    check.append(id)
+                nid = make_id(row[NAME], row[SURNAME])
+                if id != nid:  # really there is a pdroblem
+                    bad.append(id)
                     print(
-                        f"Check  - author provided {badid}  at {idx}- assuming {id} - "
+                        f"Check  - author provided {id}  at {idx}- perhaps it is {nid}?- "
                         f"{row[SURNAME]}, {row[AUTHORIDALT]} "
                     )
             update = (adb and not newid) or "but" in row[UPDATE]
