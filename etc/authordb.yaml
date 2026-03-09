@@ -1296,6 +1296,18 @@ affiliations:
     address:
       city: Clermont-Ferrand
       country_code: France
+      example_expanded: LPCA, Universit\'{e} Clermont-Auvergne, CNRS/IN2P3, Clermont-Ferrand, France
+      postcode: F-63000
+      state: ''
+      street: 4 Avenue Blaise Pascal
+    department: null
+    email: clermont.in2p3.fr
+    institute: Universit\'{e} Clermont-Auvergne, CNRS/IN2P3, LPCA
+    ror_id: 0214k6v65
+  IN2P3-LPCA-FINK:
+    address:
+      city: Clermont-Ferrand
+      country_code: France
       example_expanded: Universit\'{e} Clermont Auvergne, CNRS/IN2P3, LPCA, 4 Avenue
         Blaise Pascal, F-63000 Clermont-Ferrand, France
       postcode: F-63000
@@ -5213,7 +5225,7 @@ authors:
     orcid: 0000-0002-8526-3963
   ganglere:
     affil:
-    - IN2P3-LPCA
+    - IN2P3-LPCA-FINK
     altaffil: []
     email: emmanuel.gangler
     family_name: Gangler
@@ -5842,7 +5854,7 @@ authors:
     orcid: 0009-0005-9099-4970
   ishidaeo:
     affil:
-    - IN2P3-LPCA
+    - IN2P3-LPCA-FINK
     altaffil: []
     email: null
     family_name: Ishida
@@ -5891,7 +5903,7 @@ authors:
     orcid: null
   jammesf:
     affil:
-    - IN2P3-LPCA
+    - IN2P3-LPCA-FINK
     altaffil: []
     email: fabrice.jammes@Gmail
     family_name: Jammes
