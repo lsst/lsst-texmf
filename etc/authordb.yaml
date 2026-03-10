@@ -2086,7 +2086,7 @@ affiliations:
       state: ''
       street: Via Cintia
     department: Department of Physics "E. Pancini"
-    email: null
+    email: unina.it
     institute: University Federico II of Napoli
     ror_id: 05290cv24
   NovaGorica:
@@ -4084,7 +4084,7 @@ authors:
     affil:
     - Napoli
     altaffil: []
-    email: null
+    email: massimo.brescia
     family_name: Brescia
     given_name: Massimo
     orcid: 0000-0001-9506-5680
@@ -5195,7 +5195,7 @@ authors:
     affil:
     - SLAC-Kavli
     altaffil: []
-    email: null
+    email: shenming.fu.astro@Gmail
     family_name: Fu
     given_name: Shenming
     orcid: 0000-0001-5422-1958
