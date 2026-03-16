@@ -670,8 +670,10 @@ def process_signup(
     print(
         "\n"
         f"[signup] collected {len(authorids)} author ids\n"
-        f"[signup] last processed row index: {last_idx} - written to signup_skip\n"
+        f"[signup] last processed row index: {last_idx} - written to skip.count\n"
     )
+    with open("skip.count", "w") as f:
+        f.write(f"{last_idx}\n")
 
     write_yaml("authors.yaml", authorids)
 
