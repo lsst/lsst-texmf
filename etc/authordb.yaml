@@ -1296,7 +1296,8 @@ affiliations:
     address:
       city: Clermont-Ferrand
       country_code: France
-      example_expanded: LPCA, Universit\'{e} Clermont-Auvergne, CNRS/IN2P3, Clermont-Ferrand, France
+      example_expanded: LPCA, Universit\'{e} Clermont-Auvergne, CNRS/IN2P3, Clermont-Ferrand,
+        France
       postcode: F-63000
       state: ''
       street: 4 Avenue Blaise Pascal
@@ -3383,6 +3384,14 @@ authors:
     family_name: Adelman-McCarthy
     given_name: Jennifer K.
     orcid: 0000-0002-4100-8928
+  agarwals:
+    affil:
+    - Chicago
+    altaffil: []
+    email: shrihan
+    family_name: Agarwal
+    given_name: Shrihan
+    orcid: 0000-0002-2350-4610
   ahumadat:
     affil:
     - Maryland
