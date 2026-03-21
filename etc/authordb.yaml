@@ -8874,6 +8874,14 @@ authors:
     family_name: Takacs
     given_name: Peter
     orcid: null
+  tanikantia:
+    affil:
+    - SLAC
+    altaffil: []
+    email: atani@Stanford
+    family_name: Tanikanti
+    given_name: Aditya
+    orcid: 0000-0002-5240-5064
   tapiad:
     affil:
     - RubinObsC
