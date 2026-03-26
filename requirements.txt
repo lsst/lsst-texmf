@@ -1,5 +1,5 @@
 setuptools<81
-algoliasearch
+algoliasearch>4.3
 ook
 pybtex
 pytest
