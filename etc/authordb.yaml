@@ -5812,6 +5812,14 @@ authors:
     family_name: Hundertmark
     given_name: Markus
     orcid: 0000-0003-0961-5231
+  huntse:
+    affil:
+    - NOIRLab
+    altaffil: []
+    email: sharon.hunt
+    family_name: Hunt
+    given_name: Sharon E.
+    orcid: 0000-0002-5858-2002
   hyunm:
     affil:
     - RubinObsC
