@@ -8041,6 +8041,14 @@ authors:
     family_name: Ribeiro
     given_name: Tiago
     orcid: 0000-0002-0138-1365
+  riccim:
+    affil:
+    - IN2P3-APC
+    altaffil: []
+    email: ricci
+    family_name: Ricci
+    given_name: Marina
+    orcid: 0000-0002-3645-9652
   ricciog:
     affil:
     - NCNRP
