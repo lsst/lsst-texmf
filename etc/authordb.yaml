@@ -1101,14 +1101,14 @@ affiliations:
     address:
       city: Cambridge
       country_code: USA
-      example_expanded: Center for Astrophysics, Harvard & Smithsonian, 60 Garden
+      example_expanded: Center for Astrophysics, Harvard \& Smithsonian, 60 Garden
         Street, Cambridge, MA 02138
       postcode: 02138
       state: MA
       street: 60 Garden Street
     department: Center for Astrophysics
     email: cfa.harvard.edu
-    institute: Harvard & Smithsonian
+    institute: Harvard \& Smithsonian
     ror_id: 03c3r2d17
   Harvard-Physics:
     address:
@@ -9552,6 +9552,14 @@ authors:
     family_name: Xin
     given_name: Bo
     orcid: 0000-0002-9171-4046
+  yablonskic:
+    affil:
+    - Washington
+    altaffil: []
+    email: yablonskic
+    family_name: Yablonski
+    given_name: Connor
+    orcid:
   yangw:
     affil:
     - SLAC
