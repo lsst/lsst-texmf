@@ -7,7 +7,7 @@ r"""Extract citations from LaTeX documents and build a local bibliography.
 * Extracts cited bibkeys.
 * Pulls matching entries from central bibfiles to a local bib file.
 * It does not modify the bibliograpy in the original file(s)
-* Modify the originla file yourslef with SED or such
+* Modify the original file yourslef with SED or such
 
 """
 
