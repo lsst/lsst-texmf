@@ -3088,6 +3088,19 @@ affiliations:
     email: null
     institute: Universidad de los Andes
     ror_id: 02mhbdp94
+  UoWDoA:
+    address:
+      city: ''
+      country_code: USA
+      example_expanded: University of Washington, Dept. of Astronomy, Box 351580,
+        Seattle, WA 98195, USA
+      postcode: '98195'
+      state: null
+      street: Dept. of Astronomy, Box 351580, Seattle, WA
+    department: null
+    email: gmail.com
+    institute: University of Washington
+    ror_id: null
   Utah:
     address:
       city: Salt Lake City
@@ -9552,6 +9565,14 @@ authors:
     family_name: Xin
     given_name: Bo
     orcid: 0000-0002-9171-4046
+  yablonskic:
+    affil:
+    - UoWDoA
+    altaffil: []
+    email: yablonskic5
+    family_name: Yablonski
+    given_name: Connor
+    orcid: 0009-0000-0990-8339
   yangw:
     affil:
     - SLAC
