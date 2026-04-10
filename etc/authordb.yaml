@@ -2336,57 +2336,44 @@ affiliations:
     email: null
     institute: Rider University
     ror_id: 01dgn5344
-  RubinObs:
+  RubinConstruction:
     address:
       city: Tucson
       country_code: USA
-      example_expanded: Vera C.\ Rubin Observatory Project Office, 950 N.\ Cherry
-        Ave., Tucson, AZ  85719, USA
+      example_expanded: NSF-DOE Vera C.\ Rubin Observatory Project Office, 950 N.\
+        Cherry Ave., Tucson, AZ  85719, USA
       postcode: '85719'
       state: AZ
       street: 950 N.\ Cherry Ave.
     department: null
     email: lsst.org
-    institute: Vera C.\ Rubin Observatory Project Office
+    institute: NSF-DOE Vera C.\ Rubin Observatory Project Office
+    ror_id: 048g3cy84
+  RubinObs:
+    address:
+      city: Tucson
+      country_code: USA
+      example_expanded: NSF-DOE Vera C.\ Rubin Observatory / NSF NOIRLab, 950 N.\
+        Cherry Ave., Tucson, AZ  85719, USA
+      postcode: '85719'
+      state: AZ
+      street: 950 N.\ Cherry Ave.
+    department: NSF-DOE Vera C.\ Rubin Observatory
+    email: noirlab.edu
+    institute: NSF NOIRLab
     ror_id: 048g3cy84
   RubinObsC:
     address:
       city: La Serena
       country_code: Chile
-      example_expanded: Vera C.\ Rubin Observatory, Avenida Juan Cisternas \#1500,
-        La Serena, Chile
+      example_expanded: NSF-DOE Vera C.\ Rubin Observatory / NSF NOIRLab, Casilla
+        603, La Serena, Chile
       postcode: ''
       state: ''
-      street: Avenida Juan Cisternas \#1500
-    department: null
-    email: lsst.org
-    institute: Vera C.\ Rubin Observatory
-    ror_id: 048g3cy84
-  RubinOps:
-    address:
-      city: Tucson
-      country_code: USA
-      example_expanded: Vera C.\ Rubin Observatory/NSF NOIRLab, 950 N.\ Cherry Ave.,
-        Tucson, AZ  85719, USA
-      postcode: '85719'
-      state: AZ
-      street: 950 N.\ Cherry Ave.
-    department: Vera C.\ Rubin Observatory
+      street: Casilla 603
+    department: NSF-DOE Vera C.\ Rubin Observatory
     email: noirlab.edu
     institute: NSF NOIRLab
-    ror_id: 048g3cy84
-  RubinOpsC:
-    address:
-      city: La Serena
-      country_code: Chile
-      example_expanded: Vera C.\ Rubin Observatory/NSF NOIRLab, Avenida Juan Cisternas
-        \#1500, La Serena, Chile
-      postcode: ''
-      state: ''
-      street: Avenida Juan Cisternas \#1500
-    department: null
-    email: noirlab.edu
-    institute: Vera C.\ Rubin Observatory/NSF NOIRLab
     ror_id: 048g3cy84
   Rutgers:
     address:
@@ -3557,7 +3544,7 @@ authors:
     orcid: null
   arandas:
     affil:
-    - RubinOps
+    - RubinObs
     altaffil: []
     email: saranda@RubinObs
     family_name: Aranda
@@ -3783,7 +3770,7 @@ authors:
     orcid: 0000-0001-7774-2246
   beckervr:
     affil:
-    - RubinOps
+    - RubinObs
     altaffil: []
     email: vbecker@RubinObs
     family_name: Becker
@@ -3938,7 +3925,7 @@ authors:
     orcid: null
   blumrd:
     affil:
-    - RubinOps
+    - RubinObs
     altaffil: []
     email: bob.blum
     family_name: Blum
@@ -4107,7 +4094,7 @@ authors:
     orcid: null
   brondelbj:
     affil:
-    - RubinOpsC
+    - RubinObsC
     altaffil: []
     email: bbrondel@RubinObs
     family_name: Brondel
@@ -4310,7 +4297,7 @@ authors:
     orcid: null
   ceballor:
     affil:
-    - RubinOps
+    - RubinObs
     altaffil: []
     email: ross.ceballo
     family_name: Ceballo
@@ -4771,7 +4758,7 @@ authors:
     orcid: null
   deppesj:
     affil:
-    - RubinOps
+    - RubinObs
     altaffil: []
     email: stephanie.deppe
     family_name: Deppe
@@ -5338,7 +5325,7 @@ authors:
     orcid: null
   gillr:
     affil:
-    - RubinOpsC
+    - RubinObsC
     altaffil: []
     email: rgill@RubinObs
     family_name: Gill
@@ -5686,7 +5673,7 @@ authors:
     orcid: null
   higgscr:
     affil:
-    - RubinOps
+    - RubinObs
     altaffil: []
     email: clare.higgs
     family_name: Higgs
@@ -5830,7 +5817,7 @@ authors:
     orcid: 0000-0003-4738-4251
   ibsena:
     affil:
-    - RubinOpsC
+    - RubinObsC
     altaffil: []
     email: amanda.ibsen
     family_name: Ibsen
@@ -5863,7 +5850,7 @@ authors:
     orcid: null
   irvingd:
     affil:
-    - RubinOps
+    - RubinObs
     altaffil: []
     email: david.irving
     family_name: Irving
@@ -6324,7 +6311,7 @@ authors:
     orcid: 0000-0002-9801-5969
   krabbendamvl:
     affil:
-    - RubinObs
+    - RubinConstruction
     altaffil: []
     email: VKrabbendam
     family_name: Krabbendam
@@ -6437,7 +6424,7 @@ authors:
     orcid: 0000-0002-9601-345X
   lagopja:
     affil:
-    - RubinOpsC
+    - RubinObsC
     altaffil: []
     email: plago@RubinObs
     family_name: Lago
@@ -6825,7 +6812,7 @@ authors:
     orcid: 0000-0002-1200-0820
   margheimsj:
     affil:
-    - RubinOpsC
+    - RubinObsC
     altaffil: []
     email: steven.margheim
     family_name: Margheim
@@ -7034,7 +7021,7 @@ authors:
     orcid: null
   menesessotoga:
     affil:
-    - RubinOpsC
+    - RubinObsC
     altaffil: []
     email: gonzalo.meneses
     family_name: Meneses Soto
@@ -7050,7 +7037,7 @@ authors:
     orcid: 0000-0002-7169-4850
   metzgerk:
     affil:
-    - RubinOps
+    - RubinObs
     altaffil: []
     email: kristen.metzger
     family_name: Metzger
@@ -7194,7 +7181,7 @@ authors:
     orcid: null
   mortensenk:
     affil:
-    - RubinOpsC
+    - RubinObsC
     altaffil: []
     email: kristopher.mortensen
     family_name: Mortensen
@@ -7728,7 +7715,7 @@ authors:
     orcid: null
   petryce:
     affil:
-    - RubinOps
+    - RubinObs
     altaffil: []
     email: null
     family_name: Petry
@@ -8809,7 +8796,7 @@ authors:
     orcid: 0000-0002-1468-9668
   straussal:
     affil:
-    - RubinOps
+    - RubinObs
     altaffil: []
     email: alan.strauss
     family_name: Strauss
@@ -8965,7 +8952,7 @@ authors:
     orcid: null
   thomass:
     affil:
-    - RubinOps
+    - RubinObs
     altaffil: []
     email: sandrine.thomas
     family_name: Thomas
@@ -9207,7 +9194,7 @@ authors:
     orcid: 0000-0001-8694-1204
   venegasp:
     affil:
-    - RubinOpsC
+    - RubinObsC
     altaffil: []
     email: paulina.venegas
     family_name: Venegas
@@ -9674,7 +9661,7 @@ authors:
     orcid: 0000-0002-2897-6326
   zilkovad:
     affil:
-    - RubinOpsC
+    - RubinObsC
     altaffil: []
     email: danica.zilkova
     family_name: \v{Z}ilkov\'a
