@@ -1012,7 +1012,7 @@ affiliations:
       street: 670 N.\ A’ohoku Place
     department: null
     email: null
-    institute: International Gemini Observatory/NSF NOIRLab
+    institute: International Gemini Observatory / NSF NOIRLab
     ror_id: 0141j1w94
   GeminiS:
     address:
@@ -1025,7 +1025,7 @@ affiliations:
       street: Casilla 603
     department: null
     email: null
-    institute: International Gemini Observatory/NSF NOIRLab
+    institute: International Gemini Observatory / NSF NOIRLab
     ror_id: 02wtj7z45
   GeorgiaState:
     address:
@@ -2349,6 +2349,18 @@ affiliations:
     email: lsst.org
     institute: NSF-DOE Vera C.\ Rubin Observatory Project Office
     ror_id: 048g3cy84
+  RubinFunded:
+    address:
+      city: null
+      country_code: Chile
+      example_expanded: NSF-DOE Vera C.\ Rubin Observatory
+      postcode: null
+      state: null
+      street: null
+    department: null
+    email: null
+    institute: NSF-DOE Vera C.\ Rubin Observatory
+    ror_id: 048g3cy84
   RubinObs:
     address:
       city: Tucson
@@ -2358,9 +2370,9 @@ affiliations:
       postcode: '85719'
       state: AZ
       street: 950 N.\ Cherry Ave.
-    department: NSF-DOE Vera C.\ Rubin Observatory
+    department: null
     email: noirlab.edu
-    institute: NSF NOIRLab
+    institute: NSF-DOE Vera C.\ Rubin Observatory / NSF NOIRLab
     ror_id: 048g3cy84
   RubinObsC:
     address:
@@ -2371,9 +2383,9 @@ affiliations:
       postcode: ''
       state: ''
       street: Casilla 603
-    department: NSF-DOE Vera C.\ Rubin Observatory
+    department: null
     email: noirlab.edu
-    institute: NSF NOIRLab
+    institute: NSF-DOE Vera C.\ Rubin Observatory / NSF NOIRLab
     ror_id: 048g3cy84
   Rutgers:
     address:
@@ -6837,6 +6849,7 @@ authors:
   marshallp:
     affil:
     - SLAC
+    - RubinFunded
     altaffil: []
     email: pjm
     family_name: Marshall
