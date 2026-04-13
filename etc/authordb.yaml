@@ -2353,11 +2353,11 @@ affiliations:
     address:
       city: La Serena
       country_code: Chile
-      example_expanded: Vera C.\ Rubin Observatory, Avenida Juan Cisternas \#1500,
+      example_expanded: Vera C.\ Rubin Observatory, Casilla 603,
         La Serena, Chile
       postcode: ''
       state: ''
-      street: Avenida Juan Cisternas \#1500
+      street: Casilla 603,
     department: null
     email: lsst.org
     institute: Vera C.\ Rubin Observatory
@@ -2379,11 +2379,11 @@ affiliations:
     address:
       city: La Serena
       country_code: Chile
-      example_expanded: Vera C.\ Rubin Observatory/NSF NOIRLab, Avenida Juan Cisternas
-        \#1500, La Serena, Chile
+      example_expanded: Vera C.\ Rubin Observatory/NSF NOIRLab, Casilla 603,
+        La Serena, Chile
       postcode: ''
       state: ''
-      street: Avenida Juan Cisternas \#1500
+      street: Casilla 603
     department: null
     email: noirlab.edu
     institute: Vera C.\ Rubin Observatory/NSF NOIRLab
