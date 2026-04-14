@@ -4396,7 +4396,7 @@ authors:
     orcid: null
   choiy:
     affil:
-    - NOIRLab
+    - RubinObs
     altaffil: []
     email: yumi.choi
     family_name: Choi
@@ -5114,7 +5114,7 @@ authors:
     orcid: null
   fonsecaalvarezg:
     affil:
-    - NOIRLab
+    - RubinObs
     altaffil: []
     email: gloria.fonseca
     family_name: Fonseca Alvarez
@@ -5497,7 +5497,7 @@ authors:
     orcid: 0000-0002-5624-1888
   greenstreets:
     affil:
-    - NOIRLab
+    - RubinObs
     altaffil: []
     email: sarah.greenstreet
     family_name: Greenstreet
@@ -7005,7 +7005,7 @@ authors:
     orcid: 0000-0001-6013-1131
   meisnera:
     affil:
-    - NOIRLab
+    - RubinObs
     altaffil: []
     email: aaron.meisner
     family_name: Meisner
@@ -9437,7 +9437,7 @@ authors:
     orcid: null
   williamscc:
     affil:
-    - NOIRLab
+    - RubinObs
     altaffil: []
     email: christina.williams
     family_name: Williams
