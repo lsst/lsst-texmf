@@ -5434,12 +5434,12 @@ authors:
     orcid: null
   gomezm:
     affil:
-    - NOIRLabC
+    - RubinObsC
     altaffil: []
-    email: null
-    family_name: Gomez Jimenez
+    email: manuel.gomez
+    family_name: Gomez-Jimenez
     given_name: Manuel
-    orcid: null
+    orcid: 0009-0006-5048-0972
   gonzalesa:
     affil:
     - CNCT
