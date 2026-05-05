@@ -1997,7 +1997,7 @@ affiliations:
       state: ''
       street: University Park
     department: School of Physics \& Astronomy
-    email: null
+    email: nottingham.ac.uk
     institute: University of Nottingham
     ror_id: 04xyxjd90
   NRAO:
@@ -6904,7 +6904,7 @@ authors:
     affil:
     - Nottingham
     altaffil: []
-    email: null
+    email: garreth.martin
     family_name: Martin
     given_name: Garreth
     orcid: 0000-0003-2939-8668
