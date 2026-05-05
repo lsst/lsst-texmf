@@ -1987,6 +1987,19 @@ affiliations:
     email: noirlab.edu
     institute: NSF NOIRLab
     ror_id: 03zmsge54
+  Nottingham:
+    address:
+      city: Nottingham
+      country_code: United Kingdom
+      example_expanded: School of Physics \& Astronomy, University of Nottingham, University Park,
+        Nottingham NG7 2RD, UK
+      postcode: NG7 2RD
+      state: ''
+      street: University Park
+    department: School of Physics \& Astronomy
+    email: null
+    institute: University of Nottingham
+    ror_id: 04xyxjd90
   NRAO:
     address:
       city: Charlottesville
@@ -6887,6 +6900,14 @@ authors:
     family_name: Marsiske
     given_name: Helmut
     orcid: null
+  marting:
+    affil:
+      - Nottingham
+      altaffil: []
+      email: null
+      family_name: Martin
+      given_name: Garreth
+      orcid: 0000-0003-2939-8668
   martinezm:
     affil:
     - WisconsinMadison
