@@ -1987,19 +1987,6 @@ affiliations:
     email: noirlab.edu
     institute: NSF NOIRLab
     ror_id: 03zmsge54
-  Nottingham:
-    address:
-      city: Nottingham
-      country_code: United Kingdom
-      example_expanded: School of Physics \& Astronomy, University of Nottingham, University Park,
-        Nottingham NG7 2RD, UK
-      postcode: NG7 2RD
-      state: ''
-      street: University Park
-    department: School of Physics \& Astronomy
-    email: nottingham.ac.uk
-    institute: University of Nottingham
-    ror_id: 04xyxjd90
   NRAO:
     address:
       city: Charlottesville
@@ -2103,6 +2090,19 @@ affiliations:
     email: unina.it
     institute: University Federico II of Napoli
     ror_id: 05290cv24
+  Nottingham:
+    address:
+      city: Nottingham
+      country_code: United Kingdom
+      example_expanded: School of Physics \& Astronomy, University of Nottingham,
+        University Park, Nottingham NG7 2RD, UK
+      postcode: NG7 2RD
+      state: ''
+      street: University Park
+    department: School of Physics \& Astronomy
+    email: nottingham.ac.uk
+    institute: University of Nottingham
+    ror_id: 04xyxjd90
   NovaGorica:
     address:
       city: Nova Gorica
@@ -2505,6 +2505,18 @@ affiliations:
     email: stsci.edu
     institute: Space Telescope Science Institute
     ror_id: 036f5mx38
+  SUoTMV:
+    address:
+      city: Melbourne
+      country_code: Australia
+      example_expanded: Swinburne University of Technology, Melbourne, Victoria, Australia
+      postcode: '3122'
+      state: Victoria
+      street: null
+    department: null
+    email: swin.edu.au
+    institute: Swinburne University of Technology
+    ror_id: 031rekg67
   SVC:
     address:
       city: Latrobe
@@ -3420,6 +3432,14 @@ authors:
     family_name: Alexov
     given_name: Anastasia
     orcid: 0009-0000-7835-3963
+  aliee:
+    affil:
+    - SUoTMV
+    altaffil: []
+    email: eali
+    family_name: Ali
+    given_name: Eman E.
+    orcid: 0000-0001-9847-5386
   allberyr:
     affil:
     - RubinObs
@@ -5832,6 +5852,14 @@ authors:
     family_name: Hunt
     given_name: Sharon E.
     orcid: 0000-0002-5858-2002
+  hutj:
+    affil:
+    - AAO
+    altaffil: []
+    email: jitinghu@SUoTMV
+    family_name: Hu
+    given_name: Tiger J.
+    orcid: null
   hyunm:
     affil:
     - Stanford
@@ -6900,14 +6928,6 @@ authors:
     family_name: Marsiske
     given_name: Helmut
     orcid: null
-  marting:
-    affil:
-    - Nottingham
-    altaffil: []
-    email: garreth.martin
-    family_name: Martin
-    given_name: Garreth
-    orcid: 0000-0003-2939-8668
   martinezm:
     affil:
     - WisconsinMadison
@@ -6924,6 +6944,14 @@ authors:
     family_name: Mart\'{i}nez-Galarza
     given_name: Rafael
     orcid: null
+  marting:
+    affil:
+    - Nottingham
+    altaffil: []
+    email: garreth.martin
+    family_name: Martin
+    given_name: Garreth
+    orcid: 0000-0003-2939-8668
   masciarellij:
     affil:
     - Google
