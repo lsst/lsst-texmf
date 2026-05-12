@@ -6668,6 +6668,14 @@ authors:
     family_name: Lintott
     given_name: Chris J.
     orcid: 0000-0001-5578-359X
+  lis:
+    affil:
+    - SLAC-Kavli
+    altaffil: []
+    email: liss@Stanford
+    family_name: Li
+    given_name: Shun-Sheng
+    orcid: 0000-0001-9952-7408
   lix:
     affil:
     - Delaware-PhyAst
