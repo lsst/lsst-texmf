@@ -1524,7 +1524,7 @@ affiliations:
       state: IL
       street: 1110 W.\ Green St.
     department: Department of Astronomy
-    email: null
+    email: illinois.edu
     institute: University of Illinois
     ror_id: 047426m28
   JHU:
@@ -4948,9 +4948,9 @@ authors:
     orcid: 0000-0002-9135-997X
   eggls:
     affil:
-    - Washington
+    - Illinois-astro
     altaffil: []
-    email: null
+    email: eggl
     family_name: Eggl
     given_name: Siegfried
     orcid: 0000-0002-1398-6302
