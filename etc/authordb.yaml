@@ -5700,6 +5700,14 @@ authors:
     family_name: Herner
     given_name: Kenneth
     orcid: 0000-0001-6718-2978
+  herrerah:
+    affil:
+    - RubinObsC
+    altaffil: []
+    email: hernan.herrera
+    family_name: Herrera
+    given_name: Hern\'an
+    orcid: null
   herrmanns:
     affil:
     - SLAC
