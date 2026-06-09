@@ -4601,6 +4601,14 @@ authors:
     family_name: Corral
     given_name: Luis
     orcid: null
+  corryc:
+    affil:
+    - Berkeley-Astro
+    altaffil: []
+    email: c.corry@berkeley
+    family_name: Corry
+    given_name: Christine
+    orcid: 0009-0003-0654-7912
   cortes:
     affil:
     - NOIRLabC
