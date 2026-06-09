@@ -230,7 +230,7 @@ affiliations:
       state: CA
       street: 601 Campbell Hall
     department: Astronomy Department
-    email: null
+    email: berkeley.edu
     institute: University of California, Berkeley
     ror_id: 01an7q238
   Berkeley-LBNL:
@@ -4601,6 +4601,14 @@ authors:
     family_name: Corral
     given_name: Luis
     orcid: null
+  corryc:
+    affil:
+    - Berkeley-Astro
+    altaffil: []
+    email: c.corry
+    family_name: Corry
+    given_name: Christine
+    orcid: 0009-0003-0654-7912
   cortes:
     affil:
     - NOIRLabC
