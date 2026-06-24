@@ -888,7 +888,7 @@ NOAA,National Oceanic and Atmospheric Administration,Gen,,,A
 NOAO,National Optical Astronomy Observatories now NOIRLab,Gen,,,A
 NOC,Network Operations Center,IT,,,A
 NOGLSTP,National Organization of Gay and Lesbian Scientists and Technical Professionals,Gen,,,A
-NOIR,NSF's National Optical-Infrared Astronomy Research Laboratory; \url{https://noirlab.edu},Gen,,,A
+NOIR,NSF's National Optical-Infrared Astronomy Research Laboratory,Gen,\url{https://noirlab.edu},,A
 NOIRLab,NSF's National Optical-Infrared Astronomy Research Laboratory; \url{https://noirlab.edu},Gen,,,A
 NOS,NSF's OIR Lab Operations Services,OPS,,,A
 NPCF,National Petascale Computing Facility,OPS,,,A
