@@ -498,7 +498,7 @@ FTS,File Transfer Service,OPS,,,A
 FTS3,File Transfer Service 3,OPS,,,A
 FUSE,a user space filesystem framework,IT,,,A
 FWHM,Full Width at Half-Maximum,Gen,,,A
-FWP,Field Work Proposals,OPS,,,A
+FWP,Field Work Proposal,OPS,,,A
 FY,Financial Year,OPS DM,,,A
 FY20,Financial Year 20,OPS,,,A
 FY21,Financial Year 21,OPS,,,A
@@ -625,6 +625,7 @@ IMS,Image Management Service,CAM,,,A
 ImSim,Image Simulation,Sims,,,A
 IN2P3,Institut National de Physique Nucl√©aire et de Physique des Particules,Gen,,,A
 INAF,Istituto Nazionale di Astrofisica,Gen,,,A
+INCOSE, International Council on Systems Engineering,PSE,,,A
 IO,Input/Output,CAM,LCA-11591-B_REVIEW_(Camera_Final_Design_Report),,A
 IoA,Institute of Astronomy (Cambridge; also denoted IOA),Gen,,,A
 IP,Internet Protocol,DM,,,A
@@ -1011,7 +1012,7 @@ POCIT,People Of Color In Tech,Gen,,,A
 POE,POly Esters,OPS,,,A
 POI,Point Of Interest,OPS,,,A
 POM,Program Operations Manager,OPS,,,A
-POP,Project Operating Plan,LSST OPS,,,A
+POP,Program Operations Plan,OPS,,,A
 POSIX,Portable Operating System Interface,Gen,,,A
 PPDB,Prompt Products DataBase,DM,,,A
 PPE,Personal Protection Equipment,OPS,,,A
