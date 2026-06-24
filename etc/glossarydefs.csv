@@ -1118,6 +1118,7 @@ RSA,Raft Sensor Array,CAM,,,A
 RSE,Rucio Storage Element,OPS,,,A
 RSO,Rubin Summit Operations,OPS,,,A
 RSP,Rubin Science Platform,DM,,,A
+RSS,Research and Science Services,OPS,,,A
 RSS,square root of the sum of the squares,TS,Document-11939,,A
 RSS,Resident Set Size,DM,,,A
 RTA,Real Time Analysis,Sci,,,A
