@@ -888,7 +888,7 @@ NOAA,National Oceanic and Atmospheric Administration,Gen,,,A
 NOAO,National Optical Astronomy Observatories now NOIRLab,Gen,,,A
 NOC,Network Operations Center,IT,,,A
 NOGLSTP,National Organization of Gay and Lesbian Scientists and Technical Professionals,Gen,,,A
-NOIR,NSF's National Optical-Infrared Astronomy Research Laboratory; \url{https://noirlab.edu},Gen,,,A
+NOIR,NSF's National Optical-Infrared Astronomy Research Laboratory,Gen,\url{https://noirlab.edu},,A
 NOIRLab,NSF's National Optical-Infrared Astronomy Research Laboratory; \url{https://noirlab.edu},Gen,,,A
 NOS,NSF's OIR Lab Operations Services,OPS,,,A
 NPCF,National Petascale Computing Facility,OPS,,,A
@@ -1118,6 +1118,7 @@ RSA,Raft Sensor Array,CAM,,,A
 RSE,Rucio Storage Element,OPS,,,A
 RSO,Rubin Summit Operations,OPS,,,A
 RSP,Rubin Science Platform,DM,,,A
+RSS,Research and Science Services,OPS,,,A
 RSS,square root of the sum of the squares,TS,Document-11939,,A
 RSS,Resident Set Size,DM,,,A
 RTA,Real Time Analysis,Sci,,,A
