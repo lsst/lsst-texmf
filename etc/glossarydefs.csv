@@ -969,7 +969,7 @@ PCB,printed circuit boards,TS,Document-12030,,A
 PCI,Peripheral Component Interconnect,Gen,,,A
 PCS,Pumped Coolant System,CAM,,,A
 PCTI,Parallel Charge Transfer Inefficiency,CAM,,,A
-PCW,Project Community Workshop,LSST DM,,,A
+PCW,Project Community Workshop,LSST,,,A
 PD,Program Development,OPS,,,A
 PDAC,Prototype Data Access Center,LSST DM,,,A
 PDF,Portable Document Format,Gen,,,A
@@ -1071,6 +1071,7 @@ RCEC,Rubin Construction Executive Committee,Gen,,,A
 RCI,Raft Communication Interface,CAM,,,A
 RCM,Raft Communication Module,CAM,,,A
 RCOC,Rubin Celebration Organizing Committee,LSST,,,A
+RCW,Rubin Community Workshop,OPS,,,A
 RDBMS,Relational Database Management System,Gen,,,A
 RDM,Rubin Data Management,OPS,,,A
 RDO,Rubin Directors Office,OPS,,,A
