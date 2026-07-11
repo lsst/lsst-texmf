@@ -7121,6 +7121,14 @@ authors:
     family_name: Mentzer
     given_name: Heather R.
     orcid: 0000-0002-7169-4850
+  mesquitas:
+    affil:
+    - IN2P3-LPSC
+    altaffil: []
+    email: smesquita
+    family_name: Mesquita
+    given_name: Samuel
+    orcid: 0009-0000-7800-0922
   metzgerk:
     affil:
     - RubinObs
