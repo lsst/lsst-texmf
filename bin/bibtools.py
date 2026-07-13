@@ -19,6 +19,7 @@ TN_SERIES = {
     "SCTR": "Commissioning Technical Report",
     "SITCOMTN": "Commissioning Technical Note",
     "SMTN": "Simulations Team Technical Note",
+    "SOTN": "Summit Operation Technical Note",
     "SQR": "SQuaRE Technical Note",
     "ITTN": "Information Technology Technical Note",
     "TSTN": "Telescope and Site Technical Note",
