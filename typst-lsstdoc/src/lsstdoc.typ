@@ -5,10 +5,13 @@
 #import "title-page.typ": render-title-artwork, render-title-page
 #import "front-matter.typ": render-abstract, render-contents
 #import "change-record.typ": render-change-record
+#import "citations.typ" as citations
 
 #let render-bibliography = bibliography
 #let note = admonitions.note
 #let warning = admonitions.warning
+#let citeds = citations.citeds
+#let citedsp = citations.citedsp
 
 #let lsstdoc(
   title: none,
@@ -26,6 +29,7 @@
   changes: (),
   toc: true,
   bibliography: none,
+  bibliography-full: false,
   body,
 ) = {
   assert(nonempty(title), message: "The title field is required")
@@ -125,7 +129,7 @@
       // author-year baseline; a Rubin/AAS CSL file can replace it later.
       style: "apa",
       title: [References],
-      full: true,
+      full: bibliography-full,
     )
   }
 }

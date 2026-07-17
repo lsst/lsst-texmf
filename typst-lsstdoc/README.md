@@ -217,7 +217,7 @@ preserved.
 | --- | --- | --- | --- | --- |
 | Bibliography engine/style | Class forces BibTeX `lsst_aa.bst`; `natbib` is numeric by default and author-year with the `authoryear` option. | Required | Use Typst's native bibliography support. The prototype uses bundled APA author-year output because Typst 0.15 does not bundle AAS CSL. | Exact `lsst_aa.bst` rendering is unnecessary. A Rubin/AAS CSL file is optional follow-up work. |
 | Existing `.bib` files | Repository provides `lsst`, `lsst-dm`, `refs`, `books`, and `refs_ads`; the baseline example built all five. The style recognizes Rubin-specific fields including `handle`, plus ADS/e-print fields. | Required | Compile a curated cross-section of real entries with Typst and record parse/render failures. | LaTeX commands, brace-protected acronyms, collaboration authors, and custom `@DocuShare` behavior are likely normalization points. Do not rewrite the canonical files during the experiment. |
-| DocuShare citations | `\citeds` uses the handle in place of a year; alternate text creates a link and `\nocite`. `\citedsp` adds brackets. This explicit handle rendering was a principal reason for `lsst_aa.bst`. | Deferred | Initially use ordinary native citations. Add a handle-aware citation/link helper only if experience shows it is valuable. | Failure to render the handle as prominently as `lsst_aa.bst` is not a prototype blocker and does not justify an initial custom CSL. |
+| Citation-key display | `\citeds` uses the bibliography key in place of a derived year; alternate text still cites the same entry. `\citedsp` adds brackets. | Implemented | Generic `citeds` and `citedsp` helpers use a small CSL style whose citation layout selects `citation-key`; caller-supplied text is passed as the citation locator. | The helpers depend only on the bibliography key, not a custom `handle` field or a particular BibTeX layout. They retain Typst's native link to the exact bibliography entry and render as blue underlined links. |
 | Cross-references | Standard labels/hyperref plus convenience names for sections, figures, tables, equations, requirements, actions, and appendices. | Required | Native labels and references, with small semantic helpers only where output wording matters. | Avoid translating the large library of domain-specific TeX convenience macros. |
 | Equations | AMS math/unicode math and bold-vector helpers. | Required | Native Typst equations, labels, and references. | Visual math differs; verify semantic content and numbering. |
 | Appendices | Standard LaTeX `\appendix`; no special class layout. | Required | Native appendix heading/numbering configuration. | Exercise at least one appendix in the representative document. |
@@ -362,7 +362,8 @@ The prototype now demonstrates:
 - native headings, cross-references, equations, figures, multi-page tables,
   raw/code blocks, footnotes, URL-styled external links, Note and Warning
   admonitions, appendices, citations, and bibliography;
-- ten representative BibTeX records across the requested entry types;
+- ten representative local BibTeX records plus direct loading of all five
+  shared bibliography pools;
 - tagged output by default and a successful PDF/UA-1 build when requested;
 - structured `typst-yaml` output from `db2authors.py` that is consumed directly
   by the template; and
@@ -407,21 +408,31 @@ encouraging evidence, not yet a full accessibility audit.
 The primary show-rule function is `lsstdoc`. Required arguments are `title`,
 `doc-ref`, `series`, `date`, `authors`, and `affiliations`. Optional arguments
 are `short-title`, `subtitle`, `status`, `doi`, `repository-url`,
-`abstract`, `changes`, `toc`, and `bibliography`. `status` accepts only
-`draft`, `released`, or `obsolete`.
+`abstract`, `changes`, `toc`, `bibliography`, and `bibliography-full`.
+`status` accepts only `draft`, `released`, or `obsolete`. Bibliographies list
+only cited entries by default; set `bibliography-full: true` only for the
+equivalent of `\nocite{*}`.
 
-The same module exports `note` and `warning` functions. Notes use a cyan Rubin
-callout; warnings use an orange callout and automatically prefix custom titles
-with “Warning.” Both are kept together across page breaks.
+The same module exports `note`, `warning`, `citeds`, and `citedsp` functions.
+Notes use a cyan Rubin callout; warnings use an orange callout and
+automatically prefix custom titles with “Warning.” Both are kept together
+across page breaks. The citation helpers display a bibliography key (or
+alternate text) while adding the entry to the reference list without requiring
+a custom `handle` field. Their blue underlined text uses Typst's native citation
+link to the exact bibliography entry.
 
 External HTTP and HTTPS links are dark blue and underlined in body text and
 bibliographies. Internal cross-references and citations retain the ordinary
 document text styling.
 
 ```typst
-#import "../src/lsstdoc.typ": lsstdoc
+#import "../src/lsstdoc.typ": citeds, citedsp, lsstdoc
 #let metadata = yaml("metadata.yaml")
 #let people = yaml("authors.yaml")
+#let bibs = (
+  read("../../texmf/bibtex/bib/refs.bib", encoding: none),
+  read("../../texmf/bibtex/bib/lsst.bib", encoding: none),
+)
 
 #show: lsstdoc.with(
   title: metadata.title,
@@ -434,18 +445,28 @@ document text styling.
   affiliations: people.affiliations,
   abstract: metadata.abstract,
   changes: metadata.changes,
-  bibliography: "../examples/references.bib",
+  bibliography: bibs,
 )
 
 = Introduction
 
-Prototype text with a citation @example-reference.
+Prototype text with a citation @JSSv059i10 and a Rubin document
+#citeds("DMTN-001"). A bracketed alternate display is
+#citedsp("DMTN-000", display: [technical-note series]).
 ```
 
-Typst resolves a bibliography path from the module that calls
-`bibliography`, not from the importing document. The local-package example
-therefore passes `../examples/references.bib`. This path boundary needs a more
-polished API before publication as a package.
+Typst resolves a path string from the module that calls `bibliography`, not
+from the importing document. Calling `read(path, encoding: none)` in the
+document loads bibliography bytes at the caller's location and avoids that
+boundary. An array of those byte values lets a document use the repository's
+shared `refs.bib`, `lsst.bib`, `lsst-dm.bib`, `books.bib`, and `refs_ads.bib`
+files directly without copying entries locally.
+
+Typst still restricts file reads to the compilation root. An external document
+build must choose a `--root` containing the shared bibliography directory or
+expose that directory through its build environment. This is a build-system
+integration requirement, not a requirement to copy individual entries into a
+document-local `.bib` file.
 
 ### Exporting authors
 
@@ -485,9 +506,11 @@ exactly with `bibtools.py` after applying the known RDO correction.
 2. Native YAML works well for document and author metadata. The remaining
    architectural question is how to reconcile this prototype schema with
    Documenteer metadata without introducing another hand-maintained source.
-3. The tested BibTeX fixture parses without normalization. Typst 0.15 does not
-   bundle an AAS CSL style, so the prototype uses its bundled APA author-year
-   style. A Rubin/AAS CSL file is optional follow-up work rather than a blocker.
+3. The tested local fixture and all five shared bibliography pools parse
+   without normalization; the example cites entries directly from `refs.bib`
+   and `lsst.bib`. Typst 0.15 does not bundle an AAS CSL style, so the prototype
+   uses its bundled APA author-year style. A Rubin/AAS CSL file is optional
+   follow-up work rather than a blocker.
 4. Typst's ordinary tagged PDF and PDF/UA-1 mode are both viable for this
    representative document. A production assessment still needs screen-reader,
    reading-order, table semantics, and link-purpose review.
