@@ -67,6 +67,33 @@ def latex2text(latex: str) -> str:
     return LatexNodes2Text().latex_to_text(latex)
 
 
+def check_orcid(orcid: str | None) -> str | None:
+    """Validate and normalize an ORCID identifier.
+
+    Parameters
+    ----------
+    orcid : `str` or `None`
+        A bare dashed or 16-character ORCID identifier.
+
+    Returns
+    -------
+    normalized : `str` or `None`
+        The dashed identifier, or `None`.
+
+    Raises
+    ------
+    ValueError
+        Raised if the identifier is not in a recognized bare form.
+    """
+    if orcid is None:
+        return None
+    if re.fullmatch(r"\d{4}-\d{4}-\d{4}-\d{3}[0-9X]", orcid):
+        return orcid
+    if re.fullmatch(r"\d{15}[0-9X]", orcid):
+        return "-".join(orcid[i : i + 4] for i in range(0, len(orcid), 4))
+    raise ValueError(f"Given ORCiD does not match standard form: {orcid}")
+
+
 @dataclasses.dataclass(frozen=True)
 class Address:
     """Representation of an address."""
@@ -271,7 +298,7 @@ class AuthorFactory:
                 domains[affilid] = email
         return domains
 
-    def get_author(self, authorid: str) -> Author:
+    def get_author(self, authorid: str, *, warn_email: bool = True) -> Author:
         if authorid not in self._authors:
             raise RuntimeError(f"Author {authorid!r} not found in author database")
         author = self._authors[authorid]
@@ -296,7 +323,7 @@ class AuthorFactory:
 
         # In theory should only warn if this is AAS but we do not know the
         # mode here.
-        if (not domain or not username) and author["affil"][0] != "_":
+        if warn_email and (not domain or not username) and author["affil"][0] != "_":
             # Only warn if we need the email.
             print(
                 f"WARNING: Unable to resolve email address for author '{authorid}' email '{email}'",
@@ -914,6 +941,72 @@ def dump_csvall(factory: AuthorFactory) -> None:
             writer.writerow([id, latex2text(affil.get_full_address_with_institute())])
 
 
+def generate_typst_yaml(factory: AuthorFactory, author_ids: list[str]) -> str:
+    """Generate presentation-neutral author data for Typst documents.
+
+    Parameters
+    ----------
+    factory : `AuthorFactory`
+        Author database resolver.
+    author_ids : `list` [`str`]
+        Author database identifiers in document order.
+
+    Returns
+    -------
+    output : `str`
+        UTF-8 YAML with ordered authors and deduplicated affiliations.
+    """
+    authors = []
+    affiliations: dict[str, dict[str, Any]] = {}
+
+    for author_id in author_ids:
+        author = factory.get_author(author_id, warn_email=False)
+        affiliation_ids = [factory.get_affiliation_id(affil) for affil in author.affiliations]
+        given_name = latex2text(author.given_name)
+        family_name = latex2text(author.family_name)
+        display_name = " ".join(part for part in (given_name, family_name) if part)
+        authors.append(
+            {
+                "internal_id": author_id,
+                "given_name": given_name,
+                "family_name": family_name,
+                "display_name": display_name,
+                "orcid": check_orcid(author.orcid),
+                "affiliations": affiliation_ids,
+            }
+        )
+
+        for affiliation_id, affiliation in zip(affiliation_ids, author.affiliations, strict=True):
+            if affiliation_id in affiliations:
+                continue
+            address = None
+            if affiliation.address:
+                address = {
+                    key: latex2text(str(value))
+                    for key, value in {
+                        "street": affiliation.address.street,
+                        "city": affiliation.address.city,
+                        "region": affiliation.address.state,
+                        "postal_code": affiliation.address.postcode,
+                        "country": affiliation.address.country_code,
+                    }.items()
+                    if value
+                }
+            affiliations[affiliation_id] = {
+                "name": latex2text(affiliation.get_department_and_institute()),
+                "address": address,
+                "ror": affiliation.ror_id,
+            }
+
+    data = {
+        "schema_version": 1,
+        "generated_by": "db2authors",
+        "authors": authors,
+        "affiliations": affiliations,
+    }
+    return yaml.safe_dump(data, allow_unicode=True, sort_keys=False)
+
+
 def load_dni(donotinclude: str) -> set[str]:
     """
     Load  the standard 'do not include' file and return a list of author IDs.
@@ -968,6 +1061,7 @@ if __name__ == "__main__":
         "mnras",
         "aap",
         "aascsv",
+        "typst-yaml",
     ]
 
     description = __doc__
@@ -983,6 +1077,12 @@ if __name__ == "__main__":
                             'verbose' displays all the information...""",
     )
     parser.add_argument("-n", "--noafil", action="store_true", help="""Do not add affil at all for arxiv.""")
+    parser.add_argument(
+        "--authors",
+        default=authorfile,
+        help="YAML file containing author database IDs in document order.",
+    )
+    parser.add_argument("--output", help="Write generated output to this file instead of standard output.")
     args = parser.parse_args()
 
     # This is the database file with all the generic information
@@ -1000,12 +1100,21 @@ if __name__ == "__main__":
         dump_csvall(factory)
         exit(0)
 
-    with open(authorfile) as fh:
+    with open(args.authors, encoding="utf-8") as fh:
         authors = yaml.safe_load(fh)
 
     dni_list = load_dni(dnifile)
-    authors = [a for a in authors if a not in dni_list]
-    authors = [factory.get_author(authorid) for authorid in authors]
+    author_ids = [a for a in authors if a not in dni_list]
+
+    if args.mode == "typst-yaml":
+        output = generate_typst_yaml(factory, author_ids)
+        if args.output:
+            Path(args.output).write_text(output, encoding="utf-8")
+        else:
+            print(output, end="")
+        exit(0)
+
+    authors = [factory.get_author(authorid) for authorid in author_ids]
 
     generator_lut: dict[str, type[AuthorTextGenerator]] = {
         "aas": AASTeX,
@@ -1024,4 +1133,8 @@ if __name__ == "__main__":
         raise RuntimeError(f"Unknown generator mode: {args.mode}")
 
     generator = generator_lut[args.mode](authors)
-    print(generator.generate())
+    output = generator.generate()
+    if args.output:
+        Path(args.output).write_text(output, encoding="utf-8")
+    else:
+        print(output)

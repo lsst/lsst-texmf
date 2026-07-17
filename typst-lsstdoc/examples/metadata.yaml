@@ -1,0 +1,26 @@
+schema_version: 1
+title: A Typst Prototype for Rubin Technical Documents
+short_title: Typst lsstdoc Prototype
+subtitle: Structured metadata, authorship, and page design
+doc_ref: DMTN-999
+series: DMTN
+status: draft
+date: "2026-07-16"
+doi: null
+repository_url: https://github.com/lsst/lsst-texmf
+toc: true
+abstract: >-
+  This proof of concept demonstrates a Rubin Observatory technical document
+  assembled from native Typst components and structured YAML metadata. It
+  exercises the title page, authors and affiliations, document state, front
+  matter, page furniture, technical content, cross-references, and an existing
+  BibTeX workflow without attempting pixel-identical LaTeX output.
+changes:
+  - version: "0.1"
+    date: "2026-07-16"
+    description: Initial YAML-driven Typst prototype.
+    author: Tim Jenness
+  - version: "0.2"
+    date: "2026-07-20"
+    description: Added bibliography, page furniture, and technical examples.
+    author: Prototype Team

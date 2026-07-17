@@ -1,0 +1,25 @@
+schema_version: 1
+series:
+  DMTN: Data Management Technical Note
+  RTN: Technical Note
+  PSTN: Project Science Technical Note
+  SCTR: Commissioning Technical Report
+  SITCOMTN: Commissioning Technical Note
+  SMTN: Simulations Team Technical Note
+  SOTN: Summit Operation Technical Note
+  SQR: SQuaRE Technical Note
+  ITTN: Information Technology Technical Note
+  TSTN: Telescope and Site Technical Note
+  DMTR: Data Management Test Report
+  LDM: Data Management Controlled Document
+  LSE: Systems Engineering Controlled Document
+  LCA: Camera Controlled Document
+  LTS: Telescope & Site Controlled Document
+  LPM: Project Controlled Document
+  LEP: Education and Public Outreach Controlled Document
+  CTN: Camera Technical Note
+  RDO: Rubin Directors Office
+  Agreement: Formal Construction Agreement
+  Document: Informal Construction Document
+  Publication: LSST Construction Publication
+  Report: Construction Report
