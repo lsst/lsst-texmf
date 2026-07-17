@@ -1,7 +1,17 @@
-#import "../src/lsstdoc.typ": lsstdoc, note, warning
+#import "../src/lsstdoc.typ": citeds, citedsp, lsstdoc, note, warning
 
 #let metadata = yaml("metadata.yaml")
 #let people = yaml("authors.yaml")
+#let bibliography-sources = (
+  // Loading bytes here resolves paths from this document rather than from the
+  // imported template module. No shared entries are copied into the example.
+  read("references.bib", encoding: none),
+  read("../../texmf/bibtex/bib/refs.bib", encoding: none),
+  read("../../texmf/bibtex/bib/lsst.bib", encoding: none),
+  read("../../texmf/bibtex/bib/lsst-dm.bib", encoding: none),
+  read("../../texmf/bibtex/bib/books.bib", encoding: none),
+  read("../../texmf/bibtex/bib/refs_ads.bib", encoding: none),
+)
 
 #show: lsstdoc.with(
   title: metadata.title,
@@ -18,8 +28,7 @@
   abstract: metadata.abstract,
   changes: metadata.changes,
   toc: metadata.toc,
-  // Paths passed into a template are resolved from the template module.
-  bibliography: "../examples/references.bib",
+  bibliography: bibliography-sources,
 )
 
 = Introduction <sec-introduction>
@@ -137,12 +146,14 @@ The first prototype demonstrates:
 
 = Bibliography compatibility
 
-The fixture includes articles, books, proceedings, reports, software, and web
-entries. A conventional AAS-style bibliography is sufficient; reproducing
-Rubin's historical BibTeX handle rendering is not required. Examples include
-FITS @fits-standard, Python @python-paper, software @typst-software, and a Rubin
-technical report @DMTN-001. Typst itself is available at
-#link("https://typst.app/")[https://typst.app/].
+The local fixture includes articles, books, proceedings, reports, software,
+and web entries. The same bibliography loads all five repository bibliography
+pools directly. Examples include FITS @fits-standard, Python @python-paper,
+software @typst-software, and the shared Tidy Data entry @JSSv059i10. A Rubin
+technical report can display its bibliography key without depending on a
+custom `handle` field: #citeds("DMTN-001"). The bracketed form is
+#citedsp("DMTN-000", display: [technical-note series]). Typst itself is
+available at #link("https://typst.app/")[https://typst.app/].
 
 = Conclusion
 
@@ -152,6 +163,5 @@ without matching LaTeX pagination or glyph choices exactly.
 
 #heading(level: 1, numbering: none)[Appendix A: Prototype scope] <app-scope>
 
-Requirements extraction, meeting action items, and custom DocuShare citation
-rendering are deferred. They can be revisited if real document migrations show
-that they remain valuable.
+Requirements extraction and meeting action items are deferred. They can be
+revisited if real document migrations show that they remain valuable.

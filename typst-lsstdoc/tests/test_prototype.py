@@ -75,6 +75,28 @@ class TypstCompileTest(unittest.TestCase):
         )
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertGreater(output.stat().st_size, 10_000)
+        if pdftotext := shutil.which("pdftotext"):
+            extracted = subprocess.run(
+                [pdftotext, str(output), "-"],
+                text=True,
+                capture_output=True,
+                check=True,
+            ).stdout
+            self.assertIn("DMTN-001", extracted)
+            self.assertIn("technical-note series", extracted)
+            self.assertIn("Tidy Data", extracted)
+            self.assertNotIn("Software Carpentry", extracted)
+        if qpdf := shutil.which("qpdf"):
+            qdf = self.tempdir / "prototype-qdf.pdf"
+            subprocess.run(
+                [qpdf, "--qdf", "--object-streams=disable", str(output), str(qdf)],
+                text=True,
+                capture_output=True,
+                check=True,
+            )
+            structure = qdf.read_bytes().decode("latin-1")
+            self.assertRegex(structure, r"(?s)/Contents \(DMTN-001\).*?/Dest")
+            self.assertRegex(structure, r"(?s)/Contents \(technical-note series\).*?/Dest")
 
     def test_document_states_and_generated_authors(self) -> None:
         generated = self.tempdir / "authors.yaml"
