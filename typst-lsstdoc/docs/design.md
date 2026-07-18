@@ -329,8 +329,9 @@ This is encouraging evidence, not yet a full accessibility audit.
 ### Template API
 
 The primary show-rule function is `lsstdoc`.
-Required arguments are `title`, `doc-ref`, `series`, `date`, `authors`, and `affiliations`.
+Required arguments are `title`, `id`, `series`, `date`, `authors`, and `affiliations`; `id` deliberately matches the technote.toml field name for the document handle.
 Optional arguments are `short-title`, `subtitle`, `status`, `doi`, `repository-url`, `abstract`, `changes`, `toc`, `bibliography`, `bibliography-style`, and `bibliography-full`.
+The template also emits the front matter as a labeled metadata element, so tooling can extract the handle, title, and abstract from the compiled document with `typst eval 'query(<rubin-technote>).first().value' --in <file>`, the Typst counterpart of the annotated abstract structures in Markdown and reStructuredText technotes.
 `status` accepts only `draft`, `released`, or `obsolete`.
 Bibliographies list only cited entries by default; set `bibliography-full: true` only for the equivalent of `\nocite{*}`.
 `bibliography-style` defaults to the bundled APA style and accepts another bundled style name or a CSL file path.
@@ -345,7 +346,6 @@ Internal cross-references and citations retain the ordinary document text stylin
 
 ```typst
 #import "../src/lsstdoc.typ": citeds, citedsp, lsstdoc
-#let metadata = yaml("metadata.yaml")
 #let people = yaml("authors.yaml")
 #let bibs = (
   read("../../texmf/bibtex/bib/refs.bib", encoding: none),
@@ -353,16 +353,14 @@ Internal cross-references and citations retain the ordinary document text stylin
 )
 
 #show: lsstdoc.with(
-  title: metadata.title,
-  short-title: metadata.short_title,
-  doc-ref: metadata.doc_ref,
-  series: metadata.series,
-  status: metadata.status,
-  date: metadata.date,
+  title: "A Typst Prototype for Rubin Technical Documents",
+  id: "DMTN-999",
+  series: "DMTN",
+  status: "draft",
+  date: "2026-07-16",
   authors: people.authors,
   affiliations: people.affiliations,
-  abstract: metadata.abstract,
-  changes: metadata.changes,
+  abstract: [A short description of this document.],
   bibliography: bibs,
 )
 
@@ -397,7 +395,7 @@ The `technote-args` function in `src/technote-toml.typ` maps the parsed file ont
 ```
 
 The document loads the file itself because Typst resolves paths relative to the calling module.
-The mapping covers the handle (`id`), series (`series_id`), status (`draft`, `stable`, and `deprecated` map to `draft`, `released`, and `obsolete`), revision date (`date_updated`, falling back to `date_created`), repository URL (`github_url`), and the author list with deduplicated affiliations.
+The mapping covers the handle (`id`), series (`series_id`), status (`draft`, `stable`, and `deprecated` map to `draft`, `released`, and `obsolete`), revision date (`date_updated`, falling back to `date_created`), DOI (`doi`), repository URL (`github_url`), the optional `title` override, and the author list with deduplicated affiliations.
 URL-prefixed ORCID and ROR identifiers are normalized to the bare form the template expects.
 Unknown status states produce a clear error, and `date` and `status` can be passed explicitly to override the mapping.
 The title and abstract stay in the document source, matching the Documenteer convention, so `documenteer technote add-author` and `sync-authors` work unchanged: they edit `technote.toml` and the next compile picks the changes up.

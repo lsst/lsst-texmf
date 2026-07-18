@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import ast
+import json
 import shutil
 import struct
 import subprocess
@@ -156,7 +157,7 @@ class TypstCompileTest(unittest.TestCase):
             '#let people = yaml("../../examples/authors.yaml")\n'
             "#show: lsstdoc.with(\n"
             '  title: "Bibliography Style Test",\n'
-            '  doc-ref: "DMTN-999",\n'
+            '  id: "DMTN-999",\n'
             '  series: "DMTN",\n'
             '  date: "2026-07-16",\n'
             "  authors: people.authors,\n"
@@ -180,7 +181,7 @@ class TypstCompileTest(unittest.TestCase):
             '#let people = yaml("../../examples/authors.yaml")\n'
             "#show: lsstdoc.with(\n"
             '  title: "DOI Test",\n'
-            '  doc-ref: "DMTN-999",\n'
+            '  id: "DMTN-999",\n'
             '  series: "DMTN",\n'
             '  date: "2026-07-16",\n'
             "  authors: people.authors,\n"
@@ -333,6 +334,47 @@ class TypstCompileTest(unittest.TestCase):
             root=PROTOTYPE,
         )
         self.assertEqual(result.returncode, 0, result.stderr)
+
+    @unittest.skipUnless(shutil.which("pdftotext"), "pdftotext is not installed")
+    def test_technote_toml_maps_doi(self) -> None:
+        output = self.tempdir / "technote-doi.pdf"
+        result = self.compile(PROTOTYPE / "examples/technote.typ", output)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        extracted = subprocess.run(
+            ["pdftotext", str(output), "-"],
+            text=True,
+            capture_output=True,
+            check=True,
+        ).stdout
+        self.assertEqual(extracted.count("https://doi.org/10.71929/rubin/example.999"), 1)
+
+    def test_front_matter_is_queryable(self) -> None:
+        """Tooling can extract the front matter with typst query."""
+        result = subprocess.run(
+            [
+                "typst",
+                "query",
+                "--root",
+                str(REPOSITORY),
+                "--font-path",
+                ":".join(str(path) for path in FONT_PATHS),
+                str(PROTOTYPE / "examples/technote.typ"),
+                "<rubin-technote>",
+                "--field",
+                "value",
+                "--one",
+            ],
+            text=True,
+            capture_output=True,
+            check=False,
+        )
+        self.assertEqual(result.returncode, 0, result.stderr)
+        front_matter = json.loads(result.stdout)
+        self.assertEqual(front_matter["id"], "SQR-999")
+        self.assertEqual(front_matter["series"], "SQR")
+        self.assertEqual(front_matter["status"], "released")
+        self.assertEqual(front_matter["title"], "Reusing Documenteer Technote Metadata")
+        self.assertIn("Documenteer", json.dumps(front_matter["abstract"]))
 
     def test_technote_toml_unknown_state_rejected(self) -> None:
         source = self.tempdir / "state.typ"

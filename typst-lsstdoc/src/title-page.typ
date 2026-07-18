@@ -14,7 +14,7 @@
 
 #let render-title-page(
   title: none,
-  doc-ref: none,
+  id: none,
   series: none,
   status: none,
   date: none,
@@ -63,7 +63,7 @@
         #v(20pt)
         #render-authors(authors, affiliations)
         #v(16pt)
-        #text(size: 14pt, weight: "bold", doc-ref)
+        #text(size: 14pt, weight: "bold", id)
         #v(7pt)
         #if nonempty(doi) {
           // Pass the display text as a string: in markup a literal
