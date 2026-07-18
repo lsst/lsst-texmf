@@ -40,15 +40,20 @@
 /// the document, matching Documenteer; when `technote.title` is set it is
 /// mapped instead and the document must not also pass one. The abstract
 /// always stays in the document.
-///
-/// - data (dictionary): The parsed technote.toml contents.
-/// - date (auto, str): Override for the revision date; `auto` uses
-///   `date_updated`, falling back to `date_created`.
-/// - status (auto, str): Override for the document status; `auto` maps the
-///   technote states draft, stable, and deprecated onto draft, released,
-///   and obsolete.
 /// -> dictionary
-#let technote-args(data, date: auto, status: auto) = {
+#let technote-args(
+  /// The parsed technote.toml contents.
+  /// -> dictionary
+  data,
+  /// Override for the revision date; `auto` uses `date_updated`, falling
+  /// back to `date_created`.
+  /// -> auto | str
+  date: auto,
+  /// Override for the document status; `auto` maps the technote states
+  /// draft, stable, and deprecated onto draft, released, and obsolete.
+  /// -> auto | str
+  status: auto,
+) = {
   let technote = data.at("technote")
 
   let resolved-status = status

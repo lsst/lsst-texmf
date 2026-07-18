@@ -17,67 +17,87 @@
 
 /// Render a Rubin Observatory technical document.
 ///
-/// Use as a show rule:
+/// Use as a show rule, with metadata mapped from `technote.toml` or passed
+/// directly:
 /// ```typ
-/// #show: lsstdoc.with(
-///   title: "My Technote",
-///   id: "DMTN-999",
-///   series: "DMTN",
-///   date: "2026-07-16",
-///   authors: people.authors,
-///   affiliations: people.affiliations,
-/// )
-/// ```
+/// #import "@preview/rubin-technote:0.1.0": lsstdoc, technote-args
 ///
-/// - title (str, content): The document title.
-/// - id (str): The document handle, for example "DMTN-999".
-/// - series (str): The series key, validated against the shared Rubin
-///   series data that also determines the displayed type label.
-/// - status (str): One of "draft", "released", or "obsolete"; draft and
-///   obsolete documents get watermarks and footer state marks.
-/// - date (str): The latest revision date shown on the title page and in
-///   the running header.
-/// - authors (array): Ordered author dictionaries with `display_name`,
-///   optional `orcid` and `corresponding`, and `affiliations` identifiers.
-/// - affiliations (dictionary): Affiliation records keyed by identifier,
-///   each with a `name` and optional `address` and `ror`.
-/// - short-title (str, none): Running-header title; defaults to the title.
-/// - subtitle (str, none): Optional subtitle shown below the title.
-/// - doi (str, none): Bare DOI rendered as a link on the title page.
-/// - repository-url (str, none): Document source link shown after the body.
-/// - abstract (content, none): Abstract rendered in the front matter.
-/// - changes (array): Change-record entries with `version`, `date`,
-///   `description`, and `author` fields.
-/// - toc (bool): Whether to render a table of contents.
-/// - bibliography (bytes, array, none): Bibliography sources loaded with
-///   `read(path, encoding: none)` from the document.
-/// - bibliography-style (auto, str): A bundled citation style name or a CSL
-///   file path; `auto` selects the bundled Rubin AAS style, which follows
-///   aasjournal.bst and renders Rubin document handles from bibliography
-///   keys.
-/// - bibliography-full (bool): List all entries, not only the cited ones.
-/// - body (content): The document body.
+/// #show: lsstdoc.with(
+///   ..technote-args(toml("technote.toml")),
+///   title: "My Technote",
+///   abstract: [A short description of this document.],
+/// )
+///
+/// = Introduction
+///
+/// Add content here.
+/// ```
 /// -> content
 #let lsstdoc(
+  /// The document title, also used as PDF metadata.
+  /// -> str | content
   title: none,
+  /// The document handle, for example "DMTN-999"; the argument name
+  /// matches the technote.toml field.
+  /// -> str
   id: none,
+  /// The series key, validated against the shared Rubin series data that
+  /// also determines the displayed type label.
+  /// -> str
   series: none,
+  /// One of "draft", "released", or "obsolete"; draft and obsolete
+  /// documents get watermarks and footer state marks.
+  /// -> str
   status: "released",
+  /// The latest revision date shown on the title page and in the running
+  /// header.
+  /// -> str
   date: none,
+  /// Ordered author dictionaries with `display_name`, optional `orcid`
+  /// and `corresponding`, and `affiliations` identifiers.
+  /// -> array
   authors: none,
+  /// Affiliation records keyed by identifier, each with a `name` and
+  /// optional `address` and `ror`.
+  /// -> dictionary
   affiliations: none,
+  /// Running-header title; defaults to the title.
+  /// -> str | none
   short-title: none,
+  /// Optional subtitle shown below the title.
+  /// -> str | none
   subtitle: none,
+  /// Bare DOI rendered as a link on the title page.
+  /// -> str | none
   doi: none,
+  /// Document source link shown after the body.
+  /// -> str | none
   repository-url: none,
+  /// Abstract rendered in the front matter; a plain string also becomes
+  /// the PDF description.
+  /// -> content | str | none
   abstract: none,
+  /// Change-record entries with `version`, `date`, `description`, and
+  /// `author` fields.
+  /// -> array
   changes: (),
+  /// Whether to render a table of contents.
+  /// -> bool
   toc: true,
+  /// Bibliography sources loaded with `read(path, encoding: none)` from
+  /// the document.
+  /// -> bytes | array | none
   bibliography: none,
-  // auto selects the bundled Rubin AAS style; pass a bundled style name or
-  // a CSL file path to override it.
+  /// A bundled citation style name or a CSL file path; `auto` selects the
+  /// bundled Rubin AAS style, which follows aasjournal.bst and renders
+  /// Rubin document handles from bibliography keys.
+  /// -> auto | str
   bibliography-style: auto,
+  /// List all bibliography entries, not only the cited ones.
+  /// -> bool
   bibliography-full: false,
+  /// The document body.
+  /// -> content
   body,
 ) = {
   assert(nonempty(title), message: "The title field is required")
@@ -104,6 +124,11 @@
   show heading.where(level: 1): set text(size: 17pt, weight: "bold", fill: rubin-teal)
   show heading.where(level: 2): set text(size: 13pt, weight: "bold", fill: rubin-teal)
   show heading.where(level: 3): set text(size: 11pt, weight: "bold", fill: rubin-teal)
+  // Give sections air comparable to the LaTeX class rather than Typst's
+  // tighter defaults. The em units scale with each level's text size. A
+  // level-filtered show-set (heading.where(level: ..)) must not be used
+  // here: it breaks the tagged list structure under PDF/UA-1.
+  show heading: set block(above: 1.8em, below: 1em)
   show figure.caption: it => align(center, text(size: 9pt, it))
   // Table figures may span pages, with the caption before the table and
   // repeated headers supplied by table.header.
