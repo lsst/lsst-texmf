@@ -58,9 +58,9 @@ The package also exports `note` and `warning` admonitions and the `citeds`/`cite
 
 ## Documentation
 
-- [API manual](docs/manual.typ), generated from the source doc comments with [tidy](https://typst.app/universe/package/tidy); build it with `typst compile --root . docs/manual.typ`.
+- [User guide](docs/manual.typ), typeset with the package itself so its pages demonstrate the features it describes, with an API reference generated from the source doc comments by [tidy](https://typst.app/universe/package/tidy); build it with `typst compile --root . --font-path fonts docs/manual.typ manual.pdf` from this directory.
 - [Design and audit record](docs/design.md), covering the LaTeX `lsstdoc` feature inventory, the compatibility decisions, and the technote workflow design.
-- [Examples](examples/), including a full representative document (`prototype.typ`) and the `technote.toml`-driven example (`technote.typ`).
+- [Examples](examples/), including the acceptance fixture exercising every feature (`features.typ`) and the `technote.toml`-driven example (`technote.typ`).
 
 ## Data and assets
 
