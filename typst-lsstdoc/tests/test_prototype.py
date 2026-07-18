@@ -140,6 +140,18 @@ class TypstCompileTest(unittest.TestCase):
     @unittest.skipUnless(shutil.which("pdftotext"), "pdftotext is not installed")
     def test_default_bibliography_is_aas_style(self) -> None:
         """The default style follows aastex and keeps handles intact."""
+        many_authors = (
+            "@article{many-authors,\n"
+            "  author = {First, Alice and Second, Bob and Third, Carol and"
+            " Fourth, Dan and Fifth, Eve and Sixth, Frank and Seventh, Grace},\n"
+            "  title = {An Entry With Seven Authors},\n"
+            "  journal = {Example Journal},\n"
+            "  year = {2024},\n"
+            "  volume = {1},\n"
+            "  pages = {1}\n"
+            "}\n"
+        )
+        (self.tempdir / "many.bib").write_text(many_authors, encoding="utf-8")
         source = self.tempdir / "aas-style.typ"
         source.write_text(
             '#import "../../src/lsstdoc.typ": lsstdoc\n'
@@ -151,10 +163,12 @@ class TypstCompileTest(unittest.TestCase):
             "  bibliography: (\n"
             '    read("../../docs/manual.bib", encoding: none),\n'
             '    read("../../examples/references.bib", encoding: none),\n'
+            '    read("many.bib", encoding: none),\n'
             "  ),\n"
             ")\n"
             "= Test\n"
-            "Cite a technote @DMTN-000 and an article @fits-standard.\n",
+            "Cite a technote @DMTN-000, an article @fits-standard, and a\n"
+            "seven-author entry @many-authors.\n",
             encoding="utf-8",
         )
         output = self.tempdir / "aas-style.pdf"
@@ -177,6 +191,13 @@ class TypstCompileTest(unittest.TestCase):
         self.assertIn("DMTN-000, NSF-DOE Vera C. Rubin Observatory", normalized)
         # Articles render journal, volume, and page after the title.
         self.assertIn("Astronomy and Astrophysics, 524, A42", normalized)
+        # aasjournal.bst author truncation: five or fewer are listed in
+        # full, more than five collapse to the first three plus et al.
+        self.assertIn("Pence, W., Chiappetti, L., Page, C., Shaw, R., & Stobie, E.", normalized)
+        self.assertIn("First, A., Second, B., Third, C., et al.", normalized)
+        self.assertNotIn("Fourth", normalized)
+        # In-text citations collapse to the first author at three or more.
+        self.assertIn("(First et al. 2024)", normalized)
 
     def test_bibliography_style_option(self) -> None:
         source = self.tempdir / "bib-style.typ"
