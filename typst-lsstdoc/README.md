@@ -428,11 +428,10 @@ python3 -m unittest discover -s typst-lsstdoc/tests -v
 
 The test compiles the full example as PDF/UA-1, compiles draft/released/obsolete state fixtures using freshly exported author YAML, verifies the invalid-state diagnostic, checks affiliation references and controlled-series data, and compares `data/series.yaml` exactly with `bibtools.py`.
 
-## Current findings and next slice
+## Current findings
 
 1. The title page and page furniture can be reproduced with ordinary grids and page regions; fragile absolute placement is not needed.
-2. Native YAML works well for document and author metadata.
-   The remaining architectural question is how to reconcile this prototype schema with Documenteer metadata without introducing another hand-maintained source.
+2. Native YAML works well for document and author metadata, and the Documenteer `technote.toml` adapter resolves the metadata-ownership question without introducing another hand-maintained source.
 3. The tested local fixture and all five shared bibliography pools parse without normalization; the example cites entries directly from `refs.bib` and `lsst.bib`.
    Typst 0.15 does not bundle an AAS CSL style, so the prototype uses its bundled APA author-year style.
    A Rubin/AAS CSL file is optional follow-up work rather than a blocker.
@@ -442,3 +441,31 @@ The test compiles the full example as PDF/UA-1, compiles draft/released/obsolete
    Exact LaTeX page-sequence parity is neither necessary nor desirable.
 6. The template makes table figures breakable with repeated headers, so a single captioned figure can span pages and cross-references target the real table.
 7. The next useful evidence is a real Rubin `.bib` compatibility corpus, a long AuthorDB-generated author list, CI integration, and a side-by-side visual comparison against a representative LaTeX technical note.
+
+## Technote workflow design
+
+This is the agreed plan for making Typst technotes first-class citizens of the Markdown/reStructuredText technote workflow.
+Every mechanism named here was verified against the Documenteer source, the `templates` package, and a representative deployed technote.
+
+The published product is a PDF uploaded to lsst.io, following the LaTeX technote model, with the metadata boundary kept clean enough that Typst HTML export can be added later without changing the repository contract.
+
+The template is developed in this directory and consumed by documents as the Typst package `rubin-technote`.
+This subtree is self-contained: sources, series data, artwork, and fonts (with their licenses) all live inside it, and the test suite compiles the technote example with the project root and font path confined to the subtree, both directly and through a vendored `@preview/rubin-technote` package layout.
+While the template incubates here, a technote's Makefile fetches this subtree (about 5 MB, not a full repository clone) into a vendored package directory and compiles with `--package-path`, so documents use the permanent `#import "@preview/rubin-technote:..."` line from the start.
+When the template graduates to its own repository and is published to Typst Universe, only the fetch step is deleted; no technote source changes.
+Fonts ride inside the fetched package during incubation, which sidesteps the limitation that Typst Universe packages cannot register fonts; after Universe publication a small font-provisioning step remains in the Makefile.
+
+A Typst technote repository is as thin as a Markdown one: `technote.toml`, `index.typ`, `local.bib`, a Makefile, and CI configuration.
+`index.typ` spreads `technote-args(toml("technote.toml"))` into `lsstdoc` and keeps the title and abstract in the document source.
+
+The Makefile mirrors the Markdown technote targets.
+`make add-author` and `make sync-authors` are unchanged: they run `documenteer technote add-author`/`sync-authors`, which resolve authors through the ook API at `roundtable.lsst.cloud` and write `technote.toml`, and the next compile picks the changes up.
+A new `make sync-bibs` target materializes the five shared bibliography files into a git-ignored directory for the document to `read()`, using the same per-file GitHub raw download that Documenteer's `githubbibcache` extension performs for Sphinx builds.
+The natural home for that logic is a new `documenteer technote sync-bibs` subcommand, since the download and cache code already exists in Documenteer; a plain download loop in the Makefile is the interim fallback.
+`make pdf` runs `typst compile`.
+
+Scaffolding is a new `technote_typst` project template in the `templates` repository alongside `technote_md`; templatekit metadata means the Slack bot needs no changes.
+Continuous integration follows the shared-workflow pattern of `rubin-sphinx-technote-workflows`: fetch the template (cacheable), sync the bibliographies, compile, and upload the PDF with a landing page to LSST the Docs.
+
+While the template lives in this repository, the existing tests guard series-label parity with `bibtools.py`.
+After the split, the template repository's CI fetches `bibtools.py` from GitHub raw, the same pattern used for the bibliographies, to keep that guard.
