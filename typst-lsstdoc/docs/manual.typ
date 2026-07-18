@@ -278,6 +278,12 @@ The package ships the Open Sans, Inconsolata, and XITS families in
 Documents also compile under `--pdf-standard ua-1` for tagged, accessible
 output when alt text is supplied for figures and equations.
 
+// The generated reference nests function and parameter headings deeply;
+// cap the displayed numbering at three levels.
+#set heading(numbering: (..nums) => if nums.pos().len() <= 3 {
+  numbering("1.1", ..nums)
+})
+
 #heading(level: 1, numbering: none)[API reference] <sec-api>
 
 The reference below is generated from the doc comments in the package
