@@ -151,9 +151,8 @@ class TypstCompileTest(unittest.TestCase):
 class MetadataTest(unittest.TestCase):
     """Validate shared mappings and generated author structure."""
 
-    def test_series_matches_bibtools_with_corrected_rdo(self) -> None:
+    def test_series_matches_bibtools(self) -> None:
         expected = load_bibtools_series()
-        expected["RDO"] = "Rubin Directors Office"
         actual = yaml.safe_load((PROTOTYPE / "data/series.yaml").read_text(encoding="utf-8"))["series"]
         self.assertEqual(actual, expected)
 
