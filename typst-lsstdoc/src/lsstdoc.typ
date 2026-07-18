@@ -1,4 +1,4 @@
-#import "utilities.typ": nonempty, rubin-teal, series-label, url-blue
+#import "utilities.typ": nonempty, rubin-teal, url-styled, validate-series
 #import "admonitions.typ" as admonitions
 #import "document-state.typ": state-background, validate-status
 #import "headers-footers.typ": running-footer, running-header
@@ -29,6 +29,10 @@
   changes: (),
   toc: true,
   bibliography: none,
+  // Typst does not bundle the AAS CSL style. APA is a close bundled
+  // author-year baseline; pass another bundled style name or a CSL file
+  // path to override it.
+  bibliography-style: "apa",
   bibliography-full: false,
   body,
 ) = {
@@ -39,9 +43,9 @@
   assert(authors != none, message: "The authors field is required")
   assert(affiliations != none, message: "The affiliations field is required")
   validate-status(status)
+  validate-series(series)
   let displayed-short-title = if nonempty(short-title) { short-title } else { title }
   let author-names = authors.map(author => author.at("display_name"))
-  let _ = series-label(series)
 
   set document(title: title, author: author-names)
   set text(font: ("Open Sans", "Arial", "Helvetica"), size: 11pt, lang: "en")
@@ -52,18 +56,19 @@
   show heading.where(level: 2): set text(size: 13pt, weight: "bold", fill: rubin-teal)
   show heading.where(level: 3): set text(size: 11pt, weight: "bold", fill: rubin-teal)
   show figure.caption: it => align(center, text(size: 9pt, it))
+  // Table figures may span pages, with the caption before the table and
+  // repeated headers supplied by table.header.
+  show figure.where(kind: table): set block(breakable: true)
+  show figure.where(kind: table): set figure.caption(position: top)
   show link: it => {
     let destination = it.dest
-    let is-orcid = type(destination) == str and destination.starts-with("https://orcid.org/")
-    if is-orcid {
-      it
-    } else if type(destination) == str and (
+    // ORCID links are shown as the icon alone; internal links keep the
+    // ordinary text styling.
+    let is-external = type(destination) == str and (
       destination.starts-with("https://") or destination.starts-with("http://")
-    ) {
-      underline(
-        stroke: 0.45pt + url-blue,
-        text(fill: url-blue, it),
-      )
+    )
+    if is-external and not destination.starts-with("https://orcid.org/") {
+      url-styled(it)
     } else {
       it
     }
@@ -101,11 +106,8 @@
   counter(page).update(1)
 
   render-abstract(abstract)
-  if nonempty(abstract) { pagebreak() }
   render-change-record(changes)
-  if changes.len() > 0 { pagebreak() }
   render-contents(enabled: toc)
-  if toc { pagebreak() }
 
   set page(numbering: "1")
   counter(page).update(1)
@@ -125,9 +127,7 @@
     pagebreak()
     render-bibliography(
       bibliography,
-      // Typst does not bundle the AAS CSL style. APA is a close bundled
-      // author-year baseline; a Rubin/AAS CSL file can replace it later.
-      style: "apa",
+      style: bibliography-style,
       title: [References],
       full: bibliography-full,
     )
