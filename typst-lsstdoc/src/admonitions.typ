@@ -22,11 +22,21 @@
 /// Render a note admonition in the Rubin teal callout style.
 ///
 /// The box is kept together across page breaks.
-///
-/// - body (content): The note content.
-/// - title (str, content): The heading shown in the title bar.
+/// For example:
+/// ```typ
+/// #note(title: "Structured metadata")[
+///   Authors do not need to copy metadata into presentation markup.
+/// ]
+/// ```
 /// -> content
-#let note(body, title: "Note") = admonition(
+#let note(
+  /// The note content.
+  /// -> content
+  body,
+  /// The heading shown in the title bar.
+  /// -> str | content
+  title: "Note",
+) = admonition(
   body,
   title,
   rubin-teal,
@@ -37,11 +47,21 @@
 ///
 /// A custom title is prefixed with "Warning: " so that the severity is
 /// always visible.
-///
-/// - body (content): The warning content.
-/// - title (str, content, none): Optional custom heading.
+/// For example:
+/// ```typ
+/// #warning[
+///   Do not edit the generated bibliography files by hand.
+/// ]
+/// ```
 /// -> content
-#let warning(body, title: none) = {
+#let warning(
+  /// The warning content.
+  /// -> content
+  body,
+  /// Optional custom heading.
+  /// -> str | content | none
+  title: none,
+) = {
   let displayed-title = if title == none { "Warning" } else { "Warning: " + title }
   admonition(
     body,

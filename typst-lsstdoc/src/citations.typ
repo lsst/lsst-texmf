@@ -13,11 +13,20 @@
 /// is added to the reference list, but the citation shows the bibliography
 /// key (typically a Rubin document handle) instead of a CSL-derived
 /// author, year, or number, and links to the entry.
-///
-/// - key (str): The bibliography key, for example "DMTN-001".
-/// - display (content, none): Alternate text shown instead of the key.
+/// For example:
+/// ```typ
+/// The requirements are defined in #citeds("LPM-17"), which can also be
+/// cited as #citeds("LPM-17", display: [the science requirements]).
+/// ```
 /// -> content
-#let citeds(key, display: none) = {
+#let citeds(
+  /// The bibliography key, for example "DMTN-000".
+  /// -> str
+  key,
+  /// Alternate text shown instead of the key.
+  /// -> content | none
+  display: none,
+) = {
   let destination = citation-label(key)
   let citation = cite(
     destination,
@@ -30,10 +39,18 @@
 /// Cite a bibliography entry by key, wrapped in square brackets.
 ///
 /// The Typst equivalent of the LaTeX `\citedsp` command.
-///
-/// - key (str): The bibliography key, for example "DMTN-001".
-/// - display (content, none): Alternate text shown instead of the key.
+/// For example:
+/// ```typ
+/// The series is described elsewhere #citedsp("DMTN-000").
+/// ```
 /// -> content
-#let citedsp(key, display: none) = {
+#let citedsp(
+  /// The bibliography key, for example "DMTN-000".
+  /// -> str
+  key,
+  /// Alternate text shown instead of the key.
+  /// -> content | none
+  display: none,
+) = {
   text("[") + citeds(key, display: display) + text("]")
 }
