@@ -1,4 +1,4 @@
-#import "utilities.typ": rubin-teal
+#import "utilities.typ": controlled-series, rubin-teal
 
 #let supported-statuses = ("draft", "released", "obsolete")
 
@@ -19,8 +19,6 @@
 }
 
 #let state-color(status) = if status == "released" { rubin-teal } else { red }
-
-#let controlled-series = ("LDM", "LSE", "LCA", "LTS", "LPM", "LEP", "RDO")
 
 #let is-controlled(series) = controlled-series.contains(series)
 

@@ -3,14 +3,25 @@
 #let light-teal = rgb("#e8f5f5")
 #let url-blue = rgb("#005ea8")
 
+#let rubin-logo-path = "../assets/rubin-logo.svg"
+
+// Shared appearance of external links.
+#let url-styled(body) = underline(
+  stroke: 0.45pt + url-blue,
+  text(fill: url-blue, body),
+)
+
 #let series-data = yaml("../data/series.yaml")
 #let series-map = series-data.at("series")
+#let controlled-series = series-data.at("controlled")
+
+#let validate-series(series) = assert(
+  series in series-map,
+  message: "Unsupported Rubin document series: " + series,
+)
 
 #let series-label(series) = {
-  assert(
-    series-map.keys().contains(series),
-    message: "Unsupported Rubin document series: " + series,
-  )
+  validate-series(series)
   series-map.at(series)
 }
 
