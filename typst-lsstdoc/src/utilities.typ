@@ -25,6 +25,11 @@
   series-map.at(series)
 }
 
+#let validate-doi(doi) = assert(
+  doi == none or (type(doi) == str and doi.starts-with("10.") and doi.contains("/")),
+  message: "DOI must be a bare identifier such as 10.71929/example.71, not a URL: " + repr(doi),
+)
+
 #let value-or(data, key, default: none) = data.at(key, default: default)
 
 #let nonempty(value) = value != none and value != ""

@@ -66,10 +66,13 @@
         #text(size: 14pt, weight: "bold", doc-ref)
         #v(7pt)
         #if nonempty(doi) {
+          // Pass the display text as a string: in markup a literal
+          // https:// URL would swallow an interpolation as a fragment.
+          let doi-url = "https://doi.org/" + doi
           text(
             size: 10pt,
             weight: "bold",
-            link("https://doi.org/" + doi)[https://doi.org/#doi],
+            link(doi-url, doi-url),
           )
           v(7pt)
         }

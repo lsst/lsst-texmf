@@ -1,4 +1,4 @@
-#import "utilities.typ": nonempty, rubin-teal, url-styled, validate-series
+#import "utilities.typ": nonempty, rubin-teal, url-styled, validate-doi, validate-series
 #import "admonitions.typ" as admonitions
 #import "document-state.typ": state-background, validate-status
 #import "headers-footers.typ": running-footer, running-header
@@ -44,6 +44,7 @@
   assert(affiliations != none, message: "The affiliations field is required")
   validate-status(status)
   validate-series(series)
+  validate-doi(doi)
   let displayed-short-title = if nonempty(short-title) { short-title } else { title }
   let author-names = authors.map(author => author.at("display_name"))
 
