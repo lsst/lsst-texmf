@@ -176,7 +176,7 @@ The mixed-case keys `Agreement`, `Document`, `Publication`, and `Report` are par
 
 | Feature | LaTeX behavior and interface | Priority | Proposed Typst approach | Compatibility notes |
 | --- | --- | --- | --- | --- |
-| Bibliography engine/style | Class forces BibTeX `lsst_aa.bst`; `natbib` is numeric by default and author-year with the `authoryear` option. | Required | Use Typst's native bibliography support. The prototype uses bundled APA author-year output because Typst 0.15 does not bundle AAS CSL. | Exact `lsst_aa.bst` rendering is unnecessary. A Rubin/AAS CSL file is optional follow-up work. |
+| Bibliography engine/style | Class forces BibTeX `lsst_aa.bst`; `natbib` is numeric by default and author-year with the `authoryear` option. | Required | Use Typst's native bibliography support with the bundled `rubin-aas.csl` style, which follows the aastex `aasjournal.bst` conventions. | The target is aastex, not the `lsst_aa.bst` variant. Report handles render from bibliography keys because hyphenated report numbers do not round-trip through the bibliography processor. |
 | Existing `.bib` files | Repository provides `lsst`, `lsst-dm`, `refs`, `books`, and `refs_ads`; the baseline example built all five. The style recognizes Rubin-specific fields including `handle`, plus ADS/e-print fields. | Required | Compile a curated cross-section of real entries with Typst and record parse/render failures. | LaTeX commands, brace-protected acronyms, collaboration authors, and custom `@DocuShare` behavior are likely normalization points. Do not rewrite the canonical files during the experiment. |
 | Citation-key display | `\citeds` uses the bibliography key in place of a derived year; alternate text still cites the same entry. `\citedsp` adds brackets. | Implemented | Generic `citeds` and `citedsp` helpers use a small CSL style whose citation layout selects `citation-key`; caller-supplied text is passed as the citation locator. | The helpers depend only on the bibliography key, not a custom `handle` field or a particular BibTeX layout. They retain Typst's native link to the exact bibliography entry and render as blue underlined links. |
 | Cross-references | Standard labels/hyperref plus convenience names for sections, figures, tables, equations, requirements, actions, and appendices. | Required | Native labels and references, with small semantic helpers only where output wording matters. | Avoid translating the large library of domain-specific TeX convenience macros. |
@@ -248,8 +248,7 @@ The CLI accepts `--authors` and `--output` with backward-compatible defaults, av
 
 - TeX package and macro compatibility is explicitly out of scope.
   Native Typst constructs should replace document structure, math, figures, tables, lists, and references.
-- `lsst_aa.bst` has no direct Typst equivalent.
-  The prototype's bundled APA author-year baseline is acceptable for feasibility testing; a custom Rubin/AAS CSL and handle rendering are optional and deferred.
+- `lsst_aa.bst` has no direct Typst equivalent and is not the target: the bundled `rubin-aas.csl` follows the plain aastex `aasjournal.bst` conventions instead, which is what authors are used to.
 - Requirements and actions are rarely used and are deferred.
   If implemented later, they cross the template/build-tool boundary and should use neutral structured data.
 - The title page's absolute TeX placement should be reproduced with robust grids and page regions, not copied coordinate-for-coordinate.
@@ -269,7 +268,7 @@ Evidence from the compiled prototype supports these answers:
    It does not need to reproduce the LaTeX page sequence or exact reset point as long as the result is understandable.
 4. **Existing `.bib` compatibility:** the ten-entry representative fixture compiles without normalization.
    A larger real Rubin corpus is still needed to characterize embedded LaTeX and custom-field failures.
-5. **Bibliography style:** Typst 0.15 does not bundle AAS CSL. Bundled APA author-year output is a usable baseline; exact `lsst_aa.bst` output and prominent handle rendering are not required.
+5. **Bibliography style:** Typst 0.15 does not bundle an AAS CSL, so the package ships `rubin-aas.csl`, an author-year style following the aastex `aasjournal.bst` conventions with technote handles rendered from bibliography keys.
 6. **Formatting versus build system:** title/page layout, typography, document state, change tables, and captions are formatting.
    Author management, requirements/actions extraction, glossary generation, bibliography normalization, metadata indexing, and reproducible font/resource discovery are build-system concerns.
 7. **Largest early risks:** bibliography normalization, metadata ownership, long-author layout, and stable page furniture need evidence.
@@ -295,7 +294,7 @@ The prototype now demonstrates:
 - tagged output by default and a successful PDF/UA-1 build when requested; and
 - smoke tests for compilation, state validation, metadata mapping, and series parity.
 
-Requirements extraction, meeting actions, glossary generation, compact long author lists, issue tables, and a custom Rubin/AAS CSL style remain deferred.
+Requirements extraction, meeting actions, glossary generation, compact long author lists, and issue tables remain deferred.
 
 ### Requirements and build
 
@@ -335,7 +334,7 @@ Optional arguments are `short-title`, `subtitle`, `status`, `doi`, `repository-u
 The template also emits the front matter as a labeled metadata element, so tooling can extract the handle, title, and abstract from the compiled document with `typst eval 'query(<rubin-technote>).first().value' --in <file>`, the Typst counterpart of the annotated abstract structures in Markdown and reStructuredText technotes.
 `status` accepts only `draft`, `released`, or `obsolete`.
 Bibliographies list only cited entries by default; set `bibliography-full: true` only for the equivalent of `\nocite{*}`.
-`bibliography-style` defaults to the bundled APA style and accepts another bundled style name or a CSL file path.
+`bibliography-style` defaults to the packaged Rubin AAS style and accepts another bundled style name or a CSL file path.
 
 The same module exports `note`, `warning`, `citeds`, and `citedsp` functions.
 Notes use a cyan Rubin callout; warnings use an orange callout and automatically prefix custom titles with “Warning.” Both are kept together across page breaks.
@@ -416,8 +415,7 @@ The test compiles the full example as PDF/UA-1, compiles draft/released/obsolete
 1. The title page and page furniture can be reproduced with ordinary grids and page regions; fragile absolute placement is not needed.
 2. Native YAML works well for document and author metadata, and the Documenteer `technote.toml` adapter resolves the metadata-ownership question without introducing another hand-maintained source.
 3. The tested local fixture and all five shared bibliography pools parse without normalization; the example cites entries directly from `refs.bib` and `lsst.bib`.
-   Typst 0.15 does not bundle an AAS CSL style, so the prototype uses its bundled APA author-year style.
-   A Rubin/AAS CSL file is optional follow-up work rather than a blocker.
+   Typst 0.15 does not bundle an AAS CSL style, so the package ships its own `rubin-aas.csl` following the aastex conventions.
 4. Typst's ordinary tagged PDF and PDF/UA-1 mode are both viable for this representative document.
    A production assessment still needs screen-reader, reading-order, table semantics, and link-purpose review.
 5. Front/main numbering transitions cleanly.

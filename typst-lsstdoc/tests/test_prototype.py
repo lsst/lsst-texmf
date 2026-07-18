@@ -137,6 +137,47 @@ class TypstCompileTest(unittest.TestCase):
                 self.assertEqual(result.returncode, 0, result.stderr)
                 self.assertTrue(output.exists())
 
+    @unittest.skipUnless(shutil.which("pdftotext"), "pdftotext is not installed")
+    def test_default_bibliography_is_aas_style(self) -> None:
+        """The default style follows aastex and keeps handles intact."""
+        source = self.tempdir / "aas-style.typ"
+        source.write_text(
+            '#import "../../src/lsstdoc.typ": lsstdoc\n'
+            "#show: lsstdoc.with(\n"
+            '  title: "AAS Style Test",\n'
+            '  id: "DMTN-999",\n'
+            '  series: "DMTN",\n'
+            '  date: "2026-07-16",\n' + SINGLE_AUTHOR_ARGS + "  toc: false,\n"
+            "  bibliography: (\n"
+            '    read("../../docs/manual.bib", encoding: none),\n'
+            '    read("../../examples/references.bib", encoding: none),\n'
+            "  ),\n"
+            ")\n"
+            "= Test\n"
+            "Cite a technote @DMTN-000 and an article @fits-standard.\n",
+            encoding="utf-8",
+        )
+        output = self.tempdir / "aas-style.pdf"
+        result = self.compile(source, output)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        extracted = subprocess.run(
+            ["pdftotext", str(output), "-"],
+            text=True,
+            capture_output=True,
+            check=True,
+        ).stdout
+        # Collapse line wrapping inside the references.
+        normalized = " ".join(extracted.split())
+        # Author-year citations without a comma, following aastex.
+        self.assertIn("(Jenness 2017)", normalized)
+        # The technote reference keeps the handle intact and renders the
+        # aasjournal.bst techreport shape: type, handle, institution.
+        self.assertIn("Data Management Technical Note DMTN-000", normalized)
+        self.assertNotIn("DMTN0 ", normalized)
+        self.assertIn("DMTN-000, NSF-DOE Vera C. Rubin Observatory", normalized)
+        # Articles render journal, volume, and page after the title.
+        self.assertIn("Astronomy and Astrophysics, 524, A42", normalized)
+
     def test_bibliography_style_option(self) -> None:
         source = self.tempdir / "bib-style.typ"
         source.write_text(
