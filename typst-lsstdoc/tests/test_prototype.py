@@ -165,6 +165,14 @@ class MetadataTest(unittest.TestCase):
         actual = yaml.safe_load((PROTOTYPE / "data/series.yaml").read_text(encoding="utf-8"))["series"]
         self.assertEqual(actual, expected)
 
+    def test_controlled_series_reference_valid_series(self) -> None:
+        data = yaml.safe_load((PROTOTYPE / "data/series.yaml").read_text(encoding="utf-8"))
+        controlled = data["controlled"]
+        self.assertTrue(set(controlled).issubset(data["series"]))
+        self.assertIn("LDM", controlled)
+        self.assertIn("RDO", controlled)
+        self.assertNotIn("DMTN", controlled)
+
     def test_example_author_references_resolve(self) -> None:
         people = yaml.safe_load((PROTOTYPE / "examples/authors.yaml").read_text(encoding="utf-8"))
         affiliations = people["affiliations"]

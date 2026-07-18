@@ -23,3 +23,12 @@ series:
   Document: Informal Construction Document
   Publication: LSST Construction Publication
   Report: Construction Report
+# Series whose documents are subject to configuration control.
+controlled:
+  - LDM
+  - LSE
+  - LCA
+  - LTS
+  - LPM
+  - LEP
+  - RDO
