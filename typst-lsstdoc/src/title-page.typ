@@ -1,8 +1,7 @@
-#import "utilities.typ": nonempty, rubin-teal, series-label
+#import "utilities.typ": nonempty, rubin-logo-path, rubin-teal, series-label
 #import "authors.typ": render-authors
 #import "document-state.typ": state-color, state-label
 
-#let rubin-logo-path = "../assets/rubin-logo.svg"
 #let observatory-image-path = "../../texmf/tex/latex/lsst/rubinobs.png"
 
 #let render-title-artwork() = align(center + bottom)[
@@ -25,7 +24,6 @@
   doi: none,
 ) = {
   let label = state-label(status)
-  let compact-authors = authors.len() > 8
 
   block(width: 100%, height: 100%)[
     #grid(
@@ -63,7 +61,7 @@
           text(size: 13pt, fill: rubin-teal, subtitle)
         }
         #v(20pt)
-        #render-authors(authors, affiliations, compact: compact-authors)
+        #render-authors(authors, affiliations)
         #v(16pt)
         #text(size: 14pt, weight: "bold", doc-ref)
         #v(7pt)
