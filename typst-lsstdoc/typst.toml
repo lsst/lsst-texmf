@@ -1,5 +1,5 @@
 [package]
-name = "lsstdoc"
+name = "rubin-technote"
 version = "0.1.0"
 entrypoint = "src/lsstdoc.typ"
 authors = ["Rubin Observatory"]
@@ -8,4 +8,4 @@ compiler = "0.15.0"
 
 [template]
 path = "examples"
-entrypoint = "prototype.typ"
+entrypoint = "technote.typ"

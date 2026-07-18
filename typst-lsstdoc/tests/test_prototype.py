@@ -9,6 +9,7 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+from shutil import copytree, ignore_patterns
 
 import yaml
 
@@ -23,11 +24,7 @@ if str(REPOSITORY / "bin") not in sys.path:
 from authorutils import check_orcid  # noqa: E402
 
 PROTOTYPE = REPOSITORY / "typst-lsstdoc"
-FONT_PATHS = [
-    REPOSITORY / "texmf/fonts/truetype/public/opensans",
-    REPOSITORY / "texmf/fonts/truetype/public/Inconsolata",
-    REPOSITORY / "texmf/fonts/opentype/public/xits",
-]
+FONT_PATHS = [PROTOTYPE / "fonts"]
 
 
 def load_bibtools_series() -> dict[str, str]:
@@ -59,12 +56,13 @@ class TypstCompileTest(unittest.TestCase):
         output: Path,
         *inputs: str,
         pdf_standard: str | None = None,
+        root: Path = REPOSITORY,
     ) -> subprocess.CompletedProcess[str]:
         command = [
             "typst",
             "compile",
             "--root",
-            str(REPOSITORY),
+            str(root),
             "--font-path",
             ":".join(str(path) for path in FONT_PATHS),
         ]
@@ -284,6 +282,48 @@ class TypstCompileTest(unittest.TestCase):
         self.assertEqual(extracted.count("Example Institute"), 1)
         # A stable technote maps to released: no draft furniture.
         self.assertNotIn("D R A F T", extracted)
+
+    def test_technote_example_is_self_contained(self) -> None:
+        """The technote flow must not read outside the template subtree."""
+        output = self.tempdir / "standalone.pdf"
+        result = self.compile(
+            PROTOTYPE / "examples/technote.typ",
+            output,
+            root=PROTOTYPE,
+        )
+        self.assertEqual(result.returncode, 0, result.stderr)
+
+    def test_vendored_package_import(self) -> None:
+        """The subtree works as a vendored @preview package."""
+        package_dir = self.tempdir / "packages/preview/rubin-technote/0.1.0"
+        copytree(PROTOTYPE, package_dir, ignore=ignore_patterns("tmp", "output", "tests"))
+        shutil.copy(PROTOTYPE / "examples/technote.toml", self.tempdir / "technote.toml")
+        source = self.tempdir / "index.typ"
+        source.write_text(
+            '#import "@preview/rubin-technote:0.1.0": lsstdoc, note, technote-args\n'
+            "#show: lsstdoc.with(\n"
+            '  ..technote-args(toml("technote.toml")),\n'
+            '  title: "Vendored Package Test",\n'
+            "  toc: false,\n"
+            ")\n"
+            "= Test\n"
+            "#note[Imported through the package entrypoint.]\n",
+            encoding="utf-8",
+        )
+        command = [
+            "typst",
+            "compile",
+            "--root",
+            str(self.tempdir),
+            "--package-path",
+            str(self.tempdir / "packages"),
+            "--font-path",
+            str(package_dir / "fonts"),
+            str(source),
+            str(self.tempdir / "index.pdf"),
+        ]
+        result = subprocess.run(command, text=True, capture_output=True, check=False)
+        self.assertEqual(result.returncode, 0, result.stderr)
 
     def test_technote_toml_unknown_state_rejected(self) -> None:
         source = self.tempdir / "state.typ"
