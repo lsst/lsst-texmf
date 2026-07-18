@@ -31,7 +31,7 @@ TN_SERIES = {
     "LPM": "Project Controlled Document",
     "LEP": "Education and Public Outreach Controlled Document",
     "CTN": "Camera Technical Note",
-    "RDO": "Data Management Operations Controlled Document",
+    "RDO": "Rubin Directors Office",
     "Agreement": "Formal Construction Agreement",
     "Document": "Informal Construction Document",
     "Publication": "LSST Construction Publication",
