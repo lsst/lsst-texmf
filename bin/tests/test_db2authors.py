@@ -8,12 +8,10 @@ import tempfile
 import unittest
 from pathlib import Path
 
-import yaml
-from db2authors import AASTeX, AuthorFactory, generate_typst_yaml
+from db2authors import AASTeX, AuthorFactory
 
 REPOSITORY = Path(__file__).resolve().parents[2]
 SCRIPT = REPOSITORY / "bin" / "db2authors.py"
-AUTHOR_IDS = REPOSITORY / "typst-lsstdoc" / "examples" / "author-ids.yaml"
 
 TEST_AUTHORDB = {
     "affiliations": {
@@ -75,21 +73,6 @@ TEST_AUTHORDB = {
 }
 
 
-class TypstYamlTest(unittest.TestCase):
-    """Test the typst-yaml exporter."""
-
-    def test_placeholder_affiliation_is_not_exported(self) -> None:
-        factory = AuthorFactory.from_authordb(TEST_AUTHORDB)
-        exported = yaml.safe_load(generate_typst_yaml(factory, ["collab", "person"]))
-
-        collab, person = exported["authors"]
-        self.assertEqual(collab["internal_id"], "collab")
-        self.assertEqual(collab["affiliations"], [])
-        self.assertEqual(person["affiliations"], ["INST"])
-        self.assertNotIn("_", exported["affiliations"])
-        self.assertEqual(list(exported["affiliations"]), ["INST"])
-
-
 class EmailWarningTest(unittest.TestCase):
     """Test that email warnings come from email-consuming generators."""
 
@@ -136,11 +119,14 @@ class OutputOptionTest(unittest.TestCase):
         )
 
     def test_output_file_matches_stdout(self) -> None:
-        options = ("--mode", "lsstdoc", "--authors", str(AUTHOR_IDS))
-        stdout_run = self.run_script(*options)
-        self.assertEqual(stdout_run.returncode, 0, stdout_run.stderr)
-
         with tempfile.TemporaryDirectory() as tmpdir:
+            author_list = Path(tmpdir) / "authors.yaml"
+            author_list.write_text("- jennesst\n", encoding="utf-8")
+            options = ("--mode", "lsstdoc", "--authors", str(author_list))
+
+            stdout_run = self.run_script(*options)
+            self.assertEqual(stdout_run.returncode, 0, stdout_run.stderr)
+
             output_file = Path(tmpdir) / "authors.tex"
             file_run = self.run_script(*options, "--output", str(output_file))
             self.assertEqual(file_run.returncode, 0, file_run.stderr)

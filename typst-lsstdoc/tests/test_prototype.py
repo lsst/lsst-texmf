@@ -29,6 +29,21 @@ from authorutils import check_orcid  # noqa: E402
 PROTOTYPE = REPOSITORY / "typst-lsstdoc"
 FONT_PATHS = [PROTOTYPE / "fonts"]
 
+# Inline author arguments shared by the fixture documents.
+SINGLE_AUTHOR_ARGS = (
+    "  authors: (\n"
+    "    (\n"
+    '      internal_id: "example",\n'
+    '      given_name: "Ada",\n'
+    '      family_name: "Lovelace",\n'
+    '      display_name: "Ada Lovelace",\n'
+    "      orcid: none,\n"
+    '      affiliations: ("INST",),\n'
+    "    ),\n"
+    "  ),\n"
+    '  affiliations: (INST: (name: "Example Institute", address: "Tucson", ror: none)),\n'
+)
+
 
 def load_bibtools_series() -> dict[str, str]:
     """Read the literal TN_SERIES mapping without importing bibtools."""
@@ -110,34 +125,7 @@ class TypstCompileTest(unittest.TestCase):
             self.assertIn("/Contents (DMTN-001)", structure)
             self.assertIn("/Contents (technical-note series)", structure)
 
-    def test_document_states_and_generated_authors(self) -> None:
-        generated = self.tempdir / "authors.yaml"
-        export = subprocess.run(
-            [
-                "python3",
-                str(REPOSITORY / "bin/db2authors.py"),
-                "--mode",
-                "typst-yaml",
-                "--authors",
-                str(PROTOTYPE / "examples/author-ids.yaml"),
-                "--output",
-                str(generated),
-            ],
-            cwd=REPOSITORY,
-            text=True,
-            capture_output=True,
-            check=False,
-        )
-        self.assertEqual(export.returncode, 0, export.stderr)
-        exported = yaml.safe_load(generated.read_text(encoding="utf-8"))
-        self.assertEqual(
-            [author["internal_id"] for author in exported["authors"]],
-            ["jennesst", "acostae", "acquavivav"],
-        )
-        self.assertEqual(list(exported["affiliations"]), ["RubinObs", "CCA", "CUNYCT"])
-        self.assertEqual(exported["authors"][0]["orcid"], "0000-0001-5982-167X")
-        relative_authors = generated.relative_to(PROTOTYPE / "examples", walk_up=True)
-
+    def test_document_states(self) -> None:
         for status in ("draft", "released", "obsolete"):
             with self.subTest(status=status):
                 output = self.tempdir / f"{status}.pdf"
@@ -145,7 +133,6 @@ class TypstCompileTest(unittest.TestCase):
                     PROTOTYPE / "examples/state.typ",
                     output,
                     f"status={status}",
-                    f"authors={relative_authors}",
                 )
                 self.assertEqual(result.returncode, 0, result.stderr)
                 self.assertTrue(output.exists())
@@ -154,15 +141,11 @@ class TypstCompileTest(unittest.TestCase):
         source = self.tempdir / "bib-style.typ"
         source.write_text(
             '#import "../../src/lsstdoc.typ": lsstdoc\n'
-            '#let people = yaml("../../examples/authors.yaml")\n'
             "#show: lsstdoc.with(\n"
             '  title: "Bibliography Style Test",\n'
             '  id: "DMTN-999",\n'
             '  series: "DMTN",\n'
-            '  date: "2026-07-16",\n'
-            "  authors: people.authors,\n"
-            "  affiliations: people.affiliations,\n"
-            "  toc: false,\n"
+            '  date: "2026-07-16",\n' + SINGLE_AUTHOR_ARGS + "  toc: false,\n"
             '  bibliography: (read("../../examples/references.bib", encoding: none),),\n'
             '  bibliography-style: "ieee",\n'
             ")\n"
@@ -178,15 +161,11 @@ class TypstCompileTest(unittest.TestCase):
         source = self.tempdir / "doi.typ"
         source.write_text(
             '#import "../../src/lsstdoc.typ": lsstdoc\n'
-            '#let people = yaml("../../examples/authors.yaml")\n'
             "#show: lsstdoc.with(\n"
             '  title: "DOI Test",\n'
             '  id: "DMTN-999",\n'
             '  series: "DMTN",\n'
-            '  date: "2026-07-16",\n'
-            "  authors: people.authors,\n"
-            "  affiliations: people.affiliations,\n"
-            "  toc: false,\n"
+            '  date: "2026-07-16",\n' + SINGLE_AUTHOR_ARGS + "  toc: false,\n"
             f'  doi: "{doi}",\n'
             ")\n"
             "= Test\n",
@@ -229,33 +208,27 @@ class TypstCompileTest(unittest.TestCase):
 
     @unittest.skipUnless(shutil.which("pdftotext"), "pdftotext is not installed")
     def test_two_authors_have_no_comma_before_and(self) -> None:
-        people = {
-            "authors": [
-                {
-                    "internal_id": "a",
-                    "given_name": "Ada",
-                    "family_name": "Lovelace",
-                    "display_name": "Ada Lovelace",
-                    "orcid": None,
-                    "affiliations": ["INST"],
-                },
-                {
-                    "internal_id": "b",
-                    "given_name": "Grace",
-                    "family_name": "Hopper",
-                    "display_name": "Grace Hopper",
-                    "orcid": None,
-                    "affiliations": ["INST"],
-                },
-            ],
-            "affiliations": {"INST": {"name": "Example Institute", "address": "Tucson", "ror": None}},
-        }
-        authors_file = self.tempdir / "two-authors.yaml"
-        authors_file.write_text(yaml.safe_dump(people), encoding="utf-8")
-        relative = authors_file.relative_to(PROTOTYPE / "examples", walk_up=True)
+        source = self.tempdir / "two-authors.typ"
+        source.write_text(
+            '#import "../../src/lsstdoc.typ": lsstdoc\n'
+            "#show: lsstdoc.with(\n"
+            '  title: "Two Author Test",\n'
+            '  id: "DMTN-999",\n'
+            '  series: "DMTN",\n'
+            '  date: "2026-07-16",\n'
+            "  authors: (\n"
+            '    (internal_id: "a", display_name: "Ada Lovelace", affiliations: ("INST",)),\n'
+            '    (internal_id: "b", display_name: "Grace Hopper", affiliations: ("INST",)),\n'
+            "  ),\n"
+            '  affiliations: (INST: (name: "Example Institute", address: "Tucson", ror: none)),\n'
+            "  toc: false,\n"
+            ")\n"
+            "= Test\n",
+            encoding="utf-8",
+        )
 
         output = self.tempdir / "two-authors.pdf"
-        result = self.compile(PROTOTYPE / "examples/state.typ", output, f"authors={relative}")
+        result = self.compile(source, output)
         self.assertEqual(result.returncode, 0, result.stderr)
         extracted = subprocess.run(
             ["pdftotext", str(output), "-"],
@@ -452,13 +425,6 @@ class MetadataTest(unittest.TestCase):
         self.assertIn("LDM", controlled)
         self.assertIn("RDO", controlled)
         self.assertNotIn("DMTN", controlled)
-
-    def test_example_author_references_resolve(self) -> None:
-        people = yaml.safe_load((PROTOTYPE / "examples/authors.yaml").read_text(encoding="utf-8"))
-        affiliations = people["affiliations"]
-        for author in people["authors"]:
-            for affiliation in author["affiliations"]:
-                self.assertIn(affiliation, affiliations)
 
     def test_orcid_validation(self) -> None:
         self.assertEqual(check_orcid("000000015982167X"), "0000-0001-5982-167X")

@@ -29,7 +29,7 @@ from pathlib import Path
 from typing import Any, Self, TypeAlias
 
 import yaml
-from authorutils import check_orcid, latex2text
+from authorutils import latex2text
 
 try:
     from typing import Annotated
@@ -913,79 +913,6 @@ def dump_csvall(factory: AuthorFactory) -> None:
             writer.writerow([id, latex2text(affil.get_full_address_with_institute())])
 
 
-def generate_typst_yaml(factory: AuthorFactory, author_ids: list[str]) -> str:
-    """Generate presentation-neutral author data for Typst documents.
-
-    Parameters
-    ----------
-    factory : `AuthorFactory`
-        Author database resolver.
-    author_ids : `list` [`str`]
-        Author database identifiers in document order.
-
-    Returns
-    -------
-    output : `str`
-        UTF-8 YAML with ordered authors and deduplicated affiliations.
-    """
-    authors = []
-    affiliations: dict[str, dict[str, Any]] = {}
-
-    for author_id in author_ids:
-        author = factory.get_author(author_id)
-        # Collective authors carry the "_" placeholder affiliation, which
-        # must not appear in the output.
-        resolved = [
-            (factory.get_affiliation_id(affil), affil)
-            for affil in author.affiliations
-            if factory.get_affiliation_id(affil) != "_"
-        ]
-        affiliation_ids = [affiliation_id for affiliation_id, _ in resolved]
-        given_name = latex2text(author.given_name)
-        family_name = latex2text(author.family_name)
-        display_name = " ".join(part for part in (given_name, family_name) if part)
-        authors.append(
-            {
-                "internal_id": author_id,
-                "given_name": given_name,
-                "family_name": family_name,
-                "display_name": display_name,
-                "orcid": check_orcid(author.orcid),
-                "affiliations": affiliation_ids,
-            }
-        )
-
-        for affiliation_id, affiliation in resolved:
-            if affiliation_id in affiliations:
-                continue
-            address = None
-            if affiliation.address:
-                address = {
-                    key: latex2text(str(value))
-                    for key, value in {
-                        "street": affiliation.address.street,
-                        "city": affiliation.address.city,
-                        "region": affiliation.address.state,
-                        "postal_code": affiliation.address.postcode,
-                        "country": affiliation.address.country_code,
-                    }.items()
-                    if value
-                }
-            affiliations[affiliation_id] = {
-                "name": latex2text(affiliation.get_department_and_institute()),
-                "address": address,
-                "ror": affiliation.ror_id,
-            }
-
-    data = {
-        "schema_version": 1,
-        "generated_by": "db2authors",
-        "authors": authors,
-        "affiliations": affiliations,
-    }
-    return yaml.safe_dump(data, allow_unicode=True, sort_keys=False)
-
-
 def write_output(output: str, file_name: str | None) -> None:
     """Write generated text to a file or standard output.
 
@@ -1058,7 +985,6 @@ if __name__ == "__main__":
         "mnras",
         "aap",
         "aascsv",
-        "typst-yaml",
     ]
 
     description = __doc__
@@ -1105,11 +1031,6 @@ if __name__ == "__main__":
 
     dni_list = load_dni(dnifile)
     author_ids = [a for a in authors if a not in dni_list]
-
-    if args.mode == "typst-yaml":
-        write_output(generate_typst_yaml(factory, author_ids), args.output)
-        exit(0)
-
     authors = [factory.get_author(authorid) for authorid in author_ids]
 
     generator_lut: dict[str, type[AuthorTextGenerator]] = {

@@ -290,9 +290,8 @@ The prototype now demonstrates:
 - running headers and footers, a draft watermark, and controlled-series notices;
 - native headings, cross-references, equations, figures, multi-page tables, raw/code blocks, footnotes, URL-styled external links, Note and Warning admonitions, appendices, citations, and bibliography;
 - ten representative local BibTeX records plus direct loading of all five shared bibliography pools;
-- tagged output by default and a successful PDF/UA-1 build when requested;
-- structured `typst-yaml` output from `db2authors.py` that is consumed directly by the template; and
-- smoke tests for compilation, state validation, author export, affiliation references, and series parity.
+- tagged output by default and a successful PDF/UA-1 build when requested; and
+- smoke tests for compilation, state validation, metadata mapping, and series parity.
 
 Requirements extraction, meeting actions, glossary generation, compact long author lists, issue tables, and a custom Rubin/AAS CSL style remain deferred.
 
@@ -345,21 +344,15 @@ External HTTP and HTTPS links are dark blue and underlined in body text and bibl
 Internal cross-references and citations retain the ordinary document text styling.
 
 ```typst
-#import "../src/lsstdoc.typ": citeds, citedsp, lsstdoc
-#let people = yaml("authors.yaml")
+#import "../src/lsstdoc.typ": citeds, citedsp, lsstdoc, technote-args
 #let bibs = (
   read("../../texmf/bibtex/bib/refs.bib", encoding: none),
   read("../../texmf/bibtex/bib/lsst.bib", encoding: none),
 )
 
 #show: lsstdoc.with(
+  ..technote-args(toml("technote.toml")),
   title: "A Typst Prototype for Rubin Technical Documents",
-  id: "DMTN-999",
-  series: "DMTN",
-  status: "draft",
-  date: "2026-07-16",
-  authors: people.authors,
-  affiliations: people.affiliations,
   abstract: [A short description of this document.],
   bibliography: bibs,
 )
@@ -401,20 +394,10 @@ Unknown status states produce a clear error, and `date` and `status` can be pass
 The title and abstract stay in the document source, matching the Documenteer convention, so `documenteer technote add-author` and `sync-authors` work unchanged: they edit `technote.toml` and the next compile picks the changes up.
 `examples/technote.typ` demonstrates the flow against `examples/technote.toml`.
 
-### Exporting authors
+### Author input
 
-The new exporter mode reads an ordered list of AuthorDB identifiers and writes presentation-neutral UTF-8 YAML:
-
-```sh
-python3 bin/db2authors.py \
-  --mode typst-yaml \
-  --authors typst-lsstdoc/examples/author-ids.yaml \
-  --output typst-lsstdoc/output/generated-authors.yaml
-```
-
-The output contains a schema version, stable internal IDs, plain display names, bare normalized ORCIDs, affiliation references, and a deduplicated affiliation mapping with structured addresses and ROR identifiers.
-It does not emit Typst markup, email addresses, the placeholder affiliation of collective authors, or an invented corresponding-author flag.
-The latter remains document-specific overlay data.
+Author data comes from `technote.toml`, kept synchronized with the central author database by `documenteer technote add-author` and `sync-authors`, or is passed as explicit `authors` and `affiliations` arguments for documents outside the technote workflow.
+An earlier `db2authors.py --mode typst-yaml` exporter that generated a separate authors YAML file was retired once it became clear that the Documenteer/ook route covers author management wholesale; the Author exporter assessment above is retained as the audit record of that dead end.
 
 ### Tests
 
@@ -424,7 +407,7 @@ Run the smoke suite from the repository root:
 python3 -m unittest discover -s typst-lsstdoc/tests -v
 ```
 
-The test compiles the full example as PDF/UA-1, compiles draft/released/obsolete state fixtures using freshly exported author YAML, verifies the invalid-state diagnostic, checks affiliation references and controlled-series data, and compares `data/series.yaml` exactly with `bibtools.py`.
+The test compiles the full example as PDF/UA-1, compiles draft/released/obsolete state fixtures, verifies the invalid-state diagnostic, checks the technote.toml mapping and controlled-series data, and compares `data/series.yaml` exactly with `bibtools.py`.
 
 ## Current findings
 
