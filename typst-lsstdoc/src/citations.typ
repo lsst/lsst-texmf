@@ -1,4 +1,4 @@
-#import "utilities.typ": url-blue
+#import "utilities.typ": url-styled
 
 #let citation-key-style = "../assets/citation-key.csl"
 
@@ -16,10 +16,7 @@
     supplement: display,
     style: citation-key-style,
   )
-  underline(
-    stroke: 0.45pt + url-blue,
-    text(fill: url-blue, citation),
-  )
+  url-styled(citation)
 }
 
 #let citedsp(key, display: none) = {

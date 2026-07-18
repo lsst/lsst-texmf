@@ -1,7 +1,5 @@
-#import "utilities.typ": muted-teal
+#import "utilities.typ": muted-teal, rubin-logo-path
 #import "document-state.typ": controlled-notice, state-label
-
-#let rubin-logo-path = "../assets/rubin-logo.svg"
 
 #let running-header(short-title, doc-ref, date) = context {
   place(center + top, dy: 30pt)[
@@ -13,7 +11,7 @@
         box(width: 72pt, height: 45pt, clip: true)[
           #align(center + horizon)[
             #image(rubin-logo-path, width: 112pt, alt: "Vera C. Rubin Observatory logo")
-          ],
+          ]
         ],
         text(
           size: 7pt,

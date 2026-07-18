@@ -6,7 +6,7 @@
   let ids = ()
   for author in authors {
     for id in value-or(author, "affiliations", default: ()) {
-      if not ids.contains(id) {
+      if id not in ids {
         ids.push(id)
       }
     }
@@ -14,9 +14,9 @@
   ids
 }
 
-#let author-item(author, affiliation-ids, comma-before-marker: false) = {
+#let author-item(author, markers-by-id, comma-before-marker: false) = {
   let author-affiliations = value-or(author, "affiliations", default: ())
-  let markers = author-affiliations.map(id => str(affiliation-ids.position(value => value == id) + 1))
+  let markers = author-affiliations.map(id => markers-by-id.at(id))
   let corresponding = value-or(author, "corresponding", default: false)
   let marker-text = markers.join(",") + if corresponding { "*" } else { "" }
   let orcid = value-or(author, "orcid", default: none)
@@ -42,13 +42,7 @@
   )
 }
 
-#let join-authors(items) = {
-  if items.len() == 1 {
-    items.first()
-  } else {
-    items.slice(0, items.len() - 1).join([ ]) + [ and ] + items.last()
-  }
-}
+#let join-authors(items) = items.join([ ], last: [ and ])
 
 #let format-address(address) = {
   if type(address) == dictionary {
@@ -58,21 +52,28 @@
   }
 }
 
-#let render-authors(authors, affiliations, compact: false) = {
+#let render-authors(authors, affiliations) = {
   assert(authors.len() > 0, message: "At least one author is required")
   let affiliation-ids = affiliation-order(authors)
 
   for id in affiliation-ids {
     assert(
-      affiliations.keys().contains(id),
+      id in affiliations,
       message: "Unknown affiliation referenced by author data: " + id,
     )
   }
 
+  let markers-by-id = (:)
+  for (index, id) in affiliation-ids.enumerate() {
+    markers-by-id.insert(id, str(index + 1))
+  }
+
   let author-content = authors.enumerate().map(((index, author)) => author-item(
     author,
-    affiliation-ids,
-    comma-before-marker: index < authors.len() - 1,
+    markers-by-id,
+    // AAS style: each non-final comma precedes the affiliation markers,
+    // but a two-author list has no comma before the "and".
+    comma-before-marker: authors.len() > 2 and index < authors.len() - 1,
   ))
   let affiliation-content = affiliation-ids.enumerate().map(((index, id)) => {
     let affiliation = affiliations.at(id)
@@ -83,10 +84,10 @@
   })
 
   align(center)[
-    #set text(size: if compact { 9pt } else { 10.5pt })
+    #set text(size: 10.5pt)
     #join-authors(author-content)
     #v(0.55em)
-    #set text(size: if compact { 7pt } else { 8pt })
+    #set text(size: 8pt)
     #for affiliation in affiliation-content {
       affiliation
       linebreak()

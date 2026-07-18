@@ -1,3 +1,5 @@
+#import "utilities.typ": rubin-teal
+
 #let admonition(body, title, accent, background) = block(
   width: 75%,
   fill: background,
@@ -20,7 +22,7 @@
 #let note(body, title: "Note") = admonition(
   body,
   title,
-  rgb("#058b8c"),
+  rubin-teal,
   rgb("#f2fbfb"),
 )
 
