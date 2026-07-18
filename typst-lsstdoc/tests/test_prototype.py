@@ -4,9 +4,11 @@ from __future__ import annotations
 
 import ast
 import shutil
+import struct
 import subprocess
 import sys
 import tempfile
+import tomllib
 import unittest
 from pathlib import Path
 from shutil import copytree, ignore_patterns
@@ -293,36 +295,43 @@ class TypstCompileTest(unittest.TestCase):
         )
         self.assertEqual(result.returncode, 0, result.stderr)
 
-    def test_vendored_package_import(self) -> None:
-        """The subtree works as a vendored @preview package."""
+    def test_vendored_package_template_scaffold(self) -> None:
+        """The template scaffold compiles through a vendored @preview package.
+
+        This mirrors what ``typst init @preview/rubin-technote`` produces: the
+        files from the manifest's template path in a fresh directory, importing
+        the package.
+        """
         package_dir = self.tempdir / "packages/preview/rubin-technote/0.1.0"
         copytree(PROTOTYPE, package_dir, ignore=ignore_patterns("tmp", "output", "tests"))
-        shutil.copy(PROTOTYPE / "examples/technote.toml", self.tempdir / "technote.toml")
-        source = self.tempdir / "index.typ"
-        source.write_text(
-            '#import "@preview/rubin-technote:0.1.0": lsstdoc, note, technote-args\n'
-            "#show: lsstdoc.with(\n"
-            '  ..technote-args(toml("technote.toml")),\n'
-            '  title: "Vendored Package Test",\n'
-            "  toc: false,\n"
-            ")\n"
-            "= Test\n"
-            "#note[Imported through the package entrypoint.]\n",
-            encoding="utf-8",
-        )
+
+        manifest = tomllib.loads((PROTOTYPE / "typst.toml").read_text(encoding="utf-8"))
+        template = manifest["template"]
+        workdir = self.tempdir / "scaffold"
+        copytree(PROTOTYPE / template["path"], workdir)
+
         command = [
             "typst",
             "compile",
             "--root",
-            str(self.tempdir),
+            str(workdir),
             "--package-path",
             str(self.tempdir / "packages"),
             "--font-path",
             str(package_dir / "fonts"),
-            str(source),
-            str(self.tempdir / "index.pdf"),
+            str(workdir / template["entrypoint"]),
+            str(self.tempdir / "scaffold.pdf"),
         ]
         result = subprocess.run(command, text=True, capture_output=True, check=False)
+        self.assertEqual(result.returncode, 0, result.stderr)
+
+    def test_manual_compiles(self) -> None:
+        """The tidy-based manual builds from the API doc comments."""
+        result = self.compile(
+            PROTOTYPE / "docs/manual.typ",
+            self.tempdir / "manual.pdf",
+            root=PROTOTYPE,
+        )
         self.assertEqual(result.returncode, 0, result.stderr)
 
     def test_technote_toml_unknown_state_rejected(self) -> None:
@@ -370,6 +379,29 @@ class MetadataTest(unittest.TestCase):
         expected = load_bibtools_series()
         actual = yaml.safe_load((PROTOTYPE / "data/series.yaml").read_text(encoding="utf-8"))["series"]
         self.assertEqual(actual, expected)
+
+    def test_package_manifest_is_universe_ready(self) -> None:
+        manifest = tomllib.loads((PROTOTYPE / "typst.toml").read_text(encoding="utf-8"))
+        package = manifest["package"]
+        self.assertEqual(package["name"], "rubin-technote")
+        self.assertEqual(package["license"], "MIT")
+        self.assertTrue((PROTOTYPE / "LICENSE").exists())
+        self.assertNotIn("typst", package["description"].lower())
+        self.assertLessEqual(len(package["description"]), 60)
+        self.assertTrue(package["categories"])
+        self.assertIn("tests", package["exclude"])
+
+        template = manifest["template"]
+        entrypoint = PROTOTYPE / template["path"] / template["entrypoint"]
+        self.assertTrue(entrypoint.exists())
+
+        thumbnail = PROTOTYPE / template["thumbnail"]
+        self.assertTrue(thumbnail.exists())
+        header = thumbnail.read_bytes()[:24]
+        self.assertEqual(header[:8], b"\x89PNG\r\n\x1a\n")
+        width, height = struct.unpack(">II", header[16:24])
+        self.assertGreaterEqual(max(width, height), 1080)
+        self.assertLessEqual(thumbnail.stat().st_size, 3 * 1024 * 1024)
 
     def test_controlled_series_reference_valid_series(self) -> None:
         data = yaml.safe_load((PROTOTYPE / "data/series.yaml").read_text(encoding="utf-8"))

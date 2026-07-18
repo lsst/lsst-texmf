@@ -23,12 +23,28 @@
   }
 }
 
-// Map a parsed Documenteer technote.toml dictionary onto lsstdoc arguments.
-//
-// The caller loads the file, because Typst resolves paths relative to the
-// calling module: `lsstdoc.with(..technote-args(toml("technote.toml")), ...)`.
-// The title and abstract stay in the document, matching Documenteer, and any
-// mapped value can be overridden with the `date` and `status` arguments.
+/// Map a parsed Documenteer technote.toml dictionary onto lsstdoc arguments.
+///
+/// The caller loads the file, because paths resolve relative to the calling
+/// module:
+/// ```typ
+/// #show: lsstdoc.with(
+///   ..technote-args(toml("technote.toml")),
+///   title: "My Technote",
+/// )
+/// ```
+/// The mapping covers the handle, series, status, revision date, repository
+/// URL, and the author list with deduplicated affiliations. URL-prefixed
+/// ORCID and ROR identifiers are normalized to the bare form. The title and
+/// abstract stay in the document, matching Documenteer.
+///
+/// - data (dictionary): The parsed technote.toml contents.
+/// - date (auto, str): Override for the revision date; `auto` uses
+///   `date_updated`, falling back to `date_created`.
+/// - status (auto, str): Override for the document status; `auto` maps the
+///   technote states draft, stable, and deprecated onto draft, released,
+///   and obsolete.
+/// -> dictionary
 #let technote-args(data, date: auto, status: auto) = {
   let technote = data.at("technote")
 
