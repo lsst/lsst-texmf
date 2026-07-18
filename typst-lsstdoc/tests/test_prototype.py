@@ -13,6 +13,15 @@ from pathlib import Path
 import yaml
 
 REPOSITORY = Path(__file__).resolve().parents[2]
+
+# Match the repository convention of importing the bin scripts directly
+# (CI runs pytest with PYTHONPATH=bin) while keeping plain unittest
+# discovery working.
+if str(REPOSITORY / "bin") not in sys.path:
+    sys.path.insert(0, str(REPOSITORY / "bin"))
+
+from authorutils import check_orcid  # noqa: E402
+
 PROTOTYPE = REPOSITORY / "typst-lsstdoc"
 FONT_PATHS = [
     REPOSITORY / "texmf/fonts/truetype/public/opensans",
@@ -164,12 +173,6 @@ class MetadataTest(unittest.TestCase):
                 self.assertIn(affiliation, affiliations)
 
     def test_orcid_validation(self) -> None:
-        sys.path.insert(0, str(REPOSITORY / "bin"))
-        try:
-            from db2authors import check_orcid
-        finally:
-            sys.path.pop(0)
-
         self.assertEqual(check_orcid("000000015982167X"), "0000-0001-5982-167X")
         with self.assertRaisesRegex(ValueError, "does not match standard form"):
             check_orcid("https://orcid.org/0000-0001-5982-167X")
