@@ -1,61 +1,42 @@
 # Typst `lsstdoc` prototype
 
-This directory contains a working proof-of-concept Typst equivalent of Rubin
-Observatory's LaTeX `lsstdoc` class and the Phase 1 source/rendering audit that
-guided it. The design target is the same Rubin look and feel, information
-hierarchy, branding, and page furniture. Exact layout, font, pagination, or
-pixel equivalence with LaTeX is not required.
+This directory contains a working proof-of-concept Typst equivalent of Rubin Observatory's LaTeX `lsstdoc` class and the Phase 1 source/rendering audit that guided it.
+The design target is the same Rubin look and feel, information hierarchy, branding, and page furniture.
+Exact layout, font, pagination, or pixel equivalence with LaTeX is not required.
 
 ## Phase 1 scope and evidence
 
 The inventory below is based on:
 
-- [`lsstdoc.cls`](../texmf/tex/latex/lsst/lsstdoc.cls), including its public
-  class options, document commands, layout rules, and file/log writes;
+- [`lsstdoc.cls`](../texmf/tex/latex/lsst/lsstdoc.cls), including its public class options, document commands, layout rules, and file/log writes;
 - [`docs/lsstdoc.rst`](../docs/lsstdoc.rst) and the checked-in LaTeX examples;
-- [`db2authors.py`](../bin/db2authors.py), [`authordb.py`](../bin/authordb.py),
-  and [`authordb.yaml`](../etc/authordb.yaml);
-- [`bibtools.py`](../bin/bibtools.py), which contains the repository's actual
-  document-series mapping;
-- a local XeLaTeX build of `examples/DMTN-nnn.tex`, visually inspected as a
-  seven-page PDF.
+- [`db2authors.py`](../bin/db2authors.py), [`authordb.py`](../bin/authordb.py), and [`authordb.yaml`](../etc/authordb.yaml);
+- [`bibtools.py`](../bin/bibtools.py), which contains the repository's actual document-series mapping;
+- a local XeLaTeX build of `examples/DMTN-nnn.tex`, visually inspected as a seven-page PDF.
 
-The source was inspected at repository revision `HEAD`; the most recent commit
-touching `lsstdoc.cls` was `8c4740042907bb7cd55b6ba16e1a8accdff7c131`
-(2025-10-03). The rendering check used TeX Live 2025. It is a behavioral
-baseline, not a claim that every historical document renders identically.
+The source was inspected at repository revision `HEAD`; the most recent commit touching `lsstdoc.cls` was `8c4740042907bb7cd55b6ba16e1a8accdff7c131` (2025-10-03).
+The rendering check used TeX Live 2025.
+It is a behavioral baseline, not a claim that every historical document renders identically.
 
 ## Executive findings
 
-1. The class is primarily a presentation layer, but requirements and meeting
-   actions also create machine-readable build output. Those workflows should
-   be redesigned around structured source data rather than emulated with Typst
-   diagnostics.
-2. The class displays a group/document-type option such as `DM` and accepts an
-   arbitrary document handle, but it does not model Rubin document series
-   coherently or check that a selected label agrees with the handle. The
-   complete `TN_SERIES` key set in `bin/bibtools.py` is the prototype's source
-   of truth for supported handle prefixes. Its labels are also the baseline
-   except for the known incorrect RDO label, for which `lsstdoc.cls` is
-   authoritative. The separate inherited Gaia document-type catalogue will not
-   be ported.
-3. The title page accepts one opaque LaTeX author block. The current `lsstdoc`
-   mode of `db2authors.py` emits names only: it does not emit affiliations,
-   ORCIDs, or email addresses. The prototype's structured author rendering is
-   therefore an intentional extension, not a direct port.
-4. The class infers controlled-document notices from handle prefixes (`LDM-`,
-   `LSE-`, `LPM-`, and `RDO-`). An explicit metadata field is preferable, with
-   prefix-based defaults retained only for compatibility.
-5. Front-matter numbering has a notable edge case: `\maketitle` switches to
-   Roman numbering unconditionally, but only the `toc` path resets to Arabic.
-   Typst may use a cleaner native transition; small differences in the reset
-   point or visible page sequence are acceptable.
-6. The checked PDF is US Letter and untagged. Producing useful tagged or more
-   accessible PDFs is a desirable Typst bonus and one motivation for the
-   experiment, not a requirement to reproduce LaTeX behavior.
-7. Directly loading structured YAML into the document is another motivating
-   Typst advantage. The prototype should demonstrate it while avoiding a new,
-   duplicated hand-maintained metadata source.
+1. The class is primarily a presentation layer, but requirements and meeting actions also create machine-readable build output.
+   Those workflows should be redesigned around structured source data rather than emulated with Typst diagnostics.
+2. The class displays a group/document-type option such as `DM` and accepts an arbitrary document handle, but it does not model Rubin document series coherently or check that a selected label agrees with the handle.
+   The complete `TN_SERIES` key set in `bin/bibtools.py` is the prototype's source of truth for supported handle prefixes.
+   Its labels are the baseline; the historically incorrect RDO label in `bibtools.py` has been corrected to match `lsstdoc.cls`.
+   The separate inherited Gaia document-type catalog will not be ported.
+3. The title page accepts one opaque LaTeX author block.
+   The current `lsstdoc` mode of `db2authors.py` emits names only: it does not emit affiliations, ORCIDs, or email addresses.
+   The prototype's structured author rendering is therefore an intentional extension, not a direct port.
+4. The class infers controlled-document notices from handle prefixes (`LDM-`, `LSE-`, `LPM-`, and `RDO-`).
+   An explicit metadata field is preferable, with prefix-based defaults retained only for compatibility.
+5. Front-matter numbering has a notable edge case: `\maketitle` switches to Roman numbering unconditionally, but only the `toc` path resets to Arabic.
+   Typst may use a cleaner native transition; small differences in the reset point or visible page sequence are acceptable.
+6. The checked PDF is US Letter and untagged.
+   Producing useful tagged or more accessible PDFs is a desirable Typst bonus and one motivation for the experiment, not a requirement to reproduce LaTeX behavior.
+7. Directly loading structured YAML into the document is another motivating Typst advantage.
+   The prototype should demonstrate it while avoiding a new, duplicated hand-maintained metadata source.
 
 ## Feature compatibility inventory
 
@@ -63,8 +44,7 @@ Status meanings:
 
 - **Required**: needed in the representative prototype and acceptance test.
 - **Representative**: implement a small native subset that proves feasibility.
-- **Deferred**: document the workflow or compatibility issue, but do not block
-  the first prototype on a full implementation.
+- **Deferred**: document the workflow or compatibility issue, but do not block the first prototype on a full implementation.
 - **Bonus**: a desirable Typst advantage rather than a LaTeX-parity gate.
 - **Do not port**: obsolete, unused, or better replaced by structured data.
 
@@ -72,39 +52,25 @@ Status meanings:
 
 The class options fall into overlapping groups:
 
-- document state and behavior: `lsstdraft`, `obsolete`, `authoryear`, `toc`,
-  and `notoc` (`onecolumn` and `twocolumn` are explicitly ignored);
-- inherited content-type labels: `CP`, `MN`, `PR`, `SP`, `TN`, `TR`, `DP`,
-  `DDP`, `SRS`, `SDD`, `ICD`, `SUM`, `SRN`, `STP`, `STS`, `STR`, `VTR`,
-  `SOW`, `SPAR`, `PL`, `UG`, and `SSS`;
-- organizational labels: `PST`, `DP`, `PF`, `DM`, `CTN`, `TS`, `SE`, `RDO`,
-  `PMO`, and `OPS`.
+- document state and behavior: `lsstdraft`, `obsolete`, `authoryear`, `toc`, and `notoc` (`onecolumn` and `twocolumn` are explicitly ignored);
+- inherited content-type labels: `CP`, `MN`, `PR`, `SP`, `TN`, `TR`, `DP`, `DDP`, `SRS`, `SDD`, `ICD`, `SUM`, `SRN`, `STP`, `STS`, `STR`, `VTR`, `SOW`, `SPAR`, `PL`, `UG`, and `SSS`;
+- organizational labels: `PST`, `DP`, `PF`, `DM`, `CTN`, `TS`, `SE`, `RDO`, `PMO`, and `OPS`.
 
-`DP` occurs in both of the last two groups, and the later Data Production
-definition wins. Both content types and organizations overwrite the same
-displayed `\docType` value, so selecting more than one label option creates a
-processing-order-dependent result. This catalogue is recorded as audit
-evidence only; the Typst prototype will not expose it.
+`DP` occurs in both of the last two groups, and the later Data Production definition wins.
+Both content types and organizations overwrite the same displayed `\docType` value, so selecting more than one label option creates a processing-order-dependent result.
+This catalog is recorded as audit evidence only; the Typst prototype will not expose it.
 
-There will be no Typst `doc-type`, group, or organization argument. The
-`TN_SERIES` entry alone supplies the document's public type label.
+There will be no Typst `doc-type`, group, or organization argument.
+The `TN_SERIES` entry alone supplies the document's public type label.
 
-The active title/front-matter interface is `\title`, `\author`, `\date` or
-`\setDocDate`, `\setDocSubtitle`, `\setDocRef`, `\setDocDOI`,
-`\setDocCurator`, `\setDocCitationInformation`, `\setDocUpstreamLocation`,
-`\setDocUpstreamVersion`, `\setDocAbstract`, `\setDocChangeRecord` with
-`\addtohist`, and one of `\maketitle`, `\mkshorttitle`, or `\mkmemotitle`.
-`\setDocCompact` alters the full-title flow. The legacy metadata setters listed
-later in this inventory do not provide active metadata behavior.
+The active title/front-matter interface is `\title`, `\author`, `\date` or `\setDocDate`, `\setDocSubtitle`, `\setDocRef`, `\setDocDOI`, `\setDocCurator`, `\setDocCitationInformation`, `\setDocUpstreamLocation`, `\setDocUpstreamVersion`, `\setDocAbstract`, `\setDocChangeRecord` with `\addtohist`, and one of `\maketitle`, `\mkshorttitle`, or `\mkmemotitle`.
+`\setDocCompact` alters the full-title flow.
+The legacy metadata setters listed later in this inventory do not provide active metadata behavior.
 
-The other substantial public interfaces are `issueList`/`\addissue`, the
-requirement commands, the action-item commands, `note`, `warning`, `draftnote`,
-glossary commands supplied by the loaded package, standard bibliography
-commands, and convenience cross-reference/domain macros. The prototype should
-expose native document concepts, not aliases for this entire TeX macro surface.
+The other substantial public interfaces are `issueList`/`\addissue`, the requirement commands, the action-item commands, `note`, `warning`, `draftnote`, glossary commands supplied by the loaded package, standard bibliography commands, and convenience cross-reference/domain macros.
+The prototype should expose native document concepts, not aliases for this entire TeX macro surface.
 
-The prototype's public series set is the complete `TN_SERIES` mapping from
-`bin/bibtools.py`:
+The prototype's public series set is the complete `TN_SERIES` mapping from `bin/bibtools.py`:
 
 | Series/handle prefix | Display label |
 | --- | --- |
@@ -132,17 +98,12 @@ The prototype's public series set is the complete `TN_SERIES` mapping from
 | `Publication` | LSST Construction Publication |
 | `Report` | Construction Report |
 
-`bin/bibtools.py` currently labels RDO as “Data Management Operations
-Controlled Document.” That value is a bug; the `lsstdoc.cls` label “Rubin
-Directors Office” is correct.
+`bin/bibtools.py` previously labeled RDO as “Data Management Operations Controlled Document”; that value was a bug and has been corrected to the `lsstdoc.cls` label “Rubin Directors Office”.
 
-The implementation should not maintain an unchecked second copy of this
-mapping in Typst. Prefer moving the mapping to shared structured data that
-`bibtools.py` and Typst can both consume, or generate a Typst-readable YAML file
-from a corrected mapping and test exact key/label parity. The parity test should
-explicitly protect the corrected RDO label. The mixed-case keys `Agreement`,
-`Document`, `Publication`, and `Report` are part of the mapping and must be
-preserved.
+The implementation should not maintain an unchecked second copy of this mapping in Typst.
+`data/series.yaml` is the Typst-readable copy, and a parity test asserts exact key/label agreement with `bibtools.py`.
+The same data file records which series are subject to configuration control.
+The mixed-case keys `Agreement`, `Document`, `Publication`, and `Report` are part of the mapping and must be preserved.
 
 ### Layout and visual design
 
@@ -171,7 +132,7 @@ preserved.
 | Document title and short title | `\title[short]{long}`; the long title appears on the title page and the short title in running headers. | Required | Required `title`; optional `short-title` defaults to `title`. | Typst metadata should also receive the long title for the PDF information dictionary. |
 | Subtitle | `\setDocSubtitle`; shown below the title and appended to the PDF title. | Representative | Optional `subtitle`. | It is absent from the proposed minimum example but cheap to support. |
 | Document handle | `\setDocRef`; displayed on title page/header and stored as a PDF keyword. Its prefix also triggers controlled-document state. | Required | Required `doc-ref`, validated as a non-empty string; derive series when possible but keep it explicit. | Prefix inference is coupled to governance policy and must not be the sole source of truth. |
-| Document series/handle prefix | The handle is opaque to the title layout, and the class options do not represent the full Rubin series set. `bin/bibtools.py` contains the authoritative `TN_SERIES` key set. | Required | Support every `TN_SERIES` key and derive the display label from a corrected shared mapping. | Use `Rubin Directors Office` for RDO rather than the current erroneous `bibtools.py` value. Series/handle agreement should produce a clear error. Do not carry the separate Gaia-derived class-option catalogue into the public Typst API. |
+| Document series/handle prefix | The handle is opaque to the title layout, and the class options do not represent the full Rubin series set. `bin/bibtools.py` contains the authoritative `TN_SERIES` key set. | Required | Support every `TN_SERIES` key and derive the display label from a corrected shared mapping. | The previously erroneous `bibtools.py` label for RDO has been corrected at the source. Series/handle agreement should produce a clear error. Do not carry the separate Gaia-derived class-option catalog into the public Typst API. |
 | Revision date | `\date` aliases `\setDocDate`. The title/header label it `Latest Revision`. `\setDocRevision` is only a warning and stores nothing. | Required | Use the ISO `date` as the sole displayed latest-revision value. | Git branch names and other build labels are deliberately excluded from page furniture. |
 | DOI | `\setDocDOI`; title page prints a linked `https://doi.org/...`. | Required | Optional bare DOI rendered as a link. | Validate or at least reject a duplicated URL prefix. |
 | Repository/source URL | `\setDocUpstreamLocation` is printed after the change table, not on the title page. `\setDocUpstreamVersion` and curator/citation fields appear there too. | Representative | Optional `repository-url`, `source-version`, `curator`, and `citation-information`, placed in front matter. | The prototype plan proposes repository URL on the title page; that is a deliberate design change and should be called out in PDF comparisons. |
@@ -223,12 +184,8 @@ preserved.
 | Appendices | Standard LaTeX `\appendix`; no special class layout. | Required | Native appendix heading/numbering configuration. | Exercise at least one appendix in the representative document. |
 | Glossary/acronyms | `glossaries` is loaded, but document definitions are generated externally by `generateAcronyms.py`; glossary compilation requires additional passes/tools. | Representative | Structured YAML plus a small local acronym API for the example. | First-use tracking and full glossary generation require a focused experiment. This is both template and build-system work. |
 
-The bibliography compatibility fixture must include at least `@article`,
-`@book`, `@inproceedings`, `@techreport`, `@software`, and `@misc`, plus DOI,
-URL, e-print/arXiv, institutional author, collaboration author, and
-brace/LaTeX-markup cases. Missing entry types in the repository corpus should
-be supplied by synthetic fixtures rather than by editing canonical `.bib`
-files.
+The bibliography compatibility fixture must include at least `@article`, `@book`, `@inproceedings`, `@techreport`, `@software`, and `@misc`, plus DOI, URL, e-print/arXiv, institutional author, collaboration author, and brace/LaTeX-markup cases.
+Missing entry types in the repository corpus should be supplied by synthetic fixtures rather than by editing canonical `.bib` files.
 
 ### Build-time behavior and workflow redesign
 
@@ -244,14 +201,14 @@ files.
 
 ## Proposed prototype metadata boundary
 
-The template should receive presentation-neutral data. The following fields are
-supported by observed class behavior or are justified prototype extensions:
+The template should receive presentation-neutral data.
+The following fields are supported by observed class behavior or are justified prototype extensions:
 
 | Field | Source/meaning | Validation recommendation |
 | --- | --- | --- |
 | `title`, `short_title`, `subtitle` | LaTeX title metadata. | Non-empty title; short title defaults to title. |
 | `doc_ref` | Document handle. | Non-empty; validate its prefix against `series` when known. |
-| `series` | Explicit replacement for implicit/external series mapping. | Accept every key in `bin/bibtools.py`'s `TN_SERIES`; use corrected shared labels, including `Rubin Directors Office` for RDO. |
+| `series` | Explicit replacement for implicit/external series mapping. | Accept every key in `bin/bibtools.py`'s `TN_SERIES`; the shared labels agree exactly. |
 | `status` | Replaces independent draft/obsolete flags. | Enum: `draft`, `released`, `obsolete`. |
 | `date` | Revision date shown on the title page and in running headers. | ISO `YYYY-MM-DD`; this is the sole latest-revision value. |
 | `doi`, `repository_url` | Optional external identifiers. | Bare DOI; absolute HTTPS repository URL. |
@@ -260,30 +217,22 @@ supported by observed class behavior or are justified prototype extensions:
 | `changes` | Ordered structured change records. | Require version, date, description, and author/owner. |
 | `authors`, `affiliations` | Separate generated author data. | Validate all referenced IDs and preserve list order. |
 
-Before implementation, decide whether the existing Documenteer `metadata.yaml`
-is extended or whether the prototype file is explicitly generated from it. A
-second hand-maintained copy of title, handle, authors, DOI, and repository URL
-would be a migration regression.
+Before implementation, decide whether the existing Documenteer `metadata.yaml` is extended or whether the prototype file is explicitly generated from it.
+A second hand-maintained copy of title, handle, authors, DOI, and repository URL would be a migration regression.
 
 ## Author exporter assessment
 
-The most maintainable exporter is a new `typst-yaml` generator in the existing
-author tooling, backed by the Pydantic models in `bin/authordb.py`:
+The most maintainable exporter is a new `typst-yaml` generator in the existing author tooling, backed by the Pydantic models in `bin/authordb.py`:
 
-- `authordb.py` already validates ORCID shape, ROR shape, model fields, author
-  IDs, and email/affiliation consistency.
-- `db2authors.py` currently has a separate raw-YAML-to-dataclass path. Extending
-  that path alone would miss some of the stronger database validation.
-- The exporter must retain each requested database key as `internal_id`; the
-  current resolved `Author` dataclass loses that key.
-- It should emit only the referenced, deduplicated affiliations, in stable
-  first-use order, while retaining an ID-keyed mapping in YAML.
-- It should preserve collaboration/institutional authors and must not invent a
-  corresponding-author flag. Correspondence is document-specific data unless
-  AuthorDB is deliberately extended.
-- It should normalize LaTeX-bearing name/address strings carefully. Existing
-  `latex2text` is useful, but structured address components should be preferred
-  over the presentation-oriented `example_expanded` field.
+- `authordb.py` already validates ORCID shape, ROR shape, model fields, author IDs, and email/affiliation consistency.
+- `db2authors.py` currently has a separate raw-YAML-to-dataclass path.
+  Extending that path alone would miss some of the stronger database validation.
+- The exporter must retain each requested database key as `internal_id`; the current resolved `Author` dataclass loses that key.
+- It should emit only the referenced, deduplicated affiliations, in stable first-use order, while retaining an ID-keyed mapping in YAML.
+- It should preserve collaboration/institutional authors and must not invent a corresponding-author flag.
+  Correspondence is document-specific data unless AuthorDB is deliberately extended.
+- It should normalize LaTeX-bearing name/address strings carefully.
+  Existing `latex2text` is useful, but structured address components should be preferred over the presentation-oriented `example_expanded` field.
 
 Suggested CLI shape, consistent with the current tool, is:
 
@@ -291,93 +240,67 @@ Suggested CLI shape, consistent with the current tool, is:
 db2authors.py --mode typst-yaml --authors authors.yaml --output people.yaml
 ```
 
-The current CLI does not yet accept `--authors` or `--output`; adding those
-options with backward-compatible defaults is preferable to requiring shell
-redirection and a fixed current-working-directory input.
+The CLI accepts `--authors` and `--output` with backward-compatible defaults, avoiding shell redirection and a fixed current-working-directory input.
 
 ## Known direct-mapping gaps
 
-- TeX package and macro compatibility is explicitly out of scope. Native Typst
-  constructs should replace document structure, math, figures, tables, lists,
-  and references.
-- `lsst_aa.bst` has no direct Typst equivalent. The prototype's bundled APA
-  author-year baseline is acceptable for feasibility testing; a custom
-  Rubin/AAS CSL and handle rendering are optional and deferred.
-- Requirements and actions are rarely used and are deferred. If implemented
-  later, they cross the template/build-tool boundary and should use neutral
-  structured data.
-- The title page's absolute TeX placement should be reproduced with robust
-  grids and page regions, not copied coordinate-for-coordinate.
-- Exact line breaks, float positions, page count, and pagination are comparison
-  diagnostics, not acceptance requirements.
-- The class contains dormant and legacy interfaces. Preserving every command
-  would enlarge the prototype while reducing clarity.
+- TeX package and macro compatibility is explicitly out of scope.
+  Native Typst constructs should replace document structure, math, figures, tables, lists, and references.
+- `lsst_aa.bst` has no direct Typst equivalent.
+  The prototype's bundled APA author-year baseline is acceptable for feasibility testing; a custom Rubin/AAS CSL and handle rendering are optional and deferred.
+- Requirements and actions are rarely used and are deferred.
+  If implemented later, they cross the template/build-tool boundary and should use neutral structured data.
+- The title page's absolute TeX placement should be reproduced with robust grids and page regions, not copied coordinate-for-coordinate.
+- Exact line breaks, float positions, page count, and pagination are comparison diagnostics, not acceptance requirements.
+- The class contains dormant and legacy interfaces.
+  Preserving every command would enlarge the prototype while reducing clarity.
 
 ## Phase 1 answers to prototype questions
 
 Evidence from the compiled prototype supports these answers:
 
-1. **Title page feasibility:** yes. A centered grid plus page layers reproduces
-   the hierarchy without shipout coordinates.
-2. **Headers and footers:** yes for the representative draft, released, and
-   obsolete builds. Long controlled notices remain a production test case.
-3. **Page-number transitions:** Typst should use a clear native front/main
-   transition. It does not need to reproduce the LaTeX page sequence or exact
-   reset point as long as the result is understandable.
-4. **Existing `.bib` compatibility:** the ten-entry representative fixture
-   compiles without normalization. A larger real Rubin corpus is still needed
-   to characterize embedded LaTeX and custom-field failures.
-5. **Bibliography style:** Typst 0.15 does not bundle AAS CSL. Bundled APA
-   author-year output is a usable baseline; exact `lsst_aa.bst` output and
-   prominent handle rendering are not required.
-6. **Formatting versus build system:** title/page layout, typography, document
-   state, change tables, and captions are formatting. Author export,
-   requirements/actions extraction, glossary generation, bibliography
-   normalization, metadata indexing, and reproducible font/resource discovery
-   are build-system concerns.
-7. **Largest early risks:** bibliography normalization, metadata ownership,
-   long-author layout, and stable page furniture need evidence. Requirements
-   and action extraction are too rarely used to shape the initial prototype.
-8. **Fonts:** Open Sans, Inconsolata, and XITS Math establish the current visual
-   baseline, but the prototype may use more convenient similar-looking fonts.
+1. **Title page feasibility:** yes.
+   A centered grid plus page layers reproduces the hierarchy without shipout coordinates.
+2. **Headers and footers:** yes for the representative draft, released, and obsolete builds.
+   Long controlled notices remain a production test case.
+3. **Page-number transitions:** Typst should use a clear native front/main transition.
+   It does not need to reproduce the LaTeX page sequence or exact reset point as long as the result is understandable.
+4. **Existing `.bib` compatibility:** the ten-entry representative fixture compiles without normalization.
+   A larger real Rubin corpus is still needed to characterize embedded LaTeX and custom-field failures.
+5. **Bibliography style:** Typst 0.15 does not bundle AAS CSL. Bundled APA author-year output is a usable baseline; exact `lsst_aa.bst` output and prominent handle rendering are not required.
+6. **Formatting versus build system:** title/page layout, typography, document state, change tables, and captions are formatting.
+   Author export, requirements/actions extraction, glossary generation, bibliography normalization, metadata indexing, and reproducible font/resource discovery are build-system concerns.
+7. **Largest early risks:** bibliography normalization, metadata ownership, long-author layout, and stable page furniture need evidence.
+   Requirements and action extraction are too rarely used to shape the initial prototype.
+8. **Fonts:** Open Sans, Inconsolata, and XITS Math establish the current visual baseline, but the prototype may use more convenient similar-looking fonts.
    Reproducibility and Rubin look-and-feel matter more than exact family names.
-9. **Accessibility:** the inspected LaTeX PDF is untagged. Tagged or otherwise
-   improved Typst output is a desirable bonus and should be measured as a
-   potential migration benefit.
-10. **YAML metadata:** direct YAML loading should be demonstrated as a Typst
-   benefit, with one authoritative metadata source rather than copied fields.
+9. **Accessibility:** the inspected LaTeX PDF is untagged.
+   Tagged or otherwise improved Typst output is a desirable bonus and should be measured as a potential migration benefit.
+10. **YAML metadata:** direct YAML loading should be demonstrated as a Typst benefit, with one authoritative metadata source rather than copied fields.
 
 ## Working prototype
 
 The prototype now demonstrates:
 
 - a YAML-driven title page, metadata model, change record, and author model;
-- all series keys declared by `TN_SERIES`, with the corrected RDO label;
-- ordered unbreakable author names, shared/multiple affiliations, linked
-  AAS-style ORCID icons, and a corresponding-author marker;
+- all series keys declared by `TN_SERIES`, with controlled-series membership recorded in the shared `data/series.yaml`;
+- ordered unbreakable author names, shared/multiple affiliations, linked AAS-style ORCID icons, and a corresponding-author marker;
 - draft, released, and obsolete state rendering;
 - Roman-numbered front matter and Arabic-numbered main matter;
-- running headers and footers, a draft watermark, and controlled-series
-  notices;
-- native headings, cross-references, equations, figures, multi-page tables,
-  raw/code blocks, footnotes, URL-styled external links, Note and Warning
-  admonitions, appendices, citations, and bibliography;
-- ten representative local BibTeX records plus direct loading of all five
-  shared bibliography pools;
+- running headers and footers, a draft watermark, and controlled-series notices;
+- native headings, cross-references, equations, figures, multi-page tables, raw/code blocks, footnotes, URL-styled external links, Note and Warning admonitions, appendices, citations, and bibliography;
+- ten representative local BibTeX records plus direct loading of all five shared bibliography pools;
 - tagged output by default and a successful PDF/UA-1 build when requested;
-- structured `typst-yaml` output from `db2authors.py` that is consumed directly
-  by the template; and
-- smoke tests for compilation, state validation, author export, affiliation
-  references, and series parity.
+- structured `typst-yaml` output from `db2authors.py` that is consumed directly by the template; and
+- smoke tests for compilation, state validation, author export, affiliation references, and series parity.
 
-Requirements extraction, meeting actions, glossary generation, compact long
-author lists, issue tables, and a custom Rubin/AAS CSL style remain deferred.
+Requirements extraction, meeting actions, glossary generation, compact long author lists, issue tables, and a custom Rubin/AAS CSL style remain deferred.
 
 ### Requirements and build
 
-The tested version is Typst 0.15.0. The repository's Open Sans, Inconsolata,
-and XITS font directories are supplied explicitly so local and CI builds use
-the same families. From the repository root, build the example with:
+The tested version is Typst 0.15.0.
+The repository's Open Sans, Inconsolata, and XITS font directories are supplied explicitly so local and CI builds use the same families.
+From the repository root, build the example with:
 
 ```sh
 mkdir -p typst-lsstdoc/output
@@ -388,8 +311,8 @@ typst compile \
   typst-lsstdoc/output/prototype.pdf
 ```
 
-Typst's default PDF is tagged. The representative example also passes Typst's
-PDF/UA-1 validation:
+Typst's default PDF is tagged.
+The representative example also passes Typst's PDF/UA-1 validation:
 
 ```sh
 typst compile \
@@ -400,30 +323,25 @@ typst compile \
   typst-lsstdoc/output/prototype-pdfua.pdf
 ```
 
-The alt text in the example is part of that successful PDF/UA-1 build. This is
-encouraging evidence, not yet a full accessibility audit.
+The alt text in the example is part of that successful PDF/UA-1 build.
+This is encouraging evidence, not yet a full accessibility audit.
 
 ### Template API
 
-The primary show-rule function is `lsstdoc`. Required arguments are `title`,
-`doc-ref`, `series`, `date`, `authors`, and `affiliations`. Optional arguments
-are `short-title`, `subtitle`, `status`, `doi`, `repository-url`,
-`abstract`, `changes`, `toc`, `bibliography`, and `bibliography-full`.
-`status` accepts only `draft`, `released`, or `obsolete`. Bibliographies list
-only cited entries by default; set `bibliography-full: true` only for the
-equivalent of `\nocite{*}`.
+The primary show-rule function is `lsstdoc`.
+Required arguments are `title`, `doc-ref`, `series`, `date`, `authors`, and `affiliations`.
+Optional arguments are `short-title`, `subtitle`, `status`, `doi`, `repository-url`, `abstract`, `changes`, `toc`, `bibliography`, `bibliography-style`, and `bibliography-full`.
+`status` accepts only `draft`, `released`, or `obsolete`.
+Bibliographies list only cited entries by default; set `bibliography-full: true` only for the equivalent of `\nocite{*}`.
+`bibliography-style` defaults to the bundled APA style and accepts another bundled style name or a CSL file path.
 
 The same module exports `note`, `warning`, `citeds`, and `citedsp` functions.
-Notes use a cyan Rubin callout; warnings use an orange callout and
-automatically prefix custom titles with “Warning.” Both are kept together
-across page breaks. The citation helpers display a bibliography key (or
-alternate text) while adding the entry to the reference list without requiring
-a custom `handle` field. Their blue underlined text uses Typst's native citation
-link to the exact bibliography entry.
+Notes use a cyan Rubin callout; warnings use an orange callout and automatically prefix custom titles with “Warning.” Both are kept together across page breaks.
+The citation helpers display a bibliography key (or alternate text) while adding the entry to the reference list without requiring a custom `handle` field.
+Their blue underlined text uses Typst's native citation link to the exact bibliography entry.
 
-External HTTP and HTTPS links are dark blue and underlined in body text and
-bibliographies. Internal cross-references and citations retain the ordinary
-document text styling.
+External HTTP and HTTPS links are dark blue and underlined in body text and bibliographies.
+Internal cross-references and citations retain the ordinary document text styling.
 
 ```typst
 #import "../src/lsstdoc.typ": citeds, citedsp, lsstdoc
@@ -455,23 +373,17 @@ Prototype text with a citation @JSSv059i10 and a Rubin document
 #citedsp("DMTN-000", display: [technical-note series]).
 ```
 
-Typst resolves a path string from the module that calls `bibliography`, not
-from the importing document. Calling `read(path, encoding: none)` in the
-document loads bibliography bytes at the caller's location and avoids that
-boundary. An array of those byte values lets a document use the repository's
-shared `refs.bib`, `lsst.bib`, `lsst-dm.bib`, `books.bib`, and `refs_ads.bib`
-files directly without copying entries locally.
+Typst resolves a path string from the module that calls `bibliography`, not from the importing document.
+Calling `read(path, encoding: none)` in the document loads bibliography bytes at the caller's location and avoids that boundary.
+An array of those byte values lets a document use the repository's shared `refs.bib`, `lsst.bib`, `lsst-dm.bib`, `books.bib`, and `refs_ads.bib` files directly without copying entries locally.
 
-Typst still restricts file reads to the compilation root. An external document
-build must choose a `--root` containing the shared bibliography directory or
-expose that directory through its build environment. This is a build-system
-integration requirement, not a requirement to copy individual entries into a
-document-local `.bib` file.
+Typst still restricts file reads to the compilation root.
+An external document build must choose a `--root` containing the shared bibliography directory or expose that directory through its build environment.
+This is a build-system integration requirement, not a requirement to copy individual entries into a document-local `.bib` file.
 
 ### Exporting authors
 
-The new exporter mode reads an ordered list of AuthorDB identifiers and writes
-presentation-neutral UTF-8 YAML:
+The new exporter mode reads an ordered list of AuthorDB identifiers and writes presentation-neutral UTF-8 YAML:
 
 ```sh
 python3 bin/db2authors.py \
@@ -480,10 +392,8 @@ python3 bin/db2authors.py \
   --output typst-lsstdoc/output/generated-authors.yaml
 ```
 
-The output contains a schema version, stable internal IDs, plain display
-names, bare normalized ORCIDs, affiliation references, and a deduplicated
-affiliation mapping with structured addresses and ROR identifiers. It does not
-emit Typst markup, email addresses, or an invented corresponding-author flag.
+The output contains a schema version, stable internal IDs, plain display names, bare normalized ORCIDs, affiliation references, and a deduplicated affiliation mapping with structured addresses and ROR identifiers.
+It does not emit Typst markup, email addresses, the placeholder affiliation of collective authors, or an invented corresponding-author flag.
 The latter remains document-specific overlay data.
 
 ### Tests
@@ -494,31 +404,19 @@ Run the smoke suite from the repository root:
 python3 -m unittest discover -s typst-lsstdoc/tests -v
 ```
 
-The test compiles the full example as PDF/UA-1, compiles draft/released/obsolete
-state fixtures using freshly exported author YAML, verifies the invalid-state
-diagnostic, checks affiliation references, and compares `data/series.yaml`
-exactly with `bibtools.py` after applying the known RDO correction.
+The test compiles the full example as PDF/UA-1, compiles draft/released/obsolete state fixtures using freshly exported author YAML, verifies the invalid-state diagnostic, checks affiliation references and controlled-series data, and compares `data/series.yaml` exactly with `bibtools.py`.
 
 ## Current findings and next slice
 
-1. The title page and page furniture can be reproduced with ordinary grids and
-   page regions; fragile absolute placement is not needed.
-2. Native YAML works well for document and author metadata. The remaining
-   architectural question is how to reconcile this prototype schema with
-   Documenteer metadata without introducing another hand-maintained source.
-3. The tested local fixture and all five shared bibliography pools parse
-   without normalization; the example cites entries directly from `refs.bib`
-   and `lsst.bib`. Typst 0.15 does not bundle an AAS CSL style, so the prototype
-   uses its bundled APA author-year style. A Rubin/AAS CSL file is optional
-   follow-up work rather than a blocker.
-4. Typst's ordinary tagged PDF and PDF/UA-1 mode are both viable for this
-   representative document. A production assessment still needs screen-reader,
-   reading-order, table semantics, and link-purpose review.
-5. Front/main numbering transitions cleanly. Exact LaTeX page-sequence parity
-   is neither necessary nor desirable.
-6. A manually split multi-page example table is currently more stable than a
-   single figure-wrapped spanning table, because a figure is intentionally
-   unbreakable. A production table helper should own this behavior.
-7. The next useful evidence is a real Rubin `.bib` compatibility corpus, a long
-   AuthorDB-generated author list, CI integration, and a side-by-side visual
-   comparison against a representative LaTeX technical note.
+1. The title page and page furniture can be reproduced with ordinary grids and page regions; fragile absolute placement is not needed.
+2. Native YAML works well for document and author metadata.
+   The remaining architectural question is how to reconcile this prototype schema with Documenteer metadata without introducing another hand-maintained source.
+3. The tested local fixture and all five shared bibliography pools parse without normalization; the example cites entries directly from `refs.bib` and `lsst.bib`.
+   Typst 0.15 does not bundle an AAS CSL style, so the prototype uses its bundled APA author-year style.
+   A Rubin/AAS CSL file is optional follow-up work rather than a blocker.
+4. Typst's ordinary tagged PDF and PDF/UA-1 mode are both viable for this representative document.
+   A production assessment still needs screen-reader, reading-order, table semantics, and link-purpose review.
+5. Front/main numbering transitions cleanly.
+   Exact LaTeX page-sequence parity is neither necessary nor desirable.
+6. The template makes table figures breakable with repeated headers, so a single captioned figure can span pages and cross-references target the real table.
+7. The next useful evidence is a real Rubin `.bib` compatibility corpus, a long AuthorDB-generated author list, CI integration, and a side-by-side visual comparison against a representative LaTeX technical note.
