@@ -1,10 +1,9 @@
 #import "../src/lsstdoc.typ": citeds, citedsp, lsstdoc, note, warning
 
-// Author data is generated from the central author database with
-// db2authors.py --mode typst-yaml; the remaining metadata is passed as
-// direct template arguments. Technote repositories use technote.toml and
-// technote-args instead (see technote.typ).
-#let people = yaml("authors.yaml")
+// This example passes everything as direct template arguments. Technote
+// repositories use technote.toml and technote-args instead (see
+// technote.typ), which also keeps the author list synchronized with the
+// central author database.
 #let bibliography-sources = (
   // Loading bytes here resolves paths from this document rather than from the
   // imported template module. No shared entries are copied into the example.
@@ -25,8 +24,50 @@
   status: "draft",
   date: "2026-07-16",
   repository-url: "https://github.com/lsst/lsst-texmf",
-  authors: people.authors,
-  affiliations: people.affiliations,
+  authors: (
+    (
+      internal_id: "jennesst",
+      given_name: "Tim",
+      family_name: "Jenness",
+      display_name: "Tim Jenness",
+      orcid: "0000-0001-5982-167X",
+      affiliations: ("RubinObs",),
+      corresponding: true,
+    ),
+    (
+      internal_id: "acostae",
+      given_name: "Emily",
+      family_name: "Acosta",
+      display_name: "Emily Acosta",
+      orcid: "0009-0006-1601-3246",
+      affiliations: ("RubinObs",),
+    ),
+    (
+      internal_id: "acquavivav",
+      given_name: "Viviana",
+      family_name: "Acquaviva",
+      display_name: "Viviana Acquaviva",
+      orcid: none,
+      affiliations: ("CCA", "CUNYCT"),
+    ),
+  ),
+  affiliations: (
+    RubinObs: (
+      name: "NSF-DOE Vera C. Rubin Observatory / NSF NOIRLab",
+      address: "Tucson, Arizona, USA",
+      ror: "048g3cy84",
+    ),
+    CCA: (
+      name: "Center for Computational Astrophysics, Flatiron Institute",
+      address: "New York, New York, USA",
+      ror: "00sekdz59",
+    ),
+    CUNYCT: (
+      name: "New York City College of Technology, City University of New York",
+      address: "New York, New York, USA",
+      ror: "021a7pw18",
+    ),
+  ),
   abstract: [
     This proof of concept demonstrates a Rubin Observatory technical document
     assembled from native Typst components and structured metadata. It
@@ -55,10 +96,10 @@
 
 Rubin Observatory technical documents need a recognizable hierarchy and
 consistent metadata without requiring authors to write presentation markup.
-This prototype passes document metadata as template arguments and loads the
-generated author and affiliation data directly from YAML. It also cites
-ordinary BibTeX entries using Typst's native bibliography support
-@jenness-example.
+This prototype passes the document metadata, authors, and affiliations as
+direct template arguments; technote repositories load them from
+`technote.toml` instead. It also cites ordinary BibTeX entries using Typst's
+native bibliography support @jenness-example.
 
 The implementation is intentionally not a line-by-line translation of
 `lsstdoc.cls`. It follows the same design language while using native Typst
@@ -69,7 +110,7 @@ layout, counters, links, and references. The data flow is summarized in
   image(
     "figure.svg",
     width: 90%,
-    alt: "YAML metadata and author data flow through the Typst template to a tagged PDF.",
+    alt: "Structured metadata and author data flow through the Typst template to a tagged PDF.",
   ),
   caption: [Structured inputs are rendered by the Typst template.],
 ) <fig-data-flow>
@@ -83,15 +124,16 @@ the human-readable type label.
 
 Metadata remains structured until presentation time:
 
-```yaml
-series: DMTN
-status: draft
-doc_ref: DMTN-999
+```toml
+id = "DMTN-999"
+series_id = "DMTN"
+[technote.status]
+state = "draft"
 ```
 
 #note(title: "Structured metadata")[
-  YAML remains the authoritative input to the template; authors do not need to
-  copy metadata into presentation markup.
+  Structured data remains the authoritative input to the template; authors do
+  not need to copy metadata into presentation markup.
 ]
 
 #warning(title: "Prototype scope")[
@@ -117,8 +159,8 @@ references. Footnotes also remain native to Typst.#footnote[
 #pagebreak()
 = Tables and structured records <sec-tables>
 
-The change record in the front matter is generated from YAML. Longer technical
-tables use the same native table model. The representative @tab-series
+The change record in the front matter is generated from structured template
+arguments. Longer technical tables use the same native table model. The representative @tab-series
 deliberately contains enough rows to exercise page breaking.
 
 #let component-table(start, end) = table(
@@ -149,13 +191,13 @@ Inline code such as `typst compile` uses a monospace font. Blocks use native
 raw content:
 
 ```python
-authors = load_yaml("authors.yaml")
-document = render_template(authors)
+metadata = load_toml("technote.toml")
+document = render_template(metadata)
 ```
 
 The first prototype demonstrates:
 
-- YAML metadata and author input;
+- structured metadata and author input;
 - Rubin title and page furniture;
 - citations, equations, figures, and tables;
 - draft, released, and obsolete states.
