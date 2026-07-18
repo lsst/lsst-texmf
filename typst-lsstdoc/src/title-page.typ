@@ -2,7 +2,7 @@
 #import "authors.typ": render-authors
 #import "document-state.typ": state-color, state-label
 
-#let observatory-image-path = "../../texmf/tex/latex/lsst/rubinobs.png"
+#let observatory-image-path = "../assets/rubinobs.png"
 
 #let render-title-artwork() = align(center + bottom)[
   #image(
