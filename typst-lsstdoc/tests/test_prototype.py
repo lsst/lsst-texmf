@@ -265,6 +265,54 @@ class TypstCompileTest(unittest.TestCase):
         self.assertIn("Ada Lovelace", extracted)
         self.assertNotRegex(extracted, r"Lovelace\s*,")
 
+    @unittest.skipUnless(shutil.which("pdftotext"), "pdftotext is not installed")
+    def test_technote_toml_example_compiles(self) -> None:
+        output = self.tempdir / "technote.pdf"
+        result = self.compile(PROTOTYPE / "examples/technote.typ", output)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        extracted = subprocess.run(
+            ["pdftotext", str(output), "-"],
+            text=True,
+            capture_output=True,
+            check=True,
+        ).stdout
+        self.assertIn("SQR-999", extracted)
+        self.assertIn("SQuaRE Technical Note", extracted)
+        self.assertIn("Ada Lovelace", extracted)
+        self.assertIn("Grace Hopper", extracted)
+        # The shared affiliation is deduplicated to a single entry.
+        self.assertEqual(extracted.count("Example Institute"), 1)
+        # A stable technote maps to released: no draft furniture.
+        self.assertNotIn("D R A F T", extracted)
+
+    def test_technote_toml_unknown_state_rejected(self) -> None:
+        source = self.tempdir / "state.typ"
+        (self.tempdir / "technote.toml").write_text(
+            "[technote]\n"
+            'id = "SQR-999"\n'
+            'series_id = "SQR"\n'
+            "date_created = 2026-07-16T00:00:00Z\n"
+            "[technote.status]\n"
+            'state = "other"\n'
+            "[[technote.authors]]\n"
+            'name = {given = "Ada", family = "Lovelace"}\n',
+            encoding="utf-8",
+        )
+        source.write_text(
+            '#import "../../src/lsstdoc.typ": lsstdoc\n'
+            '#import "../../src/technote-toml.typ": technote-args\n'
+            "#show: lsstdoc.with(\n"
+            '  ..technote-args(toml("technote.toml")),\n'
+            '  title: "Unknown State Test",\n'
+            "  toc: false,\n"
+            ")\n"
+            "= Test\n",
+            encoding="utf-8",
+        )
+        result = self.compile(source, self.tempdir / "state.pdf")
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("technote status state", result.stderr)
+
     def test_invalid_document_state_fails_clearly(self) -> None:
         result = self.compile(
             PROTOTYPE / "examples/state.typ",

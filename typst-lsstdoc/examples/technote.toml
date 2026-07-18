@@ -1,0 +1,39 @@
+# Representative Documenteer technote.toml metadata, exercising both
+# author-name spellings, URL-prefixed identifiers, and a shared affiliation.
+[technote]
+id = "SQR-999"
+series_id = "SQR"
+canonical_url = "https://sqr-999.lsst.io"
+github_url = "https://github.com/lsst-sqre/sqr-999"
+github_default_branch = "main"
+date_created = 2026-07-01T12:00:00Z
+date_updated = 2026-07-16T09:30:00Z
+organization.name = "Vera C. Rubin Observatory"
+organization.ror = "https://ror.org/048g3cy84"
+license.id = "CC-BY-4.0"
+
+[technote.status]
+state = "stable"
+
+[[technote.authors]]
+name.given = "Ada"
+name.family = "Lovelace"
+internal_id = "lovelacea"
+orcid = "https://orcid.org/0000-0001-5982-167X"
+[[technote.authors.affiliations]]
+name = "Example Institute"
+internal_id = "ExampleInst"
+address = "950 N. Cherry Ave., Tucson, AZ 85719, USA"
+ror = "https://ror.org/048g3cy84"
+
+[[technote.authors]]
+name = {given = "Grace", family = "Hopper"}
+internal_id = "hopperg"
+[[technote.authors.affiliations]]
+name = "Example Institute"
+internal_id = "ExampleInst"
+address = "950 N. Cherry Ave., Tucson, AZ 85719, USA"
+[[technote.authors.affiliations]]
+name = "Second Example University"
+internal_id = "SecondExample"
+address = "125 South Wacker Drive, Chicago, IL 60606, USA"
