@@ -1,6 +1,5 @@
 #import "../src/lsstdoc.typ": lsstdoc
 
-#let people = yaml(sys.inputs.at("authors", default: "authors.yaml"))
 #let selected-status = sys.inputs.at("status", default: "released")
 
 #show: lsstdoc.with(
@@ -10,8 +9,23 @@
   series: "DMTN",
   status: selected-status,
   date: "2026-07-16",
-  authors: people.authors,
-  affiliations: people.affiliations,
+  authors: (
+    (
+      internal_id: "example",
+      given_name: "First",
+      family_name: "Author",
+      display_name: "First Author",
+      orcid: none,
+      affiliations: ("RubinObs",),
+    ),
+  ),
+  affiliations: (
+    RubinObs: (
+      name: "NSF-DOE Vera C. Rubin Observatory",
+      address: "Tucson, Arizona, USA",
+      ror: none,
+    ),
+  ),
   toc: false,
 )
 

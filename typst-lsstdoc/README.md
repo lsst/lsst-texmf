@@ -44,7 +44,6 @@ Add content here.
 
 The mapping covers the handle (`id`), series, status, revision date, DOI, repository URL, the optional title override, and the author list; the change record and abstract stay in the document, and the compiled document exposes its front matter to tooling via `typst eval 'query(<rubin-technote>).first().value' --in <file>`.
 The `lsstdoc` show rule also accepts every field directly (`id`, `series`, `status`, `date`, `authors`, `affiliations`, `subtitle`, `doi`, `repository-url`, `changes`, `toc`, `bibliography`, `bibliography-style`, `bibliography-full`) for documents that do not use `technote.toml`.
-Author data can alternatively be generated from the central author database with `db2authors.py --mode typst-yaml` in lsst-texmf.
 
 Shared bibliographies are passed as bytes so paths resolve from the document:
 
