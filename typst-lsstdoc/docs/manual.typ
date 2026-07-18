@@ -248,11 +248,11 @@ bibliography files into `lsstbib/` using the same per-file mechanism as the
 Sphinx technotes.
 Ordinary citations use Typst's `@` syntax against any loaded source, for
 example the FITS standard paper @fits-standard.
-Rubin documents are conventionally cited by their handles: `citeds` shows
-the bibliography key, as in #citeds("DMTN-001"), and `citedsp` adds
-brackets, as in #citedsp("SQR-001").
-Alternate display text is supported: #citeds("DMTN-001", display: [the
-representative technical note]).
+Rubin documents are conventionally cited by their handles, which are the
+bibliography keys in the shared `lsst.bib`: `citeds` shows the key, as in
+#citeds("DMTN-000"), and `citedsp` adds brackets, as in #citedsp("SQR-000").
+Alternate display text is supported: #citeds("DMTN-000", display: [the
+technical note series description]).
 The bibliography below lists only the cited entries unless
 `bibliography-full: true` is set, and `bibliography-style` selects another
 bundled style or a CSL file.
