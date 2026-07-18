@@ -120,7 +120,7 @@ Documents outside the technote workflow pass every field directly instead;
     [`changes`], [`()`], [Change-record entries with `version`, `date`, `description`, and `author`.],
     [`toc`], [`true`], [Whether to render a table of contents.],
     [`bibliography`], [`none`], [Bibliography sources as bytes; see @sec-citations.],
-    [`bibliography-style`], [`"apa"`], [A bundled citation style name or a CSL file path.],
+    [`bibliography-style`], [`auto`], [The Rubin AAS style, or a bundled style name or CSL file path.],
     [`bibliography-full`], [`false`], [List all bibliography entries, not only the cited ones.],
   ),
   caption: [The `lsstdoc` arguments. This multi-page table is itself a demonstration: table figures break across pages and repeat their headers.],
@@ -253,6 +253,10 @@ bibliography keys in the shared `lsst.bib`: `citeds` shows the key, as in
 #citeds("DMTN-000"), and `citedsp` adds brackets, as in #citedsp("SQR-000").
 Alternate display text is supported: #citeds("DMTN-000", display: [the
 technical note series description]).
+References follow the AAS journal (aastex) conventions by default,
+implemented by the bundled `rubin-aas.csl` style: author-year citations,
+comma-separated reference entries, and technote entries rendered as type,
+handle, and institution, with the handle taken from the bibliography key.
 The bibliography below lists only the cited entries unless
 `bibliography-full: true` is set, and `bibliography-style` selects another
 bundled style or a CSL file.
