@@ -146,12 +146,12 @@ The mixed-case keys `Agreement`, `Document`, `Publication`, and `Report` are par
 
 | Feature | LaTeX/tool behavior | Priority | Proposed Typst approach | Compatibility notes |
 | --- | --- | --- | --- | --- |
-| Multiple authors | `\author` is an opaque formatted string. `db2authors.py -m lsstdoc` preserves the requested order and generates a comma/`and` name list. | Required | Ordered author dictionaries from YAML, rendered by the template. | Keep presentation out of generated data. |
-| Author names | AuthorDB stores `given_name` and `family_name`; `db2authors` derives plain and LaTeX display forms. Empty given names can represent collaborations. | Required | Export `internal_id`, component names, and a normalized `display_name`. | Some database strings contain LaTeX escapes; conversion/normalization must be tested rather than passed directly to Typst. |
-| Affiliations | AuthorDB stores affiliation IDs and structured institute/department/address/ROR data. The current `lsstdoc` generator discards all of it. Other generators number deduplicated affiliations in first-use order. | Required | Export referenced affiliation records keyed by stable ID; the template assigns stable first-use numeric markers. | The new title page is intentionally richer than current `lsstdoc` output. Preserve document author order and per-author affiliation order. |
-| ORCID | AuthorDB stores bare identifiers. `authordb.py` validates dashed or 16-character forms; the current `lsstdoc` generator discards ORCID. | Required | Export the bare normalized identifier and render the standard small ORCID icon linked to `https://orcid.org/...`, following AASTeX practice. | The identifier is not printed on the title page. Validation is shared by AuthorDB and the exporter; checksum validation is not currently implemented. Confirm icon redistribution terms before packaging. |
+| Multiple authors | `\author` is an opaque formatted string. `db2authors.py -m lsstdoc` preserves the requested order and generates a comma/`and` name list. | Required | Ordered author dictionaries from technote.toml (via `technote-args`) or explicit arguments, rendered by the template. | Keep presentation out of the structured data. |
+| Author names | AuthorDB stores `given_name` and `family_name`; `db2authors` derives plain and LaTeX display forms. Empty given names can represent collaborations. | Required | Provide `internal_id`, component names, and a normalized `display_name` in the author dictionaries. | technote.toml stores plain-text names, so no LaTeX conversion is needed on the Typst path. |
+| Affiliations | AuthorDB stores affiliation IDs and structured institute/department/address/ROR data. The current `lsstdoc` generator discards all of it. Other generators number deduplicated affiliations in first-use order. | Required | Provide referenced affiliation records keyed by stable ID; `technote-args` deduplicates them and the template assigns stable first-use numeric markers. | The new title page is intentionally richer than current `lsstdoc` output. Preserve document author order and per-author affiliation order. |
+| ORCID | AuthorDB stores bare identifiers. `authordb.py` validates dashed or 16-character forms; the current `lsstdoc` generator discards ORCID. | Required | Store the bare normalized identifier and render the standard small ORCID icon linked to `https://orcid.org/...`, following AASTeX practice. | The identifier is not printed on the title page. `technote-args` normalizes the URL-prefixed identifiers that technote.toml stores; checksum validation is not currently implemented. Confirm icon redistribution terms before packaging. |
 | Corresponding author | Not represented in the current AuthorDB model. | Representative | Optional per-document overlay in the authors input, defaulting to false. | It cannot be truthfully generated from AuthorDB without a schema or document-local source. |
-| Email | AuthorDB can resolve a username through an affiliation's email domain. Current `lsstdoc` output does not show email. | Representative | Export only when requested; hide by default. | Avoid putting personal email into output merely because it exists in the database. |
+| Email | AuthorDB can resolve a username through an affiliation's email domain. Current `lsstdoc` output does not show email. | Representative | The template does not render email addresses. | Avoid putting personal email into output merely because it exists in the metadata. |
 | Institutional authors | `authordb.py` recognizes a collaboration as an empty given name with affiliation `"_"`. | Required | Preserve a `kind` or equivalent derived flag and allow an author with no ordinary affiliation markers. | The Typst schema must not require every author to be a person. |
 | Long author lists | No dedicated title-page layout; the opaque author string simply wraps. | Required | Add regular and compact rendering modes, selected explicitly or by a documented threshold. | Each display name, ORCID icon, comma, and affiliation marker is an unbreakable inline box, equivalent to TeX's `Tim~Jenness`. Following AASTeX style, each non-final comma precedes that author's affiliation marker, with “and” before the final name; wrapping is allowed only between authors. |
 
@@ -195,7 +195,7 @@ Missing entry types in the repository corpus should be supplied by synthetic fix
 | Meeting actions | `\action`, `\nolabelaction`, and `\oldaction` write `actions`/`oldactions` files, emit `AI:` log records, place margin labels, and later input the files into `\listofactions`. | Deferred | If later demand justifies it, use structured action YAML plus a renderer/exporter. | Action items are rarely used and are explicitly outside the initial implementation. Direct page-time file writes do not map naturally to Typst. |
 | Acronym generation | `generateAcronyms.py` scans source, writes TeX definitions/tables, and may require `makeglossaries` and repeated LaTeX passes. | Deferred | Separate preprocessing/validation around a neutral glossary data file. | Source rewriting (`-gu`) is explicitly described as potentially surprising and should not be replicated. |
 | Bibliography pipeline | BibTeX plus LaTeX reruns; standard bibliography files are found through TEXMF. | Required | One Typst compile using explicit `.bib` paths, with all required resources declared in the build command. | Pin Typst and CSL inputs for reproducibility. |
-| Author generation | `db2authors.py` reads a flat `authors.yaml` from the working directory, resolves `etc/authordb.yaml`, filters IDs through `dni.yaml`, and prints format-specific markup to stdout. | Required | Add a neutral YAML output mode that reuses the validated database model and accepts explicit input/output paths consistent with current CLI conventions. | The current CLI's `-m/--mode` means output mode, so `-m typst-yaml` is more consistent than introducing `--format` unless the CLI is deliberately modernized. Preserve requested order and DNI behavior only if it is part of the target document workflow. |
+| Author generation | `db2authors.py` reads a flat `authors.yaml` from the working directory, resolves `etc/authordb.yaml`, filters IDs through `dni.yaml`, and prints format-specific markup to stdout. | Required | Manage authors in `technote.toml` with `documenteer technote add-author` and `sync-authors`, which resolve the central author service; `technote-args` maps the result into the template. | An earlier neutral `typst-yaml` output mode in `db2authors.py` was built and then retired; the Markdown/reStructuredText technote tooling owns author management for Typst documents too. |
 | Native YAML metadata | Repository documents already carry `metadata.yaml` for Documenteer/indexing; the class separately receives title/author/handle/date in TeX. | Required | Load authoritative YAML directly with Typst's data functions and pass structured values into the template. Generate or derive any secondary form. | Direct YAML loading is a strategic Typst benefit rather than visual parity. Reconcile names such as `doc_title`/`doc_id` with `title`/`doc_ref` so the prototype does not create a third divergent source. |
 | PDF accessibility/tagging | The rendered XeLaTeX baseline reports `Tagged: no`. | Bonus | Inspect Typst's produced structure, links, outlines, copy/paste order, alt text support, and tagging. | Useful tagged output would strengthen the migration case, but lack of tagging does not block the first visual and functional prototype. |
 
@@ -215,12 +215,14 @@ The following fields are supported by observed class behavior or are justified p
 | `toc`, `list_of_figures`, `list_of_tables` | Front-matter controls. | Booleans with documented defaults. |
 | `controlled_document_policy` | Governance text and behavior. | Enum such as `none`, `ccb`, `dm-ccb`, `observatory-ccb`; allow a compatibility default from handle prefix. |
 | `changes` | Ordered structured change records. | Require version, date, description, and author/owner. |
-| `authors`, `affiliations` | Separate generated author data. | Validate all referenced IDs and preserve list order. |
+| `authors`, `affiliations` | Author data from `technote.toml` or explicit arguments. | Validate all referenced IDs and preserve list order. |
 
 Before implementation, decide whether the existing Documenteer `metadata.yaml` is extended or whether the prototype file is explicitly generated from it.
 A second hand-maintained copy of title, handle, authors, DOI, and repository URL would be a migration regression.
 
-## Author exporter assessment
+## Author exporter assessment (retired)
+
+This assessment is retained as an audit record only: the exporter it proposes was built and then retired in favor of managing authors wholesale through Documenteer and `technote.toml` (see the Author input section below).
 
 The most maintainable exporter is a new `typst-yaml` generator in the existing author tooling, backed by the Pydantic models in `bin/authordb.py`:
 
@@ -269,7 +271,7 @@ Evidence from the compiled prototype supports these answers:
    A larger real Rubin corpus is still needed to characterize embedded LaTeX and custom-field failures.
 5. **Bibliography style:** Typst 0.15 does not bundle AAS CSL. Bundled APA author-year output is a usable baseline; exact `lsst_aa.bst` output and prominent handle rendering are not required.
 6. **Formatting versus build system:** title/page layout, typography, document state, change tables, and captions are formatting.
-   Author export, requirements/actions extraction, glossary generation, bibliography normalization, metadata indexing, and reproducible font/resource discovery are build-system concerns.
+   Author management, requirements/actions extraction, glossary generation, bibliography normalization, metadata indexing, and reproducible font/resource discovery are build-system concerns.
 7. **Largest early risks:** bibliography normalization, metadata ownership, long-author layout, and stable page furniture need evidence.
    Requirements and action extraction are too rarely used to shape the initial prototype.
 8. **Fonts:** Open Sans, Inconsolata, and XITS Math establish the current visual baseline, but the prototype may use more convenient similar-looking fonts.
@@ -421,7 +423,7 @@ The test compiles the full example as PDF/UA-1, compiles draft/released/obsolete
 5. Front/main numbering transitions cleanly.
    Exact LaTeX page-sequence parity is neither necessary nor desirable.
 6. The template makes table figures breakable with repeated headers, so a single captioned figure can span pages and cross-references target the real table.
-7. The next useful evidence is a real Rubin `.bib` compatibility corpus, a long AuthorDB-generated author list, CI integration, and a side-by-side visual comparison against a representative LaTeX technical note.
+7. The next useful evidence is a real Rubin `.bib` compatibility corpus, a long author list, CI integration, and a side-by-side visual comparison against a representative LaTeX technical note.
 
 ## Technote workflow design
 
