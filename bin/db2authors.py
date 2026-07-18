@@ -128,6 +128,8 @@ class Author:
     orcid: str | None
     affiliations: list[Affiliation]
     altaffil: list[str]
+    email_warning: str | None = None
+    """Diagnostic to report if a generator publishes this email address."""
 
     @property
     def full_name(self) -> str:
@@ -254,7 +256,7 @@ class AuthorFactory:
                 domains[affilid] = email
         return domains
 
-    def get_author(self, authorid: str, *, warn_email: bool = True) -> Author:
+    def get_author(self, authorid: str) -> Author:
         if authorid not in self._authors:
             raise RuntimeError(f"Author {authorid!r} not found in author database")
         author = self._authors[authorid]
@@ -277,13 +279,13 @@ class AuthorFactory:
             # This is a key to a email domain.
             domain = self.get_email_domain_from_id(domain)
 
-        # In theory should only warn if this is AAS but we do not know the
-        # mode here.
-        if warn_email and (not domain or not username) and author["affil"][0] != "_":
-            # Only warn if we need the email.
-            print(
-                f"WARNING: Unable to resolve email address for author '{authorid}' email '{email}'",
-                file=sys.stderr,
+        # Only generators that publish email addresses should warn, so
+        # record the diagnostic here for them to report. Collective authors
+        # are not expected to have an email address.
+        email_warning = None
+        if (not domain or not username) and author["affil"][0] != "_":
+            email_warning = (
+                f"WARNING: Unable to resolve email address for author '{authorid}' email '{email}'"
             )
         if not domain:
             domain = "none.com"
@@ -298,6 +300,7 @@ class AuthorFactory:
             email=email,
             affiliations=affiliations,
             altaffil=list(author["altaffil"]),
+            email_warning=email_warning,
         )
 
 
@@ -328,6 +331,16 @@ class AuthorTextGenerator(ABC):
                     affil_to_number[affiliation] = counter
 
         return affil_to_number
+
+    def warn_unresolved_emails(self) -> None:
+        """Warn about authors whose email address could not be resolved.
+
+        Generators that publish email addresses should call this before
+        generating their output.
+        """
+        for author in self.authors:
+            if author.email_warning:
+                print(author.email_warning, file=sys.stderr)
 
     @abstractmethod
     def generate(self, header: bool = True) -> str:
@@ -370,6 +383,7 @@ class AASTeX(AuthorTextGenerator):
 
     def generate(self, header: bool = True) -> str:
         """Generate AASTeX format."""
+        self.warn_unresolved_emails()
         lines = []
         for author in self.authors:
             lines.append("")
@@ -575,6 +589,7 @@ class ADASS(AuthorTextGenerator):
         return affil_text
 
     def generate(self, header: bool = True) -> str:
+        self.warn_unresolved_emails()
         affil_to_number = self.number_affiliations()
 
         authors = list(self.authors)
@@ -798,6 +813,7 @@ class AASCSV(AuthorTextGenerator):
     mode = "aascsv"
 
     def generate(self, header: bool = True) -> str:
+        self.warn_unresolved_emails()
         # Declare the field names from the dataclass but do not use them
         # to write the header since we want to match the template exactly.
         # Need to write to a string buffer since csv.writer needs a file-like
@@ -916,8 +932,15 @@ def generate_typst_yaml(factory: AuthorFactory, author_ids: list[str]) -> str:
     affiliations: dict[str, dict[str, Any]] = {}
 
     for author_id in author_ids:
-        author = factory.get_author(author_id, warn_email=False)
-        affiliation_ids = [factory.get_affiliation_id(affil) for affil in author.affiliations]
+        author = factory.get_author(author_id)
+        # Collective authors carry the "_" placeholder affiliation, which
+        # must not appear in the output.
+        resolved = [
+            (factory.get_affiliation_id(affil), affil)
+            for affil in author.affiliations
+            if factory.get_affiliation_id(affil) != "_"
+        ]
+        affiliation_ids = [affiliation_id for affiliation_id, _ in resolved]
         given_name = latex2text(author.given_name)
         family_name = latex2text(author.family_name)
         display_name = " ".join(part for part in (given_name, family_name) if part)
@@ -932,7 +955,7 @@ def generate_typst_yaml(factory: AuthorFactory, author_ids: list[str]) -> str:
             }
         )
 
-        for affiliation_id, affiliation in zip(affiliation_ids, author.affiliations, strict=True):
+        for affiliation_id, affiliation in resolved:
             if affiliation_id in affiliations:
                 continue
             address = None
@@ -961,6 +984,24 @@ def generate_typst_yaml(factory: AuthorFactory, author_ids: list[str]) -> str:
         "affiliations": affiliations,
     }
     return yaml.safe_dump(data, allow_unicode=True, sort_keys=False)
+
+
+def write_output(output: str, file_name: str | None) -> None:
+    """Write generated text to a file or standard output.
+
+    Parameters
+    ----------
+    output : `str`
+        The generated text. A trailing newline is added if one is missing.
+    file_name : `str` or `None`
+        The file to write to, or `None` to use standard output.
+    """
+    if not output.endswith("\n"):
+        output += "\n"
+    if file_name:
+        Path(file_name).write_text(output, encoding="utf-8")
+    else:
+        print(output, end="")
 
 
 def load_dni(donotinclude: str) -> set[str]:
@@ -1041,6 +1082,9 @@ if __name__ == "__main__":
     parser.add_argument("--output", help="Write generated output to this file instead of standard output.")
     args = parser.parse_args()
 
+    if args.mode == "csvall" and args.output:
+        parser.error("--output is not supported with mode 'csvall', which writes fixed CSV files")
+
     # This is the database file with all the generic information
     # about authors. Locate it relative to this script.
     exedir = os.path.abspath(os.path.dirname(__file__))
@@ -1063,11 +1107,7 @@ if __name__ == "__main__":
     author_ids = [a for a in authors if a not in dni_list]
 
     if args.mode == "typst-yaml":
-        output = generate_typst_yaml(factory, author_ids)
-        if args.output:
-            Path(args.output).write_text(output, encoding="utf-8")
-        else:
-            print(output, end="")
+        write_output(generate_typst_yaml(factory, author_ids), args.output)
         exit(0)
 
     authors = [factory.get_author(authorid) for authorid in author_ids]
@@ -1089,8 +1129,4 @@ if __name__ == "__main__":
         raise RuntimeError(f"Unknown generator mode: {args.mode}")
 
     generator = generator_lut[args.mode](authors)
-    output = generator.generate()
-    if args.output:
-        Path(args.output).write_text(output, encoding="utf-8")
-    else:
-        print(output)
+    write_output(generator.generate(), args.output)
