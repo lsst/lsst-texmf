@@ -299,14 +299,14 @@ Requirements extraction, meeting actions, glossary generation, compact long auth
 ### Requirements and build
 
 The tested version is Typst 0.15.0.
-The repository's Open Sans, Inconsolata, and XITS font directories are supplied explicitly so local and CI builds use the same families.
+The template ships its own copies of the Open Sans, Inconsolata, and XITS families in `fonts/`, with their licenses, so local and CI builds use the same families and the subtree is self-contained.
 From the repository root, build the example with:
 
 ```sh
 mkdir -p typst-lsstdoc/output
 typst compile \
   --root . \
-  --font-path texmf/fonts/truetype/public/opensans:texmf/fonts/truetype/public/Inconsolata:texmf/fonts/opentype/public/xits \
+  --font-path typst-lsstdoc/fonts \
   typst-lsstdoc/examples/prototype.typ \
   typst-lsstdoc/output/prototype.pdf
 ```
@@ -317,7 +317,7 @@ The representative example also passes Typst's PDF/UA-1 validation:
 ```sh
 typst compile \
   --root . \
-  --font-path texmf/fonts/truetype/public/opensans:texmf/fonts/truetype/public/Inconsolata:texmf/fonts/opentype/public/xits \
+  --font-path typst-lsstdoc/fonts \
   --pdf-standard ua-1 \
   typst-lsstdoc/examples/prototype.typ \
   typst-lsstdoc/output/prototype-pdfua.pdf

@@ -6,12 +6,14 @@
 #import "front-matter.typ": render-abstract, render-contents
 #import "change-record.typ": render-change-record
 #import "citations.typ" as citations
+#import "technote-toml.typ" as technote-toml
 
 #let render-bibliography = bibliography
 #let note = admonitions.note
 #let warning = admonitions.warning
 #let citeds = citations.citeds
 #let citedsp = citations.citedsp
+#let technote-args = technote-toml.technote-args
 
 #let lsstdoc(
   title: none,

@@ -4,6 +4,7 @@
   The square source canvas is cropped by the Typst layout rather than altering the artwork.
 - `orcid-id.png` is the small ORCID icon already used by the neighboring `pstn-019` document.
   The template links the icon to the author's ORCID page and does not print the identifier.
+- `rubinobs.png` is the pale observatory illustration used along the bottom of the title page, copied from the LaTeX class assets in `texmf/tex/latex/lsst/` so the template subtree is self-contained.
 - `citation-key.csl` is a minimal CSL style used only for `citeds` and `citedsp`.
   It renders the standard CSL `citation-key` variable, or a supplied locator as alternate text, while retaining Typst's native bibliography-entry hyperlink.
 
