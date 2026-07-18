@@ -51,8 +51,10 @@
 /// - toc (bool): Whether to render a table of contents.
 /// - bibliography (bytes, array, none): Bibliography sources loaded with
 ///   `read(path, encoding: none)` from the document.
-/// - bibliography-style (str): A bundled citation style name or a CSL file
-///   path; defaults to APA.
+/// - bibliography-style (auto, str): A bundled citation style name or a CSL
+///   file path; `auto` selects the bundled Rubin AAS style, which follows
+///   aasjournal.bst and renders Rubin document handles from bibliography
+///   keys.
 /// - bibliography-full (bool): List all entries, not only the cited ones.
 /// - body (content): The document body.
 /// -> content
@@ -72,10 +74,9 @@
   changes: (),
   toc: true,
   bibliography: none,
-  // Typst does not bundle the AAS CSL style. APA is a close bundled
-  // author-year baseline; pass another bundled style name or a CSL file
-  // path to override it.
-  bibliography-style: "apa",
+  // auto selects the bundled Rubin AAS style; pass a bundled style name or
+  // a CSL file path to override it.
+  bibliography-style: auto,
   bibliography-full: false,
   body,
 ) = {
@@ -188,7 +189,7 @@
     pagebreak()
     render-bibliography(
       bibliography,
-      style: bibliography-style,
+      style: if bibliography-style == auto { "../assets/rubin-aas.csl" } else { bibliography-style },
       title: [References],
       full: bibliography-full,
     )
