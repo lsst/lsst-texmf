@@ -1,7 +1,7 @@
 #import "utilities.typ": muted-teal, rubin-logo-path
 #import "document-state.typ": controlled-notice, state-label
 
-#let running-header(short-title, doc-ref, date) = context {
+#let running-header(short-title, id, date) = context {
   place(center + top, dy: 30pt)[
     #block(width: 6.5in)[
       #grid(
@@ -17,7 +17,7 @@
           size: 7pt,
           fill: muted-teal,
           weight: "bold",
-          short-title + "  |  " + doc-ref + "  |  Latest Revision " + date,
+          short-title + "  |  " + id + "  |  Latest Revision " + date,
         ),
       )
     ]

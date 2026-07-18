@@ -33,10 +33,13 @@
 ///   title: "My Technote",
 /// )
 /// ```
-/// The mapping covers the handle, series, status, revision date, repository
-/// URL, and the author list with deduplicated affiliations. URL-prefixed
-/// ORCID and ROR identifiers are normalized to the bare form. The title and
-/// abstract stay in the document, matching Documenteer.
+/// The mapping covers the handle (`id`), series, status, revision date,
+/// DOI, repository URL, the optional title override, and the author list
+/// with deduplicated affiliations. URL-prefixed DOI, ORCID, and ROR
+/// identifiers are normalized to the bare form. The title normally stays in
+/// the document, matching Documenteer; when `technote.title` is set it is
+/// mapped instead and the document must not also pass one. The abstract
+/// always stays in the document.
 ///
 /// - data (dictionary): The parsed technote.toml contents.
 /// - date (auto, str): Override for the revision date; `auto` uses
@@ -103,13 +106,18 @@
     ))
   }
 
-  (
-    doc-ref: technote.at("id"),
+  let arguments = (
+    id: technote.at("id"),
     series: technote.at("series_id"),
     status: resolved-status,
     date: resolved-date,
+    doi: strip-prefix(technote.at("doi", default: none), "https://doi.org/"),
     repository-url: technote.at("github_url", default: none),
     authors: authors,
     affiliations: affiliations,
   )
+  if "title" in technote {
+    arguments.insert("title", technote.at("title"))
+  }
+  arguments
 }
