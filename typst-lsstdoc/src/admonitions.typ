@@ -19,6 +19,13 @@
   )
 ]
 
+/// Render a note admonition in the Rubin teal callout style.
+///
+/// The box is kept together across page breaks.
+///
+/// - body (content): The note content.
+/// - title (str, content): The heading shown in the title bar.
+/// -> content
 #let note(body, title: "Note") = admonition(
   body,
   title,
@@ -26,6 +33,14 @@
   rgb("#f2fbfb"),
 )
 
+/// Render a warning admonition in an orange callout style.
+///
+/// A custom title is prefixed with "Warning: " so that the severity is
+/// always visible.
+///
+/// - body (content): The warning content.
+/// - title (str, content, none): Optional custom heading.
+/// -> content
 #let warning(body, title: none) = {
   let displayed-title = if title == none { "Warning" } else { "Warning: " + title }
   admonition(
