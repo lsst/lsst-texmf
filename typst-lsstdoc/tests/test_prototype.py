@@ -149,6 +149,29 @@ class TypstCompileTest(unittest.TestCase):
                 self.assertEqual(result.returncode, 0, result.stderr)
                 self.assertTrue(output.exists())
 
+    def test_bibliography_style_option(self) -> None:
+        source = self.tempdir / "bib-style.typ"
+        source.write_text(
+            '#import "../../src/lsstdoc.typ": lsstdoc\n'
+            '#let people = yaml("../../examples/authors.yaml")\n'
+            "#show: lsstdoc.with(\n"
+            '  title: "Bibliography Style Test",\n'
+            '  doc-ref: "DMTN-999",\n'
+            '  series: "DMTN",\n'
+            '  date: "2026-07-16",\n'
+            "  authors: people.authors,\n"
+            "  affiliations: people.affiliations,\n"
+            "  toc: false,\n"
+            '  bibliography: (read("../../examples/references.bib", encoding: none),),\n'
+            '  bibliography-style: "ieee",\n'
+            ")\n"
+            "= Test\n"
+            "A citation @jenness-example.\n",
+            encoding="utf-8",
+        )
+        result = self.compile(source, self.tempdir / "bib-style.pdf")
+        self.assertEqual(result.returncode, 0, result.stderr)
+
     def test_change_record_accepts_non_string_values(self) -> None:
         source = self.tempdir / "changes.typ"
         source.write_text(

@@ -100,13 +100,6 @@ The change record in the front matter is generated from YAML. Longer technical
 tables use the same native table model. The representative @tab-series
 deliberately contains enough rows to exercise page breaking.
 
-#figure(
-  [],
-  kind: table,
-  alt: "A representative technical table with 25 component records.",
-  caption: [Representative multi-page technical table.],
-) <tab-series>
-
 #let component-table(start, end) = table(
   columns: (14%, 31%, 1fr),
   inset: 5pt,
@@ -123,9 +116,11 @@ deliberately contains enough rows to exercise page breaking.
   )).flatten(),
 )
 
-#component-table(1, 16)
-#pagebreak()
-#component-table(16, 26)
+#figure(
+  component-table(1, 26),
+  alt: "A representative technical table with 25 component records.",
+  caption: [Representative multi-page technical table.],
+) <tab-series>
 
 = Code and lists
 
