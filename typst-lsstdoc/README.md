@@ -381,6 +381,28 @@ Typst still restricts file reads to the compilation root.
 An external document build must choose a `--root` containing the shared bibliography directory or expose that directory through its build environment.
 This is a build-system integration requirement, not a requirement to copy individual entries into a document-local `.bib` file.
 
+### Documenteer technote metadata
+
+Typst reads TOML natively, so a document can be driven by the same `technote.toml` file that Documenteer uses for Markdown and reStructuredText technotes.
+The `technote-args` function in `src/technote-toml.typ` maps the parsed file onto template arguments:
+
+```typst
+#import "../src/lsstdoc.typ": lsstdoc
+#import "../src/technote-toml.typ": technote-args
+
+#show: lsstdoc.with(
+  ..technote-args(toml("technote.toml")),
+  title: "Reusing Documenteer Technote Metadata",
+)
+```
+
+The document loads the file itself because Typst resolves paths relative to the calling module.
+The mapping covers the handle (`id`), series (`series_id`), status (`draft`, `stable`, and `deprecated` map to `draft`, `released`, and `obsolete`), revision date (`date_updated`, falling back to `date_created`), repository URL (`github_url`), and the author list with deduplicated affiliations.
+URL-prefixed ORCID and ROR identifiers are normalized to the bare form the template expects.
+Unknown status states produce a clear error, and `date` and `status` can be passed explicitly to override the mapping.
+The title and abstract stay in the document source, matching the Documenteer convention, so `documenteer technote add-author` and `sync-authors` work unchanged: they edit `technote.toml` and the next compile picks the changes up.
+`examples/technote.typ` demonstrates the flow against `examples/technote.toml`.
+
 ### Exporting authors
 
 The new exporter mode reads an ordered list of AuthorDB identifiers and writes presentation-neutral UTF-8 YAML:
