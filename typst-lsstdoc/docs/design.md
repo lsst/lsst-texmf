@@ -308,8 +308,8 @@ mkdir -p typst-lsstdoc/output
 typst compile \
   --root . \
   --font-path typst-lsstdoc/fonts \
-  typst-lsstdoc/examples/prototype.typ \
-  typst-lsstdoc/output/prototype.pdf
+  typst-lsstdoc/examples/features.typ \
+  typst-lsstdoc/output/features.pdf
 ```
 
 Typst's default PDF is tagged.
@@ -320,8 +320,8 @@ typst compile \
   --root . \
   --font-path typst-lsstdoc/fonts \
   --pdf-standard ua-1 \
-  typst-lsstdoc/examples/prototype.typ \
-  typst-lsstdoc/output/prototype-pdfua.pdf
+  typst-lsstdoc/examples/features.typ \
+  typst-lsstdoc/output/features-pdfua.pdf
 ```
 
 The alt text in the example is part of that successful PDF/UA-1 build.
