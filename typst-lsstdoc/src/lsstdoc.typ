@@ -21,7 +21,7 @@
 /// ```typ
 /// #show: lsstdoc.with(
 ///   title: "My Technote",
-///   doc-ref: "DMTN-999",
+///   id: "DMTN-999",
 ///   series: "DMTN",
 ///   date: "2026-07-16",
 ///   authors: people.authors,
@@ -30,7 +30,7 @@
 /// ```
 ///
 /// - title (str, content): The document title.
-/// - doc-ref (str): The document handle, for example "DMTN-999".
+/// - id (str): The document handle, for example "DMTN-999".
 /// - series (str): The series key, validated against the shared Rubin
 ///   series data that also determines the displayed type label.
 /// - status (str): One of "draft", "released", or "obsolete"; draft and
@@ -58,7 +58,7 @@
 /// -> content
 #let lsstdoc(
   title: none,
-  doc-ref: none,
+  id: none,
   series: none,
   status: "released",
   date: none,
@@ -80,7 +80,7 @@
   body,
 ) = {
   assert(nonempty(title), message: "The title field is required")
-  assert(nonempty(doc-ref), message: "The doc-ref field is required")
+  assert(nonempty(id), message: "The id field is required")
   assert(nonempty(series), message: "The series field is required")
   assert(nonempty(date), message: "The date field is required")
   assert(authors != none, message: "The authors field is required")
@@ -91,7 +91,11 @@
   let displayed-short-title = if nonempty(short-title) { short-title } else { title }
   let author-names = authors.map(author => author.at("display_name"))
 
-  set document(title: title, author: author-names)
+  set document(
+    title: title,
+    author: author-names,
+    description: if type(abstract) == str { abstract } else { none },
+  )
   set text(font: ("Open Sans", "Arial", "Helvetica"), size: 11pt, lang: "en")
   set par(justify: true, leading: 0.8em, spacing: 1em)
   set heading(numbering: "1.1")
@@ -127,10 +131,23 @@
     foreground: render-title-artwork(),
   )
 
+  // Machine-readable front matter, the Typst counterpart of the annotated
+  // abstract structures in Markdown and reStructuredText technotes. Tooling
+  // extracts it from the compiled document with
+  // `typst eval 'query(<rubin-technote>).first().value' --in <file>`.
+  [#metadata((
+    id: id,
+    series: series,
+    status: status,
+    date: date,
+    title: title,
+    abstract: abstract,
+  )) <rubin-technote>]
+
   render-title-page(
     title: title,
     subtitle: subtitle,
-    doc-ref: doc-ref,
+    id: id,
     series: series,
     status: status,
     date: date,
@@ -144,7 +161,7 @@
     margin: (left: 1in, right: 1in, top: 1.4in, bottom: 0.75in),
     header: none,
     footer: running-footer(series, status),
-    foreground: running-header(displayed-short-title, doc-ref, date),
+    foreground: running-header(displayed-short-title, id, date),
     numbering: "i",
   )
   counter(page).update(1)

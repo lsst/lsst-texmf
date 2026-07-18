@@ -1,6 +1,9 @@
 #import "../src/lsstdoc.typ": citeds, citedsp, lsstdoc, note, warning
 
-#let metadata = yaml("metadata.yaml")
+// Author data is generated from the central author database with
+// db2authors.py --mode typst-yaml; the remaining metadata is passed as
+// direct template arguments. Technote repositories use technote.toml and
+// technote-args instead (see technote.typ).
 #let people = yaml("authors.yaml")
 #let bibliography-sources = (
   // Loading bytes here resolves paths from this document rather than from the
@@ -14,20 +17,37 @@
 )
 
 #show: lsstdoc.with(
-  title: metadata.title,
-  short-title: metadata.short_title,
-  subtitle: metadata.subtitle,
-  doc-ref: metadata.doc_ref,
-  series: metadata.series,
-  status: metadata.status,
-  date: metadata.date,
-  doi: metadata.doi,
-  repository-url: metadata.repository_url,
+  title: "A Typst Prototype for Rubin Technical Documents",
+  short-title: "Typst lsstdoc Prototype",
+  subtitle: "Structured metadata, authorship, and page design",
+  id: "DMTN-999",
+  series: "DMTN",
+  status: "draft",
+  date: "2026-07-16",
+  repository-url: "https://github.com/lsst/lsst-texmf",
   authors: people.authors,
   affiliations: people.affiliations,
-  abstract: metadata.abstract,
-  changes: metadata.changes,
-  toc: metadata.toc,
+  abstract: [
+    This proof of concept demonstrates a Rubin Observatory technical document
+    assembled from native Typst components and structured metadata. It
+    exercises the title page, authors and affiliations, document state, front
+    matter, page furniture, technical content, cross-references, and an
+    existing BibTeX workflow without attempting pixel-identical LaTeX output.
+  ],
+  changes: (
+    (
+      version: "0.1",
+      date: "2026-07-16",
+      description: "Initial YAML-driven Typst prototype.",
+      author: "Tim Jenness",
+    ),
+    (
+      version: "0.2",
+      date: "2026-07-20",
+      description: "Added bibliography, page furniture, and technical examples.",
+      author: "Prototype Team",
+    ),
+  ),
   bibliography: bibliography-sources,
 )
 
@@ -35,9 +55,10 @@
 
 Rubin Observatory technical documents need a recognizable hierarchy and
 consistent metadata without requiring authors to write presentation markup.
-This prototype loads the title, state, change record, people, and affiliations
-directly from YAML. It also cites ordinary BibTeX entries using Typst's native
-bibliography support @jenness-example.
+This prototype passes document metadata as template arguments and loads the
+generated author and affiliation data directly from YAML. It also cites
+ordinary BibTeX entries using Typst's native bibliography support
+@jenness-example.
 
 The implementation is intentionally not a line-by-line translation of
 `lsstdoc.cls`. It follows the same design language while using native Typst
@@ -128,8 +149,8 @@ Inline code such as `typst compile` uses a monospace font. Blocks use native
 raw content:
 
 ```python
-metadata = load_yaml("metadata.yaml")
-document = render_template(metadata)
+authors = load_yaml("authors.yaml")
+document = render_template(authors)
 ```
 
 The first prototype demonstrates:
