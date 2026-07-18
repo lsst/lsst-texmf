@@ -32,6 +32,7 @@ TN_SERIES = {
     "LEP": "Education and Public Outreach Controlled Document",
     "CTN": "Camera Technical Note",
     "RDO": "Rubin Directors Office",
+    "TESTN": "Test Technical Note",
     "Agreement": "Formal Construction Agreement",
     "Document": "Informal Construction Document",
     "Publication": "LSST Construction Publication",
