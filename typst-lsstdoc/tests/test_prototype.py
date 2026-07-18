@@ -95,6 +95,8 @@ class TypstCompileTest(unittest.TestCase):
             self.assertIn("technical-note series", extracted)
             self.assertIn("Tidy Data", extracted)
             self.assertNotIn("Software Carpentry", extracted)
+            # The running header must not leak stray punctuation.
+            self.assertNotRegex(extracted, r"(?m)^,$")
         if qpdf := shutil.which("qpdf"):
             qdf = self.tempdir / "prototype-qdf.pdf"
             subprocess.run(
@@ -104,8 +106,8 @@ class TypstCompileTest(unittest.TestCase):
                 check=True,
             )
             structure = qdf.read_bytes().decode("latin-1")
-            self.assertRegex(structure, r"(?s)/Contents \(DMTN-001\).*?/Dest")
-            self.assertRegex(structure, r"(?s)/Contents \(technical-note series\).*?/Dest")
+            self.assertIn("/Contents (DMTN-001)", structure)
+            self.assertIn("/Contents (technical-note series)", structure)
 
     def test_document_states_and_generated_authors(self) -> None:
         generated = self.tempdir / "authors.yaml"
@@ -146,6 +148,57 @@ class TypstCompileTest(unittest.TestCase):
                 )
                 self.assertEqual(result.returncode, 0, result.stderr)
                 self.assertTrue(output.exists())
+
+    def test_change_record_accepts_non_string_values(self) -> None:
+        source = self.tempdir / "changes.typ"
+        source.write_text(
+            '#import "../../src/change-record.typ": render-change-record\n'
+            "#render-change-record((\n"
+            '  (version: 0.1, date: "2026-01-01", description: "Start", author: "A Person"),\n'
+            "))\n",
+            encoding="utf-8",
+        )
+        result = self.compile(source, self.tempdir / "changes.pdf")
+        self.assertEqual(result.returncode, 0, result.stderr)
+
+    @unittest.skipUnless(shutil.which("pdftotext"), "pdftotext is not installed")
+    def test_two_authors_have_no_comma_before_and(self) -> None:
+        people = {
+            "authors": [
+                {
+                    "internal_id": "a",
+                    "given_name": "Ada",
+                    "family_name": "Lovelace",
+                    "display_name": "Ada Lovelace",
+                    "orcid": None,
+                    "affiliations": ["INST"],
+                },
+                {
+                    "internal_id": "b",
+                    "given_name": "Grace",
+                    "family_name": "Hopper",
+                    "display_name": "Grace Hopper",
+                    "orcid": None,
+                    "affiliations": ["INST"],
+                },
+            ],
+            "affiliations": {"INST": {"name": "Example Institute", "address": "Tucson", "ror": None}},
+        }
+        authors_file = self.tempdir / "two-authors.yaml"
+        authors_file.write_text(yaml.safe_dump(people), encoding="utf-8")
+        relative = authors_file.relative_to(PROTOTYPE / "examples", walk_up=True)
+
+        output = self.tempdir / "two-authors.pdf"
+        result = self.compile(PROTOTYPE / "examples/state.typ", output, f"authors={relative}")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        extracted = subprocess.run(
+            ["pdftotext", str(output), "-"],
+            text=True,
+            capture_output=True,
+            check=True,
+        ).stdout
+        self.assertIn("Ada Lovelace", extracted)
+        self.assertNotRegex(extracted, r"Lovelace\s*,")
 
     def test_invalid_document_state_fails_clearly(self) -> None:
         result = self.compile(

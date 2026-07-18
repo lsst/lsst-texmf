@@ -15,12 +15,15 @@
         [#text(weight: "bold", fill: rubin-teal)[Description]],
         [#text(weight: "bold", fill: rubin-teal)[Owner]],
       ),
+      // Interpolate so that YAML scalars such as an unquoted version 0.1
+      // (a float) are accepted as cell content.
       ..changes.map(change => (
-        change.at("version"),
-        change.at("date"),
-        change.at("description"),
-        change.at("author"),
+        [#change.at("version")],
+        [#change.at("date")],
+        [#change.at("description")],
+        [#change.at("author")],
       )).flatten(),
     )
+    pagebreak(weak: true)
   }
 }
