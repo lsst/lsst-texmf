@@ -78,21 +78,25 @@ compiles the document, while `make add-author` and `make sync-authors`
 manage the author list in `technote.toml` from the central author database.
 
 A document selects the template with a show rule, spreading the mapped
-`technote.toml` metadata and keeping the title and abstract in the source:
+`technote.toml` metadata and keeping the title and abstract in the source,
+as @lst-quickstart shows.
 
-```typ
-#import "@preview/rubin-technote:0.1.0": lsstdoc, technote-args
+#figure(
+  ```typ
+  #import "@preview/rubin-technote:0.1.0": lsstdoc, technote-args
 
-#show: lsstdoc.with(
-  ..technote-args(toml("technote.toml")),
-  title: "My Technote",
-  abstract: [A short description of this document.],
-)
+  #show: lsstdoc.with(
+    ..technote-args(toml("technote.toml")),
+    title: "My Technote",
+    abstract: [A short description of this document.],
+  )
 
-= Introduction
+  = Introduction
 
-Add content here.
-```
+  Add content here.
+  ```,
+  caption: [A minimal `index.typ` driving the template from `technote.toml`.],
+) <lst-quickstart>
 
 Documents outside the technote workflow pass every field directly instead;
 @tab-arguments lists the full argument set.
@@ -143,7 +147,20 @@ footer.
 
 == Documenteer technote.toml <sec-toml>
 
-`technote-args` maps a parsed `technote.toml` onto the arguments of
+`technote.toml` is the metadata file shared with Markdown and
+reStructuredText technotes; the full schema is documented in the
+#link("https://technote.lsst.io/user-guide/technote-toml.html")[technote.toml
+user guide].
+@lst-technote-toml shows a representative file (this package's technote
+example fixture), and @lst-quickstart in @sec-quickstart shows how the
+mapped values are passed to the template.
+
+#figure(
+  raw(read("../examples/technote.toml"), lang: "toml", block: true),
+  caption: [A representative `technote.toml` metadata file.],
+) <lst-technote-toml>
+
+`technote-args` maps the parsed file onto the arguments of
 @tab-arguments: `id`, `series_id`, `status.state` (`draft`, `stable`, and
 `deprecated` become `draft`, `released`, and `obsolete`), `date_updated`
 falling back to `date_created`, `doi`, `github_url`, the optional `title`
