@@ -15,6 +15,47 @@
 #let citedsp = citations.citedsp
 #let technote-args = technote-toml.technote-args
 
+/// Render a Rubin Observatory technical document.
+///
+/// Use as a show rule:
+/// ```typ
+/// #show: lsstdoc.with(
+///   title: "My Technote",
+///   doc-ref: "DMTN-999",
+///   series: "DMTN",
+///   date: "2026-07-16",
+///   authors: people.authors,
+///   affiliations: people.affiliations,
+/// )
+/// ```
+///
+/// - title (str, content): The document title.
+/// - doc-ref (str): The document handle, for example "DMTN-999".
+/// - series (str): The series key, validated against the shared Rubin
+///   series data that also determines the displayed type label.
+/// - status (str): One of "draft", "released", or "obsolete"; draft and
+///   obsolete documents get watermarks and footer state marks.
+/// - date (str): The latest revision date shown on the title page and in
+///   the running header.
+/// - authors (array): Ordered author dictionaries with `display_name`,
+///   optional `orcid` and `corresponding`, and `affiliations` identifiers.
+/// - affiliations (dictionary): Affiliation records keyed by identifier,
+///   each with a `name` and optional `address` and `ror`.
+/// - short-title (str, none): Running-header title; defaults to the title.
+/// - subtitle (str, none): Optional subtitle shown below the title.
+/// - doi (str, none): Bare DOI rendered as a link on the title page.
+/// - repository-url (str, none): Document source link shown after the body.
+/// - abstract (content, none): Abstract rendered in the front matter.
+/// - changes (array): Change-record entries with `version`, `date`,
+///   `description`, and `author` fields.
+/// - toc (bool): Whether to render a table of contents.
+/// - bibliography (bytes, array, none): Bibliography sources loaded with
+///   `read(path, encoding: none)` from the document.
+/// - bibliography-style (str): A bundled citation style name or a CSL file
+///   path; defaults to APA.
+/// - bibliography-full (bool): List all entries, not only the cited ones.
+/// - body (content): The document body.
+/// -> content
 #let lsstdoc(
   title: none,
   doc-ref: none,
