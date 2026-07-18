@@ -9,7 +9,7 @@ import unicodedata
 from typing import Annotated, Self
 
 import yaml
-from db2authors import check_orcid, latex2text
+from authorutils import check_orcid, latex2text
 from pydantic import AfterValidator, BaseModel, ConfigDict, Field, model_validator
 
 
