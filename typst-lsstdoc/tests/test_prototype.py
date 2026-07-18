@@ -91,10 +91,10 @@ class TypstCompileTest(unittest.TestCase):
         command.extend((str(source), str(output)))
         return subprocess.run(command, text=True, capture_output=True, check=False)
 
-    def test_full_prototype_compiles(self) -> None:
-        output = self.tempdir / "prototype.pdf"
+    def test_features_example_compiles(self) -> None:
+        output = self.tempdir / "features.pdf"
         result = self.compile(
-            PROTOTYPE / "examples/prototype.typ",
+            PROTOTYPE / "examples/features.typ",
             output,
             pdf_standard="ua-1",
         )
@@ -114,7 +114,7 @@ class TypstCompileTest(unittest.TestCase):
             # The running header must not leak stray punctuation.
             self.assertNotRegex(extracted, r"(?m)^,$")
         if qpdf := shutil.which("qpdf"):
-            qdf = self.tempdir / "prototype-qdf.pdf"
+            qdf = self.tempdir / "features-qdf.pdf"
             subprocess.run(
                 [qpdf, "--qdf", "--object-streams=disable", str(output), str(qdf)],
                 text=True,
@@ -300,13 +300,26 @@ class TypstCompileTest(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stderr)
 
     def test_manual_compiles(self) -> None:
-        """The tidy-based manual builds from the API doc comments."""
+        """The user guide builds and is typeset with the template itself."""
+        output = self.tempdir / "manual.pdf"
         result = self.compile(
             PROTOTYPE / "docs/manual.typ",
-            self.tempdir / "manual.pdf",
+            output,
             root=PROTOTYPE,
         )
         self.assertEqual(result.returncode, 0, result.stderr)
+        if pdftotext := shutil.which("pdftotext"):
+            extracted = subprocess.run(
+                [pdftotext, str(output), "-"],
+                text=True,
+                capture_output=True,
+                check=True,
+            ).stdout
+            self.assertIn("Change Record", extracted)
+            self.assertIn("Contents", extracted)
+            self.assertIn("Admonitions", extracted)
+            self.assertIn("API reference", extracted)
+            self.assertIn("References", extracted)
 
     @unittest.skipUnless(shutil.which("pdftotext"), "pdftotext is not installed")
     def test_technote_toml_maps_doi(self) -> None:

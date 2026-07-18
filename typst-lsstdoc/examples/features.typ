@@ -1,7 +1,9 @@
 #import "../src/lsstdoc.typ": citeds, citedsp, lsstdoc, note, warning
 
-// This example passes everything as direct template arguments. Technote
-// repositories use technote.toml and technote-args instead (see
+// Acceptance fixture: this document exercises every template feature in one
+// build and is compiled by the test suite. The user-facing documentation is
+// docs/manual.typ. It passes everything as direct template arguments;
+// technote repositories use technote.toml and technote-args instead (see
 // technote.typ), which also keeps the author list synchronized with the
 // central author database.
 #let bibliography-sources = (
