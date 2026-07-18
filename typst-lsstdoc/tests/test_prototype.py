@@ -172,6 +172,48 @@ class TypstCompileTest(unittest.TestCase):
         result = self.compile(source, self.tempdir / "bib-style.pdf")
         self.assertEqual(result.returncode, 0, result.stderr)
 
+    def write_doi_document(self, doi: str) -> Path:
+        """Write a minimal document that sets the given DOI."""
+        source = self.tempdir / "doi.typ"
+        source.write_text(
+            '#import "../../src/lsstdoc.typ": lsstdoc\n'
+            '#let people = yaml("../../examples/authors.yaml")\n'
+            "#show: lsstdoc.with(\n"
+            '  title: "DOI Test",\n'
+            '  doc-ref: "DMTN-999",\n'
+            '  series: "DMTN",\n'
+            '  date: "2026-07-16",\n'
+            "  authors: people.authors,\n"
+            "  affiliations: people.affiliations,\n"
+            "  toc: false,\n"
+            f'  doi: "{doi}",\n'
+            ")\n"
+            "= Test\n",
+            encoding="utf-8",
+        )
+        return source
+
+    @unittest.skipUnless(shutil.which("pdftotext"), "pdftotext is not installed")
+    def test_doi_renders_once_as_link(self) -> None:
+        source = self.write_doi_document("10.71929/example.71")
+        output = self.tempdir / "doi.pdf"
+        result = self.compile(source, output)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        extracted = subprocess.run(
+            ["pdftotext", str(output), "-"],
+            text=True,
+            capture_output=True,
+            check=True,
+        ).stdout
+        self.assertEqual(extracted.count("https://doi.org/10.71929/example.71"), 1)
+        self.assertEqual(extracted.count("https://doi.org/"), 1)
+
+    def test_url_prefixed_doi_is_rejected(self) -> None:
+        source = self.write_doi_document("https://doi.org/10.71929/example.71")
+        result = self.compile(source, self.tempdir / "doi-bad.pdf")
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("bare identifier", result.stderr)
+
     def test_change_record_accepts_non_string_values(self) -> None:
         source = self.tempdir / "changes.typ"
         source.write_text(
