@@ -194,6 +194,43 @@ class TypstCompileTest(unittest.TestCase):
         self.assertLess(normalized.index("Document curator:"), normalized.index("1 Test"))
         self.assertNotIn("Document source:", normalized)
 
+    @unittest.skipUnless(shutil.which("pdftotext"), "pdftotext is not installed")
+    def test_source_version_from_build_input(self) -> None:
+        """source-version defaults to the build's --input value."""
+        source = self.tempdir / "gitversion.typ"
+        source.write_text(
+            '#import "../../src/lsstdoc.typ": lsstdoc\n'
+            "#show: lsstdoc.with(\n"
+            '  title: "Git Version Test",\n'
+            '  id: "DMTN-999",\n'
+            '  series: "DMTN",\n'
+            '  date: "2026-07-16",\n' + SINGLE_AUTHOR_ARGS + "  toc: false,\n"
+            ")\n"
+            "= Test\n",
+            encoding="utf-8",
+        )
+
+        def extract(output: Path) -> str:
+            return subprocess.run(
+                ["pdftotext", str(output), "-"],
+                text=True,
+                capture_output=True,
+                check=True,
+            ).stdout
+
+        stamped = self.tempdir / "stamped.pdf"
+        result = self.compile(source, stamped, "source-version=abc1234-dirty")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn(
+            "Version from source repository: abc1234-dirty",
+            " ".join(extract(stamped).split()),
+        )
+
+        plain = self.tempdir / "plain.pdf"
+        result = self.compile(source, plain)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertNotIn("Version from source repository", extract(plain))
+
     def test_document_states(self) -> None:
         for status in ("draft", "released", "obsolete"):
             with self.subTest(status=status):

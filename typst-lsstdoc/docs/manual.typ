@@ -119,7 +119,7 @@ Documents outside the technote workflow pass every field directly instead;
     [`doi`], [`none`], [Bare DOI rendered as a link on the title page; URL-prefixed values are rejected.],
     [`repository-url`], [`none`], [Document source location, shown after the change record.],
     [`curator`], [`none`], [Document curator, shown after the change record.],
-    [`source-version`], [`none`], [Repository version of the source, shown after the change record.],
+    [`source-version`], [`auto`], [Repository version of the source, shown after the change record; `auto` uses the build's `--input source-version=...`, which the technote Makefile derives from git.],
     [`citation-information`], [`none`], [How to cite the document, shown after the change record.],
     [`abstract`], [`none`], [Front-matter abstract; a plain string also becomes the PDF description.],
     [`changes`], [`()`], [Change-record entries with `version`, `date`, `description`, and `author`.],
