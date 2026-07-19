@@ -3,6 +3,7 @@
 #import "document-state.typ": state-background, validate-status
 #import "headers-footers.typ": running-footer, running-header
 #import "title-page.typ": render-title-artwork, render-title-page
+#import "authors.typ": render-affiliation-page
 #import "front-matter.typ": render-abstract, render-contents
 #import "change-record.typ": render-change-record
 #import "citations.typ" as citations
@@ -63,6 +64,12 @@
   /// optional `address` and `ror`.
   /// -> dictionary
   affiliations: none,
+  /// How affiliations are displayed: "inline" lists them below the
+  /// authors, "deferred" moves them to their own front-matter page with
+  /// the title-page markers linked to the entries, and "none" hides the
+  /// markers and the list entirely.
+  /// -> str
+  affiliation-style: "inline",
   /// Running-header title; defaults to the title.
   /// -> str | none
   short-title: none,
@@ -127,6 +134,11 @@
     validate-series(series)
   }
   validate-doi(doi)
+  assert(
+    affiliation-style in ("inline", "none", "deferred"),
+    message: "Unsupported affiliation-style: " + affiliation-style
+      + ". Expected inline, none, or deferred.",
+  )
   let displayed-short-title = if nonempty(short-title) { short-title } else { title }
   let author-names = authors.map(author => author.at("display_name"))
 
@@ -208,6 +220,7 @@
     doi: doi,
     authors: authors,
     affiliations: affiliations,
+    affiliation-style: affiliation-style,
   )
 
   pagebreak()
@@ -221,6 +234,9 @@
   counter(page).update(1)
 
   render-abstract(abstract)
+  if affiliation-style == "deferred" {
+    render-affiliation-page(authors, affiliations)
+  }
   render-change-record(
     changes,
     curator: curator,

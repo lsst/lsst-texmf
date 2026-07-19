@@ -330,7 +330,8 @@ This is encouraging evidence, not yet a full accessibility audit.
 
 The primary show-rule function is `lsstdoc`.
 Required arguments are `title`, `date`, `authors`, and `affiliations`; `id` (deliberately matching the technote.toml field name for the document handle) and `series` are omitted by standalone documents such as the package's own user guide, which then carry no handle or series label.
-Optional arguments are `short-title`, `subtitle`, `status`, `doi`, `repository-url`, `curator`, `source-version`, `citation-information`, `abstract`, `changes`, `toc`, `bibliography`, `bibliography-style`, and `bibliography-full`.
+Optional arguments are `short-title`, `subtitle`, `status`, `doi`, `repository-url`, `curator`, `source-version`, `citation-information`, `abstract`, `changes`, `toc`, `affiliation-style`, `bibliography`, `bibliography-style`, and `bibliography-full`.
+`affiliation-style` places affiliations below the authors, on their own front-matter page with linked markers (the counterpart of AASTeX deferred affiliations), or hides them.
 The template also emits the front matter as a labeled metadata element, so tooling can extract the handle, title, and abstract from the compiled document with `typst eval 'query(<rubin-technote>).first().value' --in <file>`, the Typst counterpart of the annotated abstract structures in Markdown and reStructuredText technotes.
 `status` accepts only `draft`, `released`, or `obsolete`.
 Bibliographies list only cited entries by default; set `bibliography-full: true` only for the equivalent of `\nocite{*}`.
