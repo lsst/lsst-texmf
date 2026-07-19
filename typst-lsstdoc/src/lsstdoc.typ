@@ -149,6 +149,10 @@
       it
     }
   }
+  // Citations link into the reference list; style them like external
+  // links so they are easy to spot, matching the hyperref link treatment
+  // in the LaTeX class. Adjacent citations still merge into one group.
+  show cite: url-styled
 
   set page(
     paper: "us-letter",

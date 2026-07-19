@@ -228,7 +228,8 @@ Equations are numbered:
 
 $ L = 4 pi R^2 sigma T^4 $
 
-External links are rendered dark blue and underlined, while internal
+External links and citations are rendered dark blue and underlined so
+they are easy to spot, while internal section, figure, and table
 references keep the ordinary text styling.
 Table figures may span pages with repeated headers, as @tab-arguments
 demonstrates.
