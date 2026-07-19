@@ -82,7 +82,9 @@
   /// Version of the document in its source repository, shown in the front
   /// matter after the change record. `auto` takes the value from the
   /// build's `--input source-version=...`, which the technote Makefile
-  /// derives from the git state; nothing is shown when neither is set.
+  /// derives from the git state, and shows it only while the document is
+  /// a draft; released and obsolete documents rely on the change record.
+  /// An explicit value always renders.
   /// -> auto | str | none
   source-version: auto,
   /// How to cite this document, shown in the front matter after the
@@ -218,7 +220,15 @@
     curator: curator,
     repository-url: repository-url,
     source-version: if source-version == auto {
-      sys.inputs.at("source-version", default: none)
+      // Drafts show the build's version stamp so evolving state is
+      // traceable; released and obsolete documents rely on the change
+      // record, which is updated at release. An explicit value always
+      // renders.
+      if status == "draft" {
+        sys.inputs.at("source-version", default: none)
+      } else {
+        none
+      }
     } else {
       source-version
     },
