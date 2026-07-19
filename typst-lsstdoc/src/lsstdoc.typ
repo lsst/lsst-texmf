@@ -175,8 +175,14 @@
     margin: (left: 1in, right: 1in, top: 0.6in, bottom: 0.55in),
     header: none,
     footer: none,
-    background: state-background(status),
-    foreground: render-title-artwork(),
+    background: {
+      state-background(status)
+      // The observatory artwork appears only on the first page; a long
+      // author list may flow the title content onto a second page.
+      context if here().page() == 1 {
+        render-title-artwork()
+      }
+    },
   )
 
   // Machine-readable front matter, the Typst counterpart of the annotated
