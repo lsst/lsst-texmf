@@ -80,9 +80,11 @@
   /// -> str | none
   curator: none,
   /// Version of the document in its source repository, shown in the front
-  /// matter after the change record.
-  /// -> str | none
-  source-version: none,
+  /// matter after the change record. `auto` takes the value from the
+  /// build's `--input source-version=...`, which the technote Makefile
+  /// derives from the git state; nothing is shown when neither is set.
+  /// -> auto | str | none
+  source-version: auto,
   /// How to cite this document, shown in the front matter after the
   /// change record.
   /// -> str | content | none
@@ -215,7 +217,11 @@
     changes,
     curator: curator,
     repository-url: repository-url,
-    source-version: source-version,
+    source-version: if source-version == auto {
+      sys.inputs.at("source-version", default: none)
+    } else {
+      source-version
+    },
     citation-information: citation-information,
   )
   render-contents(enabled: toc)
