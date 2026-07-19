@@ -126,6 +126,51 @@ class TypstCompileTest(unittest.TestCase):
             self.assertIn("/Contents (technical-note series)", structure)
 
     @unittest.skipUnless(shutil.which("pdftotext"), "pdftotext is not installed")
+    def test_long_author_list_flows_to_second_page(self) -> None:
+        """A very long author list continues onto a second title page."""
+        authors = ",\n".join(
+            f'    (internal_id: "a{i}", display_name: "Author Number{i}", affiliations: ("INST{i % 5}",))'
+            for i in range(100)
+        )
+        affiliations = ",\n".join(
+            f'    INST{i}: (name: "Institute {i}", address: "City {i}", ror: none)' for i in range(5)
+        )
+        source = self.tempdir / "many-authors.typ"
+        source.write_text(
+            '#import "../../src/lsstdoc.typ": lsstdoc\n'
+            "#show: lsstdoc.with(\n"
+            '  title: "A Technote With One Hundred Authors",\n'
+            '  id: "DMTN-999",\n'
+            '  series: "DMTN",\n'
+            '  date: "2026-07-16",\n'
+            f"  authors: (\n{authors},\n  ),\n"
+            f"  affiliations: (\n{affiliations},\n  ),\n"
+            "  toc: false,\n"
+            ")\n"
+            "= Test\n",
+            encoding="utf-8",
+        )
+        output = self.tempdir / "many-authors.pdf"
+        result = self.compile(source, output)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        pages = [
+            " ".join(page.split())
+            for page in subprocess.run(
+                ["pdftotext", str(output), "-"],
+                text=True,
+                capture_output=True,
+                check=True,
+            ).stdout.split("\f")
+        ]
+        # The title and first authors stay on page one; the overflow,
+        # ending with the handle and revision date, continues on page two
+        # instead of colliding with the page-one furniture.
+        self.assertIn("A Technote With One Hundred Authors", pages[0])
+        self.assertIn("Author Number0", pages[0])
+        self.assertIn("Latest Revision: 2026-07-16", pages[1])
+        self.assertIn("1 Test", pages[2])
+
+    @unittest.skipUnless(shutil.which("pdftotext"), "pdftotext is not installed")
     def test_standalone_document_without_handle(self) -> None:
         """Standalone documents may omit the handle and series."""
         source = self.tempdir / "no-handle.typ"
