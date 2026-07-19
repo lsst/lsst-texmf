@@ -48,7 +48,9 @@
             [],
             text(size: 17pt, weight: "bold", fill: rubin-teal)[Vera C. Rubin Observatory],
             [],
-            text(size: 16pt, weight: "bold", fill: rubin-teal, series-label(series)),
+            text(size: 16pt, weight: "bold", fill: rubin-teal, if series == none { "" } else {
+              series-label(series)
+            }),
           )
         ]
       ],
@@ -63,8 +65,10 @@
         #v(20pt)
         #render-authors(authors, affiliations)
         #v(16pt)
-        #text(size: 14pt, weight: "bold", id)
-        #v(7pt)
+        #if nonempty(id) {
+          text(size: 14pt, weight: "bold", id)
+          v(7pt)
+        }
         #if nonempty(doi) {
           // Pass the display text as a string: in markup a literal
           // https:// URL would swallow an interpolation as a fragment.

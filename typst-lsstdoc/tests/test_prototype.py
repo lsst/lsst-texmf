@@ -125,6 +125,30 @@ class TypstCompileTest(unittest.TestCase):
             self.assertIn("/Contents (DMTN-001)", structure)
             self.assertIn("/Contents (technical-note series)", structure)
 
+    @unittest.skipUnless(shutil.which("pdftotext"), "pdftotext is not installed")
+    def test_standalone_document_without_handle(self) -> None:
+        """Standalone documents may omit the handle and series."""
+        source = self.tempdir / "no-handle.typ"
+        source.write_text(
+            '#import "../../src/lsstdoc.typ": lsstdoc\n'
+            "#show: lsstdoc.with(\n"
+            '  title: "Standalone Guide",\n'
+            '  date: "2026-07-18",\n' + SINGLE_AUTHOR_ARGS + "  toc: false,\n"
+            ")\n"
+            "= Test\n",
+            encoding="utf-8",
+        )
+        output = self.tempdir / "no-handle.pdf"
+        result = self.compile(source, output)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        extracted = subprocess.run(
+            ["pdftotext", str(output), "-"],
+            text=True,
+            capture_output=True,
+            check=True,
+        ).stdout
+        self.assertIn("Standalone Guide | Latest Revision 2026-07-18", extracted)
+
     def test_document_states(self) -> None:
         for status in ("draft", "released", "obsolete"):
             with self.subTest(status=status):
@@ -382,6 +406,8 @@ class TypstCompileTest(unittest.TestCase):
             self.assertIn("Admonitions", extracted)
             self.assertIn("API reference", extracted)
             self.assertIn("References", extracted)
+            # The guide is a standalone document with no technote handle.
+            self.assertNotIn("TESTN-001", extracted)
 
     @unittest.skipUnless(shutil.which("pdftotext"), "pdftotext is not installed")
     def test_technote_toml_maps_doi(self) -> None:

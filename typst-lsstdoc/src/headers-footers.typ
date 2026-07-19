@@ -17,7 +17,9 @@
           size: 7pt,
           fill: muted-teal,
           weight: "bold",
-          short-title + "  |  " + id + "  |  Latest Revision " + date,
+          (short-title, id, "Latest Revision " + date)
+            .filter(part => part != none)
+            .join("  |  "),
         ),
       )
     ]

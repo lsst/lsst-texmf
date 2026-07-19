@@ -38,12 +38,14 @@
   /// -> str | content
   title: none,
   /// The document handle, for example "DMTN-999"; the argument name
-  /// matches the technote.toml field.
-  /// -> str
+  /// matches the technote.toml field. Omit it for standalone documents
+  /// such as manuals, which have no handle.
+  /// -> str | none
   id: none,
   /// The series key, validated against the shared Rubin series data that
-  /// also determines the displayed type label.
-  /// -> str
+  /// also determines the displayed type label. Omit it together with the
+  /// handle for standalone documents.
+  /// -> str | none
   series: none,
   /// One of "draft", "released", or "obsolete"; draft and obsolete
   /// documents get watermarks and footer state marks.
@@ -101,13 +103,13 @@
   body,
 ) = {
   assert(nonempty(title), message: "The title field is required")
-  assert(nonempty(id), message: "The id field is required")
-  assert(nonempty(series), message: "The series field is required")
   assert(nonempty(date), message: "The date field is required")
   assert(authors != none, message: "The authors field is required")
   assert(affiliations != none, message: "The affiliations field is required")
   validate-status(status)
-  validate-series(series)
+  if series != none {
+    validate-series(series)
+  }
   validate-doi(doi)
   let displayed-short-title = if nonempty(short-title) { short-title } else { title }
   let author-names = authors.map(author => author.at("display_name"))
