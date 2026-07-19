@@ -1,5 +1,3 @@
-#import "utilities.typ": url-styled
-
 #let citation-key-style = "../assets/citation-key.csl"
 
 #let citation-label(key) = {
@@ -28,12 +26,12 @@
   display: none,
 ) = {
   let destination = citation-label(key)
-  let citation = cite(
+  // The lsstdoc show rule styles all citations like external links.
+  cite(
     destination,
     supplement: display,
     style: citation-key-style,
   )
-  url-styled(citation)
 }
 
 /// Cite a bibliography entry by key, wrapped in square brackets.

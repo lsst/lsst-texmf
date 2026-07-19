@@ -342,7 +342,7 @@ The citation helpers display a bibliography key (or alternate text) while adding
 Their blue underlined text uses Typst's native citation link to the exact bibliography entry.
 
 External HTTP and HTTPS links are dark blue and underlined in body text and bibliographies.
-Internal cross-references and citations retain the ordinary document text styling.
+Citations are styled the same way so they are easy to spot, matching the hyperref link treatment in the LaTeX class; internal section, figure, and table references retain the ordinary document text styling.
 
 ```typst
 #import "../src/lsstdoc.typ": citeds, citedsp, lsstdoc, technote-args
