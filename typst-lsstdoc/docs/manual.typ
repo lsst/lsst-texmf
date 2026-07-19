@@ -4,14 +4,12 @@
 #let package = toml("../typst.toml").at("package")
 
 // The guide is typeset with the package it documents, so its own pages
-// demonstrate the features it describes. TESTN is the series reserved for
-// template test documents.
+// demonstrate the features it describes. As a standalone document it has
+// no handle or series.
 #show: lsstdoc.with(
   title: "The rubin-technote Package",
   short-title: "rubin-technote User Guide",
   subtitle: "User guide for version " + package.version,
-  id: "TESTN-001",
-  series: "TESTN",
   status: "released",
   date: "2026-07-18",
   repository-url: package.repository,
@@ -61,8 +59,8 @@ tooling applies unchanged.
 This guide is itself a Rubin document produced by the package: its title
 page, contents, change record, and the tables and callouts below are the
 features it describes.
-The `TESTN` series shown on the title page is the series reserved for
-template test documents.
+It is also a standalone document rather than a technote, so it omits the
+`id` and `series` arguments and carries no handle or series label.
 Build the guide from the package root with:
 
 ```sh
@@ -110,8 +108,8 @@ Documents outside the technote workflow pass every field directly instead;
     stroke: 0.4pt + rgb("#777777"),
     table.header([*Argument*], [*Default*], [*Purpose*]),
     [`title`], [required], [Document title, also used as PDF metadata.],
-    [`id`], [required], [Document handle, for example `DMTN-999`; the name matches the `technote.toml` field.],
-    [`series`], [required], [Series key, validated against the shared Rubin series data in `data/series.yaml`.],
+    [`id`], [`none`], [Document handle, for example `DMTN-999`; the name matches the `technote.toml` field. Omit for standalone documents such as this guide.],
+    [`series`], [`none`], [Series key, validated against the shared Rubin series data in `data/series.yaml`; omitted together with `id`.],
     [`date`], [required], [Latest revision date for the title page and running header.],
     [`authors`], [required], [Ordered author dictionaries; see @sec-authors.],
     [`affiliations`], [required], [Affiliation records keyed by identifier; see @sec-authors.],
