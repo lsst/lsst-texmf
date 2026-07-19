@@ -26,6 +26,9 @@
   status: "draft",
   date: "2026-07-16",
   repository-url: "https://github.com/lsst/lsst-texmf",
+  curator: "Tim Jenness",
+  source-version: "tickets/DM-55518",
+  citation-information: "Cite this document as Jenness et al. (2026), DMTN-999.",
   authors: (
     (
       internal_id: "jennesst",

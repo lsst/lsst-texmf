@@ -1,6 +1,12 @@
-#import "utilities.typ": light-teal, rubin-teal
+#import "utilities.typ": light-teal, nonempty, rubin-teal
 
-#let render-change-record(changes) = {
+#let render-change-record(
+  changes,
+  curator: none,
+  repository-url: none,
+  source-version: none,
+  citation-information: none,
+) = {
   if changes.len() > 0 {
     heading(level: 1, outlined: false, numbering: none)[Change Record]
     table(
@@ -24,6 +30,32 @@
         [#change.at("author")],
       )).flatten(),
     )
+  }
+
+  // Document provenance follows the change table, as in lsstdoc.cls.
+  let lines = ()
+  if nonempty(curator) {
+    lines.push((emph[Document curator:], [#curator]))
+  }
+  if nonempty(repository-url) {
+    lines.push((emph[Document source location:], link(repository-url)))
+  }
+  if nonempty(source-version) {
+    lines.push((emph[Version from source repository:], [#source-version]))
+  }
+  if nonempty(citation-information) {
+    lines.push((emph[Cite as:], [#citation-information]))
+  }
+  if lines.len() > 0 {
+    if changes.len() > 0 {
+      v(8pt)
+    }
+    for (label, value) in lines {
+      [#label #value #linebreak()]
+    }
+  }
+
+  if changes.len() > 0 or lines.len() > 0 {
     pagebreak(weak: true)
   }
 }
