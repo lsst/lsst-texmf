@@ -196,40 +196,62 @@ class TypstCompileTest(unittest.TestCase):
 
     @unittest.skipUnless(shutil.which("pdftotext"), "pdftotext is not installed")
     def test_source_version_from_build_input(self) -> None:
-        """source-version defaults to the build's --input value."""
-        source = self.tempdir / "gitversion.typ"
-        source.write_text(
-            '#import "../../src/lsstdoc.typ": lsstdoc\n'
-            "#show: lsstdoc.with(\n"
-            '  title: "Git Version Test",\n'
-            '  id: "DMTN-999",\n'
-            '  series: "DMTN",\n'
-            '  date: "2026-07-16",\n' + SINGLE_AUTHOR_ARGS + "  toc: false,\n"
-            ")\n"
-            "= Test\n",
-            encoding="utf-8",
-        )
+        """The build's version stamp appears only in draft documents."""
 
-        def extract(output: Path) -> str:
-            return subprocess.run(
+        def write_source(status: str, explicit: str | None = None) -> Path:
+            source = self.tempdir / "gitversion.typ"
+            source.write_text(
+                '#import "../../src/lsstdoc.typ": lsstdoc\n'
+                "#show: lsstdoc.with(\n"
+                '  title: "Git Version Test",\n'
+                '  id: "DMTN-999",\n'
+                '  series: "DMTN",\n'
+                f'  status: "{status}",\n'
+                '  date: "2026-07-16",\n'
+                + SINGLE_AUTHOR_ARGS
+                + "  toc: false,\n"
+                + (f'  source-version: "{explicit}",\n' if explicit else "")
+                + ")\n"
+                "= Test\n",
+                encoding="utf-8",
+            )
+            return source
+
+        def version_line(output: Path) -> str | None:
+            extracted = subprocess.run(
                 ["pdftotext", str(output), "-"],
                 text=True,
                 capture_output=True,
                 check=True,
             ).stdout
+            normalized = " ".join(extracted.split())
+            if "Version from source repository" not in normalized:
+                return None
+            return normalized.split("Version from source repository: ")[1].split(" ")[0]
 
-        stamped = self.tempdir / "stamped.pdf"
-        result = self.compile(source, stamped, "source-version=abc1234-dirty")
+        # A draft shows the stamp so evolving state is traceable.
+        output = self.tempdir / "draft.pdf"
+        result = self.compile(write_source("draft"), output, "source-version=abc1234-dirty")
         self.assertEqual(result.returncode, 0, result.stderr)
-        self.assertIn(
-            "Version from source repository: abc1234-dirty",
-            " ".join(extract(stamped).split()),
-        )
+        self.assertEqual(version_line(output), "abc1234-dirty")
 
-        plain = self.tempdir / "plain.pdf"
-        result = self.compile(source, plain)
+        # Released documents rely on the change record instead.
+        output = self.tempdir / "released.pdf"
+        result = self.compile(write_source("released"), output, "source-version=abc1234-dirty")
         self.assertEqual(result.returncode, 0, result.stderr)
-        self.assertNotIn("Version from source repository", extract(plain))
+        self.assertIsNone(version_line(output))
+
+        # An explicit value always renders, regardless of status.
+        output = self.tempdir / "explicit.pdf"
+        result = self.compile(write_source("released", explicit="v1.0"), output)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual(version_line(output), "v1.0")
+
+        # No stamp and no explicit value renders nothing.
+        output = self.tempdir / "plain.pdf"
+        result = self.compile(write_source("draft"), output)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIsNone(version_line(output))
 
     def test_document_states(self) -> None:
         for status in ("draft", "released", "obsolete"):
