@@ -113,6 +113,7 @@ Documents outside the technote workflow pass every field directly instead;
     [`date`], [required], [Latest revision date for the title page and running header.],
     [`authors`], [required], [Ordered author dictionaries; see @sec-authors.],
     [`affiliations`], [required], [Affiliation records keyed by identifier; see @sec-authors.],
+    [`affiliation-style`], [`"inline"`], [`"inline"` lists affiliations below the authors, `"deferred"` moves them to their own front-matter page with linked markers, and `"none"` hides them.],
     [`status`], [`"released"`], [`"draft"`, `"released"`, or `"obsolete"`; see @sec-state.],
     [`short-title`], [`none`], [Running-header title; defaults to the title.],
     [`subtitle`], [`none`], [Subtitle below the title, as on this guide's title page.],
@@ -213,6 +214,11 @@ affiliations: (
 The title page assigns numeric affiliation markers in first-use order,
 renders ORCID identifiers as linked icons following AASTeX practice, and
 marks a corresponding author with an asterisk.
+`affiliation-style` controls where the affiliations appear: below the
+authors (`"inline"`, the default), on their own front-matter page with
+each marker linked to its entry (`"deferred"`, the counterpart of
+AASTeX's deferred affiliations, useful for long author lists), or not at
+all (`"none"`).
 Wrapping is only allowed between authors, and a two-author list joins with
 a plain "and".
 An institutional author is a dictionary with an empty affiliation list, as

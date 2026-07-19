@@ -170,6 +170,82 @@ class TypstCompileTest(unittest.TestCase):
         self.assertIn("Latest Revision: 2026-07-16", pages[1])
         self.assertIn("1 Test", pages[2])
 
+    def write_affiliation_document(self, style: str) -> Path:
+        """Write a two-author document with the given affiliation style."""
+        source = self.tempdir / "affiliation-style.typ"
+        source.write_text(
+            '#import "../../src/lsstdoc.typ": lsstdoc\n'
+            "#show: lsstdoc.with(\n"
+            '  title: "Affiliation Style Test",\n'
+            '  id: "DMTN-999",\n'
+            '  series: "DMTN",\n'
+            '  date: "2026-07-16",\n'
+            f'  affiliation-style: "{style}",\n'
+            "  authors: (\n"
+            '    (internal_id: "a", display_name: "Ada Lovelace", affiliations: ("INST",)),\n'
+            '    (internal_id: "b", display_name: "Grace Hopper", affiliations: ("INST", "OTHER")),\n'
+            "  ),\n"
+            "  affiliations: (\n"
+            '    INST: (name: "Example Institute", address: "Tucson", ror: none),\n'
+            '    OTHER: (name: "Other University", address: "Chicago", ror: none),\n'
+            "  ),\n"
+            '  abstract: "A short abstract.",\n'
+            "  toc: false,\n"
+            ")\n"
+            "= Test\n",
+            encoding="utf-8",
+        )
+        return source
+
+    def extract_pages(self, output: Path) -> list[str]:
+        """Extract whitespace-normalized text per page."""
+        return [
+            " ".join(page.split())
+            for page in subprocess.run(
+                ["pdftotext", str(output), "-"],
+                text=True,
+                capture_output=True,
+                check=True,
+            ).stdout.split("\f")
+        ]
+
+    @unittest.skipUnless(shutil.which("pdftotext"), "pdftotext is not installed")
+    def test_deferred_affiliations_have_their_own_page(self) -> None:
+        """Deferred affiliations move to a front-matter page with anchors."""
+        source = self.write_affiliation_document("deferred")
+        output = self.tempdir / "deferred.pdf"
+        result = self.compile(source, output)
+        # Compilation succeeding proves every marker link has a target.
+        self.assertEqual(result.returncode, 0, result.stderr)
+        pages = self.extract_pages(output)
+        # Markers stay on the title page but the legend moves off it.
+        self.assertIn("Grace Hopper1,2", pages[0])
+        self.assertNotIn("Example Institute", pages[0])
+        # The affiliations page follows the abstract in the front matter.
+        self.assertIn("A short abstract.", pages[1])
+        self.assertIn("Affiliations", pages[2])
+        self.assertIn("Example Institute; Tucson", pages[2])
+        self.assertIn("Other University; Chicago", pages[2])
+        self.assertIn("1 Test", pages[3])
+
+    @unittest.skipUnless(shutil.which("pdftotext"), "pdftotext is not installed")
+    def test_disabled_affiliations_show_no_markers(self) -> None:
+        """Style none suppresses both the markers and the legend."""
+        source = self.write_affiliation_document("none")
+        output = self.tempdir / "none.pdf"
+        result = self.compile(source, output)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        pages = self.extract_pages(output)
+        self.assertIn("Ada Lovelace and Grace Hopper", pages[0])
+        self.assertNotRegex(pages[0], r"Hopper\s*1")
+        self.assertNotIn("Example Institute", " ".join(pages))
+
+    def test_invalid_affiliation_style_rejected(self) -> None:
+        source = self.write_affiliation_document("sideways")
+        result = self.compile(source, self.tempdir / "invalid-affil.pdf")
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("affiliation-style", result.stderr)
+
     @unittest.skipUnless(shutil.which("pdftotext"), "pdftotext is not installed")
     def test_standalone_document_without_handle(self) -> None:
         """Standalone documents may omit the handle and series."""

@@ -20,6 +20,7 @@
   date: none,
   authors: none,
   affiliations: none,
+  affiliation-style: "inline",
   subtitle: none,
   doi: none,
 ) = {
@@ -61,7 +62,7 @@
       text(size: 13pt, fill: rubin-teal, subtitle)
     }
     #v(20pt)
-    #render-authors(authors, affiliations)
+    #render-authors(authors, affiliations, affiliation-style: affiliation-style)
     #v(16pt)
     #if nonempty(id) {
       text(size: 14pt, weight: "bold", id)

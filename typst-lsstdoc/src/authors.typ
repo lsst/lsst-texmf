@@ -14,11 +14,19 @@
   ids
 }
 
-#let author-item(author, markers-by-id, comma-before-marker: false) = {
+#let author-item(author, markers-by-id, comma-before-marker: false, link-markers: false) = {
   let author-affiliations = value-or(author, "affiliations", default: ())
-  let markers = author-affiliations.map(id => markers-by-id.at(id))
   let corresponding = value-or(author, "corresponding", default: false)
-  let marker-text = markers.join(",") + if corresponding { "*" } else { "" }
+  // markers-by-id is none when affiliation display is disabled; the
+  // corresponding-author star is independent of it.
+  let marker-body = if markers-by-id == none { none } else {
+    author-affiliations.map(id => if link-markers {
+      link(label("affil-" + id), markers-by-id.at(id))
+    } else {
+      markers-by-id.at(id)
+    }).join(",")
+  }
+  let marker-text = marker-body + if corresponding { "*" } else { "" }
   let orcid = value-or(author, "orcid", default: none)
   let orcid-content = if nonempty(orcid) {
     h(2pt) + link("https://orcid.org/" + orcid)[
@@ -32,7 +40,7 @@
     ]
   } else { [] }
   let comma-content = if comma-before-marker { [,] } else { [] }
-  let marker-content = if nonempty(marker-text) { super(marker-text) } else { [] }
+  let marker-content = if marker-text == none or marker-text == "" { [] } else { super(marker-text) }
 
   box(
     strong(author.at("display_name"))
@@ -52,7 +60,15 @@
   }
 }
 
-#let render-authors(authors, affiliations) = {
+#let affiliation-line(index, id, affiliations) = {
+  let affiliation = affiliations.at(id)
+  let address = value-or(affiliation, "address", default: none)
+  [
+    #super(str(index + 1)) #affiliation.at("name")#if nonempty(address) { [; #format-address(address)] }
+  ]
+}
+
+#let render-authors(authors, affiliations, affiliation-style: "inline") = {
   assert(authors.len() > 0, message: "At least one author is required")
   let affiliation-ids = affiliation-order(authors)
 
@@ -63,9 +79,12 @@
     )
   }
 
-  let markers-by-id = (:)
-  for (index, id) in affiliation-ids.enumerate() {
-    markers-by-id.insert(id, str(index + 1))
+  let markers-by-id = if affiliation-style == "none" { none } else {
+    let markers = (:)
+    for (index, id) in affiliation-ids.enumerate() {
+      markers.insert(id, str(index + 1))
+    }
+    markers
   }
 
   let author-content = authors.enumerate().map(((index, author)) => author-item(
@@ -74,14 +93,15 @@
     // AAS style: each non-final comma precedes the affiliation markers,
     // but a two-author list has no comma before the "and".
     comma-before-marker: authors.len() > 2 and index < authors.len() - 1,
+    // Deferred affiliations live on their own page; the markers link
+    // to the entries there.
+    link-markers: affiliation-style == "deferred",
   ))
-  let affiliation-content = affiliation-ids.enumerate().map(((index, id)) => {
-    let affiliation = affiliations.at(id)
-    let address = value-or(affiliation, "address", default: none)
-    [
-      #super(str(index + 1)) #affiliation.at("name")#if nonempty(address) { [; #format-address(address)] }
-    ]
-  })
+  let affiliation-content = if affiliation-style == "inline" {
+    affiliation-ids.enumerate().map(((index, id)) => affiliation-line(index, id, affiliations))
+  } else {
+    ()
+  }
 
   align(center)[
     #set text(size: 10.5pt)
@@ -96,4 +116,14 @@
       [#super("*") Corresponding author]
     }
   ]
+}
+
+#let render-affiliation-page(authors, affiliations) = {
+  heading(level: 1, outlined: false, numbering: none)[Affiliations]
+  for (index, id) in affiliation-order(authors).enumerate() {
+    // The label is the target of the title-page marker links.
+    [#box(affiliation-line(index, id, affiliations))#label("affil-" + id)]
+    linebreak()
+  }
+  pagebreak(weak: true)
 }
