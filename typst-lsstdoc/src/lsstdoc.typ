@@ -72,9 +72,21 @@
   /// Bare DOI rendered as a link on the title page.
   /// -> str | none
   doi: none,
-  /// Document source link shown after the body.
+  /// Document source location, shown in the front matter after the change
+  /// record.
   /// -> str | none
   repository-url: none,
+  /// Document curator, shown in the front matter after the change record.
+  /// -> str | none
+  curator: none,
+  /// Version of the document in its source repository, shown in the front
+  /// matter after the change record.
+  /// -> str | none
+  source-version: none,
+  /// How to cite this document, shown in the front matter after the
+  /// change record.
+  /// -> str | content | none
+  citation-information: none,
   /// Abstract rendered in the front matter; a plain string also becomes
   /// the PDF description.
   /// -> content | str | none
@@ -199,7 +211,13 @@
   counter(page).update(1)
 
   render-abstract(abstract)
-  render-change-record(changes)
+  render-change-record(
+    changes,
+    curator: curator,
+    repository-url: repository-url,
+    source-version: source-version,
+    citation-information: citation-information,
+  )
   render-contents(enabled: toc)
 
   set page(numbering: "1")
@@ -208,13 +226,6 @@
   v(12pt)
 
   body
-
-  if nonempty(repository-url) {
-    v(12pt)
-    text(size: 8pt, fill: rgb("#555555"))[
-      Document source: #link(repository-url)[#repository-url]
-    ]
-  }
 
   if bibliography != none {
     pagebreak()

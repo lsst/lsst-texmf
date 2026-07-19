@@ -149,6 +149,51 @@ class TypstCompileTest(unittest.TestCase):
         ).stdout
         self.assertIn("Standalone Guide | Latest Revision 2026-07-18", extracted)
 
+    @unittest.skipUnless(shutil.which("pdftotext"), "pdftotext is not installed")
+    def test_provenance_renders_in_front_matter(self) -> None:
+        """Provenance lines follow the change record in the front matter."""
+        source = self.tempdir / "provenance.typ"
+        source.write_text(
+            '#import "../../src/lsstdoc.typ": lsstdoc\n'
+            "#show: lsstdoc.with(\n"
+            '  title: "Provenance Test",\n'
+            '  id: "DMTN-999",\n'
+            '  series: "DMTN",\n'
+            '  date: "2026-07-16",\n' + SINGLE_AUTHOR_ARGS + "  toc: false,\n"
+            '  curator: "Ada Lovelace",\n'
+            '  repository-url: "https://github.com/lsst/example",\n'
+            '  source-version: "abc1234",\n'
+            '  citation-information: "Please cite as Lovelace (2026).",\n'
+            "  changes: (\n"
+            '    (version: "1", date: "2026-07-16", description: "Start.", author: "A"),\n'
+            "  ),\n"
+            ")\n"
+            "= Test\n"
+            "Body text.\n",
+            encoding="utf-8",
+        )
+        output = self.tempdir / "provenance.pdf"
+        result = self.compile(source, output)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        extracted = subprocess.run(
+            ["pdftotext", str(output), "-"],
+            text=True,
+            capture_output=True,
+            check=True,
+        ).stdout
+        normalized = " ".join(extracted.split())
+        for line in (
+            "Document curator: Ada Lovelace",
+            "Document source location: https://github.com/lsst/example",
+            "Version from source repository: abc1234",
+            "Cite as: Please cite as Lovelace (2026).",
+        ):
+            self.assertIn(line, normalized)
+        # The provenance belongs to the front matter, before the body, and
+        # the old end-of-body source line is gone.
+        self.assertLess(normalized.index("Document curator:"), normalized.index("1 Test"))
+        self.assertNotIn("Document source:", normalized)
+
     def test_document_states(self) -> None:
         for status in ("draft", "released", "obsolete"):
             with self.subTest(status=status):
