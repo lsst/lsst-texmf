@@ -329,7 +329,7 @@ This is encouraging evidence, not yet a full accessibility audit.
 ### Template API
 
 The primary show-rule function is `lsstdoc`.
-Required arguments are `title`, `id`, `series`, `date`, `authors`, and `affiliations`; `id` deliberately matches the technote.toml field name for the document handle.
+Required arguments are `title`, `date`, `authors`, and `affiliations`; `id` (deliberately matching the technote.toml field name for the document handle) and `series` are omitted by standalone documents such as the package's own user guide, which then carry no handle or series label.
 Optional arguments are `short-title`, `subtitle`, `status`, `doi`, `repository-url`, `abstract`, `changes`, `toc`, `bibliography`, `bibliography-style`, and `bibliography-full`.
 The template also emits the front matter as a labeled metadata element, so tooling can extract the handle, title, and abstract from the compiled document with `typst eval 'query(<rubin-technote>).first().value' --in <file>`, the Typst counterpart of the annotated abstract structures in Markdown and reStructuredText technotes.
 `status` accepts only `draft`, `released`, or `obsolete`.
