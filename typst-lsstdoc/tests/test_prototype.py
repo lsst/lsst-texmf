@@ -192,7 +192,8 @@ class TypstCompileTest(unittest.TestCase):
             ")\n"
             "= Test\n"
             "Cite a technote @DMTN-000, an article @fits-standard, and a\n"
-            "seven-author entry @many-authors.\n",
+            "seven-author entry @many-authors. Adjacent citations merge:\n"
+            "@DMTN-000 @fits-standard.\n",
             encoding="utf-8",
         )
         output = self.tempdir / "aas-style.pdf"
@@ -222,6 +223,9 @@ class TypstCompileTest(unittest.TestCase):
         self.assertNotIn("Fourth", normalized)
         # In-text citations collapse to the first author at three or more.
         self.assertIn("(First et al. 2024)", normalized)
+        # Adjacent citations merge into one parenthetical group; the
+        # citation styling must not break the grouping.
+        self.assertIn("(Jenness 2017; Pence et al. 2010)", normalized)
 
     def test_bibliography_style_option(self) -> None:
         source = self.tempdir / "bib-style.typ"
