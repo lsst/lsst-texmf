@@ -125,6 +125,27 @@ class TypstCompileTest(unittest.TestCase):
             self.assertIn("/Contents (DMTN-001)", structure)
             self.assertIn("/Contents (technical-note series)", structure)
 
+    @unittest.skipUnless(shutil.which("verapdf"), "veraPDF is not installed")
+    def test_independent_conformance_validation(self) -> None:
+        """Confirm PDF/A-2a and PDF/UA-1 conformance independently."""
+        output = self.tempdir / "conformance.pdf"
+        result = self.compile(
+            PROTOTYPE / "examples/features.typ",
+            output,
+            pdf_standard="a-2a,ua-1",
+        )
+        self.assertEqual(result.returncode, 0, result.stderr)
+        for flavour in ("2a", "ua1"):
+            with self.subTest(flavour=flavour):
+                audit = subprocess.run(
+                    ["verapdf", "--flavour", flavour, "--format", "text", str(output)],
+                    text=True,
+                    capture_output=True,
+                    check=False,
+                )
+                self.assertIn("PASS", audit.stdout)
+                self.assertNotIn("FAIL", audit.stdout)
+
     @unittest.skipUnless(shutil.which("pdftotext"), "pdftotext is not installed")
     def test_long_author_list_flows_to_second_page(self) -> None:
         """A very long author list continues onto a second title page."""
