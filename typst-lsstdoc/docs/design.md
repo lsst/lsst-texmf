@@ -451,3 +451,104 @@ Continuous integration follows the shared-workflow pattern of `rubin-sphinx-tech
 
 While the template lives in this repository, the existing tests guard series-label parity with `bibtools.py`.
 After the split, the template repository's CI fetches `bibtools.py` from GitHub raw, the same pattern used for the bibliographies, to keep that guard.
+
+## Proposal: PDF output for Markdown and reStructuredText technotes
+
+Markdown and reStructuredText technotes publish HTML only; they have no PDF edition today.
+Because this package renders a complete Rubin document from the same `technote.toml` those technotes already carry, a best-effort PDF becomes cheap: convert the body with pandoc, wrap it in the template, and compile.
+The proposal is a `make pdf` target for the `technote_md` and `technote_rst` templates that produces a Rubin-styled PDF for publication alongside the HTML edition.
+
+### Evidence
+
+Three real technotes were converted end to end with no changes to their repositories:
+
+- DMTN-310, plain Markdown;
+- DMTN-302, Markdown with `{cite:p}`/`{cite:t}` roles and a DOI;
+- DMTN-312, reStructuredText with `:cite:` roles and an `abstract` directive.
+
+In each case the title page, authors, ORCID icons, document state, DOI, and revision date came from the untouched `technote.toml` via `technote-args`; citations resolved against `local.bib` plus the shared bibliographies; and the references rendered in the packaged AAS style.
+
+### Pipeline
+
+The pipeline is pandoc plus one shared Lua filter plus a small wrapper document:
+
+1. pandoc converts `index.md` or `index.rst` to a Typst body file, with `--shift-heading-level-by=-1` so the page title does not repeat as a section.
+2. A shared Lua filter maps the Sphinx constructs pandoc does not translate on its own.
+3. A wrapper document spreads `technote-args(toml("technote.toml"))` into `lsstdoc`, supplies the title and abstract extracted from the source, loads the bibliographies, and includes the converted body.
+4. `typst compile` produces the PDF against the vendored `rubin-technote` package, exactly as in the `technote_typst` Makefile.
+
+reStructuredText is the cleaner input: pandoc parses `:cite:` roles into native citation nodes and the `abstract` directive into a div with an identifiable class.
+MyST Markdown roles arrive as literal text instead, so the filter rewrites the adjacent role-marker and code-span pair.
+Citations are emitted as `#cite(label("key"))` rather than `@key` because ADS-style keys contain characters that the `@` syntax cannot carry next to punctuation.
+
+The working filter from the reStructuredText proof of concept:
+
+```lua
+-- rst :cite: roles arrive as native Cite nodes; emit unambiguous Typst
+-- citations because ADS-style keys contain dots.
+function Cite(el)
+  local pieces = {}
+  for _, citation in ipairs(el.citations) do
+    table.insert(pieces, string.format('#cite(label("%s"))', citation.id))
+  end
+  return pandoc.RawInline("typst", table.concat(pieces, " "))
+end
+
+-- The abstract is document metadata rendered by the template, and the
+-- template owns the reference list.
+function Div(el)
+  if el.classes:includes("abstract") or el.identifier == "refs" then
+    return {}
+  end
+end
+
+function Header(el)
+  if pandoc.utils.stringify(el.content):lower() == "references" then
+    return {}
+  end
+end
+```
+
+The Markdown variant adds an `Inlines` handler that rewrites `Str "{cite:p}"` followed by a `Code` span into the same raw citation, with `form: "prose"` for `{cite:t}`.
+
+The wrapper produced for DMTN-312:
+
+```typst
+#import "@preview/rubin-technote:0.1.0": lsstdoc, technote-args
+#show: lsstdoc.with(
+  ..technote-args(toml("technote.toml")),
+  title: "The MultiProFit astronomical source modelling code",
+  abstract: "This note describes the MultiProFit ...",
+  bibliography: (
+    read("local.bib", encoding: none),
+    read("lsstbib/lsst.bib", encoding: none),
+    // ... remaining shared bibliography files ...
+  ),
+)
+#include "body.typ"
+```
+
+The Makefile target mirrors `technote_typst`, adding the conversion step:
+
+```make
+pdf: $(PACKAGE_DIR) lsstbib
+	pandoc --from rst --to typst \
+	  --shift-heading-level-by=-1 \
+	  --lua-filter sphinx-to-typst.lua \
+	  index.rst -o body.typ
+	typst compile --root . \
+	  --package-path .typst-packages \
+	  --font-path $(PACKAGE_DIR)/fonts \
+	  --input source-version=$(GITVERSION)$(GITDIRTY) \
+	  index-pdf.typ $(DOCNAME).pdf
+```
+
+### Remaining work
+
+- Generate the wrapper rather than hand-writing it: the filter can lift the title and abstract into pandoc metadata, so a template or a small script emits `index-pdf.typ`.
+- Extend the Markdown filter beyond citations: admonition directives onto `note` and `warning`, figure directives onto `figure`, and `{ref}` cross-references onto native references.
+- Spot-check tables, math, and image paths across a larger corpus.
+- Ship the filter and wrapper generation centrally rather than per repository; `documenteer technote pdf` is the natural command, alongside the proposed `sync-bibs`.
+- Publishing needs a small piece outside this package: uploading the PDF next to the HTML edition and linking it from the technote theme.
+
+The right expectation is a best-effort companion PDF: Markdown and reStructuredText technotes have no PDF at all today, simple technotes convert essentially perfectly, and exotic Sphinx features may degrade gracefully rather than block the target.
