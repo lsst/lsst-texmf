@@ -300,8 +300,11 @@ typst compile --root . \
 
 The package ships the Open Sans, Inconsolata, and XITS families in
 `fonts/`, so builds are reproducible wherever the package is vendored.
-Documents also compile under `--pdf-standard ua-1` for tagged, accessible
-output when alt text is supplied for figures and equations.
+The technote Makefile enforces `--pdf-standard a-2a,ua-1` by default,
+producing archival, tagged, accessible PDFs; missing alt text on a
+figure or equation is then a compilation failure with a source
+location, and the `PDF_STANDARD` variable must be explicitly emptied to
+opt out.
 
 // The generated reference nests function and parameter headings deeply;
 // cap the displayed numbering at three levels.
