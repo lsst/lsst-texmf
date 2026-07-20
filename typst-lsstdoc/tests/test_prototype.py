@@ -96,7 +96,7 @@ class TypstCompileTest(unittest.TestCase):
         result = self.compile(
             PROTOTYPE / "examples/features.typ",
             output,
-            pdf_standard="ua-1",
+            pdf_standard="a-2a,ua-1",
         )
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertGreater(output.stat().st_size, 10_000)
@@ -608,6 +608,10 @@ class TypstCompileTest(unittest.TestCase):
             str(self.tempdir / "packages"),
             "--font-path",
             str(package_dir / "fonts"),
+            # The technote Makefile enforces the archival and
+            # accessibility standards by default.
+            "--pdf-standard",
+            "a-2a,ua-1",
             str(workdir / template["entrypoint"]),
             str(self.tempdir / "scaffold.pdf"),
         ]
