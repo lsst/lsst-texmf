@@ -1378,7 +1378,9 @@ No actions have been identified.}
 
 %%% Command's for merging Robert's document, at least temporarily.
 %%% Some of these will be removable, some may not be.
-\renewcommand{\c}{\textit{c.}\xspace}
+%% Remove \c because this is a standard part of Latex to write cedillas
+%% and makes it impossible to write some names.
+%%\renewcommand{\c}{\textit{c.}\xspace}
 \newcommand{\eg}{\textit{e.g.}\xspace}
 \newcommand{\etc}{\textit{etc.}\xspace}
 \newcommand{\ie}{\textit{i.e.}\xspace}
