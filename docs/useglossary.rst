@@ -144,5 +144,3 @@ Other files
 .. note::
    Only one of myacronyms.txt or myglossarydefs.csv is used you should not have both files.
    If you have both only myacronyms.txt is used.
-
-

@@ -32,4 +32,3 @@ Tests
 .. toctree::
 
    test-bibtex
-
