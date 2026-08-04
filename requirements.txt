@@ -1,11 +1,11 @@
-setuptools<81
-algoliasearch>4.3
+setuptools<84
+algoliasearch>=4.44.4
 ook
 pybtex
 pytest
 pylatexenc
 pyyaml
-pydantic>=2
+pydantic>=2.13.4
 google-api-python-client
 google-auth-httplib2
 google-auth-oauthlib
