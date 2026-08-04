@@ -6,6 +6,7 @@ import sys
 
 
 def makeThemesDocument(xetex, aspectratio):
+    """Make the themes document."""
     themeDir = None
     for envvar in ["TEXMFHOME", "TEXINPUTS"]:
         if themeDir is None:
@@ -19,67 +20,66 @@ def makeThemesDocument(xetex, aspectratio):
         print("Unable to find LSST-themes on your TeX search path")
         sys.exit(1)
 
-    # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+    # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
     print(
         r"""
-    \documentclass[12pt, t, aspectratio=%(aspectratio)s, %(xetex)s]{beamer}
+    \documentclass[12pt, t, aspectratio={aspectratio}, {xetex}]{{beamer}}
     \tolerance=1000
     \usepackage[
-       position={Farmer and Lawyer},
-       institute={, Bergsthorknoll},
-       meeting={The Althing},
-       footline={Althing $\bullet$ 1000},
+       position={{Farmer and Lawyer}},
+       institute={{, Bergsthorknoll}},
+       meeting={{The Althing}},
+       footline={{Althing $\bullet$ 1000}},
        fonts=false,
-    ]{LSST-beamer}
-    \usetheme{default}
-    \author{Njal Thorgeirsson}
-    \date{1000-06-21}
+    ]{{LSST-beamer}}
+    \usetheme{{default}}
+    \author{{Njal Thorgeirsson}}
+    \date{{1000-06-21}}
 
-    \begin{document}
+    \begin{{document}}
 
-    %%------------------------------------------------------------------------------
+    %-----------------------------------------------------------------------
 
-    \newcommand{\showStyle}[1]{
+    \newcommand{{\showStyle}}[1]{{
     \begingroup
-    \setbeamertemplate{background canvas}{
-      \setBackground{LSST-themes/#1/LSSTcover}
-    }
+    \setbeamertemplate{{background canvas}}{{
+      \setBackground{{LSST-themes/#1/LSSTcover}}
+    }}
 
     \makeatletter
-    \input{LSST-themes/#1/LSSToptions.tex}
+    \input{{LSST-themes/#1/LSSToptions.tex}}
     \makeatother
 
-    \title{#1}
+    \title{{#1}}
     \maketitle
 
-    \setbeamertemplate{background canvas}{
-      \setBackground{LSST-themes/#1/LSSTmain}
-      }
+    \setbeamertemplate{{background canvas}}{{
+      \setBackground{{LSST-themes/#1/LSSTmain}}
+      }}
 
-    \begin{frame}{#1}
-    \begin{itemize}
+    \begin{{frame}}{{#1}}
+    \begin{{itemize}}
        \item Hello
-    \end{itemize}
-    \end{frame}
+    \end{{itemize}}
+    \end{{frame}}
     \endgroup
-    }
+    }}
 
-    %%------------------------------------------------------------------------------
+    %-----------------------------------------------------------------------
 
-    """
-        % dict(xetex=("xetex, " if xetex else ""), aspectratio=aspectratio)
+    """.format(**{"xetex": ("xetex, " if xetex else ""), "aspectratio": aspectratio})
     )
 
     for d in glob.glob(os.path.join(themeDir, "*")):
         d = os.path.split(d)[1]
 
-        print(r"   \showStyle{%s}" % d)
+        print(rf"   \showStyle{{{d}}}")
 
     print(
         r"""
 
-    %------------------------------------------------------------------------------
+    %------------------------------------------------------------------------
 
     \end{document}
     """

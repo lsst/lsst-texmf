@@ -80,4 +80,3 @@ stack_size = 500000	% simultaneous input sources
 error_line = 254
 half_error_line = 127
 max_print_line = 32000
-

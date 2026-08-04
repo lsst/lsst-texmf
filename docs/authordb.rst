@@ -340,5 +340,3 @@ Operational tips
 * **Review new affiliations carefully.** The postal address and public
   institute name are used in rendered front‑matter; get them right before
   merging.
-
-

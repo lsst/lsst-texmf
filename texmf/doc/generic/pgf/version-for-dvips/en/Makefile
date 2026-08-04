@@ -32,4 +32,3 @@ clean:
 		pgfmanual.ps \
 		pgfmanual.dvi \
 		pgfmanual*.aux
-
