@@ -87,7 +87,7 @@ jobs:
 
       - name: Compile test and example documents
         run: |
-          docker run --rm -v `pwd`:/workspace -w /lsst-texmf lsstsqre/lsst-texmf:latest sh -c 'make all && cp *.pdf /workspace'
+          docker run --rm -v "$(pwd)":/workspace -w /lsst-texmf lsstsqre/lsst-texmf:latest sh -c 'make all && cp *.pdf /workspace'
 
       - name: Test generateAcronyms.py
         run: |

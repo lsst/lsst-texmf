@@ -33,10 +33,10 @@ jobs:
       - name: Check diff
         run: | #  set an environment variable
            if git diff --exit-code; then
-              echo "CHANGED=false" >> ${GITHUB_ENV}
+              echo "CHANGED=false" >> "${GITHUB_ENV}"
               echo "No changes - no PR"
            else
-              echo "CHANGED=true" >> ${GITHUB_ENV}
+              echo "CHANGED=true" >> "${GITHUB_ENV}"
               echo "Git changes - should make PR"
            fi
 

@@ -29,8 +29,8 @@ jobs:
           CLIENT: ${{ secrets.FORM_ACCESS_CLIENT }}
           TOKEN_PASSPHRASE: ${{ secrets.TOKEN_PASSPHRASE }}
         run: |
-          echo $CLIENT >> client_secret.json
-          ./bin/decrypt_secret.sh $TOKEN_PASSPHRASE
+          echo "$CLIENT" >> client_secret.json
+          ./bin/decrypt_secret.sh "$TOKEN_PASSPHRASE"
           SKIP=$(cat skip)
           make processadbform
           SKIP2=$(cat skip)
@@ -41,10 +41,10 @@ jobs:
       - name: Check diff
         run: | #  set an environment variable
            if git diff --exit-code; then
-              echo "CHANGED=false" >> ${GITHUB_ENV}
+              echo "CHANGED=false" >> "${GITHUB_ENV}"
               echo "No changes - no PR"
            else
-              echo "CHANGED=true" >> ${GITHUB_ENV}
+              echo "CHANGED=true" >> "${GITHUB_ENV}"
               echo "Git changes - should make PR"
               cat new_affiliations.yaml
               cat new_authors.yaml
