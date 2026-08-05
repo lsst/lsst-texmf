@@ -2245,6 +2245,18 @@ affiliations:
     email: pitt.edu
     institute: University of Pittsburgh
     ror_id: 01an3r305
+  Portales-Ciencia:
+    address:
+      city: Santiago 
+      country_code: Chile
+      example_expanded: Universidad Diego Portales, Manuel Rodríguez Sur 415, Santiago, Chile
+      postcode: 8340263
+      state: ''
+      street: Manuel Rodríguez Sur 415
+    department: Facultad de Ingenier\'ia y Ciencias
+    email: ''
+    institute: ''
+    ror_id: 03gtdcg60
   Praha-ASCR:
     address:
       city: Praha 8
@@ -2269,7 +2281,7 @@ affiliations:
     department: null
     email: princeton.edu
     institute: Princeton University
-    ror_id: 00hx57361
+    ror_id: 03gtdcg60 
   Princeton-Astro:
     address:
       city: Princeton
