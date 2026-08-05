@@ -2250,7 +2250,7 @@ affiliations:
       city: Santiago
       country_code: Chile
       example_expanded: Universidad Diego Portales, Manuel Rodríguez Sur 415, Santiago, Chile
-      postcode: 8340263
+      postcode: '8340263'
       state: ''
       street: Manuel Rodríguez Sur 415
     department: Facultad de Ingenier\'ia y Ciencias
