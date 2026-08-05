@@ -3644,6 +3644,14 @@ authors:
     family_name: Astier
     given_name: Pierre
     orcid: 0009-0007-0777-1309
+  assefr:
+    affil:
+    - Portales-Ciencia
+    altaffil: []
+    email: roberto.assef@mail.udp.cl
+    family_name: Assef
+    given_name: Roberto
+    orcid: 0000-0002-9508-3667
   aubourge:
     affil:
     - IN2P3-APC-CEA
@@ -9384,6 +9392,14 @@ authors:
     family_name: Virieux
     given_name: Fran\c{c}oise
     orcid: null
+  vivask:
+    affil:
+    - NOIRLab
+    altaffil: []
+    email: kathy.vivas@noirlab.edu 
+    family_name: Vivas
+    given_name: Kathy
+    orcid: 0000-0003-4341-6172
   volkk:
     affil:
     - PSI
