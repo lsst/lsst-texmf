@@ -2254,8 +2254,8 @@ affiliations:
       state: ''
       street: Manuel Rodríguez Sur 415
     department: Facultad de Ingenier\'ia y Ciencias
-    email: ''
-    institute: ''
+    email: mail.udp.cl
+    institute: Universidad Diego Portale
     ror_id: 03gtdcg60
   Praha-ASCR:
     address:
@@ -3660,7 +3660,7 @@ authors:
     affil:
     - Portales-Ciencia
     altaffil: []
-    email: roberto.assef@mail.udp.cl
+    email: roberto.assef
     family_name: Assef
     given_name: Roberto
     orcid: 0000-0002-9508-3667
