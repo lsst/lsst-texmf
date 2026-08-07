@@ -1640,14 +1640,16 @@ affiliations:
     address:
       city: Rio de Janeiro
       country_code: Brazil
-      example_expanded: Laboratorio Interinstitucional de e-Astronomia, Rua General
-        Jose Cristino, 77, Rio de Janeiro, RJ, 20921-400, Brazil
-      postcode: 20921-400
+      example_expanded: Laborat\'orio Interinstitucional de e-Astronomia,
+        Av. Pastor Martin Luther King Jr, 126 - Del Castilho Nova Am\'erica Offices,
+        Torre 3000 / sala 817.
+        20765-000 – Rio de Janeiro - RJ, Brasil
+      postcode: 20765-000
       state: RJ
-      street: Rua General Jose Cristino, 77
+      street: Av. Pastor Martin Luther King Jr, 126 - Del Castilho Nova Am\'erica Offices, Torre 3000 / sala 817.
     department: null
     email: linea.org.br
-    institute: Laboratorio Interinstitucional de e-Astronomia
+    institute: Laborat\'orio Interinstitucional de e-Astronomia
     ror_id: 05b9w0m88
   LLNL:
     address:
