@@ -3593,6 +3593,14 @@ authors:
     family_name: Antilogus
     given_name: Pierre
     orcid: 0000-0002-0389-5706
+  antonym:
+    affil:
+    - EdinburghIA
+    altaffil: []
+    email: mantony
+    family_name: Antony
+    given_name: Manu
+    orcid: 0000-0001-6656-7825
   aracenaalcayagaa:
     affil:
     - RubinObsC
