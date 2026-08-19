@@ -1640,13 +1640,13 @@ affiliations:
     address:
       city: Rio de Janeiro
       country_code: Brazil
-      example_expanded: Laborat\'orio Interinstitucional de e-Astronomia,
-        Av. Pastor Martin Luther King Jr, 126 - Del Castilho Nova Am\'erica Offices,
-        Torre 3000 / sala 817.
-        20765-000 – Rio de Janeiro - RJ, Brasil
+      example_expanded: Laborat\'orio Interinstitucional de e-Astronomia, Av. Pastor
+        Martin Luther King Jr, 126 - Del Castilho Nova Am\'erica Offices, Torre 3000
+        / sala 817. 20765-000 – Rio de Janeiro - RJ, Brasil
       postcode: 20765-000
       state: RJ
-      street: Av. Pastor Martin Luther King Jr, 126 - Del Castilho Nova Am\'erica Offices, Torre 3000 / sala 817.
+      street: Av. Pastor Martin Luther King Jr, 126 - Del Castilho Nova Am\'erica
+        Offices, Torre 3000 / sala 817.
     department: null
     email: linea.org.br
     institute: Laborat\'orio Interinstitucional de e-Astronomia
@@ -2251,7 +2251,8 @@ affiliations:
     address:
       city: Santiago
       country_code: Chile
-      example_expanded: Universidad Diego Portales, Manuel Rodríguez Sur 415, Santiago, Chile
+      example_expanded: Universidad Diego Portales, Manuel Rodríguez Sur 415, Santiago,
+        Chile
       postcode: '8340263'
       state: ''
       street: Manuel Rodríguez Sur 415
@@ -3658,14 +3659,6 @@ authors:
     family_name: Arndt
     given_name: Kirk T.
     orcid: 0000-0002-6826-8340
-  astierp:
-    affil:
-    - IN2P3-LPNHE
-    altaffil: []
-    email: pierre.astier@IN2P3
-    family_name: Astier
-    given_name: Pierre
-    orcid: 0009-0007-0777-1309
   assefr:
     affil:
     - Portales-Ciencia
@@ -3674,6 +3667,14 @@ authors:
     family_name: Assef
     given_name: Roberto
     orcid: 0000-0002-9508-3667
+  astierp:
+    affil:
+    - IN2P3-LPNHE
+    altaffil: []
+    email: pierre.astier@IN2P3
+    family_name: Astier
+    given_name: Pierre
+    orcid: 0009-0007-0777-1309
   aubourge:
     affil:
     - IN2P3-APC-CEA
@@ -8799,9 +8800,9 @@ authors:
     orcid: 0000-0002-7895-4344
   snydera:
     affil:
-    - UCDavis
+    - NOIRLab
     altaffil: []
-    email: aksnyder@UCDavis
+    email: adam.snyder
     family_name: Snyder
     given_name: Adam
     orcid: 0000-0002-2343-0949
