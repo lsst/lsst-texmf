@@ -939,6 +939,7 @@ OPD,optical path difference,TS,Document-12036,,A
 OPS,Operations,LSST DM,,,A
 OpSim,Operations Simulation,Sims,,,A
 OPSTN,Operations Technical Note,LSST DM,,,A
+ORI,Office of Research Infrastructure,OPS,,,A
 ORR,Operations Readiness Review,OPS,,,A
 OS,Operating System,Gen,,,A
 OS,Observing Scientist,Gen,,,A
