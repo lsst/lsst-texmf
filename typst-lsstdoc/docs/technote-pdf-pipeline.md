@@ -90,6 +90,11 @@ The template ships in this subtree at `myst-template/`, next to the Typst packag
 
 [-IMPORTS-]
 
+// mystmd hard-codes breakableDefault to true, which lets a figure split
+// from its caption across a page break. Typst's own default is false;
+// shadow the imported binding to restore it.
+#let breakableDefault = false
+
 [-CONTENT-]
 ```
 
@@ -109,6 +114,10 @@ Two constraints found while building this:
   The option must be called something else; `show_toc` is used above.
 - A local template is selected with a path that resolves from the project root, such as `./myst-template`.
   A path mystmd cannot resolve on disk is treated as the name of a remote template and fails with a 404 against `api.mystmd.org`.
+- mystmd emits `#let breakableDefault = true` into its macro file and precedes every figure with `#show figure: set block(breakable: breakableDefault)`.
+  The value is hard-coded in the renderer with no configuration hook, and it inverts Typst's own default.
+  A figure near a page boundary therefore splits, leaving the caption stranded at the top of the next page.
+  The template shadows the imported binding between `[-IMPORTS-]` and `[-CONTENT-]`, which takes effect for every `#show` rule in the body.
 
 ### The dialect adapter
 
@@ -120,7 +129,7 @@ It reads the technote sources and writes a git-ignored build directory; the repo
 | --- | --- |
 | Title is the leading `#` heading | Lift into frontmatter `title`, remove the heading so it is not repeated as a section. |
 | `{abstract}` directive is unknown to mystmd | Lift the body into the frontmatter `abstract` part, which the template renders through `lsstdoc`. |
-| `{bibliography}` directive has no Typst renderer in mystmd | Drop it. The template owns the reference list. |
+| `{bibliography}` directive has no Typst renderer in mystmd | Drop the directive *and* an immediately preceding `References` or `Bibliography` heading. The template owns the reference list, and a heading left behind renders as an empty section with the real reference list still appearing at the end. |
 | Bare `@handle` is citation syntax in mystmd | Escape as `\@handle`. |
 | Shared bibliographies are implicit in the Sphinx build | Emit a generated `myst.yml` listing `local.bib` and the shared files explicitly. |
 
@@ -189,7 +198,12 @@ Publishing remains outside this package: uploading the PDF alongside the HTML ed
 Extend `tests/` with fixtures exercising both paths end to end.
 
 The Markdown fixture covers an `{abstract}` directive, a `{figure}` with an SVG, an `{include}`, a citation with a dotted ADS key, a footnote, and a bare `@handle`.
-Assertions run at two levels: on the generated `.typ`, so a regression names the construct that broke, and on a successful `typst compile`, so template-level breakage is caught.
+Assertions run at three levels: on the generated `.typ`, so a regression names the construct that broke; on a successful `typst compile`, so template-level breakage is caught; and on the compiled document's structure with `typst eval 'query(...)'`, which is how both layout defects below were confirmed.
+
+Two regressions found while building the DMTN-349 proof of concept have explicit checks, because both produce a valid document that is quietly wrong:
+
+- every figure sits on the same page as its caption, asserted with `query(figure).map(it => it.location().page())` against the caption's page;
+- the document contains exactly one `References` heading, on the page the template's reference list occupies.
 
 Add a malformed `local.bib` fixture asserting that the preprocessor fails with a diagnostic naming the entry, since the failure mode it guards against is silent.
 
