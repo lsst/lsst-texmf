@@ -808,6 +808,19 @@ affiliations:
     email: udel.edu
     institute: University of Delaware
     ror_id: 01sbq1a82
+  DoAUoM:
+    address:
+      city: ''
+      country_code: USA
+      example_expanded: Department of Astronomy, University of Michigan, 1085 South
+        University Avenue, Ann Arbor, MI 48109, USA
+      postcode: '48109'
+      state: null
+      street: University of Michigan, 1085 South University Avenue, Ann Arbor, MI
+    department: null
+    email: umich.edu
+    institute: Department of Astronomy
+    ror_id: null
   Drexel:
     address:
       city: Philadelphia
@@ -7472,6 +7485,14 @@ authors:
     family_name: Newbry
     given_name: Scott P.
     orcid: null
+  nguyendd:
+    affil:
+    - DoAUoM
+    altaffil: []
+    email: dieun
+    family_name: Nguyen
+    given_name: Dieu D.
+    orcid: 0000-0002-5678-1008
   nicholsr:
     affil:
     - UCSC
