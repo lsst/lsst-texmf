@@ -808,19 +808,6 @@ affiliations:
     email: udel.edu
     institute: University of Delaware
     ror_id: 01sbq1a82
-  DoAUoM:
-    address:
-      city: ''
-      country_code: USA
-      example_expanded: Department of Astronomy, University of Michigan, 1085 South
-        University Avenue, Ann Arbor, MI 48109, USA
-      postcode: '48109'
-      state: null
-      street: University of Michigan, 1085 South University Avenue, Ann Arbor, MI
-    department: null
-    email: umich.edu
-    institute: Department of Astronomy
-    ror_id: null
   Drexel:
     address:
       city: Philadelphia
@@ -1846,7 +1833,7 @@ affiliations:
     email: me.com
     institute: Placeholder for me.com email domain
     ror_id: null
-  MichiganAstro:
+  MichiganStateAstro:
     address:
       city: East Lansing
       country_code: USA
@@ -2959,6 +2946,19 @@ affiliations:
     email: ucsc.cl
     institute: Universidad Cat\'olica de la Sant{\'\i}sima Concepci\'on
     ror_id: 03y6k2j68
+  UMichigan:
+    address:
+      city: Ann Arbor
+      country_code: USA
+      example_expanded: Department of Astronomy, University of Michigan, 1085 South
+        University Avenue, Ann Arbor, MI 48109, USA
+      postcode: '48109'
+      state: MI
+      street: 1085 South University Avenue
+    department: Department of Astronomy
+    email: umich.edu
+    institute: University of Michigan
+    ror_id: 00jmfr291
   UNAM:
     address:
       city: null
@@ -7487,7 +7487,7 @@ authors:
     orcid: null
   nguyendd:
     affil:
-    - DoAUoM
+    - UMichigan
     altaffil: []
     email: dieun
     family_name: Nguyen
@@ -8966,7 +8966,7 @@ authors:
     orcid: null
   straderj:
     affil:
-    - MichiganAstro
+    - MichiganStateAstro
     altaffil: []
     email: strader
     family_name: Strader
