@@ -90,7 +90,7 @@ def _parse_line(line: str) -> tuple[str, str] | tuple[None, None]:
 
 
 def read_glossarydef(
-    filename: str, utags: set[str] | None, init: dict[str, set[tuple[str, str]]] | None = None
+    filename: str, utags: list[str] | None, init: dict[str, set[tuple[str, str]]] | None = None
 ) -> dict[str, set[tuple[str, str]]]:
     """Read glossary  definitions from LSST format glossarydefs.csv file.
 
@@ -113,11 +113,15 @@ def read_glossarydef(
         Empty dict if the file can not be opened.
     """
     if init is None:
-        definitions = {}
+        definitions: dict[str, set[tuple[str, str]]] = {}
     else:
         definitions = init.copy()
     if utags is None:
-        utags = set()
+        utags = []
+
+    # Track the best (lowest) tag priority for each acronym
+    # Lower index = higher priority (first in utags list wins)
+    tag_priority: dict[str, int] = {}
 
     lc = 0
     with open(filename) as fd:
@@ -142,28 +146,33 @@ def read_glossarydef(
                 # in the case I want only the acronym table and
                 # I read a type "G" (glossary) definition, I discard it
                 continue
-            tagset = set()
-            hasTag = False
-            if tags:
-                tagset.update(tags.split())
-                hasTag = bool(tagset.intersection(utags))
             if not acr:
                 continue
 
+            # Find the best (lowest index) matching tag priority for this entry
+            best_priority = len(utags)  # Default: no match (worst priority)
+            if tags:
+                tagset = set(tags.split())
+                for i, utag in enumerate(utags):
+                    if utag in tagset:
+                        best_priority = i
+                        break  # First match in utags order wins
+
             if acr not in definitions:
                 definitions[acr] = set()
-            # Ok lets try to do something with Tags .. like if its tagged take
-            # this one
-            # should possibly keep the tags with the acronym ..
-            # I will take the first definition - iff i get a tag match later
-            # replace it
+                tag_priority[acr] = len(utags)  # No tag matched yet
 
-            if hasTag and definitions[acr]:
-                # removed any other def take tagged one
+            # Replace definition if this entry has better (lower) tag priority
+            current_priority = tag_priority.get(acr, len(utags))
+            if best_priority < current_priority:
+                # This entry has a higher-priority tag, replace the definition
                 definitions[acr] = set()
-            if not definitions[acr]:
-                # already have a def and not matching tag so ignore new one
                 definitions[acr].add((defn, entryType))
+                tag_priority[acr] = best_priority
+            elif not definitions[acr]:
+                # No definition yet, use this one
+                definitions[acr].add((defn, entryType))
+                tag_priority[acr] = best_priority
 
     return definitions
 
@@ -172,7 +181,7 @@ def read_myacronyms(
     filename: str = "myacronyms.txt",
     allow_duplicates: bool = False,
     defaults: dict[str, tuple[str, str]] | None = None,
-    utags: set[str] | None = None,
+    utags: list[str] | None = None,
 ) -> dict[str, tuple[str, str]]:
     """Read the supplied file and extract acronyms or glossary entries.
 
@@ -536,7 +545,7 @@ def write_latex_table(
         print(r"""======= ===========""", file=fd)
 
 
-def forceConverge(prevCount: int, utags: set[str], noadorn: bool, writeallacronyms: bool) -> None:
+def forceConverge(prevCount: int, utags: list[str], noadorn: bool, writeallacronyms: bool) -> None:
     """Run through the glossary looking for definitions until
     no more are added.
     """
@@ -559,7 +568,7 @@ def setup_paths() -> tuple[str, str]:
 def main(
     texfiles: set[str],
     doGlossary: bool,
-    utags: set[str],
+    utags: list[str],
     dotex: bool,
     dorst: bool,
     doaastex: bool,
@@ -966,7 +975,7 @@ if __name__ == "__main__":
 
     texfiles = args.files
     tagstr = args.tags
-    utags = set()
+    utags: list[str] = []
     dotex = args.mode == "tex"
     dorst = args.mode == "rst"
     doaastex = args.mode == "aastex"
@@ -979,7 +988,7 @@ if __name__ == "__main__":
         exit(0)
 
     if tagstr:
-        utags.update(re.split(r"[\s,]", tagstr))
+        utags.extend(re.split(r"[\s,]", tagstr))
 
     if doCheck:
         # For now load the glossary .. see if we get an excpetion
