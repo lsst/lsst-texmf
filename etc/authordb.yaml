@@ -1195,6 +1195,20 @@ affiliations:
     email: icloud.com
     institute: iCloud Mail email domain Placeholder
     ror_id: null
+  IIdATy:
+    address:
+      city: ''
+      country_code: Argentina
+      example_expanded: IATE, Instituto de Astronom{\'\i}a Te\'orica y Experimental,
+        Francisco N de Laprida 922, C\'ordoba,  X5000BGT, Argentina
+      postcode: ''
+      state: null
+      street: Instituto de Astronom{\'\i}a Te\'orica y Experimental, Francisco N de
+        Laprida 922, C\'ordoba, X5000BGT
+    department: null
+    email: unc.edu.ar
+    institute: IATE
+    ror_id: null
   IN2P3:
     address: null
     department: null
@@ -3921,6 +3935,14 @@ authors:
     family_name: Bellm
     given_name: Eric C.
     orcid: 0000-0001-8018-5348
+  benavidesj:
+    affil:
+    - IIdATy
+    altaffil: []
+    email: jose.benavides
+    family_name: Benavides
+    given_name: Jose
+    orcid: 0000-0003-1896-0424
   bernarda:
     affil:
     - IN2P3-LPSC
