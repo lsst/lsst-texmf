@@ -1,0 +1,18 @@
+[package]
+name = "rubin-technote"
+version = "0.1.0"
+entrypoint = "src/lsstdoc.typ"
+authors = ["Rubin Observatory"]
+license = "MIT"
+description = "Technical notes for the Vera C. Rubin Observatory"
+repository = "https://github.com/lsst/lsst-texmf"
+keywords = ["rubin", "lsst", "technote", "observatory", "astronomy"]
+categories = ["report"]
+disciplines = ["astronomy"]
+compiler = "0.15.0"
+exclude = ["tests", "docs", "examples", "tmp", "output"]
+
+[template]
+path = "template"
+entrypoint = "main.typ"
+thumbnail = "thumbnail.png"

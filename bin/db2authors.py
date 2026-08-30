@@ -29,6 +29,7 @@ from pathlib import Path
 from typing import Any, Self, TypeAlias
 
 import yaml
+from authorutils import latex2text
 
 try:
     from typing import Annotated
@@ -47,24 +48,6 @@ except ImportError:
     import dataclasses  # type: ignore[no-redef]
 
     OptStr: TypeAlias = str | None  # type: ignore[no-redef,misc]
-
-
-def latex2text(latex: str) -> str:
-    """Convert a LaTeX string into a plain text string.
-
-    Parameters
-    ----------
-    latex : `str`
-        Latex string to convert.
-
-    Returns
-    -------
-    plain : `str`
-        The plain text version.
-    """
-    from pylatexenc.latex2text import LatexNodes2Text
-
-    return LatexNodes2Text().latex_to_text(latex)
 
 
 @dataclasses.dataclass(frozen=True)
@@ -145,6 +128,8 @@ class Author:
     orcid: str | None
     affiliations: list[Affiliation]
     altaffil: list[str]
+    email_warning: str | None = None
+    """Diagnostic to report if a generator publishes this email address."""
 
     @property
     def full_name(self) -> str:
@@ -294,13 +279,13 @@ class AuthorFactory:
             # This is a key to a email domain.
             domain = self.get_email_domain_from_id(domain)
 
-        # In theory should only warn if this is AAS but we do not know the
-        # mode here.
+        # Only generators that publish email addresses should warn, so
+        # record the diagnostic here for them to report. Collective authors
+        # are not expected to have an email address.
+        email_warning = None
         if (not domain or not username) and author["affil"][0] != "_":
-            # Only warn if we need the email.
-            print(
-                f"WARNING: Unable to resolve email address for author '{authorid}' email '{email}'",
-                file=sys.stderr,
+            email_warning = (
+                f"WARNING: Unable to resolve email address for author '{authorid}' email '{email}'"
             )
         if not domain:
             domain = "none.com"
@@ -315,6 +300,7 @@ class AuthorFactory:
             email=email,
             affiliations=affiliations,
             altaffil=list(author["altaffil"]),
+            email_warning=email_warning,
         )
 
 
@@ -345,6 +331,16 @@ class AuthorTextGenerator(ABC):
                     affil_to_number[affiliation] = counter
 
         return affil_to_number
+
+    def warn_unresolved_emails(self) -> None:
+        """Warn about authors whose email address could not be resolved.
+
+        Generators that publish email addresses should call this before
+        generating their output.
+        """
+        for author in self.authors:
+            if author.email_warning:
+                print(author.email_warning, file=sys.stderr)
 
     @abstractmethod
     def generate(self, header: bool = True) -> str:
@@ -387,6 +383,7 @@ class AASTeX(AuthorTextGenerator):
 
     def generate(self, header: bool = True) -> str:
         """Generate AASTeX format."""
+        self.warn_unresolved_emails()
         lines = []
         for author in self.authors:
             lines.append("")
@@ -592,6 +589,7 @@ class ADASS(AuthorTextGenerator):
         return affil_text
 
     def generate(self, header: bool = True) -> str:
+        self.warn_unresolved_emails()
         affil_to_number = self.number_affiliations()
 
         authors = list(self.authors)
@@ -815,6 +813,7 @@ class AASCSV(AuthorTextGenerator):
     mode = "aascsv"
 
     def generate(self, header: bool = True) -> str:
+        self.warn_unresolved_emails()
         # Declare the field names from the dataclass but do not use them
         # to write the header since we want to match the template exactly.
         # Need to write to a string buffer since csv.writer needs a file-like
@@ -914,6 +913,24 @@ def dump_csvall(factory: AuthorFactory) -> None:
             writer.writerow([id, latex2text(affil.get_full_address_with_institute())])
 
 
+def write_output(output: str, file_name: str | None) -> None:
+    """Write generated text to a file or standard output.
+
+    Parameters
+    ----------
+    output : `str`
+        The generated text. A trailing newline is added if one is missing.
+    file_name : `str` or `None`
+        The file to write to, or `None` to use standard output.
+    """
+    if not output.endswith("\n"):
+        output += "\n"
+    if file_name:
+        Path(file_name).write_text(output, encoding="utf-8")
+    else:
+        print(output, end="")
+
+
 def load_dni(donotinclude: str) -> set[str]:
     """
     Load  the standard 'do not include' file and return a list of author IDs.
@@ -983,7 +1000,16 @@ if __name__ == "__main__":
                             'verbose' displays all the information...""",
     )
     parser.add_argument("-n", "--noafil", action="store_true", help="""Do not add affil at all for arxiv.""")
+    parser.add_argument(
+        "--authors",
+        default=authorfile,
+        help="YAML file containing author database IDs in document order.",
+    )
+    parser.add_argument("--output", help="Write generated output to this file instead of standard output.")
     args = parser.parse_args()
+
+    if args.mode == "csvall" and args.output:
+        parser.error("--output is not supported with mode 'csvall', which writes fixed CSV files")
 
     # This is the database file with all the generic information
     # about authors. Locate it relative to this script.
@@ -1000,12 +1026,12 @@ if __name__ == "__main__":
         dump_csvall(factory)
         exit(0)
 
-    with open(authorfile) as fh:
+    with open(args.authors, encoding="utf-8") as fh:
         authors = yaml.safe_load(fh)
 
     dni_list = load_dni(dnifile)
-    authors = [a for a in authors if a not in dni_list]
-    authors = [factory.get_author(authorid) for authorid in authors]
+    author_ids = [a for a in authors if a not in dni_list]
+    authors = [factory.get_author(authorid) for authorid in author_ids]
 
     generator_lut: dict[str, type[AuthorTextGenerator]] = {
         "aas": AASTeX,
@@ -1024,4 +1050,4 @@ if __name__ == "__main__":
         raise RuntimeError(f"Unknown generator mode: {args.mode}")
 
     generator = generator_lut[args.mode](authors)
-    print(generator.generate())
+    write_output(generator.generate(), args.output)

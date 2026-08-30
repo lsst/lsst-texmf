@@ -1,0 +1,791 @@
+"""Smoke tests for the Typst lsstdoc prototype."""
+
+from __future__ import annotations
+
+import ast
+import json
+import shutil
+import struct
+import subprocess
+import sys
+import tempfile
+import tomllib
+import unittest
+from pathlib import Path
+from shutil import copytree, ignore_patterns
+
+import yaml
+
+REPOSITORY = Path(__file__).resolve().parents[2]
+
+# Match the repository convention of importing the bin scripts directly
+# (CI runs pytest with PYTHONPATH=bin) while keeping plain unittest
+# discovery working.
+if str(REPOSITORY / "bin") not in sys.path:
+    sys.path.insert(0, str(REPOSITORY / "bin"))
+
+from authorutils import check_orcid  # noqa: E402
+
+PROTOTYPE = REPOSITORY / "typst-lsstdoc"
+FONT_PATHS = [PROTOTYPE / "fonts"]
+
+# Inline author arguments shared by the fixture documents.
+SINGLE_AUTHOR_ARGS = (
+    "  authors: (\n"
+    "    (\n"
+    '      internal_id: "example",\n'
+    '      given_name: "Ada",\n'
+    '      family_name: "Lovelace",\n'
+    '      display_name: "Ada Lovelace",\n'
+    "      orcid: none,\n"
+    '      affiliations: ("INST",),\n'
+    "    ),\n"
+    "  ),\n"
+    '  affiliations: (INST: (name: "Example Institute", address: "Tucson", ror: none)),\n'
+)
+
+
+def load_bibtools_series() -> dict[str, str]:
+    """Read the literal TN_SERIES mapping without importing bibtools."""
+    tree = ast.parse((REPOSITORY / "bin/bibtools.py").read_text(encoding="utf-8"))
+    for node in tree.body:
+        if isinstance(node, ast.Assign) and any(
+            isinstance(target, ast.Name) and target.id == "TN_SERIES" for target in node.targets
+        ):
+            return ast.literal_eval(node.value)
+    raise AssertionError("TN_SERIES was not found in bin/bibtools.py")
+
+
+@unittest.skipUnless(shutil.which("typst"), "Typst is not installed")
+class TypstCompileTest(unittest.TestCase):
+    """Compile the representative and state-focused documents."""
+
+    def setUp(self) -> None:
+        (PROTOTYPE / "tmp").mkdir(exist_ok=True)
+        self.temporary = tempfile.TemporaryDirectory(dir=PROTOTYPE / "tmp")
+        self.tempdir = Path(self.temporary.name)
+
+    def tearDown(self) -> None:
+        self.temporary.cleanup()
+
+    def compile(
+        self,
+        source: Path,
+        output: Path,
+        *inputs: str,
+        pdf_standard: str | None = None,
+        root: Path = REPOSITORY,
+    ) -> subprocess.CompletedProcess[str]:
+        command = [
+            "typst",
+            "compile",
+            "--root",
+            str(root),
+            "--font-path",
+            ":".join(str(path) for path in FONT_PATHS),
+        ]
+        if pdf_standard:
+            command.extend(("--pdf-standard", pdf_standard))
+        for value in inputs:
+            command.extend(("--input", value))
+        command.extend((str(source), str(output)))
+        return subprocess.run(command, text=True, capture_output=True, check=False)
+
+    def test_features_example_compiles(self) -> None:
+        output = self.tempdir / "features.pdf"
+        result = self.compile(
+            PROTOTYPE / "examples/features.typ",
+            output,
+            pdf_standard="a-2a,ua-1",
+        )
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertGreater(output.stat().st_size, 10_000)
+        if pdftotext := shutil.which("pdftotext"):
+            extracted = subprocess.run(
+                [pdftotext, str(output), "-"],
+                text=True,
+                capture_output=True,
+                check=True,
+            ).stdout
+            self.assertIn("DMTN-001", extracted)
+            self.assertIn("technical-note series", extracted)
+            self.assertIn("Tidy Data", extracted)
+            self.assertNotIn("Software Carpentry", extracted)
+            # The running header must not leak stray punctuation.
+            self.assertNotRegex(extracted, r"(?m)^,$")
+        if qpdf := shutil.which("qpdf"):
+            qdf = self.tempdir / "features-qdf.pdf"
+            subprocess.run(
+                [qpdf, "--qdf", "--object-streams=disable", str(output), str(qdf)],
+                text=True,
+                capture_output=True,
+                check=True,
+            )
+            structure = qdf.read_bytes().decode("latin-1")
+            self.assertIn("/Contents (DMTN-001)", structure)
+            self.assertIn("/Contents (technical-note series)", structure)
+
+    @unittest.skipUnless(shutil.which("verapdf"), "veraPDF is not installed")
+    def test_independent_conformance_validation(self) -> None:
+        """Confirm PDF/A-2a and PDF/UA-1 conformance independently."""
+        output = self.tempdir / "conformance.pdf"
+        result = self.compile(
+            PROTOTYPE / "examples/features.typ",
+            output,
+            pdf_standard="a-2a,ua-1",
+        )
+        self.assertEqual(result.returncode, 0, result.stderr)
+        for flavour in ("2a", "ua1"):
+            with self.subTest(flavour=flavour):
+                audit = subprocess.run(
+                    ["verapdf", "--flavour", flavour, "--format", "text", str(output)],
+                    text=True,
+                    capture_output=True,
+                    check=False,
+                )
+                self.assertIn("PASS", audit.stdout)
+                self.assertNotIn("FAIL", audit.stdout)
+
+    @unittest.skipUnless(shutil.which("pdftotext"), "pdftotext is not installed")
+    def test_long_author_list_flows_to_second_page(self) -> None:
+        """A very long author list continues onto a second title page."""
+        authors = ",\n".join(
+            f'    (internal_id: "a{i}", display_name: "Author Number{i}", affiliations: ("INST{i % 5}",))'
+            for i in range(100)
+        )
+        affiliations = ",\n".join(
+            f'    INST{i}: (name: "Institute {i}", address: "City {i}", ror: none)' for i in range(5)
+        )
+        source = self.tempdir / "many-authors.typ"
+        source.write_text(
+            '#import "../../src/lsstdoc.typ": lsstdoc\n'
+            "#show: lsstdoc.with(\n"
+            '  title: "A Technote With One Hundred Authors",\n'
+            '  id: "DMTN-999",\n'
+            '  series: "DMTN",\n'
+            '  date: "2026-07-16",\n'
+            f"  authors: (\n{authors},\n  ),\n"
+            f"  affiliations: (\n{affiliations},\n  ),\n"
+            "  toc: false,\n"
+            ")\n"
+            "= Test\n",
+            encoding="utf-8",
+        )
+        output = self.tempdir / "many-authors.pdf"
+        result = self.compile(source, output)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        pages = [
+            " ".join(page.split())
+            for page in subprocess.run(
+                ["pdftotext", str(output), "-"],
+                text=True,
+                capture_output=True,
+                check=True,
+            ).stdout.split("\f")
+        ]
+        # The title and first authors stay on page one; the overflow,
+        # ending with the handle and revision date, continues on page two
+        # instead of colliding with the page-one furniture.
+        self.assertIn("A Technote With One Hundred Authors", pages[0])
+        self.assertIn("Author Number0", pages[0])
+        self.assertIn("Latest Revision: 2026-07-16", pages[1])
+        self.assertIn("1 Test", pages[2])
+
+    def write_affiliation_document(self, style: str) -> Path:
+        """Write a two-author document with the given affiliation style."""
+        source = self.tempdir / "affiliation-style.typ"
+        source.write_text(
+            '#import "../../src/lsstdoc.typ": lsstdoc\n'
+            "#show: lsstdoc.with(\n"
+            '  title: "Affiliation Style Test",\n'
+            '  id: "DMTN-999",\n'
+            '  series: "DMTN",\n'
+            '  date: "2026-07-16",\n'
+            f'  affiliation-style: "{style}",\n'
+            "  authors: (\n"
+            '    (internal_id: "a", display_name: "Ada Lovelace", affiliations: ("INST",)),\n'
+            '    (internal_id: "b", display_name: "Grace Hopper", affiliations: ("INST", "OTHER")),\n'
+            "  ),\n"
+            "  affiliations: (\n"
+            '    INST: (name: "Example Institute", address: "Tucson", ror: none),\n'
+            '    OTHER: (name: "Other University", address: "Chicago", ror: none),\n'
+            "  ),\n"
+            '  abstract: "A short abstract.",\n'
+            "  toc: false,\n"
+            ")\n"
+            "= Test\n",
+            encoding="utf-8",
+        )
+        return source
+
+    def extract_pages(self, output: Path) -> list[str]:
+        """Extract whitespace-normalized text per page."""
+        return [
+            " ".join(page.split())
+            for page in subprocess.run(
+                ["pdftotext", str(output), "-"],
+                text=True,
+                capture_output=True,
+                check=True,
+            ).stdout.split("\f")
+        ]
+
+    @unittest.skipUnless(shutil.which("pdftotext"), "pdftotext is not installed")
+    def test_deferred_affiliations_have_their_own_page(self) -> None:
+        """Deferred affiliations move to a front-matter page with anchors."""
+        source = self.write_affiliation_document("deferred")
+        output = self.tempdir / "deferred.pdf"
+        result = self.compile(source, output)
+        # Compilation succeeding proves every marker link has a target.
+        self.assertEqual(result.returncode, 0, result.stderr)
+        pages = self.extract_pages(output)
+        # Markers stay on the title page but the legend moves off it.
+        self.assertIn("Grace Hopper1,2", pages[0])
+        self.assertNotIn("Example Institute", pages[0])
+        # The affiliations page follows the abstract in the front matter.
+        self.assertIn("A short abstract.", pages[1])
+        self.assertIn("Affiliations", pages[2])
+        self.assertIn("Example Institute; Tucson", pages[2])
+        self.assertIn("Other University; Chicago", pages[2])
+        self.assertIn("1 Test", pages[3])
+
+    @unittest.skipUnless(shutil.which("pdftotext"), "pdftotext is not installed")
+    def test_disabled_affiliations_show_no_markers(self) -> None:
+        """Style none suppresses both the markers and the legend."""
+        source = self.write_affiliation_document("none")
+        output = self.tempdir / "none.pdf"
+        result = self.compile(source, output)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        pages = self.extract_pages(output)
+        self.assertIn("Ada Lovelace and Grace Hopper", pages[0])
+        self.assertNotRegex(pages[0], r"Hopper\s*1")
+        self.assertNotIn("Example Institute", " ".join(pages))
+
+    def test_invalid_affiliation_style_rejected(self) -> None:
+        source = self.write_affiliation_document("sideways")
+        result = self.compile(source, self.tempdir / "invalid-affil.pdf")
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("affiliation-style", result.stderr)
+
+    @unittest.skipUnless(shutil.which("pdftotext"), "pdftotext is not installed")
+    def test_standalone_document_without_handle(self) -> None:
+        """Standalone documents may omit the handle and series."""
+        source = self.tempdir / "no-handle.typ"
+        source.write_text(
+            '#import "../../src/lsstdoc.typ": lsstdoc\n'
+            "#show: lsstdoc.with(\n"
+            '  title: "Standalone Guide",\n'
+            '  date: "2026-07-18",\n' + SINGLE_AUTHOR_ARGS + "  toc: false,\n"
+            ")\n"
+            "= Test\n",
+            encoding="utf-8",
+        )
+        output = self.tempdir / "no-handle.pdf"
+        result = self.compile(source, output)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        extracted = subprocess.run(
+            ["pdftotext", str(output), "-"],
+            text=True,
+            capture_output=True,
+            check=True,
+        ).stdout
+        self.assertIn("Standalone Guide | Latest Revision 2026-07-18", extracted)
+
+    @unittest.skipUnless(shutil.which("pdftotext"), "pdftotext is not installed")
+    def test_provenance_renders_in_front_matter(self) -> None:
+        """Provenance lines follow the change record in the front matter."""
+        source = self.tempdir / "provenance.typ"
+        source.write_text(
+            '#import "../../src/lsstdoc.typ": lsstdoc\n'
+            "#show: lsstdoc.with(\n"
+            '  title: "Provenance Test",\n'
+            '  id: "DMTN-999",\n'
+            '  series: "DMTN",\n'
+            '  date: "2026-07-16",\n' + SINGLE_AUTHOR_ARGS + "  toc: false,\n"
+            '  curator: "Ada Lovelace",\n'
+            '  repository-url: "https://github.com/lsst/example",\n'
+            '  source-version: "abc1234",\n'
+            '  citation-information: "Please cite as Lovelace (2026).",\n'
+            "  changes: (\n"
+            '    (version: "1", date: "2026-07-16", description: "Start.", author: "A"),\n'
+            "  ),\n"
+            ")\n"
+            "= Test\n"
+            "Body text.\n",
+            encoding="utf-8",
+        )
+        output = self.tempdir / "provenance.pdf"
+        result = self.compile(source, output)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        extracted = subprocess.run(
+            ["pdftotext", str(output), "-"],
+            text=True,
+            capture_output=True,
+            check=True,
+        ).stdout
+        normalized = " ".join(extracted.split())
+        for line in (
+            "Document curator: Ada Lovelace",
+            "Document source location: https://github.com/lsst/example",
+            "Version from source repository: abc1234",
+            "Cite as: Please cite as Lovelace (2026).",
+        ):
+            self.assertIn(line, normalized)
+        # The provenance belongs to the front matter, before the body, and
+        # the old end-of-body source line is gone.
+        self.assertLess(normalized.index("Document curator:"), normalized.index("1 Test"))
+        self.assertNotIn("Document source:", normalized)
+
+    @unittest.skipUnless(shutil.which("pdftotext"), "pdftotext is not installed")
+    def test_source_version_from_build_input(self) -> None:
+        """The build's version stamp appears only in draft documents."""
+
+        def write_source(status: str, explicit: str | None = None) -> Path:
+            source = self.tempdir / "gitversion.typ"
+            source.write_text(
+                '#import "../../src/lsstdoc.typ": lsstdoc\n'
+                "#show: lsstdoc.with(\n"
+                '  title: "Git Version Test",\n'
+                '  id: "DMTN-999",\n'
+                '  series: "DMTN",\n'
+                f'  status: "{status}",\n'
+                '  date: "2026-07-16",\n'
+                + SINGLE_AUTHOR_ARGS
+                + "  toc: false,\n"
+                + (f'  source-version: "{explicit}",\n' if explicit else "")
+                + ")\n"
+                "= Test\n",
+                encoding="utf-8",
+            )
+            return source
+
+        def version_line(output: Path) -> str | None:
+            extracted = subprocess.run(
+                ["pdftotext", str(output), "-"],
+                text=True,
+                capture_output=True,
+                check=True,
+            ).stdout
+            normalized = " ".join(extracted.split())
+            if "Version from source repository" not in normalized:
+                return None
+            return normalized.split("Version from source repository: ")[1].split(" ")[0]
+
+        # A draft shows the stamp so evolving state is traceable.
+        output = self.tempdir / "draft.pdf"
+        result = self.compile(write_source("draft"), output, "source-version=abc1234-dirty")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual(version_line(output), "abc1234-dirty")
+
+        # Released documents rely on the change record instead.
+        output = self.tempdir / "released.pdf"
+        result = self.compile(write_source("released"), output, "source-version=abc1234-dirty")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIsNone(version_line(output))
+
+        # An explicit value always renders, regardless of status.
+        output = self.tempdir / "explicit.pdf"
+        result = self.compile(write_source("released", explicit="v1.0"), output)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual(version_line(output), "v1.0")
+
+        # No stamp and no explicit value renders nothing.
+        output = self.tempdir / "plain.pdf"
+        result = self.compile(write_source("draft"), output)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIsNone(version_line(output))
+
+    def test_document_states(self) -> None:
+        for status in ("draft", "released", "obsolete"):
+            with self.subTest(status=status):
+                output = self.tempdir / f"{status}.pdf"
+                result = self.compile(
+                    PROTOTYPE / "examples/state.typ",
+                    output,
+                    f"status={status}",
+                )
+                self.assertEqual(result.returncode, 0, result.stderr)
+                self.assertTrue(output.exists())
+
+    @unittest.skipUnless(shutil.which("pdftotext"), "pdftotext is not installed")
+    def test_default_bibliography_is_aas_style(self) -> None:
+        """The default style follows aastex and keeps handles intact."""
+        many_authors = (
+            "@article{many-authors,\n"
+            "  author = {First, Alice and Second, Bob and Third, Carol and"
+            " Fourth, Dan and Fifth, Eve and Sixth, Frank and Seventh, Grace},\n"
+            "  title = {An Entry With Seven Authors},\n"
+            "  journal = {Example Journal},\n"
+            "  year = {2024},\n"
+            "  volume = {1},\n"
+            "  pages = {1}\n"
+            "}\n"
+        )
+        (self.tempdir / "many.bib").write_text(many_authors, encoding="utf-8")
+        source = self.tempdir / "aas-style.typ"
+        source.write_text(
+            '#import "../../src/lsstdoc.typ": lsstdoc\n'
+            "#show: lsstdoc.with(\n"
+            '  title: "AAS Style Test",\n'
+            '  id: "DMTN-999",\n'
+            '  series: "DMTN",\n'
+            '  date: "2026-07-16",\n' + SINGLE_AUTHOR_ARGS + "  toc: false,\n"
+            "  bibliography: (\n"
+            '    read("../../docs/manual.bib", encoding: none),\n'
+            '    read("../../examples/references.bib", encoding: none),\n'
+            '    read("many.bib", encoding: none),\n'
+            "  ),\n"
+            ")\n"
+            "= Test\n"
+            "Cite a technote @DMTN-000, an article @fits-standard, and a\n"
+            "seven-author entry @many-authors. Adjacent citations merge:\n"
+            "@DMTN-000 @fits-standard.\n",
+            encoding="utf-8",
+        )
+        output = self.tempdir / "aas-style.pdf"
+        result = self.compile(source, output)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        extracted = subprocess.run(
+            ["pdftotext", str(output), "-"],
+            text=True,
+            capture_output=True,
+            check=True,
+        ).stdout
+        # Collapse line wrapping inside the references.
+        normalized = " ".join(extracted.split())
+        # Author-year citations without a comma, following aastex.
+        self.assertIn("(Jenness 2017)", normalized)
+        # The technote reference keeps the handle intact and renders the
+        # aasjournal.bst techreport shape: type, handle, institution.
+        self.assertIn("Data Management Technical Note DMTN-000", normalized)
+        self.assertNotIn("DMTN0 ", normalized)
+        self.assertIn("DMTN-000, NSF-DOE Vera C. Rubin Observatory", normalized)
+        # Articles render journal, volume, and page after the title.
+        self.assertIn("Astronomy and Astrophysics, 524, A42", normalized)
+        # aasjournal.bst author truncation: five or fewer are listed in
+        # full, more than five collapse to the first three plus et al.
+        self.assertIn("Pence, W., Chiappetti, L., Page, C., Shaw, R., & Stobie, E.", normalized)
+        self.assertIn("First, A., Second, B., Third, C., et al.", normalized)
+        self.assertNotIn("Fourth", normalized)
+        # In-text citations collapse to the first author at three or more.
+        self.assertIn("(First et al. 2024)", normalized)
+        # Adjacent citations merge into one parenthetical group; the
+        # citation styling must not break the grouping.
+        self.assertIn("(Jenness 2017; Pence et al. 2010)", normalized)
+
+    def test_bibliography_style_option(self) -> None:
+        source = self.tempdir / "bib-style.typ"
+        source.write_text(
+            '#import "../../src/lsstdoc.typ": lsstdoc\n'
+            "#show: lsstdoc.with(\n"
+            '  title: "Bibliography Style Test",\n'
+            '  id: "DMTN-999",\n'
+            '  series: "DMTN",\n'
+            '  date: "2026-07-16",\n' + SINGLE_AUTHOR_ARGS + "  toc: false,\n"
+            '  bibliography: (read("../../examples/references.bib", encoding: none),),\n'
+            '  bibliography-style: "ieee",\n'
+            ")\n"
+            "= Test\n"
+            "A citation @jenness-example.\n",
+            encoding="utf-8",
+        )
+        result = self.compile(source, self.tempdir / "bib-style.pdf")
+        self.assertEqual(result.returncode, 0, result.stderr)
+
+    def write_doi_document(self, doi: str) -> Path:
+        """Write a minimal document that sets the given DOI."""
+        source = self.tempdir / "doi.typ"
+        source.write_text(
+            '#import "../../src/lsstdoc.typ": lsstdoc\n'
+            "#show: lsstdoc.with(\n"
+            '  title: "DOI Test",\n'
+            '  id: "DMTN-999",\n'
+            '  series: "DMTN",\n'
+            '  date: "2026-07-16",\n' + SINGLE_AUTHOR_ARGS + "  toc: false,\n"
+            f'  doi: "{doi}",\n'
+            ")\n"
+            "= Test\n",
+            encoding="utf-8",
+        )
+        return source
+
+    @unittest.skipUnless(shutil.which("pdftotext"), "pdftotext is not installed")
+    def test_doi_renders_once_as_link(self) -> None:
+        source = self.write_doi_document("10.71929/example.71")
+        output = self.tempdir / "doi.pdf"
+        result = self.compile(source, output)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        extracted = subprocess.run(
+            ["pdftotext", str(output), "-"],
+            text=True,
+            capture_output=True,
+            check=True,
+        ).stdout
+        self.assertEqual(extracted.count("https://doi.org/10.71929/example.71"), 1)
+        self.assertEqual(extracted.count("https://doi.org/"), 1)
+
+    def test_url_prefixed_doi_is_rejected(self) -> None:
+        source = self.write_doi_document("https://doi.org/10.71929/example.71")
+        result = self.compile(source, self.tempdir / "doi-bad.pdf")
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("bare identifier", result.stderr)
+
+    def test_change_record_accepts_non_string_values(self) -> None:
+        source = self.tempdir / "changes.typ"
+        source.write_text(
+            '#import "../../src/change-record.typ": render-change-record\n'
+            "#render-change-record((\n"
+            '  (version: 0.1, date: "2026-01-01", description: "Start", author: "A Person"),\n'
+            "))\n",
+            encoding="utf-8",
+        )
+        result = self.compile(source, self.tempdir / "changes.pdf")
+        self.assertEqual(result.returncode, 0, result.stderr)
+
+    @unittest.skipUnless(shutil.which("pdftotext"), "pdftotext is not installed")
+    def test_two_authors_have_no_comma_before_and(self) -> None:
+        source = self.tempdir / "two-authors.typ"
+        source.write_text(
+            '#import "../../src/lsstdoc.typ": lsstdoc\n'
+            "#show: lsstdoc.with(\n"
+            '  title: "Two Author Test",\n'
+            '  id: "DMTN-999",\n'
+            '  series: "DMTN",\n'
+            '  date: "2026-07-16",\n'
+            "  authors: (\n"
+            '    (internal_id: "a", display_name: "Ada Lovelace", affiliations: ("INST",)),\n'
+            '    (internal_id: "b", display_name: "Grace Hopper", affiliations: ("INST",)),\n'
+            "  ),\n"
+            '  affiliations: (INST: (name: "Example Institute", address: "Tucson", ror: none)),\n'
+            "  toc: false,\n"
+            ")\n"
+            "= Test\n",
+            encoding="utf-8",
+        )
+
+        output = self.tempdir / "two-authors.pdf"
+        result = self.compile(source, output)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        extracted = subprocess.run(
+            ["pdftotext", str(output), "-"],
+            text=True,
+            capture_output=True,
+            check=True,
+        ).stdout
+        self.assertIn("Ada Lovelace", extracted)
+        self.assertNotRegex(extracted, r"Lovelace\s*,")
+
+    @unittest.skipUnless(shutil.which("pdftotext"), "pdftotext is not installed")
+    def test_technote_toml_example_compiles(self) -> None:
+        output = self.tempdir / "technote.pdf"
+        result = self.compile(PROTOTYPE / "examples/technote.typ", output)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        extracted = subprocess.run(
+            ["pdftotext", str(output), "-"],
+            text=True,
+            capture_output=True,
+            check=True,
+        ).stdout
+        self.assertIn("SQR-999", extracted)
+        self.assertIn("SQuaRE Technical Note", extracted)
+        self.assertIn("Ada Lovelace", extracted)
+        self.assertIn("Grace Hopper", extracted)
+        # The shared affiliation is deduplicated to a single entry.
+        self.assertEqual(extracted.count("Example Institute"), 1)
+        # A stable technote maps to released: no draft furniture.
+        self.assertNotIn("D R A F T", extracted)
+
+    def test_technote_example_is_self_contained(self) -> None:
+        """The technote flow must not read outside the template subtree."""
+        output = self.tempdir / "standalone.pdf"
+        result = self.compile(
+            PROTOTYPE / "examples/technote.typ",
+            output,
+            root=PROTOTYPE,
+        )
+        self.assertEqual(result.returncode, 0, result.stderr)
+
+    def test_vendored_package_template_scaffold(self) -> None:
+        """The template scaffold compiles through a vendored @preview package.
+
+        This mirrors what ``typst init @preview/rubin-technote`` produces: the
+        files from the manifest's template path in a fresh directory, importing
+        the package.
+        """
+        package_dir = self.tempdir / "packages/preview/rubin-technote/0.1.0"
+        copytree(PROTOTYPE, package_dir, ignore=ignore_patterns("tmp", "output", "tests"))
+
+        manifest = tomllib.loads((PROTOTYPE / "typst.toml").read_text(encoding="utf-8"))
+        template = manifest["template"]
+        workdir = self.tempdir / "scaffold"
+        copytree(PROTOTYPE / template["path"], workdir)
+
+        command = [
+            "typst",
+            "compile",
+            "--root",
+            str(workdir),
+            "--package-path",
+            str(self.tempdir / "packages"),
+            "--font-path",
+            str(package_dir / "fonts"),
+            # The technote Makefile enforces the archival and
+            # accessibility standards by default.
+            "--pdf-standard",
+            "a-2a,ua-1",
+            str(workdir / template["entrypoint"]),
+            str(self.tempdir / "scaffold.pdf"),
+        ]
+        result = subprocess.run(command, text=True, capture_output=True, check=False)
+        self.assertEqual(result.returncode, 0, result.stderr)
+
+    def test_manual_compiles(self) -> None:
+        """The user guide builds and is typeset with the template itself."""
+        output = self.tempdir / "manual.pdf"
+        result = self.compile(
+            PROTOTYPE / "docs/manual.typ",
+            output,
+            root=PROTOTYPE,
+        )
+        self.assertEqual(result.returncode, 0, result.stderr)
+        if pdftotext := shutil.which("pdftotext"):
+            extracted = subprocess.run(
+                [pdftotext, str(output), "-"],
+                text=True,
+                capture_output=True,
+                check=True,
+            ).stdout
+            self.assertIn("Change Record", extracted)
+            self.assertIn("Contents", extracted)
+            self.assertIn("Admonitions", extracted)
+            self.assertIn("API reference", extracted)
+            self.assertIn("References", extracted)
+            # The guide is a standalone document with no technote handle.
+            self.assertNotIn("TESTN-001", extracted)
+
+    @unittest.skipUnless(shutil.which("pdftotext"), "pdftotext is not installed")
+    def test_technote_toml_maps_doi(self) -> None:
+        output = self.tempdir / "technote-doi.pdf"
+        result = self.compile(PROTOTYPE / "examples/technote.typ", output)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        extracted = subprocess.run(
+            ["pdftotext", str(output), "-"],
+            text=True,
+            capture_output=True,
+            check=True,
+        ).stdout
+        self.assertEqual(extracted.count("https://doi.org/10.71929/rubin/example.999"), 1)
+
+    def test_front_matter_is_queryable(self) -> None:
+        """Tooling can extract the front matter with typst query."""
+        result = subprocess.run(
+            [
+                "typst",
+                "query",
+                "--root",
+                str(REPOSITORY),
+                "--font-path",
+                ":".join(str(path) for path in FONT_PATHS),
+                str(PROTOTYPE / "examples/technote.typ"),
+                "<rubin-technote>",
+                "--field",
+                "value",
+                "--one",
+            ],
+            text=True,
+            capture_output=True,
+            check=False,
+        )
+        self.assertEqual(result.returncode, 0, result.stderr)
+        front_matter = json.loads(result.stdout)
+        self.assertEqual(front_matter["id"], "SQR-999")
+        self.assertEqual(front_matter["series"], "SQR")
+        self.assertEqual(front_matter["status"], "released")
+        self.assertEqual(front_matter["title"], "Reusing Documenteer Technote Metadata")
+        self.assertIn("Documenteer", json.dumps(front_matter["abstract"]))
+
+    def test_technote_toml_unknown_state_rejected(self) -> None:
+        source = self.tempdir / "state.typ"
+        (self.tempdir / "technote.toml").write_text(
+            "[technote]\n"
+            'id = "SQR-999"\n'
+            'series_id = "SQR"\n'
+            "date_created = 2026-07-16T00:00:00Z\n"
+            "[technote.status]\n"
+            'state = "other"\n'
+            "[[technote.authors]]\n"
+            'name = {given = "Ada", family = "Lovelace"}\n',
+            encoding="utf-8",
+        )
+        source.write_text(
+            '#import "../../src/lsstdoc.typ": lsstdoc\n'
+            '#import "../../src/technote-toml.typ": technote-args\n'
+            "#show: lsstdoc.with(\n"
+            '  ..technote-args(toml("technote.toml")),\n'
+            '  title: "Unknown State Test",\n'
+            "  toc: false,\n"
+            ")\n"
+            "= Test\n",
+            encoding="utf-8",
+        )
+        result = self.compile(source, self.tempdir / "state.pdf")
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("technote status state", result.stderr)
+
+    def test_invalid_document_state_fails_clearly(self) -> None:
+        result = self.compile(
+            PROTOTYPE / "examples/state.typ",
+            self.tempdir / "invalid.pdf",
+            "status=withdrawn",
+        )
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("Unsupported document status: withdrawn", result.stderr)
+
+
+class MetadataTest(unittest.TestCase):
+    """Validate shared mappings and generated author structure."""
+
+    def test_series_matches_bibtools(self) -> None:
+        expected = load_bibtools_series()
+        actual = yaml.safe_load((PROTOTYPE / "data/series.yaml").read_text(encoding="utf-8"))["series"]
+        self.assertEqual(actual, expected)
+
+    def test_package_manifest_is_universe_ready(self) -> None:
+        manifest = tomllib.loads((PROTOTYPE / "typst.toml").read_text(encoding="utf-8"))
+        package = manifest["package"]
+        self.assertEqual(package["name"], "rubin-technote")
+        self.assertEqual(package["license"], "MIT")
+        self.assertTrue((PROTOTYPE / "LICENSE").exists())
+        self.assertNotIn("typst", package["description"].lower())
+        self.assertLessEqual(len(package["description"]), 60)
+        self.assertTrue(package["categories"])
+        self.assertIn("tests", package["exclude"])
+
+        template = manifest["template"]
+        entrypoint = PROTOTYPE / template["path"] / template["entrypoint"]
+        self.assertTrue(entrypoint.exists())
+
+        thumbnail = PROTOTYPE / template["thumbnail"]
+        self.assertTrue(thumbnail.exists())
+        header = thumbnail.read_bytes()[:24]
+        self.assertEqual(header[:8], b"\x89PNG\r\n\x1a\n")
+        width, height = struct.unpack(">II", header[16:24])
+        self.assertGreaterEqual(max(width, height), 1080)
+        self.assertLessEqual(thumbnail.stat().st_size, 3 * 1024 * 1024)
+
+    def test_controlled_series_reference_valid_series(self) -> None:
+        data = yaml.safe_load((PROTOTYPE / "data/series.yaml").read_text(encoding="utf-8"))
+        controlled = data["controlled"]
+        self.assertTrue(set(controlled).issubset(data["series"]))
+        self.assertIn("LDM", controlled)
+        self.assertIn("RDO", controlled)
+        self.assertNotIn("DMTN", controlled)
+
+    def test_orcid_validation(self) -> None:
+        self.assertEqual(check_orcid("000000015982167X"), "0000-0001-5982-167X")
+        with self.assertRaisesRegex(ValueError, "does not match standard form"):
+            check_orcid("https://orcid.org/0000-0001-5982-167X")
+
+
+if __name__ == "__main__":
+    unittest.main()
