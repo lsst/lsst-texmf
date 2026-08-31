@@ -1189,6 +1189,19 @@ affiliations:
     email: null
     institute: Instituto de Astronom\'ia y F\'isica del Espacio (IAFE)
     ror_id: 03rq94151
+  IATE:
+    address:
+      city: C\'ordoba
+      country_code: Argentina
+      example_expanded: Instituto de Astronom{\'\i}a Te\'orica y Experimental,
+        Laprida 854, C\'ordoba, X5000BGR, Argentina
+      postcode: 'X5000BGR'
+      state: null
+      street: Laprida 854
+    department: null
+    email: unc.edu.ar
+    institute: Instituto de Astronom{\'\i}a Te\'orica y Experimental
+    ror_id: 008b1vj68
   ICloud:
     address: null
     department: null
@@ -3921,6 +3934,14 @@ authors:
     family_name: Bellm
     given_name: Eric C.
     orcid: 0000-0001-8018-5348
+  benavidesj:
+    affil:
+    - IATE
+    altaffil: []
+    email: jose.benavides
+    family_name: Benavides
+    given_name: Jose
+    orcid: 0000-0003-1896-0424
   bernarda:
     affil:
     - IN2P3-LPSC
