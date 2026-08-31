@@ -1189,25 +1189,24 @@ affiliations:
     email: null
     institute: Instituto de Astronom\'ia y F\'isica del Espacio (IAFE)
     ror_id: 03rq94151
+  IATE:
+    address:
+      city: C\'ordoba
+      country_code: Argentina
+      example_expanded: Instituto de Astronom{\'\i}a Te\'orica y Experimental,
+        Laprida 854, C\'ordoba, X5000BGR, Argentina
+      postcode: 'X5000BGR'
+      state: null
+      street: Laprida 854
+    department: null
+    email: unc.edu.ar
+    institute: Instituto de Astronom{\'\i}a Te\'orica y Experimental
+    ror_id: 008b1vj68
   ICloud:
     address: null
     department: null
     email: icloud.com
     institute: iCloud Mail email domain Placeholder
-    ror_id: null
-  IIdATy:
-    address:
-      city: ''
-      country_code: Argentina
-      example_expanded: IATE, Instituto de Astronom{\'\i}a Te\'orica y Experimental,
-        Francisco N de Laprida 922, C\'ordoba,  X5000BGT, Argentina
-      postcode: ''
-      state: null
-      street: Instituto de Astronom{\'\i}a Te\'orica y Experimental, Francisco N de
-        Laprida 922, C\'ordoba, X5000BGT
-    department: null
-    email: unc.edu.ar
-    institute: IATE
     ror_id: null
   IN2P3:
     address: null
@@ -3937,7 +3936,7 @@ authors:
     orcid: 0000-0001-8018-5348
   benavidesj:
     affil:
-    - IIdATy
+    - IATE
     altaffil: []
     email: jose.benavides
     family_name: Benavides
