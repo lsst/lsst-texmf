@@ -16,13 +16,13 @@ from datetime import UTC, datetime
 import latexcodec  # noqa provides the latex+latin codec
 import pybtex.database
 import yaml
-from algoliasearch.search.client import SearchClientSync, SearchResponse
+from algoliasearch.search.client import SearchClientSync
 from bibtools import BibDict, BibEntry
 from pybtex.database import BibliographyData
 from pylatexenc.latex2text import LatexNodes2Text
 from pylatexenc.latexencode import unicode_to_latex
 
-MAXREC = 2000
+MAXREC = 500
 
 
 def latex2text(latex: str) -> str:
@@ -107,26 +107,40 @@ async def generate_bibfile(
         query = ""  # Algolia take None as string literal None
 
     client = SearchClientSync(app_id="0OJETYIVL5", api_key="b7bd2f1080a5c4fe5eee502462bcc9d3")
-    res = client.search_single_index(
-        index_name="document_dev",
-        search_params={
-            "attributesToRetrieve": [
-                "handle",
-                "series",
-                "h1",
-                "baseUrl",
-                "sourceUpdateTime",
-                "sourceUpdateTimestamp",
-                "authorNames",
-            ],
-            "hitsPerPage": MAXREC,
-            "query": query,
-        },
-    )
-    print(f"Total hits: {len(res.hits)}, Query:'{query}'")
 
-    search_data = create_bibentries(res, dois)
-    print(f"Got {len(res.hits)} records max:{MAXREC} produced {len(search_data.entries)} bibentries.")
+    # Paginate through all results since there may be more than MAXREC
+    all_hits: list = []
+    page = 0
+    while True:
+        res = client.search_single_index(
+            index_name="document_dev",
+            search_params={
+                "attributesToRetrieve": [
+                    "handle",
+                    "series",
+                    "h1",
+                    "baseUrl",
+                    "sourceUpdateTime",
+                    "sourceUpdateTimestamp",
+                    "authorNames",
+                ],
+                "hitsPerPage": MAXREC,
+                "page": page,
+                "query": query,
+            },
+        )
+        all_hits.extend(res.hits)
+        print(f"Page {page}: got {len(res.hits)} hits (total so far: {len(all_hits)}), Query:'{query}'")
+
+        # Check if there are more pages
+        if page >= res.nb_pages - 1:
+            break
+        page += 1
+
+    print(f"Total hits: {len(all_hits)}")
+
+    search_data = create_bibentries(all_hits, dois)
+    print(f"Got {len(all_hits)} records produced {len(search_data.entries)} bibentries.")
 
     # Read the external files that will be merged with the search results.
     # Do not use a BilbiographyData because duplicate key overwriting is
@@ -162,11 +176,24 @@ async def generate_bibfile(
     return result
 
 
-def create_bibentries(res: SearchResponse, dois: dict[str, str] | None = None) -> BibliographyData:
-    """Create the bibtex entries."""
+def create_bibentries(hits: list, dois: dict[str, str] | None = None) -> BibliographyData:
+    """Create the bibtex entries.
+
+    Parameters
+    ----------
+    hits : `list`
+        List of hit objects from Algolia search results.
+    dois : `dict`, optional
+        Mapping of document handle to DOI.
+
+    Returns
+    -------
+    bibdata : `BibliographyData`
+        The bibliography data containing all entries.
+    """
     entries: dict[str, pybtex.database.Entry] = {}
     doimap = dois if dois else {}
-    for hit in res.hits:
+    for hit in hits:
         d = hit.model_dump()
         if "series" in d.keys() and d["series"] == "TESTN":
             continue

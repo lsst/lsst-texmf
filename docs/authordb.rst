@@ -122,7 +122,7 @@ Overview of components
 ======================
 
 ``authordb.yaml``
------------------
+~~~~~~~~~~~~~~~~~
 A single YAML file that stores:
 
 * **Authors**: keyed by a stable *author ID* (usually ``surname`` + initials,
@@ -179,7 +179,7 @@ Typical affiliation entry (illustrative)::
 
 
 ``makeAuthorListsFromGoogle.py``
---------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 A script that connects to a Google Sheet where contributors submit sign‑ups.
 It selects relevant columns (author ID, names, affiliations, ORCID, email),
 derives normalized author IDs, and emits small YAML files for review (for
@@ -192,7 +192,7 @@ running helper scripts (including this one) inside the project Docker image.
 
 
 ``db2authors.py``
------------------
+~~~~~~~~~~~~~~~~~
 A companion utility used in build pipelines to turn the curated database into
 LaTeX author/affiliation blocks and/or to help merge reviewed YAML deltas back
 into the database. It is commonly available in the project Docker image used
@@ -299,7 +299,7 @@ Data model details
 ==================
 
 Author entries (canonical)
---------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * ``given_name``: string with LaTeX‑safe accents/macros.
 * ``family_name``: string with LaTeX‑safe accents/macros.
@@ -311,7 +311,7 @@ Author entries (canonical)
 
 
 Affiliation entries
--------------------
+~~~~~~~~~~~~~~~~~~~
 
 * ``institute``: public institute name (LaTeX‑safe).
 * ``address``: structured address with fields such as ``street``, ``city``,
