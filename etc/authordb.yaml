@@ -4682,6 +4682,13 @@ authors:
     family_name: Cortes
     given_name: Patricio
     orcid: null
+  coughlinet:
+    affil:
+    - RubinObs
+    email: eric.coughlin
+    family_name: Coughlin
+    given_name: Eric
+    orcid: 0009-0007-4565-4082
   coveykr:
     affil:
     - WestWashington
