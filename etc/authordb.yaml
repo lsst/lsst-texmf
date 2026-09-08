@@ -4685,6 +4685,7 @@ authors:
   coughlinet:
     affil:
     - RubinObs
+    altaffil: []
     email: eric.coughlin
     family_name: Coughlin
     given_name: Eric
