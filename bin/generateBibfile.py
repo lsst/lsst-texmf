@@ -18,6 +18,7 @@ import latexcodec  # noqa provides the latex+latin codec
 import pybtex.database
 import yaml
 from algoliasearch.search.client import SearchClientSync
+from algoliasearch.search.models import BrowseParamsObject
 from bibtools import BibDict, BibEntry
 from pybtex.database import BibliographyData
 from pylatexenc.latex2text import LatexNodes2Text
@@ -98,16 +99,19 @@ async def generate_bibfile(external: list[str] | None = None, dois: dict[str, st
     result : `str`
         Formatted bib file string ready to be printed.
     """
-    client = SearchClientSync(app_id="0OJETYIVL5", api_key=os.environ["DOCS_API"])
+    api_key = os.environ.get("DOCS_API")
+    if not api_key:
+        raise RuntimeError("Unable to obtain algolia API key from DOCS_API environment variable")
+    client = SearchClientSync(app_id="0OJETYIVL5", api_key=api_key)
 
     # Use browse_objects to retrieve all records without pagination limits
     # Filter server-side: importance=1 AND NOT series:TESTN
     all_hits: list = []
     client.browse_objects(
         index_name="document_dev",
-        browse_params={
-            "filters": "importance=1 AND NOT series:TESTN",
-            "attributesToRetrieve": [
+        browse_params=BrowseParamsObject(
+            filters="importance=1 AND NOT series:TESTN",
+            attributes_to_retrieve=[
                 "handle",
                 "series",
                 "h1",
@@ -116,7 +120,7 @@ async def generate_bibfile(external: list[str] | None = None, dois: dict[str, st
                 "sourceUpdateTimestamp",
                 "authorNames",
             ],
-        },
+        ),
         aggregator=lambda resp: all_hits.extend(resp.hits),
     )
     print(f"Total hits from API: {len(all_hits)}")

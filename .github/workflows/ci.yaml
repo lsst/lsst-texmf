@@ -34,6 +34,8 @@ jobs:
         run: pytest
 
       - name: Run as test generateBibfile.py
+        env:
+          DOCS_API: ${{ secrets.DOCS_API }}
         run: |
           bin/generateBibfile.py generated.bib
           wc -l generated.bib
