@@ -10,19 +10,19 @@ data is supplied by Ook, https://github.com/lsst-sqre/ook.
 import argparse
 import asyncio
 import calendar
+import os
 import re
 from datetime import UTC, datetime
 
 import latexcodec  # noqa provides the latex+latin codec
 import pybtex.database
 import yaml
-from algoliasearch.search.client import SearchClientSync, SearchResponse
+from algoliasearch.search.client import SearchClientSync
+from algoliasearch.search.models import BrowseParamsObject
 from bibtools import BibDict, BibEntry
 from pybtex.database import BibliographyData
 from pylatexenc.latex2text import LatexNodes2Text
 from pylatexenc.latexencode import unicode_to_latex
-
-MAXREC = 2000
 
 
 def latex2text(latex: str) -> str:
@@ -78,17 +78,13 @@ def sort_by_handle(key: str) -> str:
     return f"{hdl.upper()}-{handle_number:09d}"
 
 
-async def generate_bibfile(
-    query: str | None = "", external: list[str] | None = None, dois: dict[str, str] | None = None
-) -> str:
+async def generate_bibfile(external: list[str] | None = None, dois: dict[str, str] | None = None) -> str:
     """
     Query ook for the list of entries.
     Only returning meta data needed for bib entries.
 
     Parameters
     ----------
-    query : `str`
-        Any word/query string you would put in lsst.io empty for all.
     external : `str`, optional
         External bib files to seed the results. They are merged together in
         order (the final one takes priority) and then the results from
@@ -103,14 +99,19 @@ async def generate_bibfile(
     result : `str`
         Formatted bib file string ready to be printed.
     """
-    if not query:
-        query = ""  # Algolia take None as string literal None
+    api_key = os.environ.get("DOCS_API")
+    if not api_key:
+        raise RuntimeError("Unable to obtain algolia API key from DOCS_API environment variable")
+    client = SearchClientSync(app_id="0OJETYIVL5", api_key=api_key)
 
-    client = SearchClientSync(app_id="0OJETYIVL5", api_key="b7bd2f1080a5c4fe5eee502462bcc9d3")
-    res = client.search_single_index(
+    # Use browse_objects to retrieve all records without pagination limits
+    # Filter server-side: importance=1 AND NOT series:TESTN
+    all_hits: list = []
+    client.browse_objects(
         index_name="document_dev",
-        search_params={
-            "attributesToRetrieve": [
+        browse_params=BrowseParamsObject(
+            filters="importance=1 AND NOT series:TESTN",
+            attributes_to_retrieve=[
                 "handle",
                 "series",
                 "h1",
@@ -119,14 +120,13 @@ async def generate_bibfile(
                 "sourceUpdateTimestamp",
                 "authorNames",
             ],
-            "hitsPerPage": MAXREC,
-            "query": query,
-        },
+        ),
+        aggregator=lambda resp: all_hits.extend(resp.hits),
     )
-    print(f"Total hits: {len(res.hits)}, Query:'{query}'")
+    print(f"Total hits from API: {len(all_hits)}")
 
-    search_data = create_bibentries(res, dois)
-    print(f"Got {len(res.hits)} records max:{MAXREC} produced {len(search_data.entries)} bibentries.")
+    search_data = create_bibentries(all_hits, dois)
+    print(f"Got {len(all_hits)} records produced {len(search_data.entries)} bibentries.")
 
     # Read the external files that will be merged with the search results.
     # Do not use a BilbiographyData because duplicate key overwriting is
@@ -162,11 +162,11 @@ async def generate_bibfile(
     return result
 
 
-def create_bibentries(res: SearchResponse, dois: dict[str, str] | None = None) -> BibliographyData:
+def create_bibentries(hits: list, dois: dict[str, str] | None = None) -> BibliographyData:
     """Create the bibtex entries."""
     entries: dict[str, pybtex.database.Entry] = {}
     doimap = dois if dois else {}
-    for hit in res.hits:
+    for hit in hits:
         d = hit.model_dump()
         if "series" in d.keys() and d["series"] == "TESTN":
             continue
@@ -474,7 +474,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=description, formatter_class=formatter)
 
     parser.add_argument("bibfile", help="Name of file to output bib entries to", nargs="?")
-    parser.add_argument("-q", "--query", help="""Query string (optional)""")
     parser.add_argument(
         "--external",
         help="""Reference bib to use to obtain bib entries that have disappeared.""",
@@ -490,7 +489,7 @@ if __name__ == "__main__":
         with open(args.dois) as fh:
             doimap = yaml.safe_load(fh)
 
-    result = asyncio.run(generate_bibfile(args.query, args.external, doimap))
+    result = asyncio.run(generate_bibfile(args.external, doimap))
 
     # pybtex has already added a new line so do not add an additional
     # new line when printing.
