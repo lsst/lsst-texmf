@@ -9,7 +9,7 @@ import unicodedata
 from typing import Annotated, Self
 
 import yaml
-from db2authors import latex2text
+from authorutils import check_orcid, latex2text
 from pydantic import AfterValidator, BaseModel, ConfigDict, Field, model_validator
 
 
@@ -61,23 +61,6 @@ def dump_authordb(adb: AuthorDbYaml, file_name: str | None = None) -> str:
         print(f"Writing AuthorDbYaml object to {authordb_path}...\n")
         yaml.safe_dump(adb.model_dump(), adbfile, allow_unicode=True)
     return authordb_path
-
-
-def check_orcid(orcid: str | None) -> str | None:
-    """Check that the ORCID field looks like an ORCID."""
-    if orcid is None:
-        return None
-
-    # We could strip https://orcid.org/ prefix easily enough but we want
-    # to use this tooling to check for consistency in the authordb YAML
-    # file and not to work around known issues.
-    if re.match(r"^\d{4}-\d{4}-\d{4}-\d{3}[0-9X]$", orcid):
-        # Looks fine. Return as is.
-        return orcid
-    if re.match(r"^\d{15}[0-9X]$", orcid):
-        return "-".join(orcid[i : i + 4] for i in range(0, len(orcid), 4))
-
-    raise ValueError(f"Given ORCiD does not match standard form: {orcid}")
 
 
 def check_ror(ror_id: str | None) -> str | None:
