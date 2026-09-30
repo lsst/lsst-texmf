@@ -799,7 +799,7 @@ MEMS,micro-electronic mechanical systems,TS,Document-11995,,A
 MERRA,Modern-Era Retrospective analysis for Research and Applications,Sci,,,A
 MIDAS,Munich Image Data Analysis System (ESO),Gen,,,A
 MIE,Major Item of Equipment,OPS,,,A
-MJD,Modified Julian Date (to be avoided; see also JD),Gen,,,A
+MJD,Modified Julian Date,Gen,,,A
 ML,Machine Learning,Sci,,,A
 MLAG,Multi-chassis Link Aggregation,IT,,,A
 MLP,Multi-Layer Perceptron,Sci,,,A
