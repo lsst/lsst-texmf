@@ -391,6 +391,7 @@ ECDM,Einstein-Cartan-Dirac-Maxwell cosmological model,Sci,,,A
 ECM,Engineered Ceramic Materials,CAM,LCA-11591-B_REVIEW_(Camera_Final_Design_Report),https://www.cesic.de/en,A
 EDC,EPO Data Center,OPS EPO,,,A
 EDFS,Euclid Deep Field South,Sci,,,A
+EDP2,Early Data Preview 2,OPS,,,A
 EDR,early data release,TS,Document-11972,,A
 EE,engineering estimate,TS,Document-12024,,A
 EEPROM,Electrically Erasable Programmable Read-Only Memory,Gen,,,A
@@ -516,6 +517,7 @@ GAS,Guider Array Subsystem,CAM,LCA-11591-B_REVIEW_(Camera_Final_Design_Report),,
 GAVO,German Astronomical Virtual Observatory,Gen,,,A
 GB,Gigabyte,Gen,,,A
 Gb,Gigabit,Gen,,,A
+GbE,Gigabiti Ethernet,Gen,,,A
 GBDES,Gary Bernstein Dark Energy Survey,Sci,,,A
 GC,NSF Grant Conditions,TS,Document-12021,,A
 gcc,The GNU Compiler Collection; a C and C++ compiler,Gen,,,A
@@ -581,6 +583,7 @@ HITS,High Cadence Transient Survey,Sci,https://iopscience.iop.org/article/10.384
 HM,Humidity Monitor,CAM,LCA-11591-B_REVIEW_(Camera_Final_Design_Report),,A
 HPC,High Performance Computing,DM,,,A
 HPO,Head of Program Operations,OPS,,,A
+HPSS,High Performance Storage System,DM,,,A
 HPU,Hardware Protection Unit,CAM,LCA-11591-B_REVIEW_(Camera_Final_Design_Report),,A
 HQ,Head Quarters,OPS,,,A
 HR,Human Resources,Gen,,,A
@@ -1205,6 +1208,7 @@ SMC,Small Magellanic Cloud,Sci,,,A
 SME,Subject Matter Expert,Gen,,,A
 SMF,Stellar Mass Function,Sci,,,A
 SMR,Spherical Mirror Retroreflectors,Sci,,,A
+SMT,Simultaneous Multi-Threading,DM,,,A
 SMWLV,"Stars, Milky Way and Local Volume",Sci,,,A
 SN,SuperNovae,Sci,,,A
 SNANA,SuperNova ANAlysis (\url{https://snana.uchicago.edu/}),Sci,,,A
@@ -1334,7 +1338,7 @@ UHV,Ultra-high vacuum,LSST OPS,,,A
 UI,User Interface,Gen,,,A
 UID,User Identifier,IT,,,A
 UIUC,University of Illinois at Urbana-Champaign,TS,Document-11980,,A
-UK,United Kingdom,Gen OPS,,,A
+UK,United Kingdom,Gen,,,A
 UKDF,United Kingdom Data Facility,OPS,,,A
 UKIDSS,UKIRT Infrared Deep Sky Survey,Gen,,,A
 UKIRT,United Kingdom Infrared Telescope,Gen,,,A
@@ -1433,6 +1437,7 @@ XSLT,eXtensible Stylesheet Language Transformation,Gen,,,A
 YAML,Yet Another Markup Language,Gen,,,A
 YSO,Young Stellar Object,Sci,,,A
 ZD,zenith distance,TS,Document-12031,,A
+ZFS,Zettabyte File System,DM,,,A
 ZTF,Zwicky Transient Facility,Gen,,,A
 accident,"An undesired event that results in harm to people, damage to property, or loss to process.  Accidents result from contact with a substance or source of energy above the threshold limit of the body structure",Adm,,,G
 accruals,"Accounts on a balance sheet that represent liabilities and non-cash-based assets used in accrual-based accounting; these accounts include, among many others, accounts payable, accounts receivable, goodwill, future tax liability, and future interest expense",Adm,,,G
