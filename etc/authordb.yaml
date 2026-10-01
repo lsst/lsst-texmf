@@ -3327,7 +3327,7 @@ affiliations:
     email: null
     institute: soZen Inc.
     ror_id: null
-  yahoo:
+  Yahoo:
     address: null
     department: null
     email: yahoo.com
@@ -5690,7 +5690,7 @@ authors:
     email: yuyi
     family_name: Guo
     given_name: Yuyi
-    orcid: null
+    orcid: 0009-0000-6017-7957
   guylp:
     affil:
     - RubinObsC
@@ -8721,7 +8721,7 @@ authors:
     affil:
     - SLAC-Kavli
     altaffil: []
-    email: brittneykshavor@yahoo
+    email: brittneykshavor@Yahoo
     family_name: Shavor
     given_name: Brittney
     orcid: 0009-0000-5906-2562
