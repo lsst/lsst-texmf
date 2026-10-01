@@ -1193,9 +1193,9 @@ affiliations:
     address:
       city: C\'ordoba
       country_code: Argentina
-      example_expanded: Instituto de Astronom{\'\i}a Te\'orica y Experimental,
-        Laprida 854, C\'ordoba, X5000BGR, Argentina
-      postcode: 'X5000BGR'
+      example_expanded: Instituto de Astronom{\'\i}a Te\'orica y Experimental, Laprida
+        854, C\'ordoba, X5000BGR, Argentina
+      postcode: X5000BGR
       state: null
       street: Laprida 854
     department: null
@@ -3326,6 +3326,12 @@ affiliations:
     department: null
     email: null
     institute: soZen Inc.
+    ror_id: null
+  Yahoo:
+    address: null
+    department: null
+    email: yahoo.com
+    institute: Email only for yahoo.com
     ror_id: null
 authors:
   CameraTeam:
@@ -5677,6 +5683,14 @@ authors:
     family_name: Guinot
     given_name: Axel
     orcid: 0000-0002-5068-7918
+  guoy:
+    affil:
+    - Fermilab
+    altaffil: []
+    email: yuyi
+    family_name: Guo
+    given_name: Yuyi
+    orcid: 0009-0000-6017-7957
   guylp:
     affil:
     - RubinObsC
@@ -8703,6 +8717,14 @@ authors:
     family_name: Sevilla-Noarbe
     given_name: Ignacio
     orcid: 0000-0002-1831-1953
+  shavorb:
+    affil:
+    - SLAC-Kavli
+    altaffil: []
+    email: brittneykshavor@Yahoo
+    family_name: Shavor
+    given_name: Brittney
+    orcid: 0009-0000-5906-2562
   shawra:
     affil:
     - STScI
