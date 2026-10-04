@@ -3257,6 +3257,12 @@ affiliations:
     email: wisc.edu
     institute: University of Wisconsin-Madison
     ror_id: 01y2jtd41
+  Yahoo:
+    address: null
+    department: null
+    email: yahoo.com
+    institute: Email only for yahoo.com
+    ror_id: null
   Yale:
     address:
       city: New Haven
@@ -3326,12 +3332,6 @@ affiliations:
     department: null
     email: null
     institute: soZen Inc.
-    ror_id: null
-  Yahoo:
-    address: null
-    department: null
-    email: yahoo.com
-    institute: Email only for yahoo.com
     ror_id: null
 authors:
   CameraTeam:
@@ -7706,6 +7706,15 @@ authors:
     email: onoprien
     family_name: Onoprienko
     given_name: Dmitry
+    orcid: null
+  ordenesi:
+    affil:
+    - RubinObsC
+    - NOIRLabC
+    altaffil: []
+    email: ian.ordenes
+    family_name: \'Ordenes
+    given_name: Ian
     orcid: null
   oriunnom:
     affil:
