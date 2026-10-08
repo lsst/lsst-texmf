@@ -1622,6 +1622,19 @@ affiliations:
     email: null
     institute: W. M. Keck Observatory
     ror_id: 00ab7ks98
+  KICP:
+    address:
+      city: Chicago
+      country_code: USA
+      example_expanded: Kavli Institute for Cosmological Physics,
+        University of Chicago, 5640 South Ellis Avenue, Chicago, IL 60637, USA
+      postcode: '60637'
+      state: IL
+      street: 5640 South Ellis Avenue
+    department: Kavli Institute for Cosmological Physics
+    email: null
+    institute: University of Chicago
+    ror_id: null
   KLOA:
     address:
       city: Beijing
@@ -2467,6 +2480,19 @@ affiliations:
     email: null
     institute: SETI Institute,
     ror_id: 02dxgk712
+  SkAI:
+    address:
+      city: Chicago
+      country_code: USA
+      example_expanded: NSF-Simons AI Institute for the Sky (SkAI),
+        172 E. Chestnut St., Chicago, IL 60611, USA
+      postcode: '60611'
+      state: IL
+      street: 172 E. Chestnut St.
+    department: null
+    email: null
+    institute: NSF-Simons AI Institute for the Sky (SkAI)
+    ror_id: null
   SLAC:
     address:
       city: Menlo Park
@@ -3458,6 +3484,7 @@ authors:
   agarwals:
     affil:
     - Chicago
+    - KICP
     altaffil: []
     email: shrihan
     family_name: Agarwal
@@ -4440,6 +4467,8 @@ authors:
   changc:
     affil:
     - Chicago
+    - KICP
+    - SkAI
     altaffil: []
     email: chihway
     family_name: Chang
@@ -4980,6 +5009,9 @@ authors:
   drlicawagnera:
     affil:
     - Fermilab
+    - Chicago
+    - KICP
+    - SkAI
     altaffil: []
     email: kadrlica
     family_name: Drlica-Wagner
@@ -5862,6 +5894,7 @@ authors:
   hoganc:
     affil:
     - Chicago
+    - KICP
     altaffil: []
     email: null
     family_name: Hogan
@@ -6380,6 +6413,7 @@ authors:
   kesslerr:
     affil:
     - Chicago
+    - KICP
     altaffil: []
     email: null
     family_name: Kessler
@@ -7758,6 +7792,7 @@ authors:
   paia:
     affil:
     - Chicago
+    - KICP
     altaffil: []
     email: pai
     family_name: Pai
