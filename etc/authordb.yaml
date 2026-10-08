@@ -7285,6 +7285,7 @@ authors:
   millera:
     affil:
     - CIERA
+    - SkAI
     altaffil: []
     email: null
     family_name: Miller
@@ -7493,6 +7494,7 @@ authors:
   narayang:
     affil:
     - Illinois
+    - SkAI
     altaffil: []
     email: null
     family_name: Narayan
@@ -9337,6 +9339,7 @@ authors:
   turkm:
     affil:
     - Illinois
+    - SkAI
     altaffil: []
     email: null
     family_name: Turk
@@ -9507,6 +9510,7 @@ authors:
   vieiraj:
     affil:
     - Illinois-astro
+    - SkAI
     altaffil: []
     email: null
     family_name: Vieira
