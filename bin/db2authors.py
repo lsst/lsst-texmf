@@ -469,7 +469,7 @@ class Arxiv(AuthorTextGenerator):
         author_text = []
         for author in self.authors:
             affil_numbers = [str(affil_to_number[affil]) for affil in author.affiliations]
-            author_text.append(f"{author.full_name} ({' and '.join(affil_numbers)})")
+            author_text.append(f"{author.full_latex_name} ({' and '.join(affil_numbers)})".replace("~", " "))
 
         institutions = []
         for affil, number in affil_to_number.items():
