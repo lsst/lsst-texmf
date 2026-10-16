@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" version="1.0" class="in-text">
+  <info>
+    <title>Bibliography key citation</title>
+    <id>https://lsst.io/styles/bibliography-key</id>
+    <link href="https://lsst.io/styles/bibliography-key" rel="self"/>
+    <updated>2026-07-17T00:00:00+00:00</updated>
+  </info>
+  <citation>
+    <layout>
+      <choose>
+        <if variable="locator">
+          <text variable="locator"/>
+        </if>
+        <else>
+          <text variable="citation-key"/>
+        </else>
+      </choose>
+    </layout>
+  </citation>
+  <bibliography>
+    <layout>
+      <text variable="title"/>
+    </layout>
+  </bibliography>
+</style>
