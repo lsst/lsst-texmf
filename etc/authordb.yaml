@@ -1626,8 +1626,8 @@ affiliations:
     address:
       city: Chicago
       country_code: USA
-      example_expanded: Kavli Institute for Cosmological Physics,
-        University of Chicago, 5640 South Ellis Avenue, Chicago, IL 60637, USA
+      example_expanded: Kavli Institute for Cosmological Physics, University of Chicago,
+        5640 South Ellis Avenue, Chicago, IL 60637, USA
       postcode: '60637'
       state: IL
       street: 5640 South Ellis Avenue
@@ -2480,19 +2480,6 @@ affiliations:
     email: null
     institute: SETI Institute,
     ror_id: 02dxgk712
-  SkAI:
-    address:
-      city: Chicago
-      country_code: USA
-      example_expanded: NSF-Simons AI Institute for the Sky (SkAI),
-        172 E. Chestnut St., Chicago, IL 60611, USA
-      postcode: '60611'
-      state: IL
-      street: 172 E. Chestnut St.
-    department: null
-    email: null
-    institute: NSF-Simons AI Institute for the Sky (SkAI)
-    ror_id: null
   SLAC:
     address:
       city: Menlo Park
@@ -2610,6 +2597,19 @@ affiliations:
     email: null
     institute: Universidad Andres Bello Fernandez
     ror_id: 01qq57711
+  SkAI:
+    address:
+      city: Chicago
+      country_code: USA
+      example_expanded: NSF-Simons AI Institute for the Sky (SkAI), 172 E. Chestnut
+        St., Chicago, IL 60611, USA
+      postcode: '60611'
+      state: IL
+      street: 172 E. Chestnut St.
+    department: null
+    email: null
+    institute: NSF-Simons AI Institute for the Sky (SkAI)
+    ror_id: null
   Southampton:
     address:
       city: Southampton
