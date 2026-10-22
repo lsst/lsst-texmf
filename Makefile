@@ -91,7 +91,7 @@ processsignup:
 addbuilder_authors:
 	bin/makeAuthorListsFromGoogle.py --adb -p 1K1EkYr7aeXHYuLvFXRqcdvwdykxC07hZo0Y8IMaYlec "noadb!A2:I200"
 
-getbuilders:
+builderslist:
 	bin/makeAuthorListsFromGoogle.py -d --signup 4 -p 1K1EkYr7aeXHYuLvFXRqcdvwdykxC07hZo0Y8IMaYlec "2026-10-20!H7:L1000" -o etc/builderlist.yaml
 
 merge_authors: new_authors.yaml
