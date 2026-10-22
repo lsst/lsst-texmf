@@ -7346,7 +7346,7 @@ authors:
     orcid: null
   lopezj:
     affil:
-    - Gmail
+    - RubinConstruction
     altaffil: []
     email: jolopezlop
     family_name: Lopez
@@ -9188,7 +9188,7 @@ authors:
     orcid: 0000-0002-3469-9863
   rodriguezm:
     affil:
-    - Gmail
+    - RubinConstruction
     altaffil: []
     email: Michael.Rodriguez.business
     family_name: Rodriguez
@@ -10691,7 +10691,7 @@ authors:
     orcid: 0000-0002-9906-9037
   wicekf:
     affil:
-    - IN2P3
+    - IN2P3-IJCLAB
     altaffil: []
     email: wicek
     family_name: Wicek
