@@ -3792,14 +3792,6 @@ authors:
     family_name: Araya Cortes
     given_name: Claudio
     orcid: null
-  arayacortesch:
-    affil:
-    - RubinObsC
-    altaffil: []
-    email: claudio.araya
-    family_name: Araya Cortes
-    given_name: Claudio H.
-    orcid: null
   armstrongr:
     affil:
     - LLNL
@@ -4938,7 +4930,7 @@ authors:
     orcid: null
   corvettog:
     affil:
-    - RubinObsC
+    - RubinConstruction
     altaffil: []
     email: gcorvetto@Hotmail
     family_name: Corvetto
@@ -10358,7 +10350,8 @@ authors:
     orcid: null
   vanbergr:
     affil:
-    - PSUCDS
+    - SLAC
+    - UPenn
     altaffil: []
     email: rick
     family_name: Van Berg
@@ -10693,7 +10686,7 @@ authors:
     affil:
     - IN2P3-IJCLAB
     altaffil: []
-    email: wicek
+    email: francois.wicek
     family_name: Wicek
     given_name: Francois
     orcid: null
