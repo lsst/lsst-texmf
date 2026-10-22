@@ -1699,7 +1699,13 @@ affiliations:
     institute: National Astronomical Observatories, Chinese Academy of Sciences
     ror_id: 058pyyv44
   Knight:
-    address: null
+    address:
+      city: Unknown
+      country_code: USA
+      postcode: '0'
+      state: NA
+      street: None
+      example_expanded: Unknown
     department: null
     email: GarryKnight.com
     institute: Garry Knight, LLC

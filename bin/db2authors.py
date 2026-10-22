@@ -231,7 +231,7 @@ class AuthorFactory:
         raw_affil = self._affiliations.get(affiliationid)
         if not raw_affil:
             raise RuntimeError(f"Affiliation {affiliationid!r} not found in affiliation database")
-        if "address" in raw_affil and raw_affil["address"]:
+        if "address" in raw_affil and isinstance(raw_affil["address"], dict):
             address = Address(
                 street=raw_affil["address"].get("street"),
                 city=raw_affil["address"].get("city"),
@@ -949,9 +949,7 @@ if __name__ == "__main__":
     # those authors to full names and affiliations
 
     # This is the author list. It's a yaml file with authorID that
-    # maps to the database file below.  For now we assume this file is in
-    # the current working directory.
-    authorfile = os.path.join("authors.yaml")
+    # maps to the database file below.
 
     # this should probably be a dict with the value of affil_cmd
     # the keys could then be passed to the arg parser.
@@ -983,6 +981,12 @@ if __name__ == "__main__":
                             'verbose' displays all the information...""",
     )
     parser.add_argument("-n", "--noafil", action="store_true", help="""Do not add affil at all for arxiv.""")
+    parser.add_argument(
+        "-a",
+        "--authorfile",
+        default="authors.yaml",
+        help="Path to the authors YAML file (default: authors.yaml)",
+    )
     args = parser.parse_args()
 
     # This is the database file with all the generic information
@@ -1000,7 +1004,7 @@ if __name__ == "__main__":
         dump_csvall(factory)
         exit(0)
 
-    with open(authorfile) as fh:
+    with open(args.authorfile) as fh:
         authors = yaml.safe_load(fh)
 
     dni_list = load_dni(dnifile)
