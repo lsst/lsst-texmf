@@ -82,6 +82,12 @@ affiliations:
     email: anl.gov
     institute: Argonne National Laboratory
     ror_id: 05gvnxz63
+  AOL:
+    address: null
+    department: null
+    email: aol.com
+    institute: AOL Mail email domain Placeholder
+    ror_id: null
   ARCSoM:
     address:
       city: Sheffield
@@ -157,12 +163,6 @@ affiliations:
     email: null
     institute: The Adler Planetarium
     ror_id: 0248gc218
-  AOL:
-    address: null
-    department: null
-    email: aol.com
-    institute: AOL Mail email domain Placeholder
-    ror_id: null
   Aubourg:
     address: null
     department: null
@@ -7335,6 +7335,14 @@ authors:
     email: null
     family_name: Long
     given_name: Kevin E.
+    orcid: null
+  longm:
+    affil:
+    - NCSA
+    altaffil: []
+    email: mattlongt@Gmail
+    family_name: Long
+    given_name: Matthew
     orcid: null
   lopezj:
     affil:
