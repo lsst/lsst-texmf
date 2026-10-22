@@ -624,6 +624,8 @@ def process_signup(
     sheets: list[str],
     authorid_col: int = 4,
     builder: bool = False,
+    output: str = "authors.yaml",
+    duplicates: bool = False,
 ) -> None:
     """Simplified signup processor:
     - Reads only the AuthorID column (authorid_col) from the given sheets.
@@ -648,6 +650,9 @@ def process_signup(
 
         for idx, row in enumerate(values):
             last_idx = idx
+            if not row or len(row) <= authorid_col:
+                print(f"Empty row or insufficient cols at idx {idx}")
+                continue
             raw = str(row[authorid_col]).strip()
             if not raw:
                 print(f"Signup problem at idx {idx}")
@@ -655,6 +660,8 @@ def process_signup(
             # normalize similar : remove spaces, lower-case
             aid = raw.replace(" ", "").lower()
             if aid in authors:
+                if duplicates and aid in authorids_set:
+                    print(f"[signup] Duplicate authorid '{aid}' at idx {idx}")
                 authorids_set.add(aid)
             else:
                 print(f"Invalid authorid {aid} - will not be added")
@@ -675,7 +682,7 @@ def process_signup(
     with open("skip.count", "w") as f:
         f.write(f"{last_idx}\n")
 
-    write_yaml("authors.yaml", authorids)
+    write_yaml(output, authorids)
 
 
 def merge_authors_with_update(adb: dict[str, AuthorDbAuthor], authors: dict[str, AuthorDbAuthor]) -> None:
@@ -782,6 +789,18 @@ if __name__ == "__main__":
         help="Signup mode: process the Google Sheet write authors.yaml "
         "The integer argument specifies the column number of the AuthorID.",
     )
+    parser.add_argument(
+        "-o",
+        "--output",
+        default="authors.yaml",
+        help="Output file for signup mode (default: authors.yaml)",
+    )
+    parser.add_argument(
+        "-d",
+        "--duplicates",
+        action="store_true",
+        help="Report duplicate author IDs and their row index in signup mode",
+    )
 
     args = parser.parse_args()
 
@@ -793,9 +812,16 @@ if __name__ == "__main__":
         if args.builder and args.adb:
             print("Builder makes no sense with AuthorDB update - ignored please remove the flag.")
         if args.signup is not None:
-            if args.skip:
+            if args.skip and args.skip > 0:
                 print("Skip is not available with signup- ignored please remove the flag.")
-            process_signup(sheet_id, sheet_ranges, builder=args.builder, authorid_col=args.signup)
+            process_signup(
+                sheet_id,
+                sheet_ranges,
+                builder=args.builder,
+                authorid_col=args.signup,
+                output=args.output,
+                duplicates=args.duplicates,
+            )
         else:
             exitval = process_google(
                 sheet_id, sheet_ranges, skip=args.skip, builder=args.builder, adb=args.adb

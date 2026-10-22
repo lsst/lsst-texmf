@@ -3265,6 +3265,12 @@ affiliations:
     email: null
     institute: Vanderbilt University
     ror_id: 02vm5rt34
+  Vera4570:
+    address: null
+    department: null
+    email: vera4570.com
+    institute: Email only for vera4570.com
+    ror_id: null
   Washington:
     address:
       city: Seattle
@@ -6637,6 +6643,14 @@ authors:
     family_name: Jones
     given_name: Roger William Lewis
     orcid: 0000-0002-6427-3513
+  josephr:
+    affil:
+    - Princeton
+    altaffil: []
+    email: remy.joseph11@Gmail
+    family_name: Joseph
+    given_name: Remy
+    orcid: null
   juramygillesc:
     affil:
     - IN2P3-LPNHE
@@ -7330,6 +7344,14 @@ authors:
     family_name: Long
     given_name: Kevin E.
     orcid: null
+  lopezj:
+    affil:
+    - Gmail
+    altaffil: []
+    email: jolopezlop
+    family_name: Lopez
+    given_name: Jorge
+    orcid: null
   lopezm:
     affil:
     - SLAC
@@ -7840,6 +7862,14 @@ authors:
     family_name: Miller
     given_name: Bryan
     orcid: null
+  millerd:
+    affil:
+    - RubinObs
+    altaffil: []
+    email: dmiller@RubinConstruction
+    family_name: Miller
+    given_name: Duane
+    orcid: null
   millerm:
     affil:
     - NOIRLab
@@ -7855,6 +7885,14 @@ authors:
     email: dmills
     family_name: Mills
     given_name: David J.
+    orcid: null
+  millsn:
+    affil:
+    - RubinObs
+    altaffil: []
+    email: nmills@Vera4570
+    family_name: Mills
+    given_name: Neill
     orcid: null
   miravalc:
     affil:
@@ -7935,6 +7973,14 @@ authors:
     email: null
     family_name: Moriarty
     given_name: Christopher
+    orcid: null
+  morrisg:
+    affil:
+    - SLAC-Kavli
+    altaffil: []
+    email: rgm@Stanford
+    family_name: Morris
+    given_name: Glenn
     orcid: null
   morrisoncb:
     affil:
@@ -8380,6 +8426,14 @@ authors:
     family_name: Oriunno
     given_name: Marco
     orcid: 0000-0003-1579-0386
+  ortizme:
+    affil:
+    - RubinObs
+    altaffil: []
+    email: mariaeugenia.ortiz
+    family_name: Ortiz
+    given_name: Maria Eugenia
+    orcid: null
   ortizs:
     affil:
     - NOIRLab
@@ -8615,6 +8669,14 @@ authors:
     email: catherine.petry
     family_name: Petry
     given_name: Cathy E.
+    orcid: null
+  phant:
+    affil:
+    - SLAC
+    altaffil: []
+    email: ttp
+    family_name: Phan
+    given_name: Tung
     orcid: null
   pierfedericif:
     affil:

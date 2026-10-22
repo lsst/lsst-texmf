@@ -88,6 +88,12 @@ processadbform:
 processsignup:
 	bin/makeAuthorListsFromGoogle.py --signup -p 1CGxjpPuyNJ_gXRHTvkEF0qeI0XedQ-GQgbmyzWFLSUE "GenPaper!A2:I1000"
 
+addbuilder_authors:
+	bin/makeAuthorListsFromGoogle.py --adb -p 1K1EkYr7aeXHYuLvFXRqcdvwdykxC07hZo0Y8IMaYlec "noadb!A2:I200"
+
+getbuilders:
+	bin/makeAuthorListsFromGoogle.py -d --signup 4 -p 1K1EkYr7aeXHYuLvFXRqcdvwdykxC07hZo0Y8IMaYlec "2026-10-20!H7:L1000" -o etc/builderlist.yaml
+
 merge_authors: new_authors.yaml
 	bin/makeAuthorListsFromGoogle.py -m new_authors.yaml
 
