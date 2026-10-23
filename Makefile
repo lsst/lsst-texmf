@@ -66,13 +66,17 @@ test-authors:
 authors.csv: etc/authordb.yaml
 	bin/db2authors.py -m csvall
 
+builderlist.csv: etc/builderlist.yaml
+	bin/db2authors.py --authorfile etc/builderlist.yaml  -m aascsv > builderlist.csv
+
 .PHONY: docs
-docs: $(PDF) $(TESTS) glstab.tex authors.csv
+docs: $(PDF) $(TESTS) glstab.tex authors.csv builderlist.csv
 	mkdir -p docs/_static/examples
 	cp *.pdf docs/_static/examples/
 	cp etc/glossary.html docs
 	cp htmlglossary.csv docs
 	cp af*.csv authors.csv docs
+	cp builderlist.csv docs
 	make -C docs html
 
 lsst.bib:
@@ -85,6 +89,17 @@ processadbform:
 processsignup:
 	bin/makeAuthorListsFromGoogle.py --signup -p 1CGxjpPuyNJ_gXRHTvkEF0qeI0XedQ-GQgbmyzWFLSUE "GenPaper!A2:I1000"
 
+# these may be temporary .. they process dumps from contacts DB
+addbuilder_authors:
+	bin/makeAuthorListsFromGoogle.py --adb --skipfile builders.skip -p 1K1EkYr7aeXHYuLvFXRqcdvwdykxC07hZo0Y8IMaYlec "noadb!A2:I200"
+
+builderslist:
+	bin/makeAuthorListsFromGoogle.py -d --signup 4 --skipfile builders.skip -p 1K1EkYr7aeXHYuLvFXRqcdvwdykxC07hZo0Y8IMaYlec "2026-10-20!H7:L1000" -o etc/builderlist.yaml
+
+updateemail:
+	bin/makeAuthorListsFromGoogle.py --partial -p 1K1EkYr7aeXHYuLvFXRqcdvwdykxC07hZo0Y8IMaYlec "ne!A:B" --cols AUTHORID=0 EMAIL=1
+
+# these can be used to merge new authors and affils after inspection
 merge_authors: new_authors.yaml
 	bin/makeAuthorListsFromGoogle.py -m new_authors.yaml
 

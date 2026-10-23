@@ -231,7 +231,7 @@ class AuthorFactory:
         raw_affil = self._affiliations.get(affiliationid)
         if not raw_affil:
             raise RuntimeError(f"Affiliation {affiliationid!r} not found in affiliation database")
-        if "address" in raw_affil and raw_affil["address"]:
+        if "address" in raw_affil and isinstance(raw_affil["address"], dict):
             address = Address(
                 street=raw_affil["address"].get("street"),
                 city=raw_affil["address"].get("city"),
@@ -886,15 +886,27 @@ class AASCSV(AuthorTextGenerator):
         return output.getvalue()
 
 
-def dump_csvall(factory: AuthorFactory) -> None:
-    """Generate CSV of ALL authors for easier lookup of ID .
-    Authorid, Name, Institution id
-    put this in authors.csv
+def dump_csvall(factory: AuthorFactory, include_email: bool = False) -> None:
+    """Generate CSV of ALL authors for easier lookup of ID.
+
+    Authorid, Name, Institution id, optionally Email.
+    Put this in authors.csv.
+
+    Parameters
+    ----------
+    factory : AuthorFactory
+        The author factory to use.
+    include_email : bool
+        If True, include the resolved email address as a column.
     """
     author_ids = factory.get_author_ids()
-    with open("authors.csv", "w", newline="") as outf:
+    outfile = "authors-emails.csv" if include_email else "authors.csv"
+    with open(outfile, "w", newline="") as outf:
         writer = csv.writer(outf)
-        writer.writerow(["Rubin AuthorID", "Name", "Affiliation ID(s)", "AASTEX"])
+        header = ["Rubin AuthorID", "Name", "Affiliation ID(s)", "AASTEX"]
+        if include_email:
+            header.append("Email")
+        writer.writerow(header)
         for authorid in author_ids:
             author = factory.get_author(authorid)
             aas7_generator = AASTeX7([author])
@@ -904,7 +916,10 @@ def dump_csvall(factory: AuthorFactory) -> None:
             aas7_text = aas7_generator.generate(header=False)
             # the email should not be plain ..
             aas7_text = aas7_text.replace("@", " AT ")
-            writer.writerow([authorid, latex2text(author.full_name), affils, aas7_text])
+            row = [authorid, latex2text(author.full_name), affils, aas7_text]
+            if include_email:
+                row.append(author.email)
+            writer.writerow(row)
     affil_ids = factory.get_affiliation_ids()
     with open("affiliations.csv", "w") as outf:
         writer = csv.writer(outf)
@@ -949,9 +964,7 @@ if __name__ == "__main__":
     # those authors to full names and affiliations
 
     # This is the author list. It's a yaml file with authorID that
-    # maps to the database file below.  For now we assume this file is in
-    # the current working directory.
-    authorfile = os.path.join("authors.yaml")
+    # maps to the database file below.
 
     # this should probably be a dict with the value of affil_cmd
     # the keys could then be passed to the arg parser.
@@ -983,6 +996,18 @@ if __name__ == "__main__":
                             'verbose' displays all the information...""",
     )
     parser.add_argument("-n", "--noafil", action="store_true", help="""Do not add affil at all for arxiv.""")
+    parser.add_argument(
+        "-a",
+        "--authorfile",
+        default="authors.yaml",
+        help="Path to the authors YAML file (default: authors.yaml)",
+    )
+    parser.add_argument(
+        "-e",
+        "--email",
+        action="store_true",
+        help="Include resolved email column in csvall output",
+    )
     args = parser.parse_args()
 
     # This is the database file with all the generic information
@@ -997,10 +1022,10 @@ if __name__ == "__main__":
     factory = AuthorFactory.from_authordb(authordb)
 
     if args.mode == "csvall":
-        dump_csvall(factory)
+        dump_csvall(factory, include_email=args.email)
         exit(0)
 
-    with open(authorfile) as fh:
+    with open(args.authorfile) as fh:
         authors = yaml.safe_load(fh)
 
     dni_list = load_dni(dnifile)

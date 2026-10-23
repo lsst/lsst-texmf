@@ -14,3 +14,4 @@ latexcodec
 pygments
 pre-commit
 asyncio
+flake8

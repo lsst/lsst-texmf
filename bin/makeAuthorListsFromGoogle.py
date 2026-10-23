@@ -158,51 +158,83 @@ def load_model(filename: str) -> dict[str, AuthorDbAuthor]:
     return adb.authors
 
 
+def placeholder_affil(
+    domain: str,
+    affils: dict[str, Affiliation],
+    newaffils: dict[str, Affiliation],
+) -> str:
+    """Return the id of an email-only placeholder affiliation for domain,
+    creating it in newaffils if needed.
+
+    The id is the first part of the domain, capitalized. If that id is
+    already taken by an affiliation with a different domain a numeric
+    suffix is added rather than pointing the email at the wrong domain.
+    """
+    domain = domain.lower()
+    base = domain.split(".")[0].capitalize()
+    daffil = base
+    n = 2
+    while True:
+        existing = newaffils.get(daffil) or affils.get(daffil)
+        if existing is None:
+            break
+        if existing.email and existing.email.lower() == domain:
+            return daffil
+        daffil = f"{base}{n}"
+        n += 1
+    newaffils[daffil] = Affiliation(
+        institute=f"Email only for {domain}",
+        address=None,
+        email=domain,
+    )
+    print(f"  Created placeholder affiliation '{daffil}' for domain '{domain}'")
+    return daffil
+
+
 def handle_email(
     email: str,
     affils: dict[str, Affiliation],
-    affilid: str,
+    affilid: str | None,
     newaffils: dict[str, Affiliation],
 ) -> str:
-    """Return local-part or local-part@affilid, updating new_affiliations
-    when we discover a new email domain. We do not maintain a domains dict.
+    """Return local-part or local-part@affilid for email.
+
+    1. If the author's affiliation has this domain, return just the local-part.
+    2. If any other affiliation has it, encode as local-part@thataffilid.
+    3. If the author's affiliation has no domain yet, stage a copy of it with
+       this domain in newaffils.
+    4. Otherwise use (or create) an email-only placeholder affiliation.
+
+    Affiliations already staged in newaffils take precedence over affils.
+    affils is never modified.
     """
-    theEmail = email
     if "@" not in email:
-        return theEmail
+        return email
 
     mailid, domain = email.split("@", 1)
+    domain = domain.lower()
+    known = {**affils, **newaffils}
 
-    # 1) If the given affil already has this domain, return just local-part.
-    if affilid in affils:
-        if affils[affilid].email == domain:
-            return f"{mailid}"
-        if not affils[affilid].email or affils[affilid].email == "null":
-            # we have an institue with an empty email
-            newaffils[affilid] = affils[affilid]
-            newaffils[affilid].email = domain
-            return f"{mailid}"
+    def has_domain(a: Affiliation) -> bool:
+        return a.email is not None and a.email.lower() == domain
 
-    # 2) If any *other* affiliation owns this domain, encode as @that_affilid.
-    for aid, a in affils.items():
-        if a.email == domain:
+    # 1) The author's own affiliation has this domain.
+    if affilid in known and has_domain(known[affilid]):
+        return mailid
+
+    # 2) Some other affiliation owns this domain.
+    for aid, a in known.items():
+        if has_domain(a):
             return f"{mailid}@{aid}"
 
-    # 3) New domain: attach it to the provided affilid  if staged,
-    if affilid in newaffils:
-        newaffils[affilid].email = domain
-        return f"{mailid}"
-    else:
-        # Create a minimal placeholder affiliation carrying just the email.
-        # Adjust required fields if your Affiliation model is stricter.
-        daffil = domain.split(".")[0]
-        newaffils[daffil] = Affiliation(
-            institute=f"Email only for {domain}",
-            address=None,
-            email=domain,
-        )
-        # Now that this domain is associated to affilid, encode as @affilid
-        return f"{mailid}@{daffil}"
+    # 3) The author's affiliation has no domain yet - give it this one.
+    if affilid in known and (not known[affilid].email or known[affilid].email == "null"):
+        newaffils[affilid] = known[affilid].model_copy(update={"email": domain})
+        print(f"  Adding email domain '{domain}' to affiliation '{affilid}'")
+        return mailid
+
+    # 4) New domain - use a placeholder affiliation for it.
+    return f"{mailid}@{placeholder_affil(domain, affils, newaffils)}"
 
 
 def lower_strip_utf(s: str) -> str:
@@ -306,7 +338,161 @@ def process_affiliations(
     return affilids
 
 
-def genFilesADB(values: list, skip: int) -> int:
+def genFilesPartial(
+    values: list, skip: int, cols: dict[str, int] | None = None, skip_file: str | None = None
+) -> int:
+    """Partial update mode: looks up existing authors by ID and only updates
+    fields that are provided (non-empty) in the sheet. Does not clobber
+    existing values with empty ones.
+
+    Parameters
+    ----------
+    values : list
+        Rows from the Google Sheet.
+    skip : int
+        Number of rows to skip.
+    cols : dict[str, int] | None
+        Override column indices for partial mode.
+        Keys: AUTHORID, EMAIL, SURNAME, NAME, AFFIL, ORCID.
+        If None, uses global defaults.
+
+    Returns number of issues found.
+    """
+    # Use provided column map or fall back to globals
+    col_authorid = cols.get("AUTHORID", AUTHORID) if cols else AUTHORID
+    col_email = cols.get("EMAIL", EMAIL) if cols else EMAIL
+    col_surname = cols.get("SURNAME", SURNAME) if cols else SURNAME
+    col_name = cols.get("NAME", NAME) if cols else NAME
+    col_affil = cols.get("AFFIL", AFFIL) if cols else AFFIL
+    col_orcid = cols.get("ORCID", ORCID) if cols else ORCID
+
+    print(
+        f"Column mapping: AUTHORID={col_authorid}, EMAIL={col_email}, "
+        f"SURNAME={col_surname}, NAME={col_name}, AFFIL={col_affil}, ORCID={col_orcid}"
+    )
+    if not values:
+        print("No data found.")
+        return 0
+
+    updated_authors: dict[str, AuthorDbAuthor] = {}
+    newaffils: dict[str, Affiliation] = {}
+    authordb = load_authordb()
+    authors = authordb.authors
+    affils = authordb.affiliations
+    missing_affils: list[str] = []
+    notfound: list[str] = []
+    updated: list[str] = []
+
+    for idx, row in enumerate(values):
+        if idx < skip:
+            continue
+
+        # Get author ID - required
+        if len(row) <= col_authorid:
+            print(f"Row {idx}: no authorid column")
+            continue
+        aid = str(row[col_authorid]).strip().replace(" ", "").lower()
+        if not aid:
+            print(f"Row {idx}: empty authorid")
+            continue
+
+        if aid not in authors:
+            print(f"Row {idx}: author '{aid}' not found in authordb")
+            notfound.append(aid)
+            continue
+
+        # Start with existing author record
+        existing = authors[aid]
+        new_email = existing.email
+        new_family = existing.family_name
+        new_given = existing.given_name
+        new_orcid = existing.orcid
+        new_affil = existing.affil
+        new_altaffil = existing.altaffil
+
+        changed = False
+
+        # Update email if provided
+        if len(row) > col_email and row[col_email] and str(row[col_email]).strip():
+            raw_email = str(row[col_email]).strip()
+            # Check existing domains first, then add if needed
+            new_email = handle_email(raw_email, affils, new_affil[0] if new_affil else None, newaffils)
+            if new_email != existing.email:
+                print(f"Row {idx}: {aid} email: '{existing.email}' -> '{new_email}'")
+                changed = True
+
+        # Update surname if provided
+        if len(row) > col_surname and row[col_surname] and str(row[col_surname]).strip():
+            new_family = unicode_to_latex(str(row[col_surname]).strip())
+            if new_family != existing.family_name:
+                print(f"Row {idx}: {aid} family_name: '{existing.family_name}' -> '{new_family}'")
+                changed = True
+
+        # Update given name if provided
+        if len(row) > col_name and row[col_name] and str(row[col_name]).strip():
+            new_given = unicode_to_latex(str(row[col_name]).strip())
+            if new_given != existing.given_name:
+                print(f"Row {idx}: {aid} given_name: '{existing.given_name}' -> '{new_given}'")
+                changed = True
+
+        # Update ORCID if provided
+        if len(row) > col_orcid and row[col_orcid] and str(row[col_orcid]).strip():
+            orc = str(row[col_orcid]).strip().replace("https://orcid.org/", "")
+            if len(orc) >= 2:
+                new_orcid = orc
+                if new_orcid != existing.orcid:
+                    print(f"Row {idx}: {aid} orcid: '{existing.orcid}' -> '{new_orcid}'")
+                    changed = True
+
+        # Update affiliation if provided
+        if len(row) > col_affil and row[col_affil] and str(row[col_affil]).strip():
+            # Handle affiliations directly (process_affiliations uses globals)
+            affilids = [a.strip() for a in str(row[col_affil]).strip().split("/")]
+            valid_affilids = []
+            for affilid in affilids:
+                if affilid in affils:
+                    valid_affilids.append(affilid)
+                else:
+                    print(f"Row {idx}: unknown affiliation '{affilid}'")
+                    missing_affils.append(affilid)
+            if valid_affilids and valid_affilids != existing.affil:
+                new_affil = valid_affilids
+                print(f"Row {idx}: {aid} affil: {existing.affil} -> {new_affil}")
+                changed = True
+
+        if changed:
+            updated_authors[aid] = AuthorDbAuthor(
+                given_name=new_given,
+                family_name=new_family,
+                orcid=new_orcid,
+                email=new_email,
+                affil=new_affil,
+                altaffil=new_altaffil,
+            )
+            updated.append(aid)
+
+    print(
+        "\n"
+        f"Partial update summary:\n"
+        f"  Processed: {idx + 1} rows (skipped first {skip})\n"
+        f"  Updated: {len(updated)} authors\n"
+        f"  Not found: {len(notfound)} ({', '.join(notfound)})\n"
+        f"  Missing affiliations: {len(missing_affils)} ({', '.join(missing_affils)})\n"
+        f"  New affiliations/domains: {len(newaffils)}\n"
+    )
+
+    if skip_file:
+        with open(skip_file, "w") as f:
+            f.write(f"{idx + 1}\n")
+
+    write_model("new_authors.yaml", updated_authors)
+    if newaffils:
+        write_affil("new_affiliations.yaml", newaffils)
+
+    return len(notfound) + len(missing_affils)
+
+
+def genFilesADB(values: list, skip: int, skip_file: str = "skip") -> int:
     """Assumes we are procsssing the AuthordDB update form.
     It will produce:
         new_authors.yaml - authors that need to be created/updated.
@@ -414,7 +600,7 @@ def genFilesADB(values: list, skip: int) -> int:
             f" Saw: {idx + 1} rows - skip file contains the number for reprocessing \n"
         )
         exitval = len(missing_affils) + len(check) + len(notfound) + len(clash)
-        with open("skip", "w") as f:
+        with open(skip_file, "w") as f:
             f.write(f"{idx + 1}\n")
 
         write_model("new_authors.yaml", newauthors)
@@ -423,7 +609,9 @@ def genFilesADB(values: list, skip: int) -> int:
     return exitval
 
 
-def genFiles(values: list, skip: int, builder: bool = False, adb: bool = False) -> None:
+def genFiles(
+    values: list, skip: int, builder: bool = False, adb: bool = False, skip_file: str = "skip"
+) -> None:
     """** Delete this when we are done with DP1 paper Generate Files.
     authors.yaml - with all authorids (if not adb)
     new_authors.yaml - authors that need to be created/updated.
@@ -552,7 +740,7 @@ def genFiles(values: list, skip: int, builder: bool = False, adb: bool = False) 
             f" {len(notfound)} author updates where authorid not found (see above) \n"
             f" Saw: {idx + 1} rows - skip file contains the number for reprocessing \n"
         )
-        with open("skip", "w") as f:
+        with open(skip_file, "w") as f:
             f.write(f"{idx + 1}\n")
 
         if not adb:
@@ -582,7 +770,14 @@ def get_sheet(sheet_id: str, range: str) -> dict[str, Any]:
 
 
 def process_google(
-    sheet_id: str, sheets: str, skip: int = 0, builder: bool = False, adb: bool = False
+    sheet_id: str,
+    sheets: str,
+    skip: int = 0,
+    builder: bool = False,
+    adb: bool = False,
+    partial: bool = False,
+    cols: dict[str, int] | None = None,
+    skip_file: str | None = None,
 ) -> int:
     """Grab the googlesheet and process data.
     will create new_authors and new_afilliations
@@ -601,6 +796,13 @@ def process_google(
         If True, add 'RubinBuilderPaper' as the first author ID in the output.
     adb: bool, optional
         If true we are processing the ADB update form - so e.g. no authors.yaml
+    partial: bool, optional
+        If true, do partial updates - only update fields that are provided.
+    cols: dict[str, int] | None
+        Column index overrides for partial mode.
+    skip_file: str | None, optional
+        File to write the number of rows seen to. Defaults to "skip";
+        partial mode only writes it if a name is given.
 
     """
     print(f"Processing Google Sheet ID: {sheet_id}")
@@ -611,11 +813,14 @@ def process_google(
         values: list[Any] = result.get("values", [])
         if skip > 0:
             print(f"Skipping the first {skip} lines of the sheet for new authors.")
-        if adb:
+        if partial:
+            print("Doing partial update mode")
+            exitval = genFilesPartial(values, skip, cols=cols, skip_file=skip_file)
+        elif adb:
             print(f"Doing ADB {adb}")
-            exitval = genFilesADB(values, skip)
+            exitval = genFilesADB(values, skip, skip_file=skip_file or "skip")
         else:  # this will go away after DP1
-            genFiles(values, skip, builder=builder)
+            genFiles(values, skip, builder=builder, skip_file=skip_file or "skip")
     return exitval
 
 
@@ -624,6 +829,9 @@ def process_signup(
     sheets: list[str],
     authorid_col: int = 4,
     builder: bool = False,
+    output: str = "authors.yaml",
+    duplicates: bool = False,
+    skip_file: str = "skip.count",
 ) -> None:
     """Simplified signup processor:
     - Reads only the AuthorID column (authorid_col) from the given sheets.
@@ -648,6 +856,9 @@ def process_signup(
 
         for idx, row in enumerate(values):
             last_idx = idx
+            if not row or len(row) <= authorid_col:
+                print(f"Empty row or insufficient cols at idx {idx}")
+                continue
             raw = str(row[authorid_col]).strip()
             if not raw:
                 print(f"Signup problem at idx {idx}")
@@ -655,6 +866,8 @@ def process_signup(
             # normalize similar : remove spaces, lower-case
             aid = raw.replace(" ", "").lower()
             if aid in authors:
+                if duplicates and aid in authorids_set:
+                    print(f"[signup] Duplicate authorid '{aid}' at idx {idx}")
                 authorids_set.add(aid)
             else:
                 print(f"Invalid authorid {aid} - will not be added")
@@ -670,12 +883,12 @@ def process_signup(
     print(
         "\n"
         f"[signup] collected {len(authorids)} author ids\n"
-        f"[signup] last processed row index: {last_idx} - written to skip.count\n"
+        f"[signup] last processed row index: {last_idx} - written to {skip_file}\n"
     )
-    with open("skip.count", "w") as f:
+    with open(skip_file, "w") as f:
         f.write(f"{last_idx}\n")
 
-    write_yaml("authors.yaml", authorids)
+    write_yaml(output, authorids)
 
 
 def merge_authors_with_update(adb: dict[str, AuthorDbAuthor], authors: dict[str, AuthorDbAuthor]) -> None:
@@ -773,6 +986,24 @@ if __name__ == "__main__":
     )
 
     parser.add_argument(
+        "--partial",
+        action="store_true",
+        help="Partial update mode: look up existing authors by ID and only "
+        "update fields that are provided (non-empty) in the sheet. "
+        "Does not clobber existing values with empty ones. "
+        "Use this for email-only updates or selective field changes.",
+    )
+
+    parser.add_argument(
+        "--cols",
+        metavar="COL=N",
+        nargs="+",
+        help="Override column indices for partial mode. "
+        "Format: AUTHORID=0 EMAIL=1 SURNAME=2 NAME=3 AFFIL=4 ORCID=5. "
+        "Only specify the columns present in your sheet.",
+    )
+
+    parser.add_argument(
         "-S",
         "--signup",
         nargs="?",  # optional argument
@@ -782,6 +1013,25 @@ if __name__ == "__main__":
         help="Signup mode: process the Google Sheet write authors.yaml "
         "The integer argument specifies the column number of the AuthorID.",
     )
+    parser.add_argument(
+        "-o",
+        "--output",
+        default="authors.yaml",
+        help="Output file for signup mode (default: authors.yaml)",
+    )
+    parser.add_argument(
+        "-d",
+        "--duplicates",
+        action="store_true",
+        help="Report duplicate author IDs and their row index in signup mode",
+    )
+    parser.add_argument(
+        "--skipfile",
+        default=None,
+        help="File to write the number of rows processed to, so other sheets do not "
+        "overwrite the author db form count (default: skip, or skip.count in signup mode; "
+        "partial mode writes nothing unless given)",
+    )
 
     args = parser.parse_args()
 
@@ -790,15 +1040,44 @@ if __name__ == "__main__":
     if args.process_google:
         sheet_id = args.process_google[0]
         sheet_ranges = args.process_google[1:]
-        if args.builder and args.adb:
-            print("Builder makes no sense with AuthorDB update - ignored please remove the flag.")
+        if args.builder and (args.adb or args.partial):
+            print("Builder makes no sense with AuthorDB/partial update - ignored please remove the flag.")
+        if args.adb and args.partial:
+            print("Cannot use both --adb and --partial. Use --partial for updates to existing authors.")
+            exit(1)
         if args.signup is not None:
-            if args.skip:
+            if args.skip and args.skip > 0:
                 print("Skip is not available with signup- ignored please remove the flag.")
-            process_signup(sheet_id, sheet_ranges, builder=args.builder, authorid_col=args.signup)
+            process_signup(
+                sheet_id,
+                sheet_ranges,
+                builder=args.builder,
+                authorid_col=args.signup,
+                output=args.output,
+                duplicates=args.duplicates,
+                skip_file=args.skipfile or "skip.count",
+            )
         else:
+            # Parse --cols if provided
+            cols_dict = None
+            if args.cols:
+                cols_dict = {}
+                for item in args.cols:
+                    if "=" in item:
+                        key, val = item.split("=", 1)
+                        cols_dict[key.upper()] = int(val)
+                    else:
+                        print(f"Invalid --cols format: {item}. Expected COL=N")
+                        exit(1)
             exitval = process_google(
-                sheet_id, sheet_ranges, skip=args.skip, builder=args.builder, adb=args.adb
+                sheet_id,
+                sheet_ranges,
+                skip=args.skip,
+                builder=args.builder,
+                adb=args.adb,
+                partial=args.partial,
+                cols=cols_dict,
+                skip_file=args.skipfile,
             )
         did_something = True
 
