@@ -216,7 +216,7 @@ def handle_email(
     known = {**affils, **newaffils}
 
     def has_domain(a: Affiliation) -> bool:
-        return bool(a.email) and a.email.lower() == domain
+        return a.email is not None and a.email.lower() == domain
 
     # 1) The author's own affiliation has this domain.
     if affilid in known and has_domain(known[affilid]):
