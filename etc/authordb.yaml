@@ -1238,6 +1238,12 @@ affiliations:
     email: herts.ac.uk
     institute: University of Hertfordshire
     ror_id: 0267vjk41
+  Hoblitt:
+    address: null
+    department: null
+    email: hoblitt.com
+    institute: Hoblitt email domain Placeholder
+    ror_id: null
   Hotmail:
     address: null
     department: null
@@ -4071,7 +4077,7 @@ authors:
     - RubinObs
     - WisconsinMadison
     altaffil: []
-    email: KBechtol@Gmail
+    email: keith.bechtol@Gmail
     family_name: Bechtol
     given_name: Keith
     orcid: 0000-0001-8156-0429
@@ -4793,9 +4799,9 @@ authors:
     orcid: 0000-0001-5738-8956
   chirinoc:
     affil:
-    - RubinObs
+    - RubinConstruction
     altaffil: []
-    email: carol.chirino
+    email: carol.chirino@RubinObs
     family_name: Chirino
     given_name: Carol
     orcid: null
@@ -6323,7 +6329,7 @@ authors:
     affil:
     - RubinObs
     altaffil: []
-    email: jhoblitt@RubinConstruction
+    email: josh@Hoblitt
     family_name: Hoblitt
     given_name: Joshua
     orcid: 0000-0002-5292-5879
@@ -6993,9 +6999,9 @@ authors:
     orcid: 0000-0002-9801-5969
   krabbendamvl:
     affil:
-    - RubinObs
+    - RubinConstruction
     altaffil: []
-    email: victor.krabbendam
+    email: victor.krabbendam@RubinObs
     family_name: Krabbendam
     given_name: Victor L.
     orcid: null
@@ -7947,7 +7953,7 @@ authors:
     affil:
     - RubinConstruction
     altaffil: []
-    email: dmills@Gmail
+    email: dmills.lsst@Gmail
     family_name: Mills
     given_name: David J.
     orcid: null
