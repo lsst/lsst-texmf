@@ -32,7 +32,7 @@ clean:
 
 html:
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
-	cp af*csv authors.csv glossary.html htmlglossar*csv $(BUILDDIR)/html
+	cp af*csv build*csv authors.csv glossary.html htmlglossar*csv $(BUILDDIR)/html
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
 

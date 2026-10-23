@@ -75,7 +75,8 @@ docs: $(PDF) $(TESTS) glstab.tex authors.csv builderlist.csv
 	cp *.pdf docs/_static/examples/
 	cp etc/glossary.html docs
 	cp htmlglossary.csv docs
-	cp af*.csv authors.csv builderlist.csv docs
+	cp af*.csv authors.csv docs
+	cp builderlist.csv docs
 	make -C docs html
 
 lsst.bib:
