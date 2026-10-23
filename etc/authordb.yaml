@@ -9597,6 +9597,14 @@ authors:
     family_name: Seriche
     given_name: Gonzalo
     orcid: 0009-0005-2846-5648
+  serichej:
+    affil:
+    - RubinConstruction
+    altaffil: []
+    email: jseriche
+    family_name: Seriche
+    given_name: Jaime
+    orcid: null
   serioa:
     affil:
     - NOIRLab
