@@ -4071,7 +4071,7 @@ authors:
     - RubinObs
     - WisconsinMadison
     altaffil: []
-    email: KBechtol@Gmail
+    email: keith.bechto@Gmail
     family_name: Bechtol
     given_name: Keith
     orcid: 0000-0001-8156-0429
@@ -4793,9 +4793,9 @@ authors:
     orcid: 0000-0001-5738-8956
   chirinoc:
     affil:
-    - RubinObs
+    - RubinConstruction
     altaffil: []
-    email: carol.chirino
+    email: carol.chirino@RubinObs
     family_name: Chirino
     given_name: Carol
     orcid: null
@@ -6993,9 +6993,9 @@ authors:
     orcid: 0000-0002-9801-5969
   krabbendamvl:
     affil:
-    - RubinObs
+    - RubinConstruction
     altaffil: []
-    email: victor.krabbendam
+    email: victor.krabbendam@RubinObs@RubinObs
     family_name: Krabbendam
     given_name: Victor L.
     orcid: null
@@ -7947,7 +7947,7 @@ authors:
     affil:
     - RubinConstruction
     altaffil: []
-    email: dmills@Gmail
+    email: dmills.lsst@Gmail
     family_name: Mills
     given_name: David J.
     orcid: null
