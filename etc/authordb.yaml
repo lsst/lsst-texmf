@@ -5194,7 +5194,7 @@ authors:
     orcid: 0000-0002-5296-4720
   diurbar:
     affil:
-    - PSUCDS
+    - UPenn
     altaffil: []
     email: mbreilly
     family_name: Diurba
@@ -7200,7 +7200,7 @@ authors:
     family_name: Levine
     given_name: Deborah
     orcid: null
-  levinewg:
+  leviUPenn:
     affil:
     - Yale
     altaffil: []
@@ -7654,7 +7654,7 @@ authors:
     orcid: 0000-0003-3519-4004
   mayersg:
     affil:
-    - PSUCDS
+    - UPenn
     altaffil: []
     email: mayers
     family_name: Mayers
@@ -8153,7 +8153,7 @@ authors:
     orcid: null
   newcomerm:
     affil:
-    - PSUCDS
+    - UPenn
     altaffil: []
     email: mitch
     family_name: Newcomer
@@ -8315,9 +8315,9 @@ authors:
     orcid: null
   olivaresr:
     affil:
-    - RubinObsC
+    - RubinConstruction
     altaffil: []
-    email: rolivares@RubinConstruction
+    email: rolivares
     family_name: Olivares
     given_name: Roberto
     orcid: null
