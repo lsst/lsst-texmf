@@ -1674,7 +1674,7 @@ affiliations:
       state: Ontario
       street: ''
     department: null
-    email: null
+    email: jsick.codes
     institute: J.Sick Codes Inc.
     ror_id: null
   KECK:
@@ -1730,6 +1730,12 @@ affiliations:
     email: null
     institute: National Astronomical Observatories, Chinese Academy of Sciences
     ror_id: 058pyyv44
+  KTLim:
+    address: null
+    department: null
+    email: ktlim.com
+    institute: Email only for ktlim.com
+    ror_id: null
   Knight:
     address:
       city: Unknown
@@ -1871,6 +1877,12 @@ affiliations:
     email: null
     institute: Universite de Li\`ege
     ror_id: 00afp2z80
+  Linux:
+    address: null
+    department: null
+    email: linux.com
+    institute: Email only for linux.com
+    ror_id: null
   Longhorn:
     address:
       city: Ellensburg
@@ -2163,7 +2175,7 @@ affiliations:
       state: CO
       street: 3665 Discovery Drive
     department: null
-    email: null
+    email: nso.edu
     institute: National Solar Observatory
     ror_id: 00b9pg524
   NYU:
@@ -2773,6 +2785,12 @@ affiliations:
     email: straightengineering.com
     institute: Email only for straightengineering.com
     ror_id: null
+  Swinbank:
+    address: null
+    department: null
+    email: swinbank.org
+    institute: Email only for swinbank.org
+    ror_id: null
   TACC:
     address:
       city: Austin
@@ -2975,6 +2993,19 @@ affiliations:
       street: One Shields Avenue
     department: Department of Physics \& Astronomy
     email: ucdavis.edu
+    institute: University of California, Davis
+    ror_id: 05rrcem69
+  UCDavis-physics:
+    address:
+      city: Davis
+      country_code: USA
+      example_expanded: Physics Department, University of California, One Shields
+        Avenue, Davis, CA 95616, USA
+      postcode: '95616'
+      state: CA
+      street: One Shields Avenue
+    department: Department of Physics \& Astronomy
+    email: physics.ucdavis.edu
     institute: University of California, Davis
     ror_id: 05rrcem69
   UCIrvine-Astro:
@@ -3981,7 +4012,7 @@ authors:
     orcid: null
   barrjd:
     affil:
-    - RubinConstruction
+    - NSO
     altaffil: []
     email: jbarr
     family_name: Barr
@@ -4040,7 +4071,7 @@ authors:
     - RubinObs
     - WisconsinMadison
     altaffil: []
-    email: KBechtol@RubinConstruction
+    email: KBechtol@Gmail
     family_name: Bechtol
     given_name: Keith
     orcid: 0000-0001-8156-0429
@@ -4313,7 +4344,7 @@ authors:
     orcid: null
   borstada:
     affil:
-    - RubinConstruction
+    - RubinObs
     altaffil: []
     email: anthony.borstad
     family_name: Borstad
@@ -4554,7 +4585,7 @@ authors:
     orcid: null
   calabresed:
     affil:
-    - RubinConstruction
+    - AURA-T
     altaffil: []
     email: dcalabrese
     family_name: Calabrese
@@ -4829,7 +4860,7 @@ authors:
     affil:
     - RubinConstruction
     altaffil: []
-    email: aclements
+    email: awclemen@Yahoo
     family_name: Clements
     given_name: Andy W.
     orcid: null
@@ -5581,7 +5612,7 @@ authors:
     affil:
     - D4D
     altaffil: []
-    email: merlin.fisherlevin@Gmail
+    email: merlin.fisherlevine@Gmail
     family_name: Fisher-Levine
     given_name: Merlin
     orcid: 0000-0001-9440-8960
@@ -5936,7 +5967,7 @@ authors:
     orcid: 0000-0003-4089-6924
   gonzalezc:
     affil:
-    - RubinConstruction
+    - RubinObsC
     altaffil: []
     email: carola.gonzalez
     family_name: Gonzalez
@@ -6819,7 +6850,7 @@ authors:
     affil:
     - RubinObsC
     altaffil: []
-    email: kshtija.kelkar
+    email: kkshitija.astro@Gmail
     family_name: Kelkar
     given_name: Kshitija
     orcid: 0000-0002-8130-3593
@@ -6962,9 +6993,9 @@ authors:
     orcid: 0000-0002-9801-5969
   krabbendamvl:
     affil:
-    - RubinConstruction
+    - RubinObs
     altaffil: []
-    email: VKrabbendam
+    email: victor.krabbendam
     family_name: Krabbendam
     given_name: Victor L.
     orcid: null
@@ -7158,7 +7189,7 @@ authors:
     affil:
     - NOIRLab
     altaffil: []
-    email: ryan.lau
+    email: ryan.lau@Gmail
     family_name: Lau
     given_name: Ryan M.
     orcid: 0000-0003-0778-0321
@@ -7286,7 +7317,7 @@ authors:
     affil:
     - SLAC
     altaffil: []
-    email: ktl
+    email: ktl@KTLim
     family_name: Lim
     given_name: Kian-Tat
     orcid: 0000-0002-6338-6516
@@ -7390,7 +7421,7 @@ authors:
     affil:
     - RubinConstruction
     altaffil: []
-    email: jolopezlop
+    email: jolopezlop@Gmail
     family_name: Lopez
     given_name: Jorge
     orcid: null
@@ -7463,15 +7494,15 @@ authors:
     affil:
     - Princeton-Astro
     altaffil: []
-    email: nlust
+    email: natelust@Linux
     family_name: Lust
     given_name: Nate B.
     orcid: 0000-0002-4122-9384
   lutfim:
     affil:
-    - RubinConstruction
+    - RubinObs
     altaffil: []
-    email: mlutfi
+    email: mostafa.lutfi
     family_name: Lutfi
     given_name: Mostafa
     orcid: 0000-0003-2866-3802
@@ -7916,7 +7947,7 @@ authors:
     affil:
     - RubinConstruction
     altaffil: []
-    email: dmills
+    email: dmills@Gmail
     family_name: Mills
     given_name: David J.
     orcid: null
@@ -8318,7 +8349,7 @@ authors:
     affil:
     - Princeton-Astro
     altaffil: []
-    email: erfan
+    email: erfan@Princeton
     family_name: Nourbakhsh
     given_name: Erfan
     orcid: 0000-0003-3827-4691
@@ -8545,7 +8576,7 @@ authors:
     affil:
     - Duke
     altaffil: []
-    email: hp175
+    email: kakoon4171@Gmail
     family_name: Park
     given_name: Hye Yun
     orcid: 0000-0002-7295-2743
@@ -9270,7 +9301,7 @@ authors:
     orcid: 0000-0001-5326-3486
   rosase:
     affil:
-    - RubinConstruction
+    - RubinObs
     altaffil: []
     email: eric.rosas
     family_name: Rosas
@@ -9385,7 +9416,7 @@ authors:
     affil:
     - IN2P3-CPPM
     altaffil: []
-    email: bsanchez
+    email: bruno.sanchez.63@Gmail
     family_name: S\'anchez
     given_name: Bruno O.
     orcid: 0000-0002-8687-0669
@@ -9748,7 +9779,7 @@ authors:
     - JSickCodes
     - RubinObs
     altaffil: []
-    email: jsick@RubinConstruction
+    email: jonathan
     family_name: Sick
     given_name: Jonathan
     orcid: 0000-0003-3001-676X
@@ -9925,7 +9956,7 @@ authors:
     affil:
     - RubinObsC
     altaffil: []
-    email: isotuela@RubinConstruction
+    email: ioanasotuela@Gmail
     family_name: Sotuela Elorriaga
     given_name: Ioana
     orcid: 0009-0001-6379-3365
@@ -9981,7 +10012,7 @@ authors:
     affil:
     - RubinObsC
     altaffil: []
-    email: hstockebrand@RubinConstruction
+    email: hernan.stockebrand
     family_name: Stockebrand
     given_name: Hernan
     orcid: 0009-0008-9718-8586
@@ -10096,7 +10127,7 @@ authors:
     - ASTRON
     - Princeton-Astro
     altaffil: []
-    email: swinbank
+    email: john@Swinbank
     family_name: Swinbank
     given_name: John D.
     orcid: 0000-0001-9445-1846
@@ -10110,7 +10141,7 @@ authors:
     orcid: null
   tachea:
     affil:
-    - RubinConstruction
+    - RubinObs
     altaffil: []
     email: tony.tache
     family_name: Tache
@@ -10346,7 +10377,7 @@ authors:
     affil:
     - UCDavis
     altaffil: []
-    email: tyson@RubinConstruction
+    email: tyson@UCDavis-physics
     family_name: Tyson
     given_name: J. Anthony
     orcid: 0000-0002-9242-8797
@@ -10376,7 +10407,7 @@ authors:
     orcid: null
   urrutiaf:
     affil:
-    - RubinConstruction
+    - RubinObs
     altaffil: []
     email: fernanda.urrutia
     family_name: Urrutia
@@ -10782,9 +10813,9 @@ authors:
     orcid: 0000-0003-2919-7495
   willmanb:
     affil:
-    - LSST-DA
+    - NOIRLab
     altaffil: []
-    email: bwillman
+    email: beth.willman
     family_name: Willman
     given_name: Beth
     orcid: 0000-0003-2892-9906
