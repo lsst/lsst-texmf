@@ -5675,14 +5675,6 @@ authors:
     family_name: Gressler
     given_name: William J.
     orcid: null
-  gruendlra:
-    affil:
-    - NCSA
-    altaffil: []
-    email: gruendl
-    family_name: Gruendl
-    given_name: Robert A.
-    orcid: 0000-0002-4588-6517
   grisp:
     affil:
     - IN2P3-LPCA
@@ -5691,6 +5683,14 @@ authors:
     family_name: Gris
     given_name: Philippe
     orcid: null
+  gruendlra:
+    affil:
+    - NCSA
+    altaffil: []
+    email: gruendl
+    family_name: Gruendl
+    given_name: Robert A.
+    orcid: 0000-0002-4588-6517
   gschwendj:
     affil:
     - LINEA
@@ -5819,6 +5819,14 @@ authors:
     family_name: Hennawi
     given_name: Joseph
     orcid: null
+  henriquezc:
+    affil:
+    - RubinObsC
+    altaffil: []
+    email: carlos.henriquez
+    family_name: Henr{\'\i}quez
+    given_name: Carlos
+    orcid: 0009-0008-6991-4499
   hernandezf:
     affil:
     - IN2P3-CC
