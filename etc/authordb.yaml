@@ -946,10 +946,11 @@ affiliations:
     address:
       city: Miami
       country_code: USA
-      example_expanded: 11200 SW 8th Street, Miami, FL 33199
+      example_expanded: Florida International University, 11200 SW 8th Street,
+        Miami, FL 33199
       postcode: '33199'
       state: FL
-      street: ''
+      street: 11200 SW 8th Street
     department: null
     email: fiu.edu
     institute: Florida International University
