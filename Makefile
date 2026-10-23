@@ -91,10 +91,13 @@ processsignup:
 
 # these may be temporary .. they process dumps from contacts DB
 addbuilder_authors:
-	bin/makeAuthorListsFromGoogle.py --adb -p 1K1EkYr7aeXHYuLvFXRqcdvwdykxC07hZo0Y8IMaYlec "noadb!A2:I200"
+	bin/makeAuthorListsFromGoogle.py --adb --skipfile builders.skip -p 1K1EkYr7aeXHYuLvFXRqcdvwdykxC07hZo0Y8IMaYlec "noadb!A2:I200"
 
 builderslist:
-	bin/makeAuthorListsFromGoogle.py -d --signup 4 -p 1K1EkYr7aeXHYuLvFXRqcdvwdykxC07hZo0Y8IMaYlec "2026-10-20!H7:L1000" -o etc/builderlist.yaml
+	bin/makeAuthorListsFromGoogle.py -d --signup 4 --skipfile builders.skip -p 1K1EkYr7aeXHYuLvFXRqcdvwdykxC07hZo0Y8IMaYlec "2026-10-20!H7:L1000" -o etc/builderlist.yaml
+
+updateemail:
+	bin/makeAuthorListsFromGoogle.py --partial -p 1K1EkYr7aeXHYuLvFXRqcdvwdykxC07hZo0Y8IMaYlec "ne!A:B" --cols AUTHORID=0 EMAIL=1
 
 # these can be used to merge new authors and affils after inspection
 merge_authors: new_authors.yaml
