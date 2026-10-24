@@ -7386,7 +7386,7 @@ authors:
   loftusa:
     affil:
     - NCSA
-    altaffil: []
+    altaffil: ["Do not contact"]
     email: aloftus
     family_name: Loftus
     given_name: Andrew
@@ -10213,7 +10213,7 @@ authors:
   thalerjj:
     affil:
     - Illinois
-    altaffil: []
+    altaffil: ["Do not contact"]
     email: jjt
     family_name: Thaler
     given_name: Jon J.
