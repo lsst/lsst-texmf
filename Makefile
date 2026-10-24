@@ -66,8 +66,12 @@ test-authors:
 authors.csv: etc/authordb.yaml
 	bin/db2authors.py -m csvall
 
+#not for publication
+authors-emails.csv: etc/authordb.yaml
+	bin/db2authors.py -m csvall -e
+
 builderlist.csv: etc/builderlist.yaml
-	bin/db2authors.py --authorfile etc/builderlist.yaml  -m aascsv > builderlist.csv
+	bin/db2authors.py --authorfile etc/builderlist.yaml  -m csv > builderlist.csv
 
 .PHONY: docs
 docs: $(PDF) $(TESTS) glstab.tex authors.csv builderlist.csv

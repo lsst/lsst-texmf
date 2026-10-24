@@ -139,6 +139,7 @@ class Affiliation:
 class Author:
     """Representation of an author."""
 
+    authorid: str
     given_name: str
     family_name: str
     email: str
@@ -309,6 +310,7 @@ class AuthorFactory:
         email = f"{username}@{domain}"
 
         return Author(
+            authorid=authorid,
             given_name=author["given_name"],
             family_name=author["family_name"],
             orcid=author.get("orcid"),
@@ -783,6 +785,26 @@ class AASAuthorRow:
     country: str = ""
 
 
+class CSV(AuthorTextGenerator):
+    """Generate simple CSV format with author ID, name, affiliations.
+
+    Includes altaffil column. Outputs to stdout like other modes.
+    """
+
+    mode = "csv"
+
+    def generate(self, header: bool = True) -> str:
+        output = io.StringIO()
+        writer = csv.writer(output)
+        writer.writerow(["Rubin AuthorID", "Name", "Affiliations", "AltAffil"])
+        for author in self.authors:
+            affils = " / ".join(a.institute for a in author.affiliations)
+            altaffil = " / ".join(author.altaffil) if author.altaffil else ""
+            row = [author.authorid, latex2text(author.full_name), affils, altaffil]
+            writer.writerow(row)
+        return output.getvalue()
+
+
 class AASCSV(AuthorTextGenerator):
     """Generate CSV format for AAS journals.
 
@@ -886,11 +908,13 @@ class AASCSV(AuthorTextGenerator):
         return output.getvalue()
 
 
-def dump_csvall(factory: AuthorFactory, include_email: bool = False) -> None:
-    """Generate CSV of ALL authors for easier lookup of ID.
+def dump_csvall(
+    factory: AuthorFactory, include_email: bool = False, author_ids: list[str] | None = None
+) -> None:
+    """Generate CSV of authors for easier lookup of ID.
 
     Authorid, Name, Institution id, optionally Email.
-    Put this in authors.csv.
+    Put this in authors.csv (or authors-emails.csv if include_email).
 
     Parameters
     ----------
@@ -898,28 +922,33 @@ def dump_csvall(factory: AuthorFactory, include_email: bool = False) -> None:
         The author factory to use.
     include_email : bool
         If True, include the resolved email address as a column.
+    author_ids : list[str] | None
+        If provided, only include these author IDs.
+        If None, include all authors.
     """
-    author_ids = factory.get_author_ids()
+    ids: list[str] = list(author_ids) if author_ids is not None else list(factory.get_author_ids())
     outfile = "authors-emails.csv" if include_email else "authors.csv"
     with open(outfile, "w", newline="") as outf:
         writer = csv.writer(outf)
-        header = ["Rubin AuthorID", "Name", "Affiliation ID(s)", "AASTEX"]
+        header = ["Rubin AuthorID", "Name", "Affiliation ID(s)", "AltAffil", "AASTEX"]
         if include_email:
             header.append("Email")
         writer.writerow(header)
-        for authorid in author_ids:
+        for authorid in ids:
             author = factory.get_author(authorid)
             aas7_generator = AASTeX7([author])
             # people seeing the full affiliation copied it so putting IDs
             affils = " / ".join(factory.get_affiliation_id(a) for a in author.affiliations)
+            altaffil = " / ".join(author.altaffil) if author.altaffil else ""
             # Generate aas7 string using the AASTeX7 generator
             aas7_text = aas7_generator.generate(header=False)
             # the email should not be plain ..
             aas7_text = aas7_text.replace("@", " AT ")
-            row = [authorid, latex2text(author.full_name), affils, aas7_text]
+            row = [authorid, latex2text(author.full_name), affils, altaffil, aas7_text]
             if include_email:
                 row.append(author.email)
             writer.writerow(row)
+    print(f"Wrote {len(ids)} authors to {outfile}")
     affil_ids = factory.get_affiliation_ids()
     with open("affiliations.csv", "w") as outf:
         writer = csv.writer(outf)
@@ -977,6 +1006,7 @@ if __name__ == "__main__":
         "ascom",
         "webofc",
         "lsstdoc",
+        "csv",
         "csvall",
         "mnras",
         "aap",
@@ -1026,11 +1056,11 @@ if __name__ == "__main__":
         exit(0)
 
     with open(args.authorfile) as fh:
-        authors = yaml.safe_load(fh)
+        author_ids = yaml.safe_load(fh)
 
     dni_list = load_dni(dnifile)
-    authors = [a for a in authors if a not in dni_list]
-    authors = [factory.get_author(authorid) for authorid in authors]
+    author_ids = [a for a in author_ids if a not in dni_list]
+    authors = [factory.get_author(authorid) for authorid in author_ids]
 
     generator_lut: dict[str, type[AuthorTextGenerator]] = {
         "aas": AASTeX,
@@ -1043,6 +1073,7 @@ if __name__ == "__main__":
         "adass": ADASS,
         "mnras": MNRAS,
         "aap": AAP,
+        "csv": CSV,
         "aascsv": AASCSV,
     }
     if args.mode not in generator_lut:
