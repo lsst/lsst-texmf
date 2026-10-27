@@ -31,9 +31,26 @@ I am not in the AuthorDB
 lets you search easily for your name in the Author DB.
 Your author id is in the left column.
 
-If you are not in the list sign up using  the google form
-which is bookmarked in Slack `#all-users <https://rubin-obs.slack.com/archives/C02SVMGUC>`_.
+If you are not in the list sign up using  the AuthorDB google form.
+
+Author database sign up form
+----------------------------
+The AuthorDB google form is bookmarked in Slack `#all-users <https://rubin-obs.slack.com/archives/C02SVMGUC>`_.
 It will take at least 24 hours to process via the github nightly action.
+
+Builders list
+=============
+The `builders list <https://docs.google.com/spreadsheets/d/1_zXLp7GaIJnzihKsyEAz298_xdbrgxRgZ1_86kwhGPY/edit?gid=1746357435#gid=1746357435>`_
+recognizes individuals who contributed to building Rubin Observatory.
+If you believe you should be included, use the author database sign-up form above to register;
+indicate your builder status in the form.
+
+Builders list maintenance
+-------------------------
+The initial builders list is an October 2026 dump from the Contacts DB.
+Going forward, maintenance should be done by editing
+`builderlist.yaml <https://github.com/lsst/lsst-texmf/blob/main/etc/builderlist.yaml>`_
+in GitHub via pull request.
 
 I want a paper signup sheet
 ===========================
