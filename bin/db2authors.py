@@ -793,14 +793,23 @@ class CSV(AuthorTextGenerator):
 
     mode = "csv"
 
+    def __init__(self, authors: list[Author], include_email: bool = False):
+        super().__init__(authors)
+        self.include_email = include_email
+
     def generate(self, header: bool = True) -> str:
         output = io.StringIO()
         writer = csv.writer(output)
-        writer.writerow(["Rubin AuthorID", "Name", "Affiliations", "AltAffil"])
+        header_row = ["Rubin AuthorID", "Name", "Affiliations", "AltAffil"]
+        if self.include_email:
+            header_row.append("Email")
+        writer.writerow(header_row)
         for author in self.authors:
             affils = " / ".join(a.institute for a in author.affiliations)
             altaffil = " / ".join(author.altaffil) if author.altaffil else ""
             row = [author.authorid, latex2text(author.full_name), affils, altaffil]
+            if self.include_email:
+                row.append(author.email)
             writer.writerow(row)
         return output.getvalue()
 
@@ -1036,7 +1045,7 @@ if __name__ == "__main__":
         "-e",
         "--email",
         action="store_true",
-        help="Include resolved email column in csvall output",
+        help="Include resolved email column in csv and csvall output",
     )
     args = parser.parse_args()
 
@@ -1079,5 +1088,9 @@ if __name__ == "__main__":
     if args.mode not in generator_lut:
         raise RuntimeError(f"Unknown generator mode: {args.mode}")
 
-    generator = generator_lut[args.mode](authors)
+    generator: AuthorTextGenerator
+    if args.mode == "csv":
+        generator = CSV(authors, include_email=args.email)
+    else:
+        generator = generator_lut[args.mode](authors)
     print(generator.generate())
