@@ -67,8 +67,8 @@ authors.csv: etc/authordb.yaml
 	bin/db2authors.py -m csvall
 
 #not for publication
-authors-emails.csv: etc/authordb.yaml
-	bin/db2authors.py -m csvall -e
+builder-emails.csv: etc/authordb.yaml
+	bin/db2authors.py --authorfile etc/builderlist.yaml  -m csv -e  > builder-emails.csv
 
 builderlist.csv: etc/builderlist.yaml
 	bin/db2authors.py --authorfile etc/builderlist.yaml  -m csv > builderlist.csv
