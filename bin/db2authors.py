@@ -805,6 +805,9 @@ class CSV(AuthorTextGenerator):
             header_row.append("Email")
         writer.writerow(header_row)
         for author in self.authors:
+            # Skip author entirely in email mode if no valid email
+            if self.include_email and not _should_include_email(author):
+                continue
             affils = " / ".join(a.institute for a in author.affiliations)
             altaffil = " / ".join(author.altaffil) if author.altaffil else ""
             row = [author.authorid, latex2text(author.full_name), affils, altaffil]
@@ -915,6 +918,29 @@ class AASCSV(AuthorTextGenerator):
             writer.writerow(dataclass_asdict(row).values())
 
         return output.getvalue()
+
+
+def _should_include_email(author: Author) -> bool:
+    """Check if author's email should be included.
+
+    Returns False if author has 'Do not contact' in altaffil,
+    or if email is missing/unknown/None.
+    """
+    # Check for "Do not contact" in altaffil
+    if author.altaffil:
+        for alt in author.altaffil:
+            if "do not contact" in alt.lower():
+                print(f"Skipping {author.authorid}: Do not contact", file=sys.stderr)
+                return False
+    # Check for missing, None, or unknown email
+    if not author.email:
+        print(f"Skipping {author.authorid}: No valid email", file=sys.stderr)
+        return False
+    email_lower = author.email.lower()
+    if email_lower in ("unknown", "none") or email_lower.startswith("unknown@"):
+        print(f"Skipping {author.authorid}: No valid email", file=sys.stderr)
+        return False
+    return True
 
 
 def dump_csvall(
