@@ -31,9 +31,29 @@ I am not in the AuthorDB
 lets you search easily for your name in the Author DB.
 Your author id is in the left column.
 
-If you are not in the list sign up using  the google form
-which is bookmarked in Slack `#all-users <https://rubin-obs.slack.com/archives/C02SVMGUC>`_.
+If you are not in the list sign up using  the AuthorDB google form.
+
+Author database sign up form
+----------------------------
+The AuthorDB google form is bookmarked in Slack `#all-users <https://rubin-obs.slack.com/archives/C02SVMGUC>`_.
 It will take at least 24 hours to process via the github nightly action.
+
+Builders list
+=============
+The `builders list <https://docs.google.com/spreadsheets/d/1_zXLp7GaIJnzihKsyEAz298_xdbrgxRgZ1_86kwhGPY/edit?gid=1746357435#gid=1746357435>`_
+recognizes individuals who contributed to building Rubin Observatory.
+If you believe you should be included, use the author database sign-up form above to register;
+indicate your builder status in the form.
+Builder requests are reviewed by the Rubin Director's Office.
+
+Builders list maintenance
+-------------------------
+The initial builders list is an October 2026 dump from the Contacts DB.
+Going forward, maintenance should be done by editing
+`builderlist.yaml <https://github.com/lsst/lsst-texmf/blob/main/etc/builderlist.yaml>`_
+in GitHub via pull request.
+Additions to the builders list are the responsibility of the Rubin Director's Office.
+Any PR for the list should be by or approved by the directors office.
 
 I want a paper signup sheet
 ===========================
@@ -261,6 +281,9 @@ build:
 - ``csvall``
   Dump all authors into a simple CSV file (one row per author, with metadata).
 
+- ``csv``
+  Output a CSV file for authors in the current authors.yaml (one row per author, with metadata).
+
 - ``mnras``
   Author list formatted for *Monthly Notices of the Royal Astronomical Society*
   (MNRAS).
@@ -268,6 +291,24 @@ build:
 - ``aap``
   Author list formatted for *Astronomy & Astrophysics* (A&A).
 
+- ``aascsv``
+  CSV output with AAS-style author formatting.
+
+Common options
+~~~~~~~~~~~~~~
+
+- ``-m``, ``--mode``
+  Select the output format (e.g., ``-m aas7``, ``-m csv``).
+
+- ``-a``, ``--authorfile``
+  Specify the input authors.yaml file listing author IDs to include (default: authors.yaml).
+
+- ``-e``, ``--email``
+  Include resolved email addresses in ``csv`` and ``csvall`` output.
+
+.. warning::
+
+   Do not publish author email addresses on public web pages.
 
 Command‑line usage (patterns)
 =============================
