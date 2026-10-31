@@ -946,8 +946,8 @@ affiliations:
     address:
       city: Miami
       country_code: USA
-      example_expanded: Florida International University, 11200 SW 8th Street,
-        Miami, FL 33199
+      example_expanded: Florida International University, 11200 SW 8th Street, Miami,
+        FL 33199
       postcode: '33199'
       state: FL
       street: 11200 SW 8th Street
@@ -6901,6 +6901,14 @@ authors:
     family_name: Kessler
     given_name: Richard
     orcid: 0000-0003-3221-0419
+  khadkan:
+    affil:
+    - SLAC-Kavli
+    altaffil: []
+    email: narayan
+    family_name: Khadka
+    given_name: Narayan
+    orcid: 0000-0001-5512-2716
   khineh:
     affil:
     - NCSA
@@ -7271,14 +7279,6 @@ authors:
     family_name: Leung
     given_name: Hok
     orcid: null
-  levinewg:
-    affil:
-    - Yale
-    altaffil: []
-    email: null
-    family_name: Levine
-    given_name: W. Garrett
-    orcid: null
   levineb:
     affil:
     - StonyBrookU
@@ -7294,6 +7294,14 @@ authors:
     email: null
     family_name: Levine
     given_name: Deborah
+    orcid: null
+  levinewg:
+    affil:
+    - Yale
+    altaffil: []
+    email: null
+    family_name: Levine
+    given_name: W. Garrett
     orcid: null
   liangm:
     affil:
@@ -7386,7 +7394,8 @@ authors:
   loftusa:
     affil:
     - NCSA
-    altaffil: ["Do not contact"]
+    altaffil:
+    - Do not contact
     email: aloftus
     family_name: Loftus
     given_name: Andrew
@@ -10213,7 +10222,8 @@ authors:
   thalerjj:
     affil:
     - Illinois
-    altaffil: ["Do not contact"]
+    altaffil:
+    - Do not contact
     email: jjt
     family_name: Thaler
     given_name: Jon J.
