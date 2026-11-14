@@ -1693,7 +1693,7 @@ affiliations:
       state: HI
       street: 65-1120 Mamalahoa Hwy.
     department: null
-    email: null
+    email: keck.hawaii.edu
     institute: W. M. Keck Observatory
     ror_id: 00ab7ks98
   KICP:
@@ -9631,7 +9631,7 @@ authors:
     orcid: null
   sebagj:
     affil:
-    - RubinConstruction
+    - KECK
     altaffil: []
     email: jsebag
     family_name: Sebag
