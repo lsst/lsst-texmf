@@ -5143,6 +5143,14 @@ authors:
     family_name: Daniel
     given_name: Scott F.
     orcid: null
+  danielss:
+    affil:
+    - Delaware-PhyAst
+    altaffil: []
+    email: shard
+    family_name: Daniels
+    given_name: Shar
+    orcid: 0009-0006-4823-9768
   daruichf:
     affil:
     - RubinObsC
