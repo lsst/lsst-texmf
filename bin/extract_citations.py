@@ -18,6 +18,7 @@ import sys
 from pathlib import Path
 
 from pybtex.database import BibliographyData
+from pybtex.database.output.bibtex import Writer
 
 
 def extract_citations_from_latex(latex_file: str | Path) -> set[str]:
@@ -117,25 +118,17 @@ def extract_cited_entries(
     return cited_entries, missing
 
 
-def unescape_bibtex_output(bibtex_str: str) -> str:
-    r"""Unescape double backslashes in BibTeX output.
+class RawBibtexWriter(Writer):
+    r"""BibTeX writer that leaves field values untouched.
 
-    Fixes the issue where pybtex escapes backslashes, turning \\_ into \\_.
-
-    Parameters
-    ----------
-    bibtex_str : str
-        The BibTeX string output from pybtex.
-
-    Returns
-    -------
-    unescaped : str
-        The unescaped BibTeX string.
+    The default pybtex writer passes values through latexcodec, which
+    escapes characters such as ``#``, ``%``, ``&`` and ``_`` even when they
+    are already escaped (``\\#`` becomes ``\\\\#``). Entries read from the
+    central bibfiles are already valid LaTeX, so write them out verbatim.
     """
-    # Replace double backslashes followed by special characters with single
-    # This handles cases like \\_ -> \_
-    bibtex_str = re.sub(r"\\\\([_{}~^])", r"\\\1", bibtex_str)
-    return bibtex_str
+
+    def _encode(self, text: str) -> str:
+        return text
 
 
 if __name__ == "__main__":
@@ -201,9 +194,7 @@ if __name__ == "__main__":
             print(f"  - {bibkey}")
 
     # Write to output file
-    with open(args.output, "w") as fd:
-        bibtex_output = cited_entries.to_string("bibtex")
-        bibtex_output = unescape_bibtex_output(bibtex_output)
-        fd.write(bibtex_output)
+    with open(args.output, "w", encoding="utf-8") as fd:
+        fd.write(RawBibtexWriter().to_string(cited_entries))
 
     sys.exit(0 if not missing else 1)
