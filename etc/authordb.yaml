@@ -736,17 +736,17 @@ affiliations:
     institute: Email only for cox.net
     ror_id: null
   CTU-Prague:
-      address:
-        city: Prague
-        country_code: Czech Republic
-        example_expanded: Czech Technical University in Prague, Jugoslávských partyzánů 1580/3, 160 00 Prague 6, Czech Republic
-        postcode: 160 00
-        state: ‘’
-        street: Jugoslávských partyzánů 1580/3
-      department: ‘’
-      email: cvut.cz
-      institute: Czech Technical University in Prague
-      ror_id: 03kqpb082
+    address:
+      city: Prague
+      country_code: Czech Republic
+      example_expanded: Czech Technical University in Prague, Jugoslávských partyzánů 1580/3, 160 00 Prague 6, Czech Republic
+      postcode: 160 00
+      state: ''
+      street: Jugoslávských partyzánů 1580/3
+    department: ''
+    email: cvut.cz
+    institute: Czech Technical University in Prague
+    ror_id: 03kqpb082
   D4D:
     address:
       city: Bournemouth
