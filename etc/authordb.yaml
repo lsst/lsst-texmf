@@ -739,8 +739,7 @@ affiliations:
       address:
         city: Prague
         country_code: Czech Republic
-        example_expanded: Czech Technical University in Prague, Jugoslávských partyzánů 1580/3,
-          160 00 Prague 6, Czech Republic
+        example_expanded: Czech Technical University in Prague, Jugoslávských partyzánů 1580/3, 160 00 Prague 6, Czech Republic
         postcode: 160 00
         state: ‘’
         street: Jugoslávských partyzánů 1580/3
@@ -6317,7 +6316,7 @@ authors:
     affil:
     - Cornell
     altaffil: []
-    email: sch269@Cornell
+    email: sch269
     family_name: Herrmann
     given_name: Sven
     orcid: null
@@ -8367,7 +8366,7 @@ authors:
     affil:
     - CTU-Prague
     altaffil: []
-    email: andrei.nomerotski@CTU-Prague
+    email: andrei.nomerotski
     family_name: Nomerotski
     given_name: Andrei
     orcid: null
