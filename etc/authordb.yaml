@@ -3891,6 +3891,7 @@ authors:
     affil:
     - Oxford
     altaffil:
+    - Do not contact
     - Author is deceased
     email: kirk.arndt
     family_name: Arndt
@@ -6540,7 +6541,7 @@ authors:
     affil:
     - RubinConstruction
     altaffil: []
-    email: sjacobygm@Gmail
+    email: sjtucson@Hotmail
     family_name: Jacoby
     given_name: Suzanne H.
     orcid: null
