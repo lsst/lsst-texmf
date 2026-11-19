@@ -735,6 +735,19 @@ affiliations:
     email: cox.net
     institute: Email only for cox.net
     ror_id: null
+  CTU-Prague:
+      address:
+        city: Prague
+        country_code: Czech Republic
+        example_expanded: Czech Technical University in Prague, Jugoslávských partyzánů 1580/3,
+          160 00 Prague 6, Czech Republic
+        postcode: 160 00
+        state: ‘’
+        street: Jugoslávských partyzánů 1580/3
+      department: ‘’
+      email: cvut.cz
+      institute: Czech Technical University in Prague
+      ror_id: 03kqpb082
   D4D:
     address:
       city: Bournemouth
@@ -863,6 +876,12 @@ affiliations:
     email: duke.edu
     institute: Duke University
     ror_id: 00py81415
+  Earthlink:
+    address: null
+    department: null
+    email: earthlink.net
+    institute: Earthlink Mail email domain Placeholder
+    ror_id: null
   EPCC:
     address:
       city: Edinburgh
@@ -4980,7 +4999,7 @@ authors:
     affil:
     - UCSC
     altaffil: []
-    email: lcorlies
+    email: lcorlies@Gmail
     family_name: Corlies
     given_name: Lauren
     orcid: 0000-0002-0646-1540
@@ -6296,9 +6315,9 @@ authors:
     orcid: null
   herrmanns:
     affil:
-    - SLAC
+    - Cornell
     altaffil: []
-    email: herrmann
+    email: sch269@Cornell
     family_name: Herrmann
     given_name: Sven
     orcid: null
@@ -6387,7 +6406,7 @@ authors:
     affil:
     - Washington
     altaffil: []
-    email: elhoward
+    email: erinleighh02@Gmail
     family_name: Howard
     given_name: Erin Leigh
     orcid: 0000-0002-0716-947X
@@ -8346,9 +8365,9 @@ authors:
     orcid: null
   nomerotskia:
     affil:
-    - BNL
+    - CTU-Prague
     altaffil: []
-    email: anomerotski
+    email: andrei.nomerotski@CTU-Prague
     family_name: Nomerotski
     given_name: Andrei
     orcid: null
@@ -9537,7 +9556,7 @@ authors:
     affil:
     - UCSC
     altaffil: []
-    email: tas@SLAC
+    email: tschalk@Earthlink
     family_name: Schalk
     given_name: Terry L.
     orcid: null
