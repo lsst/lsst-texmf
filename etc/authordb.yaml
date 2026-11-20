@@ -475,6 +475,19 @@ affiliations:
     email: null
     institute: Cerro Tololo Inter-American Observatory
     ror_id: 03w6nzd18
+  CTU-Prague:
+    address:
+      city: Prague
+      country_code: Czech Republic
+      example_expanded: Czech Technical University in Prague, Jugoslávských partyzánů
+        1580/3, 160 00 Prague 6, Czech Republic
+      postcode: 160 00
+      state: ''
+      street: Jugoslávských partyzánů 1580/3
+    department: ''
+    email: cvut.cz
+    institute: Czech Technical University in Prague
+    ror_id: 03kqpb082
   CUMBRES:
     address:
       city: Goleta
@@ -735,18 +748,6 @@ affiliations:
     email: cox.net
     institute: Email only for cox.net
     ror_id: null
-  CTU-Prague:
-    address:
-      city: Prague
-      country_code: Czech Republic
-      example_expanded: Czech Technical University in Prague, Jugoslávských partyzánů 1580/3, 160 00 Prague 6, Czech Republic
-      postcode: 160 00
-      state: ''
-      street: Jugoslávských partyzánů 1580/3
-    department: ''
-    email: cvut.cz
-    institute: Czech Technical University in Prague
-    ror_id: 03kqpb082
   D4D:
     address:
       city: Bournemouth
@@ -875,12 +876,6 @@ affiliations:
     email: duke.edu
     institute: Duke University
     ror_id: 00py81415
-  Earthlink:
-    address: null
-    department: null
-    email: earthlink.net
-    institute: Earthlink Mail email domain Placeholder
-    ror_id: null
   EPCC:
     address:
       city: Edinburgh
@@ -922,6 +917,12 @@ affiliations:
     email: null
     institute: European Southern Observatory
     ror_id: 01qtasp15
+  Earthlink:
+    address: null
+    department: null
+    email: earthlink.net
+    institute: Earthlink Mail email domain Placeholder
+    ror_id: null
   Edinburgh:
     address:
       city: Edinburgh
