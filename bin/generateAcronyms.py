@@ -36,6 +36,8 @@ glsFile = "aglossary.tex"
 OUTPUT_MODES = ["txt", "rst", "tex", "aastex"]
 specialChars = "_$&%^#"
 specialCharsRe = re.compile(r"[_$&%^#]")
+# Inline math: unescaped $ ... unescaped $
+mathRe = re.compile(r"((?<!\\)\$[^$]+?(?<!\\)\$)")
 
 try:
     import pypandoc
@@ -440,14 +442,21 @@ def find_matches_combo(
 find_matches = find_matches_combo
 
 
-def escape_for_tex(text: str) -> str:
-    """Escape tex nasties and return new string.
-    But watch out for double whammies.
-    """
+def _escape_plain(text: str) -> str:
     for c in specialChars:
         text = text.replace(c, rf"\{c}")
         text = text.replace(rf"\\{c}", rf"\{c}")
     return text
+
+
+def escape_for_tex(text: str) -> str:
+    """Escape tex nasties and return new string.
+    But watch out for double whammies.
+    Inline math ($...$) is passed through untouched; a lone $ is escaped.
+    """
+    parts = mathRe.split(text)
+    # split with a capture group puts the math segments at odd indices
+    return "".join(p if i % 2 else _escape_plain(p) for i, p in enumerate(parts))
 
 
 def write_latex_glossary(acronyms: list[tuple[str, tuple[str, str]]], fd: IO | None = sys.stdout) -> None:
