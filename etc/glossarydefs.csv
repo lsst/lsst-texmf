@@ -689,7 +689,7 @@ JSON,JavaScript Object Notation,Gen,,,A
 JSR,Joint Status Review,LSST DM,,,A
 JTM,Joint Technical Meeting,LSST DM,,,A
 JVM,Java Virtual Machine,Gen,,,A
-JWST,James Webb Space Telescope (formerly known as NGST),Gen,,,A
+JWST,James Webb Space Telescope,Gen,,,A
 JWT,JSON Web Token,DM,,,A
 K8S,Kubernetes provisioning system,IT LSST DM,,,A
 KAGRA,Kamioka Gravitational Wave Detector,Sci,,,A
@@ -884,6 +884,7 @@ NGVLA,Next Generation Very Large Array,OPS,,,A
 NIC,Network Interface Card,DM,,,A
 NICRA,(federally) Negotiated Indirect Cost Rate Agreement,Adm,,,A
 NIR,Near Infrared,Sci,,,A
+NIRCAM,JWST Near Infrared Camera,Sci,,,A
 NIST,National Institute of Standards and Technology (USA),Gen,,,A
 NLR,National Lambda Rail,TS,Document-11941,,A
 NLT,NOIRLab Leadership Team,OPS,,,A
