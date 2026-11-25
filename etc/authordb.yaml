@@ -4694,9 +4694,9 @@ authors:
     affil:
     - IN2P3-IJCLAB
     altaffil: []
-    email: jean-eric.campage
-    family_name: CAMPAGNE
-    given_name: Jean-Eric.  (J.-E.)
+    email: jean-eric.campagne
+    family_name: Campagne
+    given_name: Jean-Eric
     orcid: 0000-0002-1590-6927
   camposa:
     affil:
@@ -6532,7 +6532,6 @@ authors:
   hyunm:
     affil:
     - Stanford
-    - SLAC
     - KASI
     altaffil: []
     email: minhee51
@@ -6642,7 +6641,7 @@ authors:
     - IN2P3-LPCA-FINK
     altaffil: []
     email: fabrice.jammes@Gmail
-    family_name: JAMMES
+    family_name: Jammes
     given_name: Fabrice
     orcid: null
   jannuzibt:
