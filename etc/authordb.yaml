@@ -3121,7 +3121,7 @@ affiliations:
       state: OH
       street: 345 Clifton Court
     department: Physics Department
-    email: uc.edu
+    email: ucmail.uc.edu
     institute: University of Cincinnati
     ror_id: 01e3m7079
   UCSB:
@@ -4690,6 +4690,14 @@ authors:
     family_name: Callen
     given_name: Alice L.
     orcid: null
+  campagnej:
+    affil:
+    - IN2P3-IJCLAB
+    altaffil: []
+    email: jean-eric.campage
+    family_name: CAMPAGNE
+    given_name: Jean-Eric.  (J.-E.)
+    orcid: 0000-0002-1590-6927
   camposa:
     affil:
     - CMU
@@ -6524,6 +6532,8 @@ authors:
   hyunm:
     affil:
     - Stanford
+    - SLAC
+    - KASI
     altaffil: []
     email: minhee51
     family_name: Hyun
@@ -6632,7 +6642,7 @@ authors:
     - IN2P3-LPCA-FINK
     altaffil: []
     email: fabrice.jammes@Gmail
-    family_name: Jammes
+    family_name: JAMMES
     given_name: Fabrice
     orcid: null
   jannuzibt:
@@ -7677,6 +7687,14 @@ authors:
     family_name: Mandelbaum
     given_name: Rachel
     orcid: 0000-0003-2271-1527
+  manept:
+    affil:
+    - Pitts
+    altaffil: []
+    email: prajaktamane1618@Gmail
+    family_name: Mane
+    given_name: Prajakta Tanaji
+    orcid: null
   maoy:
     affil:
     - Rutgers
@@ -8304,7 +8322,7 @@ authors:
     altaffil: []
     email: jeremy.neveu
     family_name: Neveu
-    given_name: Jeremy
+    given_name: J\'er\'emy
     orcid: 0000-0002-6966-5946
   nevinb:
     affil:
@@ -8439,7 +8457,7 @@ authors:
     affil:
     - Princeton-Astro
     altaffil: []
-    email: erfan@Princeton
+    email: erfan
     family_name: Nourbakhsh
     given_name: Erfan
     orcid: 0000-0003-3827-4691
@@ -9078,9 +9096,9 @@ authors:
     orcid: null
   ramelm:
     affil:
-    - IN2P3-LPSC
+    - UCPD
     altaffil: []
-    email: manon.ramel
+    email: ramelmn
     family_name: Ramel
     given_name: Manon
     orcid: null
@@ -11031,6 +11049,14 @@ authors:
     family_name: Yablonski
     given_name: Connor
     orcid: 0009-0000-0990-8339
+  yadavp:
+    affil:
+    - Illinois
+    altaffil: []
+    email: princey2
+    family_name: Yadav
+    given_name: Prince
+    orcid: null
   yangw:
     affil:
     - SLAC
