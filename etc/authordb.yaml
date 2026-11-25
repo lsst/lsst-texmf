@@ -1702,6 +1702,19 @@ affiliations:
     email: jsick.codes
     institute: J.Sick Codes Inc.
     ror_id: null
+  KASI:
+    address:
+      city: Daejeon
+      country_code: Republic of Korea
+      example_expanded: Korea Astronomy and Space Science Institute, 776 Daedeok-daero,
+        Yuseong-gu, Daejeon, 34055, Republic of Korea
+      postcode: '34055'
+      state: ''
+      street: 776 Daedeok-daero, Yuseong-gu
+    department: null
+    email: kasi.re.kr
+    institute: Korea Astronomy and Space Science Institute
+    ror_id: 04g2pxh42
   KECK:
     address:
       city: Kamuela
@@ -2087,6 +2100,19 @@ affiliations:
     email: null
     institute: Northern Arizona University
     ror_id: 0272j5188
+  NCL:
+    address:
+      city: Newcastle upon Tyne
+      country_code: UK
+      example_expanded: School of Mathematics, Statistics and Physics, Newcastle University,
+        Herschel Building, Newcastle upon Tyne, NE1 7RU, UK
+      postcode: NE1 7RU
+      state: null
+      street: Herschel Building
+    department: School of Mathematics, Statistics and Physics
+    email: newcastle.ac.uk
+    institute: Newcastle University
+    ror_id: 01kj2bm70
   NCNRP:
     address:
       city: Otwock
@@ -3085,6 +3111,19 @@ affiliations:
     email: null
     institute: University of California, Santa Cruz
     ror_id: 03s65by71
+  UCPD:
+    address:
+      city: Cincinnati
+      country_code: USA
+      example_expanded: Physics Department, University of Cincinnati, 345 Clifton
+        Court, Cincinnati, OH 45221-0011, USA
+      postcode: 45221-0011
+      state: OH
+      street: 345 Clifton Court
+    department: Physics Department
+    email: ucmail.uc.edu
+    institute: University of Cincinnati
+    ror_id: 01e3m7079
   UCSB:
     address:
       city: Santa Barbara
@@ -4651,6 +4690,14 @@ authors:
     family_name: Callen
     given_name: Alice L.
     orcid: null
+  campagnej:
+    affil:
+    - IN2P3-IJCLAB
+    altaffil: []
+    email: jean-eric.campagne
+    family_name: Campagne
+    given_name: Jean-Eric
+    orcid: 0000-0002-1590-6927
   camposa:
     affil:
     - CMU
@@ -6485,6 +6532,7 @@ authors:
   hyunm:
     affil:
     - Stanford
+    - KASI
     altaffil: []
     email: minhee51
     family_name: Hyun
@@ -7638,6 +7686,14 @@ authors:
     family_name: Mandelbaum
     given_name: Rachel
     orcid: 0000-0003-2271-1527
+  manept:
+    affil:
+    - Pitts
+    altaffil: []
+    email: prajaktamane1618@Gmail
+    family_name: Mane
+    given_name: Prajakta Tanaji
+    orcid: null
   maoy:
     affil:
     - Rutgers
@@ -8265,7 +8321,7 @@ authors:
     altaffil: []
     email: jeremy.neveu
     family_name: Neveu
-    given_name: Jeremy
+    given_name: J\'er\'emy
     orcid: 0000-0002-6966-5946
   nevinb:
     affil:
@@ -8400,7 +8456,7 @@ authors:
     affil:
     - Princeton-Astro
     altaffil: []
-    email: erfan@Princeton
+    email: erfan
     family_name: Nourbakhsh
     given_name: Erfan
     orcid: 0000-0003-3827-4691
@@ -8707,11 +8763,12 @@ authors:
     orcid: 0000-0002-9701-5975
   pedersene:
     affil:
+    - NCL
     - Harvard-Physics
     altaffil: []
-    email: eskepedersen@Harvard-FAS
+    email: eske.pedersen
     family_name: Pedersen
-    given_name: Eske M.
+    given_name: Eske Moeller
     orcid: 0000-0002-8883-2172
   pedrazaiv:
     affil:
@@ -9038,9 +9095,9 @@ authors:
     orcid: null
   ramelm:
     affil:
-    - IN2P3-LPSC
+    - UCPD
     altaffil: []
-    email: manon.ramel
+    email: ramelmn
     family_name: Ramel
     given_name: Manon
     orcid: null
@@ -10991,6 +11048,14 @@ authors:
     family_name: Yablonski
     given_name: Connor
     orcid: 0009-0000-0990-8339
+  yadavp:
+    affil:
+    - Illinois
+    altaffil: []
+    email: princey2
+    family_name: Yadav
+    given_name: Prince
+    orcid: null
   yangw:
     affil:
     - SLAC
