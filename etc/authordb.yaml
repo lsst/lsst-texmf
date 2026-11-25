@@ -1702,6 +1702,19 @@ affiliations:
     email: jsick.codes
     institute: J.Sick Codes Inc.
     ror_id: null
+  KASI:
+    address:
+      city: Daejeon
+      country_code: Republic of Korea
+      example_expanded: Korea Astronomy and Space Science Institute, 776 Daedeok-daero,
+        Yuseong-gu, Daejeon, 34055, Republic of Korea
+      postcode: '34055'
+      state: ''
+      street: 776 Daedeok-daero, Yuseong-gu
+    department: null
+    email: kasi.re.kr
+    institute: Korea Astronomy and Space Science Institute
+    ror_id: 04g2pxh42
   KECK:
     address:
       city: Kamuela
