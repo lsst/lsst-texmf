@@ -2100,6 +2100,19 @@ affiliations:
     email: null
     institute: Northern Arizona University
     ror_id: 0272j5188
+  NCL:
+    address:
+      city: Newcastle upon Tyne
+      country_code: UK
+      example_expanded: School of Mathematics, Statistics and Physics, Newcastle University,
+        Herschel Building, Newcastle upon Tyne, NE1 7RU, UK
+      postcode: NE1 7RU
+      state: null
+      street: Herschel Building
+    department: School of Mathematics, Statistics and Physics
+    email: newcastle.ac.uk
+    institute: Newcastle University
+    ror_id: 01kj2bm70
   NCNRP:
     address:
       city: Otwock
@@ -3098,6 +3111,19 @@ affiliations:
     email: null
     institute: University of California, Santa Cruz
     ror_id: 03s65by71
+  UCPD:
+    address:
+      city: Cincinnati
+      country_code: USA
+      example_expanded: Physics Department, University of Cincinnati, 345 Clifton
+        Court, Cincinnati, OH 45221-0011, USA
+      postcode: 45221-0011
+      state: OH
+      street: 345 Clifton Court
+    department: Physics Department
+    email: uc.edu
+    institute: University of Cincinnati
+    ror_id: 01e3m7079
   UCSB:
     address:
       city: Santa Barbara
@@ -8720,11 +8746,12 @@ authors:
     orcid: 0000-0002-9701-5975
   pedersene:
     affil:
+    - NCL
     - Harvard-Physics
     altaffil: []
-    email: eskepedersen@Harvard-FAS
+    email: eske.pedersen
     family_name: Pedersen
-    given_name: Eske M.
+    given_name: Eske Moeller
     orcid: 0000-0002-8883-2172
   pedrazaiv:
     affil:
