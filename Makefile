@@ -89,6 +89,14 @@ lsst.bib:
 processadbform:
 	bin/makeAuthorListsFromGoogle.py -s `cat skip` --adb -p 1CGxjpPuyNJ_gXRHTvkEF0qeI0XedQ-GQgbmyzWFLSUE "A2:I1000"
 
+# take new entries fomr the builder sign up sheet and put in a file - use --merge-author-list to merge to buildersliast.yaml
+processbuilder:
+	bin/makeAuthorListsFromGoogle.py --skipfile buildersignup.skip --signup 2 -p 1CGxjpPuyNJ_gXRHTvkEF0qeI0XedQ-GQgbmyzWFLSUE "BuilderRequest!A2:C" -o new_builders.yaml
+
+# take new builder list and merge to builders.yaml   -  run after processbuilder
+merge_builder:
+	bin/makeAuthorListsFromGoogle.py  --sort --merge-author-list  new_builders.yaml etc/builderlist.yaml
+
 # skip here is how far down the sheet we already processed - do not want to reprocess
 processsignup:
 	bin/makeAuthorListsFromGoogle.py --signup -p 1CGxjpPuyNJ_gXRHTvkEF0qeI0XedQ-GQgbmyzWFLSUE "GenPaper!A2:I1000"

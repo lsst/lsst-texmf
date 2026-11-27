@@ -932,6 +932,35 @@ def merge_affiliations(affil_file: str) -> None:
         dump_authordb(adb)
 
 
+def load_author_list(filename: str) -> list[str]:
+    """Load an authors.yaml style file - a YAML list of author ids."""
+    with open(filename) as file:
+        data = yaml.safe_load(file) or []
+    if not isinstance(data, list):
+        raise ValueError(f"{filename} is not a YAML list of author ids")
+    return [str(a) for a in data]
+
+
+def merge_author_list(src_file: str, dest_file: str, sort: bool = False) -> None:
+    """Append the author ids in src_file to dest_file, dropping duplicates.
+    dest_file is created if it does not exist.
+    If sort is True the result is sorted (case insensitive), but
+    RubinBuilderPaper is kept first if present.
+    """
+    print(f"Merging author list {src_file} into {dest_file}")
+    src = load_author_list(src_file)
+    dest = load_author_list(dest_file) if os.path.exists(dest_file) else []
+    merged = list(dict.fromkeys(dest + src))  # dedupe, keeps order
+    if sort:
+        builder = "RubinBuilderPaper"
+        has_builder = builder in merged
+        merged = sorted((a for a in merged if a != builder), key=str.lower)
+        if has_builder:
+            merged.insert(0, builder)
+    print(f"Added {len(merged) - len(dest)} authors, {dest_file} now has {len(merged)} authors")
+    write_yaml(dest_file, merged)
+
+
 if __name__ == "__main__":
     description = __doc__ or "Process Google Sheets and merge authors."
     formatter = argparse.RawDescriptionHelpFormatter
@@ -960,6 +989,19 @@ if __name__ == "__main__":
         "--merge-affiliations",
         metavar="AFFIL_FILE",
         help="Path to YAML file to use for merging affiliations",
+    )
+
+    parser.add_argument(
+        "-l",
+        "--merge-author-list",
+        nargs=2,
+        metavar=("SRC", "DEST"),
+        help="Append author ids from SRC authors.yaml to DEST authors.yaml, skipping duplicates",
+    )
+    parser.add_argument(
+        "--sort",
+        action="store_true",
+        help="With --merge-author-list sort the result (RubinBuilderPaper kept first)",
     )
 
     parser.add_argument(
@@ -1087,6 +1129,10 @@ if __name__ == "__main__":
 
     if args.merge_affiliations:
         merge_affiliations(args.merge_affiliations)
+        did_something = True
+
+    if args.merge_author_list:
+        merge_author_list(*args.merge_author_list, sort=args.sort)
         did_something = True
 
     if not did_something:
